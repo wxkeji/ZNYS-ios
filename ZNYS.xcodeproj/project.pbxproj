@@ -14,6 +14,9 @@
 		0487D7711B74548F00756EF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0487D7701B74548F00756EF8 /* Images.xcassets */; };
 		0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0487D7721B74548F00756EF8 /* LaunchScreen.xib */; };
 		0487D7801B74548F00756EF8 /* ZNYSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D77F1B74548F00756EF8 /* ZNYSTests.m */; };
+		0487D78B1B7457C200756EF8 /* GiftStatusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D78A1B7457C200756EF8 /* GiftStatusManager.m */; };
+		0487D78E1B74582200756EF8 /* Gift.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D78D1B74582200756EF8 /* Gift.m */; };
+		0487D7911B745BB500756EF8 /* GiftWithState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D7901B745BB500756EF8 /* GiftWithState.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,12 @@
 		0487D7791B74548F00756EF8 /* ZNYSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZNYSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0487D77E1B74548F00756EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0487D77F1B74548F00756EF8 /* ZNYSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNYSTests.m; sourceTree = "<group>"; };
+		0487D7891B7457C200756EF8 /* GiftStatusManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftStatusManager.h; sourceTree = "<group>"; };
+		0487D78A1B7457C200756EF8 /* GiftStatusManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftStatusManager.m; sourceTree = "<group>"; };
+		0487D78C1B74582200756EF8 /* Gift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gift.h; sourceTree = "<group>"; };
+		0487D78D1B74582200756EF8 /* Gift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gift.m; sourceTree = "<group>"; };
+		0487D78F1B745BB500756EF8 /* GiftWithState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftWithState.h; sourceTree = "<group>"; };
+		0487D7901B745BB500756EF8 /* GiftWithState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftWithState.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +98,12 @@
 				0487D7701B74548F00756EF8 /* Images.xcassets */,
 				0487D7721B74548F00756EF8 /* LaunchScreen.xib */,
 				0487D7631B74548F00756EF8 /* Supporting Files */,
+				0487D7891B7457C200756EF8 /* GiftStatusManager.h */,
+				0487D78A1B7457C200756EF8 /* GiftStatusManager.m */,
+				0487D78C1B74582200756EF8 /* Gift.h */,
+				0487D78D1B74582200756EF8 /* Gift.m */,
+				0487D78F1B745BB500756EF8 /* GiftWithState.h */,
+				0487D7901B745BB500756EF8 /* GiftWithState.m */,
 			);
 			path = ZNYS;
 			sourceTree = "<group>";
@@ -219,9 +234,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0487D78E1B74582200756EF8 /* Gift.m in Sources */,
 				0487D76C1B74548F00756EF8 /* ViewController.m in Sources */,
 				0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */,
+				0487D7911B745BB500756EF8 /* GiftWithState.m in Sources */,
 				0487D7661B74548F00756EF8 /* main.m in Sources */,
+				0487D78B1B7457C200756EF8 /* GiftStatusManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
