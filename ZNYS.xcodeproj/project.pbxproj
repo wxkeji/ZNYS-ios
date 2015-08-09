@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04587E6E1B77CC7400F6D41A /* 等级1.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E5B1B77CC7400F6D41A /* 等级1.png */; };
+		04587E6F1B77CC7400F6D41A /* 广告位.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E5C1B77CC7400F6D41A /* 广告位.png */; };
+		04587E701B77CC7400F6D41A /* 奖品柜.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E5D1B77CC7400F6D41A /* 奖品柜.png */; };
+		04587E711B77CC7400F6D41A /* 昵称.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E5E1B77CC7400F6D41A /* 昵称.png */; };
+		04587E721B77CC7400F6D41A /* 日历按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E5F1B77CC7400F6D41A /* 日历按钮.png */; };
+		04587E731B77CC7400F6D41A /* 首页背景图.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E601B77CC7400F6D41A /* 首页背景图.png */; };
+		04587E741B77CC7400F6D41A /* 首页卡通人头.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E611B77CC7400F6D41A /* 首页卡通人头.png */; };
+		04587E751B77CC7400F6D41A /* 同步按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E621B77CC7400F6D41A /* 同步按钮.png */; };
+		04587E761B77CC7400F6D41A /* 未解锁星星.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E631B77CC7400F6D41A /* 未解锁星星.png */; };
+		04587E771B77CC7400F6D41A /* 系统设置按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E641B77CC7400F6D41A /* 系统设置按钮.png */; };
+		04587E781B77CC7400F6D41A /* 小车_未兑换.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E651B77CC7400F6D41A /* 小车_未兑换.png */; };
+		04587E791B77CC7400F6D41A /* 小车_已兑换.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E661B77CC7400F6D41A /* 小车_已兑换.png */; };
+		04587E7A1B77CC7400F6D41A /* 小恐龙_已兑换.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E671B77CC7400F6D41A /* 小恐龙_已兑换.png */; };
+		04587E7B1B77CC7400F6D41A /* 小篮球_已兑换.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E681B77CC7400F6D41A /* 小篮球_已兑换.png */; };
+		04587E7C1B77CC7400F6D41A /* 小熊_已兑换.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E691B77CC7400F6D41A /* 小熊_已兑换.png */; };
+		04587E7D1B77CC7400F6D41A /* 小鸭子_未激活.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E6A1B77CC7400F6D41A /* 小鸭子_未激活.png */; };
+		04587E7E1B77CC7400F6D41A /* 小鸭子_已兑换.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E6B1B77CC7400F6D41A /* 小鸭子_已兑换.png */; };
+		04587E7F1B77CC7400F6D41A /* 星星图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E6C1B77CC7400F6D41A /* 星星图标.png */; };
+		04587E801B77CC7400F6D41A /* 知识库按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 04587E6D1B77CC7400F6D41A /* 知识库按钮.png */; };
+		04587E821B77CCE000F6D41A /* 效果图.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04587E811B77CCE000F6D41A /* 效果图.jpg */; };
 		0487D7661B74548F00756EF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D7651B74548F00756EF8 /* main.m */; };
 		0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D7681B74548F00756EF8 /* AppDelegate.m */; };
 		0487D76C1B74548F00756EF8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D76B1B74548F00756EF8 /* ViewController.m */; };
@@ -30,6 +50,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04587E5B1B77CC7400F6D41A /* 等级1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "等级1.png"; sourceTree = "<group>"; };
+		04587E5C1B77CC7400F6D41A /* 广告位.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "广告位.png"; sourceTree = "<group>"; };
+		04587E5D1B77CC7400F6D41A /* 奖品柜.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖品柜.png"; sourceTree = "<group>"; };
+		04587E5E1B77CC7400F6D41A /* 昵称.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "昵称.png"; sourceTree = "<group>"; };
+		04587E5F1B77CC7400F6D41A /* 日历按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "日历按钮.png"; sourceTree = "<group>"; };
+		04587E601B77CC7400F6D41A /* 首页背景图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页背景图.png"; sourceTree = "<group>"; };
+		04587E611B77CC7400F6D41A /* 首页卡通人头.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页卡通人头.png"; sourceTree = "<group>"; };
+		04587E621B77CC7400F6D41A /* 同步按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "同步按钮.png"; sourceTree = "<group>"; };
+		04587E631B77CC7400F6D41A /* 未解锁星星.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "未解锁星星.png"; sourceTree = "<group>"; };
+		04587E641B77CC7400F6D41A /* 系统设置按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "系统设置按钮.png"; sourceTree = "<group>"; };
+		04587E651B77CC7400F6D41A /* 小车_未兑换.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小车_未兑换.png"; sourceTree = "<group>"; };
+		04587E661B77CC7400F6D41A /* 小车_已兑换.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小车_已兑换.png"; sourceTree = "<group>"; };
+		04587E671B77CC7400F6D41A /* 小恐龙_已兑换.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小恐龙_已兑换.png"; sourceTree = "<group>"; };
+		04587E681B77CC7400F6D41A /* 小篮球_已兑换.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小篮球_已兑换.png"; sourceTree = "<group>"; };
+		04587E691B77CC7400F6D41A /* 小熊_已兑换.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小熊_已兑换.png"; sourceTree = "<group>"; };
+		04587E6A1B77CC7400F6D41A /* 小鸭子_未激活.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小鸭子_未激活.png"; sourceTree = "<group>"; };
+		04587E6B1B77CC7400F6D41A /* 小鸭子_已兑换.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小鸭子_已兑换.png"; sourceTree = "<group>"; };
+		04587E6C1B77CC7400F6D41A /* 星星图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "星星图标.png"; sourceTree = "<group>"; };
+		04587E6D1B77CC7400F6D41A /* 知识库按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "知识库按钮.png"; sourceTree = "<group>"; };
+		04587E811B77CCE000F6D41A /* 效果图.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "效果图.jpg"; sourceTree = "<group>"; };
 		0487D7601B74548F00756EF8 /* ZNYS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZNYS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0487D7641B74548F00756EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0487D7651B74548F00756EF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -69,9 +109,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		045AAA5E1B775B98001360F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				045AAA5F1B775BBA001360F9 /* Home Page(Gift Box) */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		045AAA5F1B775BBA001360F9 /* Home Page(Gift Box) */ = {
+			isa = PBXGroup;
+			children = (
+				04587E811B77CCE000F6D41A /* 效果图.jpg */,
+				04587E5B1B77CC7400F6D41A /* 等级1.png */,
+				04587E5C1B77CC7400F6D41A /* 广告位.png */,
+				04587E5D1B77CC7400F6D41A /* 奖品柜.png */,
+				04587E5E1B77CC7400F6D41A /* 昵称.png */,
+				04587E5F1B77CC7400F6D41A /* 日历按钮.png */,
+				04587E601B77CC7400F6D41A /* 首页背景图.png */,
+				04587E611B77CC7400F6D41A /* 首页卡通人头.png */,
+				04587E621B77CC7400F6D41A /* 同步按钮.png */,
+				04587E631B77CC7400F6D41A /* 未解锁星星.png */,
+				04587E641B77CC7400F6D41A /* 系统设置按钮.png */,
+				04587E651B77CC7400F6D41A /* 小车_未兑换.png */,
+				04587E661B77CC7400F6D41A /* 小车_已兑换.png */,
+				04587E671B77CC7400F6D41A /* 小恐龙_已兑换.png */,
+				04587E681B77CC7400F6D41A /* 小篮球_已兑换.png */,
+				04587E691B77CC7400F6D41A /* 小熊_已兑换.png */,
+				04587E6A1B77CC7400F6D41A /* 小鸭子_未激活.png */,
+				04587E6B1B77CC7400F6D41A /* 小鸭子_已兑换.png */,
+				04587E6C1B77CC7400F6D41A /* 星星图标.png */,
+				04587E6D1B77CC7400F6D41A /* 知识库按钮.png */,
+			);
+			name = "Home Page(Gift Box)";
+			sourceTree = "<group>";
+		};
 		0487D7571B74548E00756EF8 = {
 			isa = PBXGroup;
 			children = (
+				045AAA5E1B775B98001360F9 /* Resources */,
 				0487D7621B74548F00756EF8 /* ZNYS */,
 				0487D77C1B74548F00756EF8 /* ZNYSTests */,
 				0487D7611B74548F00756EF8 /* Products */,
@@ -214,9 +290,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04587E781B77CC7400F6D41A /* 小车_未兑换.png in Resources */,
+				04587E761B77CC7400F6D41A /* 未解锁星星.png in Resources */,
+				04587E7C1B77CC7400F6D41A /* 小熊_已兑换.png in Resources */,
+				04587E6F1B77CC7400F6D41A /* 广告位.png in Resources */,
+				04587E7D1B77CC7400F6D41A /* 小鸭子_未激活.png in Resources */,
+				04587E731B77CC7400F6D41A /* 首页背景图.png in Resources */,
+				04587E7E1B77CC7400F6D41A /* 小鸭子_已兑换.png in Resources */,
+				04587E7F1B77CC7400F6D41A /* 星星图标.png in Resources */,
+				04587E751B77CC7400F6D41A /* 同步按钮.png in Resources */,
 				0487D76F1B74548F00756EF8 /* Main.storyboard in Resources */,
 				0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */,
+				04587E701B77CC7400F6D41A /* 奖品柜.png in Resources */,
 				0487D7711B74548F00756EF8 /* Images.xcassets in Resources */,
+				04587E721B77CC7400F6D41A /* 日历按钮.png in Resources */,
+				04587E7B1B77CC7400F6D41A /* 小篮球_已兑换.png in Resources */,
+				04587E7A1B77CC7400F6D41A /* 小恐龙_已兑换.png in Resources */,
+				04587E821B77CCE000F6D41A /* 效果图.jpg in Resources */,
+				04587E711B77CC7400F6D41A /* 昵称.png in Resources */,
+				04587E6E1B77CC7400F6D41A /* 等级1.png in Resources */,
+				04587E791B77CC7400F6D41A /* 小车_已兑换.png in Resources */,
+				04587E771B77CC7400F6D41A /* 系统设置按钮.png in Resources */,
+				04587E741B77CC7400F6D41A /* 首页卡通人头.png in Resources */,
+				04587E801B77CC7400F6D41A /* 知识库按钮.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +530,7 @@
 				0487D7851B74548F00756EF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0487D7861B74548F00756EF8 /* Build configuration list for PBXNativeTarget "ZNYSTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +539,7 @@
 				0487D7881B74548F00756EF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
