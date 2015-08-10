@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.49999999999999961" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="效果图.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="a2R-Wd-nA0">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="效果图.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="a2R-Wd-nA0">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rd6-gZ-T0P">
@@ -181,25 +181,60 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lv 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LtF-Jz-Jtv">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                <color key="textColor" red="0.090196078431372548" green="0.42745098039215684" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="339" y="154" width="61" height="21"/>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="小鸭子_已兑换.png" translatesAutoresizingMaskIntoConstraints="NO" id="mrA-Qv-PKi">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="22" y="210" width="71" height="82"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="小熊_已兑换.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ihl-KL-XrW">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="107" y="210" width="71" height="82"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="小恐龙_已兑换.png" translatesAutoresizingMaskIntoConstraints="NO" id="ogA-b0-YJr">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="194" y="210" width="71" height="82"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="小车_已兑换.png" translatesAutoresizingMaskIntoConstraints="NO" id="OhJ-hH-D6U">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="273" y="210" width="71" height="82"/>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Rd6-gZ-T0P" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="1" id="0Zv-nD-qwG"/>
+                            <constraint firstItem="MpA-7y-4LL" firstAttribute="leading" secondItem="a2R-Wd-nA0" secondAttribute="trailing" constant="-69" id="12g-ch-LKk"/>
                             <constraint firstItem="4GQ-uV-hG2" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="3Hk-ok-dXj"/>
                             <constraint firstItem="uBc-GH-52n" firstAttribute="top" secondItem="EOo-QD-m61" secondAttribute="bottom" constant="1" id="3Jb-xA-lDT"/>
                             <constraint firstItem="58T-lX-MWd" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="65" id="9EW-D7-sdO"/>
                             <constraint firstItem="58T-lX-MWd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="100" id="AaN-Sx-37G"/>
                             <constraint firstItem="a2R-Wd-nA0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Cqz-cy-4bS"/>
                             <constraint firstItem="Hf5-xJ-8el" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="64" id="EPO-KS-mnW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="MpA-7y-4LL" secondAttribute="trailing" constant="2" id="G38-G8-Sbj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="a2R-Wd-nA0" secondAttribute="trailing" constant="-16" id="Gp7-mA-d5Q"/>
                             <constraint firstAttribute="centerX" secondItem="uBc-GH-52n" secondAttribute="centerX" id="I17-tS-WIX"/>
                             <constraint firstItem="MpA-7y-4LL" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="Rgc-qs-edz"/>
-                            <constraint firstItem="Hf5-xJ-8el" firstAttribute="leading" secondItem="EOo-QD-m61" secondAttribute="trailing" constant="4" id="Rkv-Ua-vKl"/>
                             <constraint firstItem="EOo-QD-m61" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="60" id="S4I-5m-YHJ"/>
                             <constraint firstItem="a2R-Wd-nA0" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="T6j-gs-7Bf"/>
+                            <constraint firstAttribute="centerX" secondItem="EOo-QD-m61" secondAttribute="centerX" id="UVY-Ju-16c">
+                                <variation key="widthClass=compact" constant="-9.5"/>
+                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="4GQ-uV-hG2" secondAttribute="trailing" constant="70" id="UqI-YG-bSt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Hf5-xJ-8el" secondAttribute="trailing" constant="119" id="bEU-a7-WYI"/>
+                            <constraint firstItem="Hf5-xJ-8el" firstAttribute="leading" secondItem="EOo-QD-m61" secondAttribute="trailing" constant="4" id="XlH-AA-yho"/>
                             <constraint firstItem="Rd6-gZ-T0P" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="bZY-DV-VvL"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="a2R-Wd-nA0" secondAttribute="bottom" id="t2x-mJ-7h6"/>
                         </constraints>
@@ -214,6 +249,11 @@
                                 <exclude reference="Hf5-xJ-8el"/>
                                 <exclude reference="uBc-GH-52n"/>
                                 <exclude reference="EOo-QD-m61"/>
+                                <exclude reference="LtF-Jz-Jtv"/>
+                                <exclude reference="mrA-Qv-PKi"/>
+                                <exclude reference="Ihl-KL-XrW"/>
+                                <exclude reference="ogA-b0-YJr"/>
+                                <exclude reference="OhJ-hH-D6U"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Cqz-cy-4bS"/>
@@ -226,12 +266,12 @@
                                 <exclude reference="9EW-D7-sdO"/>
                                 <exclude reference="AaN-Sx-37G"/>
                                 <exclude reference="S4I-5m-YHJ"/>
+                                <exclude reference="UVY-Ju-16c"/>
                                 <exclude reference="EPO-KS-mnW"/>
-                                <exclude reference="Rkv-Ua-vKl"/>
-                                <exclude reference="bEU-a7-WYI"/>
+                                <exclude reference="XlH-AA-yho"/>
                                 <exclude reference="3Hk-ok-dXj"/>
                                 <exclude reference="UqI-YG-bSt"/>
-                                <exclude reference="G38-G8-Sbj"/>
+                                <exclude reference="12g-ch-LKk"/>
                                 <exclude reference="Rgc-qs-edz"/>
                                 <exclude reference="t2x-mJ-7h6"/>
                             </mask>
@@ -247,6 +287,11 @@
                                 <include reference="Hf5-xJ-8el"/>
                                 <include reference="uBc-GH-52n"/>
                                 <include reference="EOo-QD-m61"/>
+                                <include reference="LtF-Jz-Jtv"/>
+                                <include reference="mrA-Qv-PKi"/>
+                                <include reference="Ihl-KL-XrW"/>
+                                <include reference="ogA-b0-YJr"/>
+                                <include reference="OhJ-hH-D6U"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Cqz-cy-4bS"/>
@@ -259,12 +304,12 @@
                                 <include reference="9EW-D7-sdO"/>
                                 <include reference="AaN-Sx-37G"/>
                                 <include reference="S4I-5m-YHJ"/>
+                                <include reference="UVY-Ju-16c"/>
                                 <include reference="EPO-KS-mnW"/>
-                                <include reference="Rkv-Ua-vKl"/>
-                                <include reference="bEU-a7-WYI"/>
+                                <include reference="XlH-AA-yho"/>
                                 <include reference="3Hk-ok-dXj"/>
                                 <include reference="UqI-YG-bSt"/>
-                                <include reference="G38-G8-Sbj"/>
+                                <include reference="12g-ch-LKk"/>
                                 <include reference="Rgc-qs-edz"/>
                                 <include reference="t2x-mJ-7h6"/>
                             </mask>
@@ -276,6 +321,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="小恐龙_已兑换.png" width="134" height="158"/>
+        <image name="小熊_已兑换.png" width="133" height="155"/>
+        <image name="小车_已兑换.png" width="212" height="154"/>
+        <image name="小鸭子_已兑换.png" width="128" height="130"/>
         <image name="效果图.jpg" width="750" height="1334"/>
         <image name="日历按钮.png" width="95" height="94"/>
         <image name="星星图标.png" width="59" height="57"/>
