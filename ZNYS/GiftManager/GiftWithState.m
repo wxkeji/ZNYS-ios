@@ -16,12 +16,17 @@
 - (instancetype) initWithGiftName:(NSString *)giftName
                   starsToActivate:(int)starsToActivate
 {
+    if(self = [super initWithGiftName:giftName starsToActivate:starsToActivate])
+    {
+        self.state = NotActiveted;
+    }
     return self;
 }
 
 //用一个gift来初始化,且设置state为NotActivate
 - (instancetype) initWithGift:(Gift *)gift
 {
+    self = [self initWithGiftName:gift.name starsToActivate:gift.starsToActivate];
     return self;
 }
 

@@ -11,10 +11,11 @@
 
 @interface GiftStatusManager : NSObject
 {
-    int currentNumberOfStars;    //用户现在拥有的星星数量
+    int currentValidNumberOfStars;    //用户现在拥有的可供兑换奖品的星星数量
+    int totalStars;                   //用户拥有的星星总数，包括已经用来兑换的星星和还没使用的星星
 }
 
-@property (strong) NSArray *giftList;           //所有的奖品的列表，包括【已兑换的奖品】、
+@property (strong) NSMutableArray *giftList;           //所有的奖品的列表，包括【已兑换的奖品】、
                                                 //【已激活未兑换奖品】、【未激活的奖品】
 
 //指定初始化方法
@@ -22,12 +23,12 @@
                                       giftList:(NSArray *)gList;
 
 //检查所有奖品的状态，更新奖品的状态
-- (void) checkGiftState;
+- (void) checkGiftStateOfPage:(int)page atIndex:(int)index;
 
 //得到某一页的状态信息
 - (Gift *) giftOfPage:(int)page;
 
-//用户得到了星星，number为星星增加的数量
+//用户得到了星星，number表示星星增加的数量
 - (void)increaseStars:(int)number;
 
 //减少星星（用星星兑换的奖品），如果星星的数量不够则返回NO

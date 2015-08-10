@@ -26,7 +26,7 @@
 }
 
 //检查所有奖品的状态，更新奖品的状态
-- (void) checkGiftState
+- (void) checkGiftStateOfPage:(int)page atIndex:(int)index
 {
     
 }

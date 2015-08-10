@@ -14,6 +14,8 @@
 - (instancetype) initWithGiftName:(NSString *)giftName
                   starsToActivate:(int)starsToActivate
 {
+    self.name = giftName;
+    self.starsToActivate = starsToActivate;
     return self;
 }
 
