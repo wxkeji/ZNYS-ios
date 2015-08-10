@@ -10,4 +10,11 @@
 
 @implementation Gift
 
+//指定初始化方法
+- (instancetype) initWithGiftName:(NSString *)giftName
+                  starsToActivate:(int)starsToActivate
+{
+    return self;
+}
+
 @end

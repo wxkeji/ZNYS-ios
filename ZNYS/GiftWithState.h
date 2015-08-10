@@ -21,11 +21,14 @@ typedef NS_ENUM(NSUInteger,GiftState){
 
 @property GiftState state;
 
+
 //指定初始化方法，这里把state初始化为NotActivated
 - (instancetype) initWithGiftName:(NSString *)giftName
                   starsToActivate:(int)starsToActivate;
 
 //用一个gift来初始化,且设置state为NotActivate
 - (instancetype) initWithGift:(Gift *)gift;
+
+
 
 @end
