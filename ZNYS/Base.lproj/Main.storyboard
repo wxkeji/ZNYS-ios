@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="效果图.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="a2R-Wd-nA0">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="效果图" translatesAutoresizingMaskIntoConstraints="NO" id="a2R-Wd-nA0">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rd6-gZ-T0P">
@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="height" constant="41" id="5Ar-Kj-nJj"/>
                                     <constraint firstAttribute="width" constant="51" id="CuW-o3-YUE"/>
                                 </constraints>
-                                <state key="normal" image="系统设置按钮.png">
+                                <state key="normal" image="系统设置按钮">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -49,7 +49,7 @@
                                     <constraint firstAttribute="height" constant="41" id="AvR-yV-gtL"/>
                                     <constraint firstAttribute="width" constant="50" id="jda-2a-qCC"/>
                                 </constraints>
-                                <state key="normal" image="知识库按钮.png">
+                                <state key="normal" image="知识库按钮">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -71,7 +71,7 @@
                                     <constraint firstAttribute="height" constant="41" id="bcb-MJ-3rK"/>
                                     <constraint firstAttribute="width" constant="51" id="tpe-Zp-eGv"/>
                                 </constraints>
-                                <state key="normal" image="日历按钮.png">
+                                <state key="normal" image="日历按钮">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -87,7 +87,7 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="昵称.png" translatesAutoresizingMaskIntoConstraints="NO" id="58T-lX-MWd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="昵称" translatesAutoresizingMaskIntoConstraints="NO" id="58T-lX-MWd">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="aDx-J4-r0C"/>
@@ -137,7 +137,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="首页卡通人头.png" translatesAutoresizingMaskIntoConstraints="NO" id="uBc-GH-52n">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="首页卡通人头" translatesAutoresizingMaskIntoConstraints="NO" id="uBc-GH-52n">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="1Eq-Hm-0Uv">
@@ -158,7 +158,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="星星图标.png" translatesAutoresizingMaskIntoConstraints="NO" id="EOo-QD-m61">
+                            <imageView userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="星星图标" translatesAutoresizingMaskIntoConstraints="NO" id="EOo-QD-m61">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="3iA-c8-4I6">
@@ -190,25 +190,25 @@
                                     <rect key="frame" x="339" y="154" width="61" height="21"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="小鸭子_已兑换.png" translatesAutoresizingMaskIntoConstraints="NO" id="mrA-Qv-PKi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="小鸭子_已兑换" translatesAutoresizingMaskIntoConstraints="NO" id="mrA-Qv-PKi">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="22" y="210" width="71" height="82"/>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="小熊_已兑换.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ihl-KL-XrW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="小熊_已兑换" translatesAutoresizingMaskIntoConstraints="NO" id="Ihl-KL-XrW">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="107" y="210" width="71" height="82"/>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="小恐龙_已兑换.png" translatesAutoresizingMaskIntoConstraints="NO" id="ogA-b0-YJr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="小恐龙_已兑换" translatesAutoresizingMaskIntoConstraints="NO" id="ogA-b0-YJr">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="194" y="210" width="71" height="82"/>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="小车_已兑换.png" translatesAutoresizingMaskIntoConstraints="NO" id="OhJ-hH-D6U">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="小车_已兑换" translatesAutoresizingMaskIntoConstraints="NO" id="OhJ-hH-D6U">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="273" y="210" width="71" height="82"/>
@@ -256,24 +256,24 @@
                                 <exclude reference="OhJ-hH-D6U"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Cqz-cy-4bS"/>
-                                <exclude reference="Gp7-mA-d5Q"/>
-                                <exclude reference="T6j-gs-7Bf"/>
-                                <exclude reference="0Zv-nD-qwG"/>
-                                <exclude reference="bZY-DV-VvL"/>
-                                <exclude reference="3Jb-xA-lDT"/>
-                                <exclude reference="I17-tS-WIX"/>
-                                <exclude reference="9EW-D7-sdO"/>
-                                <exclude reference="AaN-Sx-37G"/>
-                                <exclude reference="S4I-5m-YHJ"/>
-                                <exclude reference="UVY-Ju-16c"/>
+                                <exclude reference="t2x-mJ-7h6"/>
                                 <exclude reference="EPO-KS-mnW"/>
                                 <exclude reference="XlH-AA-yho"/>
                                 <exclude reference="3Hk-ok-dXj"/>
                                 <exclude reference="UqI-YG-bSt"/>
                                 <exclude reference="12g-ch-LKk"/>
                                 <exclude reference="Rgc-qs-edz"/>
-                                <exclude reference="t2x-mJ-7h6"/>
+                                <exclude reference="0Zv-nD-qwG"/>
+                                <exclude reference="bZY-DV-VvL"/>
+                                <exclude reference="9EW-D7-sdO"/>
+                                <exclude reference="AaN-Sx-37G"/>
+                                <exclude reference="S4I-5m-YHJ"/>
+                                <exclude reference="UVY-Ju-16c"/>
+                                <exclude reference="Cqz-cy-4bS"/>
+                                <exclude reference="Gp7-mA-d5Q"/>
+                                <exclude reference="T6j-gs-7Bf"/>
+                                <exclude reference="3Jb-xA-lDT"/>
+                                <exclude reference="I17-tS-WIX"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -294,24 +294,24 @@
                                 <include reference="OhJ-hH-D6U"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Cqz-cy-4bS"/>
-                                <include reference="Gp7-mA-d5Q"/>
-                                <include reference="T6j-gs-7Bf"/>
-                                <include reference="0Zv-nD-qwG"/>
-                                <include reference="bZY-DV-VvL"/>
-                                <include reference="3Jb-xA-lDT"/>
-                                <include reference="I17-tS-WIX"/>
-                                <include reference="9EW-D7-sdO"/>
-                                <include reference="AaN-Sx-37G"/>
-                                <include reference="S4I-5m-YHJ"/>
-                                <include reference="UVY-Ju-16c"/>
+                                <include reference="t2x-mJ-7h6"/>
                                 <include reference="EPO-KS-mnW"/>
                                 <include reference="XlH-AA-yho"/>
                                 <include reference="3Hk-ok-dXj"/>
                                 <include reference="UqI-YG-bSt"/>
                                 <include reference="12g-ch-LKk"/>
                                 <include reference="Rgc-qs-edz"/>
-                                <include reference="t2x-mJ-7h6"/>
+                                <include reference="0Zv-nD-qwG"/>
+                                <include reference="bZY-DV-VvL"/>
+                                <include reference="9EW-D7-sdO"/>
+                                <include reference="AaN-Sx-37G"/>
+                                <include reference="S4I-5m-YHJ"/>
+                                <include reference="UVY-Ju-16c"/>
+                                <include reference="Cqz-cy-4bS"/>
+                                <include reference="Gp7-mA-d5Q"/>
+                                <include reference="T6j-gs-7Bf"/>
+                                <include reference="3Jb-xA-lDT"/>
+                                <include reference="I17-tS-WIX"/>
                             </mask>
                         </variation>
                     </view>
@@ -321,16 +321,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="小恐龙_已兑换.png" width="134" height="158"/>
-        <image name="小熊_已兑换.png" width="133" height="155"/>
-        <image name="小车_已兑换.png" width="212" height="154"/>
-        <image name="小鸭子_已兑换.png" width="128" height="130"/>
-        <image name="效果图.jpg" width="750" height="1334"/>
-        <image name="日历按钮.png" width="95" height="94"/>
-        <image name="星星图标.png" width="59" height="57"/>
-        <image name="昵称.png" width="28" height="31"/>
-        <image name="知识库按钮.png" width="95" height="94"/>
-        <image name="系统设置按钮.png" width="94" height="94"/>
-        <image name="首页卡通人头.png" width="467" height="206"/>
+        <image name="小恐龙_已兑换" width="134" height="158"/>
+        <image name="小熊_已兑换" width="133" height="155"/>
+        <image name="小车_已兑换" width="212" height="154"/>
+        <image name="小鸭子_已兑换" width="128" height="130"/>
+        <image name="效果图" width="750" height="1334"/>
+        <image name="日历按钮" width="95" height="94"/>
+        <image name="星星图标" width="59" height="57"/>
+        <image name="昵称" width="28" height="31"/>
+        <image name="知识库按钮" width="95" height="94"/>
+        <image name="系统设置按钮" width="94" height="94"/>
+        <image name="首页卡通人头" width="467" height="206"/>
     </resources>
 </document>
