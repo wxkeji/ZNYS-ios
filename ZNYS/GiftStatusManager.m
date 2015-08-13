@@ -31,8 +31,8 @@
     
 }
 
-//得到某一页的状态信息
-- (Gift *) giftOfPage:(int)page
+//得到某一页的奖品及其状态信息
+- (NSArray *) giftOfPage:(int)page
 {
     return nil;
 }

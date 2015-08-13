@@ -9,6 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "GiftWithState.h"
 
+/*
+@protocol GiftBoxViewControllerDelegate <NSObject>
+
+
+
+@end
+ */
+
 @interface GiftStatusManager : NSObject
 {
     int currentValidNumberOfStars;    //用户现在拥有的可供兑换奖品的星星数量
@@ -26,7 +34,7 @@
 - (void) checkGiftStateOfPage:(int)page atIndex:(int)index;
 
 //得到某一页的状态信息
-- (Gift *) giftOfPage:(int)page;
+- (NSArray *) giftOfPage:(int)page;
 
 //用户得到了星星，number表示星星增加的数量
 - (void)increaseStars:(int)number;
