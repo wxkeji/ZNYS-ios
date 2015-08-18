@@ -7,6 +7,7 @@
 //
 
 #import "GiftWithState.h"
+#import "GiftState.h"
 
 @implementation GiftWithState
 
@@ -18,7 +19,8 @@
 {
     if(self = [super initWithGiftName:giftName starsToActivate:starsToActivate])
     {
-        self.state = NotActiveted;
+        self.state = [[GiftState alloc] init];
+        self.state.state = NotActiveted;
     }
     return self;
 }
@@ -30,5 +32,4 @@
     return self;
 }
 
-
-@end
+@end//  GiftWithState

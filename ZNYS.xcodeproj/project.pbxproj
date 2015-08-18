@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04581D291B78A27900FB2B3E /* GiftStatusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04581D241B78A27900FB2B3E /* GiftStatusManager.m */; };
-		04581D2A1B78A27900FB2B3E /* GiftWithState.m in Sources */ = {isa = PBXBuildFile; fileRef = 04581D261B78A27900FB2B3E /* GiftWithState.m */; };
-		04581D2B1B78A27900FB2B3E /* Gift.m in Sources */ = {isa = PBXBuildFile; fileRef = 04581D271B78A27900FB2B3E /* Gift.m */; };
+		0421D3711B8126C700BF6065 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0421D3631B8126C700BF6065 /* Cabinet.storyboard */; };
+		0421D3721B8126C700BF6065 /* CabinetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3651B8126C700BF6065 /* CabinetViewController.m */; };
+		0421D3731B8126C700BF6065 /* GiftStatusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3691B8126C700BF6065 /* GiftStatusManager.m */; };
+		0421D3741B8126C700BF6065 /* GiftWithState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D36B1B8126C700BF6065 /* GiftWithState.m */; };
+		0421D3751B8126C700BF6065 /* Gift.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D36C1B8126C700BF6065 /* Gift.m */; };
+		0421D3791B830D0B00BF6065 /* GiftState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3781B830D0B00BF6065 /* GiftState.m */; };
+		0421D37D1B831FA600BF6065 /* FileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D37C1B831FA600BF6065 /* FileOperation.m */; };
 		0487D7661B74548F00756EF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D7651B74548F00756EF8 /* main.m */; };
 		0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D7681B74548F00756EF8 /* AppDelegate.m */; };
-		0487D76C1B74548F00756EF8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D76B1B74548F00756EF8 /* ViewController.m */; };
-		0487D76F1B74548F00756EF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0487D76D1B74548F00756EF8 /* Main.storyboard */; };
 		0487D7711B74548F00756EF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0487D7701B74548F00756EF8 /* Images.xcassets */; };
 		0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0487D7721B74548F00756EF8 /* LaunchScreen.xib */; };
 		0487D7801B74548F00756EF8 /* ZNYSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D77F1B74548F00756EF8 /* ZNYSTests.m */; };
@@ -30,20 +32,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04581D231B78A27900FB2B3E /* GiftStatusManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GiftStatusManager.h; path = ZNYS/GiftManager/GiftStatusManager.h; sourceTree = "<group>"; };
-		04581D241B78A27900FB2B3E /* GiftStatusManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GiftStatusManager.m; path = ZNYS/GiftManager/GiftStatusManager.m; sourceTree = "<group>"; };
-		04581D251B78A27900FB2B3E /* Gift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gift.h; path = ZNYS/GiftManager/Gift.h; sourceTree = "<group>"; };
-		04581D261B78A27900FB2B3E /* GiftWithState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GiftWithState.m; path = ZNYS/GiftManager/GiftWithState.m; sourceTree = "<group>"; };
-		04581D271B78A27900FB2B3E /* Gift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Gift.m; path = ZNYS/GiftManager/Gift.m; sourceTree = "<group>"; };
-		04581D281B78A27900FB2B3E /* GiftWithState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GiftWithState.h; path = ZNYS/GiftManager/GiftWithState.h; sourceTree = "<group>"; };
+		0421D3641B8126C700BF6065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Cabinet.storyboard; sourceTree = "<group>"; };
+		0421D3651B8126C700BF6065 /* CabinetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CabinetViewController.m; sourceTree = "<group>"; };
+		0421D3661B8126C700BF6065 /* GiftStatusManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftStatusManager.h; sourceTree = "<group>"; };
+		0421D3671B8126C700BF6065 /* CabinetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CabinetViewController.h; sourceTree = "<group>"; };
+		0421D3681B8126C700BF6065 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		0421D3691B8126C700BF6065 /* GiftStatusManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftStatusManager.m; sourceTree = "<group>"; };
+		0421D36A1B8126C700BF6065 /* Gift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gift.h; sourceTree = "<group>"; };
+		0421D36B1B8126C700BF6065 /* GiftWithState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftWithState.m; sourceTree = "<group>"; };
+		0421D36C1B8126C700BF6065 /* Gift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gift.m; sourceTree = "<group>"; };
+		0421D36D1B8126C700BF6065 /* GiftWithState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftWithState.h; sourceTree = "<group>"; };
+		0421D3771B830D0B00BF6065 /* GiftState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftState.h; sourceTree = "<group>"; };
+		0421D3781B830D0B00BF6065 /* GiftState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftState.m; sourceTree = "<group>"; };
+		0421D37B1B831FA600BF6065 /* FileOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileOperation.h; sourceTree = "<group>"; };
+		0421D37C1B831FA600BF6065 /* FileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileOperation.m; sourceTree = "<group>"; };
 		0487D7601B74548F00756EF8 /* ZNYS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZNYS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0487D7641B74548F00756EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0487D7651B74548F00756EF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0487D7671B74548F00756EF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0487D7681B74548F00756EF8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0487D76A1B74548F00756EF8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0487D76B1B74548F00756EF8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		0487D76E1B74548F00756EF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0487D7701B74548F00756EF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0487D7731B74548F00756EF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0487D7791B74548F00756EF8 /* ZNYSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZNYSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,18 +76,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04581D2C1B78A28300FB2B3E /* GiftManager */ = {
+		0421D3761B82E34500BF6065 /* GiftManagement */ = {
 			isa = PBXGroup;
 			children = (
-				04581D231B78A27900FB2B3E /* GiftStatusManager.h */,
-				04581D241B78A27900FB2B3E /* GiftStatusManager.m */,
-				04581D251B78A27900FB2B3E /* Gift.h */,
-				04581D261B78A27900FB2B3E /* GiftWithState.m */,
-				04581D271B78A27900FB2B3E /* Gift.m */,
-				04581D281B78A27900FB2B3E /* GiftWithState.h */,
+				0421D3661B8126C700BF6065 /* GiftStatusManager.h */,
+				0421D3691B8126C700BF6065 /* GiftStatusManager.m */,
+				0421D36A1B8126C700BF6065 /* Gift.h */,
+				0421D36C1B8126C700BF6065 /* Gift.m */,
+				0421D36D1B8126C700BF6065 /* GiftWithState.h */,
+				0421D36B1B8126C700BF6065 /* GiftWithState.m */,
+				0421D3771B830D0B00BF6065 /* GiftState.h */,
+				0421D3781B830D0B00BF6065 /* GiftState.m */,
 			);
-			name = GiftManager;
-			path = ..;
+			name = GiftManagement;
+			sourceTree = "<group>";
+		};
+		0421D37A1B831F7700BF6065 /* File Operation */ = {
+			isa = PBXGroup;
+			children = (
+				0421D37B1B831FA600BF6065 /* FileOperation.h */,
+				0421D37C1B831FA600BF6065 /* FileOperation.m */,
+			);
+			name = "File Operation";
 			sourceTree = "<group>";
 		};
 		045AAA5E1B775B98001360F9 /* Resources */ = {
@@ -112,12 +129,14 @@
 		0487D7621B74548F00756EF8 /* ZNYS */ = {
 			isa = PBXGroup;
 			children = (
-				04581D2C1B78A28300FB2B3E /* GiftManager */,
+				0421D37A1B831F7700BF6065 /* File Operation */,
+				0421D3761B82E34500BF6065 /* GiftManagement */,
+				0421D3631B8126C700BF6065 /* Cabinet.storyboard */,
+				0421D3651B8126C700BF6065 /* CabinetViewController.m */,
+				0421D3671B8126C700BF6065 /* CabinetViewController.h */,
+				0421D3681B8126C700BF6065 /* Config.h */,
 				0487D7671B74548F00756EF8 /* AppDelegate.h */,
 				0487D7681B74548F00756EF8 /* AppDelegate.m */,
-				0487D76A1B74548F00756EF8 /* ViewController.h */,
-				0487D76B1B74548F00756EF8 /* ViewController.m */,
-				0487D76D1B74548F00756EF8 /* Main.storyboard */,
 				0487D7701B74548F00756EF8 /* Images.xcassets */,
 				0487D7721B74548F00756EF8 /* LaunchScreen.xib */,
 				0487D7631B74548F00756EF8 /* Supporting Files */,
@@ -231,8 +250,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0487D76F1B74548F00756EF8 /* Main.storyboard in Resources */,
 				0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */,
+				0421D3711B8126C700BF6065 /* Cabinet.storyboard in Resources */,
 				0487D7711B74548F00756EF8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,12 +270,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0487D76C1B74548F00756EF8 /* ViewController.m in Sources */,
-				04581D2A1B78A27900FB2B3E /* GiftWithState.m in Sources */,
 				0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */,
-				04581D2B1B78A27900FB2B3E /* Gift.m in Sources */,
+				0421D3741B8126C700BF6065 /* GiftWithState.m in Sources */,
+				0421D3791B830D0B00BF6065 /* GiftState.m in Sources */,
+				0421D37D1B831FA600BF6065 /* FileOperation.m in Sources */,
+				0421D3721B8126C700BF6065 /* CabinetViewController.m in Sources */,
+				0421D3751B8126C700BF6065 /* Gift.m in Sources */,
 				0487D7661B74548F00756EF8 /* main.m in Sources */,
-				04581D291B78A27900FB2B3E /* GiftStatusManager.m in Sources */,
+				0421D3731B8126C700BF6065 /* GiftStatusManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,12 +300,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0487D76D1B74548F00756EF8 /* Main.storyboard */ = {
+		0421D3631B8126C700BF6065 /* Cabinet.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0487D76E1B74548F00756EF8 /* Base */,
+				0421D3641B8126C700BF6065 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Cabinet.storyboard;
 			sourceTree = "<group>";
 		};
 		0487D7721B74548F00756EF8 /* LaunchScreen.xib */ = {

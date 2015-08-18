@@ -7,19 +7,16 @@
 //
 
 #import "Gift.h"
-
-typedef NS_ENUM(NSUInteger,GiftState){
-    Obtained,
-    AticatedNotObtained,
-    NotActiveted
-};
+#import "GiftState.h"
 
 @interface GiftWithState : Gift
 {
-    GiftState state;
+    GiftState *state;
+    NSArray *STATE; 
+
 }
 
-@property GiftState state;
+@property GiftState* state;
 
 
 //指定初始化方法，这里把state初始化为NotActivated
@@ -28,7 +25,5 @@ typedef NS_ENUM(NSUInteger,GiftState){
 
 //用一个gift来初始化,且设置state为NotActivate
 - (instancetype) initWithGift:(Gift *)gift;
-
-
 
 @end

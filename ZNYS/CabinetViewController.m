@@ -31,6 +31,9 @@
     //初始化奖品状态管理器
     self.giftStatusManager = [[GiftStatusManager alloc] init];
     
+    //从文件中读取数据
+    
+    
     NSArray *cabinetSubViews = [self.cabinetPageControl subviews];
     
     int count = 0;

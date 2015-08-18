@@ -23,7 +23,8 @@
     int totalStars;                   //用户拥有的星星总数，包括已经用来兑换的星星和还没使用的星星
 }
 
-@property (strong) NSMutableArray *giftList;           //所有的奖品的列表，包括【已兑换的奖品】、
+@property (strong,nonatomic) NSMutableArray *pageList;
+@property (strong,nonatomic) NSMutableArray *giftList;           //所有的奖品的列表，包括【已兑换的奖品】、
                                                 //【已激活未兑换奖品】、【未激活的奖品】
 
 //指定初始化方法
@@ -31,7 +32,7 @@
                                       giftList:(NSArray *)gList;
 
 //检查所有奖品的状态，更新奖品的状态
-- (void) checkGiftStateOfPage:(int)page atIndex:(int)index;
+- (void) checkGiftStateOfPage:(int)page;
 
 //得到某一页的状态信息
 - (NSArray *) giftOfPage:(int)page;
@@ -44,5 +45,11 @@
 
 //得到当前星星的数量
 - (int)currentNumberOfStars;
+
+//得到当前可用于兑换的星星的数量
+- (int)currentValidNumberOfStars;
+
+//得到用户从开始的到现在获得的星星总数
+- (int)totalStars;
 
 @end
