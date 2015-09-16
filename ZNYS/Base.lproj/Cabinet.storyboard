@@ -68,37 +68,6 @@
                             </imageView>
                             <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gf-ix-uqV">
                                 <rect key="frame" x="0.0" y="176" width="600" height="249"/>
-                                <subviews>
-                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U6m-N5-InC" userLabel="CabinetView">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="249"/>
-                                        <gestureRecognizers/>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="U6m-N5-InC" firstAttribute="leading" secondItem="8Gf-ix-uqV" secondAttribute="leading" id="2G1-Lt-vQB"/>
-                                    <constraint firstAttribute="bottom" secondItem="U6m-N5-InC" secondAttribute="bottom" id="KGo-zz-dxr"/>
-                                    <constraint firstItem="U6m-N5-InC" firstAttribute="centerY" secondItem="8Gf-ix-uqV" secondAttribute="centerY" id="S9k-Sy-j7b"/>
-                                    <constraint firstAttribute="trailing" secondItem="U6m-N5-InC" secondAttribute="trailing" id="UPn-Rf-uj5"/>
-                                    <constraint firstItem="U6m-N5-InC" firstAttribute="top" secondItem="8Gf-ix-uqV" secondAttribute="top" id="UUa-1c-5Bz"/>
-                                    <constraint firstItem="U6m-N5-InC" firstAttribute="centerX" secondItem="8Gf-ix-uqV" secondAttribute="centerX" id="V02-Fg-M5z"/>
-                                    <constraint firstAttribute="bottom" secondItem="U6m-N5-InC" secondAttribute="bottom" id="fdr-FJ-KRc"/>
-                                    <constraint firstItem="U6m-N5-InC" firstAttribute="top" secondItem="8Gf-ix-uqV" secondAttribute="top" id="i4I-u4-F93"/>
-                                    <constraint firstAttribute="trailing" secondItem="U6m-N5-InC" secondAttribute="trailing" id="kOH-k9-Hnw"/>
-                                    <constraint firstItem="U6m-N5-InC" firstAttribute="leading" secondItem="8Gf-ix-uqV" secondAttribute="leading" id="obA-KA-weO"/>
-                                </constraints>
-                                <variation key="widthClass=compact">
-                                    <mask key="subviews">
-                                        <include reference="U6m-N5-InC"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <include reference="KGo-zz-dxr"/>
-                                        <include reference="S9k-Sy-j7b"/>
-                                        <include reference="V02-Fg-M5z"/>
-                                        <include reference="i4I-u4-F93"/>
-                                        <include reference="kOH-k9-Hnw"/>
-                                        <include reference="obA-KA-weO"/>
-                                    </mask>
-                                </variation>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkD-Bh-rWB">
                                 <rect key="frame" x="262" y="453" width="76" height="76"/>
@@ -252,9 +221,7 @@
                                 <variation key="widthClass=compact" constant="4"/>
                             </constraint>
                             <constraint firstItem="58T-lX-MWd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Rd6-gZ-T0P" secondAttribute="bottom" constant="8" id="AwA-Ik-1XG"/>
-                            <constraint firstItem="AiQ-SN-3YM" firstAttribute="height" secondItem="U6m-N5-InC" secondAttribute="height" constant="28" id="BWc-2Q-N74"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LtF-Jz-Jtv" secondAttribute="trailing" constant="-125" id="EKA-lO-RoT"/>
-                            <constraint firstItem="AiQ-SN-3YM" firstAttribute="width" secondItem="U6m-N5-InC" secondAttribute="width" constant="16" id="FCG-rH-h6s"/>
                             <constraint firstItem="8Gf-ix-uqV" firstAttribute="trailing" secondItem="LtF-Jz-Jtv" secondAttribute="trailing" constant="-109" id="FNt-hE-XAb"/>
                             <constraint firstItem="Fzh-8j-SHQ" firstAttribute="leading" secondItem="58T-lX-MWd" secondAttribute="trailing" constant="7" id="Gh0-Jb-09n">
                                 <variation key="heightClass=regular" constant="8"/>
@@ -389,7 +356,6 @@
                     </view>
                     <connections>
                         <outlet property="cabinetScrollView" destination="8Gf-ix-uqV" id="yMS-zo-Phy"/>
-                        <outlet property="cabinetView" destination="U6m-N5-InC" id="Vuf-1J-XS8"/>
                         <outlet property="stars" destination="Hf5-xJ-8el" id="9O6-fT-n1I"/>
                     </connections>
                 </viewController>

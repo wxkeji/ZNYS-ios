@@ -16,7 +16,6 @@
 @property GiftStatusManager *giftStatusManager;
 @property (strong, nonatomic) IBOutlet UIScrollView *cabinetScrollView;
 
-@property (strong, nonatomic) IBOutlet UIView *cabinetView;
 @property (strong, nonatomic) IBOutlet UILabel *stars;//屏幕上显示的星星数
 
 @property (strong, nonatomic) NSMutableArray *giftGridListTag;//保存对应的礼物的Tag
@@ -32,7 +31,7 @@
     [super viewDidLoad];
     
     //从文件中读取数据
-    
+    self.giftGridListTag = [[NSMutableArray alloc] init];
     
     
     //初始化奖品状态管理器
@@ -94,31 +93,45 @@
     //在奖品柜视图里添加礼物的图片,并把对应的Tag保存在giftGridListTag里，然后为每一个奖品添加触摸手势
     for(int i=0;i<[self.giftStatusManager.giftList count];i++)
     {
+        //从奖品管理器中获取第i个奖品
+        GiftWithState *gws = self.giftStatusManager.giftList[i];
         
-         GiftWithState *gws = self.giftStatusManager.giftList[i];
-         TouchableImageView *imageView = [[TouchableImageView alloc] init];
+        //创建一个button和imageView，用imageView作为button的子View
+        UIButton *button = [[UIButton alloc] init];
+        UIImageView *imageView = [[UIImageView alloc] init];
         
-        //把点击事件的响应委托给UIScrollView
-        imageView.delegate = self;
-        
-         imageView.image = [UIImage imageNamed:gws.imageName];
+        imageView.image = [UIImage imageNamed:gws.imageName];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
+        
+        [button addSubview:imageView];
         
         // nx 和 ny表示在 4 * 2 的奖品方阵中中的位置
         //根据奖品在奖品奖品列表中的位置i算出它在4 * 2方阵中的对应位置
-         float nx,ny;
+         int nx,ny;
          nx = i % 4 + i / 8 * 4;
          ny = (i % 8) / 4;
-
+        
         //下面根据nx和ny进一步算出每一个奖品精确的位置
         //奖品柜里面高度的比例为  星星：物品：星星：物品 = 1.52：6.88：1.52：6.88 。从而按照比例推算出定位的坐标
-        imageView.frame = CGRectMake(imgW * nx, 1.52 / 15.28 * height + 15.28 / 2 * width * ny, imgW, 6.88 / 15.28 * height);
+        float buttonX,buttonY,buttonWidth,buttonHeight;
+        buttonX = imgW * nx;
+        buttonY = 1.52 / 15.28 * height + 1.0 / 2 * height * ny;
+        buttonWidth = imgW;
+        buttonHeight = 6.88 / 15.28 * height;
+        button.frame = CGRectMake(buttonX, buttonY, buttonWidth, buttonHeight);
+        imageView.frame = CGRectMake(0, 0, buttonWidth, buttonHeight);
         
-        //把奖品imageView添加到奖品柜视图
-         [self.cabinetView addSubview:imageView];
+        //为button添加点击事件
+        [button addTarget:self action:@selector(giftWasTouched:) forControlEvents:UIControlEventTouchUpInside];
+        
+        //把奖品button添加到奖品柜视图
+         [self.cabinetScrollView addSubview:button];
+        
+        //设置button的tag，后面可以用tag找到对应的奖品
+        button.tag = TAG_CABINET_GIFT + i;
         
         //把奖品的imageView的Tag添加到 gfitGridListTag 数组中
-         [self.giftGridListTag addObject:[[NSNumber alloc] initWithLong:[imageView tag]]];
+         [self.giftGridListTag addObject:[[NSNumber alloc] initWithLong:[button tag]]];
         
     }
 
@@ -126,8 +139,11 @@
 }
 
 //响应奖品的点击事件
-- (void) imageTouchesBegin:(NSUInteger)tag
+- (void) giftWasTouched:(id)sender
 {
+    //获取这个奖品的tag
+    long tag = [sender tag];
+    
     //index表示这个奖品在奖品列表是第几个
     long index=-1;
     
@@ -136,14 +152,15 @@
     //通过Tag与 giftGridListTag 中的 tag 值一一比较从而确定当前被触摸的是第几个奖品
     for(int i=0;i<length;i++)
     {
-        NSNumber *subtag = self.giftGridListTag[i];
-        if([subtag intValue] == tag)
+        NSNumber *currentTag = self.giftGridListTag[i];
+        if([currentTag longValue] == tag)
         {
             index = i;
+            break;
         }
     }
     
-    NSLog(@"Gift %ld is touched.",index);
+    NSLog(@"Gift %ld is touched.Tag is %ld",index,tag);
 }
 
 - (IBAction)synchronize:(id)sender
