@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GiftStatusManager.h"
+#import "TouchableImageView.h"
 
 /*
 @protocol GiftStatusDelegate <NSObject>
@@ -18,9 +19,7 @@
 
  */
  
-@interface CabinetViewController : UIViewController
-
-@property GiftStatusManager *giftStatusManager;
+@interface CabinetViewController : UIViewController<UIGestureRecognizerDelegate,ImageViewDelegate>
 
 @end
 

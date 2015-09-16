@@ -16,8 +16,9 @@
 //指定初始化方法，这里把state初始化为NotActivated
 - (instancetype) initWithGiftName:(NSString *)giftName
                   starsToActivate:(int)starsToActivate
+                        imageName:(NSString *)imageName
 {
-    if(self = [super initWithGiftName:giftName starsToActivate:starsToActivate])
+    if(self = [super initWithGiftName:giftName starsToActivate:starsToActivate imageName:imageName])
     {
         self.state = [[GiftState alloc] init];
         self.state.state = NotActiveted;
@@ -25,10 +26,22 @@
     return self;
 }
 
+- (instancetype) initWithGiftName:(NSString *)giftName
+                  starsToActivate:(int)starsToActivate
+{
+    if(self = [super initWithGiftName:giftName starsToActivate:starsToActivate imageName:nil])
+    {
+        self.state = [[GiftState alloc] init];
+        self.state.state = NotActiveted;
+    }
+    return self;
+
+}
+
 //用一个gift来初始化,且设置state为NotActivate
 - (instancetype) initWithGift:(Gift *)gift
 {
-    self = [self initWithGiftName:gift.name starsToActivate:gift.starsToActivate];
+    self = [self initWithGiftName:gift.name starsToActivate:gift.starsToActivate imageName:gift.imageName];
     return self;
 }
 

@@ -8,6 +8,13 @@
 
 #import "GiftStatusManager.h"
 
+@interface GiftStatusManager ()
+{
+    int currentValidNumberOfStars;    //用户现在拥有的可供兑换奖品的星星数量
+    int totalStars;                   //用户拥有的星星总数，包括已经用来兑换的星星和还没使用的星星
+}
+@end
+
 @implementation GiftStatusManager
 
 - (void) testFunc
@@ -17,13 +24,53 @@
     NSLog(@"%lu",(unsigned long)s);
 }
 
-
 //指定初始化方法
-- (instancetype) initWithCurrentNumbersOfStars:(int)numberOfStars
+- (instancetype) initWithCurrentValidNumbersOfStars:(int)currentValidNums
+                                    totalStars:(int)totals
+                                      giftList:(NSMutableArray *)gList
+{
+    currentValidNumberOfStars = currentValidNums;
+    self.giftList = gList;
+    totalStars = totals;
+    return self;
+}
+
+- (instancetype) initWithCurrentValidNumbersOfStars:(int)numberOfStars
                                       giftList:(NSMutableArray *)gList
 {
     totalStars = numberOfStars;
+    currentValidNumberOfStars = totalStars;
     self.giftList = gList;
+    return self;
+}
+
+- (instancetype)init
+{
+    NSMutableArray *gList = [[NSMutableArray alloc] init];
+    long validNumberOfStars,totals;
+    
+    validNumberOfStars = [[NSUserDefaults standardUserDefaults] integerForKey:@"currentValidNumberOfStars"];
+    
+    
+    //添加奖品
+    for(int i=0;i<8;i++)
+    {
+        GiftWithState *gws = [[GiftWithState alloc] initWithGiftName:[NSString stringWithFormat:@"littleDragon"] starsToActivate:i imageName:@"小恐龙_已兑换"];
+        [gList addObject:gws];
+    }
+    for(int i=8;i<16;i++)
+    {
+        GiftWithState *gws = [[GiftWithState alloc] initWithGiftName:[NSString stringWithFormat:@"littleDuck"] starsToActivate:i imageName:@"小鸭子_已兑换"];
+        [gList addObject:gws];
+    }
+    for(int i=16;i<24;i++)
+    {
+        GiftWithState *gws = [[GiftWithState alloc] initWithGiftName:[NSString stringWithFormat:@"littleBasketball"] starsToActivate:i imageName:@"小篮球_已兑换"];
+        [gList addObject:gws];
+    }
+
+    self = [self initWithCurrentValidNumbersOfStars:validNumberOfStars totalStars:totals  giftList:gList];
+    
     return self;
 }
 

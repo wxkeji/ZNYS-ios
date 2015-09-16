@@ -13,7 +13,9 @@
 		0421D3741B8126C700BF6065 /* GiftWithState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D36B1B8126C700BF6065 /* GiftWithState.m */; };
 		0421D3751B8126C700BF6065 /* Gift.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D36C1B8126C700BF6065 /* Gift.m */; };
 		0421D3791B830D0B00BF6065 /* GiftState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3781B830D0B00BF6065 /* GiftState.m */; };
-		0421D37D1B831FA600BF6065 /* FileOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D37C1B831FA600BF6065 /* FileOperation.m */; };
+		044DD1A71BA0A21F00176AD4 /* GiftStatusManagerFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 044DD1A61BA0A21F00176AD4 /* GiftStatusManagerFile.m */; };
+		0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0457FB5D1BA9461000001A9D /* TouchableImageView.m */; };
+		047D3D391B8A02DA00871627 /* NSArray+ForceBound.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D3D381B8A02DA00871627 /* NSArray+ForceBound.m */; };
 		0487D7661B74548F00756EF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D7651B74548F00756EF8 /* main.m */; };
 		0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D7681B74548F00756EF8 /* AppDelegate.m */; };
 		0487D7711B74548F00756EF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0487D7701B74548F00756EF8 /* Images.xcassets */; };
@@ -44,8 +46,12 @@
 		0421D36D1B8126C700BF6065 /* GiftWithState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftWithState.h; sourceTree = "<group>"; };
 		0421D3771B830D0B00BF6065 /* GiftState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftState.h; sourceTree = "<group>"; };
 		0421D3781B830D0B00BF6065 /* GiftState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftState.m; sourceTree = "<group>"; };
-		0421D37B1B831FA600BF6065 /* FileOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileOperation.h; sourceTree = "<group>"; };
-		0421D37C1B831FA600BF6065 /* FileOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileOperation.m; sourceTree = "<group>"; };
+		044DD1A51BA0A21F00176AD4 /* GiftStatusManagerFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftStatusManagerFile.h; sourceTree = "<group>"; };
+		044DD1A61BA0A21F00176AD4 /* GiftStatusManagerFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftStatusManagerFile.m; sourceTree = "<group>"; };
+		0457FB5C1BA9461000001A9D /* TouchableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchableImageView.h; sourceTree = "<group>"; };
+		0457FB5D1BA9461000001A9D /* TouchableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchableImageView.m; sourceTree = "<group>"; };
+		047D3D371B8A02DA00871627 /* NSArray+ForceBound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ForceBound.h"; sourceTree = "<group>"; };
+		047D3D381B8A02DA00871627 /* NSArray+ForceBound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ForceBound.m"; sourceTree = "<group>"; };
 		0487D7601B74548F00756EF8 /* ZNYS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZNYS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0487D7641B74548F00756EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0487D7651B74548F00756EF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -94,10 +100,19 @@
 		0421D37A1B831F7700BF6065 /* File Operation */ = {
 			isa = PBXGroup;
 			children = (
-				0421D37B1B831FA600BF6065 /* FileOperation.h */,
-				0421D37C1B831FA600BF6065 /* FileOperation.m */,
+				044DD1A51BA0A21F00176AD4 /* GiftStatusManagerFile.h */,
+				044DD1A61BA0A21F00176AD4 /* GiftStatusManagerFile.m */,
 			);
 			name = "File Operation";
+			sourceTree = "<group>";
+		};
+		0457FB5B1BA945EA00001A9D /* TouchableImageView */ = {
+			isa = PBXGroup;
+			children = (
+				0457FB5C1BA9461000001A9D /* TouchableImageView.h */,
+				0457FB5D1BA9461000001A9D /* TouchableImageView.m */,
+			);
+			name = TouchableImageView;
 			sourceTree = "<group>";
 		};
 		045AAA5E1B775B98001360F9 /* Resources */ = {
@@ -129,6 +144,7 @@
 		0487D7621B74548F00756EF8 /* ZNYS */ = {
 			isa = PBXGroup;
 			children = (
+				0457FB5B1BA945EA00001A9D /* TouchableImageView */,
 				0421D37A1B831F7700BF6065 /* File Operation */,
 				0421D3761B82E34500BF6065 /* GiftManagement */,
 				0421D3631B8126C700BF6065 /* Cabinet.storyboard */,
@@ -140,6 +156,8 @@
 				0487D7701B74548F00756EF8 /* Images.xcassets */,
 				0487D7721B74548F00756EF8 /* LaunchScreen.xib */,
 				0487D7631B74548F00756EF8 /* Supporting Files */,
+				047D3D371B8A02DA00871627 /* NSArray+ForceBound.h */,
+				047D3D381B8A02DA00871627 /* NSArray+ForceBound.m */,
 			);
 			path = ZNYS;
 			sourceTree = "<group>";
@@ -271,9 +289,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */,
+				047D3D391B8A02DA00871627 /* NSArray+ForceBound.m in Sources */,
+				0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */,
 				0421D3741B8126C700BF6065 /* GiftWithState.m in Sources */,
+				044DD1A71BA0A21F00176AD4 /* GiftStatusManagerFile.m in Sources */,
 				0421D3791B830D0B00BF6065 /* GiftState.m in Sources */,
-				0421D37D1B831FA600BF6065 /* FileOperation.m in Sources */,
 				0421D3721B8126C700BF6065 /* CabinetViewController.m in Sources */,
 				0421D3751B8126C700BF6065 /* Gift.m in Sources */,
 				0487D7661B74548F00756EF8 /* main.m in Sources */,

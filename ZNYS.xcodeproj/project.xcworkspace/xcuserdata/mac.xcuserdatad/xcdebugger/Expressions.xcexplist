@@ -10,5 +10,33 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "-[CabinetViewController viewDidLoad]:CabinetViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "imgH">
+            </PersistentString>
+            <PersistentString
+               value = "[self.cabinetView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].width;">
+            </PersistentString>
+            <PersistentString
+               value = "imgW">
+            </PersistentString>
+            <PersistentString
+               value = "self.cabinetScrollView.contentSize">
+            </PersistentString>
+            <PersistentString
+               value = "width / 4 - 16 * 4">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CabinetViewController pageChanged:]:CabinetViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self.giftStatusManager.giftList count]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

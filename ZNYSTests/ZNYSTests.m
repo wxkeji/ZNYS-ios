@@ -69,11 +69,11 @@
     NSMutableArray *list = [[NSMutableArray alloc] init];
     for(int i=0;i<8;i++)
     {
-        GiftWithState *gws = [[GiftWithState alloc] initWithGiftName:[NSString stringWithFormat:@"Gift %d",i] starsToActivate:i];
+        GiftWithState *gws = [[GiftWithState alloc] initWithGiftName:[NSString stringWithFormat:@"Gift %d",i] starsToActivate:i imageName:nil];
         [list addObject:gws];
     }
     NSArray *giftList = [list copy];
-    GiftStatusManager *gsm = [[GiftStatusManager alloc] initWithCurrentNumbersOfStars:100 giftList:(NSArray *)giftList];
+    GiftStatusManager *gsm = [[GiftStatusManager alloc] initWithCurrentValidNumbersOfStars:100 giftList:(NSArray *)giftList];
     [gsm checkGiftStateOfPage:0];
     [gsm printGiftList];
     

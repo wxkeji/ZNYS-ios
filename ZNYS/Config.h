@@ -12,4 +12,7 @@
 #define haveBluetoothMudule NO
 #define MYDEBUG YES
 
+//用户数据路径
+#define FILE_PATH_USER_DATA @"userdata.dat"
+
 #endif
