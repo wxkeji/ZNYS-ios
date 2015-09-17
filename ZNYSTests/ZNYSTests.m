@@ -8,40 +8,40 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "GiftStatusManager.h"
+#import "ItemStatusManager.h"
 
 @interface ZNYSTests : XCTestCase
 
 @end
 
 
-@interface GiftWithState(Test)
+@interface ItemWithState(Test)
 
 - (void)print;
 
 @end
 
-@implementation GiftWithState(Test)
+@implementation ItemWithState(Test)
 
 - (void)print
 {
-    NSLog(@"Name:%@\tstarsToActvat:%d\tState:%@",self.name,self.starsToActivate,self.state.toString);
+    NSLog(@"Name:%@\t\tState:%@",self.itemName,self.state.toString);
 }
 
 @end
 
 
-@interface GiftStatusManager(Test)
+@interface ItemStatusManager(Test)
 
 - (void)printGiftList;
 
 @end
 
-@implementation GiftStatusManager(Test)
+@implementation ItemStatusManager(Test)
 
 - (void)printGiftList
 {
-    for(GiftWithState *g in self.giftList)
+    for(ItemWithState *g in self.giftList)
     {
         [g print];
     }
@@ -69,11 +69,11 @@
     NSMutableArray *list = [[NSMutableArray alloc] init];
     for(int i=0;i<8;i++)
     {
-        GiftWithState *gws = [[GiftWithState alloc] initWithGiftName:[NSString stringWithFormat:@"Gift %d",i] starsToActivate:i imageName:nil];
+        ItemWithState *gws = [[ItemWithState alloc] initWithItemName:[NSString stringWithFormat:@"Gift %d",i]  imageName:nil];
         [list addObject:gws];
     }
     NSArray *giftList = [list copy];
-    GiftStatusManager *gsm = [[GiftStatusManager alloc] initWithCurrentValidNumbersOfStars:100 giftList:(NSArray *)giftList];
+    ItemStatusManager *gsm = [[ItemStatusManager alloc] initWithCurrentValidNumbersOfStars:100 giftList:(NSArray *)giftList];
     [gsm checkGiftStateOfPage:0];
     [gsm printGiftList];
     

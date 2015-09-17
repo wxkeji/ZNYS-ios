@@ -6,25 +6,24 @@
 //  Copyright (c) 2015年 Woodseen. All rights reserved.
 //
 
-#import "Gift.h"
-#import "GiftState.h"
+#import "Item.h"
+#import "ItemState.h"
 
-@interface GiftWithState : Gift
+@interface ItemWithState : Item
 {
-    GiftState *state;
+    ItemState *state;
     NSArray *STATE; 
 
 }
 
-@property GiftState* state;
+@property ItemState* state;
 
 
 //指定初始化方法，这里把state初始化为NotActivated
-- (instancetype) initWithGiftName:(NSString *)giftName
-                  starsToActivate:(int)starsToActivate
+- (instancetype) initWithItemName:(NSString *)itemName
                         imageName:(NSString *)imageName;
 
 //用一个gift来初始化,且设置state为NotActivate
-- (instancetype) initWithGift:(Gift *)gift;
+- (instancetype) initWithGift:(Item *)item;
 
 @end

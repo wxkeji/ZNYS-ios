@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GiftWithState.h"
+#import "ItemWithState.h"
 
 /*
 @protocol GiftBoxViewControllerDelegate <NSObject>
@@ -17,7 +17,7 @@
 @end
  */
 
-@interface GiftStatusManager : NSObject
+@interface ItemStatusManager : NSObject
 
 /*@property (strong,nonatomic) NSMutableArray *pageList;*/
 @property (strong,nonatomic) NSMutableArray *giftList;           //所有的奖品的列表，包括【已兑换的奖品】、

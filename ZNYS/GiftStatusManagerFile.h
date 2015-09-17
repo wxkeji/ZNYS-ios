@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GiftStatusManager.h"
+#import "ItemStatusManager.h"
 
 @interface GiftStatusManagerFile : NSObject
 

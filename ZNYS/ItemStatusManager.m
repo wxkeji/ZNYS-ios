@@ -6,21 +6,21 @@
 //  Copyright (c) 2015年 Woodseen. All rights reserved.
 //
 
-#import "GiftStatusManager.h"
+#import "ItemStatusManager.h"
 
-@interface GiftStatusManager ()
+@interface ItemStatusManager ()
 {
     int currentValidNumberOfStars;    //用户现在拥有的可供兑换奖品的星星数量
     int totalStars;                   //用户拥有的星星总数，包括已经用来兑换的星星和还没使用的星星
 }
 @end
 
-@implementation GiftStatusManager
+@implementation ItemStatusManager
 
 - (void) testFunc
 {
-    GiftWithState *g = [[GiftWithState alloc] init];
-    GiftState *s = g.state;
+    ItemWithState *g = [[ItemWithState alloc] init];
+    ItemState *s = g.state;
     NSLog(@"%lu",(unsigned long)s);
 }
 
@@ -55,17 +55,17 @@
     //添加奖品
     for(int i=0;i<8;i++)
     {
-        GiftWithState *gws = [[GiftWithState alloc] initWithGiftName:[NSString stringWithFormat:@"littleDragon"] starsToActivate:i imageName:@"小恐龙_已兑换"];
+        ItemWithState *gws = [[ItemWithState alloc] initWithItemName:[NSString stringWithFormat:@"littleDragon"]  imageName:@"小恐龙_已兑换"];
         [gList addObject:gws];
     }
     for(int i=8;i<16;i++)
     {
-        GiftWithState *gws = [[GiftWithState alloc] initWithGiftName:[NSString stringWithFormat:@"littleDuck"] starsToActivate:i imageName:@"小鸭子_已兑换"];
+        ItemWithState *gws = [[ItemWithState alloc] initWithItemName:[NSString stringWithFormat:@"littleDuck"] imageName:@"小鸭子_已兑换"];
         [gList addObject:gws];
     }
     for(int i=16;i<24;i++)
     {
-        GiftWithState *gws = [[GiftWithState alloc] initWithGiftName:[NSString stringWithFormat:@"littleBasketball"] starsToActivate:i imageName:@"小篮球_已兑换"];
+        ItemWithState *gws = [[ItemWithState alloc] initWithItemName:[NSString stringWithFormat:@"littleBasketball"]  imageName:@"小篮球_已兑换"];
         [gList addObject:gws];
     }
 
@@ -74,20 +74,20 @@
     return self;
 }
 
-//检查所有奖品的状态，更新奖品的状态
-- (void) checkGiftStateOfPage:(int)page
-{
-    NSArray *gList = [self page:page];
-    for(GiftWithState *g in gList)
-    {
-        if(g.state.state == NotActiveted)
-        {
-            if (self.currentValidNumberOfStars >= g.starsToActivate) {
-                g.state.state = ActivatedNotObtained;
-            }
-        }
-    }
-}
+////检查所有奖品的状态，更新奖品的状态
+//- (void) checkGiftStateOfPage:(int)page
+//{
+//    NSArray *gList = [self page:page];
+//    for(ItemWithState *g in gList)
+//    {
+//        if(g.state.state == NotActiveted)
+//        {
+//            if (self.currentValidNumberOfStars >= g.starsToActivate) {
+//                g.state.state = ActivatedNotObtained;
+//            }
+//        }
+//    }
+//}
 
 //先刷新，然后得到某一页的奖品及其状态信息，页码是从0开始的
 - (NSArray *) giftOfPage:(int)page

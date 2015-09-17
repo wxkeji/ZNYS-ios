@@ -13,12 +13,14 @@
 
 @interface CabinetViewController ()
 
-@property GiftStatusManager *giftStatusManager;
-@property (strong, nonatomic) IBOutlet UIScrollView *cabinetScrollView;
+@property ItemStatusManager *giftStatusManager;
+@property (strong, nonatomic) IBOutlet UIScrollView *gloryScrollView;   //奖品柜上层，存放荣誉奖杯等
+@property (strong,nonatomic) IBOutlet UIScrollView *bathItemScrollView; //奖品柜下层，存放浴室关键物件
 
 @property (strong, nonatomic) IBOutlet UILabel *stars;//屏幕上显示的星星数
 
-@property (strong, nonatomic) NSMutableArray *giftGridListTag;//保存对应的礼物的Tag
+@property (strong, nonatomic) NSMutableArray *gloryListTag;//保存对应的奖杯奖牌的Tag
+@property (strong,nonatomic) NSMutableArray *bathItemListTag;//保存对应浴室关键物品的Tag
 
 - (IBAction)synchronize:(id)sender;
 
@@ -31,25 +33,27 @@
     [super viewDidLoad];
     
     //从文件中读取数据
-    self.giftGridListTag = [[NSMutableArray alloc] init];
+    self.gloryListTag = [[NSMutableArray alloc] init];
     
     
-    //初始化奖品状态管理器
-    NSMutableArray *list = [[NSMutableArray alloc] init];
+    //创建两个列表
+    NSMutableArray *gloryList = [[NSMutableArray alloc] init];
+    NSMutableArray *bathItemList = [[NSMutableArray alloc] init];
     
-    //在这里添加奖品
+    //添加物品品到列表中
     
-    GiftWithState *gws = [[GiftWithState alloc] initWithGiftName:@"one" starsToActivate:10 imageName:@"小车_已兑换"];
+    ItemWithState *gloryStatusManager = [[ItemWithState alloc] initWithItemName:@"one"  imageName:@"小车_已兑换"];
     
     for(int i = 0;i < 30;i++)
     {
-        [list addObject:gws];
+        [gloryList addObject:gloryStatusManager];
     }
-    [list addObject:gws];
+    [gloryList addObject:gloryStatusManager];
     
-    NSArray *giftList = [list copy];
-    GiftStatusManager *gsm = [[GiftStatusManager alloc] initWithCurrentValidNumbersOfStars:22 giftList:(NSArray *)giftList];
+    NSArray *giftList = [gloryList copy];
+    ItemStatusManager *gsm = [[ItemStatusManager alloc] initWithCurrentValidNumbersOfStars:22 giftList:(NSArray *)giftList];
     self.giftStatusManager = gsm;
+    
     
     
     
@@ -65,27 +69,27 @@
     [super viewDidAppear:animated];
     
     //获取礼品柜的宽和高
-    CGFloat height = self.cabinetScrollView.frame.size.height;
-    CGFloat width = self.cabinetScrollView.frame.size.width;
+    CGFloat height = self.gloryScrollView.frame.size.height;
+    CGFloat width = self.gloryScrollView.frame.size.width;
     
     //根据奖品列表获得礼品柜的个数
     long n = ([self.giftStatusManager.giftList count] - 1) / 8 + 1;
     
     //根据礼品柜的个数设置礼品柜scrollView的滚动页数
-    self.cabinetScrollView.contentSize = CGSizeMake(width * n, height);
+    self.gloryScrollView.contentSize = CGSizeMake(width * n, height);
     
     //隐藏cabinetControlView的滚动条
-    self.cabinetScrollView.showsHorizontalScrollIndicator = NO;
-    self.cabinetScrollView.showsVerticalScrollIndicator = NO;
+    self.gloryScrollView.showsHorizontalScrollIndicator = NO;
+    self.gloryScrollView.showsVerticalScrollIndicator = NO;
     
     //打开scrollView的弹簧效果
-    self.cabinetScrollView.bounces = YES;
+    self.gloryScrollView.bounces = YES;
     
     //scrollView额外滚动范围为零
-    self.cabinetScrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    self.gloryScrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     
     //开启scrollView的分页
-    [self.cabinetScrollView setPagingEnabled:YES];
+    [self.gloryScrollView setPagingEnabled:YES];
     
     //每个奖品的宽度为奖品柜宽度的四分之一
     CGFloat imgW = width / 4;
@@ -94,7 +98,7 @@
     for(int i=0;i<[self.giftStatusManager.giftList count];i++)
     {
         //从奖品管理器中获取第i个奖品
-        GiftWithState *gws = self.giftStatusManager.giftList[i];
+        ItemWithState *gws = self.giftStatusManager.giftList[i];
         
         //创建一个button和imageView，用imageView作为button的子View
         UIButton *button = [[UIButton alloc] init];
@@ -125,13 +129,13 @@
         [button addTarget:self action:@selector(giftWasTouched:) forControlEvents:UIControlEventTouchUpInside];
         
         //把奖品button添加到奖品柜视图
-         [self.cabinetScrollView addSubview:button];
+         [self.gloryScrollView addSubview:button];
         
         //设置button的tag，后面可以用tag找到对应的奖品
         button.tag = TAG_CABINET_GIFT + i;
         
         //把奖品的imageView的Tag添加到 gfitGridListTag 数组中
-         [self.giftGridListTag addObject:[[NSNumber alloc] initWithLong:[button tag]]];
+         [self.gloryListTag addObject:[[NSNumber alloc] initWithLong:[button tag]]];
         
     }
 
@@ -147,12 +151,12 @@
     //index表示这个奖品在奖品列表是第几个
     long index=-1;
     
-    unsigned long length = [self.giftGridListTag count];
+    unsigned long length = [self.gloryListTag count];
     
     //通过Tag与 giftGridListTag 中的 tag 值一一比较从而确定当前被触摸的是第几个奖品
     for(int i=0;i<length;i++)
     {
-        NSNumber *currentTag = self.giftGridListTag[i];
+        NSNumber *currentTag = self.gloryListTag[i];
         if([currentTag longValue] == tag)
         {
             index = i;

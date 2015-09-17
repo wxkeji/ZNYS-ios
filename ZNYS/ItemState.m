@@ -6,28 +6,28 @@
 //  Copyright (c) 2015年 Woodseen. All rights reserved.
 //
 
-#import "GiftState.h"
+#import "ItemState.h"
 
-@implementation GiftState
+@implementation ItemState
 
 - (instancetype)init
 {
     if(self = [super init])
     {
-        GiftStateEnum s=Obtained;
+        ItemStateEnum s=Obtained;
         [self setState:s];
     }
     return self;
 }
 
-- (void) setState:(GiftStateEnum)s
+- (void) setState:(ItemStateEnum)s
 {
     state = s;
 }
 
-- (GiftStateEnum)state
+- (ItemStateEnum)state
 {
-    GiftStateEnum s = state;
+    ItemStateEnum s = state;
     return s;
 }
 
@@ -47,7 +47,7 @@
             break;
             
         default:
-            return @"Wrong gift state!";
+            return @"Wrong item state!";
     }
 }
 

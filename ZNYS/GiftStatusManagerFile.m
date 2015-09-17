@@ -10,9 +10,9 @@
 
 @implementation GiftStatusManagerFile
 
-- (GiftStatusManager *)giftStatusManager
+- (ItemStatusManager *)giftStatusManager
 {
-    GiftStatusManager *gsm;
+    ItemStatusManager *gsm;
     
     
     

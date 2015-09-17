@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		0421D3711B8126C700BF6065 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0421D3631B8126C700BF6065 /* Cabinet.storyboard */; };
 		0421D3721B8126C700BF6065 /* CabinetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3651B8126C700BF6065 /* CabinetViewController.m */; };
-		0421D3731B8126C700BF6065 /* GiftStatusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3691B8126C700BF6065 /* GiftStatusManager.m */; };
-		0421D3741B8126C700BF6065 /* GiftWithState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D36B1B8126C700BF6065 /* GiftWithState.m */; };
-		0421D3751B8126C700BF6065 /* Gift.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D36C1B8126C700BF6065 /* Gift.m */; };
-		0421D3791B830D0B00BF6065 /* GiftState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3781B830D0B00BF6065 /* GiftState.m */; };
+		0421D3731B8126C700BF6065 /* ItemStatusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3691B8126C700BF6065 /* ItemStatusManager.m */; };
+		0421D3741B8126C700BF6065 /* ItemWithState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D36B1B8126C700BF6065 /* ItemWithState.m */; };
+		0421D3751B8126C700BF6065 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D36C1B8126C700BF6065 /* Item.m */; };
+		0421D3791B830D0B00BF6065 /* ItemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3781B830D0B00BF6065 /* ItemState.m */; };
 		044DD1A71BA0A21F00176AD4 /* GiftStatusManagerFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 044DD1A61BA0A21F00176AD4 /* GiftStatusManagerFile.m */; };
 		0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0457FB5D1BA9461000001A9D /* TouchableImageView.m */; };
 		047D3D391B8A02DA00871627 /* NSArray+ForceBound.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D3D381B8A02DA00871627 /* NSArray+ForceBound.m */; };
@@ -21,6 +21,7 @@
 		0487D7711B74548F00756EF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0487D7701B74548F00756EF8 /* Images.xcassets */; };
 		0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0487D7721B74548F00756EF8 /* LaunchScreen.xib */; };
 		0487D7801B74548F00756EF8 /* ZNYSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D77F1B74548F00756EF8 /* ZNYSTests.m */; };
+		6F851F3F1BA9B31B0098415D /* BathItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F851F3E1BA9B31B0098415D /* BathItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,16 +37,16 @@
 /* Begin PBXFileReference section */
 		0421D3641B8126C700BF6065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Cabinet.storyboard; sourceTree = "<group>"; };
 		0421D3651B8126C700BF6065 /* CabinetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CabinetViewController.m; sourceTree = "<group>"; };
-		0421D3661B8126C700BF6065 /* GiftStatusManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftStatusManager.h; sourceTree = "<group>"; };
+		0421D3661B8126C700BF6065 /* ItemStatusManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemStatusManager.h; sourceTree = "<group>"; };
 		0421D3671B8126C700BF6065 /* CabinetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CabinetViewController.h; sourceTree = "<group>"; };
 		0421D3681B8126C700BF6065 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
-		0421D3691B8126C700BF6065 /* GiftStatusManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftStatusManager.m; sourceTree = "<group>"; };
-		0421D36A1B8126C700BF6065 /* Gift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gift.h; sourceTree = "<group>"; };
-		0421D36B1B8126C700BF6065 /* GiftWithState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftWithState.m; sourceTree = "<group>"; };
-		0421D36C1B8126C700BF6065 /* Gift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gift.m; sourceTree = "<group>"; };
-		0421D36D1B8126C700BF6065 /* GiftWithState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftWithState.h; sourceTree = "<group>"; };
-		0421D3771B830D0B00BF6065 /* GiftState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftState.h; sourceTree = "<group>"; };
-		0421D3781B830D0B00BF6065 /* GiftState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftState.m; sourceTree = "<group>"; };
+		0421D3691B8126C700BF6065 /* ItemStatusManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemStatusManager.m; sourceTree = "<group>"; };
+		0421D36A1B8126C700BF6065 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		0421D36B1B8126C700BF6065 /* ItemWithState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemWithState.m; sourceTree = "<group>"; };
+		0421D36C1B8126C700BF6065 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		0421D36D1B8126C700BF6065 /* ItemWithState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemWithState.h; sourceTree = "<group>"; };
+		0421D3771B830D0B00BF6065 /* ItemState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemState.h; sourceTree = "<group>"; };
+		0421D3781B830D0B00BF6065 /* ItemState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemState.m; sourceTree = "<group>"; };
 		044DD1A51BA0A21F00176AD4 /* GiftStatusManagerFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftStatusManagerFile.h; sourceTree = "<group>"; };
 		044DD1A61BA0A21F00176AD4 /* GiftStatusManagerFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftStatusManagerFile.m; sourceTree = "<group>"; };
 		0457FB5C1BA9461000001A9D /* TouchableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchableImageView.h; sourceTree = "<group>"; };
@@ -62,6 +63,8 @@
 		0487D7791B74548F00756EF8 /* ZNYSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZNYSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0487D77E1B74548F00756EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0487D77F1B74548F00756EF8 /* ZNYSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNYSTests.m; sourceTree = "<group>"; };
+		6F851F3D1BA9B31B0098415D /* BathItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BathItem.h; sourceTree = "<group>"; };
+		6F851F3E1BA9B31B0098415D /* BathItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BathItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,19 +85,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0421D3761B82E34500BF6065 /* GiftManagement */ = {
+		0421D3761B82E34500BF6065 /* ItemManagement */ = {
 			isa = PBXGroup;
 			children = (
-				0421D3661B8126C700BF6065 /* GiftStatusManager.h */,
-				0421D3691B8126C700BF6065 /* GiftStatusManager.m */,
-				0421D36A1B8126C700BF6065 /* Gift.h */,
-				0421D36C1B8126C700BF6065 /* Gift.m */,
-				0421D36D1B8126C700BF6065 /* GiftWithState.h */,
-				0421D36B1B8126C700BF6065 /* GiftWithState.m */,
-				0421D3771B830D0B00BF6065 /* GiftState.h */,
-				0421D3781B830D0B00BF6065 /* GiftState.m */,
+				0421D3661B8126C700BF6065 /* ItemStatusManager.h */,
+				0421D3691B8126C700BF6065 /* ItemStatusManager.m */,
+				0421D36A1B8126C700BF6065 /* Item.h */,
+				0421D36C1B8126C700BF6065 /* Item.m */,
+				0421D36D1B8126C700BF6065 /* ItemWithState.h */,
+				0421D36B1B8126C700BF6065 /* ItemWithState.m */,
+				0421D3771B830D0B00BF6065 /* ItemState.h */,
+				0421D3781B830D0B00BF6065 /* ItemState.m */,
+				6F851F3D1BA9B31B0098415D /* BathItem.h */,
+				6F851F3E1BA9B31B0098415D /* BathItem.m */,
 			);
-			name = GiftManagement;
+			name = ItemManagement;
 			sourceTree = "<group>";
 		};
 		0421D37A1B831F7700BF6065 /* File Operation */ = {
@@ -146,7 +151,7 @@
 			children = (
 				0457FB5B1BA945EA00001A9D /* TouchableImageView */,
 				0421D37A1B831F7700BF6065 /* File Operation */,
-				0421D3761B82E34500BF6065 /* GiftManagement */,
+				0421D3761B82E34500BF6065 /* ItemManagement */,
 				0421D3631B8126C700BF6065 /* Cabinet.storyboard */,
 				0421D3651B8126C700BF6065 /* CabinetViewController.m */,
 				0421D3671B8126C700BF6065 /* CabinetViewController.h */,
@@ -290,14 +295,15 @@
 			files = (
 				0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */,
 				047D3D391B8A02DA00871627 /* NSArray+ForceBound.m in Sources */,
+				6F851F3F1BA9B31B0098415D /* BathItem.m in Sources */,
 				0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */,
-				0421D3741B8126C700BF6065 /* GiftWithState.m in Sources */,
+				0421D3741B8126C700BF6065 /* ItemWithState.m in Sources */,
 				044DD1A71BA0A21F00176AD4 /* GiftStatusManagerFile.m in Sources */,
-				0421D3791B830D0B00BF6065 /* GiftState.m in Sources */,
+				0421D3791B830D0B00BF6065 /* ItemState.m in Sources */,
 				0421D3721B8126C700BF6065 /* CabinetViewController.m in Sources */,
-				0421D3751B8126C700BF6065 /* Gift.m in Sources */,
+				0421D3751B8126C700BF6065 /* Item.m in Sources */,
 				0487D7661B74548F00756EF8 /* main.m in Sources */,
-				0421D3731B8126C700BF6065 /* GiftStatusManager.m in Sources */,
+				0421D3731B8126C700BF6065 /* ItemStatusManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

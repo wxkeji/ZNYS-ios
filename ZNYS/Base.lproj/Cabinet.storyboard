@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -66,7 +67,7 @@
                                     <constraint firstAttribute="width" secondItem="AiQ-SN-3YM" secondAttribute="height" multiplier="750:585" id="twg-ho-fjH"/>
                                 </constraints>
                             </imageView>
-                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gf-ix-uqV">
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gf-ix-uqV">
                                 <rect key="frame" x="0.0" y="176" width="600" height="249"/>
                             </scrollView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gn5-E2-sba">
@@ -303,6 +304,11 @@
                                 <exclude reference="gn5-E2-sba"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="SsS-wO-hEF"/>
+                                <exclude reference="gsZ-Ss-GzV"/>
+                                <exclude reference="pm1-S8-YIi"/>
+                                <exclude reference="px6-fV-GGd"/>
+                                <exclude reference="zat-e5-RbX"/>
                                 <exclude reference="P69-ja-NNq"/>
                                 <exclude reference="bJk-tc-e2b"/>
                                 <exclude reference="g6y-pK-f0U"/>
@@ -310,11 +316,6 @@
                                 <exclude reference="BEG-Kj-niE"/>
                                 <exclude reference="g4O-lG-LgU"/>
                                 <exclude reference="mLh-za-ryX"/>
-                                <exclude reference="SsS-wO-hEF"/>
-                                <exclude reference="gsZ-Ss-GzV"/>
-                                <exclude reference="pm1-S8-YIi"/>
-                                <exclude reference="px6-fV-GGd"/>
-                                <exclude reference="zat-e5-RbX"/>
                                 <exclude reference="Wmn-87-HDF"/>
                             </mask>
                         </variation>
@@ -346,18 +347,16 @@
                                 <include reference="LtF-Jz-Jtv"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="SsS-wO-hEF"/>
+                                <include reference="gsZ-Ss-GzV"/>
+                                <include reference="pm1-S8-YIi"/>
+                                <include reference="px6-fV-GGd"/>
+                                <include reference="zat-e5-RbX"/>
                                 <include reference="u5r-yJ-EGo"/>
                                 <include reference="0Zv-nD-qwG"/>
                                 <include reference="7Xo-uu-8uN"/>
                                 <include reference="g6y-pK-f0U"/>
-                                <include reference="AEc-qd-73y"/>
-                                <include reference="I17-tS-WIX"/>
-                                <include reference="AwA-Ik-1XG"/>
-                                <include reference="q7M-1b-TF1"/>
                                 <include reference="Qwe-ZD-yaD"/>
-                                <include reference="Gh0-Jb-09n"/>
-                                <include reference="KoL-fF-JXU"/>
-                                <include reference="hRV-4M-LAD"/>
                                 <include reference="BEG-Kj-niE"/>
                                 <exclude reference="FNt-hE-XAb"/>
                                 <include reference="ViJ-l9-GQC"/>
@@ -365,35 +364,38 @@
                                 <include reference="b8u-db-HVt"/>
                                 <include reference="g4O-lG-LgU"/>
                                 <include reference="mLh-za-ryX"/>
+                                <include reference="AEc-qd-73y"/>
+                                <include reference="I17-tS-WIX"/>
+                                <include reference="AwA-Ik-1XG"/>
+                                <include reference="q7M-1b-TF1"/>
+                                <include reference="Gh0-Jb-09n"/>
+                                <include reference="KoL-fF-JXU"/>
+                                <include reference="hRV-4M-LAD"/>
                                 <include reference="Sm1-av-GTW"/>
                                 <include reference="UVY-Ju-16c"/>
                                 <include reference="p83-w7-Nlo"/>
                                 <include reference="XlH-AA-yho"/>
                                 <include reference="bS8-uL-NiG"/>
-                                <include reference="SsS-wO-hEF"/>
-                                <include reference="gsZ-Ss-GzV"/>
-                                <include reference="pm1-S8-YIi"/>
-                                <include reference="px6-fV-GGd"/>
-                                <include reference="zat-e5-RbX"/>
-                                <include reference="EKA-lO-RoT"/>
                                 <include reference="7sl-bG-s5a"/>
                                 <include reference="Qbj-2M-fVc"/>
                                 <include reference="UqI-YG-bSt"/>
+                                <include reference="Wmn-87-HDF"/>
+                                <include reference="mVL-kO-uxH"/>
                                 <include reference="ebd-SG-SeG"/>
                                 <include reference="qPd-FQ-27O"/>
                                 <include reference="yUr-zx-ACK"/>
-                                <include reference="Wmn-87-HDF"/>
-                                <include reference="mVL-kO-uxH"/>
                                 <include reference="Uh4-l5-Tvg"/>
                                 <include reference="XIq-Pl-eei"/>
                                 <include reference="mW8-un-cbV"/>
+                                <include reference="EKA-lO-RoT"/>
                                 <include reference="n2V-K5-W8o"/>
                                 <include reference="sg9-SJ-c13"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="cabinetScrollView" destination="8Gf-ix-uqV" id="yMS-zo-Phy"/>
+                        <outlet property="bathItemScrollView" destination="gn5-E2-sba" id="fCb-yf-dlq"/>
+                        <outlet property="gloryScrollView" destination="8Gf-ix-uqV" id="GrH-2f-gxe"/>
                         <outlet property="stars" destination="Hf5-xJ-8el" id="9O6-fT-n1I"/>
                     </connections>
                 </viewController>

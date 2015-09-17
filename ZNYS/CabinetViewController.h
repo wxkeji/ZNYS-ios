@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GiftStatusManager.h"
+#import "ItemStatusManager.h"
 #import "TouchableImageView.h"
 
 /*
@@ -19,7 +19,7 @@
 
  */
  
-@interface CabinetViewController : UIViewController<UIGestureRecognizerDelegate,ImageViewDelegate>
+@interface CabinetViewController : UIViewController<UIGestureRecognizerDelegate>
 
 @end
 

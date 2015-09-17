@@ -8,22 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger,GiftStateEnum){
+typedef NS_ENUM(NSUInteger,ItemStateEnum){
     Obtained,
     ActivatedNotObtained,
     NotActiveted
 };
 
-@interface GiftState : NSObject
+@interface ItemState : NSObject
 {
     unsigned int state;
 }
 
 - (instancetype) init;
 
-- (void) setState:(GiftStateEnum)s;
+- (void) setState:(ItemStateEnum)s;
 
-- (GiftStateEnum) state;
+- (ItemStateEnum) state;
 
 - (NSString *) toString;
 
