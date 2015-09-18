@@ -64,41 +64,35 @@
       self.stars.text = [[NSString alloc] initWithFormat:@"%d",self.giftStatusManager.currentValidNumberOfStars];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)setItemScrollView:(UIScrollView *)scrollView giftList:(NSMutableArray *)giftList height:(float)height width:(float)width numberOfPage:(long)numberOfPage itemEachPage:(long)itemEachPage target:(UIViewController *)target selector:(SEL)selecor
 {
-    [super viewDidAppear:animated];
-    
-    //获取礼品柜的宽和高
-    CGFloat height = self.gloryScrollView.frame.size.height;
-    CGFloat width = self.gloryScrollView.frame.size.width;
-    
     //根据奖品列表获得礼品柜的个数
-    long n = ([self.giftStatusManager.giftList count] - 1) / 8 + 1;
+    long n = ([giftList count] - 1) / 8 + 1;
     
     //根据礼品柜的个数设置礼品柜scrollView的滚动页数
-    self.gloryScrollView.contentSize = CGSizeMake(width * n, height);
+    scrollView.contentSize = CGSizeMake(width * n, height);
     
     //隐藏cabinetControlView的滚动条
-    self.gloryScrollView.showsHorizontalScrollIndicator = NO;
-    self.gloryScrollView.showsVerticalScrollIndicator = NO;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
     
     //打开scrollView的弹簧效果
-    self.gloryScrollView.bounces = YES;
+    scrollView.bounces = YES;
     
     //scrollView额外滚动范围为零
-    self.gloryScrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     
     //开启scrollView的分页
-    [self.gloryScrollView setPagingEnabled:YES];
+    [scrollView setPagingEnabled:YES];
     
-    //每个奖品的宽度为奖品柜宽度的四分之一
-    CGFloat imgW = width / 4;
+    //每个奖品的宽度为奖品柜宽度的itemEachPage分之一
+    CGFloat imgW = width / itemEachPage;
     
     //在奖品柜视图里添加礼物的图片,并把对应的Tag保存在giftGridListTag里，然后为每一个奖品添加触摸手势
-    for(int i=0;i<[self.giftStatusManager.giftList count];i++)
+    for(int i=0;i<[giftList count];i++)
     {
         //从奖品管理器中获取第i个奖品
-        ItemWithState *gws = self.giftStatusManager.giftList[i];
+        ItemWithState *gws = giftList[i];
         
         //创建一个button和imageView，用imageView作为button的子View
         UIButton *button = [[UIButton alloc] init];
@@ -111,9 +105,9 @@
         
         // nx 和 ny表示在 4 * 2 的奖品方阵中中的位置
         //根据奖品在奖品奖品列表中的位置i算出它在4 * 2方阵中的对应位置
-         int nx,ny;
-         nx = i % 4 + i / 8 * 4;
-         ny = (i % 8) / 4;
+        int nx,ny;
+        nx = i;
+        ny = 0;
         
         //下面根据nx和ny进一步算出每一个奖品精确的位置
         //奖品柜里面高度的比例为  星星：物品：星星：物品 = 1.52：6.88：1.52：6.88 。从而按照比例推算出定位的坐标
@@ -126,20 +120,27 @@
         imageView.frame = CGRectMake(0, 0, buttonWidth, buttonHeight);
         
         //为button添加点击事件
-        [button addTarget:self action:@selector(giftWasTouched:) forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:target action:selecor forControlEvents:UIControlEventTouchUpInside];
         
         //把奖品button添加到奖品柜视图
-         [self.gloryScrollView addSubview:button];
+        [self.gloryScrollView addSubview:button];
         
         //设置button的tag，后面可以用tag找到对应的奖品
         button.tag = TAG_CABINET_GIFT + i;
         
         //把奖品的imageView的Tag添加到 gfitGridListTag 数组中
-         [self.gloryListTag addObject:[[NSNumber alloc] initWithLong:[button tag]]];
+        [self.gloryListTag addObject:[[NSNumber alloc] initWithLong:[button tag]]];
         
     }
-
     
+
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self setItemScrollView:self.gloryScrollView giftList:self.giftStatusManager.giftList height:self.gloryScrollView.frame.size.height width:self.gloryScrollView.frame.size.width numberOfPage:[self.giftStatusManager.giftList count] itemEachPage:4 target:self selector:@selector(giftWasTouched:)];
 }
 
 //响应奖品的点击事件
