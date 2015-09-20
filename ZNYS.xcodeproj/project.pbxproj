@@ -216,7 +216,6 @@
 			children = (
 				0469BFC41BAE605A0055DF4A /* libsqlite3.0.tbd */,
 				0487D7621B74548F00756EF8 /* ZNYS */,
-				045AAA5E1B775B98001360F9 /* Resources */,
 				0487D77C1B74548F00756EF8 /* ZNYSTests */,
 				0487D7611B74548F00756EF8 /* Products */,
 			);
@@ -510,6 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZNYS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -520,6 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZNYS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

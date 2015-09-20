@@ -104,7 +104,7 @@
                                     <action selector="synchronize:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vs6-tq-ot7"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="广告位" translatesAutoresizingMaskIntoConstraints="NO" id="BRc-hv-Gv1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="广告位" translatesAutoresizingMaskIntoConstraints="NO" id="BRc-hv-Gv1">
                                 <rect key="frame" x="0.0" y="545" width="600" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="999" constant="55" id="ZT1-kE-nMb">
@@ -235,6 +235,20 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpA-7y-4LL">
+                                <rect key="frame" x="528" y="24" width="51" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MpA-7y-4LL" secondAttribute="height" multiplier="1:1" id="1rv-o9-Cs1"/>
+                                </constraints>
+                                <state key="normal" image="日历按钮">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="1rv-o9-Cs1"/>
+                                    </mask>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -341,7 +355,6 @@
                             <mask key="subviews">
                                 <include reference="a2R-Wd-nA0"/>
                                 <include reference="Rd6-gZ-T0P"/>
-                                <include reference="MpA-7y-4LL"/>
                                 <include reference="8Gf-ix-uqV"/>
                                 <include reference="qkD-Bh-rWB"/>
                                 <include reference="BRc-hv-Gv1"/>
@@ -352,6 +365,7 @@
                                 <include reference="EOo-QD-m61"/>
                                 <include reference="uBc-GH-52n"/>
                                 <include reference="LtF-Jz-Jtv"/>
+                                <include reference="MpA-7y-4LL"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="o6z-wr-Gcp"/>
