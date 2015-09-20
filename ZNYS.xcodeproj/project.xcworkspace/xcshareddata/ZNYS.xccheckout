@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>F7BAC8C1-041A-4F0F-B7AB-B1BAA8BCD3AB</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>ZNYS</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>03BC1176E648E5050153922F88987116FB200E8F</key>
 		<string>https://github.com/wxkeji/ZNYS-ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ZNYS.xcodeproj/project.xcworkspace</string>
+	<string>ZNYS.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>03BC1176E648E5050153922F88987116FB200E8F</key>

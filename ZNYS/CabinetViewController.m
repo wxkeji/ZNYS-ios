@@ -72,7 +72,7 @@
     CGFloat height = self.gloryScrollView.frame.size.height;
     CGFloat width = self.gloryScrollView.frame.size.width;
     
-    //根据奖品列表获得礼品柜的个数
+    //根据奖品列表获得礼品柜的页数
     long n = ([self.giftStatusManager.giftList count] - 1) / 8 + 1;
     
     //根据礼品柜的个数设置礼品柜scrollView的滚动页数
