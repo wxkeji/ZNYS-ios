@@ -3,10 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[GiftStatusManager checkGiftStateOfPage:]:GiftStatusManager.m">
+         contextName = "-[CabinetViewController viewDidAppear:]:CabinetViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.currentNumberOfStars">
+               value = "self.tagDict">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -35,6 +35,14 @@
          <PersistentStrings>
             <PersistentString
                value = "[self.giftStatusManager.giftList count]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GiftStatusManager checkGiftStateOfPage:]:GiftStatusManager.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.currentNumberOfStars">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

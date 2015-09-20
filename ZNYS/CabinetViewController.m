@@ -8,19 +8,23 @@
 
 #import "CabinetViewController.h"
 #import "Config.h"
-#import "GiftStatusManagerFile.h"
+#import "ItemStatusManagerFile.h"
 #import "NSArray+ForceBound.h"
+#import "DialogView.h"
 
 @interface CabinetViewController ()
 
-@property ItemStatusManager *giftStatusManager;
+@property UserData *giftStatusManager;
 @property (strong, nonatomic) IBOutlet UIScrollView *gloryScrollView;   //奖品柜上层，存放荣誉奖杯等
 @property (strong,nonatomic) IBOutlet UIScrollView *bathItemScrollView; //奖品柜下层，存放浴室关键物件
 
 @property (strong, nonatomic) IBOutlet UILabel *stars;//屏幕上显示的星星数
 
-@property (strong, nonatomic) NSMutableArray *gloryListTag;//保存对应的奖杯奖牌的Tag
-@property (strong,nonatomic) NSMutableArray *bathItemListTag;//保存对应浴室关键物品的Tag
+@property (strong,nonatomic) NSMutableDictionary *tagDict;   //保存tag的列表的词典
+
+
+@property (strong,nonatomic) NSMutableArray *bathItemList;  //保存浴室标志性物品
+
 
 - (IBAction)synchronize:(id)sender;
 
@@ -33,29 +37,40 @@
     [super viewDidLoad];
     
     //从文件中读取数据
-    self.gloryListTag = [[NSMutableArray alloc] init];
     
+    //初始化tag字典
+    self.tagDict = [[NSMutableDictionary alloc] init];
     
     //创建两个列表
     NSMutableArray *gloryList = [[NSMutableArray alloc] init];
-    NSMutableArray *bathItemList = [[NSMutableArray alloc] init];
     
     //添加物品品到列表中
     
-    ItemWithState *gloryStatusManager = [[ItemWithState alloc] initWithItemName:@"one"  imageName:@"小车_已兑换"];
+    NSString *littleCar = @"小车_已兑换";
     
-    for(int i = 0;i < 30;i++)
+    for(int i = 1;i <= 30;i++)
     {
-        [gloryList addObject:gloryStatusManager];
+        ItemWithState *gloryItem = [[ItemWithState alloc] initWithItemName:@"littleCar"  imageName:[NSString stringWithFormat:@"%@%d",littleCar,i]];
+        [gloryList addObject:gloryItem];
     }
-    [gloryList addObject:gloryStatusManager];
+    
     
     NSArray *giftList = [gloryList copy];
-    ItemStatusManager *gsm = [[ItemStatusManager alloc] initWithCurrentValidNumbersOfStars:22 giftList:(NSArray *)giftList];
-    self.giftStatusManager = gsm;
     
     
+    NSString *littleBasketball = @"小篮球_已兑换";
     
+    self.bathItemList = [[NSMutableArray alloc] init];
+    for(int i = 1;i <= 30;i++)
+    {
+        ItemWithState *bathItem = [[ItemWithState alloc] initWithItemName:@"littleBasketball"  imageName:[NSString stringWithFormat:@"%@%d",littleBasketball,i]];
+        [self.bathItemList addObject:bathItem];
+    }
+    
+    UserData *userData = [[UserData alloc] initWithCurrentValidNumbersOfStars:22 gloryItemList:(NSArray *)giftList bathItemList:self.bathItemList];
+    
+    self.giftStatusManager = userData;
+
     
     //自动适配与更新布局
     [self.view layoutIfNeeded];
@@ -64,10 +79,10 @@
       self.stars.text = [[NSString alloc] initWithFormat:@"%d",self.giftStatusManager.currentValidNumberOfStars];
 }
 
-- (void)setItemScrollView:(UIScrollView *)scrollView giftList:(NSMutableArray *)giftList height:(float)height width:(float)width numberOfPage:(long)numberOfPage itemEachPage:(long)itemEachPage target:(UIViewController *)target selector:(SEL)selecor
+- (void)setItemScrollView:(UIScrollView *)scrollView itemList:(NSMutableArray *)giftList height:(float)height width:(float)width itemEachPage:(long)itemEachPage target:(UIViewController *)target selector:(SEL)selecor tagListName:(NSString *)tagListName startTag:(long)startTag
 {
     //根据奖品列表获得礼品柜的个数
-    long n = ([giftList count] - 1) / 8 + 1;
+    long n = ([giftList count] - 1) / itemEachPage + 1;
     
     //根据礼品柜的个数设置礼品柜scrollView的滚动页数
     scrollView.contentSize = CGSizeMake(width * n, height);
@@ -87,6 +102,8 @@
     
     //每个奖品的宽度为奖品柜宽度的itemEachPage分之一
     CGFloat imgW = width / itemEachPage;
+    
+    NSMutableArray *tagList = [[NSMutableArray alloc] init];
     
     //在奖品柜视图里添加礼物的图片,并把对应的Tag保存在giftGridListTag里，然后为每一个奖品添加触摸手势
     for(int i=0;i<[giftList count];i++)
@@ -113,9 +130,10 @@
         //奖品柜里面高度的比例为  星星：物品：星星：物品 = 1.52：6.88：1.52：6.88 。从而按照比例推算出定位的坐标
         float buttonX,buttonY,buttonWidth,buttonHeight;
         buttonX = imgW * nx;
-        buttonY = 1.52 / 15.28 * height + 1.0 / 2 * height * ny;
+        //buttonY = 1.52 / 15.28 * height + 1.0 / 2 * height * ny;
+        buttonY = 0;
         buttonWidth = imgW;
-        buttonHeight = 6.88 / 15.28 * height;
+        buttonHeight = 6.88 / (15.28 / 2) * height;
         button.frame = CGRectMake(buttonX, buttonY, buttonWidth, buttonHeight);
         imageView.frame = CGRectMake(0, 0, buttonWidth, buttonHeight);
         
@@ -123,16 +141,17 @@
         [button addTarget:target action:selecor forControlEvents:UIControlEventTouchUpInside];
         
         //把奖品button添加到奖品柜视图
-        [self.gloryScrollView addSubview:button];
+        [scrollView addSubview:button];
         
         //设置button的tag，后面可以用tag找到对应的奖品
-        button.tag = TAG_CABINET_GIFT + i;
+        button.tag = startTag + i;
         
         //把奖品的imageView的Tag添加到 gfitGridListTag 数组中
-        [self.gloryListTag addObject:[[NSNumber alloc] initWithLong:[button tag]]];
+        [tagList addObject:[[NSNumber alloc] initWithLong:[button tag]]];
         
     }
     
+     [self.tagDict setObject:tagList forKey:tagListName];
 
 }
 
@@ -140,32 +159,64 @@
 {
     [super viewDidAppear:animated];
     
-    [self setItemScrollView:self.gloryScrollView giftList:self.giftStatusManager.giftList height:self.gloryScrollView.frame.size.height width:self.gloryScrollView.frame.size.width numberOfPage:[self.giftStatusManager.giftList count] itemEachPage:4 target:self selector:@selector(giftWasTouched:)];
+    [self setItemScrollView:self.gloryScrollView itemList:self.giftStatusManager.gloryItemList height:self.gloryScrollView.frame.size.height width:self.gloryScrollView.frame.size.width itemEachPage:4 target:self selector:@selector(itemWasTouched:) tagListName:@"gloryItemTagList" startTag:TAG_GLORY_ITEM];
+    
+    [self setItemScrollView:self.bathItemScrollView itemList:self.bathItemList height:self.bathItemScrollView.frame.size.height width:self.bathItemScrollView.frame.size.width itemEachPage:4 target:self selector:@selector(itemWasTouched:) tagListName:@"bathItemTagList" startTag:TAG_BATH_ITEM ];
 }
 
-//响应奖品的点击事件
-- (void) giftWasTouched:(id)sender
+
+//响应item的点击事件
+- (void) itemWasTouched:(id)sender
 {
-    //获取这个奖品的tag
+    //获取这个item的tag
     long tag = [sender tag];
     
-    //index表示这个奖品在奖品列表是第几个
+    //index表示这个item在item列表是第几个
     long index=-1;
     
-    unsigned long length = [self.gloryListTag count];
+    NSArray *keys = [self.tagDict allKeys];
     
-    //通过Tag与 giftGridListTag 中的 tag 值一一比较从而确定当前被触摸的是第几个奖品
-    for(int i=0;i<length;i++)
+    for(NSString *key in keys)
     {
-        NSNumber *currentTag = self.gloryListTag[i];
-        if([currentTag longValue] == tag)
+        NSMutableArray * tagList = [self.tagDict objectForKey:key];
+        unsigned long length = [tagList count];
+        
+        //通过Tag与 itemTagList 中的 tag 值一一比较从而确定当前被触摸的是第几个奖品
+        for(int i=0;i<length;i++)
         {
-            index = i;
-            break;
+            NSNumber *currentTag = tagList[i];
+            if([currentTag longValue] == tag)
+            {
+                index = i;
+                long indexOfScrollView = tag / 1000 - 1;
+                //NSLog(@"Item %ld is touched.Tag is %ld.In scrollView %ld",index,tag,indexOfScrollView);
+                
+                NSString *itemName,*conditionToGet;
+                ItemWithState *item;
+                if(indexOfScrollView == 0)
+                {
+                     item= self.giftStatusManager.gloryItemList[index];
+                }
+                else
+                {
+                    item= self.bathItemList[index];
+                }
+                itemName = item.itemName;
+                conditionToGet = [NSString stringWithFormat:@"得到%d颗星星",5];
+                
+                DialogView *dialogView = [DialogView instanceDialogViewWithItemName:itemName conditionToGet:conditionToGet];
+                dialogView.alpha = 1.0;
+                dialogView.frame = self.view.bounds;
+                [self.view addSubview:dialogView];
+                [self.view bringSubviewToFront:dialogView];
+                NSLog(@"Subview added.");
+                
+                return;
+            }
         }
     }
-    
-    NSLog(@"Gift %ld is touched.Tag is %ld",index,tag);
+        
+    NSLog(@"Tag not found");
 }
 
 - (IBAction)synchronize:(id)sender

@@ -6,16 +6,19 @@
 //  Copyright (c) 2015年 Woodseen. All rights reserved.
 //
 
-#import "ItemStatusManager.h"
+#import "UserData.h"
+#import <sqlite3.h>
 
-@interface ItemStatusManager ()
+#define DB_FILENAME @"userdata"    //数据库文件名ß
+
+@interface UserData ()
 {
     int currentValidNumberOfStars;    //用户现在拥有的可供兑换奖品的星星数量
     int totalStars;                   //用户拥有的星星总数，包括已经用来兑换的星星和还没使用的星星
 }
 @end
 
-@implementation ItemStatusManager
+@implementation UserData
 
 - (void) testFunc
 {
@@ -27,20 +30,43 @@
 //指定初始化方法
 - (instancetype) initWithCurrentValidNumbersOfStars:(int)currentValidNums
                                     totalStars:(int)totals
-                                      giftList:(NSMutableArray *)gList
+                                      gloryItemList:(NSMutableArray *)gloryItemList
+                                       bathItemList:(NSMutableArray *)bathItemList
 {
+    //数据库操作
+    //获取数据库文件地址
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:DB_FILENAME];
+    
+    //打开iPhone上的数据库文件
+    sqlite3 *database;
+    int state = sqlite3_open([path UTF8String],&database);
+    if(state == SQLITE_OK)
+    {
+        NSLog(@" >> Succeed to open database. %@",path);
+    }
+    else
+    {
+         NSLog(@" >> Failed to open database. %@",path);
+    }
+    
+    
     currentValidNumberOfStars = currentValidNums;
-    self.giftList = gList;
+    self.gloryItemList = gloryItemList;
+    self.bathItemList = bathItemList;
     totalStars = totals;
     return self;
 }
 
 - (instancetype) initWithCurrentValidNumbersOfStars:(int)numberOfStars
-                                      giftList:(NSMutableArray *)gList
+                                      gloryItemList:(NSMutableArray *)gloryItemList
+                                       bathItemList:(NSMutableArray *)bathItemList
 {
     totalStars = numberOfStars;
     currentValidNumberOfStars = totalStars;
-    self.giftList = gList;
+    self.gloryItemList = gloryItemList;
+    self.bathItemList = bathItemList;
     return self;
 }
 
@@ -69,7 +95,7 @@
         [gList addObject:gws];
     }
 
-    self = [self initWithCurrentValidNumbersOfStars:validNumberOfStars totalStars:totals  giftList:gList];
+    self = [self initWithCurrentValidNumbersOfStars:validNumberOfStars totalStars:totals  gloryItemList:gList bathItemList:self.bathItemList];
     
     return self;
 }
@@ -103,7 +129,7 @@
     NSMutableArray *list = [[NSMutableArray alloc] init];
     for(int start=page*8,i=0;i<8;i++)
     {
-        [list addObject:self.giftList[start + i]];
+        [list addObject:self.gloryItemList[start + i]];
     }
     return list;
 }

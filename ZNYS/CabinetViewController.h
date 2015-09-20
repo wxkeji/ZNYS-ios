@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ItemStatusManager.h"
+#import "UserData.h"
 #import "TouchableImageView.h"
+#import "DialogView.h"
 
 /*
 @protocol GiftStatusDelegate <NSObject>
@@ -19,7 +20,7 @@
 
  */
  
-@interface CabinetViewController : UIViewController<UIGestureRecognizerDelegate>
+@interface CabinetViewController : UIViewController<UIGestureRecognizerDelegate,UITextFieldDelegate>
 
 @end
 

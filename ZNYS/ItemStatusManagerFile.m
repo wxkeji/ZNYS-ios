@@ -6,13 +6,13 @@
 //  Copyright (c) 2015年 Woodseen. All rights reserved.
 //
 
-#import "GiftStatusManagerFile.h"
+#import "ItemStatusManagerFile.h"
 
-@implementation GiftStatusManagerFile
+@implementation ItemStatusManagerFile
 
-- (ItemStatusManager *)giftStatusManager
+- (UserData *)giftStatusManager
 {
-    ItemStatusManager *gsm;
+    UserData *gsm;
     
     
     

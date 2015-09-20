@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ItemStatusManager.h"
+#import "UserData.h"
 
-@interface GiftStatusManagerFile : NSObject
+@interface ItemStatusManagerFile : NSObject
 
 @end
