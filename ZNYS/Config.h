@@ -16,6 +16,8 @@
 #define FILE_PATH_USER_DATA @"userdata.dat"
 
 //首页奖品柜中的奖品的tag：从1000开始
-#define TAG_CABINET_GIFT 1000
+#define TAG_GLORY_ITEM 1000
+#define TAG_BATH_ITEM  2000
+
 
 #endif

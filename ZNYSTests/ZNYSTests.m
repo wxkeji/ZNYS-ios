@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "ItemStatusManager.h"
+#import "UserData.h"
 
 @interface ZNYSTests : XCTestCase
 
@@ -31,17 +31,17 @@
 @end
 
 
-@interface ItemStatusManager(Test)
+@interface UserData(Test)
 
 - (void)printGiftList;
 
 @end
 
-@implementation ItemStatusManager(Test)
+@implementation UserData(Test)
 
 - (void)printGiftList
 {
-    for(ItemWithState *g in self.giftList)
+    for(ItemWithState *g in self.gloryItemList)
     {
         [g print];
     }
@@ -73,7 +73,7 @@
         [list addObject:gws];
     }
     NSArray *giftList = [list copy];
-    ItemStatusManager *gsm = [[ItemStatusManager alloc] initWithCurrentValidNumbersOfStars:100 giftList:(NSArray *)giftList];
+    UserData *gsm = [[UserData alloc] initWithCurrentValidNumbersOfStars:100 gloryItemList:(NSArray *)giftList bathItemList:nil];
     [gsm checkGiftStateOfPage:0];
     [gsm printGiftList];
     

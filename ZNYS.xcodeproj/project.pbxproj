@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041365FA1BAD8AA600CD0604 /* DialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041365F91BAD8AA600CD0604 /* DialogView.xib */; settings = {ASSET_TAGS = (); }; };
+		041366001BAD8C9A00CD0604 /* DialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 041365FF1BAD8C9A00CD0604 /* DialogView.m */; settings = {ASSET_TAGS = (); }; };
 		0421D3711B8126C700BF6065 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0421D3631B8126C700BF6065 /* Cabinet.storyboard */; };
 		0421D3721B8126C700BF6065 /* CabinetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3651B8126C700BF6065 /* CabinetViewController.m */; };
-		0421D3731B8126C700BF6065 /* ItemStatusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3691B8126C700BF6065 /* ItemStatusManager.m */; };
+		0421D3731B8126C700BF6065 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3691B8126C700BF6065 /* UserData.m */; };
 		0421D3741B8126C700BF6065 /* ItemWithState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D36B1B8126C700BF6065 /* ItemWithState.m */; };
 		0421D3751B8126C700BF6065 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D36C1B8126C700BF6065 /* Item.m */; };
 		0421D3791B830D0B00BF6065 /* ItemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3781B830D0B00BF6065 /* ItemState.m */; };
-		044DD1A71BA0A21F00176AD4 /* GiftStatusManagerFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 044DD1A61BA0A21F00176AD4 /* GiftStatusManagerFile.m */; };
+		044DD1A71BA0A21F00176AD4 /* ItemStatusManagerFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 044DD1A61BA0A21F00176AD4 /* ItemStatusManagerFile.m */; };
 		0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0457FB5D1BA9461000001A9D /* TouchableImageView.m */; };
+		0469BFBE1BADC22F0055DF4A /* Fortune.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469BFBD1BADC22F0055DF4A /* Fortune.m */; settings = {ASSET_TAGS = (); }; };
+		0469BFC31BAE5CC00055DF4A /* CalendarScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0469BFC21BAE5CC00055DF4A /* CalendarScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		0469BFC51BAE605A0055DF4A /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0469BFC41BAE605A0055DF4A /* libsqlite3.0.tbd */; };
 		047D3D391B8A02DA00871627 /* NSArray+ForceBound.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D3D381B8A02DA00871627 /* NSArray+ForceBound.m */; };
 		0487D7661B74548F00756EF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D7651B74548F00756EF8 /* main.m */; };
 		0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D7681B74548F00756EF8 /* AppDelegate.m */; };
@@ -35,22 +40,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		041365F91BAD8AA600CD0604 /* DialogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DialogView.xib; sourceTree = "<group>"; };
+		041365FE1BAD8C9A00CD0604 /* DialogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogView.h; sourceTree = "<group>"; };
+		041365FF1BAD8C9A00CD0604 /* DialogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialogView.m; sourceTree = "<group>"; };
 		0421D3641B8126C700BF6065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Cabinet.storyboard; sourceTree = "<group>"; };
 		0421D3651B8126C700BF6065 /* CabinetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CabinetViewController.m; sourceTree = "<group>"; };
-		0421D3661B8126C700BF6065 /* ItemStatusManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemStatusManager.h; sourceTree = "<group>"; };
+		0421D3661B8126C700BF6065 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		0421D3671B8126C700BF6065 /* CabinetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CabinetViewController.h; sourceTree = "<group>"; };
 		0421D3681B8126C700BF6065 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
-		0421D3691B8126C700BF6065 /* ItemStatusManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemStatusManager.m; sourceTree = "<group>"; };
+		0421D3691B8126C700BF6065 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
 		0421D36A1B8126C700BF6065 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		0421D36B1B8126C700BF6065 /* ItemWithState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemWithState.m; sourceTree = "<group>"; };
 		0421D36C1B8126C700BF6065 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		0421D36D1B8126C700BF6065 /* ItemWithState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemWithState.h; sourceTree = "<group>"; };
 		0421D3771B830D0B00BF6065 /* ItemState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemState.h; sourceTree = "<group>"; };
 		0421D3781B830D0B00BF6065 /* ItemState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemState.m; sourceTree = "<group>"; };
-		044DD1A51BA0A21F00176AD4 /* GiftStatusManagerFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftStatusManagerFile.h; sourceTree = "<group>"; };
-		044DD1A61BA0A21F00176AD4 /* GiftStatusManagerFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftStatusManagerFile.m; sourceTree = "<group>"; };
+		044DD1A51BA0A21F00176AD4 /* ItemStatusManagerFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemStatusManagerFile.h; sourceTree = "<group>"; };
+		044DD1A61BA0A21F00176AD4 /* ItemStatusManagerFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemStatusManagerFile.m; sourceTree = "<group>"; };
 		0457FB5C1BA9461000001A9D /* TouchableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchableImageView.h; sourceTree = "<group>"; };
 		0457FB5D1BA9461000001A9D /* TouchableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchableImageView.m; sourceTree = "<group>"; };
+		0469BFBC1BADC22F0055DF4A /* Fortune.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fortune.h; sourceTree = "<group>"; };
+		0469BFBD1BADC22F0055DF4A /* Fortune.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fortune.m; sourceTree = "<group>"; };
+		0469BFC21BAE5CC00055DF4A /* CalendarScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CalendarScreen.storyboard; path = ../CalendarScreen.storyboard; sourceTree = "<group>"; };
+		0469BFC41BAE605A0055DF4A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		047D3D371B8A02DA00871627 /* NSArray+ForceBound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ForceBound.h"; sourceTree = "<group>"; };
 		047D3D381B8A02DA00871627 /* NSArray+ForceBound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ForceBound.m"; sourceTree = "<group>"; };
 		0487D7601B74548F00756EF8 /* ZNYS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZNYS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0469BFC51BAE605A0055DF4A /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,8 +101,6 @@
 		0421D3761B82E34500BF6065 /* ItemManagement */ = {
 			isa = PBXGroup;
 			children = (
-				0421D3661B8126C700BF6065 /* ItemStatusManager.h */,
-				0421D3691B8126C700BF6065 /* ItemStatusManager.m */,
 				0421D36A1B8126C700BF6065 /* Item.h */,
 				0421D36C1B8126C700BF6065 /* Item.m */,
 				0421D36D1B8126C700BF6065 /* ItemWithState.h */,
@@ -105,10 +116,65 @@
 		0421D37A1B831F7700BF6065 /* File Operation */ = {
 			isa = PBXGroup;
 			children = (
-				044DD1A51BA0A21F00176AD4 /* GiftStatusManagerFile.h */,
-				044DD1A61BA0A21F00176AD4 /* GiftStatusManagerFile.m */,
+				044DD1A51BA0A21F00176AD4 /* ItemStatusManagerFile.h */,
+				044DD1A61BA0A21F00176AD4 /* ItemStatusManagerFile.m */,
 			);
 			name = "File Operation";
+			sourceTree = "<group>";
+		};
+		043B7B731BAD30BA0094BB3E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0469BFBF1BADCBCE0055DF4A /* UserData */,
+				0469BFBB1BADC2140055DF4A /* Fortune */,
+				043B7B771BAD31380094BB3E /* Config */,
+				043B7B761BAD31200094BB3E /* NSArray+ForceBound */,
+				0487D7671B74548F00756EF8 /* AppDelegate.h */,
+				0487D7681B74548F00756EF8 /* AppDelegate.m */,
+				0421D3761B82E34500BF6065 /* ItemManagement */,
+				0421D37A1B831F7700BF6065 /* File Operation */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		043B7B741BAD30DA0094BB3E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0469BFC21BAE5CC00055DF4A /* CalendarScreen.storyboard */,
+				0487D7721B74548F00756EF8 /* LaunchScreen.xib */,
+				0421D3631B8126C700BF6065 /* Cabinet.storyboard */,
+				041365F91BAD8AA600CD0604 /* DialogView.xib */,
+				041365FE1BAD8C9A00CD0604 /* DialogView.h */,
+				041365FF1BAD8C9A00CD0604 /* DialogView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		043B7B751BAD30F60094BB3E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0457FB5B1BA945EA00001A9D /* TouchableImageView */,
+				0421D3651B8126C700BF6065 /* CabinetViewController.m */,
+				0421D3671B8126C700BF6065 /* CabinetViewController.h */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		043B7B761BAD31200094BB3E /* NSArray+ForceBound */ = {
+			isa = PBXGroup;
+			children = (
+				047D3D371B8A02DA00871627 /* NSArray+ForceBound.h */,
+				047D3D381B8A02DA00871627 /* NSArray+ForceBound.m */,
+			);
+			name = "NSArray+ForceBound";
+			sourceTree = "<group>";
+		};
+		043B7B771BAD31380094BB3E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				0421D3681B8126C700BF6065 /* Config.h */,
+			);
+			name = Config;
 			sourceTree = "<group>";
 		};
 		0457FB5B1BA945EA00001A9D /* TouchableImageView */ = {
@@ -127,11 +193,29 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		0469BFBB1BADC2140055DF4A /* Fortune */ = {
+			isa = PBXGroup;
+			children = (
+				0469BFBC1BADC22F0055DF4A /* Fortune.h */,
+				0469BFBD1BADC22F0055DF4A /* Fortune.m */,
+			);
+			name = Fortune;
+			sourceTree = "<group>";
+		};
+		0469BFBF1BADCBCE0055DF4A /* UserData */ = {
+			isa = PBXGroup;
+			children = (
+				0421D3661B8126C700BF6065 /* UserData.h */,
+				0421D3691B8126C700BF6065 /* UserData.m */,
+			);
+			name = UserData;
+			sourceTree = "<group>";
+		};
 		0487D7571B74548E00756EF8 = {
 			isa = PBXGroup;
 			children = (
+				0469BFC41BAE605A0055DF4A /* libsqlite3.0.tbd */,
 				0487D7621B74548F00756EF8 /* ZNYS */,
-				045AAA5E1B775B98001360F9 /* Resources */,
 				0487D77C1B74548F00756EF8 /* ZNYSTests */,
 				0487D7611B74548F00756EF8 /* Products */,
 			);
@@ -149,20 +233,11 @@
 		0487D7621B74548F00756EF8 /* ZNYS */ = {
 			isa = PBXGroup;
 			children = (
-				0457FB5B1BA945EA00001A9D /* TouchableImageView */,
-				0421D37A1B831F7700BF6065 /* File Operation */,
-				0421D3761B82E34500BF6065 /* ItemManagement */,
-				0421D3631B8126C700BF6065 /* Cabinet.storyboard */,
-				0421D3651B8126C700BF6065 /* CabinetViewController.m */,
-				0421D3671B8126C700BF6065 /* CabinetViewController.h */,
-				0421D3681B8126C700BF6065 /* Config.h */,
-				0487D7671B74548F00756EF8 /* AppDelegate.h */,
-				0487D7681B74548F00756EF8 /* AppDelegate.m */,
+				043B7B751BAD30F60094BB3E /* Controller */,
+				043B7B741BAD30DA0094BB3E /* View */,
+				043B7B731BAD30BA0094BB3E /* Model */,
 				0487D7701B74548F00756EF8 /* Images.xcassets */,
-				0487D7721B74548F00756EF8 /* LaunchScreen.xib */,
 				0487D7631B74548F00756EF8 /* Supporting Files */,
-				047D3D371B8A02DA00871627 /* NSArray+ForceBound.h */,
-				047D3D381B8A02DA00871627 /* NSArray+ForceBound.m */,
 			);
 			path = ZNYS;
 			sourceTree = "<group>";
@@ -275,7 +350,9 @@
 			files = (
 				0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */,
 				0421D3711B8126C700BF6065 /* Cabinet.storyboard in Resources */,
+				041365FA1BAD8AA600CD0604 /* DialogView.xib in Resources */,
 				0487D7711B74548F00756EF8 /* Images.xcassets in Resources */,
+				0469BFC31BAE5CC00055DF4A /* CalendarScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,12 +375,14 @@
 				6F851F3F1BA9B31B0098415D /* BathItem.m in Sources */,
 				0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */,
 				0421D3741B8126C700BF6065 /* ItemWithState.m in Sources */,
-				044DD1A71BA0A21F00176AD4 /* GiftStatusManagerFile.m in Sources */,
+				044DD1A71BA0A21F00176AD4 /* ItemStatusManagerFile.m in Sources */,
+				041366001BAD8C9A00CD0604 /* DialogView.m in Sources */,
+				0469BFBE1BADC22F0055DF4A /* Fortune.m in Sources */,
 				0421D3791B830D0B00BF6065 /* ItemState.m in Sources */,
 				0421D3721B8126C700BF6065 /* CabinetViewController.m in Sources */,
 				0421D3751B8126C700BF6065 /* Item.m in Sources */,
 				0487D7661B74548F00756EF8 /* main.m in Sources */,
-				0421D3731B8126C700BF6065 /* ItemStatusManager.m in Sources */,
+				0421D3731B8126C700BF6065 /* UserData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZNYS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -440,6 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZNYS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -17,15 +17,16 @@
 @end
  */
 
-@interface ItemStatusManager : NSObject
+@interface UserData : NSObject
 
-/*@property (strong,nonatomic) NSMutableArray *pageList;*/
-@property (strong,nonatomic) NSMutableArray *giftList;           //所有的奖品的列表，包括【已兑换的奖品】、
-                                                //【已激活未兑换奖品】、【未激活的奖品】
+@property (strong,nonatomic) NSMutableArray *gloryItemList; //荣誉奖杯、奖牌等
+@property (strong,nonatomic) NSMutableArray *bathItemList;  //浴室标志性物品
+
 
 //指定初始化方法
 - (instancetype) initWithCurrentValidNumbersOfStars:(int)numberOfStars
-                                      giftList:(NSArray *)gList;
+                                      gloryItemList:(NSArray *)gloryItemList
+                                       bathItemList:(NSMutableArray *)bathItemList;
 
 //检查所有奖品的状态，更新奖品的状态
 - (void) checkGiftStateOfPage:(int)page;
