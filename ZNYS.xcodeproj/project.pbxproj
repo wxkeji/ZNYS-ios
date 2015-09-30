@@ -129,8 +129,6 @@
 				0469BFBB1BADC2140055DF4A /* Fortune */,
 				043B7B771BAD31380094BB3E /* Config */,
 				043B7B761BAD31200094BB3E /* NSArray+ForceBound */,
-				0487D7671B74548F00756EF8 /* AppDelegate.h */,
-				0487D7681B74548F00756EF8 /* AppDelegate.m */,
 				0421D3761B82E34500BF6065 /* ItemManagement */,
 				0421D37A1B831F7700BF6065 /* File Operation */,
 			);
@@ -140,6 +138,7 @@
 		043B7B741BAD30DA0094BB3E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0457FB5B1BA945EA00001A9D /* TouchableImageView */,
 				0469BFC21BAE5CC00055DF4A /* CalendarScreen.storyboard */,
 				0487D7721B74548F00756EF8 /* LaunchScreen.xib */,
 				0421D3631B8126C700BF6065 /* Cabinet.storyboard */,
@@ -153,7 +152,6 @@
 		043B7B751BAD30F60094BB3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0457FB5B1BA945EA00001A9D /* TouchableImageView */,
 				0421D3651B8126C700BF6065 /* CabinetViewController.m */,
 				0421D3671B8126C700BF6065 /* CabinetViewController.h */,
 			);
@@ -184,13 +182,6 @@
 				0457FB5D1BA9461000001A9D /* TouchableImageView.m */,
 			);
 			name = TouchableImageView;
-			sourceTree = "<group>";
-		};
-		045AAA5E1B775B98001360F9 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		0469BFBB1BADC2140055DF4A /* Fortune */ = {
@@ -233,6 +224,8 @@
 		0487D7621B74548F00756EF8 /* ZNYS */ = {
 			isa = PBXGroup;
 			children = (
+				0487D7671B74548F00756EF8 /* AppDelegate.h */,
+				0487D7681B74548F00756EF8 /* AppDelegate.m */,
 				043B7B751BAD30F60094BB3E /* Controller */,
 				043B7B741BAD30DA0094BB3E /* View */,
 				043B7B731BAD30BA0094BB3E /* Model */,
