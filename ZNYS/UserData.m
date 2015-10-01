@@ -33,6 +33,8 @@
                                       gloryItemList:(NSMutableArray *)gloryItemList
                                        bathItemList:(NSMutableArray *)bathItemList
 {
+    /*
+    
     //数据库操作
     //获取数据库文件地址
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -51,6 +53,7 @@
          NSLog(@" >> Failed to open database. %@",path);
     }
     
+    */
     
     currentValidNumberOfStars = currentValidNums;
     self.gloryItemList = gloryItemList;

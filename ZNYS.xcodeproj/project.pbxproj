@@ -18,7 +18,6 @@
 		044DD1A71BA0A21F00176AD4 /* ItemStatusManagerFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 044DD1A61BA0A21F00176AD4 /* ItemStatusManagerFile.m */; };
 		0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0457FB5D1BA9461000001A9D /* TouchableImageView.m */; };
 		0469BFBE1BADC22F0055DF4A /* Fortune.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469BFBD1BADC22F0055DF4A /* Fortune.m */; settings = {ASSET_TAGS = (); }; };
-		0469BFC31BAE5CC00055DF4A /* CalendarScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0469BFC21BAE5CC00055DF4A /* CalendarScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		047D3D391B8A02DA00871627 /* NSArray+ForceBound.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D3D381B8A02DA00871627 /* NSArray+ForceBound.m */; };
 		0487D7661B74548F00756EF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D7651B74548F00756EF8 /* main.m */; };
 		0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D7681B74548F00756EF8 /* AppDelegate.m */; };
@@ -26,6 +25,8 @@
 		0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0487D7721B74548F00756EF8 /* LaunchScreen.xib */; };
 		0487D7801B74548F00756EF8 /* ZNYSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D77F1B74548F00756EF8 /* ZNYSTests.m */; };
 		6F851F3F1BA9B31B0098415D /* BathItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F851F3E1BA9B31B0098415D /* BathItem.m */; };
+		6FC69C131BBC4DBD0074C38E /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6FC69C141BBC4DBD0074C38E /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FC69C121BBC4DBD0074C38E /* CalendarViewController.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +61,6 @@
 		0457FB5D1BA9461000001A9D /* TouchableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchableImageView.m; sourceTree = "<group>"; };
 		0469BFBC1BADC22F0055DF4A /* Fortune.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fortune.h; sourceTree = "<group>"; };
 		0469BFBD1BADC22F0055DF4A /* Fortune.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fortune.m; sourceTree = "<group>"; };
-		0469BFC21BAE5CC00055DF4A /* CalendarScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CalendarScreen.storyboard; path = ../CalendarScreen.storyboard; sourceTree = "<group>"; };
 		047D3D371B8A02DA00871627 /* NSArray+ForceBound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ForceBound.h"; sourceTree = "<group>"; };
 		047D3D381B8A02DA00871627 /* NSArray+ForceBound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ForceBound.m"; sourceTree = "<group>"; };
 		0487D7601B74548F00756EF8 /* ZNYS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZNYS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +75,9 @@
 		0487D77F1B74548F00756EF8 /* ZNYSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNYSTests.m; sourceTree = "<group>"; };
 		6F851F3D1BA9B31B0098415D /* BathItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BathItem.h; sourceTree = "<group>"; };
 		6F851F3E1BA9B31B0098415D /* BathItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BathItem.m; sourceTree = "<group>"; };
+		6FC69C101BBC4DBD0074C38E /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		6FC69C121BBC4DBD0074C38E /* CalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				0457FB5B1BA945EA00001A9D /* TouchableImageView */,
-				0469BFC21BAE5CC00055DF4A /* CalendarScreen.storyboard */,
+				6FC69C121BBC4DBD0074C38E /* CalendarViewController.xib */,
 				0487D7721B74548F00756EF8 /* LaunchScreen.xib */,
 				0421D3631B8126C700BF6065 /* Cabinet.storyboard */,
 				041365F91BAD8AA600CD0604 /* DialogView.xib */,
@@ -151,6 +154,8 @@
 			children = (
 				0421D3651B8126C700BF6065 /* CabinetViewController.m */,
 				0421D3671B8126C700BF6065 /* CabinetViewController.h */,
+				6FC69C101BBC4DBD0074C38E /* CalendarViewController.h */,
+				6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -339,9 +344,9 @@
 			files = (
 				0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */,
 				0421D3711B8126C700BF6065 /* Cabinet.storyboard in Resources */,
+				6FC69C141BBC4DBD0074C38E /* CalendarViewController.xib in Resources */,
 				041365FA1BAD8AA600CD0604 /* DialogView.xib in Resources */,
 				0487D7711B74548F00756EF8 /* Images.xcassets in Resources */,
-				0469BFC31BAE5CC00055DF4A /* CalendarScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +370,7 @@
 				0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */,
 				0421D3741B8126C700BF6065 /* ItemWithState.m in Sources */,
 				044DD1A71BA0A21F00176AD4 /* ItemStatusManagerFile.m in Sources */,
+				6FC69C131BBC4DBD0074C38E /* CalendarViewController.m in Sources */,
 				041366001BAD8C9A00CD0604 /* DialogView.m in Sources */,
 				0469BFBE1BADC22F0055DF4A /* Fortune.m in Sources */,
 				0421D3791B830D0B00BF6065 /* ItemState.m in Sources */,

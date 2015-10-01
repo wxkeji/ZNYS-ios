@@ -7,6 +7,7 @@
 //
 
 #import "CabinetViewController.h"
+#import "CalendarViewController.h"
 #import "Config.h"
 #import "ItemStatusManagerFile.h"
 #import "NSArray+ForceBound.h"
@@ -22,9 +23,9 @@
 
 @property (strong,nonatomic) NSMutableDictionary *tagDict;   //保存tag的列表的词典
 
-
 @property (strong,nonatomic) NSMutableArray *bathItemList;  //保存浴室标志性物品
 
+- (IBAction)calendarButtonTouched:(id)sender;
 
 - (IBAction)synchronize:(id)sender;
 
@@ -50,7 +51,7 @@
     
     for(int i = 1;i <= 30;i++)
     {
-        ItemWithState *gloryItem = [[ItemWithState alloc] initWithItemName:@"littleCar"  imageName:[NSString stringWithFormat:@"%@%d",littleCar,i]];
+        ItemWithState *gloryItem = [[ItemWithState alloc] initWithItemName:@"littleCar"  imageName:littleCar];
         [gloryList addObject:gloryItem];
     }
     
@@ -63,7 +64,7 @@
     self.bathItemList = [[NSMutableArray alloc] init];
     for(int i = 1;i <= 30;i++)
     {
-        ItemWithState *bathItem = [[ItemWithState alloc] initWithItemName:@"littleBasketball"  imageName:[NSString stringWithFormat:@"%@%d",littleBasketball,i]];
+        ItemWithState *bathItem = [[ItemWithState alloc] initWithItemName:@"littleBasketball"  imageName:littleBasketball];
         [self.bathItemList addObject:bathItem];
     }
     
@@ -217,6 +218,11 @@
     }
         
     NSLog(@"Tag not found");
+}
+
+- (IBAction)calendarButtonTouched:(id)sender {
+    CalendarViewController *cvc = [[CalendarViewController alloc] init];
+    [self.navigationController pushViewController:cvc animated:YES];
 }
 
 - (IBAction)synchronize:(id)sender
