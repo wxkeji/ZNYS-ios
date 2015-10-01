@@ -8,6 +8,7 @@
 
 #import "CabinetViewController.h"
 #import "CalendarViewController.h"
+#import "IsParentViewController.h"
 #import "Config.h"
 #import "ItemStatusManagerFile.h"
 #import "NSArray+ForceBound.h"
@@ -28,6 +29,8 @@
 - (IBAction)calendarButtonTouched:(id)sender;
 
 - (IBAction)synchronize:(id)sender;
+
+- (IBAction)settingButtonTouched:(id)sender;
 
 @end
 
@@ -222,12 +225,19 @@
 
 - (IBAction)calendarButtonTouched:(id)sender {
     CalendarViewController *cvc = [[CalendarViewController alloc] init];
-    [self.navigationController pushViewController:cvc animated:YES];
+    [self.view.window addSubview:cvc.view];
+    [self.view.window sendSubviewToBack:self.view];
 }
 
 - (IBAction)synchronize:(id)sender
 {
     
+}
+
+- (IBAction)settingButtonTouched:(id)sender {
+    IsParentViewController *ipvc = [[IsParentViewController alloc] init];
+    [self.view.window addSubview:ipvc.view];
+    [self.view.window sendSubviewToBack:self.view];
 }
 
 - (void)didReceiveMemoryWarning {

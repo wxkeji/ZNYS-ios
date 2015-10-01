@@ -45,6 +45,9 @@
                                         <include reference="lbu-Xh-NQm"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="settingButtonTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wcO-29-Guv"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="奖品柜" translatesAutoresizingMaskIntoConstraints="NO" id="AiQ-SN-3YM">
                                 <rect key="frame" x="-8" y="162" width="616" height="277"/>

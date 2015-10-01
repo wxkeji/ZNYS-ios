@@ -24,6 +24,8 @@
 		0487D7711B74548F00756EF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0487D7701B74548F00756EF8 /* Images.xcassets */; };
 		0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0487D7721B74548F00756EF8 /* LaunchScreen.xib */; };
 		0487D7801B74548F00756EF8 /* ZNYSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D77F1B74548F00756EF8 /* ZNYSTests.m */; };
+		6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F368F061BBCCE1700D273C9 /* IsParentViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F368F071BBCCE1700D273C9 /* IsParentViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		6F851F3F1BA9B31B0098415D /* BathItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F851F3E1BA9B31B0098415D /* BathItem.m */; };
 		6FC69C131BBC4DBD0074C38E /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6FC69C141BBC4DBD0074C38E /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FC69C121BBC4DBD0074C38E /* CalendarViewController.xib */; settings = {ASSET_TAGS = (); }; };
@@ -73,6 +75,9 @@
 		0487D7791B74548F00756EF8 /* ZNYSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZNYSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0487D77E1B74548F00756EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0487D77F1B74548F00756EF8 /* ZNYSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNYSTests.m; sourceTree = "<group>"; };
+		6F368F051BBCCE1700D273C9 /* IsParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsParentViewController.h; sourceTree = "<group>"; };
+		6F368F061BBCCE1700D273C9 /* IsParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsParentViewController.m; sourceTree = "<group>"; };
+		6F368F071BBCCE1700D273C9 /* IsParentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IsParentViewController.xib; sourceTree = "<group>"; };
 		6F851F3D1BA9B31B0098415D /* BathItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BathItem.h; sourceTree = "<group>"; };
 		6F851F3E1BA9B31B0098415D /* BathItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BathItem.m; sourceTree = "<group>"; };
 		6FC69C101BBC4DBD0074C38E /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
@@ -139,8 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				0457FB5B1BA945EA00001A9D /* TouchableImageView */,
-				6FC69C121BBC4DBD0074C38E /* CalendarViewController.xib */,
 				0487D7721B74548F00756EF8 /* LaunchScreen.xib */,
+				6FC69C121BBC4DBD0074C38E /* CalendarViewController.xib */,
+				6F368F071BBCCE1700D273C9 /* IsParentViewController.xib */,
 				0421D3631B8126C700BF6065 /* Cabinet.storyboard */,
 				041365F91BAD8AA600CD0604 /* DialogView.xib */,
 				041365FE1BAD8C9A00CD0604 /* DialogView.h */,
@@ -156,6 +162,8 @@
 				0421D3671B8126C700BF6065 /* CabinetViewController.h */,
 				6FC69C101BBC4DBD0074C38E /* CalendarViewController.h */,
 				6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */,
+				6F368F051BBCCE1700D273C9 /* IsParentViewController.h */,
+				6F368F061BBCCE1700D273C9 /* IsParentViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -346,6 +354,7 @@
 				0421D3711B8126C700BF6065 /* Cabinet.storyboard in Resources */,
 				6FC69C141BBC4DBD0074C38E /* CalendarViewController.xib in Resources */,
 				041365FA1BAD8AA600CD0604 /* DialogView.xib in Resources */,
+				6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */,
 				0487D7711B74548F00756EF8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,6 +384,7 @@
 				0469BFBE1BADC22F0055DF4A /* Fortune.m in Sources */,
 				0421D3791B830D0B00BF6065 /* ItemState.m in Sources */,
 				0421D3721B8126C700BF6065 /* CabinetViewController.m in Sources */,
+				6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */,
 				0421D3751B8126C700BF6065 /* Item.m in Sources */,
 				0487D7661B74548F00756EF8 /* main.m in Sources */,
 				0421D3731B8126C700BF6065 /* UserData.m in Sources */,
