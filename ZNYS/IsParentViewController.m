@@ -7,8 +7,35 @@
 //
 
 #import "IsParentViewController.h"
+#import "settingIndexController.h"
+
 
 @interface IsParentViewController ()
+
+@property (weak, nonatomic) IBOutlet UIButton *button1;
+@property (weak, nonatomic) IBOutlet UIButton *button2;
+@property (weak, nonatomic) IBOutlet UIButton *button3;
+@property (weak, nonatomic) IBOutlet UIButton *button4;
+@property (weak, nonatomic) IBOutlet UIButton *button5;
+@property (weak, nonatomic) IBOutlet UIButton *button6;
+@property (weak, nonatomic) IBOutlet UIButton *button7;
+@property (weak, nonatomic) IBOutlet UIButton *button8;
+@property (weak, nonatomic) IBOutlet UIButton *button9;
+@property(strong,nonatomic)NSString*key;
+
+
+- (IBAction)button1:(id)sender;
+- (IBAction)button2:(id)sender;
+- (IBAction)button3:(id)sender;
+- (IBAction)button4:(id)sender;
+- (IBAction)button5:(id)sender;
+- (IBAction)button6:(id)sender;
+- (IBAction)button7:(id)sender;
+- (IBAction)button8:(id)sender;
+- (IBAction)button9:(id)sender;
+
+
+
 
 @end
 
@@ -16,6 +43,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //self.key=[NSString stringWithFormat:@"658"];
+    inputCount=3;
+    inputIndex=0;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -34,4 +64,42 @@
 }
 */
 
+- (IBAction)button1:(id)sender {
+    
+}
+
+- (IBAction)button2:(id)sender {
+   
+}
+
+- (IBAction)button3:(id)sender {
+    
+    
+}
+
+- (IBAction)button4:(id)sender {
+    
+}
+
+- (IBAction)button5:(id)sender {
+    [self performSegueWithIdentifier:@"tableViewID" sender:self];
+    
+}
+
+- (IBAction)button6:(id)sender {
+    
+    
+    
+}
+
+- (IBAction)button7:(id)sender {
+    
+}
+
+- (IBAction)button8:(id)sender {
+}
+
+- (IBAction)button9:(id)sender {
+    
+}
 @end

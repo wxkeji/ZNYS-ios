@@ -29,6 +29,7 @@
 		6F851F3F1BA9B31B0098415D /* BathItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F851F3E1BA9B31B0098415D /* BathItem.m */; };
 		6FC69C131BBC4DBD0074C38E /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6FC69C141BBC4DBD0074C38E /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FC69C121BBC4DBD0074C38E /* CalendarViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		C4A025001BBE678000771969 /* settingIndexController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A024FF1BBE678000771969 /* settingIndexController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		6FC69C101BBC4DBD0074C38E /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		6FC69C121BBC4DBD0074C38E /* CalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
+		C4A024FE1BBE678000771969 /* settingIndexController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingIndexController.h; sourceTree = "<group>"; };
+		C4A024FF1BBE678000771969 /* settingIndexController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingIndexController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,7 @@
 		043B7B751BAD30F60094BB3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C4A024FD1BBE675300771969 /* settingControllers */,
 				0421D3651B8126C700BF6065 /* CabinetViewController.m */,
 				0421D3671B8126C700BF6065 /* CabinetViewController.h */,
 				6FC69C101BBC4DBD0074C38E /* CalendarViewController.h */,
@@ -268,6 +272,15 @@
 				0487D77E1B74548F00756EF8 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C4A024FD1BBE675300771969 /* settingControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4A024FE1BBE678000771969 /* settingIndexController.h */,
+				C4A024FF1BBE678000771969 /* settingIndexController.m */,
+			);
+			name = settingControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,6 +399,7 @@
 				0421D3721B8126C700BF6065 /* CabinetViewController.m in Sources */,
 				6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */,
 				0421D3751B8126C700BF6065 /* Item.m in Sources */,
+				C4A025001BBE678000771969 /* settingIndexController.m in Sources */,
 				0487D7661B74548F00756EF8 /* main.m in Sources */,
 				0421D3731B8126C700BF6065 /* UserData.m in Sources */,
 			);

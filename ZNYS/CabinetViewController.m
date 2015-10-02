@@ -30,7 +30,7 @@
 
 - (IBAction)synchronize:(id)sender;
 
-- (IBAction)settingButtonTouched:(id)sender;
+//- (IBAction)settingButtonTouched:(id)sender;
 
 @end
 
@@ -233,11 +233,14 @@
 {
     
 }
-
-- (IBAction)settingButtonTouched:(id)sender {
-    IsParentViewController *ipvc = [[IsParentViewController alloc] init];
-    [self.view.window addSubview:ipvc.view];
-    [self.view.window sendSubviewToBack:self.view];
+//
+//- (IBAction)settingButtonTouched:(id)sender {
+//    IsParentViewController *ipvc = [[IsParentViewController alloc] init];
+//    [self.view.window addSubview:ipvc.view];
+//    [self.view.window sendSubviewToBack:self.view];
+//}
+- (IBAction)unwindSegue:(UIStoryboardSegue *)sender{
+   
 }
 
 - (void)didReceiveMemoryWarning {
