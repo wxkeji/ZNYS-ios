@@ -99,15 +99,15 @@
                         <mask key="constraints">
                             <exclude reference="bJI-ad-LZY"/>
                             <exclude reference="nsw-ds-y0G"/>
+                            <exclude reference="NKo-9u-68i"/>
+                            <exclude reference="XBm-an-xF4"/>
+                            <exclude reference="bAV-oy-dE5"/>
+                            <exclude reference="yiA-V1-VdQ"/>
                             <exclude reference="RHv-Fw-oAD"/>
                             <exclude reference="XcO-VV-lA7"/>
                             <exclude reference="a5o-t9-chd"/>
                             <exclude reference="gLZ-ST-avf"/>
                             <exclude reference="obD-HE-fvx"/>
-                            <exclude reference="NKo-9u-68i"/>
-                            <exclude reference="XBm-an-xF4"/>
-                            <exclude reference="bAV-oy-dE5"/>
-                            <exclude reference="yiA-V1-VdQ"/>
                         </mask>
                     </variation>
                     <variation key="widthClass=compact">
@@ -119,15 +119,15 @@
                         <mask key="constraints">
                             <include reference="bJI-ad-LZY"/>
                             <include reference="nsw-ds-y0G"/>
+                            <include reference="NKo-9u-68i"/>
+                            <include reference="XBm-an-xF4"/>
+                            <include reference="bAV-oy-dE5"/>
+                            <include reference="yiA-V1-VdQ"/>
                             <include reference="RHv-Fw-oAD"/>
                             <include reference="XcO-VV-lA7"/>
                             <include reference="a5o-t9-chd"/>
                             <include reference="gLZ-ST-avf"/>
                             <include reference="obD-HE-fvx"/>
-                            <include reference="NKo-9u-68i"/>
-                            <include reference="XBm-an-xF4"/>
-                            <include reference="bAV-oy-dE5"/>
-                            <include reference="yiA-V1-VdQ"/>
                         </mask>
                     </variation>
                 </view>

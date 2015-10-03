@@ -30,6 +30,7 @@
 		6FC69C131BBC4DBD0074C38E /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6FC69C141BBC4DBD0074C38E /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FC69C121BBC4DBD0074C38E /* CalendarViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		C4A025001BBE678000771969 /* settingIndexController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A024FF1BBE678000771969 /* settingIndexController.m */; settings = {ASSET_TAGS = (); }; };
+		C4DC701F1BBFA0F4004AB6A7 /* DIYGoalController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4DC701E1BBFA0F4004AB6A7 /* DIYGoalController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,8 @@
 		6FC69C121BBC4DBD0074C38E /* CalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
 		C4A024FE1BBE678000771969 /* settingIndexController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingIndexController.h; sourceTree = "<group>"; };
 		C4A024FF1BBE678000771969 /* settingIndexController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingIndexController.m; sourceTree = "<group>"; };
+		C4DC701D1BBFA0F4004AB6A7 /* DIYGoalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIYGoalController.h; sourceTree = "<group>"; };
+		C4DC701E1BBFA0F4004AB6A7 /* DIYGoalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIYGoalController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +282,8 @@
 			children = (
 				C4A024FE1BBE678000771969 /* settingIndexController.h */,
 				C4A024FF1BBE678000771969 /* settingIndexController.m */,
+				C4DC701D1BBFA0F4004AB6A7 /* DIYGoalController.h */,
+				C4DC701E1BBFA0F4004AB6A7 /* DIYGoalController.m */,
 			);
 			name = settingControllers;
 			sourceTree = "<group>";
@@ -389,6 +394,7 @@
 				0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */,
 				047D3D391B8A02DA00871627 /* NSArray+ForceBound.m in Sources */,
 				6F851F3F1BA9B31B0098415D /* BathItem.m in Sources */,
+				C4DC701F1BBFA0F4004AB6A7 /* DIYGoalController.m in Sources */,
 				0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */,
 				0421D3741B8126C700BF6065 /* ItemWithState.m in Sources */,
 				044DD1A71BA0A21F00176AD4 /* ItemStatusManagerFile.m in Sources */,

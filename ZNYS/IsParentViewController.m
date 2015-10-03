@@ -44,8 +44,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //self.key=[NSString stringWithFormat:@"658"];
-    inputCount=3;
-    inputIndex=0;
+    inputCount=1;
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -65,41 +65,59 @@
 */
 
 - (IBAction)button1:(id)sender {
-    
+    [ self dismissViewControllerAnimated: YES completion: nil ];
 }
 
 - (IBAction)button2:(id)sender {
-   
+   [ self dismissViewControllerAnimated: YES completion: nil ];
 }
 
 - (IBAction)button3:(id)sender {
-    
+    [ self dismissViewControllerAnimated: YES completion: nil ];
     
 }
 
 - (IBAction)button4:(id)sender {
-    
+    [ self dismissViewControllerAnimated: YES completion: nil ];
 }
 
 - (IBAction)button5:(id)sender {
-    [self performSegueWithIdentifier:@"tableViewID" sender:self];
-    
+    if (inputCount==3) {
+        [self performSegueWithIdentifier:@"tableViewID" sender:self];
+    }
+   else
+       [ self dismissViewControllerAnimated: YES completion: nil ];
+
 }
 
 - (IBAction)button6:(id)sender {
-    
+    if(inputCount==1)
+    {
+        inputCount++;
+        
+    }
+    else{
+        [ self dismissViewControllerAnimated: YES completion: nil ];
+    }
     
     
 }
 
+
 - (IBAction)button7:(id)sender {
-    
+    [ self dismissViewControllerAnimated: YES completion: nil ];
 }
 
 - (IBAction)button8:(id)sender {
+    
+    if (inputCount==2) {
+        inputCount++;
+    }
+    else
+    [ self dismissViewControllerAnimated: YES completion: nil ];
 }
 
 - (IBAction)button9:(id)sender {
-    
+    [ self dismissViewControllerAnimated: YES completion: nil ];
 }
 @end

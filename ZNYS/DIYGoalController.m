@@ -1,30 +1,27 @@
 //
-//  settingIndexController.m
+//  DIYGoalController.m
 //  ZNYS
 //
-//  Created by jerry on 15/10/2.
+//  Created by jerry on 15/10/3.
 //  Copyright © 2015年 Woodseen. All rights reserved.
 //
 
-#import "settingIndexController.h"
+#import "DIYGoalController.h"
 
-@interface settingIndexController ()
+@interface DIYGoalController ()
 
 @end
 
-@implementation settingIndexController
+@implementation DIYGoalController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //手动修改headerview的高度
     UIView *headerView = self.tableView.tableHeaderView;
     CGFloat headerH=[UIScreen mainScreen].bounds.size.height;
     CGRect newFrame=self.tableView.tableHeaderView.frame;
-    newFrame.size.height=headerH/3;
+    newFrame.size.height=headerH/5;
     headerView.frame=newFrame;
     self.tableView.tableHeaderView = headerView;
-    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
-    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -36,9 +33,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-- (IBAction)unwindSegue:(UIStoryboardSegue *)sender{
-    
 }
 
 #pragma mark - Table view data source
@@ -52,14 +46,10 @@
 //#warning Incomplete implementation, return the number of rows
 //    return 0;
 //}
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return [UIScreen mainScreen].bounds.size.height*(2/15);
-//}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
     // Configure the cell...
     
