@@ -53,7 +53,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+}
 /*
 #pragma mark - Navigation
 
@@ -83,7 +87,9 @@
 
 - (IBAction)button5:(id)sender {
     if (inputCount==3) {
+         
         [self performSegueWithIdentifier:@"tableViewID" sender:self];
+       
     }
    else
        [ self dismissViewControllerAnimated: YES completion: nil ];

@@ -29,7 +29,14 @@
 		6F851F3F1BA9B31B0098415D /* BathItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F851F3E1BA9B31B0098415D /* BathItem.m */; };
 		6FC69C131BBC4DBD0074C38E /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6FC69C141BBC4DBD0074C38E /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FC69C121BBC4DBD0074C38E /* CalendarViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		C43136411BC26CF90097A91B /* LeftToRightSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = C43136401BC26CF90097A91B /* LeftToRightSegue.m */; settings = {ASSET_TAGS = (); }; };
+		C43136441BC279800097A91B /* RightToLeftSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = C43136431BC279800097A91B /* RightToLeftSegue.m */; settings = {ASSET_TAGS = (); }; };
+		C431364A1BC29A840097A91B /* NormalModeControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C43136491BC29A840097A91B /* NormalModeControllerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C43BC7621BC541FF00C332DD /* IsParentToSettingSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = C43BC7611BC541FF00C332DD /* IsParentToSettingSegue.m */; settings = {ASSET_TAGS = (); }; };
+		C460E03D1BC5021F000608BD /* LackToothModeControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C460E03C1BC5021F000608BD /* LackToothModeControllerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C460E0401BC509D3000608BD /* DesignModeController.m in Sources */ = {isa = PBXBuildFile; fileRef = C460E03F1BC509D3000608BD /* DesignModeController.m */; settings = {ASSET_TAGS = (); }; };
 		C4A025001BBE678000771969 /* settingIndexController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A024FF1BBE678000771969 /* settingIndexController.m */; settings = {ASSET_TAGS = (); }; };
+		C4DBC6881BC4C41F00285604 /* FeedbackPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4DBC6871BC4C41F00285604 /* FeedbackPopView.m */; settings = {ASSET_TAGS = (); }; };
 		C4DC701F1BBFA0F4004AB6A7 /* DIYGoalController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4DC701E1BBFA0F4004AB6A7 /* DIYGoalController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -85,8 +92,22 @@
 		6FC69C101BBC4DBD0074C38E /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		6FC69C121BBC4DBD0074C38E /* CalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
+		C431363F1BC26CF90097A91B /* LeftToRightSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftToRightSegue.h; sourceTree = "<group>"; };
+		C43136401BC26CF90097A91B /* LeftToRightSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftToRightSegue.m; sourceTree = "<group>"; };
+		C43136421BC279800097A91B /* RightToLeftSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightToLeftSegue.h; sourceTree = "<group>"; };
+		C43136431BC279800097A91B /* RightToLeftSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightToLeftSegue.m; sourceTree = "<group>"; };
+		C43136481BC29A840097A91B /* NormalModeControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalModeControllerViewController.h; sourceTree = "<group>"; };
+		C43136491BC29A840097A91B /* NormalModeControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalModeControllerViewController.m; sourceTree = "<group>"; };
+		C43BC7601BC541FF00C332DD /* IsParentToSettingSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsParentToSettingSegue.h; sourceTree = "<group>"; };
+		C43BC7611BC541FF00C332DD /* IsParentToSettingSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsParentToSettingSegue.m; sourceTree = "<group>"; };
+		C460E03B1BC5021F000608BD /* LackToothModeControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LackToothModeControllerViewController.h; sourceTree = "<group>"; };
+		C460E03C1BC5021F000608BD /* LackToothModeControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LackToothModeControllerViewController.m; sourceTree = "<group>"; };
+		C460E03E1BC509D3000608BD /* DesignModeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignModeController.h; sourceTree = "<group>"; };
+		C460E03F1BC509D3000608BD /* DesignModeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignModeController.m; sourceTree = "<group>"; };
 		C4A024FE1BBE678000771969 /* settingIndexController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingIndexController.h; sourceTree = "<group>"; };
 		C4A024FF1BBE678000771969 /* settingIndexController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingIndexController.m; sourceTree = "<group>"; };
+		C4DBC6861BC4C41F00285604 /* FeedbackPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackPopView.h; sourceTree = "<group>"; };
+		C4DBC6871BC4C41F00285604 /* FeedbackPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackPopView.m; sourceTree = "<group>"; };
 		C4DC701D1BBFA0F4004AB6A7 /* DIYGoalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIYGoalController.h; sourceTree = "<group>"; };
 		C4DC701E1BBFA0F4004AB6A7 /* DIYGoalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIYGoalController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +170,7 @@
 		043B7B741BAD30DA0094BB3E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C4DBC6851BC4C3E500285604 /* SettingViews */,
 				0457FB5B1BA945EA00001A9D /* TouchableImageView */,
 				0487D7721B74548F00756EF8 /* LaunchScreen.xib */,
 				6FC69C121BBC4DBD0074C38E /* CalendarViewController.xib */,
@@ -171,6 +193,12 @@
 				6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */,
 				6F368F051BBCCE1700D273C9 /* IsParentViewController.h */,
 				6F368F061BBCCE1700D273C9 /* IsParentViewController.m */,
+				C431363F1BC26CF90097A91B /* LeftToRightSegue.h */,
+				C43136401BC26CF90097A91B /* LeftToRightSegue.m */,
+				C43136421BC279800097A91B /* RightToLeftSegue.h */,
+				C43136431BC279800097A91B /* RightToLeftSegue.m */,
+				C43BC7601BC541FF00C332DD /* IsParentToSettingSegue.h */,
+				C43BC7611BC541FF00C332DD /* IsParentToSettingSegue.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -284,8 +312,23 @@
 				C4A024FF1BBE678000771969 /* settingIndexController.m */,
 				C4DC701D1BBFA0F4004AB6A7 /* DIYGoalController.h */,
 				C4DC701E1BBFA0F4004AB6A7 /* DIYGoalController.m */,
+				C43136481BC29A840097A91B /* NormalModeControllerViewController.h */,
+				C43136491BC29A840097A91B /* NormalModeControllerViewController.m */,
+				C460E03B1BC5021F000608BD /* LackToothModeControllerViewController.h */,
+				C460E03C1BC5021F000608BD /* LackToothModeControllerViewController.m */,
+				C460E03E1BC509D3000608BD /* DesignModeController.h */,
+				C460E03F1BC509D3000608BD /* DesignModeController.m */,
 			);
 			name = settingControllers;
+			sourceTree = "<group>";
+		};
+		C4DBC6851BC4C3E500285604 /* SettingViews */ = {
+			isa = PBXGroup;
+			children = (
+				C4DBC6861BC4C41F00285604 /* FeedbackPopView.h */,
+				C4DBC6871BC4C41F00285604 /* FeedbackPopView.m */,
+			);
+			name = SettingViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,10 +434,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C43136441BC279800097A91B /* RightToLeftSegue.m in Sources */,
+				C43136411BC26CF90097A91B /* LeftToRightSegue.m in Sources */,
+				C431364A1BC29A840097A91B /* NormalModeControllerViewController.m in Sources */,
 				0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */,
+				C460E0401BC509D3000608BD /* DesignModeController.m in Sources */,
 				047D3D391B8A02DA00871627 /* NSArray+ForceBound.m in Sources */,
+				C4DBC6881BC4C41F00285604 /* FeedbackPopView.m in Sources */,
 				6F851F3F1BA9B31B0098415D /* BathItem.m in Sources */,
 				C4DC701F1BBFA0F4004AB6A7 /* DIYGoalController.m in Sources */,
+				C43BC7621BC541FF00C332DD /* IsParentToSettingSegue.m in Sources */,
 				0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */,
 				0421D3741B8126C700BF6065 /* ItemWithState.m in Sources */,
 				044DD1A71BA0A21F00176AD4 /* ItemStatusManagerFile.m in Sources */,
@@ -403,6 +452,7 @@
 				0469BFBE1BADC22F0055DF4A /* Fortune.m in Sources */,
 				0421D3791B830D0B00BF6065 /* ItemState.m in Sources */,
 				0421D3721B8126C700BF6065 /* CabinetViewController.m in Sources */,
+				C460E03D1BC5021F000608BD /* LackToothModeControllerViewController.m in Sources */,
 				6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */,
 				0421D3751B8126C700BF6065 /* Item.m in Sources */,
 				C4A025001BBE678000771969 /* settingIndexController.m in Sources */,
