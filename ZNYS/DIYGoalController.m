@@ -11,15 +11,41 @@
 @interface DIYGoalController ()
 
 @end
-
+#define iph4 ([UIScreen mainScreen].bounds.size.height == 480)
+#define iph5 ([UIScreen mainScreen].bounds.size.height == 568)
+#define iph6 ([UIScreen mainScreen].bounds.size.height == 667)
+#define iph6p ([UIScreen mainScreen].bounds.size.height == 736)
 @implementation DIYGoalController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIView *headerView = self.tableView.tableHeaderView;
-    CGFloat headerH=[UIScreen mainScreen].bounds.size.height;
+   // CGFloat deviceH=self.view.frame.size.height;
+    
+//    
+//    640  i5 128.000000!!!
+//    i6  150.5
+//    6p 163.3333
+//    i4 113
+    
     CGRect newFrame=self.tableView.tableHeaderView.frame;
-    newFrame.size.height=headerH/5;
+    //newFrame.size.height=headerH/5;
+    if (iph4) {
+        newFrame.size.height=113;
+    }
+    if (iph5) {
+        newFrame.size.height=130;
+    }
+    if (iph6) {
+        newFrame.size.height=150.5;
+    }
+    if (iph6p) {
+        newFrame.size.height=163.333;
+    }
+    
+    
+    
+    
     headerView.frame=newFrame;
     self.tableView.tableHeaderView = headerView;
     
@@ -33,6 +59,9 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)unwindSegue:(UIStoryboardSegue *)sender{
+    
 }
 
 #pragma mark - Table view data source
