@@ -9,13 +9,22 @@
 #import "AppDelegate.h"
 #import "CoreDataHelper.h"
 #import "User.h"
+#import "CabinetViewController.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    UIStoryboard * storyBoard = [UIStoryboard storyboardWithName:@"Cabinet" bundle:[NSBundle mainBundle]];
+    CabinetViewController * viewController = [storyBoard instantiateViewControllerWithIdentifier:@"CabinetViewController"];
+    UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:viewController];
+    nav.navigationBarHidden = YES;
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

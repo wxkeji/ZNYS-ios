@@ -50,11 +50,18 @@
 		45BC40A11C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC408E1C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m */; };
 		45BC40A21C2469D9006A185F /* BrushingStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC40901C2469D9006A185F /* BrushingStatistics.m */; };
 		45CE1B6F1C2BE61900C886BC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45CE1B6D1C2BE61900C886BC /* Model.xcdatamodeld */; };
+		645A016F1C37B5B800556395 /* AddAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016A1C37B5B800556395 /* AddAccountView.m */; settings = {ASSET_TAGS = (); }; };
+		645A01701C37B5B800556395 /* SelectBirthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016C1C37B5B800556395 /* SelectBirthView.m */; settings = {ASSET_TAGS = (); }; };
+		645A01711C37B5B800556395 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016E1C37B5B800556395 /* AddAccountViewController.m */; settings = {ASSET_TAGS = (); }; };
+		645A01771C37B6FD00556395 /* VerifyKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A01761C37B6FD00556395 /* VerifyKeyboardViewController.m */; settings = {ASSET_TAGS = (); }; };
+		645A01831C37C56D00556395 /* 华康娃娃体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 645A01821C37C56D00556395 /* 华康娃娃体.TTF */; settings = {ASSET_TAGS = (); }; };
+		645A01841C37C58E00556395 /* 华康娃娃体.TTF in Sources */ = {isa = PBXBuildFile; fileRef = 645A01821C37C56D00556395 /* 华康娃娃体.TTF */; };
 		6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F368F061BBCCE1700D273C9 /* IsParentViewController.m */; };
 		6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F368F071BBCCE1700D273C9 /* IsParentViewController.xib */; };
 		6F851F3F1BA9B31B0098415D /* BathItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F851F3E1BA9B31B0098415D /* BathItem.m */; };
 		6FC69C131BBC4DBD0074C38E /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */; };
 		6FC69C141BBC4DBD0074C38E /* CalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FC69C121BBC4DBD0074C38E /* CalendarViewController.xib */; };
+		840ACE02D000AED2E3D3E8A8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 683F419A9E2D0C36989BFD4A /* libPods.a */; };
 		C43136411BC26CF90097A91B /* LeftToRightSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = C43136401BC26CF90097A91B /* LeftToRightSegue.m */; };
 		C43136441BC279800097A91B /* RightToLeftSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = C43136431BC279800097A91B /* RightToLeftSegue.m */; };
 		C43136471BC282C30097A91B /* IsParentToCabinetSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = C43136461BC282C30097A91B /* IsParentToCabinetSegue.m */; };
@@ -161,6 +168,17 @@
 		45BC408F1C2469D9006A185F /* BrushingStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushingStatistics.h; sourceTree = "<group>"; };
 		45BC40901C2469D9006A185F /* BrushingStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushingStatistics.m; sourceTree = "<group>"; };
 		45CE1B6E1C2BE61900C886BC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		645A01681C37B56900556395 /* ToolMacroes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolMacroes.h; sourceTree = "<group>"; };
+		645A01691C37B5B800556395 /* AddAccountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountView.h; sourceTree = "<group>"; };
+		645A016A1C37B5B800556395 /* AddAccountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountView.m; sourceTree = "<group>"; };
+		645A016B1C37B5B800556395 /* SelectBirthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectBirthView.h; sourceTree = "<group>"; };
+		645A016C1C37B5B800556395 /* SelectBirthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBirthView.m; sourceTree = "<group>"; };
+		645A016D1C37B5B800556395 /* AddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountViewController.h; sourceTree = "<group>"; };
+		645A016E1C37B5B800556395 /* AddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountViewController.m; sourceTree = "<group>"; };
+		645A01751C37B6FD00556395 /* VerifyKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyKeyboardViewController.h; sourceTree = "<group>"; };
+		645A01761C37B6FD00556395 /* VerifyKeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyKeyboardViewController.m; sourceTree = "<group>"; };
+		645A01821C37C56D00556395 /* 华康娃娃体.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "华康娃娃体.TTF"; sourceTree = "<group>"; };
+		683F419A9E2D0C36989BFD4A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F368F051BBCCE1700D273C9 /* IsParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsParentViewController.h; sourceTree = "<group>"; };
 		6F368F061BBCCE1700D273C9 /* IsParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsParentViewController.m; sourceTree = "<group>"; };
 		6F368F071BBCCE1700D273C9 /* IsParentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IsParentViewController.xib; sourceTree = "<group>"; };
@@ -169,6 +187,8 @@
 		6FC69C101BBC4DBD0074C38E /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		6FC69C121BBC4DBD0074C38E /* CalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarViewController.xib; sourceTree = "<group>"; };
+		869812908A6DD8477FF731F8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		91C03429B6C007A30E11C265 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C431363F1BC26CF90097A91B /* LeftToRightSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftToRightSegue.h; sourceTree = "<group>"; };
 		C43136401BC26CF90097A91B /* LeftToRightSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftToRightSegue.m; sourceTree = "<group>"; };
 		C43136421BC279800097A91B /* RightToLeftSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightToLeftSegue.h; sourceTree = "<group>"; };
@@ -197,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */,
+				840ACE02D000AED2E3D3E8A8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +360,8 @@
 				0487D7621B74548F00756EF8 /* ZNYS */,
 				0487D77C1B74548F00756EF8 /* ZNYSTests */,
 				0487D7611B74548F00756EF8 /* Products */,
+				DBFDA703871AFF6CB28D8090 /* Pods */,
+				63353D4AB29EDC413AD1EB41 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -354,7 +377,9 @@
 		0487D7621B74548F00756EF8 /* ZNYS */ = {
 			isa = PBXGroup;
 			children = (
-				458093DD1C231BE500CB9BF9 /* BrushConnectingModule */,
+				645A01781C37BB7B00556395 /* Resource */,
+				645A01671C37B53E00556395 /* Utils */,
+				645A01651C37B51D00556395 /* Modules */,
 				458093961C2160FF00CB9BF9 /* Data Model */,
 				0487D7671B74548F00756EF8 /* AppDelegate.h */,
 				0487D7681B74548F00756EF8 /* AppDelegate.m */,
@@ -492,6 +517,102 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
+		63353D4AB29EDC413AD1EB41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				683F419A9E2D0C36989BFD4A /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		645A01651C37B51D00556395 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				645A01661C37B52A00556395 /* UserAccountModule */,
+				458093DD1C231BE500CB9BF9 /* BrushConnectingModule */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		645A01661C37B52A00556395 /* UserAccountModule */ = {
+			isa = PBXGroup;
+			children = (
+				645A01741C37B5D200556395 /* Model */,
+				645A01731C37B5C100556395 /* ViewController */,
+				645A01721C37B5BB00556395 /* View */,
+			);
+			name = UserAccountModule;
+			sourceTree = "<group>";
+		};
+		645A01671C37B53E00556395 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				645A01681C37B56900556395 /* ToolMacroes.h */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		645A01721C37B5BB00556395 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				645A01691C37B5B800556395 /* AddAccountView.h */,
+				645A016A1C37B5B800556395 /* AddAccountView.m */,
+				645A016B1C37B5B800556395 /* SelectBirthView.h */,
+				645A016C1C37B5B800556395 /* SelectBirthView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		645A01731C37B5C100556395 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				645A016D1C37B5B800556395 /* AddAccountViewController.h */,
+				645A016E1C37B5B800556395 /* AddAccountViewController.m */,
+				645A01751C37B6FD00556395 /* VerifyKeyboardViewController.h */,
+				645A01761C37B6FD00556395 /* VerifyKeyboardViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		645A01741C37B5D200556395 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		645A01781C37BB7B00556395 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				645A01791C37BB8400556395 /* Font */,
+				645A017A1C37BBA000556395 /* Image */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		645A01791C37BB8400556395 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				645A01821C37C56D00556395 /* 华康娃娃体.TTF */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
+		645A017A1C37BBA000556395 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				645A017B1C37BBA600556395 /* UserAccount */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		645A017B1C37BBA600556395 /* UserAccount */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UserAccount;
+			sourceTree = "<group>";
+		};
 		C4A024FD1BBE675300771969 /* settingControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +639,15 @@
 			name = SettingViews;
 			sourceTree = "<group>";
 		};
+		DBFDA703871AFF6CB28D8090 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91C03429B6C007A30E11C265 /* Pods.debug.xcconfig */,
+				869812908A6DD8477FF731F8 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -525,9 +655,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0487D7831B74548F00756EF8 /* Build configuration list for PBXNativeTarget "ZNYS" */;
 			buildPhases = (
+				7492CCC6575E8E324CD396BF /* Check Pods Manifest.lock */,
 				0487D75C1B74548F00756EF8 /* Sources */,
 				0487D75D1B74548F00756EF8 /* Frameworks */,
 				0487D75E1B74548F00756EF8 /* Resources */,
+				C6CF789D48CA643A4251B0F0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -601,6 +733,7 @@
 				0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */,
 				0421D3711B8126C700BF6065 /* Cabinet.storyboard in Resources */,
 				6FC69C141BBC4DBD0074C38E /* CalendarViewController.xib in Resources */,
+				645A01831C37C56D00556395 /* 华康娃娃体.TTF in Resources */,
 				041365FA1BAD8AA600CD0604 /* DialogView.xib in Resources */,
 				6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */,
 				0487D7711B74548F00756EF8 /* Images.xcassets in Resources */,
@@ -616,21 +749,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7492CCC6575E8E324CD396BF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C6CF789D48CA643A4251B0F0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0487D75C1B74548F00756EF8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				645A01841C37C58E00556395 /* 华康娃娃体.TTF in Sources */,
 				45BC409C1C2469D9006A185F /* Rules.m in Sources */,
 				C43136441BC279800097A91B /* RightToLeftSegue.m in Sources */,
 				C43136411BC26CF90097A91B /* LeftToRightSegue.m in Sources */,
+				645A01711C37B5B800556395 /* AddAccountViewController.m in Sources */,
 				C431364A1BC29A840097A91B /* NormalModeControllerViewController.m in Sources */,
 				0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */,
 				C460E0401BC509D3000608BD /* DesignModeController.m in Sources */,
+				645A016F1C37B5B800556395 /* AddAccountView.m in Sources */,
 				45BC409B1C2469D9006A185F /* Rules+CoreDataProperties.m in Sources */,
 				458093991C21611E00CB9BF9 /* Model.xcdatamodeld in Sources */,
 				4580946C1C23DE6400CB9BF9 /* ConnectedViewController.m in Sources */,
 				047D3D391B8A02DA00871627 /* NSArray+ForceBound.m in Sources */,
+				645A01771C37B6FD00556395 /* VerifyKeyboardViewController.m in Sources */,
 				45BC40A11C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m in Sources */,
 				45BC40A21C2469D9006A185F /* BrushingStatistics.m in Sources */,
 				C4DBC6881BC4C41F00285604 /* FeedbackPopView.m in Sources */,
@@ -668,6 +838,7 @@
 				C4A025001BBE678000771969 /* settingIndexController.m in Sources */,
 				45BC40971C2469D9006A185F /* CustomerServices+CoreDataProperties.m in Sources */,
 				45BC409F1C2469D9006A185F /* Belongings+CoreDataProperties.m in Sources */,
+				645A01701C37B5B800556395 /* SelectBirthView.m in Sources */,
 				45CE1B6F1C2BE61900C886BC /* Model.xcdatamodeld in Sources */,
 				0487D7661B74548F00756EF8 /* main.m in Sources */,
 				0421D3731B8126C700BF6065 /* UserData.m in Sources */,
@@ -794,6 +965,7 @@
 		};
 		0487D7841B74548F00756EF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91C03429B6C007A30E11C265 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZNYS/Info.plist;
@@ -805,6 +977,7 @@
 		};
 		0487D7851B74548F00756EF8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 869812908A6DD8477FF731F8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZNYS/Info.plist;
