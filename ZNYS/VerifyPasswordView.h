@@ -8,6 +8,10 @@
 
 #import "ZNYSBaseView.h"
 
+typedef void(^ButtonClickBlock)(NSInteger number);
+
 @interface VerifyPasswordView : ZNYSBaseView
+
+@property (nonatomic,copy) ButtonClickBlock buttonClickBlock;
 
 @end

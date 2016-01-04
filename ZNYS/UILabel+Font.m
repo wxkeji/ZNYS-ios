@@ -10,10 +10,10 @@
 
 @implementation UILabel (Font)
 
-- (instancetype)initWithCustomFont{
+- (instancetype)initWithCustomFont:(CGFloat)size{
     self = [super init];
     if (self) {
-        self.font = [UIFont fontWithName:@"DFPWaWaW5" size:12.f];
+        self.font = [UIFont fontWithName:@"DFPWaWaW5" size:size];
     }
     return self;
 }

@@ -10,4 +10,6 @@
 
 @interface UIButton (Font)
 
+- (instancetype)initWithCustomFont:(CGFloat)size;
+
 @end

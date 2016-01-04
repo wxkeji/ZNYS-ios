@@ -43,28 +43,28 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
-    NSArray *familyNames = [UIFont familyNames];
-    for( NSString *familyName in familyNames ){
-        printf( "Family: %s \n", [familyName UTF8String] );
-        NSArray *fontNames = [UIFont fontNamesForFamilyName:familyName];
-        for( NSString *fontName in fontNames ){
-            printf( "\tFont: %s \n", [fontName UTF8String] );
-        }
-    }
-    
-    self.label = [[UILabel alloc] initWithCustomFont];
-    self.label.text = @"测试字体";
-
-    [self.view addSubview:self.label];
-    WS(weakSelf, self);
-    [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.view.mas_left).with.offset(0);
-        make.top.equalTo(weakSelf.view.mas_top).with.offset(0);
-        make.width.mas_equalTo(100);
-        make.height.mas_equalTo(100);
-    }];
-    
+//    
+//    NSArray *familyNames = [UIFont familyNames];
+//    for( NSString *familyName in familyNames ){
+//        printf( "Family: %s \n", [familyName UTF8String] );
+//        NSArray *fontNames = [UIFont fontNamesForFamilyName:familyName];
+//        for( NSString *fontName in fontNames ){
+//            printf( "\tFont: %s \n", [fontName UTF8String] );
+//        }
+//    }
+//    
+//    self.label = [[UILabel alloc] initWithCustomFont];
+//    self.label.text = @"测试字体";
+//
+//    [self.view addSubview:self.label];
+//    WS(weakSelf, self);
+//    [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(weakSelf.view.mas_left).with.offset(0);
+//        make.top.equalTo(weakSelf.view.mas_top).with.offset(0);
+//        make.width.mas_equalTo(100);
+//        make.height.mas_equalTo(100);
+//    }];
+//    
     //从文件中读取数据
     
     //初始化tag字典

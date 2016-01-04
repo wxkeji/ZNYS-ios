@@ -61,6 +61,10 @@
 		645A01961C37CBBF00556395 /* ZNYSBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A01951C37CBBF00556395 /* ZNYSBaseView.m */; settings = {ASSET_TAGS = (); }; };
 		645A019C1C37CEF700556395 /* VerifyPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A019B1C37CEF700556395 /* VerifyPasswordView.m */; settings = {ASSET_TAGS = (); }; };
 		645A019F1C3A146E00556395 /* UIButton+Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A019E1C3A146E00556395 /* UIButton+Font.m */; settings = {ASSET_TAGS = (); }; };
+		647E05B51C3A2DE800ADB810 /* userAccount_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05B31C3A2DE800ADB810 /* userAccount_back@2x.png */; settings = {ASSET_TAGS = (); }; };
+		647E05B61C3A2DE800ADB810 /* userAccount_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05B41C3A2DE800ADB810 /* userAccount_back@3x.png */; settings = {ASSET_TAGS = (); }; };
+		647E05B91C3A327200ADB810 /* userAccount_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05B71C3A327200ADB810 /* userAccount_logo@2x.png */; settings = {ASSET_TAGS = (); }; };
+		647E05BA1C3A327200ADB810 /* userAccount_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05B81C3A327200ADB810 /* userAccount_logo@3x.png */; settings = {ASSET_TAGS = (); }; };
 		6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F368F061BBCCE1700D273C9 /* IsParentViewController.m */; };
 		6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F368F071BBCCE1700D273C9 /* IsParentViewController.xib */; };
 		6F851F3F1BA9B31B0098415D /* BathItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F851F3E1BA9B31B0098415D /* BathItem.m */; };
@@ -193,6 +197,10 @@
 		645A019B1C37CEF700556395 /* VerifyPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyPasswordView.m; sourceTree = "<group>"; };
 		645A019D1C3A146E00556395 /* UIButton+Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Font.h"; sourceTree = "<group>"; };
 		645A019E1C3A146E00556395 /* UIButton+Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Font.m"; sourceTree = "<group>"; };
+		647E05B31C3A2DE800ADB810 /* userAccount_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userAccount_back@2x.png"; sourceTree = "<group>"; };
+		647E05B41C3A2DE800ADB810 /* userAccount_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userAccount_back@3x.png"; sourceTree = "<group>"; };
+		647E05B71C3A327200ADB810 /* userAccount_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userAccount_logo@2x.png"; sourceTree = "<group>"; };
+		647E05B81C3A327200ADB810 /* userAccount_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userAccount_logo@3x.png"; sourceTree = "<group>"; };
 		683F419A9E2D0C36989BFD4A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F368F051BBCCE1700D273C9 /* IsParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsParentViewController.h; sourceTree = "<group>"; };
 		6F368F061BBCCE1700D273C9 /* IsParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsParentViewController.m; sourceTree = "<group>"; };
@@ -628,6 +636,10 @@
 		645A017B1C37BBA600556395 /* UserAccount */ = {
 			isa = PBXGroup;
 			children = (
+				647E05B71C3A327200ADB810 /* userAccount_logo@2x.png */,
+				647E05B81C3A327200ADB810 /* userAccount_logo@3x.png */,
+				647E05B31C3A2DE800ADB810 /* userAccount_back@2x.png */,
+				647E05B41C3A2DE800ADB810 /* userAccount_back@3x.png */,
 			);
 			name = UserAccount;
 			sourceTree = "<group>";
@@ -771,11 +783,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				647E05B51C3A2DE800ADB810 /* userAccount_back@2x.png in Resources */,
 				0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */,
+				647E05BA1C3A327200ADB810 /* userAccount_logo@3x.png in Resources */,
 				0421D3711B8126C700BF6065 /* Cabinet.storyboard in Resources */,
 				6FC69C141BBC4DBD0074C38E /* CalendarViewController.xib in Resources */,
 				645A01831C37C56D00556395 /* 华康娃娃体.TTF in Resources */,
 				041365FA1BAD8AA600CD0604 /* DialogView.xib in Resources */,
+				647E05B91C3A327200ADB810 /* userAccount_logo@2x.png in Resources */,
+				647E05B61C3A2DE800ADB810 /* userAccount_back@3x.png in Resources */,
 				6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */,
 				0487D7711B74548F00756EF8 /* Images.xcassets in Resources */,
 			);

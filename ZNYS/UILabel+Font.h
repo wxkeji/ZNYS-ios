@@ -10,6 +10,6 @@
 
 @interface UILabel (Font)
 
-- (instancetype)initWithCustomFont;
+- (instancetype)initWithCustomFont:(CGFloat)size;
 
 @end
