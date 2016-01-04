@@ -15,6 +15,7 @@
 #import "DialogView.h"
 #import "ToolMacroes.h"
 #import <Masonry.h>
+#import "UILabel+Font.h"
 
 @interface CabinetViewController ()
 
@@ -52,9 +53,9 @@
         }
     }
     
-    self.label = [[UILabel alloc] init];
+    self.label = [[UILabel alloc] initWithCustomFont];
     self.label.text = @"测试字体";
-    self.label.font = [UIFont fontWithName:@"DFPWaWaW5" size:15.f];
+
     [self.view addSubview:self.label];
     WS(weakSelf, self);
     [self.label mas_makeConstraints:^(MASConstraintMaker *make) {

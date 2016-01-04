@@ -1,5 +1,5 @@
 //
-//  VerifyKeyboardViewController.h
+//  ZNYSBaseView.h
 //  ZNYS
 //
 //  Created by Ellise on 16/1/2.
@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ToolMacroes.h"
+#import <Masonry.h>
 
-@interface VerifyKeyboardViewController : UIViewController
+@interface ZNYSBaseView : UIView
 
 @end

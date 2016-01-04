@@ -1,14 +1,15 @@
 //
-//  VerifyKeyboardViewController.m
+//  ZNYSBaseController.h
 //  ZNYS
 //
 //  Created by Ellise on 16/1/2.
 //  Copyright © 2016年 Woodseen. All rights reserved.
 //
 
-#import "VerifyKeyboardViewController.h"
+#import <UIKit/UIKit.h>
 #import "ToolMacroes.h"
+#import <Masonry.h>
 
-@implementation VerifyKeyboardViewController
+@interface ZNYSBaseController : UIViewController
 
 @end

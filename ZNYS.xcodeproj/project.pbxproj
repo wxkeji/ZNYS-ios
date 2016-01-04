@@ -53,9 +53,13 @@
 		645A016F1C37B5B800556395 /* AddAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016A1C37B5B800556395 /* AddAccountView.m */; settings = {ASSET_TAGS = (); }; };
 		645A01701C37B5B800556395 /* SelectBirthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016C1C37B5B800556395 /* SelectBirthView.m */; settings = {ASSET_TAGS = (); }; };
 		645A01711C37B5B800556395 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016E1C37B5B800556395 /* AddAccountViewController.m */; settings = {ASSET_TAGS = (); }; };
-		645A01771C37B6FD00556395 /* VerifyKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A01761C37B6FD00556395 /* VerifyKeyboardViewController.m */; settings = {ASSET_TAGS = (); }; };
 		645A01831C37C56D00556395 /* 华康娃娃体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 645A01821C37C56D00556395 /* 华康娃娃体.TTF */; settings = {ASSET_TAGS = (); }; };
 		645A01841C37C58E00556395 /* 华康娃娃体.TTF in Sources */ = {isa = PBXBuildFile; fileRef = 645A01821C37C56D00556395 /* 华康娃娃体.TTF */; };
+		645A018B1C37C9AC00556395 /* UILabel+Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A018A1C37C9AC00556395 /* UILabel+Font.m */; settings = {ASSET_TAGS = (); }; };
+		645A01901C37CB2500556395 /* ZNYSBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A018F1C37CB2500556395 /* ZNYSBaseController.m */; settings = {ASSET_TAGS = (); }; };
+		645A01931C37CB7300556395 /* VerifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A01921C37CB7300556395 /* VerifyPasswordViewController.m */; settings = {ASSET_TAGS = (); }; };
+		645A01961C37CBBF00556395 /* ZNYSBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A01951C37CBBF00556395 /* ZNYSBaseView.m */; settings = {ASSET_TAGS = (); }; };
+		645A019C1C37CEF700556395 /* VerifyPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A019B1C37CEF700556395 /* VerifyPasswordView.m */; settings = {ASSET_TAGS = (); }; };
 		6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F368F061BBCCE1700D273C9 /* IsParentViewController.m */; };
 		6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F368F071BBCCE1700D273C9 /* IsParentViewController.xib */; };
 		6F851F3F1BA9B31B0098415D /* BathItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F851F3E1BA9B31B0098415D /* BathItem.m */; };
@@ -175,9 +179,17 @@
 		645A016C1C37B5B800556395 /* SelectBirthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectBirthView.m; sourceTree = "<group>"; };
 		645A016D1C37B5B800556395 /* AddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountViewController.h; sourceTree = "<group>"; };
 		645A016E1C37B5B800556395 /* AddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountViewController.m; sourceTree = "<group>"; };
-		645A01751C37B6FD00556395 /* VerifyKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyKeyboardViewController.h; sourceTree = "<group>"; };
-		645A01761C37B6FD00556395 /* VerifyKeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyKeyboardViewController.m; sourceTree = "<group>"; };
 		645A01821C37C56D00556395 /* 华康娃娃体.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "华康娃娃体.TTF"; sourceTree = "<group>"; };
+		645A01891C37C9AC00556395 /* UILabel+Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Font.h"; sourceTree = "<group>"; };
+		645A018A1C37C9AC00556395 /* UILabel+Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Font.m"; sourceTree = "<group>"; };
+		645A018E1C37CB2500556395 /* ZNYSBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNYSBaseController.h; sourceTree = "<group>"; };
+		645A018F1C37CB2500556395 /* ZNYSBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNYSBaseController.m; sourceTree = "<group>"; };
+		645A01911C37CB7300556395 /* VerifyPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyPasswordViewController.h; sourceTree = "<group>"; };
+		645A01921C37CB7300556395 /* VerifyPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyPasswordViewController.m; sourceTree = "<group>"; };
+		645A01941C37CBBF00556395 /* ZNYSBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNYSBaseView.h; sourceTree = "<group>"; };
+		645A01951C37CBBF00556395 /* ZNYSBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNYSBaseView.m; sourceTree = "<group>"; };
+		645A019A1C37CEF700556395 /* VerifyPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyPasswordView.h; sourceTree = "<group>"; };
+		645A019B1C37CEF700556395 /* VerifyPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyPasswordView.m; sourceTree = "<group>"; };
 		683F419A9E2D0C36989BFD4A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F368F051BBCCE1700D273C9 /* IsParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsParentViewController.h; sourceTree = "<group>"; };
 		6F368F061BBCCE1700D273C9 /* IsParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsParentViewController.m; sourceTree = "<group>"; };
@@ -377,6 +389,8 @@
 		0487D7621B74548F00756EF8 /* ZNYS */ = {
 			isa = PBXGroup;
 			children = (
+				645A018C1C37CAE100556395 /* Base */,
+				645A01881C37C97100556395 /* Categories */,
 				645A01781C37BB7B00556395 /* Resource */,
 				645A01671C37B53E00556395 /* Utils */,
 				645A01651C37B51D00556395 /* Modules */,
@@ -559,6 +573,8 @@
 				645A016A1C37B5B800556395 /* AddAccountView.m */,
 				645A016B1C37B5B800556395 /* SelectBirthView.h */,
 				645A016C1C37B5B800556395 /* SelectBirthView.m */,
+				645A019A1C37CEF700556395 /* VerifyPasswordView.h */,
+				645A019B1C37CEF700556395 /* VerifyPasswordView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -568,8 +584,8 @@
 			children = (
 				645A016D1C37B5B800556395 /* AddAccountViewController.h */,
 				645A016E1C37B5B800556395 /* AddAccountViewController.m */,
-				645A01751C37B6FD00556395 /* VerifyKeyboardViewController.h */,
-				645A01761C37B6FD00556395 /* VerifyKeyboardViewController.m */,
+				645A01911C37CB7300556395 /* VerifyPasswordViewController.h */,
+				645A01921C37CB7300556395 /* VerifyPasswordViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -611,6 +627,26 @@
 			children = (
 			);
 			name = UserAccount;
+			sourceTree = "<group>";
+		};
+		645A01881C37C97100556395 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				645A01891C37C9AC00556395 /* UILabel+Font.h */,
+				645A018A1C37C9AC00556395 /* UILabel+Font.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		645A018C1C37CAE100556395 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				645A018E1C37CB2500556395 /* ZNYSBaseController.h */,
+				645A018F1C37CB2500556395 /* ZNYSBaseController.m */,
+				645A01941C37CBBF00556395 /* ZNYSBaseView.h */,
+				645A01951C37CBBF00556395 /* ZNYSBaseView.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		C4A024FD1BBE675300771969 /* settingControllers */ = {
@@ -791,21 +827,24 @@
 				45BC409C1C2469D9006A185F /* Rules.m in Sources */,
 				C43136441BC279800097A91B /* RightToLeftSegue.m in Sources */,
 				C43136411BC26CF90097A91B /* LeftToRightSegue.m in Sources */,
+				645A01931C37CB7300556395 /* VerifyPasswordViewController.m in Sources */,
 				645A01711C37B5B800556395 /* AddAccountViewController.m in Sources */,
 				C431364A1BC29A840097A91B /* NormalModeControllerViewController.m in Sources */,
 				0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */,
 				C460E0401BC509D3000608BD /* DesignModeController.m in Sources */,
 				645A016F1C37B5B800556395 /* AddAccountView.m in Sources */,
 				45BC409B1C2469D9006A185F /* Rules+CoreDataProperties.m in Sources */,
+				645A018B1C37C9AC00556395 /* UILabel+Font.m in Sources */,
 				458093991C21611E00CB9BF9 /* Model.xcdatamodeld in Sources */,
+				645A01901C37CB2500556395 /* ZNYSBaseController.m in Sources */,
 				4580946C1C23DE6400CB9BF9 /* ConnectedViewController.m in Sources */,
 				047D3D391B8A02DA00871627 /* NSArray+ForceBound.m in Sources */,
-				645A01771C37B6FD00556395 /* VerifyKeyboardViewController.m in Sources */,
 				45BC40A11C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m in Sources */,
 				45BC40A21C2469D9006A185F /* BrushingStatistics.m in Sources */,
 				C4DBC6881BC4C41F00285604 /* FeedbackPopView.m in Sources */,
 				45BC40981C2469D9006A185F /* CustomerServices.m in Sources */,
 				6F851F3F1BA9B31B0098415D /* BathItem.m in Sources */,
+				645A01961C37CBBF00556395 /* ZNYSBaseView.m in Sources */,
 				C4DC701F1BBFA0F4004AB6A7 /* DIYGoalController.m in Sources */,
 				C43BC7621BC541FF00C332DD /* IsParentToSettingSegue.m in Sources */,
 				458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */,
@@ -825,6 +864,7 @@
 				45BC409D1C2469D9006A185F /* ToothBrush+CoreDataProperties.m in Sources */,
 				041366001BAD8C9A00CD0604 /* DialogView.m in Sources */,
 				0469BFBE1BADC22F0055DF4A /* Fortune.m in Sources */,
+				645A019C1C37CEF700556395 /* VerifyPasswordView.m in Sources */,
 				0421D3791B830D0B00BF6065 /* ItemState.m in Sources */,
 				0421D3721B8126C700BF6065 /* CabinetViewController.m in Sources */,
 				458094661C23DE4100CB9BF9 /* ConnectedView.m in Sources */,
