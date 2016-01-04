@@ -60,6 +60,7 @@
 		645A01931C37CB7300556395 /* VerifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A01921C37CB7300556395 /* VerifyPasswordViewController.m */; settings = {ASSET_TAGS = (); }; };
 		645A01961C37CBBF00556395 /* ZNYSBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A01951C37CBBF00556395 /* ZNYSBaseView.m */; settings = {ASSET_TAGS = (); }; };
 		645A019C1C37CEF700556395 /* VerifyPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A019B1C37CEF700556395 /* VerifyPasswordView.m */; settings = {ASSET_TAGS = (); }; };
+		645A019F1C3A146E00556395 /* UIButton+Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A019E1C3A146E00556395 /* UIButton+Font.m */; settings = {ASSET_TAGS = (); }; };
 		6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F368F061BBCCE1700D273C9 /* IsParentViewController.m */; };
 		6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F368F071BBCCE1700D273C9 /* IsParentViewController.xib */; };
 		6F851F3F1BA9B31B0098415D /* BathItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F851F3E1BA9B31B0098415D /* BathItem.m */; };
@@ -190,6 +191,8 @@
 		645A01951C37CBBF00556395 /* ZNYSBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNYSBaseView.m; sourceTree = "<group>"; };
 		645A019A1C37CEF700556395 /* VerifyPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyPasswordView.h; sourceTree = "<group>"; };
 		645A019B1C37CEF700556395 /* VerifyPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyPasswordView.m; sourceTree = "<group>"; };
+		645A019D1C3A146E00556395 /* UIButton+Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Font.h"; sourceTree = "<group>"; };
+		645A019E1C3A146E00556395 /* UIButton+Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Font.m"; sourceTree = "<group>"; };
 		683F419A9E2D0C36989BFD4A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F368F051BBCCE1700D273C9 /* IsParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsParentViewController.h; sourceTree = "<group>"; };
 		6F368F061BBCCE1700D273C9 /* IsParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsParentViewController.m; sourceTree = "<group>"; };
@@ -634,6 +637,8 @@
 			children = (
 				645A01891C37C9AC00556395 /* UILabel+Font.h */,
 				645A018A1C37C9AC00556395 /* UILabel+Font.m */,
+				645A019D1C3A146E00556395 /* UIButton+Font.h */,
+				645A019E1C3A146E00556395 /* UIButton+Font.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -845,6 +850,7 @@
 				45BC40981C2469D9006A185F /* CustomerServices.m in Sources */,
 				6F851F3F1BA9B31B0098415D /* BathItem.m in Sources */,
 				645A01961C37CBBF00556395 /* ZNYSBaseView.m in Sources */,
+				645A019F1C3A146E00556395 /* UIButton+Font.m in Sources */,
 				C4DC701F1BBFA0F4004AB6A7 /* DIYGoalController.m in Sources */,
 				C43BC7621BC541FF00C332DD /* IsParentToSettingSegue.m in Sources */,
 				458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */,
