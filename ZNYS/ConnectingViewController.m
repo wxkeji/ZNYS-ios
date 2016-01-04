@@ -7,9 +7,9 @@
 //
 
 #import "ConnectingViewController.h"
-
+#import "ConnectingView.h"
 @interface ConnectingViewController ()
-
+@property(nonatomic,strong)ConnectingView* connectingView;
 @end
 
 @implementation ConnectingViewController
@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.view addSubview:self.connectingView];
+    self.connectingView.delegate = self;
+   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +36,19 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+#pragma mark - getter and setters
+-(ConnectingView*)connectingView
+{
+    if(!_connectingView)
+    {
+        _connectingView = [[ConnectingView alloc] init];
+    }
+    return _connectingView;
+}
+#pragma mark - Delegate methods
+-(void)returnToHome
+{
+    [self.navigationController popViewControllerAnimated:YES];
+    NSLog(@"点击返回");
+}
 @end

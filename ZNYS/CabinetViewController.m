@@ -17,7 +17,7 @@
 #import <Masonry.h>
 #import "UILabel+Font.h"
 #import "VerifyPasswordViewController.h"
-
+#import "ConnectingViewController.h"
 @interface CabinetViewController ()
 
 @property UserData *giftStatusManager;
@@ -31,6 +31,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (weak, nonatomic) IBOutlet UIButton *calendarButton;
+@property (weak, nonatomic) IBOutlet UIButton *connectToothBrushButton;
 
 - (IBAction)synchronize:(id)sender;
 
@@ -265,6 +266,7 @@
 {
     [self.calendarButton addTarget:self action:@selector(toCalendar) forControlEvents:UIControlEventTouchUpInside];
     [self.settingsButton addTarget:self action:@selector(toSetting) forControlEvents:UIControlEventTouchUpInside];
+    [self.connectToothBrushButton addTarget:self action:@selector(toConnectBrush) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)toCalendar
@@ -279,4 +281,9 @@
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
+-(void)toConnectBrush
+{
+    ConnectingViewController* cvc = [[ConnectingViewController alloc] init];
+    [self.navigationController pushViewController:cvc animated:YES];
+}
 @end//  ViewController
