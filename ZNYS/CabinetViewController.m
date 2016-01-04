@@ -16,6 +16,7 @@
 #import "ToolMacroes.h"
 #import <Masonry.h>
 #import "UILabel+Font.h"
+#import "VerifyPasswordViewController.h"
 
 @interface CabinetViewController ()
 
@@ -263,6 +264,7 @@
 - (void)initPageJumps
 {
     [self.calendarButton addTarget:self action:@selector(toCalendar) forControlEvents:UIControlEventTouchUpInside];
+    [self.settingsButton addTarget:self action:@selector(toSetting) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)toCalendar
@@ -270,6 +272,11 @@
     UIStoryboard *story=[UIStoryboard storyboardWithName:@"Calendar" bundle:nil];
     CalendarViewController *cvc = [story instantiateViewControllerWithIdentifier:@"CalendarViewController"];
     [self.navigationController pushViewController:cvc animated:YES];
+}
+
+- (void)toSetting{
+    VerifyPasswordViewController * viewController = [[VerifyPasswordViewController alloc] init];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 @end//  ViewController

@@ -18,11 +18,20 @@
         self.backgroundColor = RGBCOLOR(249, 220, 229);
         
         for (NSInteger i = 0; i < 9; i++) {
-            UIButton * numberButton = [[UIButton alloc] initWithCustomFont:20.f];
-            numberButton.frame = CGRectMake(24+i*72+i*13, 19+72*i+13*i, 72, 72);
+            UIButton * numberButton = [[UIButton alloc] initWithCustomFont:50.f];
             
+            if (i<3) {
+                numberButton.frame = CGRectMake(0.064*kSCREEN_WIDTH+(i%3)*0.192*kSCREEN_WIDTH+(i%3)*0.035*kSCREEN_WIDTH, 0.028*kSCREEN_HEIGHT, 0.192*kSCREEN_WIDTH, 0.192*kSCREEN_WIDTH);
+            }else if(i>=3&&i<6){
+            numberButton.frame = CGRectMake(0.064*kSCREEN_WIDTH+(i%3)*0.192*kSCREEN_WIDTH+(i%3)*0.035*kSCREEN_WIDTH, 0.028*kSCREEN_HEIGHT+0.108*kSCREEN_HEIGHT+0.019*kSCREEN_HEIGHT, 0.192*kSCREEN_WIDTH, 0.192*kSCREEN_WIDTH);
+            }else{
+              numberButton.frame = CGRectMake(0.064*kSCREEN_WIDTH+(i%3)*0.192*kSCREEN_WIDTH+(i%3)*0.035*kSCREEN_WIDTH, 0.028*kSCREEN_HEIGHT+0.108*kSCREEN_HEIGHT*2+0.019*kSCREEN_HEIGHT*2, 0.192*kSCREEN_WIDTH, 0.192*kSCREEN_WIDTH);
+            }
+            
+            
+            numberButton.layer.cornerRadius = 8.0f;
             numberButton.tag = i+1;
-            [numberButton setTitle:[NSString stringWithFormat:@"%ld",(long)i] forState:UIControlStateNormal];
+            [numberButton setTitle:[NSString stringWithFormat:@"%ld",(long)(i+1)] forState:UIControlStateNormal];
             [numberButton addTarget:self action:@selector(numberButtonAction:) forControlEvents:UIControlEventTouchUpInside];
             
             if ((i%2)) {

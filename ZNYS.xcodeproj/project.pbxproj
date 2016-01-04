@@ -60,6 +60,13 @@
 		645A01961C37CBBF00556395 /* ZNYSBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A01951C37CBBF00556395 /* ZNYSBaseView.m */; settings = {ASSET_TAGS = (); }; };
 		645A019C1C37CEF700556395 /* VerifyPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A019B1C37CEF700556395 /* VerifyPasswordView.m */; settings = {ASSET_TAGS = (); }; };
 		645A019F1C3A146E00556395 /* UIButton+Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A019E1C3A146E00556395 /* UIButton+Font.m */; settings = {ASSET_TAGS = (); }; };
+		647E05BF1C3A5C1D00ADB810 /* userAccount_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05BB1C3A5C1D00ADB810 /* userAccount_back@2x.png */; settings = {ASSET_TAGS = (); }; };
+		647E05C01C3A5C1D00ADB810 /* userAccount_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05BC1C3A5C1D00ADB810 /* userAccount_back@3x.png */; settings = {ASSET_TAGS = (); }; };
+		647E05C11C3A5C1D00ADB810 /* userAccount_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05BD1C3A5C1D00ADB810 /* userAccount_logo@2x.png */; settings = {ASSET_TAGS = (); }; };
+		647E05C21C3A5C1D00ADB810 /* userAccount_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05BE1C3A5C1D00ADB810 /* userAccount_logo@3x.png */; settings = {ASSET_TAGS = (); }; };
+		647E05C51C3A6B4B00ADB810 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05C41C3A6B4B00ADB810 /* SettingViewController.m */; settings = {ASSET_TAGS = (); }; };
+		647E05C81C3A6C1900ADB810 /* SettingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05C71C3A6C1900ADB810 /* SettingHeaderView.m */; settings = {ASSET_TAGS = (); }; };
+		647E05CB1C3A6C4C00ADB810 /* SettingButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05CA1C3A6C4C00ADB810 /* SettingButtonView.m */; settings = {ASSET_TAGS = (); }; };
 		6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F368F061BBCCE1700D273C9 /* IsParentViewController.m */; };
 		6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F368F071BBCCE1700D273C9 /* IsParentViewController.xib */; };
 		6F3962821C3A12C100C78F84 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F3962811C3A12C100C78F84 /* Cabinet.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -192,6 +199,16 @@
 		645A019B1C37CEF700556395 /* VerifyPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyPasswordView.m; sourceTree = "<group>"; };
 		645A019D1C3A146E00556395 /* UIButton+Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Font.h"; sourceTree = "<group>"; };
 		645A019E1C3A146E00556395 /* UIButton+Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Font.m"; sourceTree = "<group>"; };
+		647E05BB1C3A5C1D00ADB810 /* userAccount_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userAccount_back@2x.png"; sourceTree = "<group>"; };
+		647E05BC1C3A5C1D00ADB810 /* userAccount_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userAccount_back@3x.png"; sourceTree = "<group>"; };
+		647E05BD1C3A5C1D00ADB810 /* userAccount_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userAccount_logo@2x.png"; sourceTree = "<group>"; };
+		647E05BE1C3A5C1D00ADB810 /* userAccount_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userAccount_logo@3x.png"; sourceTree = "<group>"; };
+		647E05C31C3A6B4B00ADB810 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		647E05C41C3A6B4B00ADB810 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		647E05C61C3A6C1900ADB810 /* SettingHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingHeaderView.h; sourceTree = "<group>"; };
+		647E05C71C3A6C1900ADB810 /* SettingHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingHeaderView.m; sourceTree = "<group>"; };
+		647E05C91C3A6C4C00ADB810 /* SettingButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingButtonView.h; sourceTree = "<group>"; };
+		647E05CA1C3A6C4C00ADB810 /* SettingButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingButtonView.m; sourceTree = "<group>"; };
 		683F419A9E2D0C36989BFD4A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F368F051BBCCE1700D273C9 /* IsParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsParentViewController.h; sourceTree = "<group>"; };
 		6F368F061BBCCE1700D273C9 /* IsParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsParentViewController.m; sourceTree = "<group>"; };
@@ -578,6 +595,10 @@
 				645A016C1C37B5B800556395 /* SelectBirthView.m */,
 				645A019A1C37CEF700556395 /* VerifyPasswordView.h */,
 				645A019B1C37CEF700556395 /* VerifyPasswordView.m */,
+				647E05C61C3A6C1900ADB810 /* SettingHeaderView.h */,
+				647E05C71C3A6C1900ADB810 /* SettingHeaderView.m */,
+				647E05C91C3A6C4C00ADB810 /* SettingButtonView.h */,
+				647E05CA1C3A6C4C00ADB810 /* SettingButtonView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -589,6 +610,8 @@
 				645A016E1C37B5B800556395 /* AddAccountViewController.m */,
 				645A01911C37CB7300556395 /* VerifyPasswordViewController.h */,
 				645A01921C37CB7300556395 /* VerifyPasswordViewController.m */,
+				647E05C31C3A6B4B00ADB810 /* SettingViewController.h */,
+				647E05C41C3A6B4B00ADB810 /* SettingViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -628,6 +651,10 @@
 		645A017B1C37BBA600556395 /* UserAccount */ = {
 			isa = PBXGroup;
 			children = (
+				647E05BB1C3A5C1D00ADB810 /* userAccount_back@2x.png */,
+				647E05BC1C3A5C1D00ADB810 /* userAccount_back@3x.png */,
+				647E05BD1C3A5C1D00ADB810 /* userAccount_logo@2x.png */,
+				647E05BE1C3A5C1D00ADB810 /* userAccount_logo@3x.png */,
 			);
 			name = UserAccount;
 			sourceTree = "<group>";
@@ -772,13 +799,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */,
+				647E05C21C3A5C1D00ADB810 /* userAccount_logo@3x.png in Resources */,
 				0421D3711B8126C700BF6065 /* Settings.storyboard in Resources */,
 				645A01831C37C56D00556395 /* 华康娃娃体.TTF in Resources */,
+				647E05BF1C3A5C1D00ADB810 /* userAccount_back@2x.png in Resources */,
+				647E05C11C3A5C1D00ADB810 /* userAccount_logo@2x.png in Resources */,
 				041365FA1BAD8AA600CD0604 /* DialogView.xib in Resources */,
 				6F3962841C3A13E200C78F84 /* Calendar.storyboard in Resources */,
 				6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */,
 				0487D7711B74548F00756EF8 /* Images.xcassets in Resources */,
 				6F3962821C3A12C100C78F84 /* Cabinet.storyboard in Resources */,
+				647E05C01C3A5C1D00ADB810 /* userAccount_back@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,6 +885,7 @@
 				C4DC701F1BBFA0F4004AB6A7 /* DIYGoalController.m in Sources */,
 				C43BC7621BC541FF00C332DD /* IsParentToSettingSegue.m in Sources */,
 				458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */,
+				647E05CB1C3A6C4C00ADB810 /* SettingButtonView.m in Sources */,
 				45BC409A1C2469D9006A185F /* InferenceEngine.m in Sources */,
 				45BC40951C2469D9006A185F /* AreaStatistics+CoreDataProperties.m in Sources */,
 				0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */,
@@ -887,7 +919,9 @@
 				645A01701C37B5B800556395 /* SelectBirthView.m in Sources */,
 				45CE1B6F1C2BE61900C886BC /* Model.xcdatamodeld in Sources */,
 				0487D7661B74548F00756EF8 /* main.m in Sources */,
+				647E05C81C3A6C1900ADB810 /* SettingHeaderView.m in Sources */,
 				0421D3731B8126C700BF6065 /* UserData.m in Sources */,
+				647E05C51C3A6B4B00ADB810 /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

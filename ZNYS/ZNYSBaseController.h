@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ToolMacroes.h"
 #import <Masonry.h>
+#import <SVProgressHUD.h>
 #import "UILabel+Font.h"
 #import "UIButton+Font.h"
 

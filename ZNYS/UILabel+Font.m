@@ -10,10 +10,14 @@
 
 @implementation UILabel (Font)
 
-- (instancetype)initWithCustomFont:(CGFloat)size{
+- (instancetype)initWithCustomFont:(CGFloat)size isBold:(BOOL)bold{
     self = [super init];
     if (self) {
-        self.font = [UIFont fontWithName:@"DFPWaWaW5" size:size];
+//        if (!bold) {
+           self.font = [UIFont fontWithName:@"DFPWaWaW5" size:size];
+//        }else{
+//            self.font = [UIFont fontWithName:@"DFPWaWaW5-Bold" size:size];
+//        }
     }
     return self;
 }
