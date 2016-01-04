@@ -8,6 +8,7 @@
 
 #import "VerifyPasswordViewController.h"
 #import "VerifyPasswordView.h"
+#import "SettingViewController.h"
 
 @interface VerifyPasswordViewController()
 
@@ -155,7 +156,7 @@
 
 - (UILabel *)titleLabel{
     if (!_titleLabel) {
-        _titleLabel = [[UILabel alloc] initWithCustomFont:50.f isBold:YES];
+        _titleLabel = [[UILabel alloc] initWithCustomFont:50.f];
         _titleLabel.text = @"只适用于父母";
         _titleLabel.textColor = RGBCOLOR(241, 141, 172);
     }
@@ -173,7 +174,7 @@
 
 - (UILabel *)inputTipsLabel{
     if (!_inputTipsLabel) {
-        _inputTipsLabel = [[UILabel alloc]initWithCustomFont:19.f isBold:YES];
+        _inputTipsLabel = [[UILabel alloc]initWithCustomFont:19.f];
         
         NSString * first = [self changeNumberToString:[[self.tipsArray objectAtIndex:0] integerValue]];
         NSString * second = [self changeNumberToString:[[self.tipsArray objectAtIndex:1] integerValue]];
@@ -198,7 +199,8 @@
             if (self.inputArray.count == 3) {
                 BOOL isCorrect = ([[weakSelf.inputArray objectAtIndex:0] integerValue] == [[weakSelf.tipsArray objectAtIndex:0] integerValue]) && ([[weakSelf.inputArray objectAtIndex:1] integerValue] == [[weakSelf.tipsArray objectAtIndex:1] integerValue]) && ([[weakSelf.inputArray objectAtIndex:2] integerValue] == [[weakSelf.tipsArray objectAtIndex:2] integerValue]);
                 if (isCorrect) {
-                    weakSelf.logoImage.hidden = YES;
+                    SettingViewController * viewController = [[SettingViewController alloc] init];
+                    [weakSelf.navigationController pushViewController:viewController animated:YES];
                 }else{
                     [SVProgressHUD setBackgroundColor:RGBCOLOR(241, 141, 172)];
                     [SVProgressHUD showErrorWithStatus:@"输入有误，请重新输入"];

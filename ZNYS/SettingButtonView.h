@@ -8,6 +8,10 @@
 
 #import "ZNYSBaseView.h"
 
+typedef void(^ButtonClickBlock)(NSInteger tag);
+
 @interface SettingButtonView : ZNYSBaseView
+
+@property (nonatomic,copy) ButtonClickBlock buttonClickBlock;
 
 @end

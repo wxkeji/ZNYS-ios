@@ -12,6 +12,10 @@
 
 #pragma mark life cycle
 
+- (void)dealloc{
+    _buttonClickBlock = nil;
+}
+
 - (instancetype)init{
     self = [super init];
     if (self) {

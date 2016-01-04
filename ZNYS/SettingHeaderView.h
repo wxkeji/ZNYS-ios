@@ -8,6 +8,14 @@
 
 #import "ZNYSBaseView.h"
 
+typedef void(^DismissButtonBlock)();
+
+typedef void(^ThumbButtonBlock)();
+
 @interface SettingHeaderView : ZNYSBaseView
+
+@property (nonatomic,copy) DismissButtonBlock dismissButtonBlock;
+
+@property (nonatomic,copy) ThumbButtonBlock thumbButtonBlock;
 
 @end
