@@ -26,10 +26,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *stars;//屏幕上显示的星星数
 
 @property (strong,nonatomic) NSMutableDictionary *tagDict;   //保存tag的列表的词典
-
 @property (strong,nonatomic) NSMutableArray *bathItemList;  //保存浴室标志性物品
 
-- (IBAction)calendarButtonTouched:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
+@property (weak, nonatomic) IBOutlet UIButton *calendarButton;
 
 - (IBAction)synchronize:(id)sender;
 
@@ -43,6 +43,8 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    [self initPageJumps];
     
     NSArray *familyNames = [UIFont familyNames];
     for( NSString *familyName in familyNames ){
@@ -275,6 +277,20 @@
 -(void)dealloc
 {
     
+}
+
+#pragma mark - Page Jumps
+
+- (void)initPageJumps
+{
+    [self.calendarButton addTarget:self action:@selector(toCalendar) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)toCalendar
+{
+    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Calendar" bundle:nil];
+    CalendarViewController *cvc = [story instantiateViewControllerWithIdentifier:@"CalendarViewController"];
+    [self.navigationController pushViewController:cvc animated:YES];
 }
 
 @end//  ViewController
