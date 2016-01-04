@@ -26,10 +26,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *stars;//屏幕上显示的星星数
 
 @property (strong,nonatomic) NSMutableDictionary *tagDict;   //保存tag的列表的词典
-
 @property (strong,nonatomic) NSMutableArray *bathItemList;  //保存浴室标志性物品
 
-- (IBAction)calendarButtonTouched:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
+@property (weak, nonatomic) IBOutlet UIButton *calendarButton;
 
 - (IBAction)synchronize:(id)sender;
 
@@ -43,28 +43,9 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-//    
-//    NSArray *familyNames = [UIFont familyNames];
-//    for( NSString *familyName in familyNames ){
-//        printf( "Family: %s \n", [familyName UTF8String] );
-//        NSArray *fontNames = [UIFont fontNamesForFamilyName:familyName];
-//        for( NSString *fontName in fontNames ){
-//            printf( "\tFont: %s \n", [fontName UTF8String] );
-//        }
-//    }
-//    
-//    self.label = [[UILabel alloc] initWithCustomFont];
-//    self.label.text = @"测试字体";
-//
-//    [self.view addSubview:self.label];
-//    WS(weakSelf, self);
-//    [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(weakSelf.view.mas_left).with.offset(0);
-//        make.top.equalTo(weakSelf.view.mas_top).with.offset(0);
-//        make.width.mas_equalTo(100);
-//        make.height.mas_equalTo(100);
-//    }];
-//    
+    
+    [self initPageJumps];
+
     //从文件中读取数据
     
     //初始化tag字典
@@ -275,6 +256,20 @@
 -(void)dealloc
 {
     
+}
+
+#pragma mark - Page Jumps
+
+- (void)initPageJumps
+{
+    [self.calendarButton addTarget:self action:@selector(toCalendar) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)toCalendar
+{
+    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Calendar" bundle:nil];
+    CalendarViewController *cvc = [story instantiateViewControllerWithIdentifier:@"CalendarViewController"];
+    [self.navigationController pushViewController:cvc animated:YES];
 }
 
 @end//  ViewController
