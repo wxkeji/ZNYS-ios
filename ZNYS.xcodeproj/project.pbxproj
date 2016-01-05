@@ -61,6 +61,7 @@
 		645A01961C37CBBF00556395 /* ZNYSBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A01951C37CBBF00556395 /* ZNYSBaseView.m */; settings = {ASSET_TAGS = (); }; };
 		645A019C1C37CEF700556395 /* VerifyPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A019B1C37CEF700556395 /* VerifyPasswordView.m */; settings = {ASSET_TAGS = (); }; };
 		645A019F1C3A146E00556395 /* UIButton+Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A019E1C3A146E00556395 /* UIButton+Font.m */; settings = {ASSET_TAGS = (); }; };
+		647664641C3BBF0C00386E05 /* AddAccountButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 647664631C3BBF0C00386E05 /* AddAccountButton.m */; settings = {ASSET_TAGS = (); }; };
 		647E05BF1C3A5C1D00ADB810 /* userAccount_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05BB1C3A5C1D00ADB810 /* userAccount_back@2x.png */; settings = {ASSET_TAGS = (); }; };
 		647E05C01C3A5C1D00ADB810 /* userAccount_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05BC1C3A5C1D00ADB810 /* userAccount_back@3x.png */; settings = {ASSET_TAGS = (); }; };
 		647E05C11C3A5C1D00ADB810 /* userAccount_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05BD1C3A5C1D00ADB810 /* userAccount_logo@2x.png */; settings = {ASSET_TAGS = (); }; };
@@ -205,6 +206,8 @@
 		645A019B1C37CEF700556395 /* VerifyPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyPasswordView.m; sourceTree = "<group>"; };
 		645A019D1C3A146E00556395 /* UIButton+Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Font.h"; sourceTree = "<group>"; };
 		645A019E1C3A146E00556395 /* UIButton+Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Font.m"; sourceTree = "<group>"; };
+		647664621C3BBF0C00386E05 /* AddAccountButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountButton.h; sourceTree = "<group>"; };
+		647664631C3BBF0C00386E05 /* AddAccountButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountButton.m; sourceTree = "<group>"; };
 		647E05BB1C3A5C1D00ADB810 /* userAccount_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userAccount_back@2x.png"; sourceTree = "<group>"; };
 		647E05BC1C3A5C1D00ADB810 /* userAccount_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userAccount_back@3x.png"; sourceTree = "<group>"; };
 		647E05BD1C3A5C1D00ADB810 /* userAccount_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userAccount_logo@2x.png"; sourceTree = "<group>"; };
@@ -617,6 +620,8 @@
 				647E05D31C3B71E800ADB810 /* SwitchUserView.m */,
 				64337DC61C3B8DD400C9D811 /* ThumbView.h */,
 				64337DC71C3B8DD400C9D811 /* ThumbView.m */,
+				647664621C3BBF0C00386E05 /* AddAccountButton.h */,
+				647664631C3BBF0C00386E05 /* AddAccountButton.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -908,6 +913,7 @@
 				458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */,
 				647E05CB1C3A6C4C00ADB810 /* SettingButtonView.m in Sources */,
 				45BC409A1C2469D9006A185F /* InferenceEngine.m in Sources */,
+				647664641C3BBF0C00386E05 /* AddAccountButton.m in Sources */,
 				647E05CE1C3B70A500ADB810 /* UserAccountViewController.m in Sources */,
 				45BC40951C2469D9006A185F /* AreaStatistics+CoreDataProperties.m in Sources */,
 				0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */,
