@@ -8,6 +8,7 @@
 
 #import "UserAccountViewController.h"
 #import "UserDetailView.h"
+#import "SwitchUserView.h"
 
 @interface UserAccountViewController ()
 
@@ -18,6 +19,12 @@
 @property (nonatomic,strong) UILabel * titleLabel;
 
 @property (nonatomic,strong) UserDetailView * userDetailView;
+
+@property (nonatomic,strong) SwitchUserView * switchUserView;
+
+@property (nonatomic,strong) UIView * switchBackView;
+
+@property (nonatomic,strong) UILabel * switchDesLabel;
 
 @end
 
@@ -30,6 +37,9 @@
     _dismissButton = nil;
     _userDetailView = nil;
     _titleLabel = nil;
+    _switchUserView = nil;
+    _switchBackView = nil;
+    _switchDesLabel = nil;
 }
 
 - (void)viewDidLoad {
@@ -40,13 +50,16 @@
     [self.navView addSubview:self.dismissButton];
     [self.navView addSubview:self.titleLabel];
     [self.view addSubview:self.userDetailView];
+    [self.view addSubview:self.switchBackView];
+    [self.switchBackView addSubview:self.switchUserView];
+    [self.switchBackView addSubview:self.switchDesLabel];
     
     WS(weakSelf, self);
     [self.navView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.view.mas_top).with.offset(0);
         make.left.equalTo(weakSelf.view.mas_left).with.offset(0);
         make.right.equalTo(weakSelf.view.mas_right).with.offset(0);
-        make.height.mas_equalTo(0.115*kSCREEN_HEIGHT);
+        make.height.mas_equalTo(CustomHeight(75));
     }];
     
     [self.dismissButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -66,7 +79,27 @@
         make.top.equalTo(weakSelf.navView.mas_bottom).with.offset(0);
         make.left.equalTo(weakSelf.view.mas_left).with.offset(0);
         make.right.equalTo(weakSelf.view.mas_right).with.offset(0);
-        make.height.mas_equalTo(0.509*kSCREEN_HEIGHT);
+        make.height.mas_equalTo(0.459*kSCREEN_HEIGHT);
+    }];
+    
+    [self.switchUserView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.switchBackView.mas_left).with.offset(0);
+        make.right.equalTo(weakSelf.switchBackView.mas_right).with.offset(0);
+        make.top.equalTo(weakSelf.switchBackView.mas_top).with.offset(0.088*kSCREEN_HEIGHT);
+        make.height.mas_equalTo(0.3*kSCREEN_HEIGHT);
+    }];
+    
+    [self.switchBackView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.view.mas_left).with.offset(0);
+        make.right.equalTo(weakSelf.view.mas_right).with.offset(0);
+        make.top.equalTo(weakSelf.userDetailView.mas_bottom).with.offset(0);
+        make.bottom.equalTo(weakSelf.view.mas_bottom).with.offset(0);
+    }];
+    
+    [self.switchDesLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.switchBackView.mas_left).with.offset(0.072*kSCREEN_WIDTH);
+        make.top.equalTo(weakSelf.switchBackView.mas_top).with.offset(0.034*kSCREEN_HEIGHT);
+        make.height.mas_equalTo(0.03*kSCREEN_HEIGHT);
     }];
 }
 
@@ -111,6 +144,30 @@
         _userDetailView = [[UserDetailView alloc] init];
     }
     return _userDetailView;
+}
+
+- (SwitchUserView *)switchUserView{
+    if (!_switchUserView) {
+        _switchUserView = [[SwitchUserView alloc] init];
+    }
+    return _switchUserView;
+}
+
+- (UIView *)switchBackView{
+    if (!_switchBackView) {
+        _switchBackView = [[UIView alloc] init];
+        _switchBackView.backgroundColor =[UIColor whiteColor];
+    }
+    return _switchBackView;
+}
+
+- (UILabel *)switchDesLabel{
+    if (!_switchDesLabel) {
+        _switchDesLabel = [[UILabel alloc] initWithCustomFont:18.f];
+        _switchDesLabel.text = @"切换宝宝：";
+        _switchDesLabel.textColor = [UIColor blackColor];
+    }
+    return _switchDesLabel;
 }
 
 @end
