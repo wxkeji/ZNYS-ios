@@ -60,8 +60,8 @@
         [self.thumbButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(weakSelf.mas_centerX);
             make.bottom.equalTo(weakSelf.nameLabel.mas_top).with.offset(-0.015*kSCREEN_HEIGHT);
-            make.height.mas_equalTo(0.129*kSCREEN_HEIGHT);
-            make.width.mas_equalTo(0.129*kSCREEN_HEIGHT);
+            make.height.mas_equalTo(0.125*kSCREEN_HEIGHT);
+            make.width.mas_equalTo(0.125*kSCREEN_HEIGHT);
         }];
         
         [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {

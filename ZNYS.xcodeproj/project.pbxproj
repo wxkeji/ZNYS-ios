@@ -49,6 +49,7 @@
 		45BC40A11C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC408E1C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m */; };
 		45BC40A21C2469D9006A185F /* BrushingStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC40901C2469D9006A185F /* BrushingStatistics.m */; };
 		45CE1B6F1C2BE61900C886BC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45CE1B6D1C2BE61900C886BC /* Model.xcdatamodeld */; };
+		64337DC81C3B8DD400C9D811 /* ThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64337DC71C3B8DD400C9D811 /* ThumbView.m */; settings = {ASSET_TAGS = (); }; };
 		645A016F1C37B5B800556395 /* AddAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016A1C37B5B800556395 /* AddAccountView.m */; settings = {ASSET_TAGS = (); }; };
 		645A01701C37B5B800556395 /* SelectBirthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016C1C37B5B800556395 /* SelectBirthView.m */; settings = {ASSET_TAGS = (); }; };
 		645A01711C37B5B800556395 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016E1C37B5B800556395 /* AddAccountViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -67,6 +68,9 @@
 		647E05C51C3A6B4B00ADB810 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05C41C3A6B4B00ADB810 /* SettingViewController.m */; settings = {ASSET_TAGS = (); }; };
 		647E05C81C3A6C1900ADB810 /* SettingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05C71C3A6C1900ADB810 /* SettingHeaderView.m */; settings = {ASSET_TAGS = (); }; };
 		647E05CB1C3A6C4C00ADB810 /* SettingButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05CA1C3A6C4C00ADB810 /* SettingButtonView.m */; settings = {ASSET_TAGS = (); }; };
+		647E05CE1C3B70A500ADB810 /* UserAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05CD1C3B70A500ADB810 /* UserAccountViewController.m */; settings = {ASSET_TAGS = (); }; };
+		647E05D11C3B710A00ADB810 /* UserDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05D01C3B710A00ADB810 /* UserDetailView.m */; settings = {ASSET_TAGS = (); }; };
+		647E05D41C3B71E800ADB810 /* SwitchUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05D31C3B71E800ADB810 /* SwitchUserView.m */; settings = {ASSET_TAGS = (); }; };
 		6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F368F061BBCCE1700D273C9 /* IsParentViewController.m */; };
 		6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F368F071BBCCE1700D273C9 /* IsParentViewController.xib */; };
 		6F3962821C3A12C100C78F84 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F3962811C3A12C100C78F84 /* Cabinet.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -179,6 +183,8 @@
 		45BC408F1C2469D9006A185F /* BrushingStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushingStatistics.h; sourceTree = "<group>"; };
 		45BC40901C2469D9006A185F /* BrushingStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushingStatistics.m; sourceTree = "<group>"; };
 		45CE1B6E1C2BE61900C886BC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		64337DC61C3B8DD400C9D811 /* ThumbView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbView.h; sourceTree = "<group>"; };
+		64337DC71C3B8DD400C9D811 /* ThumbView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbView.m; sourceTree = "<group>"; };
 		645A01681C37B56900556395 /* ToolMacroes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolMacroes.h; sourceTree = "<group>"; };
 		645A01691C37B5B800556395 /* AddAccountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountView.h; sourceTree = "<group>"; };
 		645A016A1C37B5B800556395 /* AddAccountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountView.m; sourceTree = "<group>"; };
@@ -209,6 +215,12 @@
 		647E05C71C3A6C1900ADB810 /* SettingHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingHeaderView.m; sourceTree = "<group>"; };
 		647E05C91C3A6C4C00ADB810 /* SettingButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingButtonView.h; sourceTree = "<group>"; };
 		647E05CA1C3A6C4C00ADB810 /* SettingButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingButtonView.m; sourceTree = "<group>"; };
+		647E05CC1C3B70A500ADB810 /* UserAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAccountViewController.h; sourceTree = "<group>"; };
+		647E05CD1C3B70A500ADB810 /* UserAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAccountViewController.m; sourceTree = "<group>"; };
+		647E05CF1C3B710A00ADB810 /* UserDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailView.h; sourceTree = "<group>"; };
+		647E05D01C3B710A00ADB810 /* UserDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailView.m; sourceTree = "<group>"; };
+		647E05D21C3B71E800ADB810 /* SwitchUserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchUserView.h; sourceTree = "<group>"; };
+		647E05D31C3B71E800ADB810 /* SwitchUserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchUserView.m; sourceTree = "<group>"; };
 		683F419A9E2D0C36989BFD4A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F368F051BBCCE1700D273C9 /* IsParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsParentViewController.h; sourceTree = "<group>"; };
 		6F368F061BBCCE1700D273C9 /* IsParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsParentViewController.m; sourceTree = "<group>"; };
@@ -599,6 +611,12 @@
 				647E05C71C3A6C1900ADB810 /* SettingHeaderView.m */,
 				647E05C91C3A6C4C00ADB810 /* SettingButtonView.h */,
 				647E05CA1C3A6C4C00ADB810 /* SettingButtonView.m */,
+				647E05CF1C3B710A00ADB810 /* UserDetailView.h */,
+				647E05D01C3B710A00ADB810 /* UserDetailView.m */,
+				647E05D21C3B71E800ADB810 /* SwitchUserView.h */,
+				647E05D31C3B71E800ADB810 /* SwitchUserView.m */,
+				64337DC61C3B8DD400C9D811 /* ThumbView.h */,
+				64337DC71C3B8DD400C9D811 /* ThumbView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -612,6 +630,8 @@
 				645A01921C37CB7300556395 /* VerifyPasswordViewController.m */,
 				647E05C31C3A6B4B00ADB810 /* SettingViewController.h */,
 				647E05C41C3A6B4B00ADB810 /* SettingViewController.m */,
+				647E05CC1C3B70A500ADB810 /* UserAccountViewController.h */,
+				647E05CD1C3B70A500ADB810 /* UserAccountViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -872,6 +892,7 @@
 				645A016F1C37B5B800556395 /* AddAccountView.m in Sources */,
 				45BC409B1C2469D9006A185F /* Rules+CoreDataProperties.m in Sources */,
 				645A018B1C37C9AC00556395 /* UILabel+Font.m in Sources */,
+				647E05D41C3B71E800ADB810 /* SwitchUserView.m in Sources */,
 				645A01901C37CB2500556395 /* ZNYSBaseController.m in Sources */,
 				4580946C1C23DE6400CB9BF9 /* ConnectedViewController.m in Sources */,
 				047D3D391B8A02DA00871627 /* NSArray+ForceBound.m in Sources */,
@@ -887,6 +908,7 @@
 				458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */,
 				647E05CB1C3A6C4C00ADB810 /* SettingButtonView.m in Sources */,
 				45BC409A1C2469D9006A185F /* InferenceEngine.m in Sources */,
+				647E05CE1C3B70A500ADB810 /* UserAccountViewController.m in Sources */,
 				45BC40951C2469D9006A185F /* AreaStatistics+CoreDataProperties.m in Sources */,
 				0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */,
 				45BC40911C2469D9006A185F /* User+CoreDataProperties.m in Sources */,
@@ -915,6 +937,7 @@
 				458094691C23DE5700CB9BF9 /* ConnectingViewController.m in Sources */,
 				C4A025001BBE678000771969 /* settingIndexController.m in Sources */,
 				45BC40971C2469D9006A185F /* CustomerServices+CoreDataProperties.m in Sources */,
+				647E05D11C3B710A00ADB810 /* UserDetailView.m in Sources */,
 				45BC409F1C2469D9006A185F /* Belongings+CoreDataProperties.m in Sources */,
 				645A01701C37B5B800556395 /* SelectBirthView.m in Sources */,
 				45CE1B6F1C2BE61900C886BC /* Model.xcdatamodeld in Sources */,
@@ -922,6 +945,7 @@
 				647E05C81C3A6C1900ADB810 /* SettingHeaderView.m in Sources */,
 				0421D3731B8126C700BF6065 /* UserData.m in Sources */,
 				647E05C51C3A6B4B00ADB810 /* SettingViewController.m in Sources */,
+				64337DC81C3B8DD400C9D811 /* ThumbView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
