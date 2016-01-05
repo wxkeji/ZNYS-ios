@@ -14,17 +14,16 @@
 #import "NSArray+ForceBound.h"
 #import "DialogView.h"
 #import "ToolMacroes.h"
-#import <Masonry.h>
 #import "UILabel+Font.h"
 #import "VerifyPasswordViewController.h"
 #import "ConnectingViewController.h"
 @interface CabinetViewController ()
 
 @property UserData *giftStatusManager;
-@property (strong, nonatomic) IBOutlet UIScrollView *gloryScrollView;   //奖品柜上层，存放荣誉奖杯等
-@property (strong,nonatomic) IBOutlet UIScrollView *bathItemScrollView; //奖品柜下层，存放浴室关键物件
+@property (weak, nonatomic) IBOutlet UIScrollView *gloryScrollView;   //奖品柜上层，存放荣誉奖杯等
+@property (weak,nonatomic) IBOutlet UIScrollView *bathItemScrollView; //奖品柜下层，存放浴室关键物件
 
-@property (strong, nonatomic) IBOutlet UILabel *stars;//屏幕上显示的星星数
+@property (weak, nonatomic) IBOutlet UILabel *stars;//屏幕上显示的星星数
 
 @property (strong,nonatomic) NSMutableDictionary *tagDict;   //保存tag的列表的词典
 @property (strong,nonatomic) NSMutableArray *bathItemList;  //保存浴室标志性物品
@@ -43,23 +42,18 @@
 @implementation CabinetViewController
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
     
     [self initPageJumps];
 
-    //从文件中读取数据
-    
     //初始化tag字典
     self.tagDict = [[NSMutableDictionary alloc] init];
     
     //创建两个列表
     NSMutableArray *gloryList = [[NSMutableArray alloc] init];
     
-    //添加物品品到列表中
-    
+    //添加30个小车到列表中
     NSString *littleCar = @"小车_已兑换";
-    
     for(int i = 1;i <= 30;i++)
     {
         ItemWithState *gloryItem = [[ItemWithState alloc] initWithItemName:@"littleCar"  imageName:littleCar];
@@ -68,10 +62,7 @@
     
     
     NSArray *giftList = [gloryList copy];
-    
-    
     NSString *littleBasketball = @"小篮球_已兑换";
-    
     self.bathItemList = [[NSMutableArray alloc] init];
     for(int i = 1;i <= 30;i++)
     {
