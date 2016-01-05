@@ -175,8 +175,9 @@
         
         button.frame = [self getRectOfItemAt:(int)nx
                                    itemWidth:imgW
-                                  itemHeight:height];
-        imageView.frame = CGRectMake(0,0,imgW,height);
+                                  scrollViewHeight:height];
+        CGFloat buttonHeight = button.frame.size.height;
+        imageView.frame = CGRectMake(0,buttonHeight / 5.0,imgW,3.0 / 5 * height);
         
         [button addSubview:imageView];
         
@@ -224,14 +225,15 @@
 //奖品柜里面高度的比例为  星星：物品：星星：物品 = 1.52：6.88：1.52：6.88 。从而按照比例推算出定位的坐标
 - (CGRect)getRectOfItemAt:(int)nx
               itemWidth:(CGFloat)itemWidth
-             itemHeight:(CGFloat)itemHeight
+             scrollViewHeight:(CGFloat)scrollViewHeight
 {
     float buttonX,buttonY,buttonWidth,buttonHeight;
     buttonX = itemWidth * nx;
     //buttonY = 1.52 / 15.28 * height + 1.0 / 2 * height * ny;
     buttonY = 0;
     buttonWidth = itemWidth;
-    buttonHeight = 6.88 / (15.28 / 2) * itemHeight;
+    buttonHeight = 6.88 / (15.28 / 2) * scrollViewHeight;
+    //buttonHeight = 3.0 / 5 * scrollViewHeight;
     return CGRectMake(buttonX, buttonY, buttonWidth, buttonHeight);
 }
 
