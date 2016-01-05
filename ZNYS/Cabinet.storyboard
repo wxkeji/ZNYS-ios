@@ -209,7 +209,6 @@
                     <connections>
                         <outlet property="bathItemScrollView" destination="K9p-qk-ohK" id="YJg-Nh-iSL"/>
                         <outlet property="calendarButton" destination="kTs-nz-99L" id="tXx-ai-wZU"/>
-                        <outlet property="connectToothBrushButton" destination="Xzv-wH-yHx" id="f3E-Bb-nsJ"/>
                         <outlet property="gloryScrollView" destination="uR9-Vb-wq3" id="ZYZ-Up-px1"/>
                         <outlet property="settingsButton" destination="izw-VE-VdG" id="cbr-2Z-Kx5"/>
                         <outlet property="stars" destination="Cgh-wn-OMW" id="4SW-9P-vix"/>
