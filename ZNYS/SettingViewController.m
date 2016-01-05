@@ -9,6 +9,7 @@
 #import "SettingViewController.h"
 #import "SettingButtonView.h"
 #import "SettingHeaderView.h"
+#import "UserAccountViewController.h"
 
 @interface SettingViewController ()
 
@@ -85,7 +86,8 @@
         };
         
         _headerView.thumbButtonBlock = ^{
-           
+            UserAccountViewController * viewController = [[UserAccountViewController alloc] init];
+            [weakSelf.navigationController pushViewController:viewController animated:YES];
         };
     }
     return _headerView;
