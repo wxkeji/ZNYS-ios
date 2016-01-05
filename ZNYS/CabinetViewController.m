@@ -19,40 +19,98 @@
 #import "ConnectingViewController.h"
 @interface CabinetViewController ()
 
-@property UserData *giftStatusManager;
+#pragma mark - UI 控件的 Outlet —— 两个 ScrollView
+
 @property (weak, nonatomic) IBOutlet UIScrollView *gloryScrollView;   //奖品柜上层，存放荣誉奖杯等
 @property (weak,nonatomic) IBOutlet UIScrollView *bathItemScrollView; //奖品柜下层，存放浴室关键物件
 
-@property (weak, nonatomic) IBOutlet UILabel *stars;//屏幕上显示的星星数
+#pragma mark - UI 控件的 Outlet —— 用户状态
 
-@property (strong,nonatomic) NSMutableDictionary *tagDict;   //保存tag的列表的词典
-@property (strong,nonatomic) NSMutableArray *bathItemList;  //保存浴室标志性物品
+@property (weak, nonatomic) IBOutlet UILabel *username;
+@property (weak, nonatomic) IBOutlet UILabel *stars;//屏幕上显示的星星数
+@property (weak, nonatomic) IBOutlet UIImageView *cartoonHead;  //奖品柜上的卡通人头。。它会根据性别显示蓝色这个或者粉红色的另一个
+@property (weak, nonatomic) IBOutlet UILabel *level;
+
+#pragma mark - UI 控件的 Outlet —— 按钮
 
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (weak, nonatomic) IBOutlet UIButton *calendarButton;
 @property (weak, nonatomic) IBOutlet UIButton *connectToothBrushButton;
 
-- (IBAction)synchronize:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *bookButton;  //这个是日历按钮左边的按钮，看起来像一本书……
+
+#pragma mark - UI 控件的 Outlet —— 通知中心、广告
+
+@property (weak, nonatomic) IBOutlet UIImageView *ADBackroung;//广告位的背景图片
+@property (weak, nonatomic) IBOutlet UIImageView *advertismentLabel;//广告位Label
+
 
 //- (IBAction)settingButtonTouched:(id)sender;
 @property (strong, nonatomic) UILabel *label;
+
+#pragma mark -
+
+@property UserData *giftStatusManager;
+@property (strong,nonatomic) NSMutableDictionary *tagDict;   //保存tag的列表的词典
+@property (strong,nonatomic) NSMutableArray *bathItemList;  //保存浴室标志性物品
 
 @end
 
 @implementation CabinetViewController
 
+#pragma mark - View Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self initPageJumps];
+    [self setupCabinet];
 
+    [self.view layoutIfNeeded];
+    
+    //设置屏幕上的信息
+    self.stars.text = [[NSString alloc] initWithFormat:@"%d",self.giftStatusManager.currentValidNumberOfStars];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self setItemScrollView:self.gloryScrollView
+                   itemList:self.giftStatusManager.gloryItemList
+                     height:self.gloryScrollView.frame.size.height
+                      width:self.gloryScrollView.frame.size.width
+               itemEachPage:4 selector:@selector(itemWasTouched:) tagListName:@"gloryItemTagList"
+                   startTag:TAG_GLORY_ITEM];
+    
+    [self setItemScrollView:self.bathItemScrollView
+                   itemList:self.bathItemList
+                     height:self.bathItemScrollView.frame.size.height
+                      width:self.bathItemScrollView.frame.size.width
+               itemEachPage:4
+                   selector:@selector(itemWasTouched:)
+                tagListName:@"bathItemTagList" startTag:TAG_BATH_ITEM ];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc
+{
+    
+}
+
+#pragma mark - 设置奖品柜的数据
+
+- (void)setupCabinet
+{
     //初始化tag字典
     self.tagDict = [[NSMutableDictionary alloc] init];
     
-    //创建两个列表
+    //创建两个列表,添加若干小车到里面
     NSMutableArray *gloryList = [[NSMutableArray alloc] init];
-    
-    //添加30个小车到列表中
     NSString *littleCar = @"小车_已兑换";
     for(int i = 1;i <= 30;i++)
     {
@@ -71,39 +129,27 @@
     }
     
     UserData *userData = [[UserData alloc] initWithCurrentValidNumbersOfStars:22 gloryItemList:(NSArray *)giftList bathItemList:self.bathItemList];
-    
     self.giftStatusManager = userData;
-
-    
-    //自动适配与更新布局
-    [self.view layoutIfNeeded];
-    
-        //设置屏幕上的信息
-      self.stars.text = [[NSString alloc] initWithFormat:@"%d",self.giftStatusManager.currentValidNumberOfStars];
 }
 
-- (void)setItemScrollView:(UIScrollView *)scrollView itemList:(NSMutableArray *)giftList height:(float)height width:(float)width itemEachPage:(long)itemEachPage target:(UIViewController *)target selector:(SEL)selecor tagListName:(NSString *)tagListName startTag:(long)startTag
+- (void)setItemScrollView:(UIScrollView *)scrollView
+                 itemList:(NSMutableArray *)giftList
+                   height:(float)height
+                    width:(float)width
+             itemEachPage:(int)itemEachPage
+                 selector:(SEL)selecor
+              tagListName:(NSString *)tagListName
+                 startTag:(long)startTag
 {
     //根据奖品列表获得礼品柜的个数
-    long n = ([giftList count] - 1) / itemEachPage + 1;
+    int n = ([giftList count] - 1) / itemEachPage + 1;
     
-    //根据礼品柜的个数设置礼品柜scrollView的滚动页数
-    scrollView.contentSize = CGSizeMake(width * n, height);
+    [self initScrollView:scrollView
+               WithWidth:width
+                  height:height
+               totalPage:n];
     
-    //隐藏cabinetControlView的滚动条
-    scrollView.showsHorizontalScrollIndicator = NO;
-    scrollView.showsVerticalScrollIndicator = NO;
-    
-    //打开scrollView的弹簧效果
-    scrollView.bounces = YES;
-    
-    //scrollView额外滚动范围为零
-    scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    
-    //开启scrollView的分页
-    [scrollView setPagingEnabled:YES];
-    
-    //每个奖品的宽度为奖品柜宽度的itemEachPage分之一
+    //把奖品柜的宽度n等分
     CGFloat imgW = width / itemEachPage;
     
     NSMutableArray *tagList = [[NSMutableArray alloc] init];
@@ -112,13 +158,13 @@
     for(int i=0;i<[giftList count];i++)
     {
         //从奖品管理器中获取第i个奖品
-        ItemWithState *gws = giftList[i];
+        ItemWithState *itemWithState = giftList[i];
         
         //创建一个button和imageView，用imageView作为button的子View
         UIButton *button = [[UIButton alloc] init];
-        UIImageView *imageView = [[UIImageView alloc] init];
         
-        imageView.image = [UIImage imageNamed:gws.imageName];
+        UIImageView *imageView = [[UIImageView alloc] init];
+        imageView.image = [UIImage imageNamed:itemWithState.imageName];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         
         [button addSubview:imageView];
@@ -129,19 +175,12 @@
         nx = i;
         ny = 0;
         
-        //下面根据nx和ny进一步算出每一个奖品精确的位置
-        //奖品柜里面高度的比例为  星星：物品：星星：物品 = 1.52：6.88：1.52：6.88 。从而按照比例推算出定位的坐标
-        float buttonX,buttonY,buttonWidth,buttonHeight;
-        buttonX = imgW * nx;
-        //buttonY = 1.52 / 15.28 * height + 1.0 / 2 * height * ny;
-        buttonY = 0;
-        buttonWidth = imgW;
-        buttonHeight = 6.88 / (15.28 / 2) * height;
-        button.frame = CGRectMake(buttonX, buttonY, buttonWidth, buttonHeight);
-        imageView.frame = CGRectMake(0, 0, buttonWidth, buttonHeight);
+        button.frame = [self getRectOfItemAt:(int)nx
+                                   itemWidth:imgW
+                                  itemHeight:height];
         
         //为button添加点击事件
-        [button addTarget:target action:selecor forControlEvents:UIControlEventTouchUpInside];
+        [button addTarget:self action:selecor forControlEvents:UIControlEventTouchUpInside];
         
         //把奖品button添加到奖品柜视图
         [scrollView addSubview:button];
@@ -158,15 +197,45 @@
 
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)initScrollView:(UIScrollView *)scrollView
+             WithWidth:(CGFloat)width
+                height:(CGFloat)height
+             totalPage:(int)totalPage
 {
-    [super viewDidAppear:animated];
+    //根据礼品柜的个数设置礼品柜scrollView的滚动页数
+    scrollView.contentSize = CGSizeMake(width * totalPage, height);
     
-    [self setItemScrollView:self.gloryScrollView itemList:self.giftStatusManager.gloryItemList height:self.gloryScrollView.frame.size.height width:self.gloryScrollView.frame.size.width itemEachPage:4 target:self selector:@selector(itemWasTouched:) tagListName:@"gloryItemTagList" startTag:TAG_GLORY_ITEM];
+    //隐藏cabinetControlView的滚动条
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
     
-    [self setItemScrollView:self.bathItemScrollView itemList:self.bathItemList height:self.bathItemScrollView.frame.size.height width:self.bathItemScrollView.frame.size.width itemEachPage:4 target:self selector:@selector(itemWasTouched:) tagListName:@"bathItemTagList" startTag:TAG_BATH_ITEM ];
+    //打开scrollView的弹簧效果
+    scrollView.bounces = YES;
+    
+    //scrollView额外滚动范围为零
+    scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    
+    //开启scrollView的分页
+    [scrollView setPagingEnabled:YES];
 }
 
+//根据nx和ny进一步算出每一个奖品精确的位置
+//奖品柜里面高度的比例为  星星：物品：星星：物品 = 1.52：6.88：1.52：6.88 。从而按照比例推算出定位的坐标
+- (CGRect)getRectOfItemAt:(int)nx
+              itemWidth:(CGFloat)itemWidth
+             itemHeight:(CGFloat)itemHeight
+{
+    float buttonX,buttonY,buttonWidth,buttonHeight;
+    buttonX = itemWidth * nx;
+    //buttonY = 1.52 / 15.28 * height + 1.0 / 2 * height * ny;
+    buttonY = 0;
+    buttonWidth = itemWidth;
+    buttonHeight = 6.88 / (15.28 / 2) * itemHeight;
+    return CGRectMake(buttonX, buttonY, buttonWidth, buttonHeight);
+}
+
+
+#pragma mark - 事件响应函数
 
 //响应item的点击事件
 - (void) itemWasTouched:(id)sender
@@ -222,36 +291,7 @@
     NSLog(@"Tag not found");
 }
 
-- (IBAction)calendarButtonTouched:(id)sender {
-    CalendarViewController *cvc = [[CalendarViewController alloc] init];
-    [self.view.window addSubview:cvc.view];
-    [self.view.window sendSubviewToBack:self.view];
-}
-
-- (IBAction)synchronize:(id)sender
-{
-    
-}
-//
-//- (IBAction)settingButtonTouched:(id)sender {
-//    IsParentViewController *ipvc = [[IsParentViewController alloc] init];
-//    [self.view.window addSubview:ipvc.view];
-//    [self.view.window sendSubviewToBack:self.view];
-//}
-- (IBAction)unwindSegue:(UIStoryboardSegue *)sender{
-   
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
--(void)dealloc
-{
-    
-}
-
-#pragma mark - Page Jumps
+#pragma mark - 页面跳转
 
 - (void)initPageJumps
 {
@@ -277,4 +317,21 @@
     ConnectingViewController* cvc = [[ConnectingViewController alloc] init];
     [self.navigationController pushViewController:cvc animated:YES];
 }
+
+#pragma mark - 历史遗留代码
+
+- (IBAction)synchronize:(id)sender
+{
+    
+}
+//
+//- (IBAction)settingButtonTouched:(id)sender {
+//    IsParentViewController *ipvc = [[IsParentViewController alloc] init];
+//    [self.view.window addSubview:ipvc.view];
+//    [self.view.window sendSubviewToBack:self.view];
+//}
+- (IBAction)unwindSegue:(UIStoryboardSegue *)sender{
+    
+}
+
 @end//  ViewController

@@ -199,7 +199,8 @@
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="0.26274509800000001" green="0.73725490199999999" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact">
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="24" y="0.0" width="34" height="21"/>
                                             <mask key="constraints">
                                                 <exclude reference="axZ-Wn-BjE"/>
                                                 <exclude reference="ys2-Dm-jrh"/>
@@ -550,12 +551,18 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="ADBackroung" destination="ZoT-eC-V2w" id="oO4-mr-GDU"/>
+                        <outlet property="advertismentLabel" destination="ZoT-eC-V2w" id="pCq-GM-Het"/>
                         <outlet property="bathItemScrollView" destination="K9p-qk-ohK" id="YJg-Nh-iSL"/>
+                        <outlet property="bookButton" destination="7Qp-Oe-nU0" id="jxt-vt-84d"/>
                         <outlet property="calendarButton" destination="kTs-nz-99L" id="tXx-ai-wZU"/>
+                        <outlet property="cartoonHead" destination="Ahj-MN-x6B" id="csN-Kf-zg1"/>
                         <outlet property="connectToothBrushButton" destination="Xzv-wH-yHx" id="f3E-Bb-nsJ"/>
                         <outlet property="gloryScrollView" destination="uR9-Vb-wq3" id="ZYZ-Up-px1"/>
+                        <outlet property="level" destination="NiC-AY-YMC" id="sbc-Yg-xn0"/>
                         <outlet property="settingsButton" destination="izw-VE-VdG" id="cbr-2Z-Kx5"/>
                         <outlet property="stars" destination="Cgh-wn-OMW" id="4SW-9P-vix"/>
+                        <outlet property="username" destination="zwv-pm-Uew" id="J5U-Ye-fSI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LIh-15-beM" sceneMemberID="firstResponder"/>
