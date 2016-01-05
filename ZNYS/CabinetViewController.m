@@ -142,7 +142,7 @@
                  startTag:(long)startTag
 {
     //根据奖品列表获得礼品柜的个数
-    int n = ([giftList count] - 1) / itemEachPage + 1;
+    long n = ([giftList count] - 1) / itemEachPage + 1;
     
     [self initScrollView:scrollView
                WithWidth:width
@@ -167,8 +167,6 @@
         imageView.image = [UIImage imageNamed:itemWithState.imageName];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         
-        [button addSubview:imageView];
-        
         // nx 和 ny表示在 4 * 2 的奖品方阵中中的位置
         //根据奖品在奖品奖品列表中的位置i算出它在4 * 2方阵中的对应位置
         int nx,ny;
@@ -178,6 +176,9 @@
         button.frame = [self getRectOfItemAt:(int)nx
                                    itemWidth:imgW
                                   itemHeight:height];
+        imageView.frame = CGRectMake(0,0,imgW,height);
+        
+        [button addSubview:imageView];
         
         //为button添加点击事件
         [button addTarget:self action:selecor forControlEvents:UIControlEventTouchUpInside];
@@ -200,7 +201,7 @@
 - (void)initScrollView:(UIScrollView *)scrollView
              WithWidth:(CGFloat)width
                 height:(CGFloat)height
-             totalPage:(int)totalPage
+             totalPage:(long)totalPage
 {
     //根据礼品柜的个数设置礼品柜scrollView的滚动页数
     scrollView.contentSize = CGSizeMake(width * totalPage, height);
