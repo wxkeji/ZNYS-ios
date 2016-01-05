@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol ConnectingViewDelegate<NSObject>
+-(void)returnToHome;
+@end
 @interface ConnectingView : UIView
-
+@property(nonatomic,strong)id<ConnectingViewDelegate>delegate;
 @end
