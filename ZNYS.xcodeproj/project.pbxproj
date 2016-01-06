@@ -48,34 +48,40 @@
 		45BC40A01C2469D9006A185F /* Belongings.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC408C1C2469D9006A185F /* Belongings.m */; };
 		45BC40A11C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC408E1C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m */; };
 		45BC40A21C2469D9006A185F /* BrushingStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC40901C2469D9006A185F /* BrushingStatistics.m */; };
+		45BD638A1C3BEA5400132EA9 /* BCBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 45BD63841C3BEA5400132EA9 /* BCBackground.png */; };
+		45BD638B1C3BEA5400132EA9 /* BCButtomPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 45BD63851C3BEA5400132EA9 /* BCButtomPattern.png */; };
+		45BD638C1C3BEA5400132EA9 /* BCProgress_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 45BD63861C3BEA5400132EA9 /* BCProgress_fill.png */; };
+		45BD638D1C3BEA5400132EA9 /* BCProgressEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = 45BD63871C3BEA5400132EA9 /* BCProgressEmpty.png */; };
+		45BD638E1C3BEA5400132EA9 /* BCTopBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 45BD63881C3BEA5400132EA9 /* BCTopBar.png */; };
+		45BD638F1C3BEA5400132EA9 /* BCTopBarReturnButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 45BD63891C3BEA5400132EA9 /* BCTopBarReturnButton.png */; };
 		45CE1B6F1C2BE61900C886BC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45CE1B6D1C2BE61900C886BC /* Model.xcdatamodeld */; };
-		64337DC81C3B8DD400C9D811 /* ThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64337DC71C3B8DD400C9D811 /* ThumbView.m */; settings = {ASSET_TAGS = (); }; };
-		645A016F1C37B5B800556395 /* AddAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016A1C37B5B800556395 /* AddAccountView.m */; settings = {ASSET_TAGS = (); }; };
-		645A01701C37B5B800556395 /* SelectBirthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016C1C37B5B800556395 /* SelectBirthView.m */; settings = {ASSET_TAGS = (); }; };
-		645A01711C37B5B800556395 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016E1C37B5B800556395 /* AddAccountViewController.m */; settings = {ASSET_TAGS = (); }; };
-		645A01831C37C56D00556395 /* 华康娃娃体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 645A01821C37C56D00556395 /* 华康娃娃体.TTF */; settings = {ASSET_TAGS = (); }; };
+		64337DC81C3B8DD400C9D811 /* ThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64337DC71C3B8DD400C9D811 /* ThumbView.m */; };
+		645A016F1C37B5B800556395 /* AddAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016A1C37B5B800556395 /* AddAccountView.m */; };
+		645A01701C37B5B800556395 /* SelectBirthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016C1C37B5B800556395 /* SelectBirthView.m */; };
+		645A01711C37B5B800556395 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016E1C37B5B800556395 /* AddAccountViewController.m */; };
+		645A01831C37C56D00556395 /* 华康娃娃体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 645A01821C37C56D00556395 /* 华康娃娃体.TTF */; };
 		645A01841C37C58E00556395 /* 华康娃娃体.TTF in Sources */ = {isa = PBXBuildFile; fileRef = 645A01821C37C56D00556395 /* 华康娃娃体.TTF */; };
-		645A018B1C37C9AC00556395 /* UILabel+Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A018A1C37C9AC00556395 /* UILabel+Font.m */; settings = {ASSET_TAGS = (); }; };
-		645A01901C37CB2500556395 /* ZNYSBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A018F1C37CB2500556395 /* ZNYSBaseController.m */; settings = {ASSET_TAGS = (); }; };
-		645A01931C37CB7300556395 /* VerifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A01921C37CB7300556395 /* VerifyPasswordViewController.m */; settings = {ASSET_TAGS = (); }; };
-		645A01961C37CBBF00556395 /* ZNYSBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A01951C37CBBF00556395 /* ZNYSBaseView.m */; settings = {ASSET_TAGS = (); }; };
-		645A019C1C37CEF700556395 /* VerifyPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A019B1C37CEF700556395 /* VerifyPasswordView.m */; settings = {ASSET_TAGS = (); }; };
-		645A019F1C3A146E00556395 /* UIButton+Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A019E1C3A146E00556395 /* UIButton+Font.m */; settings = {ASSET_TAGS = (); }; };
-		647664641C3BBF0C00386E05 /* AddAccountButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 647664631C3BBF0C00386E05 /* AddAccountButton.m */; settings = {ASSET_TAGS = (); }; };
-		647E05BF1C3A5C1D00ADB810 /* userAccount_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05BB1C3A5C1D00ADB810 /* userAccount_back@2x.png */; settings = {ASSET_TAGS = (); }; };
-		647E05C01C3A5C1D00ADB810 /* userAccount_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05BC1C3A5C1D00ADB810 /* userAccount_back@3x.png */; settings = {ASSET_TAGS = (); }; };
-		647E05C11C3A5C1D00ADB810 /* userAccount_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05BD1C3A5C1D00ADB810 /* userAccount_logo@2x.png */; settings = {ASSET_TAGS = (); }; };
-		647E05C21C3A5C1D00ADB810 /* userAccount_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05BE1C3A5C1D00ADB810 /* userAccount_logo@3x.png */; settings = {ASSET_TAGS = (); }; };
-		647E05C51C3A6B4B00ADB810 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05C41C3A6B4B00ADB810 /* SettingViewController.m */; settings = {ASSET_TAGS = (); }; };
-		647E05C81C3A6C1900ADB810 /* SettingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05C71C3A6C1900ADB810 /* SettingHeaderView.m */; settings = {ASSET_TAGS = (); }; };
-		647E05CB1C3A6C4C00ADB810 /* SettingButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05CA1C3A6C4C00ADB810 /* SettingButtonView.m */; settings = {ASSET_TAGS = (); }; };
-		647E05CE1C3B70A500ADB810 /* UserAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05CD1C3B70A500ADB810 /* UserAccountViewController.m */; settings = {ASSET_TAGS = (); }; };
-		647E05D11C3B710A00ADB810 /* UserDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05D01C3B710A00ADB810 /* UserDetailView.m */; settings = {ASSET_TAGS = (); }; };
-		647E05D41C3B71E800ADB810 /* SwitchUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05D31C3B71E800ADB810 /* SwitchUserView.m */; settings = {ASSET_TAGS = (); }; };
+		645A018B1C37C9AC00556395 /* UILabel+Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A018A1C37C9AC00556395 /* UILabel+Font.m */; };
+		645A01901C37CB2500556395 /* ZNYSBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A018F1C37CB2500556395 /* ZNYSBaseController.m */; };
+		645A01931C37CB7300556395 /* VerifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A01921C37CB7300556395 /* VerifyPasswordViewController.m */; };
+		645A01961C37CBBF00556395 /* ZNYSBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A01951C37CBBF00556395 /* ZNYSBaseView.m */; };
+		645A019C1C37CEF700556395 /* VerifyPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A019B1C37CEF700556395 /* VerifyPasswordView.m */; };
+		645A019F1C3A146E00556395 /* UIButton+Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A019E1C3A146E00556395 /* UIButton+Font.m */; };
+		647664641C3BBF0C00386E05 /* AddAccountButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 647664631C3BBF0C00386E05 /* AddAccountButton.m */; };
+		647E05BF1C3A5C1D00ADB810 /* userAccount_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05BB1C3A5C1D00ADB810 /* userAccount_back@2x.png */; };
+		647E05C01C3A5C1D00ADB810 /* userAccount_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05BC1C3A5C1D00ADB810 /* userAccount_back@3x.png */; };
+		647E05C11C3A5C1D00ADB810 /* userAccount_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05BD1C3A5C1D00ADB810 /* userAccount_logo@2x.png */; };
+		647E05C21C3A5C1D00ADB810 /* userAccount_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05BE1C3A5C1D00ADB810 /* userAccount_logo@3x.png */; };
+		647E05C51C3A6B4B00ADB810 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05C41C3A6B4B00ADB810 /* SettingViewController.m */; };
+		647E05C81C3A6C1900ADB810 /* SettingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05C71C3A6C1900ADB810 /* SettingHeaderView.m */; };
+		647E05CB1C3A6C4C00ADB810 /* SettingButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05CA1C3A6C4C00ADB810 /* SettingButtonView.m */; };
+		647E05CE1C3B70A500ADB810 /* UserAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05CD1C3B70A500ADB810 /* UserAccountViewController.m */; };
+		647E05D11C3B710A00ADB810 /* UserDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05D01C3B710A00ADB810 /* UserDetailView.m */; };
+		647E05D41C3B71E800ADB810 /* SwitchUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05D31C3B71E800ADB810 /* SwitchUserView.m */; };
 		6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F368F061BBCCE1700D273C9 /* IsParentViewController.m */; };
 		6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F368F071BBCCE1700D273C9 /* IsParentViewController.xib */; };
-		6F3962821C3A12C100C78F84 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F3962811C3A12C100C78F84 /* Cabinet.storyboard */; settings = {ASSET_TAGS = (); }; };
-		6F3962841C3A13E200C78F84 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F3962831C3A13E200C78F84 /* Calendar.storyboard */; settings = {ASSET_TAGS = (); }; };
+		6F3962821C3A12C100C78F84 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F3962811C3A12C100C78F84 /* Cabinet.storyboard */; };
+		6F3962841C3A13E200C78F84 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F3962831C3A13E200C78F84 /* Calendar.storyboard */; };
 		6F851F3F1BA9B31B0098415D /* BathItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F851F3E1BA9B31B0098415D /* BathItem.m */; };
 		6FC69C131BBC4DBD0074C38E /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */; };
 		840ACE02D000AED2E3D3E8A8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 683F419A9E2D0C36989BFD4A /* libPods.a */; };
@@ -183,6 +189,12 @@
 		45BC408E1C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BrushingStatistics+CoreDataProperties.m"; sourceTree = "<group>"; };
 		45BC408F1C2469D9006A185F /* BrushingStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushingStatistics.h; sourceTree = "<group>"; };
 		45BC40901C2469D9006A185F /* BrushingStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushingStatistics.m; sourceTree = "<group>"; };
+		45BD63841C3BEA5400132EA9 /* BCBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCBackground.png; sourceTree = "<group>"; };
+		45BD63851C3BEA5400132EA9 /* BCButtomPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCButtomPattern.png; sourceTree = "<group>"; };
+		45BD63861C3BEA5400132EA9 /* BCProgress_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCProgress_fill.png; sourceTree = "<group>"; };
+		45BD63871C3BEA5400132EA9 /* BCProgressEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCProgressEmpty.png; sourceTree = "<group>"; };
+		45BD63881C3BEA5400132EA9 /* BCTopBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCTopBar.png; sourceTree = "<group>"; };
+		45BD63891C3BEA5400132EA9 /* BCTopBarReturnButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCTopBarReturnButton.png; sourceTree = "<group>"; };
 		45CE1B6E1C2BE61900C886BC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		64337DC61C3B8DD400C9D811 /* ThumbView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbView.h; sourceTree = "<group>"; };
 		64337DC71C3B8DD400C9D811 /* ThumbView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbView.m; sourceTree = "<group>"; };
@@ -566,6 +578,19 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
+		45BD63831C3BEA4400132EA9 /* BrushConnecting */ = {
+			isa = PBXGroup;
+			children = (
+				45BD63841C3BEA5400132EA9 /* BCBackground.png */,
+				45BD63851C3BEA5400132EA9 /* BCButtomPattern.png */,
+				45BD63861C3BEA5400132EA9 /* BCProgress_fill.png */,
+				45BD63871C3BEA5400132EA9 /* BCProgressEmpty.png */,
+				45BD63881C3BEA5400132EA9 /* BCTopBar.png */,
+				45BD63891C3BEA5400132EA9 /* BCTopBarReturnButton.png */,
+			);
+			name = BrushConnecting;
+			sourceTree = "<group>";
+		};
 		63353D4AB29EDC413AD1EB41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -668,6 +693,7 @@
 		645A017A1C37BBA000556395 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				45BD63831C3BEA4400132EA9 /* BrushConnecting */,
 				645A017B1C37BBA600556395 /* UserAccount */,
 			);
 			name = Image;
@@ -827,11 +853,17 @@
 				647E05C21C3A5C1D00ADB810 /* userAccount_logo@3x.png in Resources */,
 				0421D3711B8126C700BF6065 /* Settings.storyboard in Resources */,
 				645A01831C37C56D00556395 /* 华康娃娃体.TTF in Resources */,
+				45BD638A1C3BEA5400132EA9 /* BCBackground.png in Resources */,
 				647E05BF1C3A5C1D00ADB810 /* userAccount_back@2x.png in Resources */,
 				647E05C11C3A5C1D00ADB810 /* userAccount_logo@2x.png in Resources */,
+				45BD638C1C3BEA5400132EA9 /* BCProgress_fill.png in Resources */,
+				45BD638D1C3BEA5400132EA9 /* BCProgressEmpty.png in Resources */,
+				45BD638B1C3BEA5400132EA9 /* BCButtomPattern.png in Resources */,
 				041365FA1BAD8AA600CD0604 /* DialogView.xib in Resources */,
 				6F3962841C3A13E200C78F84 /* Calendar.storyboard in Resources */,
 				6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */,
+				45BD638F1C3BEA5400132EA9 /* BCTopBarReturnButton.png in Resources */,
+				45BD638E1C3BEA5400132EA9 /* BCTopBar.png in Resources */,
 				0487D7711B74548F00756EF8 /* Images.xcassets in Resources */,
 				6F3962821C3A12C100C78F84 /* Cabinet.storyboard in Resources */,
 				647E05C01C3A5C1D00ADB810 /* userAccount_back@3x.png in Resources */,
