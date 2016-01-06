@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *starsOwned;
 @property (nullable, nonatomic, retain) NSNumber *tokenOwned;
 @property (nullable, nonatomic, retain) NSString *uuid;
+@property (nullable, nonatomic, retain) NSString *birthday;
 @property (nullable, nonatomic, retain) CustomerServices *beViewedByCustomerService;
 @property (nullable, nonatomic, retain) NSSet<Award *> *possessAwards;
 @property (nullable, nonatomic, retain) NSSet<Belongings *> *possessBelongings;

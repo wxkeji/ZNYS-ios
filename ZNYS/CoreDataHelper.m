@@ -145,7 +145,7 @@ NSString* storeFilename = @"database.sqlite";
 #pragma mark - test methods,can be deleted anytime
 
 
--(User*)createUserWithBirthday:(NSString*)birthday
+-(NSString*)createUserWithBirthday:(NSString*)birthday
                    gender:(NSString*)gender
                  nickName:(NSString*)nickName
 {
@@ -157,7 +157,8 @@ NSString* storeFilename = @"database.sqlite";
     NSTimeInterval timeInterval = [now timeIntervalSinceDate:birthDate];
     double age = timeInterval/(60*60*24*365);//当前多少岁（年）
     
-    user.age = [NSString stringWithFormat:@"%d",age];
+    user.age = [NSString stringWithFormat:@"%f",age];
+    user.birthday = birthday;
     user.cycleCountOfHighestLevel = @0;
     user.gender = gender;
     user.level = @0;
@@ -167,7 +168,7 @@ NSString* storeFilename = @"database.sqlite";
     user.tokenOwned = @0;
     user.uuid = [[NSUUID UUID] UUIDString];
     [self save];
-    return user;
+    return user.uuid;
 }
 -(NSArray*)retrieveUsers:(NSPredicate*)predicate
 {
@@ -182,6 +183,7 @@ NSString* storeFilename = @"database.sqlite";
    {
        return YES;
    }
+    else
     return NO;
 }
 @end

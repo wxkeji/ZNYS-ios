@@ -26,5 +26,5 @@
 @dynamic possessAwards;
 @dynamic possessBelongings;
 @dynamic possessToothBrushes;
-
+@dynamic birthday;
 @end

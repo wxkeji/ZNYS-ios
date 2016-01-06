@@ -25,4 +25,40 @@
     }
     else return nil;
 }
++(NSString*)currentUserName
+{
+    return [self currentUser].nickName;
+}
++(NSString*)currentUserBirthday
+{
+    return [self currentUser].birthday;
+}
++(NSNumber*)currentUserCycleCountOfHighestLevel
+{
+    return [self currentUser].cycleCountOfHighestLevel;
+}
++(NSString*)currentUserGender
+{
+    return [self currentUser].gender;
+}
++(NSNumber*)currentUserLevel
+{
+    return [self currentUser].level;
+}
++(NSNumber*)currentUserPhotoNumber
+{
+    return [self currentUser].photoNumber;
+}
++(NSNumber*)currentUserStarsOwned
+{
+    return [self currentUser].starsOwned;
+}
++(NSNumber*)currentUserTokenOwned
+{
+    return [self currentUser].tokenOwned;
+}
++(NSString*)currentUserUUID
+{
+    return [self currentUser].uuid;
+}
 @end

@@ -85,6 +85,7 @@
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birthday" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cycleCountOfHighestLevel" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isCurrentUser" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -110,6 +111,6 @@
         <element name="Picture" positionX="-612" positionY="164" width="128" height="88"/>
         <element name="Rules" positionX="279" positionY="-295" width="128" height="133"/>
         <element name="ToothBrush" positionX="-153" positionY="2" width="128" height="148"/>
-        <element name="User" positionX="-351" positionY="-144" width="128" height="253"/>
+        <element name="User" positionX="-351" positionY="-144" width="128" height="270"/>
     </elements>
 </model>

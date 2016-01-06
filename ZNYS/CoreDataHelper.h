@@ -22,7 +22,7 @@
 - (void)loadStore;
 - (void)save;
 //对于Core Data里的实体类，请勿直接用 [[Class alloc]init]的方法生成实例。若要获取新的实例，请调用createXX方法，或者用retrieveXXX的方法来获取已经存储的实例。predicate参数指定筛选条件，若将全部数据取出，设置其为Nil，在NSArray中返回数据库中得所有实例。
--(User*)createUserWithBirthday:(NSString*)birthday
+-(NSString*)createUserWithBirthday:(NSString*)birthday
                         gender:(NSString*)gender
                       nickName:(NSString*)nickName;
 -(NSArray*)retrieveUsers:(NSPredicate*)predicate;
