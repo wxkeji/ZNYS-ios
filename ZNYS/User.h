@@ -17,6 +17,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 // Insert code here to declare functionality of your managed object subclass
 +(User*)currentUser;
++(NSString*)currentUserName;
++(NSString*)currentUserBirthday;
++(NSNumber*)currentUserCycleCountOfHighestLevel;
++(NSString*)currentUserGender;
++(NSNumber*)currentUserLevel;
++(NSNumber*)currentUserPhotoNumber;
++(NSNumber*)currentUserStarsOwned;
++(NSNumber*)currentUserTokenOwned;
++(NSString*)currentUserUUID;
 @end
 
 NS_ASSUME_NONNULL_END
