@@ -34,8 +34,10 @@
         [self.window makeKeyAndVisible];
     }
     
-   // [[CoreDataHelper sharedInstance] createUserWithBirthday:@"1995-03-27" gender:@"boy" nickName:@"嘿嘿嘿"];
     
+//    [[CoreDataHelper sharedInstance] createUserWithBirthday:@"1995-03-27" gender:@"boy" nickName:@"嘿嘿嘿"];
+    NSLog(@"是否有用户：%hhd",[[CoreDataHelper sharedInstance] whetherThereIsUser]);
+
     return YES;
 }
 

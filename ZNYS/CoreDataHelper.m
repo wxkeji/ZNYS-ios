@@ -177,7 +177,8 @@ NSString* storeFilename = @"database.sqlite";
 }
 -(BOOL)whetherThereIsUser
 {
-   if( ![self retrieveUsers:nil][0])
+    NSArray* result = [self retrieveUsers:nil];
+   if([self retrieveUsers:nil].count)
    {
        return YES;
    }
