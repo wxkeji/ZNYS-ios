@@ -13,6 +13,7 @@
 @property(strong,nonatomic)UIButton* returnButton;
 @property(strong,nonatomic)UIImageView* backgroundView;
 @property(strong,nonatomic)UIImageView* topBarView;
+@property(strong,nonatomic)UIProgressView* progressView;
 @end
 @implementation ConnectingView
 
@@ -31,6 +32,7 @@
         [self addSubview:self.backgroundView];
         [self addSubview:self.topBarView];
         [self addSubview:self.returnButton];
+        [self addSubview:self.progressView];
     }
     return self;
 }
@@ -45,11 +47,11 @@
 {
     if(!_returnButton)
     {
-        self.returnButton   = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.returnButton setBackgroundImage:[UIImage imageNamed:@"BCTopBarReturnButton"] forState:UIControlStateNormal];
-        [self.returnButton sizeToFit];
-        [self.returnButton setFrame:CGRectMake(25, 30, 30, 30)];
-        [self.returnButton addTarget:self action:@selector(returnToHome) forControlEvents:UIControlEventTouchUpInside];
+        _returnButton   = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_returnButton setBackgroundImage:[UIImage imageNamed:@"BCTopBarReturnButton"] forState:UIControlStateNormal];
+        [_returnButton sizeToFit];
+        [_returnButton setFrame:CGRectMake(25,kSCREEN_WIDTH*154/750-42,30,30)];
+        [_returnButton addTarget:self action:@selector(returnToHome) forControlEvents:UIControlEventTouchUpInside];
     }
     return _returnButton;
 }
@@ -57,8 +59,8 @@
 {
     if(!_backgroundView)
     {
-        self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BCBackground"]];
-        [self.backgroundView setFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT)];
+        _backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BCBackground"]];
+        [_backgroundView setFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT)];
     }
     return _backgroundView;
 }
@@ -66,9 +68,20 @@
 {
     if(!_topBarView)
     {
-        self.topBarView     = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BCTopBar"]];
-        [self.topBarView setFrame:CGRectMake(0, 0, kSCREEN_WIDTH, 75)];
+        _topBarView     = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BCTopBar"]];
+        [_topBarView setFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_WIDTH*154/750)];
     }
     return _topBarView;
+}
+-(UIProgressView*)progressView
+{
+    if(!_progressView)
+    {
+        _progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+        [_progressView setFrame:CGRectMake(40, kSCREEN_HEIGHT - 150, 3000, 3005)];
+//        _progressView.progressImage = [UIImage imageNamed:@"BCProgress_fill"];
+//        _progressView.trackImage = [UIImage imageNamed:@"BCProgressEmpty"];
+    }
+    return _progressView;
 }
 @end

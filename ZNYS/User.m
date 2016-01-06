@@ -11,9 +11,18 @@
 #import "Belongings.h"
 #import "CustomerServices.h"
 #import "ToothBrush.h"
-
+#import "CoreDataHelper.h"
 @implementation User
 
 // Insert code here to add functionality to your managed object subclass
-
++(User*)currentUser
+{
+    NSString* uuid =   [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserUID"];
+    if(uuid)
+    {
+        User* user =   [[CoreDataHelper sharedInstance] retrieveUsers:[NSPredicate predicateWithFormat:@"uuid = %@",uuid]][0];
+        return user;
+    }
+    else return nil;
+}
 @end
