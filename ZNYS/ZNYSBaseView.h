@@ -12,6 +12,7 @@
 #import <SVProgressHUD.h>
 #import "UILabel+Font.h"
 #import "UIButton+Font.h"
+#import "UITextField+Font.h"
 
 @interface ZNYSBaseView : UIView
 

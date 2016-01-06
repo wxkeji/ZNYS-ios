@@ -91,7 +91,7 @@
 
 - (UILabel *)titleLabel{
     if (!_titleLabel) {
-        _titleLabel = [[UILabel alloc] initWithCustomFont:27.f];
+        _titleLabel = [[UILabel alloc] initWithCustomFont:25.f];
         _titleLabel.text = @"设置";
         _titleLabel.textColor = [UIColor blackColor];
     }
@@ -119,7 +119,7 @@
 
 - (UILabel *)nameLabel{
     if (!_nameLabel) {
-        _nameLabel = [[UILabel alloc] initWithCustomFont:27.f];
+        _nameLabel = [[UILabel alloc] initWithCustomFont:25.f];
         _nameLabel.text = @"果果";
         _nameLabel.textColor = [UIColor whiteColor];
     }

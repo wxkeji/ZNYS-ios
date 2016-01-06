@@ -11,6 +11,7 @@
 #import <Masonry.h>
 #import <SVProgressHUD.h>
 #import "UILabel+Font.h"
+#import "UITextField+Font.h"
 #import "UIButton+Font.h"
 
 @interface ZNYSBaseController : UIViewController

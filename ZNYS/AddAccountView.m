@@ -9,6 +9,9 @@
 #import "AddAccountView.h"
 #import <Masonry.h>
 #import "ToolMacroes.h"
+#import "UITextField+Font.h"
+#import "UIButton+Font.h"
+#import "UILabel+Font.h"
 
 @interface AddAccountView()
 
@@ -17,6 +20,8 @@
 @property (nonatomic,strong) UILabel * nameLabel;
 
 @property (nonatomic,strong) UILabel * chooseBirthLabel;
+
+@property (nonatomic,strong) UIButton * dismissButton;
 
 @end
 
@@ -33,6 +38,8 @@
     _nameTextField = nil;
     _birthButton = nil;
     _delegate = nil;
+    _titleLabel = nil;
+    _dismissButton = nil;
 }
 
 - (instancetype)init{
@@ -40,73 +47,85 @@
     if (self) {
         self.backgroundColor = [UIColor blueColor];
         
-        UIView * bgView = [[UIView alloc] init];
-        bgView.backgroundColor = [UIColor clearColor];
+//        UIView * bgView = [[UIView alloc] init];
+//        bgView.backgroundColor = [UIColor clearColor];
         
         [self addSubview:self.chooseThumbLabel];
         [self addSubview:self.nameLabel];
         [self addSubview:self.chooseBirthLabel];
-        [self addSubview:bgView];
-        [bgView addSubview:self.boysButton];
-        [bgView addSubview:self.girlsButton];
+//        [self addSubview:bgView];
+        [self addSubview:self.boysButton];
+        [self addSubview:self.girlsButton];
         [self addSubview:self.nameTextField];
         [self addSubview:self.birthButton];
+        [self addSubview:self.titleLabel];
+        [self addSubview:self.dismissButton];
         
         WS(weakSelf, self);
         [self.chooseThumbLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(weakSelf.mas_left).with.offset(25);
-            make.top.equalTo(weakSelf.mas_top).with.offset(30);
-            make.width.mas_equalTo(100);
-            make.height.mas_equalTo(25);
+            make.left.equalTo(weakSelf.mas_left).with.offset(CustomWidth(33));
+            make.top.equalTo(weakSelf.mas_top).with.offset(CustomHeight(160));
+            make.height.mas_equalTo(CustomHeight(31));
         }];
         
         [self.boysButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(bgView.mas_left).with.offset(5);
-            make.top.equalTo(bgView.mas_top).with.offset(10);
-            make.width.mas_equalTo(50);
-            make.height.mas_equalTo(50);
+            make.left.equalTo(weakSelf.chooseThumbLabel.mas_right).with.offset(CustomWidth(16));
+            make.centerY.mas_equalTo(weakSelf.chooseThumbLabel.mas_centerY);
+            make.width.mas_equalTo(CustomWidth(105));
+            make.height.mas_equalTo(CustomHeight(105));
         }];
         
         [self.girlsButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(bgView.mas_right).with.offset(-5);
+            make.left.equalTo(weakSelf.boysButton.mas_right).with.offset(CustomWidth(16));
             make.centerY.mas_equalTo(weakSelf.boysButton.mas_centerY);
-            make.width.mas_equalTo(50);
-            make.height.mas_equalTo(50);
+            make.width.mas_equalTo(CustomWidth(105));
+            make.height.mas_equalTo(CustomHeight(105));
         }];
         
-        [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(weakSelf.mas_right).with.offset(-20);
-            make.centerY.mas_equalTo(weakSelf.chooseThumbLabel.mas_centerY);
-            make.height.mas_equalTo(70);
-            make.width.mas_equalTo(120);
-        }];
+//        [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.right.equalTo(weakSelf.mas_right).with.offset(-20);
+//            make.centerY.mas_equalTo(weakSelf.chooseThumbLabel.mas_centerY);
+//            make.height.mas_equalTo(70);
+//            make.width.mas_equalTo(120);
+//        }];
         
         [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(weakSelf.mas_left).with.offset(25);
-            make.centerY.mas_equalTo(weakSelf.mas_centerY);
-            make.height.mas_equalTo(25);
-            make.width.mas_equalTo(40);
+            make.left.equalTo(weakSelf.mas_left).with.offset(CustomWidth(33));
+            make.top.equalTo(weakSelf.chooseThumbLabel.mas_bottom).with.offset(CustomHeight(74));
+            make.height.mas_equalTo(CustomHeight(31));
         }];
         
         [self.nameTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(weakSelf.mas_right).with.offset(-25);
+            make.left.equalTo(weakSelf.nameLabel.mas_right).with.offset(CustomWidth(16));
             make.centerY.mas_equalTo(weakSelf.nameLabel.mas_centerY);
-            make.height.mas_equalTo(25);
-            make.width.mas_equalTo(110);
+            make.height.mas_equalTo(CustomHeight(43));
+            make.width.mas_equalTo(CustomWidth(227));
         }];
         
         [self.chooseBirthLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(weakSelf.mas_left).with.offset(25);
-            make.bottom.equalTo(weakSelf.mas_bottom).with.offset(-30);
-            make.height.mas_equalTo(25);
-            make.width.mas_equalTo(40);
+            make.left.equalTo(weakSelf.mas_left).with.offset(CustomWidth(33));
+            make.top.equalTo(weakSelf.nameLabel.mas_bottom).with.offset(CustomHeight(37));
+            make.height.mas_equalTo(CustomHeight(31));
         }];
         
         [self.birthButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(weakSelf.mas_right).with.offset(-25);
+            make.left.equalTo(weakSelf.chooseBirthLabel.mas_right).with.offset(CustomWidth(16));
             make.centerY.mas_equalTo(weakSelf.chooseBirthLabel.mas_centerY);
-            make.height.mas_equalTo(25);
-            make.width.mas_equalTo(110);
+            make.height.mas_equalTo(CustomHeight(43));
+            make.width.mas_equalTo(CustomWidth(227));
+        }];
+        
+        [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(weakSelf.mas_top).with.offset(CustomHeight(32.5));
+            make.centerX.mas_equalTo(weakSelf.mas_centerX);
+            make.height.mas_equalTo(CustomHeight(29));
+        }];
+        
+        [self.dismissButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(weakSelf.mas_left).with.offset(CustomWidth(24));
+            make.centerY.mas_equalTo(weakSelf.titleLabel.mas_centerY);
+            make.width.mas_equalTo(CustomWidth(32.5));
+            make.height.mas_equalTo(CustomHeight(32.5));
         }];
     }
     return self;
@@ -120,6 +139,10 @@
 
 - (void)birthButtonAction{
     [self.delegate showPickerView];
+}
+
+- (void)dismissButtonAction{
+    [self.delegate dismissButtonAction];
 }
 
 #pragma mark getters and setters
@@ -150,10 +173,10 @@
 
 - (UITextField *)nameTextField{
     if (!_nameTextField) {
-        _nameTextField = [[UITextField alloc] init];
-        _nameTextField.font = [UIFont systemFontOfSize:15.f];
-        _nameTextField.placeholder = @"请输入昵称";
+        _nameTextField = [[UITextField alloc] initWithCustomFont:22.f];
+//        _nameTextField.placeholder = @"请输入昵称";
         _nameTextField.textAlignment = NSTextAlignmentCenter;
+        _nameTextField.textColor = [UIColor whiteColor];
         _nameTextField.backgroundColor = [UIColor redColor];
     }
     return _nameTextField;
@@ -161,9 +184,8 @@
 
 - (UIButton *)birthButton{
     if (!_birthButton) {
-        _birthButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _birthButton.titleLabel.font = [UIFont systemFontOfSize:13.f];
-        [_birthButton setTitle:@"请选择生日" forState:UIControlStateNormal];
+        _birthButton = [[UIButton alloc] initWithCustomFont:22.f];
+    //    [_birthButton setTitle:@"请选择生日" forState:UIControlStateNormal];
         [_birthButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_birthButton setBackgroundColor:[UIColor redColor]];
         [_birthButton addTarget:self action:@selector(birthButtonAction) forControlEvents:UIControlEventTouchUpInside];
@@ -173,32 +195,46 @@
 
 - (UILabel *)chooseBirthLabel{
     if (!_chooseBirthLabel) {
-        _chooseBirthLabel = [[UILabel alloc] init];
-        _chooseBirthLabel.text = @"生日";
+        _chooseBirthLabel = [[UILabel alloc] initWithCustomFont:20.f];
+        _chooseBirthLabel.text = @"生日：";
         _chooseBirthLabel.textColor = [UIColor whiteColor];
-        _chooseBirthLabel.font = [UIFont systemFontOfSize:15.f];
     }
     return _chooseBirthLabel;
 }
 
 - (UILabel *)chooseThumbLabel{
     if (!_chooseThumbLabel) {
-        _chooseThumbLabel = [[UILabel alloc]init];
-        _chooseThumbLabel.text = @"选择头像颜色";
+        _chooseThumbLabel = [[UILabel alloc]initWithCustomFont:20.f];
+        _chooseThumbLabel.text = @"头像：";
         _chooseThumbLabel.textColor = [UIColor whiteColor];
-        _chooseThumbLabel.font = [UIFont systemFontOfSize:15.f];
     }
     return _chooseThumbLabel;
 }
 
 - (UILabel *)nameLabel{
     if (!_nameLabel) {
-        _nameLabel = [[UILabel alloc] init];
-        _nameLabel.text = @"昵称";
+        _nameLabel = [[UILabel alloc] initWithCustomFont:20.f];
+        _nameLabel.text = @"昵称：";
         _nameLabel.textColor = [UIColor whiteColor];
-        _nameLabel.font = [UIFont systemFontOfSize:15.f];
     }
     return _nameLabel;
+}
+
+- (UILabel *)titleLabel{
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc] initWithCustomFont:23.f];
+        _titleLabel.textColor = [UIColor whiteColor];
+    }
+    return _titleLabel;
+}
+
+- (UIButton *)dismissButton{
+    if (!_dismissButton) {
+        _dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_dismissButton setImage:[UIImage imageNamed:@"userAccount_back"] forState:UIControlStateNormal];
+        [_dismissButton addTarget:self action:@selector(dismissButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _dismissButton;
 }
 
 @end

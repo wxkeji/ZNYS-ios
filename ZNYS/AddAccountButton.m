@@ -52,7 +52,7 @@
 #pragma mark event action
 
 - (void)addButtonAction{
-    
+    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"AddUserActionDidPost" object:nil]];
 }
 
 #pragma mark getters and setters

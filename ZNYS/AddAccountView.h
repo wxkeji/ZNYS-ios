@@ -14,6 +14,8 @@
 
 - (void)showPickerView;
 
+- (void)dismissButtonAction;
+
 @end
 
 @interface AddAccountView : UIView
@@ -27,5 +29,7 @@
 @property (nonatomic,strong) UIButton * birthButton;
 
 @property (nonatomic,strong) id<ChooseThumbDelegate> delegate;
+
+@property (nonatomic,strong) UILabel * titleLabel;
 
 @end

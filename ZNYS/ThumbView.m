@@ -15,6 +15,7 @@
 - (void)dealloc{
     _nameLabel = nil;
     _thumbButton = nil;
+    
 }
 
 - (instancetype)init{

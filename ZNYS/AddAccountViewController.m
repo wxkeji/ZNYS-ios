@@ -14,8 +14,6 @@
 
 @interface AddAccountViewController ()
 
-@property (nonatomic,strong) AddAccountView * addAccountView;
-
 @property (nonatomic,strong) UIButton * addButton;
 
 @property (nonatomic,strong) UIButton * backgroundButton;
@@ -51,20 +49,21 @@
     [self.view addSubview:self.addAccountView];
     [self.view addSubview:self.addButton];
     [self.view addSubview:self.selectView];
+
     
     WS(weakSelf, self);
     [self.addAccountView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(weakSelf.view.mas_centerX);
-        make.centerY.mas_equalTo(weakSelf.view.mas_centerY);
-        make.height.mas_equalTo(200);
-        make.width.mas_equalTo(300);
+        make.top.equalTo(weakSelf.view.mas_top).with.offset(0);
+        make.left.equalTo(weakSelf.view.mas_left).with.offset(0);
+        make.right.equalTo(weakSelf.view.mas_right).with.offset(0);
+        make.height.mas_equalTo(CustomHeight(430.5));
     }];
     
     [self.addButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(weakSelf.view.mas_bottom).with.offset(-60);
+        make.top.equalTo(weakSelf.addAccountView.mas_bottom).with.offset(CustomHeight(51));
         make.centerX.mas_equalTo(weakSelf.view.mas_centerX);
-        make.width.mas_equalTo(60);
-        make.height.mas_equalTo(60);
+        make.width.mas_equalTo(CustomWidth(117));
+        make.height.mas_equalTo(CustomHeight(117));
     }];
     
 }
@@ -189,6 +188,10 @@
     }];
 }
 
+- (void)dismissButtonAction{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma mark event action
 
 - (void)addButtonAction{
@@ -210,6 +213,15 @@
         _addAccountView = [[AddAccountView alloc] init];
         _addAccountView.nameTextField.delegate = self;
         _addAccountView.delegate = self;
+        
+        if (self.style == 0) {
+            _addAccountView.titleLabel.text = @"修改用户";
+        }else{
+            _addAccountView.titleLabel.text = @"添加新用户";
+            _addAccountView.nameTextField.placeholder = @"宝宝";
+            [_addAccountView.nameTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+            [_addAccountView.birthButton setTitle:@"1996-01-01" forState:UIControlStateNormal];
+        }
     }
     return _addAccountView;
 }
