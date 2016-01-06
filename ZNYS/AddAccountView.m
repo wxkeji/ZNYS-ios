@@ -21,8 +21,6 @@
 
 @property (nonatomic,strong) UILabel * chooseBirthLabel;
 
-@property (nonatomic,strong) UIButton * dismissButton;
-
 @end
 
 @implementation AddAccountView
