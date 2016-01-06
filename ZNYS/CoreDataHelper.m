@@ -151,7 +151,7 @@ NSString* storeFilename = @"database.sqlite";
 {
     User* user =  [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat: @"yyyy-MM-dd"];
+    [dateFormatter setDateFormat: @"yyyy-mm-dd"];
     NSDate *birthDate= [dateFormatter dateFromString:birthday];
     NSDate *now = [NSDate date];
     NSTimeInterval timeInterval = [now timeIntervalSinceDate:birthDate];
@@ -177,10 +177,11 @@ NSString* storeFilename = @"database.sqlite";
 }
 -(BOOL)whetherThereIsUser
 {
-   if( ![self retrieveUsers:nil][0])
+   if([self retrieveUsers:nil][0])
    {
        return YES;
    }
+    else
     return NO;
 }
 @end

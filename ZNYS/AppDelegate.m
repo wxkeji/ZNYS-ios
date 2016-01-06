@@ -24,8 +24,8 @@
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     
+    NSLog(@"Users existence:%hhd",[[CoreDataHelper sharedInstance] whetherThereIsUser]);
     
-    [[CoreDataHelper sharedInstance] createUserWithBirthday:@"1995-03-27" gender:@"boy" nickName:@"嘿嘿嘿"];
     
     return YES;
 }

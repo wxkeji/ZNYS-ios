@@ -23,6 +23,10 @@
         User* user =   [[CoreDataHelper sharedInstance] retrieveUsers:[NSPredicate predicateWithFormat:@"uuid = %@",uuid]][0];
         return user;
     }
-    else return nil;
+    else
+    {
+        NSLog(@"获取当前用户失败，User.m, line28");
+        return nil;
+    }
 }
 @end
