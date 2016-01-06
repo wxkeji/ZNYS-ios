@@ -11,6 +11,9 @@
 #import "AppDelegate.h"
 #import "SelectBirthView.h"
 #import "ToolMacroes.h"
+#import "CoreDataHelper.h"
+#import <SVProgressHUD.h>
+#import "CabinetViewController.h"
 
 @interface AddAccountViewController ()
 
@@ -195,7 +198,27 @@
 #pragma mark event action
 
 - (void)addButtonAction{
-  
+    
+    NSString * gender = [[NSString alloc]init];
+    if (self.addAccountView.boysButton.selected) {
+        gender = @"boy";
+    }else{
+        gender = @"girl";
+    }
+    
+     [[CoreDataHelper sharedInstance] createUserWithBirthday:self.addAccountView.birthButton.titleLabel.text gender:gender nickName:self.addAccountView.nameTextField.text];
+    if (self.style == 0) {
+        [SVProgressHUD showInfoWithStatus:@"修改成功"];
+        [self.navigationController popViewControllerAnimated:YES];
+    }else if(self.style == 1){
+        [SVProgressHUD showInfoWithStatus:@"添加用户成功"];
+        UIStoryboard * storyBoard = [UIStoryboard storyboardWithName:@"Cabinet" bundle:[NSBundle mainBundle]];
+        CabinetViewController * viewController = [storyBoard instantiateViewControllerWithIdentifier:@"CabinetViewController"];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }else{
+        [SVProgressHUD showInfoWithStatus:@"修改成功"];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)dismiss{
@@ -221,6 +244,10 @@
             _addAccountView.nameTextField.placeholder = @"宝宝";
             [_addAccountView.nameTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
             [_addAccountView.birthButton setTitle:@"1996-01-01" forState:UIControlStateNormal];
+        }
+        
+        if (self.style == 1) {
+            _addAccountView.dismissButton.hidden = YES;
         }
     }
     return _addAccountView;

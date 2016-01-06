@@ -32,4 +32,6 @@
 
 @property (nonatomic,strong) UILabel * titleLabel;
 
+@property (nonatomic,strong) UIButton * dismissButton;
+
 @end

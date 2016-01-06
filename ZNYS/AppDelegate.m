@@ -10,6 +10,7 @@
 #import "CoreDataHelper.h"
 #import "User.h"
 #import "CabinetViewController.h"
+#import "AddAccountViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -18,14 +19,22 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     UIStoryboard * storyBoard = [UIStoryboard storyboardWithName:@"Cabinet" bundle:[NSBundle mainBundle]];
-    CabinetViewController * viewController = [storyBoard instantiateViewControllerWithIdentifier:@"CabinetViewController"];
-    UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:viewController];
-    nav.navigationBarHidden = YES;
-    self.window.rootViewController = nav;
-    [self.window makeKeyAndVisible];
+    if ([[CoreDataHelper sharedInstance] whetherThereIsUser]) {
+        CabinetViewController * viewController = [storyBoard instantiateViewControllerWithIdentifier:@"CabinetViewController"];
+         UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:viewController];
+        nav.navigationBarHidden = YES;
+        self.window.rootViewController = nav;
+        [self.window makeKeyAndVisible];
+    }else{
+        AddAccountViewController * viewController = [[AddAccountViewController alloc] init];
+        viewController.style = 1;
+         UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:viewController];
+        nav.navigationBarHidden = YES;
+        self.window.rootViewController = nav;
+        [self.window makeKeyAndVisible];
+    }
     
-    
-    [[CoreDataHelper sharedInstance] createUserWithBirthday:@"1995-03-27" gender:@"boy" nickName:@"嘿嘿嘿"];
+   // [[CoreDataHelper sharedInstance] createUserWithBirthday:@"1995-03-27" gender:@"boy" nickName:@"嘿嘿嘿"];
     
     return YES;
 }
