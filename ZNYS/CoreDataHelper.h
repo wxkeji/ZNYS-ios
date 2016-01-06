@@ -26,4 +26,5 @@
                         gender:(NSString*)gender
                       nickName:(NSString*)nickName;
 -(NSArray*)retrieveUsers:(NSPredicate*)predicate;
+-(BOOL)whetherThereIsUser;
 @end
