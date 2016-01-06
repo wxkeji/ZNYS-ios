@@ -157,7 +157,7 @@ NSString* storeFilename = @"database.sqlite";
     NSTimeInterval timeInterval = [now timeIntervalSinceDate:birthDate];
     double age = timeInterval/(60*60*24*365);//当前多少岁（年）
     
-    user.age = [NSString stringWithFormat:@"%d",age];
+    user.age = [NSString stringWithFormat:@"%f",age];
     user.cycleCountOfHighestLevel = @0;
     user.gender = gender;
     user.level = @0;

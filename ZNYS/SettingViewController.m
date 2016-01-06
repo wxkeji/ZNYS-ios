@@ -10,6 +10,7 @@
 #import "SettingButtonView.h"
 #import "SettingHeaderView.h"
 #import "UserAccountViewController.h"
+#import "CabinetViewController.h"
 
 @interface SettingViewController ()
 
@@ -82,7 +83,12 @@
         
         WS(weakSelf, self);
         _headerView.dismissButtonBlock = ^{
-            [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+            for (UIViewController * viewController in weakSelf.navigationController.viewControllers) {
+                if ([viewController isKindOfClass:[CabinetViewController class]]) {
+                    [weakSelf.navigationController popToViewController:viewController animated:YES];
+                }
+            }
+            
         };
         
         _headerView.thumbButtonBlock = ^{
