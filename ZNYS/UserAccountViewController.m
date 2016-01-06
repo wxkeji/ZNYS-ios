@@ -7,6 +7,7 @@
 //
 
 #import "UserAccountViewController.h"
+#import "AddAccountViewController.h"
 #import "UserDetailView.h"
 #import "SwitchUserView.h"
 
@@ -40,6 +41,8 @@
     _switchUserView = nil;
     _switchBackView = nil;
     _switchDesLabel = nil;
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad {
@@ -53,6 +56,8 @@
     [self.view addSubview:self.switchBackView];
     [self.switchBackView addSubview:self.switchUserView];
     [self.switchBackView addSubview:self.switchDesLabel];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jumpToAddUserAccount) name:@"AddUserActionDidPost" object:nil];
     
     WS(weakSelf, self);
     [self.navView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -105,6 +110,16 @@
 
 #pragma mark private method
 
+- (void)jumpToAddUserAccount{
+    AddAccountViewController * viewController = [[AddAccountViewController alloc] init];
+//    viewController.addAccountView.titleLabel.text = @"添加新用户";
+//    viewController.addAccountView.nameTextField.placeholder = @"宝宝";
+//    [viewController.addAccountView.nameTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+//    [viewController.addAccountView.birthButton setTitle:@"1996-01-01" forState:UIControlStateNormal];
+    viewController.style = 2;
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
 #pragma mark event action
 
 - (void)dismissButtonAction{
@@ -142,6 +157,14 @@
 - (UserDetailView *)userDetailView{
     if (!_userDetailView) {
         _userDetailView = [[UserDetailView alloc] init];
+        
+        WS(weakSelf, self);
+        _userDetailView.modifyButtonBlock = ^{
+            AddAccountViewController * viewController = [[AddAccountViewController alloc] init];
+//            viewController.addAccountView.titleLabel.text = @"修改用户";
+            viewController.style = 0;
+            [weakSelf.navigationController pushViewController:viewController animated:YES];
+        };
     }
     return _userDetailView;
 }

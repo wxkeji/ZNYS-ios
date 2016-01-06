@@ -33,7 +33,7 @@
         [self addSubview:self.certifyButton];
         
         NSMutableArray * years = [[NSMutableArray alloc]init];
-        for (NSInteger i = 2006; i <= 2016; i++) {
+        for (NSInteger i = 1996; i <= 2016; i++) {
             [years addObject:[NSString stringWithFormat:@"%ld",(long)i]];
         }
         

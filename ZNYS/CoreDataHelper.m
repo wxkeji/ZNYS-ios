@@ -175,4 +175,12 @@ NSString* storeFilename = @"database.sqlite";
     [request setPredicate:predicate];
     return [self.context executeFetchRequest:request error:nil];
 }
+-(BOOL)whetherThereIsUser
+{
+   if( ![self retrieveUsers:nil][0])
+   {
+       return YES;
+   }
+    return NO;
+}
 @end

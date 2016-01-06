@@ -6,7 +6,7 @@
 //  Copyright © 2015 Woodseen. All rights reserved.
 //
 
-#define debug 0//1 for opening debug mode(output logs) 0 fot closing
+#define debug 1//1 for opening debug mode(output logs) 0 fot closing
 #define checkDatabase 1//如果想查看数据库里的内容，把它设置为1，否则设置为0
 
 #import <Foundation/Foundation.h>
@@ -26,4 +26,5 @@
                         gender:(NSString*)gender
                       nickName:(NSString*)nickName;
 -(NSArray*)retrieveUsers:(NSPredicate*)predicate;
+-(BOOL)whetherThereIsUser;
 @end

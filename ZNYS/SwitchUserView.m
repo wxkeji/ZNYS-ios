@@ -31,7 +31,6 @@
         
         NSInteger count = self.dataArray.count+1;
        
-        
         for (NSInteger i = 0; i<count; i++) {
 //            if (i<count-1) {
 //                ThumbView * thumbView = [[ThumbView alloc] init];
@@ -53,6 +52,7 @@
                 if (i<count-1) {
                     ThumbView * thumbView = [[ThumbView alloc] init];
                     thumbView.frame = CGRectMake(0.068*kSCREEN_WIDTH+i*viewWidth+i*0.033*kSCREEN_WIDTH, 0, viewWidth, 0.15*kSCREEN_HEIGHT);
+                    thumbView.thumbButton.tag = i;
                     thumbView.nameLabel.text = [[self.dataArray objectAtIndex:i] objectForKey:@"name"];
                     if ([[[self.dataArray objectAtIndex:i] objectForKey:@"thumb"] isEqualToString:@"boy"]) {
                         [thumbView.thumbButton setBackgroundColor:[UIColor blueColor]];
@@ -70,6 +70,7 @@
                 if (i<count-1) {
                     ThumbView * thumbView = [[ThumbView alloc] init];
                     thumbView.frame = CGRectMake(0.068*kSCREEN_WIDTH+i*viewWidth+i*0.033*kSCREEN_WIDTH, 0, viewWidth, 0.15*kSCREEN_HEIGHT);
+                    thumbView.thumbButton.tag = i;
                     thumbView.nameLabel.text = [[self.dataArray objectAtIndex:i] objectForKey:@"name"];
                     if ([[[self.dataArray objectAtIndex:i] objectForKey:@"thumb"] isEqualToString:@"boy"]) {
                         [thumbView.thumbButton setBackgroundColor:[UIColor blueColor]];
@@ -87,6 +88,7 @@
                 if (i<count-2) {
                     ThumbView * thumbView = [[ThumbView alloc] init];
                     thumbView.frame = CGRectMake(0.068*kSCREEN_WIDTH+i*viewWidth+i*0.033*kSCREEN_WIDTH, 0, viewWidth, 0.15*kSCREEN_HEIGHT);
+                    thumbView.thumbButton.tag = i;
                     thumbView.nameLabel.text = [[self.dataArray objectAtIndex:i] objectForKey:@"name"];
                     if ([[[self.dataArray objectAtIndex:i] objectForKey:@"thumb"] isEqualToString:@"boy"]) {
                         [thumbView.thumbButton setBackgroundColor:[UIColor blueColor]];
@@ -97,6 +99,7 @@
                 }else if(i == (count-2)){
                     ThumbView * thumbView = [[ThumbView alloc] init];
                     thumbView.frame = CGRectMake(0.068*kSCREEN_WIDTH, 0.15*kSCREEN_HEIGHT, viewWidth, 0.15*kSCREEN_HEIGHT);
+                    thumbView.thumbButton.tag = i;
                     thumbView.nameLabel.text = [[self.dataArray objectAtIndex:i] objectForKey:@"name"];
                     if ([[[self.dataArray objectAtIndex:i] objectForKey:@"thumb"] isEqualToString:@"boy"]) {
                         [thumbView.thumbButton setBackgroundColor:[UIColor blueColor]];
@@ -104,10 +107,6 @@
                         [thumbView.thumbButton setBackgroundColor:[UIColor redColor]];
                     }
                     [self addSubview:thumbView];
-                }else{
-                    AddAccountButton * addView = [[AddAccountButton alloc] init];
-                    addView.frame = CGRectMake(0.068*kSCREEN_WIDTH+viewWidth+0.033*kSCREEN_WIDTH, 0.15*kSCREEN_HEIGHT, viewWidth, 0.15*kSCREEN_HEIGHT);
-                    [self addSubview:addView];
                 }
             }
         }
@@ -124,7 +123,7 @@
         [_dataArray addObject:@{@"name":@"阿花",@"thumb":@"girl"}];
         [_dataArray addObject:@{@"name":@"阿花",@"thumb":@"boy"}];
         [_dataArray addObject:@{@"name":@"阿花",@"thumb":@"boy"}];
-        [_dataArray addObject:@{@"name":@"阿花",@"thumb":@"boy"}];
+       // [_dataArray addObject:@{@"name":@"阿花",@"thumb":@"boy"}];
     }
     return _dataArray;
 }
