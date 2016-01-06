@@ -206,18 +206,39 @@
         gender = @"girl";
     }
     
-     [[CoreDataHelper sharedInstance] createUserWithBirthday:self.addAccountView.birthButton.titleLabel.text gender:gender nickName:self.addAccountView.nameTextField.text];
-    if (self.style == 0) {
-        [SVProgressHUD showInfoWithStatus:@"修改成功"];
-        [self.navigationController popViewControllerAnimated:YES];
-    }else if(self.style == 1){
-        [SVProgressHUD showInfoWithStatus:@"添加用户成功"];
-        UIStoryboard * storyBoard = [UIStoryboard storyboardWithName:@"Cabinet" bundle:[NSBundle mainBundle]];
-        CabinetViewController * viewController = [storyBoard instantiateViewControllerWithIdentifier:@"CabinetViewController"];
-        [self.navigationController pushViewController:viewController animated:YES];
+    NSString * name = [[NSString alloc] init];
+    if (self.addAccountView.nameTextField.text.length) {
+        name = self.addAccountView.nameTextField.text;
     }else{
-        [SVProgressHUD showInfoWithStatus:@"修改成功"];
-        [self.navigationController popViewControllerAnimated:YES];
+        name = @"宝宝";
+    }
+    
+     NSString * uid = [[CoreDataHelper sharedInstance] createUserWithBirthday:self.addAccountView.birthButton.titleLabel.text gender:gender nickName:name];
+    if (self.style == 0) {
+//        if (uid) {
+//            [SVProgressHUD showInfoWithStatus:@"修改成功"];
+//            [self.navigationController popViewControllerAnimated:YES];
+//        }
+    }else if(self.style == 1){
+        if (uid) {
+             [[NSUserDefaults standardUserDefaults]setObject:uid forKey:@"currentUserUID"];
+            
+            [SVProgressHUD showInfoWithStatus:@"添加用户成功"];
+            UIStoryboard * storyBoard = [UIStoryboard storyboardWithName:@"Cabinet" bundle:[NSBundle mainBundle]];
+            CabinetViewController * viewController = [storyBoard instantiateViewControllerWithIdentifier:@"CabinetViewController"];
+            [self.navigationController pushViewController:viewController animated:YES];
+        }else{
+           [SVProgressHUD showInfoWithStatus:@"添加用户失败，请重试"];
+        }
+    }else{
+        if (uid) {
+            [[NSUserDefaults standardUserDefaults]setObject:uid forKey:@"currentUserUID"];
+
+            [SVProgressHUD showInfoWithStatus:@"添加用户成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }else{
+         [SVProgressHUD showInfoWithStatus:@"添加用户失败，请重试"];
+        }
     }
 }
 
