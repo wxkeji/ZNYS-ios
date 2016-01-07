@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(NSNumber*)currentUserTokenOwned;
 +(NSString*)currentUserUUID;
 +(NSInteger)currentUsersNumberOfToothBushes;
+
 @end
 
 NS_ASSUME_NONNULL_END

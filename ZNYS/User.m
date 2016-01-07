@@ -61,6 +61,7 @@
 {
     return [self currentUser].uuid;
 }
+
 +(NSInteger)currentUsersNumberOfToothBushes
 {
     return [self currentUser].possessToothBrushes.count;
