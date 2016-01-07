@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   MetalList.plist
+   ZNYS
+
+   Created by Ellise on 16/1/7.
+   Copyright (c) 2016年 Woodseen. All rights reserved.
+-->
+<plist version="1.0"><array><dict><key>Level1</key><dict><key>title</key><array><string>Level1 Object</string></array><key>description</key><array><string>Level1 Description</string></array></dict></dict><dict><key>Level2</key><dict><key>title</key><array><string>Level2 Object</string></array><key>description</key><array><string>Level2 Description</string></array></dict></dict><dict><key>Level3</key><dict><key>title</key><array><string>Level3 Object</string></array><key>description</key><array><string>Level3 Description</string></array></dict></dict><dict><key>Level4</key><dict><key>title</key><array><string>Level4 Object</string></array><key>description</key><array><string>Level4 Description</string></array></dict></dict><dict><key>Level5</key><dict><key>title</key><array><string>Level5 Object</string></array><key>description</key><array><string>Level5 Description</string></array></dict></dict><dict><key>Level6</key><dict><key>title</key><array><string>Level6 Object</string></array><key>description</key><array><string>Level6 Description</string></array></dict></dict><dict><key>Level7</key><dict><key>title</key><array><string>Level7 Object</string></array><key>description</key><array><string>Level7 Description</string></array></dict></dict><dict><key>Level8</key><dict><key>title</key><array><string>Level8 Object</string></array><key>description</key><array><string>Level8 Description</string></array></dict></dict><dict><key>Level9</key><dict><key>title</key><array><string>Level9 Object</string></array><key>description</key><array><string>Level9 Description</string></array></dict></dict><dict><key>Level10</key><dict><key>title</key><array><string>Level10 Object</string></array><key>description</key><array><string>Level10 Description</string></array></dict></dict></array></plist>

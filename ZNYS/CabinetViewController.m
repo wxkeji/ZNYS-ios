@@ -53,6 +53,7 @@
 @property UserData *giftStatusManager;
 @property (strong,nonatomic) NSMutableDictionary *tagDict;   //保存tag的列表的词典
 @property (strong,nonatomic) NSMutableArray *bathItemList;  //保存浴室标志性物品
+@property (nonatomic,strong) NSMutableArray * gloryList;   //保存勋章物品
 
 @end
 
@@ -110,16 +111,17 @@
     self.tagDict = [[NSMutableDictionary alloc] init];
     
     //创建两个列表,添加若干小车到里面
-    NSMutableArray *gloryList = [[NSMutableArray alloc] init];
+    self.gloryList = [[NSMutableArray alloc] init];
     NSString *littleCar = @"小车_已兑换";
     for(int i = 1;i <= 30;i++)
     {
         ItemWithState *gloryItem = [[ItemWithState alloc] initWithItemName:@"littleCar"  imageName:littleCar];
-        [gloryList addObject:gloryItem];
+        
+        [self.gloryList addObject:gloryItem];
     }
     
     
-    NSArray *giftList = [gloryList copy];
+   // NSArray *giftList = [self.gloryList copy];
     NSString *littleBasketball = @"小篮球_已兑换";
     self.bathItemList = [[NSMutableArray alloc] init];
     for(int i = 1;i <= 30;i++)
@@ -128,7 +130,7 @@
         [self.bathItemList addObject:bathItem];
     }
     
-    UserData *userData = [[UserData alloc] initWithCurrentValidNumbersOfStars:22 gloryItemList:(NSArray *)giftList bathItemList:self.bathItemList];
+    UserData *userData = [[UserData alloc] initWithCurrentValidNumbersOfStars:22 gloryItemList:self.gloryList bathItemList:self.bathItemList];
     self.giftStatusManager = userData;
 }
 

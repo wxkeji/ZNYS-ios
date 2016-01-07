@@ -63,6 +63,8 @@
 		645A019F1C3A146E00556395 /* UIButton+Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A019E1C3A146E00556395 /* UIButton+Font.m */; settings = {ASSET_TAGS = (); }; };
 		647664641C3BBF0C00386E05 /* AddAccountButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 647664631C3BBF0C00386E05 /* AddAccountButton.m */; settings = {ASSET_TAGS = (); }; };
 		6476646A1C3CB1A000386E05 /* UITextField+Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 647664691C3CB1A000386E05 /* UITextField+Font.m */; settings = {ASSET_TAGS = (); }; };
+		6476646D1C3E600F00386E05 /* 勋章描述.json in Resources */ = {isa = PBXBuildFile; fileRef = 6476646C1C3E600F00386E05 /* 勋章描述.json */; settings = {ASSET_TAGS = (); }; };
+		6476646F1C3E604200386E05 /* MetalList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6476646E1C3E604200386E05 /* MetalList.plist */; settings = {ASSET_TAGS = (); }; };
 		647E05BF1C3A5C1D00ADB810 /* userAccount_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05BB1C3A5C1D00ADB810 /* userAccount_back@2x.png */; settings = {ASSET_TAGS = (); }; };
 		647E05C01C3A5C1D00ADB810 /* userAccount_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05BC1C3A5C1D00ADB810 /* userAccount_back@3x.png */; settings = {ASSET_TAGS = (); }; };
 		647E05C11C3A5C1D00ADB810 /* userAccount_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 647E05BD1C3A5C1D00ADB810 /* userAccount_logo@2x.png */; settings = {ASSET_TAGS = (); }; };
@@ -211,6 +213,8 @@
 		647664631C3BBF0C00386E05 /* AddAccountButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountButton.m; sourceTree = "<group>"; };
 		647664681C3CB1A000386E05 /* UITextField+Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Font.h"; sourceTree = "<group>"; };
 		647664691C3CB1A000386E05 /* UITextField+Font.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Font.m"; sourceTree = "<group>"; };
+		6476646C1C3E600F00386E05 /* 勋章描述.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "勋章描述.json"; sourceTree = "<group>"; };
+		6476646E1C3E604200386E05 /* MetalList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MetalList.plist; sourceTree = "<group>"; };
 		647E05BB1C3A5C1D00ADB810 /* userAccount_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userAccount_back@2x.png"; sourceTree = "<group>"; };
 		647E05BC1C3A5C1D00ADB810 /* userAccount_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userAccount_back@3x.png"; sourceTree = "<group>"; };
 		647E05BD1C3A5C1D00ADB810 /* userAccount_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userAccount_logo@2x.png"; sourceTree = "<group>"; };
@@ -654,6 +658,7 @@
 		645A01781C37BB7B00556395 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				6476646B1C3E5FFB00386E05 /* Json */,
 				645A01791C37BB8400556395 /* Font */,
 				645A017A1C37BBA000556395 /* Image */,
 			);
@@ -709,6 +714,15 @@
 				645A01951C37CBBF00556395 /* ZNYSBaseView.m */,
 			);
 			name = Base;
+			sourceTree = "<group>";
+		};
+		6476646B1C3E5FFB00386E05 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				6476646C1C3E600F00386E05 /* 勋章描述.json */,
+				6476646E1C3E604200386E05 /* MetalList.plist */,
+			);
+			name = Json;
 			sourceTree = "<group>";
 		};
 		C4A024FD1BBE675300771969 /* settingControllers */ = {
@@ -828,6 +842,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6476646F1C3E604200386E05 /* MetalList.plist in Resources */,
 				0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */,
 				647E05C21C3A5C1D00ADB810 /* userAccount_logo@3x.png in Resources */,
 				0421D3711B8126C700BF6065 /* Settings.storyboard in Resources */,
@@ -835,6 +850,7 @@
 				647E05BF1C3A5C1D00ADB810 /* userAccount_back@2x.png in Resources */,
 				647E05C11C3A5C1D00ADB810 /* userAccount_logo@2x.png in Resources */,
 				041365FA1BAD8AA600CD0604 /* DialogView.xib in Resources */,
+				6476646D1C3E600F00386E05 /* 勋章描述.json in Resources */,
 				6F3962841C3A13E200C78F84 /* Calendar.storyboard in Resources */,
 				6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */,
 				0487D7711B74548F00756EF8 /* Images.xcassets in Resources */,
