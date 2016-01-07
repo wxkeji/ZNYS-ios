@@ -7,6 +7,7 @@
 //
 
 #import "UserDetailView.h"
+#import "User.h"
 
 @interface UserDetailView ()
 
@@ -149,7 +150,7 @@
 - (UILabel *)nameLabel{
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc] initWithCustomFont:20.f];
-        _nameLabel.text = [NSString stringWithFormat:@"果果"];
+        _nameLabel.text = [User currentUserName];
         _nameLabel.textColor = [UIColor whiteColor];
     }
     return _nameLabel;
@@ -158,7 +159,7 @@
 - (UILabel *)birthdayLabel{
     if (!_birthdayLabel) {
         _birthdayLabel = [[UILabel alloc] initWithCustomFont:20.f];
-        _birthdayLabel.text = [NSString stringWithFormat:@"2000-01-01"];
+        _birthdayLabel.text = [User currentUserBirthday];
         _birthdayLabel.textColor = [UIColor whiteColor];
     }
     return _birthdayLabel;
@@ -167,7 +168,7 @@
 - (UILabel *)coinLabel{
     if (!_coinLabel) {
         _coinLabel = [[UILabel alloc] initWithCustomFont:20.f];
-        _coinLabel.text = [NSString stringWithFormat:@"50"];
+        _coinLabel.text = [NSString stringWithFormat:@"%@",[User currentUserTokenOwned]];
         _coinLabel.textColor = [UIColor whiteColor];
     }
     return _coinLabel;

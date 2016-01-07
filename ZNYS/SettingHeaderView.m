@@ -7,6 +7,7 @@
 //
 
 #import "SettingHeaderView.h"
+#import "User.h"
 
 @interface SettingHeaderView()
 
@@ -120,7 +121,7 @@
 - (UILabel *)nameLabel{
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc] initWithCustomFont:25.f];
-        _nameLabel.text = @"果果";
+        _nameLabel.text = [User currentUserName];
         _nameLabel.textColor = [UIColor whiteColor];
     }
     return _nameLabel;
