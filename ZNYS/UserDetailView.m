@@ -177,7 +177,7 @@
 - (UILabel *)brushLabel{
     if (!_brushLabel) {
         _brushLabel = [[UILabel alloc] initWithCustomFont:20.f];
-        _brushLabel.text = [NSString stringWithFormat:@"1把"];
+        _brushLabel.text = [NSString stringWithFormat:@"%ld把",(long)[User currentUsersNumberOfToothBushes]];
         _brushLabel.textColor = [UIColor whiteColor];
     }
     return _brushLabel;
