@@ -61,4 +61,8 @@
 {
     return [self currentUser].uuid;
 }
++(int)currentUsersNumberOfToothBushes
+{
+    return [self currentUser].possessToothBrushes.count;
+}
 @end
