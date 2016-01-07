@@ -112,21 +112,28 @@
     
     //创建两个列表,添加若干小车到里面
     self.gloryList = [[NSMutableArray alloc] init];
-    NSString *littleCar = @"小车_已兑换";
+    NSString *littleCar = @"小车";
     for(int i = 1;i <= 30;i++)
     {
-        ItemWithState *gloryItem = [[ItemWithState alloc] initWithItemName:@"littleCar"  imageName:littleCar];
+        ItemStateEnum state;
+        if(i % 2 == 0){
+            state = Obtained;
+        }
+        else{
+            state = NotActiveted;
+        }
+        ItemWithState *gloryItem = [[ItemWithState alloc] initWithItemName:@"littleCar"  imageName:littleCar state:state tag:i style:0];
         
         [self.gloryList addObject:gloryItem];
     }
     
     
    // NSArray *giftList = [self.gloryList copy];
-    NSString *littleBasketball = @"小篮球_已兑换";
+    NSString *littleBasketball = @"小篮球";
     self.bathItemList = [[NSMutableArray alloc] init];
     for(int i = 1;i <= 30;i++)
     {
-        ItemWithState *bathItem = [[ItemWithState alloc] initWithItemName:@"littleBasketball"  imageName:littleBasketball];
+        ItemWithState *bathItem = [[ItemWithState alloc] initWithItemName:@"littleBasketball"  imageName:littleBasketball state:Obtained tag:i style:1];
         [self.bathItemList addObject:bathItem];
     }
     
