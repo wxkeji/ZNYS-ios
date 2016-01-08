@@ -46,6 +46,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *ADBackroung;//广告位的背景图片
 @property (weak, nonatomic) IBOutlet UIImageView *advertismentLabel;//广告位Label
 
+@property (strong, nonatomic) NSNumber* userLevel;
 
 //- (IBAction)settingButtonTouched:(id)sender;
 @property (strong, nonatomic) UILabel *label;
@@ -164,6 +165,30 @@
     UserData *userData = [[UserData alloc] initWithCurrentValidNumbersOfStars:22 gloryItemList:gloryList bathItemList:bathItemList];
     self.giftStatusManager = userData;
 }
+
+- (void)setGloryView{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"MetalList" ofType:@"plist"];
+    NSArray *jsonArray = [NSArray arrayWithContentsOfFile:path];
+    
+    self.giftStatusManager.gloryItemList = [[NSMutableArray alloc] init];
+    NSString *littleCar = @"小车";
+    for(NSInteger i = 1;i <= 10;i++)
+    {
+        ItemStateEnum state;
+        if(i <= [self.userLevel integerValue]){
+            state = Obtained;
+        }
+        else{
+            state = NotActiveted;
+        }
+        
+        NSDictionary * itemDic = [jsonArray objectAtIndex:(i-1)];
+        ItemWithState *gloryItem = [[ItemWithState alloc] initWithDictionary:[itemDic objectForKey:[NSString stringWithFormat:@"Level%ld",(long)i]] imageName:littleCar state:state tag:i style:0 starsToActivate:i];
+        [self.giftStatusManager.gloryItemList addObject:gloryItem];
+    }
+    
+}
+
 
 //把对应的item的View添加到ScrollView中
 - (void)setItemScrollView:(UIScrollView *)scrollView
@@ -295,7 +320,7 @@
     if ([keyPath isEqualToString:@"userLevel"]) {
         self.level.text = [NSString stringWithFormat:@"LV%ld",[self.userLevel integerValue]];
         
-        
+    
     }
 }
 
