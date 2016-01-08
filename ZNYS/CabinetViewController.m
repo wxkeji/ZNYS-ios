@@ -52,8 +52,6 @@
 
 @property UserData *giftStatusManager;
 @property (strong,nonatomic) NSMutableDictionary *tagDict;   //保存tag的列表的词典
-@property (strong,nonatomic) NSMutableArray *bathItemList;  //保存浴室标志性物品
-@property (nonatomic,strong) NSMutableArray * gloryList;   //保存勋章物品
 
 @end
 
@@ -65,7 +63,7 @@
     [super viewDidLoad];
     
     [self initPageJumps];
-    [self setupCabinet];
+    [self initCabinet];
 
     [self.view layoutIfNeeded];
     
@@ -79,15 +77,11 @@
     
     [self setItemScrollView:self.gloryScrollView
                    itemList:self.giftStatusManager.gloryItemList
-                     height:self.gloryScrollView.frame.size.height
-                      width:self.gloryScrollView.frame.size.width
                itemEachPage:4 selector:@selector(itemWasTouched:) tagListName:@"gloryItemTagList"
                    startTag:TAG_GLORY_ITEM];
     
     [self setItemScrollView:self.bathItemScrollView
-                   itemList:self.bathItemList
-                     height:self.bathItemScrollView.frame.size.height
-                      width:self.bathItemScrollView.frame.size.width
+                   itemList:self.giftStatusManager.bathItemList
                itemEachPage:4
                    selector:@selector(itemWasTouched:)
                 tagListName:@"bathItemTagList" startTag:TAG_BATH_ITEM ];
@@ -105,13 +99,13 @@
 
 #pragma mark - 设置奖品柜的数据
 
-- (void)setupCabinet
+- (void)initCabinet
 {
     //初始化tag字典
     self.tagDict = [[NSMutableDictionary alloc] init];
     
     //创建两个列表,添加若干小车到里面
-    self.gloryList = [[NSMutableArray alloc] init];
+    NSMutableArray *gloryList = [[NSMutableArray alloc] init];
     NSString *littleCar = @"小车";
     for(int i = 1;i <= 30;i++)
     {
@@ -127,31 +121,29 @@
                                @"shadow-description":@"Level1 shadow"};
         ItemWithState *gloryItem = [[ItemWithState alloc] initWithDictionary:dict  imageName:littleCar state:state tag:i style:0 starsToActivate:i];
         
-        [self.gloryList addObject:gloryItem];
+        [gloryList addObject:gloryItem];
     }
     
     
    // NSArray *giftList = [self.gloryList copy];
     NSString *littleBasketball = @"小篮球";
-    self.bathItemList = [[NSMutableArray alloc] init];
+    NSMutableArray *bathItemList = [[NSMutableArray alloc] init];
     for(int i = 1;i <= 30;i++)
     {
         NSDictionary *dict = @{@"title":@"Level1 Object",
           @"description":@"Level1 Description",
           @"shadow-description":@"Level1 shadow"};
         ItemWithState *bathItem = [[ItemWithState alloc] initWithDictionary:dict  imageName:littleBasketball state:Obtained tag:i style:1 starsToActivate:i];
-        [self.bathItemList addObject:bathItem];
+        [bathItemList addObject:bathItem];
     }
     
-    UserData *userData = [[UserData alloc] initWithCurrentValidNumbersOfStars:22 gloryItemList:self.gloryList bathItemList:self.bathItemList];
+    UserData *userData = [[UserData alloc] initWithCurrentValidNumbersOfStars:22 gloryItemList:gloryList bathItemList:bathItemList];
     self.giftStatusManager = userData;
 }
 
 //把对应的item的View添加到ScrollView中
 - (void)setItemScrollView:(UIScrollView *)scrollView
                  itemList:(NSMutableArray *)giftList
-                   height:(float)height
-                    width:(float)width
              itemEachPage:(int)itemEachPage
                  selector:(SEL)selecor
               tagListName:(NSString *)tagListName
@@ -160,8 +152,11 @@
     //根据奖品列表获得礼品柜的个数
     long n = ([giftList count] - 1) / itemEachPage + 1;
     
+    CGFloat width = scrollView.frame.size.width;
+    CGFloat height = scrollView.frame.size.height;
+    
     [self initScrollView:scrollView
-               WithWidth:width
+               WithContentWidth:width
                   height:height
                totalPage:n];
     
@@ -216,7 +211,7 @@
 }
 
 - (void)initScrollView:(UIScrollView *)scrollView
-             WithWidth:(CGFloat)width
+             WithContentWidth:(CGFloat)width
                 height:(CGFloat)height
              totalPage:(long)totalPage
 {
@@ -239,10 +234,19 @@
 
 - (void)refreshCabinet
 {
-    self.gloryScrollView = nil;
-    self.bathItemScrollView = nil;
-    [self initScrollView:self.gloryScrollView WithWidth:self.view.bounds.size.width height:self.view.bounds.size.height totalPage:self.giftStatusManager.gloryItemList.count];
-    [self initScrollView:self.bathItemScrollView WithWidth:self.view.bounds.size.width height:self.view.bounds.size.height totalPage:self.giftStatusManager.bathItemList.count];
+    for(UIView *view in self.gloryScrollView.subviews) {
+        if([view class] == [UIButton class]){
+            [view removeFromSuperview];
+        }
+    }
+    for(UIView *view in self.bathItemScrollView.subviews) {
+        if([view class] == [UIButton class]){
+            [view removeFromSuperview];
+        }
+    }
+    [self setItemScrollView:self.gloryScrollView itemList:self.giftStatusManager.gloryItemList itemEachPage:4 selector:@selector(itemWasTouched:) tagListName:@"gloryItemTagList" startTag:TAG_GLORY_ITEM];
+    [self setItemScrollView:self.bathItemScrollView itemList:self.giftStatusManager.bathItemList itemEachPage:4 selector:@selector(itemWasTouched:) tagListName:@"bathItemTagList" startTag:TAG_BATH_ITEM];
+    
 }
 
 //根据nx和ny进一步算出每一个奖品精确的位置
@@ -298,7 +302,7 @@
                 }
                 else
                 {
-                    item= self.bathItemList[index];
+                    item= self.giftStatusManager.bathItemList[index];
                 }
                 itemName = item.itemName;
                 conditionToGet = [NSString stringWithFormat:@"兑换条件：%d颗星星",item.starsToActivate];
@@ -329,6 +333,13 @@
 
 - (void)toCalendar
 {
+    NSInteger state = ( rand() % 2 == 0 )? Obtained : NotActiveted;
+    ItemWithState *itemWithState = [[ItemWithState alloc] initWithDictionary:@{@"title":@"newItem",@"description":@"A test item",@"shadow-description":@"Test item in shadow"} imageName:@"小车" state:state tag:1 style:0 starsToActivate:rand()];
+    NSMutableArray *newList = [[NSMutableArray alloc] initWithArray:@[itemWithState]];
+    self.giftStatusManager.gloryItemList = newList;
+    [self refreshCabinet];
+    return;
+    
     UIStoryboard *story=[UIStoryboard storyboardWithName:@"Calendar" bundle:nil];
     CalendarViewController *cvc = [story instantiateViewControllerWithIdentifier:@"CalendarViewController"];
     [self.navigationController pushViewController:cvc animated:YES];

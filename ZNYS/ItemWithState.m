@@ -27,7 +27,7 @@
 {
     NSString *giftName = dict[@"title"];
     NSString *description;
-    if(style == Obtained) {
+    if(s == Obtained) {
         description = dict[@"description"];
     }
     else {
