@@ -15,8 +15,8 @@
 - (instancetype) initWithItemName:(NSString *)giftName
                         imageName:(NSString *)imageName
                             state:(ItemStateEnum)s
-                              tag:(int)tag
-                            style:(int)style
+                              tag:(NSInteger)tag
+                            style:(NSInteger)style
 {
     
     if(self = [super initWithItemName:giftName imageName:imageName])
@@ -53,5 +53,7 @@
     self = [self initWithItemName:item.itemName imageName:item.imageName];
     return self;
 }
+
+
 
 @end//  GiftWithState
