@@ -21,6 +21,6 @@
 @property (assign,nonatomic) id<DialogViewDelegate> delegate;
 
 +(DialogView *)instanceDialogView;
-+(DialogView *)instanceDialogViewWithItemName:(NSString *)itemName conditionToGet:(NSString *)conditionToGet;
++(DialogView *)instanceDialogViewWithItemName:(NSString *)itemName conditionToGet:(NSString *)conditionToGet descriptionText:(NSString *)descriptionText;
 
 @end

@@ -12,7 +12,9 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *itemName;
 
-@property (strong, nonatomic) IBOutlet UILabel *conditionToGet;
+@property (weak, nonatomic) IBOutlet UILabel *conditionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+
 
 @property (strong, nonatomic) IBOutlet UIView *dialog;
 
@@ -27,11 +29,12 @@
     return [nibView objectAtIndex:0];
 }
 
-+(DialogView *)instanceDialogViewWithItemName:(NSString *)itemName conditionToGet:(NSString *)conditionToGet
++(DialogView *)instanceDialogViewWithItemName:(NSString *)itemName conditionToGet:(NSString *)conditionToGet descriptionText:(NSString *)descriptionText
 {
     DialogView *dialogView = [DialogView instanceDialogView];
     dialogView.itemName.text = itemName;
-    dialogView.conditionToGet.text = conditionToGet;
+    dialogView.conditionLabel.text = conditionToGet;
+    dialogView.descriptionLabel.text = descriptionText;
     
     //设置为可交互
     dialogView.userInteractionEnabled = YES;

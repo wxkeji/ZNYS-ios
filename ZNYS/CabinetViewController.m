@@ -122,7 +122,10 @@
         else{
             state = NotActiveted;
         }
-        ItemWithState *gloryItem = [[ItemWithState alloc] initWithItemName:@"littleCar"  imageName:littleCar state:state tag:i style:0];
+        NSDictionary *dict = @{@"title":@"Level1 Object",
+                               @"description":@"Level1 Description",
+                               @"shadow-description":@"Level1 shadow"};
+        ItemWithState *gloryItem = [[ItemWithState alloc] initWithDictionary:dict  imageName:littleCar state:state tag:i style:0 starsToActivate:i];
         
         [self.gloryList addObject:gloryItem];
     }
@@ -133,7 +136,10 @@
     self.bathItemList = [[NSMutableArray alloc] init];
     for(int i = 1;i <= 30;i++)
     {
-        ItemWithState *bathItem = [[ItemWithState alloc] initWithItemName:@"littleBasketball"  imageName:littleBasketball state:Obtained tag:i style:1];
+        NSDictionary *dict = @{@"title":@"Level1 Object",
+          @"description":@"Level1 Description",
+          @"shadow-description":@"Level1 shadow"};
+        ItemWithState *bathItem = [[ItemWithState alloc] initWithDictionary:dict  imageName:littleBasketball state:Obtained tag:i style:1 starsToActivate:i];
         [self.bathItemList addObject:bathItem];
     }
     
@@ -141,6 +147,7 @@
     self.giftStatusManager = userData;
 }
 
+//把对应的item的View添加到ScrollView中
 - (void)setItemScrollView:(UIScrollView *)scrollView
                  itemList:(NSMutableArray *)giftList
                    height:(float)height
@@ -230,6 +237,14 @@
     [scrollView setPagingEnabled:YES];
 }
 
+- (void)refreshCabinet
+{
+    self.gloryScrollView = nil;
+    self.bathItemScrollView = nil;
+    [self initScrollView:self.gloryScrollView WithWidth:self.view.bounds.size.width height:self.view.bounds.size.height totalPage:self.giftStatusManager.gloryItemList.count];
+    [self initScrollView:self.bathItemScrollView WithWidth:self.view.bounds.size.width height:self.view.bounds.size.height totalPage:self.giftStatusManager.bathItemList.count];
+}
+
 //根据nx和ny进一步算出每一个奖品精确的位置
 //奖品柜里面高度的比例为  星星：物品：星星：物品 = 1.52：6.88：1.52：6.88 。从而按照比例推算出定位的坐标
 - (CGRect)getRectOfItemAt:(int)nx
@@ -286,9 +301,9 @@
                     item= self.bathItemList[index];
                 }
                 itemName = item.itemName;
-                conditionToGet = [NSString stringWithFormat:@"得到%d颗星星",5];
+                conditionToGet = [NSString stringWithFormat:@"兑换条件：%d颗星星",item.starsToActivate];
                 
-                DialogView *dialogView = [DialogView instanceDialogViewWithItemName:itemName conditionToGet:conditionToGet];
+                DialogView *dialogView = [DialogView instanceDialogViewWithItemName:itemName conditionToGet:conditionToGet descriptionText:item.descriptionText];
                 dialogView.alpha = 1.0;
                 dialogView.frame = self.view.bounds;
                 [self.view addSubview:dialogView];

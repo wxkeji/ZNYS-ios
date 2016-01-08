@@ -11,17 +11,19 @@
 
 @interface ItemWithState : Item
 
-@property int style;
+@property (readonly) int style;
 @property ItemState *state;
-@property int tag;
-
+@property (readonly) int tag;
+@property (strong, nonatomic, readonly) NSString *descriptionText;
+@property (readonly) NSInteger starsToActivate;
 
 //指定初始化方法，这里把state初始化为NotActivated
-- (instancetype) initWithItemName:(NSString *)itemName
+- (instancetype) initWithDictionary:(NSDictionary *)dict
                         imageName:(NSString *)imageName
                             state:(ItemStateEnum)s
                               tag:(int)tag
-                            style:(int)style;
+                            style:(int)style
+                    starsToActivate:(NSInteger)stars;
 
 //用一个gift来初始化,且设置state为NotActivate
 - (instancetype) initWithGift:(Item *)item;
