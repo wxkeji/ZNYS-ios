@@ -333,13 +333,6 @@
 
 - (void)toCalendar
 {
-    NSInteger state = ( rand() % 2 == 0 )? Obtained : NotActiveted;
-    ItemWithState *itemWithState = [[ItemWithState alloc] initWithDictionary:@{@"title":@"newItem",@"description":@"A test item",@"shadow-description":@"Test item in shadow"} imageName:@"小车" state:state tag:1 style:0 starsToActivate:rand()];
-    NSMutableArray *newList = [[NSMutableArray alloc] initWithArray:@[itemWithState]];
-    self.giftStatusManager.gloryItemList = newList;
-    [self refreshCabinet];
-    return;
-    
     UIStoryboard *story=[UIStoryboard storyboardWithName:@"Calendar" bundle:nil];
     CalendarViewController *cvc = [story instantiateViewControllerWithIdentifier:@"CalendarViewController"];
     [self.navigationController pushViewController:cvc animated:YES];
