@@ -17,6 +17,8 @@
 #import "UILabel+Font.h"
 #import "VerifyPasswordViewController.h"
 #import "ConnectingViewController.h"
+#import "User.h"
+#import "ItemWithState.h"
 @interface CabinetViewController ()
 
 #pragma mark - UI 控件的 Outlet —— 两个 ScrollView
@@ -69,6 +71,26 @@
     
     //设置屏幕上的信息
     self.stars.text = [[NSString alloc] initWithFormat:@"%d",self.giftStatusManager.currentValidNumberOfStars];
+    
+    self.userLevel = [User currentUserLevel];
+    [self addObserver:self forKeyPath:@"userLevel" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+    
+    self.level.text = [NSString stringWithFormat:@"LV%ld",[self.userLevel integerValue]];
+    
+    //测试等级按钮
+    UIButton * levelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    levelButton.frame = CGRectMake(0, 100, 80, 60);
+    levelButton.backgroundColor = [UIColor purpleColor];
+    [levelButton setTitle:@"等级测试" forState:UIControlStateNormal];
+    [levelButton addTarget:self action:@selector(changeLevel) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:levelButton];
+}
+
+- (void)changeLevel{
+    NSInteger level =[self.userLevel integerValue];
+    NSInteger addResult = (++level)%10;
+    NSNumber * result = [NSNumber numberWithInteger:addResult];
+    [self setValue:result forKey:@"userLevel"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -94,7 +116,7 @@
 
 -(void)dealloc
 {
-    
+    [self removeObserver:self forKeyPath:@"userLevel"];
 }
 
 #pragma mark - 设置奖品柜的数据
@@ -124,6 +146,8 @@
         [gloryList addObject:gloryItem];
     }
     
+    //创建两个列表,添加若干小车到里面
+    [self setGloryView];
     
    // NSArray *giftList = [self.gloryList copy];
     NSString *littleBasketball = @"小篮球";
@@ -265,33 +289,42 @@
     return CGRectMake(buttonX, buttonY, buttonWidth, buttonHeight);
 }
 
+#pragma mark KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
+    if ([keyPath isEqualToString:@"userLevel"]) {
+        self.level.text = [NSString stringWithFormat:@"LV%ld",[self.userLevel integerValue]];
+        
+        
+    }
+}
 
 #pragma mark - 事件响应函数
 
 //响应item的点击事件
-- (void) itemWasTouched:(id)sender
+- (void) itemWasTouched:(ItemWithState *)sender
 {
     //获取这个item的tag
-    long tag = [sender tag];
+    NSInteger tag = sender.tag;
     
     //index表示这个item在item列表是第几个
-    long index=-1;
+    NSInteger index=-1;
     
     NSArray *keys = [self.tagDict allKeys];
     
     for(NSString *key in keys)
     {
         NSMutableArray * tagList = [self.tagDict objectForKey:key];
-        unsigned long length = [tagList count];
+        NSInteger length = [tagList count];
         
         //通过Tag与 itemTagList 中的 tag 值一一比较从而确定当前被触摸的是第几个奖品
-        for(int i=0;i<length;i++)
+        for(NSInteger i=0;i<length;i++)
         {
             NSNumber *currentTag = tagList[i];
             if([currentTag longValue] == tag)
             {
                 index = i;
-                long indexOfScrollView = tag / 1000 - 1;
+                NSInteger indexOfScrollView = tag / 1000 - 1;
                 //NSLog(@"Item %ld is touched.Tag is %ld.In scrollView %ld",index,tag,indexOfScrollView);
                 
                 NSString *itemName,*conditionToGet;
