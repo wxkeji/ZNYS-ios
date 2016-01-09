@@ -14,6 +14,7 @@
 @property(strong,nonatomic)UIImageView* backgroundView;
 @property(strong,nonatomic)UIImageView* topBarView;
 @property(strong,nonatomic)UIProgressView* progressView;
+@property(strong,nonatomic)UIView* transparentView;
 @end
 @implementation ConnectingView
 
@@ -31,13 +32,15 @@
     {
         [self addSubview:self.backgroundView];
         [self addSubview:self.topBarView];
-        [self addSubview:self.returnButton];
+ 
         [self addSubview:self.progressView];
+        [self addSubview:self.transparentView];
+               [self.transparentView addSubview:self.returnButton];
     }
     return self;
 }
 #pragma mark - button actions
--(void)returnToHome
+-(void)returnToHome1
 {
     NSLog(@"准备返回");
     [self.delegate returnToHome];
@@ -48,10 +51,12 @@
     if(!_returnButton)
     {
         _returnButton   = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_returnButton setBackgroundImage:[UIImage imageNamed:@"BCTopBarReturnButton"] forState:UIControlStateNormal];
+   //     [_returnButton setBackgroundImage:[UIImage imageNamed:@"BCTopBarReturnButton"] forState:UIControlStateNormal];
+        [_returnButton setBackgroundColor:[UIColor redColor]];
         [_returnButton sizeToFit];
         [_returnButton setFrame:CGRectMake(25,kSCREEN_WIDTH*154/750-42,30,30)];
-        [_returnButton addTarget:self action:@selector(returnToHome) forControlEvents:UIControlEventTouchUpInside];
+          [_returnButton addTarget:self action:@selector(returnToHome1) forControlEvents:UIControlEventTouchUpInside];
+      
     }
     return _returnButton;
 }
@@ -83,5 +88,14 @@
 //        _progressView.trackImage = [UIImage imageNamed:@"BCProgressEmpty"];
     }
     return _progressView;
+}
+-(UIView*)transparentView
+{
+    if(!_transparentView)
+    {
+        _transparentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT)];
+        _transparentView.backgroundColor = [UIColor clearColor];
+    }
+    return _transparentView;
 }
 @end

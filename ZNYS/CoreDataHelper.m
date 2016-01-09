@@ -146,8 +146,8 @@ NSString* storeFilename = @"database.sqlite";
 
 
 -(NSString*)createUserWithBirthday:(NSString*)birthday
-                   gender:(NSString*)gender
-                 nickName:(NSString*)nickName
+                            gender:(NSString*)gender
+                          nickName:(NSString*)nickName
 {
     User* user =  [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -168,6 +168,7 @@ NSString* storeFilename = @"database.sqlite";
     user.tokenOwned = @0;
     user.uuid = [[NSUUID UUID] UUIDString];
     [self save];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"userDidCreate" object:nil];
     return user.uuid;
 }
 -(NSArray*)retrieveUsers:(NSPredicate*)predicate
@@ -175,6 +176,21 @@ NSString* storeFilename = @"database.sqlite";
     NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
     [request setPredicate:predicate];
     return [self.context executeFetchRequest:request error:nil];
+}
+-(NSArray*)retrieveOtherUsersExcept:(NSString*)uuid
+{
+    NSArray* tempResult = [self retrieveUsers:[NSPredicate predicateWithFormat:@"uuid != %@",uuid]];
+    NSMutableArray* arrayReturned = [[NSMutableArray alloc] init];
+    if (tempResult.count>0)
+    {
+        for (User* user in tempResult)
+        {
+            [arrayReturned addObject:@{@"name":user.nickName,@"thumb":user.photoNumber,@"uuid":user.uuid}];
+        }
+        return arrayReturned;
+
+    }
+    else return nil;
 }
 -(BOOL)modifyUserInfoWithUUID:(NSString*)UUID
                      birthday:(NSString*)Birthday

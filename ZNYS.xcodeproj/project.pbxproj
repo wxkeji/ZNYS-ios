@@ -49,6 +49,12 @@
 		45BC40A11C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC408E1C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m */; };
 		45BC40A21C2469D9006A185F /* BrushingStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC40901C2469D9006A185F /* BrushingStatistics.m */; };
 		45CE1B6F1C2BE61900C886BC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45CE1B6D1C2BE61900C886BC /* Model.xcdatamodeld */; };
+		45EB69CD1C40B2C800160457 /* BCBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69C71C40B2C800160457 /* BCBackground.png */; };
+		45EB69CE1C40B2C800160457 /* BCButtomPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69C81C40B2C800160457 /* BCButtomPattern.png */; };
+		45EB69CF1C40B2C800160457 /* BCProgress_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69C91C40B2C800160457 /* BCProgress_fill.png */; };
+		45EB69D01C40B2C800160457 /* BCProgressEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69CA1C40B2C800160457 /* BCProgressEmpty.png */; };
+		45EB69D11C40B2C800160457 /* BCTopBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69CB1C40B2C800160457 /* BCTopBar.png */; };
+		45EB69D21C40B2C800160457 /* BCTopBarReturnButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69CC1C40B2C800160457 /* BCTopBarReturnButton.png */; };
 		64337DC81C3B8DD400C9D811 /* ThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64337DC71C3B8DD400C9D811 /* ThumbView.m */; };
 		645A016F1C37B5B800556395 /* AddAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016A1C37B5B800556395 /* AddAccountView.m */; };
 		645A01701C37B5B800556395 /* SelectBirthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016C1C37B5B800556395 /* SelectBirthView.m */; };
@@ -187,6 +193,12 @@
 		45BC408F1C2469D9006A185F /* BrushingStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushingStatistics.h; sourceTree = "<group>"; };
 		45BC40901C2469D9006A185F /* BrushingStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushingStatistics.m; sourceTree = "<group>"; };
 		45CE1B6E1C2BE61900C886BC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		45EB69C71C40B2C800160457 /* BCBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCBackground.png; sourceTree = "<group>"; };
+		45EB69C81C40B2C800160457 /* BCButtomPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCButtomPattern.png; sourceTree = "<group>"; };
+		45EB69C91C40B2C800160457 /* BCProgress_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCProgress_fill.png; sourceTree = "<group>"; };
+		45EB69CA1C40B2C800160457 /* BCProgressEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCProgressEmpty.png; sourceTree = "<group>"; };
+		45EB69CB1C40B2C800160457 /* BCTopBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCTopBar.png; sourceTree = "<group>"; };
+		45EB69CC1C40B2C800160457 /* BCTopBarReturnButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCTopBarReturnButton.png; sourceTree = "<group>"; };
 		64337DC61C3B8DD400C9D811 /* ThumbView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbView.h; sourceTree = "<group>"; };
 		64337DC71C3B8DD400C9D811 /* ThumbView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbView.m; sourceTree = "<group>"; };
 		645A01681C37B56900556395 /* ToolMacroes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolMacroes.h; sourceTree = "<group>"; };
@@ -573,6 +585,19 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
+		45EB69C61C40B2B100160457 /* ToothBrushConnecting */ = {
+			isa = PBXGroup;
+			children = (
+				45EB69C71C40B2C800160457 /* BCBackground.png */,
+				45EB69C81C40B2C800160457 /* BCButtomPattern.png */,
+				45EB69C91C40B2C800160457 /* BCProgress_fill.png */,
+				45EB69CA1C40B2C800160457 /* BCProgressEmpty.png */,
+				45EB69CB1C40B2C800160457 /* BCTopBar.png */,
+				45EB69CC1C40B2C800160457 /* BCTopBarReturnButton.png */,
+			);
+			name = ToothBrushConnecting;
+			sourceTree = "<group>";
+		};
 		63353D4AB29EDC413AD1EB41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -676,6 +701,7 @@
 		645A017A1C37BBA000556395 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				45EB69C61C40B2B100160457 /* ToothBrushConnecting */,
 				645A017B1C37BBA600556395 /* UserAccount */,
 			);
 			name = Image;
@@ -846,16 +872,22 @@
 				0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */,
 				647E05C21C3A5C1D00ADB810 /* userAccount_logo@3x.png in Resources */,
 				0421D3711B8126C700BF6065 /* Settings.storyboard in Resources */,
+				45EB69CE1C40B2C800160457 /* BCButtomPattern.png in Resources */,
+				45EB69D11C40B2C800160457 /* BCTopBar.png in Resources */,
 				645A01831C37C56D00556395 /* 华康娃娃体.TTF in Resources */,
+				45EB69CD1C40B2C800160457 /* BCBackground.png in Resources */,
 				647E05BF1C3A5C1D00ADB810 /* userAccount_back@2x.png in Resources */,
+				45EB69CF1C40B2C800160457 /* BCProgress_fill.png in Resources */,
 				647E05C11C3A5C1D00ADB810 /* userAccount_logo@2x.png in Resources */,
 				041365FA1BAD8AA600CD0604 /* DialogView.xib in Resources */,
+				45EB69D21C40B2C800160457 /* BCTopBarReturnButton.png in Resources */,
 				6476646D1C3E600F00386E05 /* 勋章描述.json in Resources */,
 				6F3962841C3A13E200C78F84 /* Calendar.storyboard in Resources */,
 				6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */,
 				0487D7711B74548F00756EF8 /* Images.xcassets in Resources */,
 				6F3962821C3A12C100C78F84 /* Cabinet.storyboard in Resources */,
 				647E05C01C3A5C1D00ADB810 /* userAccount_back@3x.png in Resources */,
+				45EB69D01C40B2C800160457 /* BCProgressEmpty.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
