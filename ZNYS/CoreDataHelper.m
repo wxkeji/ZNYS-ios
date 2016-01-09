@@ -161,7 +161,7 @@ NSString* storeFilename = @"database.sqlite";
     user.birthday = birthday;
     user.cycleCountOfHighestLevel = @0;
     user.gender = gender;
-    user.level = @0;
+    user.level = @1;
     user.nickName = nickName;
     user.photoNumber = @0;
     user.starsOwned = @0;
@@ -175,6 +175,17 @@ NSString* storeFilename = @"database.sqlite";
     NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
     [request setPredicate:predicate];
     return [self.context executeFetchRequest:request error:nil];
+}
+-(BOOL)modifyUserInfoWithUUID:(NSString*)UUID
+                     birthday:(NSString*)Birthday
+                       gender:(NSString*)gender
+                     nickname:(NSString*)nickname
+{
+   User* userToBeModified  =  [self retrieveUsers:[NSPredicate predicateWithFormat:@"uuid = %@",UUID]][0];
+    userToBeModified.birthday = Birthday;
+    userToBeModified.gender = gender;
+    userToBeModified.nickName = nickname;
+    return YES;
 }
 -(BOOL)whetherThereIsUser
 {
