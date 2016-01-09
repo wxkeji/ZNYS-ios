@@ -18,4 +18,6 @@ typedef void(^ThumbButtonBlock)();
 
 @property (nonatomic,copy) ThumbButtonBlock thumbButtonBlock;
 
+@property (nonatomic,strong) UILabel * nameLabel;
+
 @end

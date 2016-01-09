@@ -11,6 +11,7 @@
 #import "SettingHeaderView.h"
 #import "UserAccountViewController.h"
 #import "CabinetViewController.h"
+#import "User.h"
 
 @interface SettingViewController ()
 
@@ -30,6 +31,7 @@
     _headerView = nil;
     _buttonView = nil;
     _logoImage = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewDidLoad {
@@ -39,6 +41,7 @@
     self.view.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.headerView];
     [self.view addSubview:self.buttonView];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshUserDetail) name:@"userDetailDidChange" object:nil];
 //    [self.view addSubview:self.logoImage];
     
     WS(weakSelf, self);
@@ -65,6 +68,9 @@
 }
 
 #pragma mark private method
+- (void)refreshUserDetail{
+    self.headerView.nameLabel.text = [User currentUserName];
+}
 
 #pragma mark event action
 
