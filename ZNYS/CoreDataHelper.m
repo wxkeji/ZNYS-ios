@@ -177,6 +177,21 @@ NSString* storeFilename = @"database.sqlite";
     [request setPredicate:predicate];
     return [self.context executeFetchRequest:request error:nil];
 }
+-(NSArray*)retrieveOtherUsersExcept:(NSString*)uuid
+{
+    NSArray* tempResult = [self retrieveUsers:[NSPredicate predicateWithFormat:@"uuid != %@",uuid]];
+    NSMutableArray* arrayReturned = [[NSMutableArray alloc] init];
+    if (tempResult.count>0)
+    {
+        for (User* user in tempResult)
+        {
+            [arrayReturned addObject:@{@"name":user.nickName,@"thumb":user.photoNumber,@"uuid":user.uuid}];
+        }
+        return arrayReturned;
+
+    }
+    else return nil;
+}
 -(BOOL)modifyUserInfoWithUUID:(NSString*)UUID
                      birthday:(NSString*)Birthday
                        gender:(NSString*)gender
