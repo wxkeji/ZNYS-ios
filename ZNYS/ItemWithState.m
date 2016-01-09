@@ -21,8 +21,8 @@
 - (instancetype) initWithDictionary:(NSDictionary *)dict
                         imageName:(NSString *)imageName
                             state:(ItemStateEnum)s
-                              tag:(int)tag
-                            style:(int)style
+                              tag:(NSInteger)tag
+                            style:(NSInteger)style
                     starsToActivate:(NSInteger)stars
 {
     NSString *giftName = dict[@"title"];

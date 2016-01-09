@@ -213,13 +213,14 @@
         name = @"宝宝";
     }
     
-     NSString * uid = [[CoreDataHelper sharedInstance] createUserWithBirthday:self.addAccountView.birthButton.titleLabel.text gender:gender nickName:name];
+    
     if (self.style == 0) {
 //        if (uid) {
 //            [SVProgressHUD showInfoWithStatus:@"修改成功"];
 //            [self.navigationController popViewControllerAnimated:YES];
 //        }
     }else if(self.style == 1){
+        NSString * uid = [[CoreDataHelper sharedInstance] createUserWithBirthday:self.addAccountView.birthButton.titleLabel.text gender:gender nickName:name];
         if (uid) {
              [[NSUserDefaults standardUserDefaults]setObject:uid forKey:@"currentUserUID"];
             
@@ -231,6 +232,7 @@
            [SVProgressHUD showInfoWithStatus:@"添加用户失败，请重试"];
         }
     }else{
+        NSString * uid = [[CoreDataHelper sharedInstance] createUserWithBirthday:self.addAccountView.birthButton.titleLabel.text gender:gender nickName:name];
         if (uid) {
             [[NSUserDefaults standardUserDefaults]setObject:uid forKey:@"currentUserUID"];
 
@@ -260,6 +262,15 @@
         
         if (self.style == 0) {
             _addAccountView.titleLabel.text = @"修改用户";
+            _addAccountView.nameTextField.text = [User currentUserName];
+            [_addAccountView.birthButton setTitle:[User currentUserBirthday] forState:UIControlStateNormal];
+            if ([[User currentUserGender] isEqualToString:@"boy"]) {
+                _addAccountView.boysButton.selected = YES;
+                _addAccountView.girlsButton.selected = NO;
+            }else{
+                _addAccountView.boysButton.selected = NO;
+                _addAccountView.girlsButton.selected = YES;
+            }
         }else{
             _addAccountView.titleLabel.text = @"添加新用户";
             _addAccountView.nameTextField.placeholder = @"宝宝";

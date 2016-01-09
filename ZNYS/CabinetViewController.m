@@ -126,29 +126,29 @@
 {
     //初始化tag字典
     self.tagDict = [[NSMutableDictionary alloc] init];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"MetalList" ofType:@"plist"];
+    NSArray *jsonArray = [NSArray arrayWithContentsOfFile:path];
     
     //创建两个列表,添加若干小车到里面
     NSMutableArray *gloryList = [[NSMutableArray alloc] init];
     NSString *littleCar = @"小车";
-    for(int i = 1;i <= 30;i++)
+    for(NSInteger i = 1;i <= 10;i++)
     {
         ItemStateEnum state;
-        if(i % 2 == 0){
+        if(i <= [self.userLevel integerValue]){
             state = Obtained;
         }
         else{
             state = NotActiveted;
         }
-        NSDictionary *dict = @{@"title":@"Level1 Object",
-                               @"description":@"Level1 Description",
-                               @"shadow-description":@"Level1 shadow"};
-        ItemWithState *gloryItem = [[ItemWithState alloc] initWithDictionary:dict  imageName:littleCar state:state tag:i style:0 starsToActivate:i];
+       NSDictionary * itemDic = [[jsonArray objectAtIndex:(i-1)] objectForKey:[NSString stringWithFormat:@"Level%ld",(long)i]];
+      ItemWithState *gloryItem = [[ItemWithState alloc] initWithDictionary:itemDic  imageName:littleCar state:state tag:i style:0 starsToActivate:i];
         
         [gloryList addObject:gloryItem];
     }
     
     //创建两个列表,添加若干小车到里面
-    [self setGloryView];
+   // [self setGloryView];
     
    // NSArray *giftList = [self.gloryList copy];
     NSString *littleBasketball = @"小篮球";
@@ -166,28 +166,28 @@
     self.giftStatusManager = userData;
 }
 
-- (void)setGloryView{
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"MetalList" ofType:@"plist"];
-    NSArray *jsonArray = [NSArray arrayWithContentsOfFile:path];
-    
-    self.giftStatusManager.gloryItemList = [[NSMutableArray alloc] init];
-    NSString *littleCar = @"小车";
-    for(NSInteger i = 1;i <= 10;i++)
-    {
-        ItemStateEnum state;
-        if(i <= [self.userLevel integerValue]){
-            state = Obtained;
-        }
-        else{
-            state = NotActiveted;
-        }
-        
-        NSDictionary * itemDic = [jsonArray objectAtIndex:(i-1)];
-        ItemWithState *gloryItem = [[ItemWithState alloc] initWithDictionary:[itemDic objectForKey:[NSString stringWithFormat:@"Level%ld",(long)i]] imageName:littleCar state:state tag:i style:0 starsToActivate:i];
-        [self.giftStatusManager.gloryItemList addObject:gloryItem];
-    }
-    
-}
+//- (void)setGloryView{
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"MetalList" ofType:@"plist"];
+//    NSArray *jsonArray = [NSArray arrayWithContentsOfFile:path];
+//    
+//    self.giftStatusManager.gloryItemList = [[NSMutableArray alloc] init];
+//    NSString *littleCar = @"小车";
+//    for(NSInteger i = 1;i <= 10;i++)
+//    {
+//        ItemStateEnum state;
+//        if(i <= [self.userLevel integerValue]){
+//            state = Obtained;
+//        }
+//        else{
+//            state = NotActiveted;
+//        }
+//        
+//        NSDictionary * itemDic = [jsonArray objectAtIndex:(i-1)];
+//        ItemWithState *gloryItem = [[ItemWithState alloc] initWithDictionary:[itemDic objectForKey:[NSString stringWithFormat:@"Level%ld",(long)i]] imageName:littleCar state:state tag:i style:0 starsToActivate:i];
+//        [self.giftStatusManager.gloryItemList addObject:gloryItem];
+//    }
+//    
+//}
 
 
 //把对应的item的View添加到ScrollView中
@@ -284,7 +284,7 @@
 - (void)refreshCabinet
 {
     for(UIView *view in self.gloryScrollView.subviews) {
-        if([view class] == [UIButton class]){
+        if(([view class] == [UIButton class])||([view isKindOfClass:[ItemWithState class]]) ){
             [view removeFromSuperview];
         }
     }
@@ -320,7 +320,7 @@
     if ([keyPath isEqualToString:@"userLevel"]) {
         self.level.text = [NSString stringWithFormat:@"LV%ld",[self.userLevel integerValue]];
         
-    
+        [self refreshCabinet];
     }
 }
 
