@@ -475,6 +475,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4545DC7A1C40AA78007ABC19 /* ToothBrushConnecting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ToothBrushConnecting;
+			sourceTree = "<group>";
+		};
 		458093921C2144B700CB9BF9 /* CoreDataHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -676,6 +683,7 @@
 		645A017A1C37BBA000556395 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				4545DC7A1C40AA78007ABC19 /* ToothBrushConnecting */,
 				645A017B1C37BBA600556395 /* UserAccount */,
 			);
 			name = Image;
