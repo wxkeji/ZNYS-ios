@@ -237,7 +237,7 @@
         NSString * uid = [[CoreDataHelper sharedInstance] createUserWithBirthday:self.addAccountView.birthButton.titleLabel.text gender:gender nickName:name];
         if (uid) {
             [[NSUserDefaults standardUserDefaults]setObject:uid forKey:@"currentUserUID"];
-
+            
             [SVProgressHUD showInfoWithStatus:@"添加用户成功"];
             [self.navigationController popViewControllerAnimated:YES];
         }else{

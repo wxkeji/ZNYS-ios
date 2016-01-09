@@ -17,7 +17,6 @@
 
 @property (nonatomic,strong) UIButton * thumbButton;
 
-@property (nonatomic,strong) UILabel * nameLabel;
 
 @end
 
