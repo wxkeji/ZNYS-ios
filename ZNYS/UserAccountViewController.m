@@ -10,6 +10,7 @@
 #import "AddAccountViewController.h"
 #import "UserDetailView.h"
 #import "SwitchUserView.h"
+#import "User.h"
 
 @interface UserAccountViewController ()
 
@@ -56,6 +57,8 @@
     [self.view addSubview:self.switchBackView];
     [self.switchBackView addSubview:self.switchUserView];
     [self.switchBackView addSubview:self.switchDesLabel];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshDetail) name:@"userDetailDidChange" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jumpToAddUserAccount) name:@"AddUserActionDidPost" object:nil];
     
@@ -118,6 +121,14 @@
 //    [viewController.addAccountView.birthButton setTitle:@"1996-01-01" forState:UIControlStateNormal];
     viewController.style = 2;
     [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (void)refreshDetail{
+    self.userDetailView.birthdayLabel.text = [User currentUserBirthday];
+    self.userDetailView.nameLabel.text = [User currentUserName];
+    self.userDetailView.brushLabel.text = [NSString stringWithFormat:@"%ld把",(long)[User currentUsersNumberOfToothBushes]];
+    self.userDetailView.coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[User currentUserTokenOwned] integerValue]];
+    //头像变化
 }
 
 #pragma mark event action

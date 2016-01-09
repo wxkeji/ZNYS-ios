@@ -27,4 +27,8 @@
                       nickName:(NSString*)nickName;
 -(NSArray*)retrieveUsers:(NSPredicate*)predicate;
 -(BOOL)whetherThereIsUser;
+-(BOOL)modifyUserInfoWithUUID:(NSString*)UUID
+                     birthday:(NSString*)Birthday
+                       gender:(NSString*)gender
+                     nickname:(NSString*)nickname;
 @end

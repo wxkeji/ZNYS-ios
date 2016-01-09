@@ -201,9 +201,9 @@
     
     NSString * gender = [[NSString alloc]init];
     if (self.addAccountView.boysButton.selected) {
-        gender = @"boy";
+        gender = @"0";
     }else{
-        gender = @"girl";
+        gender = @"1";
     }
     
     NSString * name = [[NSString alloc] init];
@@ -215,10 +215,12 @@
     
     
     if (self.style == 0) {
-//        if (uid) {
-//            [SVProgressHUD showInfoWithStatus:@"修改成功"];
-//            [self.navigationController popViewControllerAnimated:YES];
-//        }
+        NSString * uuid = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserUID"];
+        if ([[CoreDataHelper sharedInstance] modifyUserInfoWithUUID:uuid birthday:self.addAccountView.birthButton.titleLabel.text gender:gender nickname:name]) {
+            [SVProgressHUD showInfoWithStatus:@"修改用户成功"];
+        }else{
+            [SVProgressHUD showInfoWithStatus:@"修改失败，请重试"];
+        }
     }else if(self.style == 1){
         NSString * uid = [[CoreDataHelper sharedInstance] createUserWithBirthday:self.addAccountView.birthButton.titleLabel.text gender:gender nickName:name];
         if (uid) {

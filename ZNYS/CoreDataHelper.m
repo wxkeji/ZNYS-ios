@@ -185,6 +185,8 @@ NSString* storeFilename = @"database.sqlite";
     userToBeModified.birthday = Birthday;
     userToBeModified.gender = gender;
     userToBeModified.nickName = nickname;
+    [self save];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"userDetailDidChange" object:nil];
     return YES;
 }
 -(BOOL)whetherThereIsUser
