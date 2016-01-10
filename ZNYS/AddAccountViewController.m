@@ -277,7 +277,7 @@
             _addAccountView.titleLabel.text = @"添加新用户";
             _addAccountView.nameTextField.placeholder = @"宝宝";
             [_addAccountView.nameTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-            [_addAccountView.birthButton setTitle:@"1996-01-01" forState:UIControlStateNormal];
+            [_addAccountView.birthButton setTitle:@"1996年1月1日" forState:UIControlStateNormal];
         }
         
         if (self.style == 1) {
@@ -307,7 +307,7 @@
 
 - (NSString *)year{
     if (!_year) {
-        _year = [NSString stringWithFormat:@"2006"];
+        _year = [NSString stringWithFormat:@"1996"];
     }
     return _year;
 }
