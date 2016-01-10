@@ -8,6 +8,7 @@
 
 #import "ConnectingViewController.h"
 #import "ConnectingView.h"
+#import "BluetoothServer.h"
 @interface ConnectingViewController ()
 @property(nonatomic,strong)ConnectingView* connectingView;
 @end
@@ -36,6 +37,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(void)didConnect
+{
+    
+}
 #pragma mark - getter and setters
 -(ConnectingView*)connectingView
 {
@@ -49,6 +54,5 @@
 -(void)returnToHome
 {
     [self.navigationController popViewControllerAnimated:YES];
-    NSLog(@"点击返回");
 }
 @end

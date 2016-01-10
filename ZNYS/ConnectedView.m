@@ -7,7 +7,7 @@
 //
 
 #import "ConnectedView.h"
-
+#import "ToolMacroes.h"
 @implementation ConnectedView
 
 /*
@@ -17,5 +17,10 @@
     // Drawing code
 }
 */
-
+-(instancetype)init
+{
+    self = [super initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT)];
+    
+    return self;
+}
 @end

@@ -10,10 +10,13 @@
 #import <Masonry.h>
 #import "ToolMacroes.h"
 @interface ConnectingView()
-@property(strong,nonatomic)UIButton* returnButton;
+@property(strong,nonatomic)UIButton*    returnButton;
 @property(strong,nonatomic)UIImageView* backgroundView;
 @property(strong,nonatomic)UIImageView* topBarView;
-@property(strong,nonatomic)UIView* transparentView;
+@property(strong,nonatomic)UIView*      transparentView;
+@property(strong,nonatomic)UIImageView* progressView;
+@property(strong,nonatomic)UIImageView* bottomPattern;
+@property(strong,nonatomic)UIImageView* progressViewInside;
 @end
 @implementation ConnectingView
 
@@ -32,13 +35,22 @@
         [self addSubview:self.backgroundView];
         [self addSubview:self.topBarView];
         [self addSubview:self.returnButton];
+        [self addSubview:self.bottomPattern];
+        [self addSubview:self.progressView];
+       // [_progressView startAnimating];
     }
     return self;
+}
+#pragma mark - update UI
+-(void)updateConnectingProgressFrom:(float)previewProgress
+                                 to:(float)updatedProgress
+{
+//     self.progressView.animationImages
+    [self.progressView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"进度%i0",(int)updatedProgress*10]]];
 }
 #pragma mark - button actions
 -(void)returnToHome
 {
-    NSLog(@"准备返回");
     [self.delegate returnToHome];
 }
 #pragma mark - getter and setters
@@ -48,7 +60,6 @@
     {
         _returnButton   = [UIButton buttonWithType:UIButtonTypeCustom];
    [_returnButton setBackgroundImage:[UIImage imageNamed:@"BCTopBarReturnButton"] forState:UIControlStateNormal];
-        [_returnButton setBackgroundColor:[UIColor redColor]];
         [_returnButton sizeToFit];
         [_returnButton setFrame:CGRectMake(25,kSCREEN_WIDTH*154/750-CustomHeight(42),30,30)];
           [_returnButton addTarget:self action:@selector(returnToHome) forControlEvents:UIControlEventTouchUpInside];
@@ -72,6 +83,52 @@
         [_topBarView setFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_WIDTH*154/750)];
     }
     return _topBarView;
+}
+-(UIImageView*)progressView
+{
+    if(!_progressView)
+    {
+        
+      //  _progressView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BCProgressEmpty"]];
+        
+        _progressView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"进度0"]];
+        _progressView = [[UIImageView alloc] initWithFrame:CGRectMake((kSCREEN_WIDTH - CustomWidth(321)-CustomWidth(8))/2, kSCREEN_HEIGHT - CustomHeight(150)-CustomHeight(39), 321, 73)];
+      //  [_progressView setFrame:CGRectMake((kSCREEN_WIDTH - CustomWidth(321)-CustomWidth(8))/2, kSCREEN_HEIGHT - CustomHeight(150)-CustomHeight(39), 321, 73)];
+        _progressView.animationImages = [NSArray arrayWithObjects:
+                                         [UIImage imageNamed:@"进度10"],
+                                         [UIImage imageNamed:@"进度20"],
+                                         [UIImage imageNamed:@"进度30"],
+                                         [UIImage imageNamed:@"进度40"],
+                                         [UIImage imageNamed:@"进度50"],
+                                         [UIImage imageNamed:@"进度60"],
+                                         [UIImage imageNamed:@"进度70"],
+                                         [UIImage imageNamed:@"进度80"],
+                                         [UIImage imageNamed:@"进度90"],
+                                         [UIImage imageNamed:@"进度100"],
+                                         nil];
+        _progressView.animationDuration = 2;
+       // _progressView.animationRepeatCount = 1;
+       //[_progressView setFrame:CGRectMake((kSCREEN_WIDTH - CustomWidth(300))/2, kSCREEN_HEIGHT-CustomHeight(150), 300,34)];
+    }
+    return _progressView;
+}
+//-(UIView*)progressViewInside
+//{
+//    if(!_progressViewInside)
+//    {
+//        _progressViewInside = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BCProgress_fill"]];
+//        [_progressViewInside setFrame:CGRectMake(self.progressView.frame.origin.x + CustomWidth(9), self.progressView.frame.origin.y + CustomHeight(8.7) , 275.5, 17)];
+//    }
+//    return _progressViewInside;
+//}
+-(UIImageView*)bottomPattern
+{
+    if(!_bottomPattern)
+    {
+        _bottomPattern = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BCBottomPattern"]];
+        [_bottomPattern setFrame:CGRectMake(self.progressView.frame.origin.x+CustomWidth(86),self.progressView.frame.origin.y+self.progressView.frame.size.height-72,252,160)];
+    }
+    return _bottomPattern;
 }
 
 @end

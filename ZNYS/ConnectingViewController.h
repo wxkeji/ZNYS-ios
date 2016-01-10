@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "ConnectingView.h"
+
 @interface ConnectingViewController : UIViewController<ConnectingViewDelegate>
 
 @end

@@ -49,12 +49,24 @@
 		45BC40A11C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC408E1C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m */; };
 		45BC40A21C2469D9006A185F /* BrushingStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC40901C2469D9006A185F /* BrushingStatistics.m */; };
 		45CE1B6F1C2BE61900C886BC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45CE1B6D1C2BE61900C886BC /* Model.xcdatamodeld */; };
+		45DC5E5F1C421B80000D6A7A /* 进度0.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E541C421B80000D6A7A /* 进度0.png */; };
+		45DC5E601C421B80000D6A7A /* 进度10.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E551C421B80000D6A7A /* 进度10.png */; };
+		45DC5E611C421B80000D6A7A /* 进度20.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E561C421B80000D6A7A /* 进度20.png */; };
+		45DC5E621C421B80000D6A7A /* 进度30.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E571C421B80000D6A7A /* 进度30.png */; };
+		45DC5E631C421B80000D6A7A /* 进度40.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E581C421B80000D6A7A /* 进度40.png */; };
+		45DC5E641C421B80000D6A7A /* 进度50.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E591C421B80000D6A7A /* 进度50.png */; };
+		45DC5E651C421B80000D6A7A /* 进度60.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E5A1C421B80000D6A7A /* 进度60.png */; };
+		45DC5E661C421B80000D6A7A /* 进度70.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E5B1C421B80000D6A7A /* 进度70.png */; };
+		45DC5E671C421B80000D6A7A /* 进度80.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E5C1C421B80000D6A7A /* 进度80.png */; };
+		45DC5E681C421B80000D6A7A /* 进度90.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E5D1C421B80000D6A7A /* 进度90.png */; };
+		45DC5E691C421B80000D6A7A /* 进度100.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E5E1C421B80000D6A7A /* 进度100.png */; };
+		45DC5E701C423615000D6A7A /* libBLELib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC5E6F1C423615000D6A7A /* libBLELib.a */; };
 		45EB69CD1C40B2C800160457 /* BCBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69C71C40B2C800160457 /* BCBackground.png */; };
-		45EB69CE1C40B2C800160457 /* BCButtomPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69C81C40B2C800160457 /* BCButtomPattern.png */; };
 		45EB69CF1C40B2C800160457 /* BCProgress_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69C91C40B2C800160457 /* BCProgress_fill.png */; };
 		45EB69D01C40B2C800160457 /* BCProgressEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69CA1C40B2C800160457 /* BCProgressEmpty.png */; };
 		45EB69D11C40B2C800160457 /* BCTopBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69CB1C40B2C800160457 /* BCTopBar.png */; };
 		45EB69D21C40B2C800160457 /* BCTopBarReturnButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69CC1C40B2C800160457 /* BCTopBarReturnButton.png */; };
+		45EB69D41C415DDE00160457 /* BCBottomPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69D31C415DDE00160457 /* BCBottomPattern.png */; };
 		64337DC81C3B8DD400C9D811 /* ThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64337DC71C3B8DD400C9D811 /* ThumbView.m */; };
 		645A016F1C37B5B800556395 /* AddAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016A1C37B5B800556395 /* AddAccountView.m */; };
 		645A01701C37B5B800556395 /* SelectBirthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016C1C37B5B800556395 /* SelectBirthView.m */; };
@@ -193,12 +205,26 @@
 		45BC408F1C2469D9006A185F /* BrushingStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushingStatistics.h; sourceTree = "<group>"; };
 		45BC40901C2469D9006A185F /* BrushingStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushingStatistics.m; sourceTree = "<group>"; };
 		45CE1B6E1C2BE61900C886BC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		45DC5E541C421B80000D6A7A /* 进度0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度0.png"; sourceTree = "<group>"; };
+		45DC5E551C421B80000D6A7A /* 进度10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度10.png"; sourceTree = "<group>"; };
+		45DC5E561C421B80000D6A7A /* 进度20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度20.png"; sourceTree = "<group>"; };
+		45DC5E571C421B80000D6A7A /* 进度30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度30.png"; sourceTree = "<group>"; };
+		45DC5E581C421B80000D6A7A /* 进度40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度40.png"; sourceTree = "<group>"; };
+		45DC5E591C421B80000D6A7A /* 进度50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度50.png"; sourceTree = "<group>"; };
+		45DC5E5A1C421B80000D6A7A /* 进度60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度60.png"; sourceTree = "<group>"; };
+		45DC5E5B1C421B80000D6A7A /* 进度70.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度70.png"; sourceTree = "<group>"; };
+		45DC5E5C1C421B80000D6A7A /* 进度80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度80.png"; sourceTree = "<group>"; };
+		45DC5E5D1C421B80000D6A7A /* 进度90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度90.png"; sourceTree = "<group>"; };
+		45DC5E5E1C421B80000D6A7A /* 进度100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度100.png"; sourceTree = "<group>"; };
+		45DC5E6D1C423606000D6A7A /* BluetoothServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothServer.h; sourceTree = "<group>"; };
+		45DC5E6E1C423606000D6A7A /* SensorDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorDataHandler.h; sourceTree = "<group>"; };
+		45DC5E6F1C423615000D6A7A /* libBLELib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBLELib.a; path = BLELib/libBLELib.a; sourceTree = "<group>"; };
 		45EB69C71C40B2C800160457 /* BCBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCBackground.png; sourceTree = "<group>"; };
-		45EB69C81C40B2C800160457 /* BCButtomPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCButtomPattern.png; sourceTree = "<group>"; };
 		45EB69C91C40B2C800160457 /* BCProgress_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCProgress_fill.png; sourceTree = "<group>"; };
 		45EB69CA1C40B2C800160457 /* BCProgressEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCProgressEmpty.png; sourceTree = "<group>"; };
 		45EB69CB1C40B2C800160457 /* BCTopBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCTopBar.png; sourceTree = "<group>"; };
 		45EB69CC1C40B2C800160457 /* BCTopBarReturnButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCTopBarReturnButton.png; sourceTree = "<group>"; };
+		45EB69D31C415DDE00160457 /* BCBottomPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCBottomPattern.png; sourceTree = "<group>"; };
 		64337DC61C3B8DD400C9D811 /* ThumbView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbView.h; sourceTree = "<group>"; };
 		64337DC71C3B8DD400C9D811 /* ThumbView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbView.m; sourceTree = "<group>"; };
 		645A01681C37B56900556395 /* ToolMacroes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolMacroes.h; sourceTree = "<group>"; };
@@ -284,6 +310,7 @@
 			files = (
 				458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */,
 				840ACE02D000AED2E3D3E8A8 /* libPods.a in Frameworks */,
+				45DC5E701C423615000D6A7A /* libBLELib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +471,7 @@
 		0487D7621B74548F00756EF8 /* ZNYS */ = {
 			isa = PBXGroup;
 			children = (
+				45DC5E6A1C4235DD000D6A7A /* Library */,
 				645A018C1C37CAE100556395 /* Base */,
 				645A01881C37C97100556395 /* Categories */,
 				645A01781C37BB7B00556395 /* Resource */,
@@ -585,15 +613,53 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
+		45DC5E6A1C4235DD000D6A7A /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				45DC5E6B1C4235E4000D6A7A /* BluetoothModule */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		45DC5E6B1C4235E4000D6A7A /* BluetoothModule */ = {
+			isa = PBXGroup;
+			children = (
+				45DC5E6F1C423615000D6A7A /* libBLELib.a */,
+				45DC5E6C1C423606000D6A7A /* Header */,
+			);
+			name = BluetoothModule;
+			sourceTree = "<group>";
+		};
+		45DC5E6C1C423606000D6A7A /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				45DC5E6D1C423606000D6A7A /* BluetoothServer.h */,
+				45DC5E6E1C423606000D6A7A /* SensorDataHandler.h */,
+			);
+			name = Header;
+			path = BLELib;
+			sourceTree = "<group>";
+		};
 		45EB69C61C40B2B100160457 /* ToothBrushConnecting */ = {
 			isa = PBXGroup;
 			children = (
+				45EB69D31C415DDE00160457 /* BCBottomPattern.png */,
 				45EB69C71C40B2C800160457 /* BCBackground.png */,
-				45EB69C81C40B2C800160457 /* BCButtomPattern.png */,
 				45EB69C91C40B2C800160457 /* BCProgress_fill.png */,
 				45EB69CA1C40B2C800160457 /* BCProgressEmpty.png */,
 				45EB69CB1C40B2C800160457 /* BCTopBar.png */,
 				45EB69CC1C40B2C800160457 /* BCTopBarReturnButton.png */,
+				45DC5E541C421B80000D6A7A /* 进度0.png */,
+				45DC5E551C421B80000D6A7A /* 进度10.png */,
+				45DC5E561C421B80000D6A7A /* 进度20.png */,
+				45DC5E571C421B80000D6A7A /* 进度30.png */,
+				45DC5E581C421B80000D6A7A /* 进度40.png */,
+				45DC5E591C421B80000D6A7A /* 进度50.png */,
+				45DC5E5A1C421B80000D6A7A /* 进度60.png */,
+				45DC5E5B1C421B80000D6A7A /* 进度70.png */,
+				45DC5E5C1C421B80000D6A7A /* 进度80.png */,
+				45DC5E5D1C421B80000D6A7A /* 进度90.png */,
+				45DC5E5E1C421B80000D6A7A /* 进度100.png */,
 			);
 			name = ToothBrushConnecting;
 			sourceTree = "<group>";
@@ -871,23 +937,34 @@
 				6476646F1C3E604200386E05 /* MetalList.plist in Resources */,
 				0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */,
 				647E05C21C3A5C1D00ADB810 /* userAccount_logo@3x.png in Resources */,
+				45DC5E691C421B80000D6A7A /* 进度100.png in Resources */,
+				45DC5E641C421B80000D6A7A /* 进度50.png in Resources */,
 				0421D3711B8126C700BF6065 /* Settings.storyboard in Resources */,
-				45EB69CE1C40B2C800160457 /* BCButtomPattern.png in Resources */,
 				45EB69D11C40B2C800160457 /* BCTopBar.png in Resources */,
+				45DC5E651C421B80000D6A7A /* 进度60.png in Resources */,
 				645A01831C37C56D00556395 /* 华康娃娃体.TTF in Resources */,
 				45EB69CD1C40B2C800160457 /* BCBackground.png in Resources */,
+				45DC5E681C421B80000D6A7A /* 进度90.png in Resources */,
+				45DC5E601C421B80000D6A7A /* 进度10.png in Resources */,
 				647E05BF1C3A5C1D00ADB810 /* userAccount_back@2x.png in Resources */,
 				45EB69CF1C40B2C800160457 /* BCProgress_fill.png in Resources */,
 				647E05C11C3A5C1D00ADB810 /* userAccount_logo@2x.png in Resources */,
 				041365FA1BAD8AA600CD0604 /* DialogView.xib in Resources */,
 				45EB69D21C40B2C800160457 /* BCTopBarReturnButton.png in Resources */,
+				45DC5E5F1C421B80000D6A7A /* 进度0.png in Resources */,
+				45DC5E631C421B80000D6A7A /* 进度40.png in Resources */,
 				6476646D1C3E600F00386E05 /* 勋章描述.json in Resources */,
+				45DC5E621C421B80000D6A7A /* 进度30.png in Resources */,
 				6F3962841C3A13E200C78F84 /* Calendar.storyboard in Resources */,
+				45EB69D41C415DDE00160457 /* BCBottomPattern.png in Resources */,
 				6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */,
 				0487D7711B74548F00756EF8 /* Images.xcassets in Resources */,
+				45DC5E661C421B80000D6A7A /* 进度70.png in Resources */,
 				6F3962821C3A12C100C78F84 /* Cabinet.storyboard in Resources */,
+				45DC5E611C421B80000D6A7A /* 进度20.png in Resources */,
 				647E05C01C3A5C1D00ADB810 /* userAccount_back@3x.png in Resources */,
 				45EB69D01C40B2C800160457 /* BCProgressEmpty.png in Resources */,
+				45DC5E671C421B80000D6A7A /* 进度80.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1135,6 +1212,10 @@
 				INFOPLIST_FILE = ZNYS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZNYS/BLELib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1147,6 +1228,10 @@
 				INFOPLIST_FILE = ZNYS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ZNYS/BLELib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
