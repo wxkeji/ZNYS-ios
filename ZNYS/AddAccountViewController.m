@@ -218,6 +218,7 @@
         NSString * uuid = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserUID"];
         if ([[CoreDataHelper sharedInstance] modifyUserInfoWithUUID:uuid birthday:self.addAccountView.birthButton.titleLabel.text gender:gender nickname:name]) {
             [SVProgressHUD showInfoWithStatus:@"修改用户成功"];
+            
         }else{
             [SVProgressHUD showInfoWithStatus:@"修改失败，请重试"];
         }
@@ -236,8 +237,7 @@
     }else{
         NSString * uid = [[CoreDataHelper sharedInstance] createUserWithBirthday:self.addAccountView.birthButton.titleLabel.text gender:gender nickName:name];
         if (uid) {
-            [[NSUserDefaults standardUserDefaults]setObject:uid forKey:@"currentUserUID"];
-            
+           
             [SVProgressHUD showInfoWithStatus:@"添加用户成功"];
             [self.navigationController popViewControllerAnimated:YES];
         }else{

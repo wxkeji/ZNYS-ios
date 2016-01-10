@@ -47,7 +47,8 @@
 #pragma mark event action
 
 - (void)thumbButtonAction{
-    //发通知
+    [[NSUserDefaults standardUserDefaults] setObject:self.uuid forKey:@"currentUserUID"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"userDidSwitch" object:nil];
 }
 
 #pragma mark getters and setters
@@ -68,6 +69,13 @@
         [_thumbButton addTarget:self action:@selector(thumbButtonAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _thumbButton;
+}
+
+- (NSString *)uuid{
+    if (!_uuid) {
+        _uuid = [[NSString alloc] init];
+    }
+    return _uuid;
 }
 
 @end

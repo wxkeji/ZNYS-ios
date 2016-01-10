@@ -55,6 +55,7 @@
 
 @property UserData *giftStatusManager;
 @property (strong,nonatomic) NSMutableDictionary *tagDict;   //保存tag的列表的词典
+@property (nonatomic,strong) NSMutableArray * gloryList;
 
 @end
 
@@ -65,10 +66,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self initPageJumps];
-    [self initCabinet];
-
+    
     [self.view layoutIfNeeded];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDetailChange) name:@"userDidSwitch" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDetailChange) name:@"userDidCreate" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDetailChange) name:@"userDetailDidChange" object:nil];
     
     //设置屏幕上的信息
     self.stars.text = [[NSString alloc] initWithFormat:@"%d",self.giftStatusManager.currentValidNumberOfStars];
@@ -77,6 +80,8 @@
     [self addObserver:self forKeyPath:@"userLevel" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     
     self.level.text = [NSString stringWithFormat:@"LV%ld",[self.userLevel integerValue]];
+    self.username.text = [User currentUserName];
+    self.stars.text = [NSString stringWithFormat:@"%@",[User currentUserStarsOwned]];
     
     //测试等级按钮
     UIButton * levelButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -85,11 +90,18 @@
     [levelButton setTitle:@"等级测试" forState:UIControlStateNormal];
     [levelButton addTarget:self action:@selector(changeLevel) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:levelButton];
+    
+    [self initPageJumps];
+    [self initCabinet];
+
 }
 
 - (void)changeLevel{
     NSInteger level =[self.userLevel integerValue];
-    NSInteger addResult = (++level)%10;
+    NSInteger addResult = (++level)%11;
+    if (addResult == 0) {
+        addResult++;
+    }
     NSNumber * result = [NSNumber numberWithInteger:addResult];
     [self setValue:result forKey:@"userLevel"];
 }
@@ -126,26 +138,27 @@
 {
     //初始化tag字典
     self.tagDict = [[NSMutableDictionary alloc] init];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"MetalList" ofType:@"plist"];
-    NSArray *jsonArray = [NSArray arrayWithContentsOfFile:path];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"MetalList" ofType:@"plist"];
+//    NSArray *jsonArray = [NSArray arrayWithContentsOfFile:path];
     
     //创建两个列表,添加若干小车到里面
-    NSMutableArray *gloryList = [[NSMutableArray alloc] init];
-    NSString *littleCar = @"小车";
-    for(NSInteger i = 1;i <= 10;i++)
-    {
-        ItemStateEnum state;
-        if(i <= [self.userLevel integerValue]){
-            state = Obtained;
-        }
-        else{
-            state = NotActiveted;
-        }
-       NSDictionary * itemDic = [[jsonArray objectAtIndex:(i-1)] objectForKey:[NSString stringWithFormat:@"Level%ld",(long)i]];
-      ItemWithState *gloryItem = [[ItemWithState alloc] initWithDictionary:itemDic  imageName:littleCar state:state tag:i style:0 starsToActivate:i];
-        
-        [gloryList addObject:gloryItem];
-    }
+    self.gloryList = [[NSMutableArray alloc] init];
+    [self setGloryView];
+//    NSString *littleCar = @"小车";
+//    for(NSInteger i = 1;i <= 10;i++)
+//    {
+//        ItemStateEnum state;
+//        if(i <= [self.userLevel integerValue]){
+//            state = Obtained;
+//        }
+//        else{
+//            state = NotActiveted;
+//        }
+//       NSDictionary * itemDic = [[jsonArray objectAtIndex:(i-1)] objectForKey:[NSString stringWithFormat:@"Level%ld",(long)i]];
+//      ItemWithState *gloryItem = [[ItemWithState alloc] initWithDictionary:itemDic  imageName:littleCar state:state tag:i style:0 starsToActivate:i];
+//        
+//        [self.gloryList addObject:gloryItem];
+//    }
     
     //创建两个列表,添加若干小车到里面
    // [self setGloryView];
@@ -162,32 +175,34 @@
         [bathItemList addObject:bathItem];
     }
     
-    UserData *userData = [[UserData alloc] initWithCurrentValidNumbersOfStars:22 gloryItemList:gloryList bathItemList:bathItemList];
+    UserData *userData = [[UserData alloc] initWithCurrentValidNumbersOfStars:22 gloryItemList:self.gloryList bathItemList:bathItemList];
     self.giftStatusManager = userData;
 }
 
-//- (void)setGloryView{
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"MetalList" ofType:@"plist"];
-//    NSArray *jsonArray = [NSArray arrayWithContentsOfFile:path];
-//    
-//    self.giftStatusManager.gloryItemList = [[NSMutableArray alloc] init];
-//    NSString *littleCar = @"小车";
-//    for(NSInteger i = 1;i <= 10;i++)
-//    {
-//        ItemStateEnum state;
-//        if(i <= [self.userLevel integerValue]){
-//            state = Obtained;
-//        }
-//        else{
-//            state = NotActiveted;
-//        }
-//        
-//        NSDictionary * itemDic = [jsonArray objectAtIndex:(i-1)];
-//        ItemWithState *gloryItem = [[ItemWithState alloc] initWithDictionary:[itemDic objectForKey:[NSString stringWithFormat:@"Level%ld",(long)i]] imageName:littleCar state:state tag:i style:0 starsToActivate:i];
-//        [self.giftStatusManager.gloryItemList addObject:gloryItem];
-//    }
-//    
-//}
+- (void)setGloryView{
+    [self.gloryList removeAllObjects];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"MetalList" ofType:@"plist"];
+    NSArray *jsonArray = [NSArray arrayWithContentsOfFile:path];
+    
+   // self.giftStatusManager.gloryItemList = [[NSMutableArray alloc] init];
+    NSString *littleCar = @"小车";
+    for(NSInteger i = 1;i <= 10;i++)
+    {
+        ItemStateEnum state;
+        if(i <= [self.userLevel integerValue]){
+            state = Obtained;
+        }
+        else{
+            state = NotActiveted;
+        }
+        
+        NSDictionary * itemDic = [jsonArray objectAtIndex:(i-1)];
+        ItemWithState *gloryItem = [[ItemWithState alloc] initWithDictionary:[itemDic objectForKey:[NSString stringWithFormat:@"Level%ld",(long)i]] imageName:littleCar state:state tag:i style:0 starsToActivate:i];
+        [self.gloryList addObject:gloryItem];
+    }
+    
+}
 
 
 //把对应的item的View添加到ScrollView中
@@ -284,15 +299,14 @@
 - (void)refreshCabinet
 {
     for(UIView *view in self.gloryScrollView.subviews) {
-        if(([view class] == [UIButton class])||([view isKindOfClass:[ItemWithState class]]) ){
-            [view removeFromSuperview];
-        }
+        [view removeFromSuperview];
     }
     for(UIView *view in self.bathItemScrollView.subviews) {
         if([view class] == [UIButton class]){
             [view removeFromSuperview];
         }
     }
+    [self setGloryView];
     [self setItemScrollView:self.gloryScrollView itemList:self.giftStatusManager.gloryItemList itemEachPage:4 selector:@selector(itemWasTouched:) tagListName:@"gloryItemTagList" startTag:TAG_GLORY_ITEM];
     [self setItemScrollView:self.bathItemScrollView itemList:self.giftStatusManager.bathItemList itemEachPage:4 selector:@selector(itemWasTouched:) tagListName:@"bathItemTagList" startTag:TAG_BATH_ITEM];
     
@@ -322,6 +336,16 @@
         
         [self refreshCabinet];
     }
+}
+
+#pragma mark private method
+
+- (void)userDetailChange{
+    self.userLevel = [User currentUserLevel];
+    self.level.text = [NSString stringWithFormat:@"LV%@",self.userLevel];
+    self.username.text = [User currentUserName];
+    self.stars.text = [NSString stringWithFormat:@"%@",[User currentUserStarsOwned]];
+    [self refreshCabinet];
 }
 
 #pragma mark - 事件响应函数

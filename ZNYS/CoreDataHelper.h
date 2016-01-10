@@ -31,4 +31,5 @@
                      birthday:(NSString*)Birthday
                        gender:(NSString*)gender
                      nickname:(NSString*)nickname;
+-(NSArray*)retrieveOtherUsersExcept:(NSString*)uuid;
 @end
