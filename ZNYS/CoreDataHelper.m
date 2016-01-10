@@ -168,6 +168,7 @@ NSString* storeFilename = @"database.sqlite";
     user.tokenOwned = @0;
     user.uuid = [[NSUUID UUID] UUIDString];
     [self save];
+    [[NSUserDefaults standardUserDefaults]setObject:user.uuid forKey:@"currentUserUID"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"userDidCreate" object:nil];
     return user.uuid;
 }

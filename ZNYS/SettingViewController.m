@@ -42,6 +42,8 @@
     [self.view addSubview:self.headerView];
     [self.view addSubview:self.buttonView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshUserDetail) name:@"userDetailDidChange" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshUserDetail) name:@"userDidCreate" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshUserDetail) name:@"userDidSwitch" object:nil];
 //    [self.view addSubview:self.logoImage];
     
     WS(weakSelf, self);

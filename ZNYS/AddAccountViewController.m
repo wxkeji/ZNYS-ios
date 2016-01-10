@@ -218,6 +218,7 @@
         NSString * uuid = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserUID"];
         if ([[CoreDataHelper sharedInstance] modifyUserInfoWithUUID:uuid birthday:self.addAccountView.birthButton.titleLabel.text gender:gender nickname:name]) {
             [SVProgressHUD showInfoWithStatus:@"修改用户成功"];
+            
         }else{
             [SVProgressHUD showInfoWithStatus:@"修改失败，请重试"];
         }
@@ -236,8 +237,7 @@
     }else{
         NSString * uid = [[CoreDataHelper sharedInstance] createUserWithBirthday:self.addAccountView.birthButton.titleLabel.text gender:gender nickName:name];
         if (uid) {
-            [[NSUserDefaults standardUserDefaults]setObject:uid forKey:@"currentUserUID"];
-            
+           
             [SVProgressHUD showInfoWithStatus:@"添加用户成功"];
             [self.navigationController popViewControllerAnimated:YES];
         }else{
@@ -277,7 +277,7 @@
             _addAccountView.titleLabel.text = @"添加新用户";
             _addAccountView.nameTextField.placeholder = @"宝宝";
             [_addAccountView.nameTextField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-            [_addAccountView.birthButton setTitle:@"1996-01-01" forState:UIControlStateNormal];
+            [_addAccountView.birthButton setTitle:@"1996年1月1日" forState:UIControlStateNormal];
         }
         
         if (self.style == 1) {
@@ -307,7 +307,7 @@
 
 - (NSString *)year{
     if (!_year) {
-        _year = [NSString stringWithFormat:@"2006"];
+        _year = [NSString stringWithFormat:@"1996"];
     }
     return _year;
 }

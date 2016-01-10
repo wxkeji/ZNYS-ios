@@ -14,4 +14,6 @@
 
 @property (nonatomic,strong) UILabel * nameLabel;
 
+@property (nonatomic,strong) NSString * uuid;
+
 @end

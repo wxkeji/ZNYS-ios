@@ -11,6 +11,7 @@
 #import "UserDetailView.h"
 #import "SwitchUserView.h"
 #import "User.h"
+#import "CoreDataHelper.h"
 
 @interface UserAccountViewController ()
 
@@ -59,8 +60,9 @@
     [self.switchBackView addSubview:self.switchDesLabel];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshDetail) name:@"userDetailDidChange" object:nil];
-    
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newUserDetail) name:@"userDidCreate" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jumpToAddUserAccount) name:@"AddUserActionDidPost" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newUserDetail) name:@"userDidSwitch" object:nil];
     
     WS(weakSelf, self);
     [self.navView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -131,6 +133,11 @@
     //头像变化
 }
 
+- (void)newUserDetail{
+    self.switchUserView.dataArray = [[CoreDataHelper sharedInstance] retrieveOtherUsersExcept:[[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserUID"]];
+    [self.switchUserView refresh];
+    [self refreshDetail];
+}
 #pragma mark event action
 
 - (void)dismissButtonAction{

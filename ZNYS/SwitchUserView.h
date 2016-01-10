@@ -10,4 +10,8 @@
 
 @interface SwitchUserView : ZNYSBaseView
 
+@property (nonatomic,strong) NSArray * dataArray;
+
+- (void)refresh;
+
 @end
