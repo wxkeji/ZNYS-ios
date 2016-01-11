@@ -10,7 +10,6 @@
 #import "CalendarViewController.h"
 #import "IsParentViewController.h"
 #import "Config.h"
-#import "ItemStatusManagerFile.h"
 #import "NSArray+ForceBound.h"
 #import "DialogView.h"
 #import "ToolMacroes.h"
@@ -21,27 +20,30 @@
 #import "ItemWithState.h"
 @interface CabinetViewController ()
 
-#pragma mark - UI 控件的 Outlet —— 两个 ScrollView
+//奖品柜的两个ScrollView
 
 @property (weak, nonatomic) IBOutlet UIScrollView *gloryScrollView;   //奖品柜上层，存放荣誉奖杯等
 @property (weak,nonatomic) IBOutlet UIScrollView *bathItemScrollView; //奖品柜下层，存放浴室关键物件
 
-#pragma mark - UI 控件的 Outlet —— 用户状态
+@property (strong, nonatomic) NSMutableArray *gloryList;
+@property (strong, nonatomic) NSMutableArray *giftList;
+
+//用户状态控件
 
 @property (weak, nonatomic) IBOutlet UILabel *username;
 @property (weak, nonatomic) IBOutlet UILabel *stars;//屏幕上显示的星星数
 @property (weak, nonatomic) IBOutlet UIImageView *cartoonHead;  //奖品柜上的卡通人头。。它会根据性别显示蓝色这个或者粉红色的另一个
 @property (weak, nonatomic) IBOutlet UILabel *level;
 
-#pragma mark - UI 控件的 Outlet —— 按钮
+//按钮
 
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (weak, nonatomic) IBOutlet UIButton *calendarButton;
 @property (weak, nonatomic) IBOutlet UIButton *connectToothBrushButton;
 
-@property (weak, nonatomic) IBOutlet UIButton *bookButton;  //这个是日历按钮左边的按钮，看起来像一本书……
+@property (weak, nonatomic) IBOutlet UIButton *bookButton;  //这个是日历按钮左边的按钮，看起来像一本书
 
-#pragma mark - UI 控件的 Outlet —— 通知中心、广告
+//通知中心、广告
 
 @property (weak, nonatomic) IBOutlet UIImageView *ADBackroung;//广告位的背景图片
 @property (weak, nonatomic) IBOutlet UIImageView *advertismentLabel;//广告位Label
@@ -51,16 +53,11 @@
 //- (IBAction)settingButtonTouched:(id)sender;
 @property (strong, nonatomic) UILabel *label;
 
-#pragma mark -
-
-@property UserData *giftStatusManager;
-@property (nonatomic,strong) NSMutableArray * gloryList;
-
 @end
 
 @implementation CabinetViewController
 
-#pragma mark - View Life Cycle
+#pragma mark - Life Cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -73,7 +70,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDetailChange) name:@"userDetailDidChange" object:nil];
     
     //设置屏幕上的信息
-    self.stars.text = [[NSString alloc] initWithFormat:@"%d",self.giftStatusManager.currentValidNumberOfStars];
     
     self.userLevel = [User currentUserLevel];
     [self addObserver:self forKeyPath:@"userLevel" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
@@ -95,35 +91,6 @@
 
 }
 
-- (void)changeLevel{
-    NSInteger level =[self.userLevel integerValue];
-    NSInteger addResult = (++level)%11;
-    if (addResult == 0) {
-        addResult++;
-    }
-    NSNumber * result = [NSNumber numberWithInteger:addResult];
-    [self setValue:result forKey:@"userLevel"];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    [self setItemScrollView:self.gloryScrollView
-                   itemList:self.giftStatusManager.gloryItemList
-               itemEachPage:4
-                   onItemClick:@selector(itemWasTouched:)
-                tagListName:@"gloryItemTagList"
-                   startTag:TAG_GLORY_ITEM];
-    
-    [self setItemScrollView:self.bathItemScrollView
-                   itemList:self.giftStatusManager.bathItemList
-               itemEachPage:4
-                   onItemClick:@selector(itemWasTouched:)
-                tagListName:@"bathItemTagList"
-                   startTag:TAG_BATH_ITEM ];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -134,7 +101,25 @@
     [self removeObserver:self forKeyPath:@"userLevel"];
 }
 
-#pragma mark - 设置奖品柜的数据
+#pragma mark - Private Methods
+
+- (void)changeLevel{
+    NSInteger level =[self.userLevel integerValue];
+    NSInteger addResult = (++level)%11;
+    if (addResult == 0) {
+        addResult++;
+    }
+    NSNumber * result = [NSNumber numberWithInteger:addResult];
+    [self setValue:result forKey:@"userLevel"];
+}
+
+- (void)userDetailChange{
+    self.userLevel = [User currentUserLevel];
+    self.level.text = [NSString stringWithFormat:@"LV%@",self.userLevel];
+    self.username.text = [User currentUserName];
+    self.stars.text = [NSString stringWithFormat:@"%@",[User currentUserStarsOwned]];
+    [self refreshCabinet];
+}
 
 - (void)initCabinet
 {
@@ -175,8 +160,18 @@
         [bathItemList addObject:bathItem];
     }
     
-    UserData *userData = [[UserData alloc] initWithCurrentValidNumbersOfStars:22 gloryItemList:self.gloryList bathItemList:bathItemList];
-    self.giftStatusManager = userData;
+    self.gloryList = self.gloryList;
+    self.giftList = bathItemList;
+    
+    [self setItemScrollView:self.gloryScrollView
+                   itemList:self.gloryList
+               itemEachPage:4
+                onItemClick:@selector(itemWasTouched:)];
+    
+    [self setItemScrollView:self.bathItemScrollView
+                   itemList:self.giftList
+               itemEachPage:4
+                onItemClick:@selector(itemWasTouched:)];
 }
 
 - (void)setGloryView{
@@ -210,8 +205,6 @@
                  itemList:(NSMutableArray *)giftList
              itemEachPage:(int)itemEachPage
                  onItemClick:(SEL)onItemClickSelecor
-              tagListName:(NSString *)tagListName
-                 startTag:(long)startTag
 {
     //根据奖品列表获得礼品柜的个数
     long n = ([giftList count] - 1) / itemEachPage + 1;
@@ -299,8 +292,8 @@
         }
     }
     [self setGloryView];
-    [self setItemScrollView:self.gloryScrollView itemList:self.giftStatusManager.gloryItemList itemEachPage:4 onItemClick:@selector(itemWasTouched:) tagListName:@"gloryItemTagList" startTag:TAG_GLORY_ITEM];
-    [self setItemScrollView:self.bathItemScrollView itemList:self.giftStatusManager.bathItemList itemEachPage:4 onItemClick:@selector(itemWasTouched:) tagListName:@"bathItemTagList" startTag:TAG_BATH_ITEM];
+    [self setItemScrollView:self.gloryScrollView itemList:self.gloryList itemEachPage:4 onItemClick:@selector(itemWasTouched:)];
+    [self setItemScrollView:self.bathItemScrollView itemList:self.giftList itemEachPage:4 onItemClick:@selector(itemWasTouched:)];
     
 }
 
@@ -330,17 +323,7 @@
     }
 }
 
-#pragma mark private method
-
-- (void)userDetailChange{
-    self.userLevel = [User currentUserLevel];
-    self.level.text = [NSString stringWithFormat:@"LV%@",self.userLevel];
-    self.username.text = [User currentUserName];
-    self.stars.text = [NSString stringWithFormat:@"%@",[User currentUserStarsOwned]];
-    [self refreshCabinet];
-}
-
-#pragma mark - 事件响应函数
+#pragma mark - Event Action
 
 //响应item的点击事件
 - (void) itemWasTouched:(UITapGestureRecognizer *)recognizer
@@ -353,11 +336,11 @@
     ItemWithState *item;
     if(itemView.superview == self.gloryScrollView)
     {
-         item= self.giftStatusManager.gloryItemList[index];
+         item= self.gloryList[index];
     }
     else
     {
-        item= self.giftStatusManager.bathItemList[index];
+        item= self.giftList[index];
     }
     itemName = item.itemName;
     conditionToGet = [NSString stringWithFormat:@"兑换条件：%ld颗星星",(long)item.starsToActivate];

@@ -11,10 +11,8 @@
 		041366001BAD8C9A00CD0604 /* DialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 041365FF1BAD8C9A00CD0604 /* DialogView.m */; };
 		0421D3711B8126C700BF6065 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0421D3631B8126C700BF6065 /* Settings.storyboard */; };
 		0421D3721B8126C700BF6065 /* CabinetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3651B8126C700BF6065 /* CabinetViewController.m */; };
-		0421D3731B8126C700BF6065 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3691B8126C700BF6065 /* UserData.m */; };
 		0421D3741B8126C700BF6065 /* ItemWithState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D36B1B8126C700BF6065 /* ItemWithState.m */; };
 		0421D3791B830D0B00BF6065 /* ItemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3781B830D0B00BF6065 /* ItemState.m */; };
-		044DD1A71BA0A21F00176AD4 /* ItemStatusManagerFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 044DD1A61BA0A21F00176AD4 /* ItemStatusManagerFile.m */; };
 		0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0457FB5D1BA9461000001A9D /* TouchableImageView.m */; };
 		0469BFBE1BADC22F0055DF4A /* Fortune.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469BFBD1BADC22F0055DF4A /* Fortune.m */; };
 		047D3D391B8A02DA00871627 /* NSArray+ForceBound.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D3D381B8A02DA00871627 /* NSArray+ForceBound.m */; };
@@ -96,7 +94,6 @@
 		6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F368F071BBCCE1700D273C9 /* IsParentViewController.xib */; };
 		6F3962821C3A12C100C78F84 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F3962811C3A12C100C78F84 /* Cabinet.storyboard */; };
 		6F3962841C3A13E200C78F84 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F3962831C3A13E200C78F84 /* Calendar.storyboard */; };
-		6F851F3F1BA9B31B0098415D /* BathItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F851F3E1BA9B31B0098415D /* BathItem.m */; };
 		6FC69C131BBC4DBD0074C38E /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */; };
 		840ACE02D000AED2E3D3E8A8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 683F419A9E2D0C36989BFD4A /* libPods.a */; };
 		C43136411BC26CF90097A91B /* LeftToRightSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = C43136401BC26CF90097A91B /* LeftToRightSegue.m */; };
@@ -127,16 +124,12 @@
 		041365FF1BAD8C9A00CD0604 /* DialogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialogView.m; sourceTree = "<group>"; };
 		0421D3641B8126C700BF6065 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		0421D3651B8126C700BF6065 /* CabinetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CabinetViewController.m; sourceTree = "<group>"; };
-		0421D3661B8126C700BF6065 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		0421D3671B8126C700BF6065 /* CabinetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CabinetViewController.h; sourceTree = "<group>"; };
 		0421D3681B8126C700BF6065 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
-		0421D3691B8126C700BF6065 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
 		0421D36B1B8126C700BF6065 /* ItemWithState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemWithState.m; sourceTree = "<group>"; };
 		0421D36D1B8126C700BF6065 /* ItemWithState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemWithState.h; sourceTree = "<group>"; };
 		0421D3771B830D0B00BF6065 /* ItemState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemState.h; sourceTree = "<group>"; };
 		0421D3781B830D0B00BF6065 /* ItemState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemState.m; sourceTree = "<group>"; };
-		044DD1A51BA0A21F00176AD4 /* ItemStatusManagerFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemStatusManagerFile.h; sourceTree = "<group>"; };
-		044DD1A61BA0A21F00176AD4 /* ItemStatusManagerFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemStatusManagerFile.m; sourceTree = "<group>"; };
 		0457FB5C1BA9461000001A9D /* TouchableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchableImageView.h; sourceTree = "<group>"; };
 		0457FB5D1BA9461000001A9D /* TouchableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchableImageView.m; sourceTree = "<group>"; };
 		0469BFBC1BADC22F0055DF4A /* Fortune.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fortune.h; sourceTree = "<group>"; };
@@ -272,8 +265,6 @@
 		6F368F071BBCCE1700D273C9 /* IsParentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IsParentViewController.xib; sourceTree = "<group>"; };
 		6F3962811C3A12C100C78F84 /* Cabinet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cabinet.storyboard; sourceTree = "<group>"; };
 		6F3962831C3A13E200C78F84 /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
-		6F851F3D1BA9B31B0098415D /* BathItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BathItem.h; sourceTree = "<group>"; };
-		6F851F3E1BA9B31B0098415D /* BathItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BathItem.m; sourceTree = "<group>"; };
 		6FC69C101BBC4DBD0074C38E /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		869812908A6DD8477FF731F8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -328,19 +319,8 @@
 				0421D36B1B8126C700BF6065 /* ItemWithState.m */,
 				0421D3771B830D0B00BF6065 /* ItemState.h */,
 				0421D3781B830D0B00BF6065 /* ItemState.m */,
-				6F851F3D1BA9B31B0098415D /* BathItem.h */,
-				6F851F3E1BA9B31B0098415D /* BathItem.m */,
 			);
 			name = Item;
-			sourceTree = "<group>";
-		};
-		0421D37A1B831F7700BF6065 /* File Operation */ = {
-			isa = PBXGroup;
-			children = (
-				044DD1A51BA0A21F00176AD4 /* ItemStatusManagerFile.h */,
-				044DD1A61BA0A21F00176AD4 /* ItemStatusManagerFile.m */,
-			);
-			name = "File Operation";
 			sourceTree = "<group>";
 		};
 		042F08321C43A37E0091F5C4 /* Cabinet */ = {
@@ -362,7 +342,6 @@
 				0469BFBB1BADC2140055DF4A /* Fortune */,
 				043B7B771BAD31380094BB3E /* Config */,
 				043B7B761BAD31200094BB3E /* NSArray+ForceBound */,
-				0421D37A1B831F7700BF6065 /* File Operation */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -444,8 +423,6 @@
 			isa = PBXGroup;
 			children = (
 				0421D3761B82E34500BF6065 /* Item */,
-				0421D3661B8126C700BF6065 /* UserData.h */,
-				0421D3691B8126C700BF6065 /* UserData.m */,
 			);
 			name = ItemManagement;
 			sourceTree = "<group>";
@@ -1055,7 +1032,6 @@
 				45BC40A21C2469D9006A185F /* BrushingStatistics.m in Sources */,
 				C4DBC6881BC4C41F00285604 /* FeedbackPopView.m in Sources */,
 				45BC40981C2469D9006A185F /* CustomerServices.m in Sources */,
-				6F851F3F1BA9B31B0098415D /* BathItem.m in Sources */,
 				645A01961C37CBBF00556395 /* ZNYSBaseView.m in Sources */,
 				645A019F1C3A146E00556395 /* UIButton+Font.m in Sources */,
 				C4DC701F1BBFA0F4004AB6A7 /* DIYGoalController.m in Sources */,
@@ -1075,7 +1051,6 @@
 				45BC40921C2469D9006A185F /* User.m in Sources */,
 				45BC409E1C2469D9006A185F /* ToothBrush.m in Sources */,
 				45BC40961C2469D9006A185F /* AreaStatistics.m in Sources */,
-				044DD1A71BA0A21F00176AD4 /* ItemStatusManagerFile.m in Sources */,
 				6FC69C131BBC4DBD0074C38E /* CalendarViewController.m in Sources */,
 				45BC409D1C2469D9006A185F /* ToothBrush+CoreDataProperties.m in Sources */,
 				041366001BAD8C9A00CD0604 /* DialogView.m in Sources */,
@@ -1098,7 +1073,6 @@
 				45CE1B6F1C2BE61900C886BC /* Model.xcdatamodeld in Sources */,
 				0487D7661B74548F00756EF8 /* main.m in Sources */,
 				647E05C81C3A6C1900ADB810 /* SettingHeaderView.m in Sources */,
-				0421D3731B8126C700BF6065 /* UserData.m in Sources */,
 				647E05C51C3A6B4B00ADB810 /* SettingViewController.m in Sources */,
 				64337DC81C3B8DD400C9D811 /* ThumbView.m in Sources */,
 			);

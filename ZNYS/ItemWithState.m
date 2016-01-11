@@ -39,11 +39,11 @@
         _state = [[ItemState alloc] init];
         self.state.state = s;
         if(s == Obtained) {
-            self.imageName = [self.imageName stringByAppendingString:@"_已兑换"];
+            self.imageName = [imageName stringByAppendingString:@"_已兑换"];
         }
         else
         {
-            self.imageName = [self.imageName stringByAppendingString:@"_未兑换"];
+            self.imageName = [imageName stringByAppendingString:@"_未兑换"];
         }
         _style = style;
         _tag = tag;

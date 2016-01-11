@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UserData.h"
 #import "TouchableImageView.h"
 #import "DialogView.h"
 
