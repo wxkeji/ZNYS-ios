@@ -33,8 +33,9 @@
     else {
         description = dict[@"shadow-description"];
     }
-    if(self = [super initWithItemName:giftName imageName:imageName])
+    if(self = [super init])
     {
+        self.itemName = giftName;
         _state = [[ItemState alloc] init];
         self.state.state = s;
         if(s == Obtained) {
@@ -52,24 +53,4 @@
     return self;
 }
 
-- (instancetype) initWithGiftName:(NSString *)giftName
-{
-    if(self = [super initWithItemName:giftName imageName:nil])
-    {
-        _state = [[ItemState alloc] init];
-        _state.state = NotActiveted;
-    }
-    return self;
-
-}
-
-//用一个gift来初始化,且设置state为NotActivate
-- (instancetype) initWithItem:(Item *)item
-{
-    self = [self initWithItemName:item.itemName imageName:item.imageName];
-    return self;
-}
-
-
-
-@end//  GiftWithState
+@end

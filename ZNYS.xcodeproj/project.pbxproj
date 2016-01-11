@@ -13,7 +13,6 @@
 		0421D3721B8126C700BF6065 /* CabinetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3651B8126C700BF6065 /* CabinetViewController.m */; };
 		0421D3731B8126C700BF6065 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3691B8126C700BF6065 /* UserData.m */; };
 		0421D3741B8126C700BF6065 /* ItemWithState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D36B1B8126C700BF6065 /* ItemWithState.m */; };
-		0421D3751B8126C700BF6065 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D36C1B8126C700BF6065 /* Item.m */; };
 		0421D3791B830D0B00BF6065 /* ItemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3781B830D0B00BF6065 /* ItemState.m */; };
 		044DD1A71BA0A21F00176AD4 /* ItemStatusManagerFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 044DD1A61BA0A21F00176AD4 /* ItemStatusManagerFile.m */; };
 		0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0457FB5D1BA9461000001A9D /* TouchableImageView.m */; };
@@ -132,9 +131,7 @@
 		0421D3671B8126C700BF6065 /* CabinetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CabinetViewController.h; sourceTree = "<group>"; };
 		0421D3681B8126C700BF6065 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		0421D3691B8126C700BF6065 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
-		0421D36A1B8126C700BF6065 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		0421D36B1B8126C700BF6065 /* ItemWithState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemWithState.m; sourceTree = "<group>"; };
-		0421D36C1B8126C700BF6065 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		0421D36D1B8126C700BF6065 /* ItemWithState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemWithState.h; sourceTree = "<group>"; };
 		0421D3771B830D0B00BF6065 /* ItemState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemState.h; sourceTree = "<group>"; };
 		0421D3781B830D0B00BF6065 /* ItemState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemState.m; sourceTree = "<group>"; };
@@ -324,11 +321,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0421D3761B82E34500BF6065 /* ItemManagement */ = {
+		0421D3761B82E34500BF6065 /* Item */ = {
 			isa = PBXGroup;
 			children = (
-				0421D36A1B8126C700BF6065 /* Item.h */,
-				0421D36C1B8126C700BF6065 /* Item.m */,
 				0421D36D1B8126C700BF6065 /* ItemWithState.h */,
 				0421D36B1B8126C700BF6065 /* ItemWithState.m */,
 				0421D3771B830D0B00BF6065 /* ItemState.h */,
@@ -336,7 +331,7 @@
 				6F851F3D1BA9B31B0098415D /* BathItem.h */,
 				6F851F3E1BA9B31B0098415D /* BathItem.m */,
 			);
-			name = ItemManagement;
+			name = Item;
 			sourceTree = "<group>";
 		};
 		0421D37A1B831F7700BF6065 /* File Operation */ = {
@@ -363,11 +358,10 @@
 				45CE1B6D1C2BE61900C886BC /* Model.xcdatamodeld */,
 				458094A31C242E8400CB9BF9 /* Entities */,
 				458093921C2144B700CB9BF9 /* CoreDataHelper */,
-				0469BFBF1BADCBCE0055DF4A /* UserData */,
+				0469BFBF1BADCBCE0055DF4A /* ItemManagement */,
 				0469BFBB1BADC2140055DF4A /* Fortune */,
 				043B7B771BAD31380094BB3E /* Config */,
 				043B7B761BAD31200094BB3E /* NSArray+ForceBound */,
-				0421D3761B82E34500BF6065 /* ItemManagement */,
 				0421D37A1B831F7700BF6065 /* File Operation */,
 			);
 			name = Model;
@@ -446,13 +440,14 @@
 			name = Fortune;
 			sourceTree = "<group>";
 		};
-		0469BFBF1BADCBCE0055DF4A /* UserData */ = {
+		0469BFBF1BADCBCE0055DF4A /* ItemManagement */ = {
 			isa = PBXGroup;
 			children = (
+				0421D3761B82E34500BF6065 /* Item */,
 				0421D3661B8126C700BF6065 /* UserData.h */,
 				0421D3691B8126C700BF6065 /* UserData.m */,
 			);
-			name = UserData;
+			name = ItemManagement;
 			sourceTree = "<group>";
 		};
 		0487D7571B74548E00756EF8 = {
@@ -1094,7 +1089,6 @@
 				45BC40991C2469D9006A185F /* InferenceEngine+CoreDataProperties.m in Sources */,
 				6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */,
 				C43136471BC282C30097A91B /* IsParentToCabinetSegue.m in Sources */,
-				0421D3751B8126C700BF6065 /* Item.m in Sources */,
 				458094691C23DE5700CB9BF9 /* ConnectingViewController.m in Sources */,
 				C4A025001BBE678000771969 /* settingIndexController.m in Sources */,
 				45BC40971C2469D9006A185F /* CustomerServices+CoreDataProperties.m in Sources */,
