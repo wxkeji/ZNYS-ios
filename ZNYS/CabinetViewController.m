@@ -54,7 +54,6 @@
 #pragma mark -
 
 @property UserData *giftStatusManager;
-@property (strong,nonatomic) NSMutableDictionary *tagDict;   //保存tag的列表的词典
 @property (nonatomic,strong) NSMutableArray * gloryList;
 
 @end
@@ -112,14 +111,17 @@
     
     [self setItemScrollView:self.gloryScrollView
                    itemList:self.giftStatusManager.gloryItemList
-               itemEachPage:4 selector:@selector(itemWasTouched:) tagListName:@"gloryItemTagList"
+               itemEachPage:4
+                   onItemClick:@selector(itemWasTouched:)
+                tagListName:@"gloryItemTagList"
                    startTag:TAG_GLORY_ITEM];
     
     [self setItemScrollView:self.bathItemScrollView
                    itemList:self.giftStatusManager.bathItemList
                itemEachPage:4
-                   selector:@selector(itemWasTouched:)
-                tagListName:@"bathItemTagList" startTag:TAG_BATH_ITEM ];
+                   onItemClick:@selector(itemWasTouched:)
+                tagListName:@"bathItemTagList"
+                   startTag:TAG_BATH_ITEM ];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -136,8 +138,6 @@
 
 - (void)initCabinet
 {
-    //初始化tag字典
-    self.tagDict = [[NSMutableDictionary alloc] init];
 //    NSString *path = [[NSBundle mainBundle] pathForResource:@"MetalList" ofType:@"plist"];
 //    NSArray *jsonArray = [NSArray arrayWithContentsOfFile:path];
     
@@ -209,7 +209,7 @@
 - (void)setItemScrollView:(UIScrollView *)scrollView
                  itemList:(NSMutableArray *)giftList
              itemEachPage:(int)itemEachPage
-                 selector:(SEL)selecor
+                 onItemClick:(SEL)onItemClickSelecor
               tagListName:(NSString *)tagListName
                  startTag:(long)startTag
 {
@@ -225,18 +225,13 @@
                totalPage:n];
     
     //把奖品柜的宽度n等分
-    CGFloat imgW = width / itemEachPage;
+    CGFloat itemWidth = width / itemEachPage;
     
-    NSMutableArray *tagList = [[NSMutableArray alloc] init];
-    
-    //在奖品柜视图里添加礼物的图片,并把对应的Tag保存在giftGridListTag里，然后为每一个奖品添加触摸手势
-    for(int i=0;i<[giftList count];i++)
+    //在奖品柜视图里添加礼物的图片,然后为每一个奖品添加触摸手势
+    for(NSInteger i=0;i<[giftList count];i++)
     {
         //从奖品管理器中获取第i个奖品
         ItemWithState *itemWithState = giftList[i];
-        
-        //创建一个button和imageView，用imageView作为button的子View
-        UIButton *button = [[UIButton alloc] init];
         
         UIImageView *imageView = [[UIImageView alloc] init];
         imageView.image = [UIImage imageNamed:itemWithState.imageName];
@@ -244,34 +239,29 @@
         
         // nx 和 ny表示在 4 * 2 的奖品方阵中中的位置
         //根据奖品在奖品奖品列表中的位置i算出它在4 * 2方阵中的对应位置
-        int nx,ny;
+        NSInteger nx;
         nx = i;
-        ny = 0;
         
-        button.frame = [self getRectOfItemAt:(int)nx
-                                   itemWidth:imgW
-                                  scrollViewHeight:height];
-        CGFloat buttonHeight = button.frame.size.height;
-        imageView.frame = CGRectMake(0,buttonHeight / 5.0,imgW,3.0 / 5 * height);
+        CGRect itemRect = [self getRectOfItemAt:(int)nx
+                                    itemWidth:itemWidth
+                             scrollViewHeight:height];
+        CGFloat itemHeight = itemRect.size.height;
+        imageView.frame = CGRectMake(itemRect.origin.x,itemRect.origin.y + itemHeight / 5.0,itemWidth,3.0 / 5 * height);
         
-        [button addSubview:imageView];
-        
-        //为button添加点击事件
-        [button addTarget:self action:selecor forControlEvents:UIControlEventTouchUpInside];
+        imageView.userInteractionEnabled = YES;
         
         //把奖品button添加到奖品柜视图
-        [scrollView addSubview:button];
+        [scrollView addSubview:imageView];
+        
+        UITapGestureRecognizer *tapRecog = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(itemWasTouched:)];
+        tapRecog.numberOfTapsRequired = 1;
+        tapRecog.numberOfTouchesRequired = 1;
+        
+        [imageView addGestureRecognizer:tapRecog];
         
         //设置button的tag，后面可以用tag找到对应的奖品
-        button.tag = startTag + i;
-        
-        //把奖品的imageView的Tag添加到 gfitGridListTag 数组中
-        [tagList addObject:[[NSNumber alloc] initWithLong:[button tag]]];
-        
+        imageView.tag = i;
     }
-    
-     [self.tagDict setObject:tagList forKey:tagListName];
-
 }
 
 - (void)initScrollView:(UIScrollView *)scrollView
@@ -294,6 +284,8 @@
     
     //开启scrollView的分页
     [scrollView setPagingEnabled:YES];
+    
+    scrollView.delaysContentTouches = NO;
 }
 
 - (void)refreshCabinet
@@ -307,8 +299,8 @@
         }
     }
     [self setGloryView];
-    [self setItemScrollView:self.gloryScrollView itemList:self.giftStatusManager.gloryItemList itemEachPage:4 selector:@selector(itemWasTouched:) tagListName:@"gloryItemTagList" startTag:TAG_GLORY_ITEM];
-    [self setItemScrollView:self.bathItemScrollView itemList:self.giftStatusManager.bathItemList itemEachPage:4 selector:@selector(itemWasTouched:) tagListName:@"bathItemTagList" startTag:TAG_BATH_ITEM];
+    [self setItemScrollView:self.gloryScrollView itemList:self.giftStatusManager.gloryItemList itemEachPage:4 onItemClick:@selector(itemWasTouched:) tagListName:@"gloryItemTagList" startTag:TAG_GLORY_ITEM];
+    [self setItemScrollView:self.bathItemScrollView itemList:self.giftStatusManager.bathItemList itemEachPage:4 onItemClick:@selector(itemWasTouched:) tagListName:@"bathItemTagList" startTag:TAG_BATH_ITEM];
     
 }
 
@@ -351,57 +343,31 @@
 #pragma mark - 事件响应函数
 
 //响应item的点击事件
-- (void) itemWasTouched:(ItemWithState *)sender
+- (void) itemWasTouched:(UITapGestureRecognizer *)recognizer
 {
-    //获取这个item的tag
-    NSInteger tag = sender.tag;
-    
     //index表示这个item在item列表是第几个
-    NSInteger index=-1;
+    UIImageView *itemView = (UIImageView *)recognizer.view;
+    NSInteger index=itemView.tag;
     
-    NSArray *keys = [self.tagDict allKeys];
-    
-    for(NSString *key in keys)
+    NSString *itemName,*conditionToGet;
+    ItemWithState *item;
+    if(itemView.superview == self.gloryScrollView)
     {
-        NSMutableArray * tagList = [self.tagDict objectForKey:key];
-        NSInteger length = [tagList count];
-        
-        //通过Tag与 itemTagList 中的 tag 值一一比较从而确定当前被触摸的是第几个奖品
-        for(NSInteger i=0;i<length;i++)
-        {
-            NSNumber *currentTag = tagList[i];
-            if([currentTag longValue] == tag)
-            {
-                index = i;
-                NSInteger indexOfScrollView = tag / 1000 - 1;
-                //NSLog(@"Item %ld is touched.Tag is %ld.In scrollView %ld",index,tag,indexOfScrollView);
-                
-                NSString *itemName,*conditionToGet;
-                ItemWithState *item;
-                if(indexOfScrollView == 0)
-                {
-                     item= self.giftStatusManager.gloryItemList[index];
-                }
-                else
-                {
-                    item= self.giftStatusManager.bathItemList[index];
-                }
-                itemName = item.itemName;
-                conditionToGet = [NSString stringWithFormat:@"兑换条件：%d颗星星",item.starsToActivate];
-                
-                DialogView *dialogView = [DialogView instanceDialogViewWithItemName:itemName conditionToGet:conditionToGet descriptionText:item.descriptionText];
-                dialogView.alpha = 1.0;
-                dialogView.frame = self.view.bounds;
-                [self.view addSubview:dialogView];
-                [self.view bringSubviewToFront:dialogView];
-                NSLog(@"Subview added.");
-                
-                return;
-            }
-        }
+         item= self.giftStatusManager.gloryItemList[index];
     }
-        
-    NSLog(@"Tag not found");
+    else
+    {
+        item= self.giftStatusManager.bathItemList[index];
+    }
+    itemName = item.itemName;
+    conditionToGet = [NSString stringWithFormat:@"兑换条件：%ld颗星星",(long)item.starsToActivate];
+    
+    DialogView *dialogView = [DialogView instanceDialogViewWithItemName:itemName conditionToGet:conditionToGet descriptionText:item.descriptionText];
+    dialogView.alpha = 1.0;
+    dialogView.frame = self.view.bounds;
+    [self.view addSubview:dialogView];
+    [self.view bringSubviewToFront:dialogView];
+    NSLog(@"Item was touched.");
 }
 
 #pragma mark - 页面跳转
@@ -429,6 +395,18 @@
 {
     ConnectingViewController* cvc = [[ConnectingViewController alloc] init];
     [self.navigationController pushViewController:cvc animated:YES];
+}
+
+#pragma mark - Tap Gesture Recognizer Delegate
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    return YES;
+}
+
+-(BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    return YES;
 }
 
 #pragma mark - 历史遗留代码

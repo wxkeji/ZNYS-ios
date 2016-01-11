@@ -8,7 +8,7 @@
 
 #import "ConnectingViewController.h"
 #import "ConnectingView.h"
-#import "BluetoothServer.h"
+//#import "BluetoothServer.h"
 @interface ConnectingViewController ()
 @property(nonatomic,strong)ConnectingView* connectingView;
 @end

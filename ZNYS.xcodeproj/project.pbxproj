@@ -348,6 +348,15 @@
 			name = "File Operation";
 			sourceTree = "<group>";
 		};
+		042F08321C43A37E0091F5C4 /* Cabinet */ = {
+			isa = PBXGroup;
+			children = (
+				0421D3651B8126C700BF6065 /* CabinetViewController.m */,
+				0421D3671B8126C700BF6065 /* CabinetViewController.h */,
+			);
+			name = Cabinet;
+			sourceTree = "<group>";
+		};
 		043B7B731BAD30BA0094BB3E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,8 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				C4A024FD1BBE675300771969 /* settingControllers */,
-				0421D3651B8126C700BF6065 /* CabinetViewController.m */,
-				0421D3671B8126C700BF6065 /* CabinetViewController.h */,
+				042F08321C43A37E0091F5C4 /* Cabinet */,
 				6FC69C101BBC4DBD0074C38E /* CalendarViewController.h */,
 				6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */,
 				6F368F051BBCCE1700D273C9 /* IsParentViewController.h */,
@@ -864,6 +872,7 @@
 				0487D75D1B74548F00756EF8 /* Frameworks */,
 				0487D75E1B74548F00756EF8 /* Resources */,
 				C6CF789D48CA643A4251B0F0 /* Copy Pods Resources */,
+				91E17089FE97E4472BFD9BBE /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -991,6 +1000,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		91E17089FE97E4472BFD9BBE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C6CF789D48CA643A4251B0F0 /* Copy Pods Resources */ = {
