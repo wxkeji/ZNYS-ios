@@ -24,6 +24,7 @@
 		0487D7711B74548F00756EF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0487D7701B74548F00756EF8 /* Images.xcassets */; };
 		0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0487D7721B74548F00756EF8 /* LaunchScreen.xib */; };
 		0487D7801B74548F00756EF8 /* ZNYSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D77F1B74548F00756EF8 /* ZNYSTests.m */; };
+		451507241C44185800333DAD /* libBLELib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 451507231C44185800333DAD /* libBLELib.a */; };
 		458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458093901C21448000CB9BF9 /* CoreData.framework */; };
 		458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 458093941C21453200CB9BF9 /* CoreDataHelper.m */; };
 		458094631C23DE3100CB9BF9 /* ConnectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 458094621C23DE3100CB9BF9 /* ConnectingView.m */; };
@@ -60,7 +61,6 @@
 		45DC5E671C421B80000D6A7A /* 进度80.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E5C1C421B80000D6A7A /* 进度80.png */; };
 		45DC5E681C421B80000D6A7A /* 进度90.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E5D1C421B80000D6A7A /* 进度90.png */; };
 		45DC5E691C421B80000D6A7A /* 进度100.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E5E1C421B80000D6A7A /* 进度100.png */; };
-		45DC5E701C423615000D6A7A /* libBLELib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC5E6F1C423615000D6A7A /* libBLELib.a */; };
 		45EB69CD1C40B2C800160457 /* BCBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69C71C40B2C800160457 /* BCBackground.png */; };
 		45EB69CF1C40B2C800160457 /* BCProgress_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69C91C40B2C800160457 /* BCProgress_fill.png */; };
 		45EB69D01C40B2C800160457 /* BCProgressEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69CA1C40B2C800160457 /* BCProgressEmpty.png */; };
@@ -156,6 +156,7 @@
 		0487D7791B74548F00756EF8 /* ZNYSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZNYSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0487D77E1B74548F00756EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0487D77F1B74548F00756EF8 /* ZNYSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNYSTests.m; sourceTree = "<group>"; };
+		451507231C44185800333DAD /* libBLELib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBLELib.a; sourceTree = "<group>"; };
 		455A260B1C2BE7330061C48A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		458093901C21448000CB9BF9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		458093931C21453200CB9BF9 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
@@ -218,7 +219,6 @@
 		45DC5E5E1C421B80000D6A7A /* 进度100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度100.png"; sourceTree = "<group>"; };
 		45DC5E6D1C423606000D6A7A /* BluetoothServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothServer.h; sourceTree = "<group>"; };
 		45DC5E6E1C423606000D6A7A /* SensorDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorDataHandler.h; sourceTree = "<group>"; };
-		45DC5E6F1C423615000D6A7A /* libBLELib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBLELib.a; path = BLELib/libBLELib.a; sourceTree = "<group>"; };
 		45EB69C71C40B2C800160457 /* BCBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCBackground.png; sourceTree = "<group>"; };
 		45EB69C91C40B2C800160457 /* BCProgress_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCProgress_fill.png; sourceTree = "<group>"; };
 		45EB69CA1C40B2C800160457 /* BCProgressEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCProgressEmpty.png; sourceTree = "<group>"; };
@@ -310,7 +310,7 @@
 			files = (
 				458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */,
 				840ACE02D000AED2E3D3E8A8 /* libPods.a in Frameworks */,
-				45DC5E701C423615000D6A7A /* libBLELib.a in Frameworks */,
+				451507241C44185800333DAD /* libBLELib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,7 +624,7 @@
 		45DC5E6B1C4235E4000D6A7A /* BluetoothModule */ = {
 			isa = PBXGroup;
 			children = (
-				45DC5E6F1C423615000D6A7A /* libBLELib.a */,
+				451507231C44185800333DAD /* libBLELib.a */,
 				45DC5E6C1C423606000D6A7A /* Header */,
 			);
 			name = BluetoothModule;
@@ -903,6 +903,7 @@
 				TargetAttributes = {
 					0487D75F1B74548F00756EF8 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = KAG6J66XWF;
 					};
 					0487D7781B74548F00756EF8 = {
 						CreatedOnToolsVersion = 6.4;
@@ -1209,14 +1210,19 @@
 			baseConfigurationReference = 91C03429B6C007A30E11C265 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ZNYS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZNYS/BLELib",
+					"$(PROJECT_DIR)/ZNYS",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.EricCheung.ZNYS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1225,14 +1231,19 @@
 			baseConfigurationReference = 869812908A6DD8477FF731F8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ZNYS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZNYS/BLELib",
+					"$(PROJECT_DIR)/ZNYS",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.EricCheung.ZNYS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

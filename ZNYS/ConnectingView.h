@@ -12,6 +12,6 @@
 @end
 @interface ConnectingView : UIView
 @property(nonatomic,strong)id<ConnectingViewDelegate>delegate;
--(void)updateConnectingProgressFrom:(float)previewProgress
-                                 to:(float)updatedProgress;
+//-(void)updateConnectingProgressFrom:(float)previewProgress
+//                                 to:(float)updatedProgress;
 @end

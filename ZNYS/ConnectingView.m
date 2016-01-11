@@ -37,17 +37,10 @@
         [self addSubview:self.returnButton];
         [self addSubview:self.bottomPattern];
         [self addSubview:self.progressView];
-       // [_progressView startAnimating];
     }
     return self;
 }
-#pragma mark - update UI
--(void)updateConnectingProgressFrom:(float)previewProgress
-                                 to:(float)updatedProgress
-{
-//     self.progressView.animationImages
-    [self.progressView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"进度%i0",(int)updatedProgress*10]]];
-}
+
 #pragma mark - button actions
 -(void)returnToHome
 {
@@ -88,9 +81,7 @@
 {
     if(!_progressView)
     {
-        
       //  _progressView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BCProgressEmpty"]];
-        
         _progressView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"进度0"]];
         _progressView = [[UIImageView alloc] initWithFrame:CGRectMake((kSCREEN_WIDTH - CustomWidth(321)-CustomWidth(8))/2, kSCREEN_HEIGHT - CustomHeight(150)-CustomHeight(39), 321, 73)];
       //  [_progressView setFrame:CGRectMake((kSCREEN_WIDTH - CustomWidth(321)-CustomWidth(8))/2, kSCREEN_HEIGHT - CustomHeight(150)-CustomHeight(39), 321, 73)];
@@ -106,7 +97,7 @@
                                          [UIImage imageNamed:@"进度90"],
                                          [UIImage imageNamed:@"进度100"],
                                          nil];
-        _progressView.animationDuration = 2;
+        _progressView.animationDuration = 5;
        // _progressView.animationRepeatCount = 1;
        //[_progressView setFrame:CGRectMake((kSCREEN_WIDTH - CustomWidth(300))/2, kSCREEN_HEIGHT-CustomHeight(150), 300,34)];
     }
