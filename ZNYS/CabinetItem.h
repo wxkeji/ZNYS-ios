@@ -6,10 +6,12 @@
 //  Copyright (c) 2015年 Woodseen. All rights reserved.
 //
 
-#import "Item.h"
 #import "ItemState.h"
 
-@interface ItemWithState : Item
+@interface CabinetItem : NSObject
+
+@property (strong) NSString *itemName;       //礼物名称
+@property NSString *imageName;
 
 @property (readonly) NSInteger style;
 @property ItemState *state;
@@ -24,8 +26,5 @@
                               tag:(NSInteger)tag
                             style:(NSInteger)style
                     starsToActivate:(NSInteger)stars;
-
-//用一个gift来初始化,且设置state为NotActivate
-- (instancetype) initWithGift:(Item *)item;
 
 @end

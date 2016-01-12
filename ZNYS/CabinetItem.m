@@ -6,16 +6,16 @@
 //  Copyright (c) 2015年 Woodseen. All rights reserved.
 //
 
-#import "ItemWithState.h"
+#import "CabinetItem.h"
 #import "ItemState.h"
 
-@interface ItemWithState()
+@interface CabinetItem()
 
 
 
 @end
 
-@implementation ItemWithState
+@implementation CabinetItem
 
 //指定初始化方法，这里把state初始化为NotActivated
 - (instancetype) initWithDictionary:(NSDictionary *)dict
@@ -33,16 +33,17 @@
     else {
         description = dict[@"shadow-description"];
     }
-    if(self = [super initWithItemName:giftName imageName:imageName])
+    if(self = [super init])
     {
+        self.itemName = giftName;
         _state = [[ItemState alloc] init];
         self.state.state = s;
         if(s == Obtained) {
-            self.imageName = [self.imageName stringByAppendingString:@"_已兑换"];
+            self.imageName = [imageName stringByAppendingString:@"_已兑换"];
         }
         else
         {
-            self.imageName = [self.imageName stringByAppendingString:@"_未兑换"];
+            self.imageName = [imageName stringByAppendingString:@"_未兑换"];
         }
         _style = style;
         _tag = tag;
@@ -52,24 +53,4 @@
     return self;
 }
 
-- (instancetype) initWithGiftName:(NSString *)giftName
-{
-    if(self = [super initWithItemName:giftName imageName:nil])
-    {
-        _state = [[ItemState alloc] init];
-        _state.state = NotActiveted;
-    }
-    return self;
-
-}
-
-//用一个gift来初始化,且设置state为NotActivate
-- (instancetype) initWithItem:(Item *)item
-{
-    self = [self initWithItemName:item.itemName imageName:item.imageName];
-    return self;
-}
-
-
-
-@end//  GiftWithState
+@end

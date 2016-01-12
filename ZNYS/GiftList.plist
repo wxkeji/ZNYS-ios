@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>GiftIetm</key>
+		<dict/>
+		<key>title</key>
+		<string>Hey</string>
+		<key>description</key>
+		<string>The first gift</string>
+		<key>shadow-description</key>
+		<string>Not Acivate</string>
+		<key>stars-to-activate</key>
+		<integer>5</integer>
+		<key>item-state</key>
+		<integer>0</integer>
+		<key>image-name</key>
+		<string>小鸭子</string>
+	</dict>
+	<dict>
+		<key>GiftIetm</key>
+		<dict/>
+		<key>title</key>
+		<string>Haha</string>
+		<key>description</key>
+		<string>The second gift</string>
+		<key>shadow-description</key>
+		<string>第二个礼物，猜猜这是什么</string>
+		<key>stars-to-activate</key>
+		<integer>7</integer>
+		<key>item-state</key>
+		<integer>2</integer>
+		<key>image-name</key>
+		<string>小鸭子</string>
+	</dict>
+	<dict>
+		<key>GiftIetm</key>
+		<dict/>
+		<key>title</key>
+		<string>Comming soon...</string>
+		<key>description</key>
+		<string>激活了</string>
+		<key>shadow-description</key>
+		<string>...</string>
+		<key>stars-to-activate</key>
+		<integer>5</integer>
+		<key>item-state</key>
+		<integer>2</integer>
+		<key>image-name</key>
+		<string>小车</string>
+	</dict>
+	<dict>
+		<key>GiftIetm</key>
+		<dict/>
+		<key>title</key>
+		<string>Hey</string>
+		<key>description</key>
+		<string>The first gift</string>
+		<key>shadow-description</key>
+		<string>Not Acivate</string>
+		<key>stars-to-activate</key>
+		<integer>5</integer>
+		<key>item-state</key>
+		<integer>2</integer>
+		<key>image-name</key>
+		<string>小鸭子</string>
+	</dict>
+	<dict>
+		<key>GiftIetm</key>
+		<dict/>
+		<key>title</key>
+		<string>Hey</string>
+		<key>description</key>
+		<string>The first gift</string>
+		<key>shadow-description</key>
+		<string>Not Acivate</string>
+		<key>stars-to-activate</key>
+		<integer>5</integer>
+		<key>item-state</key>
+		<integer>2</integer>
+		<key>image-name</key>
+		<string>小鸭子</string>
+	</dict>
+	<dict>
+		<key>GiftIetm</key>
+		<dict/>
+		<key>title</key>
+		<string>Hey</string>
+		<key>description</key>
+		<string>The first gift</string>
+		<key>shadow-description</key>
+		<string>Not Acivate</string>
+		<key>stars-to-activate</key>
+		<integer>5</integer>
+		<key>item-state</key>
+		<integer>2</integer>
+		<key>image-name</key>
+		<string>小鸭子</string>
+	</dict>
+	<dict>
+		<key>GiftIetm</key>
+		<dict/>
+		<key>title</key>
+		<string>Hey</string>
+		<key>description</key>
+		<string>The first gift</string>
+		<key>shadow-description</key>
+		<string>Not Acivate</string>
+		<key>stars-to-activate</key>
+		<integer>5</integer>
+		<key>item-state</key>
+		<integer>2</integer>
+		<key>image-name</key>
+		<string>小鸭子</string>
+	</dict>
+	<dict>
+		<key>GiftIetm</key>
+		<dict/>
+		<key>title</key>
+		<string>Hey</string>
+		<key>description</key>
+		<string>The first gift</string>
+		<key>shadow-description</key>
+		<string>Not Acivate</string>
+		<key>stars-to-activate</key>
+		<integer>5</integer>
+		<key>item-state</key>
+		<integer>2</integer>
+		<key>image-name</key>
+		<string>小鸭子</string>
+	</dict>
+</array>
+</plist>
