@@ -37,6 +37,11 @@
         [self addSubview:self.returnButton];
         [self addSubview:self.bottomPattern];
         [self addSubview:self.progressView];
+        [self.progressView startAnimating];
+        WS(weakSelf, self);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.progressView setImage:[UIImage imageNamed:@"进度100"]];
+        });
     }
     return self;
 }
@@ -97,8 +102,8 @@
                                          [UIImage imageNamed:@"进度90"],
                                          [UIImage imageNamed:@"进度100"],
                                          nil];
-        _progressView.animationDuration = 5;
-       // _progressView.animationRepeatCount = 1;
+        _progressView.animationDuration = 2;
+        _progressView.animationRepeatCount = 1;
        //[_progressView setFrame:CGRectMake((kSCREEN_WIDTH - CustomWidth(300))/2, kSCREEN_HEIGHT-CustomHeight(150), 300,34)];
     }
     return _progressView;

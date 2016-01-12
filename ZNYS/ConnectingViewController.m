@@ -9,12 +9,22 @@
 #import "ConnectingViewController.h"
 #import "ConnectingView.h"
 #import "BluetoothServer.h"
+#import "ConnectedViewController.h"
 @interface ConnectingViewController ()
+
 @property(nonatomic,strong)ConnectingView* connectingView;
+
+@property BOOL isConnected;
 @end
 
 @implementation ConnectingViewController
-
+#pragma mark - View life cycle
+-(instancetype)init
+{
+    self = [super init];
+    self.isConnected = NO;
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -43,7 +53,8 @@
 */
 -(void)didConnect
 {
-    
+    ConnectedViewController* cvc = [[ConnectedViewController alloc] init];
+    [self.navigationController pushViewController:cvc animated:YES];
 }
 #pragma mark - getter and setters
 -(ConnectingView*)connectingView
