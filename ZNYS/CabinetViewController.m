@@ -17,7 +17,8 @@
 #import "VerifyPasswordViewController.h"
 #import "ConnectingViewController.h"
 #import "User.h"
-#import "ItemWithState.h"
+#import "CabinetItem.h"
+#import "GiftItem.h"
 @interface CabinetViewController ()
 
 //奖品柜的两个ScrollView
@@ -49,9 +50,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *advertismentLabel;//广告位Label
 
 @property (strong, nonatomic) NSNumber* userLevel;
-
-//- (IBAction)settingButtonTouched:(id)sender;
-@property (strong, nonatomic) UILabel *label;
 
 @end
 
@@ -86,7 +84,7 @@
     [levelButton addTarget:self action:@selector(changeLevel) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:levelButton];
     
-    [self initPageJumps];
+    [self initButtonEvents];
     [self initCabinet];
 
 }
@@ -121,47 +119,18 @@
     [self refreshCabinet];
 }
 
+- (void)initButtonEvents
+{
+    [self.calendarButton addTarget:self action:@selector(toCalendar) forControlEvents:UIControlEventTouchUpInside];
+    [self.settingsButton addTarget:self action:@selector(toSetting) forControlEvents:UIControlEventTouchUpInside];
+    [self.connectToothBrushButton addTarget:self action:@selector(toConnectBrush) forControlEvents:UIControlEventTouchUpInside];
+}
+
 - (void)initCabinet
 {
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"MetalList" ofType:@"plist"];
-//    NSArray *jsonArray = [NSArray arrayWithContentsOfFile:path];
-    
     //创建两个列表,添加若干小车到里面
-    self.gloryList = [[NSMutableArray alloc] init];
-    [self setGloryView];
-//    NSString *littleCar = @"小车";
-//    for(NSInteger i = 1;i <= 10;i++)
-//    {
-//        ItemStateEnum state;
-//        if(i <= [self.userLevel integerValue]){
-//            state = Obtained;
-//        }
-//        else{
-//            state = NotActiveted;
-//        }
-//       NSDictionary * itemDic = [[jsonArray objectAtIndex:(i-1)] objectForKey:[NSString stringWithFormat:@"Level%ld",(long)i]];
-//      ItemWithState *gloryItem = [[ItemWithState alloc] initWithDictionary:itemDic  imageName:littleCar state:state tag:i style:0 starsToActivate:i];
-//        
-//        [self.gloryList addObject:gloryItem];
-//    }
-    
-    //创建两个列表,添加若干小车到里面
-   // [self setGloryView];
-    
-   // NSArray *giftList = [self.gloryList copy];
-    NSString *littleBasketball = @"小篮球";
-    NSMutableArray *bathItemList = [[NSMutableArray alloc] init];
-    for(int i = 1;i <= 30;i++)
-    {
-        NSDictionary *dict = @{@"title":@"Level1 Object",
-          @"description":@"Level1 Description",
-          @"shadow-description":@"Level1 shadow"};
-        ItemWithState *bathItem = [[ItemWithState alloc] initWithDictionary:dict  imageName:littleBasketball state:Obtained tag:i style:1 starsToActivate:i];
-        [bathItemList addObject:bathItem];
-    }
-    
-    self.gloryList = self.gloryList;
-    self.giftList = bathItemList;
+    [self initGloryList];
+    [self initGiftList];
     
     [self setItemScrollView:self.gloryScrollView
                    itemList:self.gloryList
@@ -174,7 +143,7 @@
                 onItemClick:@selector(itemWasTouched:)];
 }
 
-- (void)setGloryView{
+- (void)initGloryList{
     [self.gloryList removeAllObjects];
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"MetalList" ofType:@"plist"];
@@ -193,8 +162,35 @@
         }
         
         NSDictionary * itemDic = [jsonArray objectAtIndex:(i-1)];
-        ItemWithState *gloryItem = [[ItemWithState alloc] initWithDictionary:[itemDic objectForKey:[NSString stringWithFormat:@"Level%ld",(long)i]] imageName:littleCar state:state tag:i style:0 starsToActivate:i];
+        CabinetItem *gloryItem = [[CabinetItem alloc] initWithDictionary:[itemDic objectForKey:[NSString stringWithFormat:@"Level%ld",(long)i]] imageName:littleCar state:state tag:i style:0 starsToActivate:i];
         [self.gloryList addObject:gloryItem];
+    }
+    
+}
+
+/*
+ *
+ *  这个函数需要GiftList.plist文件，文件中的每一个子项目需要有：
+ *      1、title                 ：   NSString
+ *      2、description           ：   NSString
+ *      3、shadow-description    ：   NSString
+ *      4、iamge-name            ：   NSString
+ *      5、item-state            ：   NSNumber        其中0、1、2分别代表Obtained、ActivatedNotObtained、NotActivate三种状态
+ *      6、stars-to-activate     ：   NSNumber
+ *
+ */
+- (void)initGiftList {
+    [self.giftList removeAllObjects];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"GiftList" ofType:@"plist"];
+    NSArray *jsonArray = [NSArray arrayWithContentsOfFile:path];
+    
+    NSInteger i = 0;
+    for(NSDictionary *itemDict in jsonArray)
+    {
+        GiftItem *giftItem = [[GiftItem alloc] initWithDictionary:itemDict tag:i style:1];
+        i++;
+        [self.giftList addObject:giftItem];
     }
     
 }
@@ -224,7 +220,7 @@
     for(NSInteger i=0;i<[giftList count];i++)
     {
         //从奖品管理器中获取第i个奖品
-        ItemWithState *itemWithState = giftList[i];
+        CabinetItem *itemWithState = giftList[i];
         
         UIImageView *imageView = [[UIImageView alloc] init];
         imageView.image = [UIImage imageNamed:itemWithState.imageName];
@@ -287,11 +283,11 @@
         [view removeFromSuperview];
     }
     for(UIView *view in self.bathItemScrollView.subviews) {
-        if([view class] == [UIButton class]){
+        if([view class] == [UIImageView class]){
             [view removeFromSuperview];
         }
     }
-    [self setGloryView];
+    [self initGloryList];
     [self setItemScrollView:self.gloryScrollView itemList:self.gloryList itemEachPage:4 onItemClick:@selector(itemWasTouched:)];
     [self setItemScrollView:self.bathItemScrollView itemList:self.giftList itemEachPage:4 onItemClick:@selector(itemWasTouched:)];
     
@@ -333,7 +329,7 @@
     NSInteger index=itemView.tag;
     
     NSString *itemName,*conditionToGet;
-    ItemWithState *item;
+    CabinetItem *item;
     if(itemView.superview == self.gloryScrollView)
     {
          item= self.gloryList[index];
@@ -353,14 +349,6 @@
     NSLog(@"Item was touched.");
 }
 
-#pragma mark - 页面跳转
-
-- (void)initPageJumps
-{
-    [self.calendarButton addTarget:self action:@selector(toCalendar) forControlEvents:UIControlEventTouchUpInside];
-    [self.settingsButton addTarget:self action:@selector(toSetting) forControlEvents:UIControlEventTouchUpInside];
-    [self.connectToothBrushButton addTarget:self action:@selector(toConnectBrush) forControlEvents:UIControlEventTouchUpInside];
-}
 
 - (void)toCalendar
 {
@@ -380,16 +368,24 @@
     [self.navigationController pushViewController:cvc animated:YES];
 }
 
-#pragma mark - Tap Gesture Recognizer Delegate
+#pragma mark - Getters 
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+- (NSMutableArray *)gloryList
 {
-    return YES;
+    if(_gloryList == nil)
+    {
+        _gloryList = [[NSMutableArray alloc] init];
+    }
+    return _gloryList;
 }
 
--(BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+- (NSMutableArray *)giftList
 {
-    return YES;
+    if(_giftList == nil)
+    {
+        _giftList = [[NSMutableArray alloc] init];
+    }
+    return _giftList;
 }
 
 #pragma mark - 历史遗留代码

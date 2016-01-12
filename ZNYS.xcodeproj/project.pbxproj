@@ -11,7 +11,7 @@
 		041366001BAD8C9A00CD0604 /* DialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 041365FF1BAD8C9A00CD0604 /* DialogView.m */; };
 		0421D3711B8126C700BF6065 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0421D3631B8126C700BF6065 /* Settings.storyboard */; };
 		0421D3721B8126C700BF6065 /* CabinetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3651B8126C700BF6065 /* CabinetViewController.m */; };
-		0421D3741B8126C700BF6065 /* ItemWithState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D36B1B8126C700BF6065 /* ItemWithState.m */; };
+		0421D3741B8126C700BF6065 /* CabinetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D36B1B8126C700BF6065 /* CabinetItem.m */; };
 		0421D3791B830D0B00BF6065 /* ItemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 0421D3781B830D0B00BF6065 /* ItemState.m */; };
 		0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0457FB5D1BA9461000001A9D /* TouchableImageView.m */; };
 		0469BFBE1BADC22F0055DF4A /* Fortune.m in Sources */ = {isa = PBXBuildFile; fileRef = 0469BFBD1BADC22F0055DF4A /* Fortune.m */; };
@@ -21,6 +21,8 @@
 		0487D7711B74548F00756EF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0487D7701B74548F00756EF8 /* Images.xcassets */; };
 		0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0487D7721B74548F00756EF8 /* LaunchScreen.xib */; };
 		0487D7801B74548F00756EF8 /* ZNYSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D77F1B74548F00756EF8 /* ZNYSTests.m */; };
+		04A7510F1C43D9E500B3F537 /* GiftList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A7510E1C43D9E500B3F537 /* GiftList.plist */; };
+		04C978F31C44BE100046DB4A /* GiftItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C978F21C44BE100046DB4A /* GiftItem.m */; };
 		458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458093901C21448000CB9BF9 /* CoreData.framework */; };
 		458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 458093941C21453200CB9BF9 /* CoreDataHelper.m */; };
 		458094631C23DE3100CB9BF9 /* ConnectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 458094621C23DE3100CB9BF9 /* ConnectingView.m */; };
@@ -126,8 +128,8 @@
 		0421D3651B8126C700BF6065 /* CabinetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CabinetViewController.m; sourceTree = "<group>"; };
 		0421D3671B8126C700BF6065 /* CabinetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CabinetViewController.h; sourceTree = "<group>"; };
 		0421D3681B8126C700BF6065 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
-		0421D36B1B8126C700BF6065 /* ItemWithState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemWithState.m; sourceTree = "<group>"; };
-		0421D36D1B8126C700BF6065 /* ItemWithState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemWithState.h; sourceTree = "<group>"; };
+		0421D36B1B8126C700BF6065 /* CabinetItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CabinetItem.m; sourceTree = "<group>"; };
+		0421D36D1B8126C700BF6065 /* CabinetItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CabinetItem.h; sourceTree = "<group>"; };
 		0421D3771B830D0B00BF6065 /* ItemState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemState.h; sourceTree = "<group>"; };
 		0421D3781B830D0B00BF6065 /* ItemState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemState.m; sourceTree = "<group>"; };
 		0457FB5C1BA9461000001A9D /* TouchableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchableImageView.h; sourceTree = "<group>"; };
@@ -146,6 +148,9 @@
 		0487D7791B74548F00756EF8 /* ZNYSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZNYSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0487D77E1B74548F00756EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0487D77F1B74548F00756EF8 /* ZNYSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNYSTests.m; sourceTree = "<group>"; };
+		04A7510E1C43D9E500B3F537 /* GiftList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GiftList.plist; sourceTree = "<group>"; };
+		04C978F11C44BE100046DB4A /* GiftItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftItem.h; sourceTree = "<group>"; };
+		04C978F21C44BE100046DB4A /* GiftItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftItem.m; sourceTree = "<group>"; };
 		455A260B1C2BE7330061C48A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		458093901C21448000CB9BF9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		458093931C21453200CB9BF9 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
@@ -315,10 +320,12 @@
 		0421D3761B82E34500BF6065 /* Item */ = {
 			isa = PBXGroup;
 			children = (
-				0421D36D1B8126C700BF6065 /* ItemWithState.h */,
-				0421D36B1B8126C700BF6065 /* ItemWithState.m */,
+				0421D36D1B8126C700BF6065 /* CabinetItem.h */,
+				0421D36B1B8126C700BF6065 /* CabinetItem.m */,
 				0421D3771B830D0B00BF6065 /* ItemState.h */,
 				0421D3781B830D0B00BF6065 /* ItemState.m */,
+				04C978F11C44BE100046DB4A /* GiftItem.h */,
+				04C978F21C44BE100046DB4A /* GiftItem.m */,
 			);
 			name = Item;
 			sourceTree = "<group>";
@@ -793,6 +800,7 @@
 			children = (
 				6476646C1C3E600F00386E05 /* 勋章描述.json */,
 				6476646E1C3E604200386E05 /* MetalList.plist */,
+				04A7510E1C43D9E500B3F537 /* GiftList.plist */,
 			);
 			name = Json;
 			sourceTree = "<group>";
@@ -929,6 +937,7 @@
 				45DC5E601C421B80000D6A7A /* 进度10.png in Resources */,
 				647E05BF1C3A5C1D00ADB810 /* userAccount_back@2x.png in Resources */,
 				45EB69CF1C40B2C800160457 /* BCProgress_fill.png in Resources */,
+				04A7510F1C43D9E500B3F537 /* GiftList.plist in Resources */,
 				647E05C11C3A5C1D00ADB810 /* userAccount_logo@2x.png in Resources */,
 				041365FA1BAD8AA600CD0604 /* DialogView.xib in Resources */,
 				45EB69D21C40B2C800160457 /* BCTopBarReturnButton.png in Resources */,
@@ -1044,7 +1053,7 @@
 				45BC40951C2469D9006A185F /* AreaStatistics+CoreDataProperties.m in Sources */,
 				0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */,
 				45BC40911C2469D9006A185F /* User+CoreDataProperties.m in Sources */,
-				0421D3741B8126C700BF6065 /* ItemWithState.m in Sources */,
+				0421D3741B8126C700BF6065 /* CabinetItem.m in Sources */,
 				45BC40A01C2469D9006A185F /* Belongings.m in Sources */,
 				458094631C23DE3100CB9BF9 /* ConnectingView.m in Sources */,
 				45BC40931C2469D9006A185F /* Award+CoreDataProperties.m in Sources */,
@@ -1067,6 +1076,7 @@
 				458094691C23DE5700CB9BF9 /* ConnectingViewController.m in Sources */,
 				C4A025001BBE678000771969 /* settingIndexController.m in Sources */,
 				45BC40971C2469D9006A185F /* CustomerServices+CoreDataProperties.m in Sources */,
+				04C978F31C44BE100046DB4A /* GiftItem.m in Sources */,
 				647E05D11C3B710A00ADB810 /* UserDetailView.m in Sources */,
 				45BC409F1C2469D9006A185F /* Belongings+CoreDataProperties.m in Sources */,
 				645A01701C37B5B800556395 /* SelectBirthView.m in Sources */,

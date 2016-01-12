@@ -8,7 +8,7 @@
 
 #import "ItemState.h"
 
-@interface ItemWithState : NSObject
+@interface CabinetItem : NSObject
 
 @property (strong) NSString *itemName;       //礼物名称
 @property NSString *imageName;

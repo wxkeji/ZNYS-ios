@@ -6,16 +6,16 @@
 //  Copyright (c) 2015年 Woodseen. All rights reserved.
 //
 
-#import "ItemWithState.h"
+#import "CabinetItem.h"
 #import "ItemState.h"
 
-@interface ItemWithState()
+@interface CabinetItem()
 
 
 
 @end
 
-@implementation ItemWithState
+@implementation CabinetItem
 
 //指定初始化方法，这里把state初始化为NotActivated
 - (instancetype) initWithDictionary:(NSDictionary *)dict
