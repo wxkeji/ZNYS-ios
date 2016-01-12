@@ -14,7 +14,7 @@
 		<key>stars-to-activate</key>
 		<integer>5</integer>
 		<key>item-state</key>
-		<integer>2</integer>
+		<integer>0</integer>
 		<key>image-name</key>
 		<string>小鸭子</string>
 	</dict>

@@ -235,7 +235,7 @@
                                     itemWidth:itemWidth
                              scrollViewHeight:height];
         CGFloat itemHeight = itemRect.size.height;
-        imageView.frame = CGRectMake(itemRect.origin.x,itemRect.origin.y + itemHeight / 5.0,itemWidth,3.0 / 5 * height);
+        imageView.frame = CGRectMake(itemRect.origin.x,itemRect.origin.y + itemHeight * 2.0 / 5.0,itemWidth,3.0 / 5 * itemHeight);
         
         imageView.userInteractionEnabled = YES;
         
