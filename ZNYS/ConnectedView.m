@@ -19,8 +19,11 @@
 @property(nonatomic,strong) UIImageView*  toothPatternView;
 @property(nonatomic,strong) UIImageView*  bottomRectangleView;
 @property(nonatomic,strong) UIImageView*  bottomToothBrushView;
+@property(nonatomic,strong) UILabel*      toothBrushingTimesLabel;
 @property(nonatomic,strong) UIImageView*  bottomClockView;
+@property(nonatomic,strong) UILabel*      toothBrushingDurationLabel;
 @property(nonatomic,strong) UIImageView*  bottomStarView;
+@property(nonatomic,strong) UILabel*      numberOfStarsGotLabel;
 @property(nonatomic,strong) UIImageView*  backgroundView;
 @property(nonatomic,strong) UIButton*     scrollUpButton;
 @property(nonatomic,strong) UIButton*     scrollDownButton;
@@ -62,6 +65,8 @@
         [_scrollView addSubview:self.pressureLevelButton];
         [_scrollView addSubview:self.indicatorPatternView];
         [_scrollView addSubview:self.toothPatternView];
+        [_scrollView addSubview:self.scrollUpButton];
+        [_scrollView addSubview:self.bottomRectangleView];
     }
     return _scrollView;
 }
@@ -84,7 +89,7 @@
     {
         _topBarTextLabel = [[UILabel alloc] initWithCustomFont:21.0f];
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
-        [formatter setDateFormat:@"YYYY-MM-DD"];
+        [formatter setDateFormat:@"YYYY年MM月DD日"];
         _topBarTextLabel.text =[formatter stringFromDate:[NSDate date]];
         [_topBarTextLabel sizeToFit];
         _topBarTextLabel.textColor = [UIColor whiteColor];
@@ -181,11 +186,27 @@
     }
     return _scrollUpButton;
 }
+-(UIImageView*)bottomRectangleView
+{
+    if (!_bottomRectangleView)
+    {
+        _bottomRectangleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TBCBottomPattern"]];
+        [_bottomRectangleView setFrame:CGRectMake((kSCREEN_WIDTH - CustomWidth(327))/2, CustomHeight(475), CustomWidth(327), CustomHeight(91))];
+    }
+    return _bottomRectangleView;
+}
+-(UIImageView*)bottomToothBrushView
+{
+    if (!_bottomToothBrushView)
+    {
+        _bottomToothBrushView = [UIImageView alloc] initWithImage:[UIImage imageNamed:@""]
+    }
+}
 -(UIButton*)scrollDownButton
 {
     if (!_scrollDownButton)
     {
-        _scrollDownButton = [UIButton alloc] initWithFrame:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
+      //  _scrollDownButton = [UIButton alloc] initWithFrame:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
     }
     return _scrollDownButton;
 }
