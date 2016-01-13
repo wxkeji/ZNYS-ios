@@ -7,6 +7,7 @@
 //
 
 #import "ConnectingView.h"
+#import "ConnectedView.h"
 #import <Masonry.h>
 #import "ToolMacroes.h"
 @interface ConnectingView()
@@ -41,6 +42,7 @@
         WS(weakSelf, self);
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf.progressView setImage:[UIImage imageNamed:@"进度100"]];
+            
         });
     }
     return self;
@@ -57,7 +59,7 @@
     if(!_returnButton)
     {
         _returnButton   = [UIButton buttonWithType:UIButtonTypeCustom];
-   [_returnButton setBackgroundImage:[UIImage imageNamed:@"BCTopBarReturnButton"] forState:UIControlStateNormal];
+        [_returnButton setBackgroundImage:[UIImage imageNamed:@"BCTopBarReturnButton"] forState:UIControlStateNormal];
         [_returnButton sizeToFit];
         [_returnButton setFrame:CGRectMake(25,kSCREEN_WIDTH*154/750-CustomHeight(42),30,30)];
           [_returnButton addTarget:self action:@selector(returnToHome) forControlEvents:UIControlEventTouchUpInside];

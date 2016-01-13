@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ConnectedViewController : UIViewController
+#import "ConnectedView.h"
+@interface ConnectedViewController : UIViewController<ConnectedViewDelegate>
 
 @end

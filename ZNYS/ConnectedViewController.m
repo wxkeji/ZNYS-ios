@@ -7,9 +7,9 @@
 //
 
 #import "ConnectedViewController.h"
-
+#import "ConnectedView.h"
 @interface ConnectedViewController ()
-
+@property(nonatomic,strong) ConnectedView* connectedView;
 @end
 
 @implementation ConnectedViewController
@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.connectedView = [[ConnectedView alloc] init];
+    [self.view addSubview:self.connectedView];
+    self.connectedView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +36,9 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+#pragma mark - delegate implementation
+-(void)returnToHome
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 @end

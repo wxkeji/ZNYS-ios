@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ConnectedViewDelegate<NSObject>
+
+-(void)returnToHome;
+
+-(void)scrollToNextPage;
+
+@end
+
 @interface ConnectedView : UIView
+
+@property(nonatomic,strong)id<ConnectedViewDelegate>delegate;
 
 @end

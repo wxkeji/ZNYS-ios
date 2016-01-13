@@ -59,7 +59,7 @@
 		45DC5E671C421B80000D6A7A /* 进度80.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E5C1C421B80000D6A7A /* 进度80.png */; };
 		45DC5E681C421B80000D6A7A /* 进度90.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E5D1C421B80000D6A7A /* 进度90.png */; };
 		45DC5E691C421B80000D6A7A /* 进度100.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E5E1C421B80000D6A7A /* 进度100.png */; };
-		45DC5E701C423615000D6A7A /* libBLELib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DC5E6F1C423615000D6A7A /* libBLELib.a */; };
+		45E8756E1C44E52C009A5DDB /* libBLELib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E8756D1C44E52C009A5DDB /* libBLELib.a */; };
 		45EB69CD1C40B2C800160457 /* BCBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69C71C40B2C800160457 /* BCBackground.png */; };
 		45EB69CF1C40B2C800160457 /* BCProgress_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69C91C40B2C800160457 /* BCProgress_fill.png */; };
 		45EB69D01C40B2C800160457 /* BCProgressEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69CA1C40B2C800160457 /* BCProgressEmpty.png */; };
@@ -213,7 +213,7 @@
 		45DC5E5E1C421B80000D6A7A /* 进度100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度100.png"; sourceTree = "<group>"; };
 		45DC5E6D1C423606000D6A7A /* BluetoothServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothServer.h; sourceTree = "<group>"; };
 		45DC5E6E1C423606000D6A7A /* SensorDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorDataHandler.h; sourceTree = "<group>"; };
-		45DC5E6F1C423615000D6A7A /* libBLELib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBLELib.a; path = BLELib/libBLELib.a; sourceTree = "<group>"; };
+		45E8756D1C44E52C009A5DDB /* libBLELib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBLELib.a; sourceTree = "<group>"; };
 		45EB69C71C40B2C800160457 /* BCBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCBackground.png; sourceTree = "<group>"; };
 		45EB69C91C40B2C800160457 /* BCProgress_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCProgress_fill.png; sourceTree = "<group>"; };
 		45EB69CA1C40B2C800160457 /* BCProgressEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCProgressEmpty.png; sourceTree = "<group>"; };
@@ -303,7 +303,7 @@
 			files = (
 				458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */,
 				840ACE02D000AED2E3D3E8A8 /* libPods.a in Frameworks */,
-				45DC5E701C423615000D6A7A /* libBLELib.a in Frameworks */,
+				45E8756E1C44E52C009A5DDB /* libBLELib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,7 +611,7 @@
 		45DC5E6B1C4235E4000D6A7A /* BluetoothModule */ = {
 			isa = PBXGroup;
 			children = (
-				45DC5E6F1C423615000D6A7A /* libBLELib.a */,
+				45E8756D1C44E52C009A5DDB /* libBLELib.a */,
 				45DC5E6C1C423606000D6A7A /* Header */,
 			);
 			name = BluetoothModule;
@@ -1217,7 +1217,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZNYS/BLELib",
+					"$(PROJECT_DIR)/ZNYS",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.EricCheung.ZNYS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1233,7 +1235,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZNYS/BLELib",
+					"$(PROJECT_DIR)/ZNYS",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.EricCheung.ZNYS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
