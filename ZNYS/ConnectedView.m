@@ -192,6 +192,7 @@
     {
         _bottomRectangleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TBCBottomPattern"]];
         [_bottomRectangleView setFrame:CGRectMake((kSCREEN_WIDTH - CustomWidth(327))/2, CustomHeight(475), CustomWidth(327), CustomHeight(91))];
+        [_bottomRectangleView addSubview:self.bottomToothBrushView];
     }
     return _bottomRectangleView;
 }
@@ -199,7 +200,8 @@
 {
     if (!_bottomToothBrushView)
     {
-        _bottomToothBrushView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
+        _bottomToothBrushView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TBCToothBrush"]];
+        [_bottomToothBrushView setFrame:CGRectMake(CustomWidth(25), CustomHeight(20), CustomWidth(18), CustomHeight(91))];
     }
     return _bottomToothBrushView;
 }
