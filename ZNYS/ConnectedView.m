@@ -199,8 +199,9 @@
 {
     if (!_bottomToothBrushView)
     {
-        _bottomToothBrushView = [UIImageView alloc] initWithImage:[UIImage imageNamed:@""]
+        _bottomToothBrushView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
     }
+    return _bottomToothBrushView;
 }
 -(UIButton*)scrollDownButton
 {
