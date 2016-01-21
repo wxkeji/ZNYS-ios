@@ -8,6 +8,7 @@
 
 #import "ConnectedViewController.h"
 #import "ConnectedView.h"
+#import "CabinetViewController.h"
 @interface ConnectedViewController ()
 @property(nonatomic,strong) ConnectedView* connectedView;
 @end
@@ -39,6 +40,11 @@
 #pragma mark - delegate implementation
 -(void)returnToHome
 {
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
+    for (UIViewController * viewController in self.navigationController.viewControllers) {
+        if ([viewController isKindOfClass:[CabinetViewController class]]) {
+            [self.navigationController popToViewController:viewController animated:YES];
+  
+        }
+    }
+    }
 @end
