@@ -83,10 +83,6 @@
 {
     if(!_topBarTextLabel)
     {
-        //looks good
-    }
-    if(!_topBarTextLabel)
-    {
         _topBarTextLabel = [[UILabel alloc] initWithCustomFont:21.0f];
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
         [formatter setDateFormat:@"YYYY年MM月DD日"];
@@ -176,6 +172,7 @@
     }
     return _toothPatternView;
 }
+
 -(UIButton*)scrollUpButton
 {
     if (!_scrollUpButton)
@@ -192,7 +189,13 @@
     {
         _bottomRectangleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TBCBottomPattern"]];
         [_bottomRectangleView setFrame:CGRectMake((kSCREEN_WIDTH - CustomWidth(327))/2, CustomHeight(475), CustomWidth(327), CustomHeight(91))];
+        _bottomRectangleView.clipsToBounds = YES;
         [_bottomRectangleView addSubview:self.bottomToothBrushView];
+        [_bottomRectangleView addSubview:self.bottomClockView];
+        [_bottomRectangleView addSubview:self.bottomStarView];
+        [_bottomRectangleView addSubview:self.toothBrushingTimesLabel];
+        [_bottomRectangleView addSubview:self.toothBrushingDurationLabel];
+        [_bottomRectangleView addSubview:self.numberOfStarsGotLabel];
     }
     return _bottomRectangleView;
 }
@@ -205,11 +208,77 @@
     }
     return _bottomToothBrushView;
 }
+-(UILabel*)toothBrushingTimesLabel
+{
+    if (!_toothBrushingTimesLabel)
+    {
+        _toothBrushingTimesLabel = [[UILabel alloc] initWithCustomFont:41.5f];
+        [_toothBrushingTimesLabel setFrame:CGRectMake(self.bottomToothBrushView.frame.origin.x + CustomWidth(30), self.bottomToothBrushView.frame.origin.y + CustomHeight(12), 20, 25)];
+        [_toothBrushingTimesLabel setText:@"3"];
+        [_toothBrushingTimesLabel setTextColor:[UIColor whiteColor]];
+        [_toothBrushingTimesLabel sizeToFit];
+    }
+    return _toothBrushingTimesLabel;
+}
+
+
+-(UIImageView*)bottomClockView
+{
+    if (!_bottomClockView)
+    {
+        _bottomClockView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TBCClock"]];
+        CGRect bcvFrame = self.bottomToothBrushView.frame;
+        bcvFrame.origin.x = self.bottomToothBrushView.frame.origin.x + CustomWidth(75);
+        bcvFrame.origin.y = self.bottomToothBrushView.frame.origin.y + CustomHeight(15);
+        bcvFrame.size.width = bcvFrame.size.height = 31;
+        [_bottomClockView setFrame:bcvFrame];
+    }
+    return _bottomClockView;
+}
+-(UILabel*)toothBrushingDurationLabel
+{
+    if (!_toothBrushingDurationLabel)
+    {
+         _toothBrushingDurationLabel = [[UILabel alloc] initWithCustomFont:27.0f];
+        [_toothBrushingDurationLabel setFrame:CGRectMake(self.bottomClockView.frame.origin.x + CustomWidth(35), self.bottomClockView.frame.origin.y + CustomHeight(6), 75, 25)];
+        [_toothBrushingDurationLabel setText: @"08:00"];
+        [_toothBrushingDurationLabel setTextColor:[UIColor whiteColor]];
+        [_toothBrushingDurationLabel sizeToFit];
+    }
+    return _toothBrushingDurationLabel;
+}
+-(UIImageView*)bottomStarView
+{
+    if (!_bottomStarView)
+    {
+        _bottomStarView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TBCStar"]];
+        CGRect bsvFrame = self.bottomClockView.frame;
+        bsvFrame.origin.x = self.bottomClockView.frame.origin.x + CustomWidth(125);
+        bsvFrame.size.width = bsvFrame.size.height = 35;
+        [_bottomStarView setFrame:bsvFrame];
+    }
+    return _bottomStarView;
+}
+-(UILabel*)numberOfStarsGotLabel
+{
+    if (!_numberOfStarsGotLabel)
+    {
+        _numberOfStarsGotLabel = [[UILabel alloc] initWithCustomFont:41.5f];
+        CGRect nofsglFrame = self.toothBrushingTimesLabel.frame;
+        _numberOfStarsGotLabel.text = @"5";
+        nofsglFrame.origin.x += CustomWidth(205);
+        [_numberOfStarsGotLabel  setFrame:nofsglFrame];
+        _numberOfStarsGotLabel.textColor = [UIColor whiteColor];
+        [_numberOfStarsGotLabel sizeToFit];
+    }
+    return _numberOfStarsGotLabel;
+}
 -(UIButton*)scrollDownButton
 {
     if (!_scrollDownButton)
     {
-      //  _scrollDownButton = [UIButton alloc] initWithFrame:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
+        //  _scrollDownButton = [UIButton alloc] initWithFrame:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>);
+       // [_scrollDownButton setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
     }
     return _scrollDownButton;
 }
@@ -220,6 +289,9 @@
 }
 -(void)scrollToNextPage
 {
-    [self.delegate scrollToNextPage];
+  //  [self.delegate scrollToNextPage];
+    CGRect frame = self.scrollView.frame;
+    frame.origin.y = self.scrollView.contentSize.height/2;//滑动至第2页
+    [self.scrollView scrollRectToVisible:frame animated:YES];
 }
 @end

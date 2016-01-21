@@ -12,7 +12,7 @@
 
 -(void)returnToHome;
 
--(void)scrollToNextPage;
+//-(void)scrollToNextPage;
 
 @end
 

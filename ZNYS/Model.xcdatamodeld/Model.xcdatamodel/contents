@@ -8,7 +8,7 @@
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="startTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="times" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="beIncludedByBrushingStatistics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BrushingStatistics" inverseName="includeSYQY" inverseEntity="BrushingStatistics" syncable="YES"/>
+        <relationship name="beIncludedByBrushingStatistics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BrushingStatistics" inverseName="includeAreaStatistics" inverseEntity="BrushingStatistics" syncable="YES"/>
     </entity>
     <entity name="Award" representedClassName="Award" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -36,15 +36,15 @@
         <attribute name="timeSlot" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="toothBrushID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="bePossessedByToothBrush" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ToothBrush" inverseName="possessBrushingStatistics" inverseEntity="ToothBrush" syncable="YES"/>
-        <relationship name="includeSYQY" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AreaStatistics" inverseName="beIncludedByBrushingStatistics" inverseEntity="AreaStatistics" syncable="YES"/>
+        <relationship name="includeAreaStatistics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AreaStatistics" inverseName="beIncludedByBrushingStatistics" inverseEntity="AreaStatistics" syncable="YES"/>
     </entity>
     <entity name="CustomerServices" representedClassName="CustomerServices" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="linkAddress" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="literalDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pictureURL" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="beOutput" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="InferenceEngine" inverseName="outputKFXX" inverseEntity="InferenceEngine" syncable="YES"/>
-        <relationship name="viewYH" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="beViewedByCustomerService" inverseEntity="User" syncable="YES"/>
+        <relationship name="beOutput" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="InferenceEngine" inverseName="outputCustomerService" inverseEntity="InferenceEngine" syncable="YES"/>
+        <relationship name="viewUsers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="beViewedByCustomerService" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="InferenceEngine" representedClassName="InferenceEngine" syncable="YES">
         <attribute name="customerServiceID" optional="YES" attributeType="String" syncable="YES"/>
@@ -52,7 +52,7 @@
         <attribute name="inferenceDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rulesID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="matchRules" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Rules" inverseName="matchInferenceEngine" inverseEntity="Rules" syncable="YES"/>
-        <relationship name="outputKFXX" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CustomerServices" inverseName="beOutput" inverseEntity="CustomerServices" syncable="YES"/>
+        <relationship name="outputCustomerService" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CustomerServices" inverseName="beOutput" inverseEntity="CustomerServices" syncable="YES"/>
     </entity>
     <entity name="Knowledge" representedClassName="Knowledge" syncable="YES">
         <attribute name="coverDiscription" optional="YES" attributeType="String" syncable="YES"/>
@@ -95,7 +95,7 @@
         <attribute name="starsOwned" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="tokenOwned" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="beViewedByCustomerService" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CustomerServices" inverseName="viewYH" inverseEntity="CustomerServices" syncable="YES"/>
+        <relationship name="beViewedByCustomerService" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CustomerServices" inverseName="viewUsers" inverseEntity="CustomerServices" syncable="YES"/>
         <relationship name="possessAwards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Award" inverseName="bePossessedByUser" inverseEntity="Award" syncable="YES"/>
         <relationship name="possessBelongings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Belongings" inverseName="bePossessedByUser" inverseEntity="Belongings" syncable="YES"/>
         <relationship name="possessToothBrushes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ToothBrush" inverseName="bePossessedByUser" inverseEntity="ToothBrush" syncable="YES"/>
@@ -107,7 +107,7 @@
         <element name="BrushingStatistics" positionX="63" positionY="54" width="128" height="163"/>
         <element name="CustomerServices" positionX="-110" positionY="-270" width="128" height="133"/>
         <element name="InferenceEngine" positionX="79" positionY="-220" width="128" height="133"/>
-        <element name="Knowledge" positionX="-459" positionY="161" width="128" height="118"/>
+        <element name="Knowledge" positionX="-450" positionY="162" width="128" height="118"/>
         <element name="Picture" positionX="-612" positionY="164" width="128" height="88"/>
         <element name="Rules" positionX="279" positionY="-295" width="128" height="133"/>
         <element name="ToothBrush" positionX="-153" positionY="2" width="128" height="148"/>
