@@ -90,7 +90,7 @@
     {
       //  _progressView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BCProgressEmpty"]];
         _progressView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"进度0"]];
-        _progressView = [[UIImageView alloc] initWithFrame:CGRectMake((kSCREEN_WIDTH - CustomWidth(321)-CustomWidth(8))/2, kSCREEN_HEIGHT - CustomHeight(150)-CustomHeight(39), 321, 73)];
+        _progressView = [[UIImageView alloc] initWithFrame:CGRectMake((kSCREEN_WIDTH - CustomWidth(321)-CustomWidth(8))/2, kSCREEN_HEIGHT - CustomHeight(150)-CustomHeight(39), CustomWidth(321), CustomHeight(73))];
       //  [_progressView setFrame:CGRectMake((kSCREEN_WIDTH - CustomWidth(321)-CustomWidth(8))/2, kSCREEN_HEIGHT - CustomHeight(150)-CustomHeight(39), 321, 73)];
         _progressView.animationImages = [NSArray arrayWithObjects:
                                          [UIImage imageNamed:@"进度10"],

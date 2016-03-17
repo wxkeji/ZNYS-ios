@@ -13,6 +13,9 @@
 -(void)returnToHome;
 
 //-(void)scrollToNextPage;
+-(void)setBrushingTiems:(NSUInteger)brusingTimes;
+-(void)setBrushingDuration:(NSUInteger)brushingDuration;//暂定以秒作为单位吧
+-(void)setNumbesOfStarsGot:(NSUInteger)starsGot;
 
 @end
 
