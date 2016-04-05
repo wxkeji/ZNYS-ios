@@ -43,8 +43,7 @@
     for (UIViewController * viewController in self.navigationController.viewControllers) {
         if ([viewController isKindOfClass:[CabinetViewController class]]) {
             [self.navigationController popToViewController:viewController animated:YES];
-  
-        }
+          }
     }
     }
 @end

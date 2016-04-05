@@ -23,6 +23,7 @@
 		0487D7801B74548F00756EF8 /* ZNYSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D77F1B74548F00756EF8 /* ZNYSTests.m */; };
 		04A7510F1C43D9E500B3F537 /* GiftList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A7510E1C43D9E500B3F537 /* GiftList.plist */; };
 		04C978F31C44BE100046DB4A /* GiftItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C978F21C44BE100046DB4A /* GiftItem.m */; };
+		454112741C95BE9600BE4DE9 /* ZNYSprogressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */; };
 		458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458093901C21448000CB9BF9 /* CoreData.framework */; };
 		458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 458093941C21453200CB9BF9 /* CoreDataHelper.m */; };
 		458094631C23DE3100CB9BF9 /* ConnectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 458094621C23DE3100CB9BF9 /* ConnectingView.m */; };
@@ -66,9 +67,9 @@
 		45EB69D11C40B2C800160457 /* BCTopBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69CB1C40B2C800160457 /* BCTopBar.png */; };
 		45EB69D21C40B2C800160457 /* BCTopBarReturnButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69CC1C40B2C800160457 /* BCTopBarReturnButton.png */; };
 		45EB69D41C415DDE00160457 /* BCBottomPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69D31C415DDE00160457 /* BCBottomPattern.png */; };
-		6412FC9B1C476AB400DF8FC5 /* RewardListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6412FC9A1C476AB400DF8FC5 /* RewardListViewController.m */; settings = {ASSET_TAGS = (); }; };
-		6412FC9E1C477DF200DF8FC5 /* RewardBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6412FC9D1C477DF200DF8FC5 /* RewardBlockView.m */; settings = {ASSET_TAGS = (); }; };
-		6412FCA11C477F0C00DF8FC5 /* RewardItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6412FCA01C477F0C00DF8FC5 /* RewardItemView.m */; settings = {ASSET_TAGS = (); }; };
+		6412FC9B1C476AB400DF8FC5 /* RewardListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6412FC9A1C476AB400DF8FC5 /* RewardListViewController.m */; };
+		6412FC9E1C477DF200DF8FC5 /* RewardBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6412FC9D1C477DF200DF8FC5 /* RewardBlockView.m */; };
+		6412FCA11C477F0C00DF8FC5 /* RewardItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6412FCA01C477F0C00DF8FC5 /* RewardItemView.m */; };
 		64337DC81C3B8DD400C9D811 /* ThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64337DC71C3B8DD400C9D811 /* ThumbView.m */; };
 		645A016F1C37B5B800556395 /* AddAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016A1C37B5B800556395 /* AddAccountView.m */; };
 		645A01701C37B5B800556395 /* SelectBirthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016C1C37B5B800556395 /* SelectBirthView.m */; };
@@ -154,6 +155,8 @@
 		04A7510E1C43D9E500B3F537 /* GiftList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GiftList.plist; sourceTree = "<group>"; };
 		04C978F11C44BE100046DB4A /* GiftItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftItem.h; sourceTree = "<group>"; };
 		04C978F21C44BE100046DB4A /* GiftItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftItem.m; sourceTree = "<group>"; };
+		454112721C95BE9600BE4DE9 /* ZNYSprogressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNYSprogressBar.h; sourceTree = "<group>"; };
+		454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNYSprogressBar.m; sourceTree = "<group>"; };
 		455A260B1C2BE7330061C48A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		458093901C21448000CB9BF9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		458093931C21453200CB9BF9 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
@@ -551,6 +554,8 @@
 				458094621C23DE3100CB9BF9 /* ConnectingView.m */,
 				458094641C23DE4100CB9BF9 /* ConnectedView.h */,
 				458094651C23DE4100CB9BF9 /* ConnectedView.m */,
+				454112721C95BE9600BE4DE9 /* ZNYSprogressBar.h */,
+				454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1088,6 +1093,7 @@
 				0421D3741B8126C700BF6065 /* CabinetItem.m in Sources */,
 				6412FC9E1C477DF200DF8FC5 /* RewardBlockView.m in Sources */,
 				45BC40A01C2469D9006A185F /* Belongings.m in Sources */,
+				454112741C95BE9600BE4DE9 /* ZNYSprogressBar.m in Sources */,
 				458094631C23DE3100CB9BF9 /* ConnectingView.m in Sources */,
 				45BC40931C2469D9006A185F /* Award+CoreDataProperties.m in Sources */,
 				45BC40921C2469D9006A185F /* User.m in Sources */,

@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
     <entity name="AreaStatistics" representedClassName="AreaStatistics" syncable="YES">
-        <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="areaName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="brushingStatisticsID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="correctness" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="duration" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="endTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="startTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="times" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="beIncludedByBrushingStatistics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BrushingStatistics" inverseName="includeSYQY" inverseEntity="BrushingStatistics" syncable="YES"/>
+        <relationship name="beIncludedByBrushingStatistics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BrushingStatistics" inverseName="includeAreaStatistics" inverseEntity="BrushingStatistics" syncable="YES"/>
     </entity>
     <entity name="Award" representedClassName="Award" syncable="YES">
+        <attribute name="awardDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="exchangeData" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pitcureURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="priority" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="voice" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="bePossessedByUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="possessAwards" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Belongings" representedClassName="Belongings" syncable="YES">
@@ -29,22 +37,42 @@
         <relationship name="bePossessedByUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="possessBelongings" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="BrushingStatistics" representedClassName="BrushingStatistics" syncable="YES">
+        <attribute name="cleanliness" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="duration" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="effect" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="speed" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="starsGained" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="strength" optional="YES" syncable="YES"/>
         <attribute name="timeSlot" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="toothBrushID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="bePossessedByToothBrush" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ToothBrush" inverseName="possessBrushingStatistics" inverseEntity="ToothBrush" syncable="YES"/>
-        <relationship name="includeSYQY" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AreaStatistics" inverseName="beIncludedByBrushingStatistics" inverseEntity="AreaStatistics" syncable="YES"/>
+        <relationship name="includeAreaStatistics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AreaStatistics" inverseName="beIncludedByBrushingStatistics" inverseEntity="AreaStatistics" syncable="YES"/>
+    </entity>
+    <entity name="Cabinet" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hasItem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="inCabinet" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <entity name="CalenderItem" syncable="YES">
+        <attribute name="awardCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstAwardID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="starNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongToUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="possessCalenderItem" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="CustomerServices" representedClassName="CustomerServices" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="linkAddress" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="literalDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pictureURL" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="beOutput" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="InferenceEngine" inverseName="outputKFXX" inverseEntity="InferenceEngine" syncable="YES"/>
-        <relationship name="viewYH" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="beViewedByCustomerService" inverseEntity="User" syncable="YES"/>
+        <relationship name="beOutput" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="InferenceEngine" inverseName="outputCustomerService" inverseEntity="InferenceEngine" syncable="YES"/>
+        <relationship name="viewUsers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="beViewedByCustomerService" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="InferenceEngine" representedClassName="InferenceEngine" syncable="YES">
         <attribute name="customerServiceID" optional="YES" attributeType="String" syncable="YES"/>
@@ -52,7 +80,16 @@
         <attribute name="inferenceDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rulesID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="matchRules" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Rules" inverseName="matchInferenceEngine" inverseEntity="Rules" syncable="YES"/>
-        <relationship name="outputKFXX" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CustomerServices" inverseName="beOutput" inverseEntity="CustomerServices" syncable="YES"/>
+        <relationship name="outputCustomerService" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CustomerServices" inverseName="beOutput" inverseEntity="CustomerServices" syncable="YES"/>
+    </entity>
+    <entity name="Item" syncable="YES">
+        <attribute name="cabinetID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sceneID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="bePossessedByUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="possessItem" inverseEntity="User" syncable="YES"/>
+        <relationship name="inCabinet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cabinet" inverseName="hasItem" inverseEntity="Cabinet" syncable="YES"/>
     </entity>
     <entity name="Knowledge" representedClassName="Knowledge" syncable="YES">
         <attribute name="coverDiscription" optional="YES" attributeType="String" syncable="YES"/>
@@ -60,6 +97,11 @@
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="knowledgeLiteralDetails" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="numberOfPicturesContained" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Parameter" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <entity name="Picture" representedClassName="Picture" syncable="YES">
         <attribute name="addressURL" optional="YES" attributeType="String" syncable="YES"/>
@@ -74,8 +116,14 @@
         <attribute name="rightValue" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="matchInferenceEngine" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="InferenceEngine" inverseName="matchRules" inverseEntity="InferenceEngine" syncable="YES"/>
     </entity>
+    <entity name="Scene" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
     <entity name="ToothBrush" representedClassName="ToothBrush" syncable="YES">
+        <attribute name="bindTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="lastConnectTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="macAddress" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -88,29 +136,42 @@
         <attribute name="birthday" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cycleCountOfHighestLevel" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icon_url_local" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icon_url_server" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="interationTime" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="isCurrentUser" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isDelete" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isRegistered" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="lastActiveTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="nickName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="starsOwned" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="tokenOwned" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="beViewedByCustomerService" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CustomerServices" inverseName="viewYH" inverseEntity="CustomerServices" syncable="YES"/>
+        <relationship name="beViewedByCustomerService" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CustomerServices" inverseName="viewUsers" inverseEntity="CustomerServices" syncable="YES"/>
         <relationship name="possessAwards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Award" inverseName="bePossessedByUser" inverseEntity="Award" syncable="YES"/>
         <relationship name="possessBelongings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Belongings" inverseName="bePossessedByUser" inverseEntity="Belongings" syncable="YES"/>
+        <relationship name="possessCalenderItem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CalenderItem" inverseName="belongToUser" inverseEntity="CalenderItem" syncable="YES"/>
+        <relationship name="possessItem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="bePossessedByUser" inverseEntity="Item" syncable="YES"/>
         <relationship name="possessToothBrushes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ToothBrush" inverseName="bePossessedByUser" inverseEntity="ToothBrush" syncable="YES"/>
     </entity>
     <elements>
-        <element name="AreaStatistics" positionX="207" positionY="125" width="128" height="163"/>
-        <element name="Award" positionX="-540" positionY="-153" width="128" height="148"/>
-        <element name="Belongings" positionX="-684" positionY="-85" width="128" height="148"/>
-        <element name="BrushingStatistics" positionX="63" positionY="54" width="128" height="163"/>
-        <element name="CustomerServices" positionX="-110" positionY="-270" width="128" height="133"/>
-        <element name="InferenceEngine" positionX="79" positionY="-220" width="128" height="133"/>
-        <element name="Knowledge" positionX="-459" positionY="161" width="128" height="118"/>
-        <element name="Picture" positionX="-612" positionY="164" width="128" height="88"/>
-        <element name="Rules" positionX="279" positionY="-295" width="128" height="133"/>
-        <element name="ToothBrush" positionX="-153" positionY="2" width="128" height="148"/>
-        <element name="User" positionX="-351" positionY="-144" width="128" height="270"/>
+        <element name="AreaStatistics" positionX="115" positionY="-198" width="128" height="178"/>
+        <element name="Award" positionX="-461" positionY="-396" width="128" height="253"/>
+        <element name="Belongings" positionX="-927" positionY="293" width="128" height="148"/>
+        <element name="BrushingStatistics" positionX="16" positionY="-199" width="128" height="208"/>
+        <element name="CustomerServices" positionX="-918" positionY="459" width="128" height="133"/>
+        <element name="InferenceEngine" positionX="-738" positionY="477" width="128" height="133"/>
+        <element name="Knowledge" positionX="-738" positionY="179" width="128" height="118"/>
+        <element name="Picture" positionX="-909" positionY="173" width="128" height="88"/>
+        <element name="Rules" positionX="-738" positionY="308" width="128" height="133"/>
+        <element name="ToothBrush" positionX="-153" positionY="-225" width="128" height="178"/>
+        <element name="User" positionX="-308" positionY="-234" width="128" height="388"/>
+        <element name="Cabinet" positionX="-126" positionY="-423" width="128" height="118"/>
+        <element name="Scene" positionX="-225" positionY="324" width="128" height="75"/>
+        <element name="Parameter" positionX="-72" positionY="324" width="128" height="90"/>
+        <element name="Item" positionX="-317" positionY="-420" width="128" height="150"/>
+        <element name="CalenderItem" positionX="-189" positionY="-99" width="128" height="165"/>
     </elements>
 </model>

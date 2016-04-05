@@ -107,6 +107,7 @@ NSString* storeFilename = @"database.sqlite";
     {
         NSLog(@"Failed to add store. Error: %@", error);
         abort();
+        //要是在这里崩溃了，可以到输出的日志里面找到类似 //Users/EricCheung/Library/Developer/CoreSimulator/Devices/FB072C5D-BACF-4CBD-B9C2-5F6A964244AD/data/Containers/Data/Application/023B8309-ED5A-4F83-A2B6-5A1123CF21A6/Documents/Stores/database.sqlite) 的一个URL，然后把这个url对应的那个database.sqlite文件删除就好了   by张恒铭
     }
     else
     {
@@ -208,7 +209,6 @@ NSString* storeFilename = @"database.sqlite";
 }
 -(BOOL)whetherThereIsUser
 {
-    NSArray* result = [self retrieveUsers:nil];
    if([self retrieveUsers:nil].count)
    {
        return YES;
