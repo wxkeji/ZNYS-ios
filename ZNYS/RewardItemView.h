@@ -10,9 +10,7 @@
 
 @interface RewardItemView : ZNYSBaseView
 
-@property (nonatomic,strong) UIView * backgroundView;
-
-@property (nonatomic,strong) UIImageView * coinView;
+@property (nonatomic,strong) UIImageView * bgView;
 
 @property (nonatomic,strong) UILabel * coinLabel;
 
