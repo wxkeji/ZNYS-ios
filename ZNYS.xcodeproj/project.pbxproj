@@ -23,6 +23,8 @@
 		0487D7801B74548F00756EF8 /* ZNYSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D77F1B74548F00756EF8 /* ZNYSTests.m */; };
 		04A7510F1C43D9E500B3F537 /* GiftList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A7510E1C43D9E500B3F537 /* GiftList.plist */; };
 		04C978F31C44BE100046DB4A /* GiftItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C978F21C44BE100046DB4A /* GiftItem.m */; };
+		451D6A1F1C9A8434000B6A91 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 451D6A1E1C9A8434000B6A91 /* Model.xcdatamodeld */; };
+		451D6A211C9A8445000B6A91 /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 451D6A201C9A8445000B6A91 /* Model.xcdatamodel */; };
 		454112741C95BE9600BE4DE9 /* ZNYSprogressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */; };
 		458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458093901C21448000CB9BF9 /* CoreData.framework */; };
 		458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 458093941C21453200CB9BF9 /* CoreDataHelper.m */; };
@@ -48,7 +50,6 @@
 		45BC40A01C2469D9006A185F /* Belongings.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC408C1C2469D9006A185F /* Belongings.m */; };
 		45BC40A11C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC408E1C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m */; };
 		45BC40A21C2469D9006A185F /* BrushingStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC40901C2469D9006A185F /* BrushingStatistics.m */; };
-		45CE1B6F1C2BE61900C886BC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45CE1B6D1C2BE61900C886BC /* Model.xcdatamodeld */; };
 		45DC5E5F1C421B80000D6A7A /* 进度0.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E541C421B80000D6A7A /* 进度0.png */; };
 		45DC5E601C421B80000D6A7A /* 进度10.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E551C421B80000D6A7A /* 进度10.png */; };
 		45DC5E611C421B80000D6A7A /* 进度20.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E561C421B80000D6A7A /* 进度20.png */; };
@@ -155,9 +156,9 @@
 		04A7510E1C43D9E500B3F537 /* GiftList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GiftList.plist; sourceTree = "<group>"; };
 		04C978F11C44BE100046DB4A /* GiftItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftItem.h; sourceTree = "<group>"; };
 		04C978F21C44BE100046DB4A /* GiftItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftItem.m; sourceTree = "<group>"; };
+		451D6A201C9A8445000B6A91 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		454112721C95BE9600BE4DE9 /* ZNYSprogressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNYSprogressBar.h; sourceTree = "<group>"; };
 		454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNYSprogressBar.m; sourceTree = "<group>"; };
-		455A260B1C2BE7330061C48A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		458093901C21448000CB9BF9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		458093931C21453200CB9BF9 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		458093941C21453200CB9BF9 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
@@ -205,7 +206,6 @@
 		45BC408E1C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BrushingStatistics+CoreDataProperties.m"; sourceTree = "<group>"; };
 		45BC408F1C2469D9006A185F /* BrushingStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushingStatistics.h; sourceTree = "<group>"; };
 		45BC40901C2469D9006A185F /* BrushingStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushingStatistics.m; sourceTree = "<group>"; };
-		45CE1B6E1C2BE61900C886BC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		45DC5E541C421B80000D6A7A /* 进度0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度0.png"; sourceTree = "<group>"; };
 		45DC5E551C421B80000D6A7A /* 进度10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度10.png"; sourceTree = "<group>"; };
 		45DC5E561C421B80000D6A7A /* 进度20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度20.png"; sourceTree = "<group>"; };
@@ -354,7 +354,8 @@
 		043B7B731BAD30BA0094BB3E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				45CE1B6D1C2BE61900C886BC /* Model.xcdatamodeld */,
+				451D6A1E1C9A8434000B6A91 /* Model.xcdatamodeld */,
+				451D6A201C9A8445000B6A91 /* Model.xcdatamodel */,
 				458094A31C242E8400CB9BF9 /* Entities */,
 				458093921C2144B700CB9BF9 /* CoreDataHelper */,
 				0469BFBF1BADCBCE0055DF4A /* ItemManagement */,
@@ -1103,6 +1104,7 @@
 				45BC409D1C2469D9006A185F /* ToothBrush+CoreDataProperties.m in Sources */,
 				041366001BAD8C9A00CD0604 /* DialogView.m in Sources */,
 				0469BFBE1BADC22F0055DF4A /* Fortune.m in Sources */,
+				451D6A1F1C9A8434000B6A91 /* Model.xcdatamodeld in Sources */,
 				645A019C1C37CEF700556395 /* VerifyPasswordView.m in Sources */,
 				0421D3791B830D0B00BF6065 /* ItemState.m in Sources */,
 				0421D3721B8126C700BF6065 /* CabinetViewController.m in Sources */,
@@ -1111,6 +1113,7 @@
 				45BC40941C2469D9006A185F /* Award.m in Sources */,
 				45BC40991C2469D9006A185F /* InferenceEngine+CoreDataProperties.m in Sources */,
 				6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */,
+				451D6A211C9A8445000B6A91 /* Model.xcdatamodel in Sources */,
 				C43136471BC282C30097A91B /* IsParentToCabinetSegue.m in Sources */,
 				458094691C23DE5700CB9BF9 /* ConnectingViewController.m in Sources */,
 				C4A025001BBE678000771969 /* settingIndexController.m in Sources */,
@@ -1119,7 +1122,6 @@
 				647E05D11C3B710A00ADB810 /* UserDetailView.m in Sources */,
 				45BC409F1C2469D9006A185F /* Belongings+CoreDataProperties.m in Sources */,
 				645A01701C37B5B800556395 /* SelectBirthView.m in Sources */,
-				45CE1B6F1C2BE61900C886BC /* Model.xcdatamodeld in Sources */,
 				0487D7661B74548F00756EF8 /* main.m in Sources */,
 				647E05C81C3A6C1900ADB810 /* SettingHeaderView.m in Sources */,
 				647E05C51C3A6B4B00ADB810 /* SettingViewController.m in Sources */,
@@ -1349,13 +1351,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		45CE1B6D1C2BE61900C886BC /* Model.xcdatamodeld */ = {
+		451D6A1E1C9A8434000B6A91 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				455A260B1C2BE7330061C48A /* Model.xcdatamodel */,
-				45CE1B6E1C2BE61900C886BC /* Model.xcdatamodel */,
 			);
-			currentVersion = 45CE1B6E1C2BE61900C886BC /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
