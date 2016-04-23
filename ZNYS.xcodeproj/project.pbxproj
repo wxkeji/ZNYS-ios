@@ -32,6 +32,8 @@
 		458094661C23DE4100CB9BF9 /* ConnectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 458094651C23DE4100CB9BF9 /* ConnectedView.m */; };
 		458094691C23DE5700CB9BF9 /* ConnectingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 458094681C23DE5700CB9BF9 /* ConnectingViewController.m */; };
 		4580946C1C23DE6400CB9BF9 /* ConnectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4580946B1C23DE6400CB9BF9 /* ConnectedViewController.m */; };
+		45839C321CBF6A4C000E878D /* CustomProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45839C301CBF6A4C000E878D /* CustomProgressBar.m */; };
+		45839C331CBF6A4C000E878D /* ProgressRectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 45839C311CBF6A4C000E878D /* ProgressRectangle.png */; };
 		45BC40911C2469D9006A185F /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC406E1C2469D9006A185F /* User+CoreDataProperties.m */; };
 		45BC40921C2469D9006A185F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC40701C2469D9006A185F /* User.m */; };
 		45BC40931C2469D9006A185F /* Award+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC40721C2469D9006A185F /* Award+CoreDataProperties.m */; };
@@ -170,6 +172,9 @@
 		458094681C23DE5700CB9BF9 /* ConnectingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectingViewController.m; sourceTree = "<group>"; };
 		4580946A1C23DE6400CB9BF9 /* ConnectedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedViewController.h; sourceTree = "<group>"; };
 		4580946B1C23DE6400CB9BF9 /* ConnectedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectedViewController.m; sourceTree = "<group>"; };
+		45839C2F1CBF6A4C000E878D /* CustomProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomProgressBar.h; sourceTree = "<group>"; };
+		45839C301CBF6A4C000E878D /* CustomProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomProgressBar.m; sourceTree = "<group>"; };
+		45839C311CBF6A4C000E878D /* ProgressRectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgressRectangle.png; sourceTree = "<group>"; };
 		45BC406D1C2469D9006A185F /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
 		45BC406E1C2469D9006A185F /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
 		45BC406F1C2469D9006A185F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -534,6 +539,9 @@
 		458093DD1C231BE500CB9BF9 /* BrushConnectingModule */ = {
 			isa = PBXGroup;
 			children = (
+				45839C2F1CBF6A4C000E878D /* CustomProgressBar.h */,
+				45839C301CBF6A4C000E878D /* CustomProgressBar.m */,
+				45839C311CBF6A4C000E878D /* ProgressRectangle.png */,
 				458093E01C231BFE00CB9BF9 /* Controller */,
 				458093DF1C231BFA00CB9BF9 /* View */,
 				458093DE1C231BF300CB9BF9 /* Model */,
@@ -1007,6 +1015,7 @@
 				647E05C01C3A5C1D00ADB810 /* userAccount_back@3x.png in Resources */,
 				45EB69D01C40B2C800160457 /* BCProgressEmpty.png in Resources */,
 				45DC5E671C421B80000D6A7A /* 进度80.png in Resources */,
+				45839C331CBF6A4C000E878D /* ProgressRectangle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1075,6 +1084,7 @@
 				4580946C1C23DE6400CB9BF9 /* ConnectedViewController.m in Sources */,
 				047D3D391B8A02DA00871627 /* NSArray+ForceBound.m in Sources */,
 				45BC40A11C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m in Sources */,
+				45839C321CBF6A4C000E878D /* CustomProgressBar.m in Sources */,
 				45BC40A21C2469D9006A185F /* BrushingStatistics.m in Sources */,
 				C4DBC6881BC4C41F00285604 /* FeedbackPopView.m in Sources */,
 				45BC40981C2469D9006A185F /* CustomerServices.m in Sources */,
