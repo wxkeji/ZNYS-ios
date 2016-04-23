@@ -12,6 +12,7 @@
 #import "UserAccountViewController.h"
 #import "CabinetViewController.h"
 #import "User.h"
+#import "RewardListViewController.h"
 
 @interface SettingViewController ()
 
@@ -81,6 +82,18 @@
 - (SettingButtonView *)buttonView{
     if (!_buttonView) {
         _buttonView = [[SettingButtonView alloc] init];
+        
+        WS(weakSelf, self);
+        _buttonView.buttonClickBlock = ^(NSInteger tag){
+            switch (tag) {
+                case 0:
+                    [weakSelf.navigationController pushViewController:[[RewardListViewController alloc] init] animated:YES];
+                    break;
+                    
+                default:
+                    break;
+            }
+        };
     }
     return _buttonView;
 }
