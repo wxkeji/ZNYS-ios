@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZNYSBaseNavigationBar.h"
 #import "ToolMacroes.h"
 #import <Masonry.h>
 #import <SVProgressHUD.h>
@@ -14,6 +15,12 @@
 #import "UITextField+Font.h"
 #import "UIButton+Font.h"
 
+
 @interface ZNYSBaseController : UIViewController
+
+@property (nonatomic,strong) ZNYSBaseNavigationBar * nav;
+
+- (void)backMenuDidPressed;
+- (void)setNavBarWithTitle:(NSString *)title Color:(UIColor *)color TextColor:(UIColor *)textColor;
 
 @end

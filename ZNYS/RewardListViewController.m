@@ -7,31 +7,181 @@
 //
 
 #import "RewardListViewController.h"
+#import "ZNYSBaseNavigationBar.h"
+#import "rewardListModel.h"
+#import "AddRewardButtonView.h"
 
 @interface RewardListViewController ()
+
+@property (nonatomic,strong) UIImageView * imageView;
+
+@property (nonatomic,strong) UIScrollView * rewardScrollView;
+
+@property (nonatomic,strong) NSMutableArray<rewardListModel *> * dataArray;
+
+@property (nonatomic,strong) NSMutableArray<RewardItemView *> * itemArray;
+
+@property (nonatomic,assign) BOOL isInDeleteMode;
+
+@property (nonatomic) CGFloat contentOffsetX;
 
 @end
 
 @implementation RewardListViewController
 
+#pragma mark life cycle
+
+- (void)dealloc{
+    _imageView = nil;
+    _rewardScrollView = nil;
+    _dataArray = nil;
+    _itemArray = nil;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.isInDeleteMode = NO;
+    self.contentOffsetX = 0;
+    
+    self.nav.hidden = NO;
+    self.nav.delegate = self;
+    [self.nav.rightButton setTitle:@"删除" forState:UIControlStateNormal];
+    UIColor * backColor = [UIColor redColor];
+    UIColor * titleColor = [UIColor whiteColor];
+    [self setNavBarWithTitle:@"奖励清单" Color:backColor TextColor:titleColor];
+    
+    [self.view addSubview:self.imageView];
+    [self.view addSubview:self.rewardScrollView];
+    WS(weakSelf, self);
+    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.view.mas_left).with.offset(0);
+        make.right.equalTo(weakSelf.view.mas_right).with.offset(0);
+        make.top.equalTo(weakSelf.nav.mas_bottom).with.offset(CustomHeight(3));
+        make.height.mas_equalTo(CustomHeight(144));
+    }];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)refreshScrollView{
+    [self.rewardScrollView removeFromSuperview];
+    self.rewardScrollView = nil;
+    
+    [self.itemArray removeAllObjects];
+    
+    [self.view addSubview:self.rewardScrollView];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark ZNYSBaseNavigationBarDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)rightButtonClicked{
+    NSArray * tempArr = [NSArray arrayWithArray:self.itemArray];
+    for (RewardItemView * item in tempArr) {
+        if (item.isSelected) {
+            [self.itemArray removeObjectAtIndex:item.tag];
+            [self.dataArray removeObjectAtIndex:item.tag];
+        }
+    }
+    
+    self.isInDeleteMode = NO;
+    self.contentOffsetX = self.rewardScrollView.contentOffset.x;
+    
+    [self refreshScrollView];
+    
+    self.nav.rightButton.hidden = !self.isInDeleteMode;
 }
-*/
+
+#pragma mark RewardItemViewDelegate
+
+- (void)startDelete{
+    self.nav.rightButton.hidden = NO;
+    self.isInDeleteMode = YES;
+    self.contentOffsetX = self.rewardScrollView.contentOffset.x;
+    
+    [self refreshScrollView];
+}
+
+#pragma mark private method
+
+- (void)addItemToScrollView{
+    CGFloat width = CustomWidth(107);
+    CGFloat height = CustomHeight(142);
+    
+    for (NSInteger i = 0; i<self.dataArray.count; i++) {
+        NSInteger num = i+1;
+        RewardItemView * item = [[RewardItemView alloc] initWithFrame:CGRectMake((kSCREEN_WIDTH*(int)(num/6))+CustomWidth(17)+(num%3)*(width+CustomWidth(11)), CustomHeight(14)+((int)(num/3)%2)*(height+CustomHeight(13)), width, height)];
+        item.tag = [self.dataArray objectAtIndex:i].coins;
+        item.selectButton.hidden = self.isInDeleteMode ? NO : YES;
+        item.coinLabel.text = [NSString stringWithFormat:@"x %ld",(long)[self.dataArray objectAtIndex:i].coins];
+        item.delegate = self;
+        [self.rewardScrollView addSubview:item];
+        [self.itemArray addObject:item];
+    }
+
+}
+
+- (void)addAddItemButton{
+    CGFloat width = CustomWidth(107);
+    CGFloat height = CustomHeight(142);
+    
+    AddRewardButtonView * addButton = [[AddRewardButtonView alloc] initWithFrame:CGRectMake(CustomWidth(17), CustomHeight(14), width, height)];
+    [_rewardScrollView addSubview:addButton];
+
+}
+
+- (void)deleteItemInScrollView{
+    NSArray * tempArr = [NSArray arrayWithArray:self.itemArray];
+    for (RewardItemView * item in tempArr) {
+        [item removeFromSuperview];
+        [self.itemArray removeObjectAtIndex:item.tag];
+    }
+}
+
+#pragma mark getters and setters
+
+- (UIImageView *)imageView{
+    if (!_imageView) {
+        _imageView = [[UIImageView alloc] init];
+        _imageView.backgroundColor = [UIColor yellowColor];
+    }
+    return _imageView;
+}
+
+- (UIScrollView *)rewardScrollView{
+    if (!_rewardScrollView) {
+        _rewardScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, CustomHeight(202), kSCREEN_WIDTH, CustomHeight(446))];
+        _rewardScrollView.backgroundColor = [UIColor whiteColor];
+        _rewardScrollView.contentSize = CGSizeMake(((self.dataArray.count+1)/6+1)*kSCREEN_WIDTH, 0);
+        _rewardScrollView.pagingEnabled = YES;
+        _rewardScrollView.showsVerticalScrollIndicator = FALSE;
+        _rewardScrollView.showsHorizontalScrollIndicator = FALSE;
+        [_rewardScrollView setContentOffset:CGPointMake(_contentOffsetX, 0)];
+        
+        //添加奖品blockview
+        [self addItemToScrollView];
+        
+        //添加添加奖品按钮
+        [self addAddItemButton];
+    }
+    return _rewardScrollView;
+}
+
+- (NSMutableArray *)dataArray{
+    if (!_dataArray) {
+        _dataArray = [[NSMutableArray alloc] init];
+        for (NSInteger i = 0; i<30; i++) {
+            rewardListModel * model = [[rewardListModel alloc] init];
+            model.coins = i;
+            [_dataArray addObject:model];
+        }
+    }
+    return _dataArray;
+}
+
+- (NSMutableArray *)itemArray{
+    if (!_itemArray) {
+        _itemArray = [[NSMutableArray alloc]init];
+    }
+    return _itemArray;
+}
 
 @end
