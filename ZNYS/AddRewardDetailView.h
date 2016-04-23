@@ -1,13 +1,13 @@
 //
-//  RewardBlockView.h
+//  AddRewardDetailView.h
 //  ZNYS
 //
-//  Created by Ellise on 16/1/14.
+//  Created by Ellise on 16/4/22.
 //  Copyright © 2016年 Woodseen. All rights reserved.
 //
 
 #import "ZNYSBaseView.h"
 
-@interface RewardBlockView : ZNYSBaseView
+@interface AddRewardDetailView : ZNYSBaseView
 
 @end
