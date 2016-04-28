@@ -2,8 +2,8 @@
 //  Award.m
 //  ZNYS
 //
-//  Created by 张恒铭 on 12/19/15.
-//  Copyright © 2015 Woodseen. All rights reserved.
+//  Created by 张恒铭 on 4/24/16.
+//  Copyright © 2016 Woodseen. All rights reserved.
 //
 
 #import "Award.h"
