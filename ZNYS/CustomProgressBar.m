@@ -22,6 +22,7 @@
     self.layer.cornerRadius = 15;
     self.layer.masksToBounds = YES;
     self.layer.borderWidth = 9;
+    self.progress = 0.0f;
    // self.layer.backgroundColor = [UIColor colorWithRed:43.0/255 green:176.0/255 blue:252.0/255 alpha:1.0].CGColor;
     
     
@@ -35,11 +36,13 @@
     
     return self;
 }
--(void)setProgress:(float)progress
+-(void)updateProgress:(float)progress
 {
     if(!(progress>=0.01&&progress<=1.01))
         progress = progress - (int)progress;
     self.progressLayer.anchorPoint = CGPointMake(1.5-progress, 0.5);
+    self.progress = progress;
+    [self.indicatorLabel setText:[NSString stringWithFormat:@"%i",(int)(progress*100)]];
 }
 
 -(UIImageView*)indicatorView
