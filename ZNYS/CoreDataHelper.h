@@ -32,4 +32,9 @@
                        gender:(NSString*)gender
                      nickname:(NSString*)nickname;
 -(NSArray*)retrieveOtherUsersExcept:(NSString*)uuid;
+
+
+
+- (Award*)createNewAwardWithAward:(Award*)award;
+-(NSArray*)retrieveAwardsWithPredicate:(NSPredicate*)predicate;
 @end

@@ -30,11 +30,17 @@
     // Do any additional setup after loading the view.
     dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void){
         [[BluetoothServer defaultServer] scan];
-        [self didConnect];
+       // [self didConnect];
     });
     [self.view addSubview:self.connectingView];
+    [self.connectingView setProgress:0.1f];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.connectingView setProgress:0.2f];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.connectingView setProgress:0.3f];
+        });
+    });
     self.connectingView.delegate = self;
-   
 }
 
 - (void)didReceiveMemoryWarning {

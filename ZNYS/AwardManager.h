@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Award.h"
+#import "CoreDataHelper.h"
 
 @interface AwardManager : NSObject
-
++ (instancetype)sharedInstance;
+- (void)createWithAward:(Award*)award;
+- (void)retrieveWithUUID:(NSString*)award;
+- (void)updateAward:(Award*)award;
+- (void)deleteAward:(Award*)award;
 @end
