@@ -71,7 +71,6 @@
 		45EB69D21C40B2C800160457 /* BCTopBarReturnButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69CC1C40B2C800160457 /* BCTopBarReturnButton.png */; };
 		45EB69D41C415DDE00160457 /* BCBottomPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69D31C415DDE00160457 /* BCBottomPattern.png */; };
 		6412FC9B1C476AB400DF8FC5 /* RewardListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6412FC9A1C476AB400DF8FC5 /* RewardListViewController.m */; };
-		6412FC9E1C477DF200DF8FC5 /* RewardBlockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6412FC9D1C477DF200DF8FC5 /* RewardBlockView.m */; };
 		6412FCA11C477F0C00DF8FC5 /* RewardItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6412FCA01C477F0C00DF8FC5 /* RewardItemView.m */; };
 		64337DC81C3B8DD400C9D811 /* ThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64337DC71C3B8DD400C9D811 /* ThumbView.m */; };
 		645A016F1C37B5B800556395 /* AddAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016A1C37B5B800556395 /* AddAccountView.m */; };
@@ -233,8 +232,6 @@
 		45EB69D31C415DDE00160457 /* BCBottomPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCBottomPattern.png; sourceTree = "<group>"; };
 		6412FC991C476AB400DF8FC5 /* RewardListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardListViewController.h; sourceTree = "<group>"; };
 		6412FC9A1C476AB400DF8FC5 /* RewardListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardListViewController.m; sourceTree = "<group>"; };
-		6412FC9C1C477DF200DF8FC5 /* RewardBlockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardBlockView.h; sourceTree = "<group>"; };
-		6412FC9D1C477DF200DF8FC5 /* RewardBlockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardBlockView.m; sourceTree = "<group>"; };
 		6412FC9F1C477F0C00DF8FC5 /* RewardItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardItemView.h; sourceTree = "<group>"; };
 		6412FCA01C477F0C00DF8FC5 /* RewardItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardItemView.m; sourceTree = "<group>"; };
 		64337DC61C3B8DD400C9D811 /* ThumbView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbView.h; sourceTree = "<group>"; };
@@ -702,8 +699,6 @@
 		6412FC971C476A7600DF8FC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6412FC9C1C477DF200DF8FC5 /* RewardBlockView.h */,
-				6412FC9D1C477DF200DF8FC5 /* RewardBlockView.m */,
 				6412FC9F1C477F0C00DF8FC5 /* RewardItemView.h */,
 				6412FCA01C477F0C00DF8FC5 /* RewardItemView.m */,
 			);
@@ -1103,7 +1098,6 @@
 				0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */,
 				45BC40911C2469D9006A185F /* User+CoreDataProperties.m in Sources */,
 				0421D3741B8126C700BF6065 /* CabinetItem.m in Sources */,
-				6412FC9E1C477DF200DF8FC5 /* RewardBlockView.m in Sources */,
 				45BC40A01C2469D9006A185F /* Belongings.m in Sources */,
 				454112741C95BE9600BE4DE9 /* ZNYSprogressBar.m in Sources */,
 				458094631C23DE3100CB9BF9 /* ConnectingView.m in Sources */,
