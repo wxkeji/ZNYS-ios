@@ -12,7 +12,7 @@
 
 @property (nonatomic,strong) UIImageView * coinView;
 
-@property (nonatomic,strong) UIButton * deleteButton;
+@property (nonatomic,strong) UIButton * playRecordButton;
 
 @end
 
@@ -24,8 +24,8 @@
     _bgView = nil;
     _coinLabel = nil;
     _coinView = nil;
-    _deleteButton = nil;
     _selectButton = nil;
+    _playRecordButton = nil;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -38,8 +38,8 @@
         [self addSubview:self.bgView];
         [self addSubview:self.coinView];
         [self addSubview:self.coinLabel];
-        [self addSubview:self.deleteButton];
         [self addSubview:self.selectButton];
+        [self addSubview:self.playRecordButton];
         
         WS(weakSelf, self);
         [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {

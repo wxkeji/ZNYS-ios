@@ -98,6 +98,8 @@
 		647E05CE1C3B70A500ADB810 /* UserAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05CD1C3B70A500ADB810 /* UserAccountViewController.m */; };
 		647E05D11C3B710A00ADB810 /* UserDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05D01C3B710A00ADB810 /* UserDetailView.m */; };
 		647E05D41C3B71E800ADB810 /* SwitchUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05D31C3B71E800ADB810 /* SwitchUserView.m */; };
+		64CCBD821CD30361003EFFAD /* AddRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD811CD30361003EFFAD /* AddRewardViewController.m */; settings = {ASSET_TAGS = (); }; };
+		64CCBD851CD30460003EFFAD /* AddRewardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD841CD30460003EFFAD /* AddRewardView.m */; settings = {ASSET_TAGS = (); }; };
 		6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F368F061BBCCE1700D273C9 /* IsParentViewController.m */; };
 		6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F368F071BBCCE1700D273C9 /* IsParentViewController.xib */; };
 		6F3962821C3A12C100C78F84 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F3962811C3A12C100C78F84 /* Cabinet.storyboard */; };
@@ -278,6 +280,10 @@
 		647E05D01C3B710A00ADB810 /* UserDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailView.m; sourceTree = "<group>"; };
 		647E05D21C3B71E800ADB810 /* SwitchUserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchUserView.h; sourceTree = "<group>"; };
 		647E05D31C3B71E800ADB810 /* SwitchUserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchUserView.m; sourceTree = "<group>"; };
+		64CCBD801CD30361003EFFAD /* AddRewardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRewardViewController.h; sourceTree = "<group>"; };
+		64CCBD811CD30361003EFFAD /* AddRewardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRewardViewController.m; sourceTree = "<group>"; };
+		64CCBD831CD30460003EFFAD /* AddRewardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRewardView.h; sourceTree = "<group>"; };
+		64CCBD841CD30460003EFFAD /* AddRewardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRewardView.m; sourceTree = "<group>"; };
 		683F419A9E2D0C36989BFD4A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F368F051BBCCE1700D273C9 /* IsParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsParentViewController.h; sourceTree = "<group>"; };
 		6F368F061BBCCE1700D273C9 /* IsParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsParentViewController.m; sourceTree = "<group>"; };
@@ -701,6 +707,8 @@
 			children = (
 				6412FC9F1C477F0C00DF8FC5 /* RewardItemView.h */,
 				6412FCA01C477F0C00DF8FC5 /* RewardItemView.m */,
+				64CCBD831CD30460003EFFAD /* AddRewardView.h */,
+				64CCBD841CD30460003EFFAD /* AddRewardView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -710,6 +718,8 @@
 			children = (
 				6412FC991C476AB400DF8FC5 /* RewardListViewController.h */,
 				6412FC9A1C476AB400DF8FC5 /* RewardListViewController.m */,
+				64CCBD801CD30361003EFFAD /* AddRewardViewController.h */,
+				64CCBD811CD30361003EFFAD /* AddRewardViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -1064,6 +1074,7 @@
 				645A01841C37C58E00556395 /* 华康娃娃体.TTF in Sources */,
 				45BC409C1C2469D9006A185F /* Rules.m in Sources */,
 				6476646A1C3CB1A000386E05 /* UITextField+Font.m in Sources */,
+				64CCBD821CD30361003EFFAD /* AddRewardViewController.m in Sources */,
 				C43136441BC279800097A91B /* RightToLeftSegue.m in Sources */,
 				C43136411BC26CF90097A91B /* LeftToRightSegue.m in Sources */,
 				645A01931C37CB7300556395 /* VerifyPasswordViewController.m in Sources */,
@@ -1103,6 +1114,7 @@
 				458094631C23DE3100CB9BF9 /* ConnectingView.m in Sources */,
 				45BC40921C2469D9006A185F /* User.m in Sources */,
 				45BC409E1C2469D9006A185F /* ToothBrush.m in Sources */,
+				64CCBD851CD30460003EFFAD /* AddRewardView.m in Sources */,
 				45BC40961C2469D9006A185F /* AreaStatistics.m in Sources */,
 				6FC69C131BBC4DBD0074C38E /* CalendarViewController.m in Sources */,
 				45BC409D1C2469D9006A185F /* ToothBrush+CoreDataProperties.m in Sources */,
