@@ -14,4 +14,5 @@
 @property(nonatomic,strong)id<ConnectingViewDelegate>delegate;
 //-(void)updateConnectingProgressFrom:(float)previewProgress
 //                                 to:(float)updatedProgress;
+- (void)setProgress:(float)progress;
 @end

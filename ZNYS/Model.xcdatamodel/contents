@@ -43,7 +43,7 @@
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="speed" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="starsGained" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="strength" optional="YES" syncable="YES"/>
+        <attribute name="strength" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="timeSlot" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="toothBrushID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="bePossessedByToothBrush" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ToothBrush" inverseName="possessBrushingStatistics" inverseEntity="ToothBrush" syncable="YES"/>
@@ -160,18 +160,18 @@
         <element name="AreaStatistics" positionX="115" positionY="-198" width="128" height="178"/>
         <element name="Award" positionX="-461" positionY="-396" width="128" height="253"/>
         <element name="Belongings" positionX="-927" positionY="293" width="128" height="148"/>
-        <element name="BrushingStatistics" positionX="16" positionY="-199" width="128" height="208"/>
+        <element name="BrushingStatistics" positionX="16" positionY="-199" width="128" height="210"/>
+        <element name="Cabinet" positionX="-126" positionY="-423" width="128" height="118"/>
+        <element name="CalenderItem" positionX="-189" positionY="-99" width="128" height="165"/>
         <element name="CustomerServices" positionX="-918" positionY="459" width="128" height="133"/>
         <element name="InferenceEngine" positionX="-738" positionY="477" width="128" height="133"/>
+        <element name="Item" positionX="-317" positionY="-420" width="128" height="150"/>
         <element name="Knowledge" positionX="-738" positionY="179" width="128" height="118"/>
+        <element name="Parameter" positionX="-72" positionY="324" width="128" height="90"/>
         <element name="Picture" positionX="-909" positionY="173" width="128" height="88"/>
         <element name="Rules" positionX="-738" positionY="308" width="128" height="133"/>
+        <element name="Scene" positionX="-225" positionY="324" width="128" height="75"/>
         <element name="ToothBrush" positionX="-153" positionY="-225" width="128" height="178"/>
         <element name="User" positionX="-308" positionY="-234" width="128" height="388"/>
-        <element name="Cabinet" positionX="-126" positionY="-423" width="128" height="118"/>
-        <element name="Scene" positionX="-225" positionY="324" width="128" height="75"/>
-        <element name="Parameter" positionX="-72" positionY="324" width="128" height="90"/>
-        <element name="Item" positionX="-317" positionY="-420" width="128" height="150"/>
-        <element name="CalenderItem" positionX="-189" positionY="-99" width="128" height="165"/>
     </elements>
 </model>

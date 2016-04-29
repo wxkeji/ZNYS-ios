@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @interface CustomProgressBar : UIView
--(void)setProgress:(float)progress;
+-(void)updateProgress:(float)progress;
+@property(nonatomic,assign) float progress;
 @end

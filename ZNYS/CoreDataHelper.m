@@ -8,6 +8,7 @@
 
 #import "CoreDataHelper.h"
 #import "User.h"
+#import "Award.h"
 @implementation CoreDataHelper
 
 #pragma mark - Initilization methods
@@ -215,5 +216,40 @@ NSString* storeFilename = @"database.sqlite";
    }
     else
     return NO;
+}
+
+#pragma mark - Award releated methods
+- (Award*)createNewAwardWithAward:(Award*)award
+{
+    Award* savedObject =  [NSEntityDescription insertNewObjectForEntityForName:@"Award" inManagedObjectContext:self.context];
+    savedObject.awardDescription = award.description;
+    savedObject.exchangeData = award.exchangeData;
+    savedObject.id = award.id;
+    savedObject.level = award.level;
+    savedObject.name = award.name;
+    savedObject.pitcureURL = award.pitcureURL;
+    savedObject.price = award.price;
+    savedObject.priority = award.priority;
+    savedObject.status = award.status;
+    savedObject.type = award.type;
+    savedObject.userID = award.userID;
+    savedObject.uuid = award.uuid;
+    savedObject.voice = award.voice;
+    
+    [self save];
+    return award;
+}
+-(NSArray*)retrieveAwardsWithPredicate:(NSPredicate*)predicate
+{
+    if (predicate) {
+        NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"Award"];
+        [request setPredicate:predicate];
+        return [self.context executeFetchRequest:request error:nil];
+    }
+    else
+    {
+        NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"Award"];
+        return [self.context executeFetchRequest:request error:nil];
+    }
 }
 @end

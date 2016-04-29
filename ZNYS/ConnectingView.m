@@ -10,15 +10,21 @@
 #import "ConnectedView.h"
 #import <Masonry.h>
 #import "ToolMacroes.h"
+#import "CustomProgressBar.h"
 @interface ConnectingView()
-@property(strong,nonatomic)UIButton*    returnButton;
-@property(strong,nonatomic)UIImageView* backgroundView;
-@property(strong,nonatomic)UIImageView* topBarView;
-@property(strong,nonatomic)UIView*      transparentView;
-@property(strong,nonatomic)UIImageView* progressView;
-@property(strong,nonatomic)UIImageView* bottomPattern;
-@property(strong,nonatomic)UIImageView* progressViewInside;
+@property(strong,nonatomic)UIButton*     returnButton;
+@property(strong,nonatomic)UIImageView*  backgroundView;
+@property(strong,nonatomic)UIImageView*  topBarView;
+@property(strong,nonatomic)UIView*       transparentView;
+@property(strong,nonatomic)CustomProgressBar* progressView;
+@property(strong,nonatomic)UIImageView*  bottomPattern;
+@property(strong,nonatomic)UIImageView*  progressViewInside;
+
+
+@property(nonatomic,strong) UIImageView* indicatorView;
+@property(nonatomic,strong) UILabel*     indicatorLabel;
 @end
+
 @implementation ConnectingView
 
 /*
@@ -38,14 +44,34 @@
         [self addSubview:self.returnButton];
         [self addSubview:self.bottomPattern];
         [self addSubview:self.progressView];
-        [self.progressView startAnimating];
+        [self addSubview:self.indicatorView];
+        
         WS(weakSelf, self);
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf.progressView setImage:[UIImage imageNamed:@"进度100"]];
-            
-        });
+
+        [self.indicatorLabel mas_makeConstraints:^(MASConstraintMaker* make){
+            make.centerX.equalTo(weakSelf.indicatorView.mas_centerX);
+            make.top.equalTo(weakSelf.indicatorView.mas_top).with.offset(5);
+        }];
+        
+        [self.indicatorView mas_makeConstraints:^(MASConstraintMaker*make){
+            make.bottom.equalTo(weakSelf.progressView.mas_top).with.offset(9);
+            make.width.equalTo(@51);
+            make.height.equalTo(@48);
+            make.centerX.equalTo(weakSelf.progressView.mas_left).with.offset(9 + weakSelf.progressView.progress * (CustomWidth(321) - 18) );
+        }];
+        
     }
     return self;
+}
+
+- (void)setProgress:(float)progress
+{
+
+    [UIView animateWithDuration:0.0 animations:^{
+       // [self.indicatorView setFrame:CGRectMake(self.indicatorView.frame.origin.x + progress * (CGRectGetWidth(self.progressView.frame) - 18), CGRectGetMinY(self.indicatorView.frame), CGRectGetWidth(self.indicatorView.frame),CGRectGetHeight(self.indicatorView.frame))];
+        [self.indicatorView setFrame:CGRectMake(self.progressView.frame.origin.x + 9 + progress * (CGRectGetWidth(self.progressView.frame) - 18), CGRectGetMinY(self.indicatorView.frame), CGRectGetWidth(self.indicatorView.frame),CGRectGetHeight(self.indicatorView.frame))];
+    }];
+        [self.progressView updateProgress:progress];
 }
 
 #pragma mark - button actions
@@ -84,41 +110,15 @@
     }
     return _topBarView;
 }
--(UIImageView*)progressView
+-(CustomProgressBar*)progressView
 {
     if(!_progressView)
     {
-      //  _progressView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BCProgressEmpty"]];
-        _progressView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"进度0"]];
-        _progressView = [[UIImageView alloc] initWithFrame:CGRectMake((kSCREEN_WIDTH - CustomWidth(321)-CustomWidth(8))/2, kSCREEN_HEIGHT - CustomHeight(150)-CustomHeight(39), CustomWidth(321), CustomHeight(73))];
-      //  [_progressView setFrame:CGRectMake((kSCREEN_WIDTH - CustomWidth(321)-CustomWidth(8))/2, kSCREEN_HEIGHT - CustomHeight(150)-CustomHeight(39), 321, 73)];
-        _progressView.animationImages = [NSArray arrayWithObjects:
-                                         [UIImage imageNamed:@"进度10"],
-                                         [UIImage imageNamed:@"进度20"],
-                                         [UIImage imageNamed:@"进度30"],
-                                         [UIImage imageNamed:@"进度40"],
-                                         [UIImage imageNamed:@"进度50"],
-                                         [UIImage imageNamed:@"进度60"],
-                                         [UIImage imageNamed:@"进度70"],
-                                         [UIImage imageNamed:@"进度80"],
-                                         [UIImage imageNamed:@"进度90"],
-                                         [UIImage imageNamed:@"进度100"],
-                                         nil];
-        _progressView.animationDuration = 2;
-        _progressView.animationRepeatCount = 1;
-       //[_progressView setFrame:CGRectMake((kSCREEN_WIDTH - CustomWidth(300))/2, kSCREEN_HEIGHT-CustomHeight(150), 300,34)];
-    }
+        _progressView = [[CustomProgressBar alloc] initWithFrame:CGRectMake((kSCREEN_WIDTH - CustomWidth(321)-CustomWidth(8))/2, kSCREEN_HEIGHT - CustomHeight(150)-CustomHeight(39), CustomWidth(321), CustomHeight(35))];
+         }
     return _progressView;
 }
-//-(UIView*)progressViewInside
-//{
-//    if(!_progressViewInside)
-//    {
-//        _progressViewInside = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"BCProgress_fill"]];
-//        [_progressViewInside setFrame:CGRectMake(self.progressView.frame.origin.x + CustomWidth(9), self.progressView.frame.origin.y + CustomHeight(8.7) , 275.5, 17)];
-//    }
-//    return _progressViewInside;
-//}
+
 -(UIImageView*)bottomPattern
 {
     if(!_bottomPattern)
@@ -128,5 +128,21 @@
     }
     return _bottomPattern;
 }
-
+- (UIImageView*)indicatorView
+{
+    if (!_indicatorView) {
+        _indicatorView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ProgressRectangle"]];
+        _indicatorView.frame = CGRectMake(100, 100, 51, 48);
+        [_indicatorView addSubview:self.indicatorLabel];
+    }
+    return _indicatorView;
+}
+- (UILabel *)indicatorLabel {
+    if(_indicatorLabel == nil) {
+        _indicatorLabel = [[UILabel alloc] init];
+        [_indicatorLabel setText:@"0%"];
+        [_indicatorLabel setTextColor:[UIColor whiteColor]];
+    }
+    return _indicatorLabel;
+}
 @end
