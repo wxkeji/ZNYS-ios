@@ -12,4 +12,6 @@
 
 @property (nonatomic,assign) NSInteger coins;
 
+@property (nonatomic,assign) NSInteger range;
+
 @end

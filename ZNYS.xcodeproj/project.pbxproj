@@ -74,6 +74,7 @@
 		6412FC9B1C476AB400DF8FC5 /* RewardListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6412FC9A1C476AB400DF8FC5 /* RewardListViewController.m */; };
 		6412FCA11C477F0C00DF8FC5 /* RewardItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6412FCA01C477F0C00DF8FC5 /* RewardItemView.m */; };
 		64337DC81C3B8DD400C9D811 /* ThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64337DC71C3B8DD400C9D811 /* ThumbView.m */; };
+		643ADB071CD8AA2A00723BB5 /* ExchangeRewardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 643ADB061CD8AA2A00723BB5 /* ExchangeRewardDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		645A016F1C37B5B800556395 /* AddAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016A1C37B5B800556395 /* AddAccountView.m */; };
 		645A01701C37B5B800556395 /* SelectBirthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016C1C37B5B800556395 /* SelectBirthView.m */; };
 		645A01711C37B5B800556395 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016E1C37B5B800556395 /* AddAccountViewController.m */; };
@@ -101,6 +102,13 @@
 		647E05D41C3B71E800ADB810 /* SwitchUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05D31C3B71E800ADB810 /* SwitchUserView.m */; };
 		64CCBD821CD30361003EFFAD /* AddRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD811CD30361003EFFAD /* AddRewardViewController.m */; settings = {ASSET_TAGS = (); }; };
 		64CCBD851CD30460003EFFAD /* AddRewardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD841CD30460003EFFAD /* AddRewardView.m */; settings = {ASSET_TAGS = (); }; };
+		64CCBD881CD30B6B003EFFAD /* ZNYSBaseNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD871CD30B6B003EFFAD /* ZNYSBaseNavigationBar.m */; settings = {ASSET_TAGS = (); }; };
+		64CCBD8B1CD30B7E003EFFAD /* rewardListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD8A1CD30B7E003EFFAD /* rewardListModel.m */; settings = {ASSET_TAGS = (); }; };
+		64CCBD8E1CD30B94003EFFAD /* AddRewardButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD8D1CD30B94003EFFAD /* AddRewardButtonView.m */; settings = {ASSET_TAGS = (); }; };
+		64CCBD911CD314E6003EFFAD /* ChooseNumberScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD901CD314E6003EFFAD /* ChooseNumberScrollView.m */; settings = {ASSET_TAGS = (); }; };
+		64CCBD941CD4909F003EFFAD /* AddRewardScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD931CD4909F003EFFAD /* AddRewardScrollView.m */; settings = {ASSET_TAGS = (); }; };
+		64CCBD971CD5BA1F003EFFAD /* MAKAFakeRootAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD961CD5BA1F003EFFAD /* MAKAFakeRootAlertView.m */; settings = {ASSET_TAGS = (); }; };
+		64CCBD9A1CD88A16003EFFAD /* ExchangeRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD991CD88A16003EFFAD /* ExchangeRewardViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F368F061BBCCE1700D273C9 /* IsParentViewController.m */; };
 		6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F368F071BBCCE1700D273C9 /* IsParentViewController.xib */; };
 		6F3962821C3A12C100C78F84 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F3962811C3A12C100C78F84 /* Cabinet.storyboard */; };
@@ -241,6 +249,8 @@
 		6412FCA01C477F0C00DF8FC5 /* RewardItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardItemView.m; sourceTree = "<group>"; };
 		64337DC61C3B8DD400C9D811 /* ThumbView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbView.h; sourceTree = "<group>"; };
 		64337DC71C3B8DD400C9D811 /* ThumbView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbView.m; sourceTree = "<group>"; };
+		643ADB051CD8AA2A00723BB5 /* ExchangeRewardDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangeRewardDetailViewController.h; sourceTree = "<group>"; };
+		643ADB061CD8AA2A00723BB5 /* ExchangeRewardDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeRewardDetailViewController.m; sourceTree = "<group>"; };
 		645A01681C37B56900556395 /* ToolMacroes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolMacroes.h; sourceTree = "<group>"; };
 		645A01691C37B5B800556395 /* AddAccountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountView.h; sourceTree = "<group>"; };
 		645A016A1C37B5B800556395 /* AddAccountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountView.m; sourceTree = "<group>"; };
@@ -287,6 +297,20 @@
 		64CCBD811CD30361003EFFAD /* AddRewardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRewardViewController.m; sourceTree = "<group>"; };
 		64CCBD831CD30460003EFFAD /* AddRewardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRewardView.h; sourceTree = "<group>"; };
 		64CCBD841CD30460003EFFAD /* AddRewardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRewardView.m; sourceTree = "<group>"; };
+		64CCBD861CD30B6B003EFFAD /* ZNYSBaseNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNYSBaseNavigationBar.h; sourceTree = "<group>"; };
+		64CCBD871CD30B6B003EFFAD /* ZNYSBaseNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNYSBaseNavigationBar.m; sourceTree = "<group>"; };
+		64CCBD891CD30B7E003EFFAD /* rewardListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rewardListModel.h; sourceTree = "<group>"; };
+		64CCBD8A1CD30B7E003EFFAD /* rewardListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rewardListModel.m; sourceTree = "<group>"; };
+		64CCBD8C1CD30B94003EFFAD /* AddRewardButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRewardButtonView.h; sourceTree = "<group>"; };
+		64CCBD8D1CD30B94003EFFAD /* AddRewardButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRewardButtonView.m; sourceTree = "<group>"; };
+		64CCBD8F1CD314E6003EFFAD /* ChooseNumberScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseNumberScrollView.h; sourceTree = "<group>"; };
+		64CCBD901CD314E6003EFFAD /* ChooseNumberScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseNumberScrollView.m; sourceTree = "<group>"; };
+		64CCBD921CD4909F003EFFAD /* AddRewardScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRewardScrollView.h; sourceTree = "<group>"; };
+		64CCBD931CD4909F003EFFAD /* AddRewardScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRewardScrollView.m; sourceTree = "<group>"; };
+		64CCBD951CD5BA1F003EFFAD /* MAKAFakeRootAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKAFakeRootAlertView.h; sourceTree = "<group>"; };
+		64CCBD961CD5BA1F003EFFAD /* MAKAFakeRootAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKAFakeRootAlertView.m; sourceTree = "<group>"; };
+		64CCBD981CD88A16003EFFAD /* ExchangeRewardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangeRewardViewController.h; sourceTree = "<group>"; };
+		64CCBD991CD88A16003EFFAD /* ExchangeRewardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeRewardViewController.m; sourceTree = "<group>"; };
 		683F419A9E2D0C36989BFD4A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F368F051BBCCE1700D273C9 /* IsParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IsParentViewController.h; sourceTree = "<group>"; };
 		6F368F061BBCCE1700D273C9 /* IsParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IsParentViewController.m; sourceTree = "<group>"; };
@@ -703,6 +727,8 @@
 		6412FC961C476A6B00DF8FC5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				64CCBD891CD30B7E003EFFAD /* rewardListModel.h */,
+				64CCBD8A1CD30B7E003EFFAD /* rewardListModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -710,10 +736,18 @@
 		6412FC971C476A7600DF8FC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				64CCBD951CD5BA1F003EFFAD /* MAKAFakeRootAlertView.h */,
+				64CCBD961CD5BA1F003EFFAD /* MAKAFakeRootAlertView.m */,
+				64CCBD8C1CD30B94003EFFAD /* AddRewardButtonView.h */,
+				64CCBD8D1CD30B94003EFFAD /* AddRewardButtonView.m */,
 				6412FC9F1C477F0C00DF8FC5 /* RewardItemView.h */,
 				6412FCA01C477F0C00DF8FC5 /* RewardItemView.m */,
 				64CCBD831CD30460003EFFAD /* AddRewardView.h */,
 				64CCBD841CD30460003EFFAD /* AddRewardView.m */,
+				64CCBD8F1CD314E6003EFFAD /* ChooseNumberScrollView.h */,
+				64CCBD901CD314E6003EFFAD /* ChooseNumberScrollView.m */,
+				64CCBD921CD4909F003EFFAD /* AddRewardScrollView.h */,
+				64CCBD931CD4909F003EFFAD /* AddRewardScrollView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -725,6 +759,10 @@
 				6412FC9A1C476AB400DF8FC5 /* RewardListViewController.m */,
 				64CCBD801CD30361003EFFAD /* AddRewardViewController.h */,
 				64CCBD811CD30361003EFFAD /* AddRewardViewController.m */,
+				64CCBD981CD88A16003EFFAD /* ExchangeRewardViewController.h */,
+				64CCBD991CD88A16003EFFAD /* ExchangeRewardViewController.m */,
+				643ADB051CD8AA2A00723BB5 /* ExchangeRewardDetailViewController.h */,
+				643ADB061CD8AA2A00723BB5 /* ExchangeRewardDetailViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -858,6 +896,8 @@
 		645A018C1C37CAE100556395 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				64CCBD861CD30B6B003EFFAD /* ZNYSBaseNavigationBar.h */,
+				64CCBD871CD30B6B003EFFAD /* ZNYSBaseNavigationBar.m */,
 				645A018E1C37CB2500556395 /* ZNYSBaseController.h */,
 				645A018F1C37CB2500556395 /* ZNYSBaseController.m */,
 				645A01941C37CBBF00556395 /* ZNYSBaseView.h */,
@@ -1077,7 +1117,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				645A01841C37C58E00556395 /* 华康娃娃体.TTF in Sources */,
+				64CCBD8E1CD30B94003EFFAD /* AddRewardButtonView.m in Sources */,
 				45BC409C1C2469D9006A185F /* Rules.m in Sources */,
+				64CCBD971CD5BA1F003EFFAD /* MAKAFakeRootAlertView.m in Sources */,
 				6476646A1C3CB1A000386E05 /* UITextField+Font.m in Sources */,
 				64CCBD821CD30361003EFFAD /* AddRewardViewController.m in Sources */,
 				C43136441BC279800097A91B /* RightToLeftSegue.m in Sources */,
@@ -1085,6 +1127,7 @@
 				645A01931C37CB7300556395 /* VerifyPasswordViewController.m in Sources */,
 				645A01711C37B5B800556395 /* AddAccountViewController.m in Sources */,
 				C431364A1BC29A840097A91B /* NormalModeControllerViewController.m in Sources */,
+				64CCBD8B1CD30B7E003EFFAD /* rewardListModel.m in Sources */,
 				0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */,
 				C460E0401BC509D3000608BD /* DesignModeController.m in Sources */,
 				645A016F1C37B5B800556395 /* AddAccountView.m in Sources */,
@@ -1092,6 +1135,8 @@
 				645A018B1C37C9AC00556395 /* UILabel+Font.m in Sources */,
 				647E05D41C3B71E800ADB810 /* SwitchUserView.m in Sources */,
 				645A01901C37CB2500556395 /* ZNYSBaseController.m in Sources */,
+				643ADB071CD8AA2A00723BB5 /* ExchangeRewardDetailViewController.m in Sources */,
+				64CCBD881CD30B6B003EFFAD /* ZNYSBaseNavigationBar.m in Sources */,
 				4580946C1C23DE6400CB9BF9 /* ConnectedViewController.m in Sources */,
 				047D3D391B8A02DA00871627 /* NSArray+ForceBound.m in Sources */,
 				45BC40A11C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m in Sources */,
@@ -1113,12 +1158,14 @@
 				45BD02F91CCBDEE600A14E95 /* Award.m in Sources */,
 				0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */,
 				4576E3E21CCFD37800A1BA2B /* AwardManager.m in Sources */,
+				64CCBD941CD4909F003EFFAD /* AddRewardScrollView.m in Sources */,
 				45BC40911C2469D9006A185F /* User+CoreDataProperties.m in Sources */,
 				0421D3741B8126C700BF6065 /* CabinetItem.m in Sources */,
 				45BC40A01C2469D9006A185F /* Belongings.m in Sources */,
 				454112741C95BE9600BE4DE9 /* ZNYSprogressBar.m in Sources */,
 				458094631C23DE3100CB9BF9 /* ConnectingView.m in Sources */,
 				45BC40921C2469D9006A185F /* User.m in Sources */,
+				64CCBD9A1CD88A16003EFFAD /* ExchangeRewardViewController.m in Sources */,
 				45BC409E1C2469D9006A185F /* ToothBrush.m in Sources */,
 				64CCBD851CD30460003EFFAD /* AddRewardView.m in Sources */,
 				45BC40961C2469D9006A185F /* AreaStatistics.m in Sources */,
@@ -1141,6 +1188,7 @@
 				C4A025001BBE678000771969 /* settingIndexController.m in Sources */,
 				45BC40971C2469D9006A185F /* CustomerServices+CoreDataProperties.m in Sources */,
 				04C978F31C44BE100046DB4A /* GiftItem.m in Sources */,
+				64CCBD911CD314E6003EFFAD /* ChooseNumberScrollView.m in Sources */,
 				647E05D11C3B710A00ADB810 /* UserDetailView.m in Sources */,
 				45BC409F1C2469D9006A185F /* Belongings+CoreDataProperties.m in Sources */,
 				645A01701C37B5B800556395 /* SelectBirthView.m in Sources */,
@@ -1276,7 +1324,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZNYS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1294,7 +1342,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZNYS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

@@ -100,6 +100,10 @@
     [self refreshScrollView];
 }
 
+- (void)playRecord{
+
+}
+
 #pragma mark private method
 
 - (void)addItemToScrollView{
@@ -108,7 +112,7 @@
     
     for (NSInteger i = 0; i<self.dataArray.count; i++) {
         NSInteger num = i+1;
-        RewardItemView * item = [[RewardItemView alloc] initWithFrame:CGRectMake((kSCREEN_WIDTH*(int)(num/6))+CustomWidth(17)+(num%3)*(width+CustomWidth(11)), CustomHeight(14)+((int)(num/3)%2)*(height+CustomHeight(13)), width, height)];
+        RewardItemView * item = [[RewardItemView alloc] initWithFrame:CGRectMake(13+(num%3)*CustomWidth(120),CustomHeight(14)+(num/3)*CustomHeight(175),width,height) type:RecordType model:[self.dataArray objectAtIndex:i]];
         item.tag = [self.dataArray objectAtIndex:i].coins;
         item.selectButton.hidden = self.isInDeleteMode ? NO : YES;
         item.coinLabel.text = [NSString stringWithFormat:@"x %ld",(long)[self.dataArray objectAtIndex:i].coins];
@@ -150,10 +154,10 @@
     if (!_rewardScrollView) {
         _rewardScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, CustomHeight(202), kSCREEN_WIDTH, CustomHeight(446))];
         _rewardScrollView.backgroundColor = [UIColor whiteColor];
-        _rewardScrollView.contentSize = CGSizeMake(((self.dataArray.count+1)/6+1)*kSCREEN_WIDTH, 0);
-        _rewardScrollView.pagingEnabled = YES;
+        _rewardScrollView.contentSize = CGSizeMake(kSCREEN_WIDTH, ((self.dataArray.count/3)+1)*CustomHeight(200));
+        _rewardScrollView.pagingEnabled = NO;
         _rewardScrollView.showsVerticalScrollIndicator = FALSE;
-        _rewardScrollView.showsHorizontalScrollIndicator = FALSE;
+        _rewardScrollView.showsHorizontalScrollIndicator = YES;
         [_rewardScrollView setContentOffset:CGPointMake(_contentOffsetX, 0)];
         
         //添加奖品blockview

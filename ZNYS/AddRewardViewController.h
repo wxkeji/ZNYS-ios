@@ -7,7 +7,8 @@
 //
 
 #import "ZNYSBaseController.h"
+#import "RewardItemView.h"
 
-@interface AddRewardViewController : ZNYSBaseController
+@interface AddRewardViewController : ZNYSBaseController<ZNYSBaseNavigationBarDelegate,UIScrollViewDelegate,RewardItemViewDelegate>
 
 @end

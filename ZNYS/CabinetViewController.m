@@ -19,6 +19,7 @@
 #import "User.h"
 #import "CabinetItem.h"
 #import "GiftItem.h"
+#import "ExchangeRewardViewController.h"
 @interface CabinetViewController ()
 
 //奖品柜的两个ScrollView
@@ -366,6 +367,11 @@
 {
     ConnectingViewController* cvc = [[ConnectingViewController alloc] init];
     [self.navigationController pushViewController:cvc animated:YES];
+}
+
+- (IBAction)ExchangeRewardButtonClicked:(id)sender {
+    ExchangeRewardViewController * vc = [[ExchangeRewardViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - Getters 

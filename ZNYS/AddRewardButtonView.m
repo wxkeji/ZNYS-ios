@@ -7,6 +7,8 @@
 //
 
 #import "AddRewardButtonView.h"
+#import "AddRewardViewController.h"
+#import "AppDelegate.h"
 
 @implementation AddRewardButtonView
 
@@ -37,6 +39,8 @@
 
 - (void)addButtonClicked{
     NSLog(@"addButtonClicked");
+    AddRewardViewController * vc = [[AddRewardViewController alloc] init];
+    [CurrentNavController pushViewController:vc animated:YES];
 }
 
 #pragma mark getters and setters

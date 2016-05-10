@@ -7,7 +7,14 @@
 //
 
 #import "ZNYSBaseView.h"
+#import "rewardListModel.h"
 
-@interface AddRewardView : ZNYSBaseView
+@interface AddRewardView : ZNYSBaseView<UIPickerViewDelegate,UIPickerViewDataSource,UIScrollViewDelegate>
+
+@property (nonatomic,strong) rewardListModel * model;
+
+//- (instancetype)initWithRange:(NSInteger)range startFrom:(NSInteger)startNum;
+
+- (instancetype)initWithModel:(rewardListModel *)model;
 
 @end
