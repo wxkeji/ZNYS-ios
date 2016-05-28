@@ -100,8 +100,12 @@
     [self refreshScrollView];
 }
 
-- (void)playRecord{
+- (void)playRecord:(rewardListModel *)model{
 
+}
+
+- (void)showNextPage:(rewardListModel *)model{
+   
 }
 
 #pragma mark private method

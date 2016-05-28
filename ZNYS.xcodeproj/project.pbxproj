@@ -100,6 +100,8 @@
 		647E05CE1C3B70A500ADB810 /* UserAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05CD1C3B70A500ADB810 /* UserAccountViewController.m */; };
 		647E05D11C3B710A00ADB810 /* UserDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05D01C3B710A00ADB810 /* UserDetailView.m */; };
 		647E05D41C3B71E800ADB810 /* SwitchUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05D31C3B71E800ADB810 /* SwitchUserView.m */; };
+		6488AE071CF53D2D00AE062D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6488AE061CF53D2D00AE062D /* AVFoundation.framework */; };
+		6488AE091CF53D3800AE062D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6488AE081CF53D3800AE062D /* CoreAudio.framework */; };
 		64CCBD821CD30361003EFFAD /* AddRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD811CD30361003EFFAD /* AddRewardViewController.m */; settings = {ASSET_TAGS = (); }; };
 		64CCBD851CD30460003EFFAD /* AddRewardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD841CD30460003EFFAD /* AddRewardView.m */; settings = {ASSET_TAGS = (); }; };
 		64CCBD881CD30B6B003EFFAD /* ZNYSBaseNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD871CD30B6B003EFFAD /* ZNYSBaseNavigationBar.m */; settings = {ASSET_TAGS = (); }; };
@@ -293,6 +295,8 @@
 		647E05D01C3B710A00ADB810 /* UserDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailView.m; sourceTree = "<group>"; };
 		647E05D21C3B71E800ADB810 /* SwitchUserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchUserView.h; sourceTree = "<group>"; };
 		647E05D31C3B71E800ADB810 /* SwitchUserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchUserView.m; sourceTree = "<group>"; };
+		6488AE061CF53D2D00AE062D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6488AE081CF53D3800AE062D /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		64CCBD801CD30361003EFFAD /* AddRewardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRewardViewController.h; sourceTree = "<group>"; };
 		64CCBD811CD30361003EFFAD /* AddRewardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRewardViewController.m; sourceTree = "<group>"; };
 		64CCBD831CD30460003EFFAD /* AddRewardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRewardView.h; sourceTree = "<group>"; };
@@ -348,6 +352,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6488AE091CF53D3800AE062D /* CoreAudio.framework in Frameworks */,
+				6488AE071CF53D2D00AE062D /* AVFoundation.framework in Frameworks */,
 				458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */,
 				840ACE02D000AED2E3D3E8A8 /* libPods.a in Frameworks */,
 				45E8756E1C44E52C009A5DDB /* libBLELib.a in Frameworks */,
@@ -709,6 +715,8 @@
 		63353D4AB29EDC413AD1EB41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6488AE081CF53D3800AE062D /* CoreAudio.framework */,
+				6488AE061CF53D2D00AE062D /* AVFoundation.framework */,
 				683F419A9E2D0C36989BFD4A /* libPods.a */,
 			);
 			name = Frameworks;
@@ -1255,6 +1263,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: pengfei yin (25NQ2Q84LT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1298,6 +1307,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: pengfei yin (25NQ2Q84LT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1323,6 +1333,7 @@
 			baseConfigurationReference = 91C03429B6C007A30E11C265 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ZNYS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1331,7 +1342,7 @@
 					"$(PROJECT_DIR)/ZNYS/BLELib",
 					"$(PROJECT_DIR)/ZNYS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.EricCheung.ZNYS;
+				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1341,6 +1352,7 @@
 			baseConfigurationReference = 869812908A6DD8477FF731F8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ZNYS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1349,7 +1361,7 @@
 					"$(PROJECT_DIR)/ZNYS/BLELib",
 					"$(PROJECT_DIR)/ZNYS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.EricCheung.ZNYS;
+				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

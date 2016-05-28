@@ -29,7 +29,7 @@
             
             UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CustomWidth(106), CustomHeight(30))];
             label.backgroundColor = [UIColor clearColor];
-            if (i == (model.coins-1) || i == model.range+2) {
+            if (i == (model.coins-1) || i == model.range+2+model.coins) {
                 label.text = @" ";
             }else{
              label.text = [NSString stringWithFormat:@"%ld",(long)i];

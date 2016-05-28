@@ -44,6 +44,10 @@
     }
 }
 
+- (void)showNextPage:(rewardListModel *)model{
+
+}
+
 #pragma mark getters and setters
 
 - (UIScrollView *)scrollView{

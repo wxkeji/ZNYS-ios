@@ -16,20 +16,21 @@
     _buttonClickBlock = nil;
 }
 
-- (instancetype)init{
-    self = [super init];
+- (instancetype)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = RGBCOLOR(249, 220, 229);
+       // NSLog([NSString stringWithFormat:@"%@%@"],self.frame.size.width,self.frame.size.height);
         
         for (NSInteger i = 0; i < 9; i++) {
             UIButton * numberButton = [[UIButton alloc] initWithCustomFont:50.f];
             
             if (i<3) {
-                numberButton.frame = CGRectMake(0.064*kSCREEN_WIDTH+(i%3)*0.192*kSCREEN_WIDTH+(i%3)*0.035*kSCREEN_WIDTH, 0.028*kSCREEN_HEIGHT, 0.192*kSCREEN_WIDTH, 0.192*kSCREEN_WIDTH);
+                numberButton.frame = CGRectMake(0.082*self.frame.size.width+(i%3)*0.25*self.frame.size.width+(i%3)*0.043*self.frame.size.width, 0.078*self.frame.size.height, 0.25*self.frame.size.width, 0.25*self.frame.size.width);
             }else if(i>=3&&i<6){
-            numberButton.frame = CGRectMake(0.064*kSCREEN_WIDTH+(i%3)*0.192*kSCREEN_WIDTH+(i%3)*0.035*kSCREEN_WIDTH, 0.028*kSCREEN_HEIGHT+0.108*kSCREEN_HEIGHT+0.019*kSCREEN_HEIGHT, 0.192*kSCREEN_WIDTH, 0.192*kSCREEN_WIDTH);
+            numberButton.frame = CGRectMake(0.082*self.frame.size.width+(i%3)*0.25*self.frame.size.width+(i%3)*0.043*self.frame.size.width, 0.078*self.frame.size.height+0.25*self.frame.size.width+0.04*self.frame.size.height, 0.25*self.frame.size.width, 0.25*self.frame.size.width);
             }else{
-              numberButton.frame = CGRectMake(0.064*kSCREEN_WIDTH+(i%3)*0.192*kSCREEN_WIDTH+(i%3)*0.035*kSCREEN_WIDTH, 0.028*kSCREEN_HEIGHT+0.108*kSCREEN_HEIGHT*2+0.019*kSCREEN_HEIGHT*2, 0.192*kSCREEN_WIDTH, 0.192*kSCREEN_WIDTH);
+              numberButton.frame = CGRectMake(0.082*self.frame.size.width+(i%3)*0.25*self.frame.size.width+(i%3)*0.043*self.frame.size.width, 0.675*self.frame.size.height, 0.25*self.frame.size.width, 0.25*self.frame.size.width);
             }
             
             

@@ -126,13 +126,13 @@
     [self.passwordView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.itemView.mas_right).with.offset(CustomWidth(17));
         make.centerY.mas_equalTo(weakSelf.itemView.mas_centerY);
-        make.width.mas_equalTo(CustomWidth(270));
-        make.height.mas_equalTo(CustomHeight(250));
+        make.width.mas_equalTo(CustomWidth(220));
+        make.height.mas_equalTo(CustomHeight(230));
     }];
     
     [self.tipsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(weakSelf.view.mas_right).with.offset(CustomWidth(-15));
-        make.bottom.equalTo(weakSelf.view.mas_bottom).with.offset(CustomHeight(-220));
+        make.bottom.equalTo(weakSelf.view.mas_bottom).with.offset(CustomHeight(-100));
         make.width.mas_equalTo(CustomWidth(280));
         make.height.mas_equalTo(CustomHeight(40));
     }];
@@ -272,7 +272,7 @@
 
 - (VerifyPasswordView *)passwordView{
     if (!_passwordView) {
-        _passwordView = [[VerifyPasswordView alloc] init];
+        _passwordView = [[VerifyPasswordView alloc] initWithFrame:CGRectMake(CustomWidth(200), CustomHeight(400), CustomWidth(220), CustomHeight(220))];
         _passwordView.layer.cornerRadius = 8.0f;
         
         WS(weakSelf, self);
@@ -283,7 +283,8 @@
             if (self.inputArray.count == 3) {
                 BOOL isCorrect = ([[weakSelf.inputArray objectAtIndex:0] integerValue] == [[weakSelf.tipsArray objectAtIndex:0] integerValue]) && ([[weakSelf.inputArray objectAtIndex:1] integerValue] == [[weakSelf.tipsArray objectAtIndex:1] integerValue]) && ([[weakSelf.inputArray objectAtIndex:2] integerValue] == [[weakSelf.tipsArray objectAtIndex:2] integerValue]);
                 if (isCorrect) {
-                    NSLog(@"right");
+                    [SVProgressHUD showInfoWithStatus:@"兑换成功"];
+                    [weakSelf.navigationController popViewControllerAnimated:YES];
                 }else{
                     [SVProgressHUD setBackgroundColor:RGBCOLOR(241, 141, 172)];
                     [SVProgressHUD showErrorWithStatus:@"输入有误，请重新输入"];

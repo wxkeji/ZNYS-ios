@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Xcode 7.0">
     <entity name="AreaStatistics" representedClassName="AreaStatistics" syncable="YES">
         <attribute name="areaName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="brushingStatisticsID" optional="YES" attributeType="String" syncable="YES"/>
@@ -24,7 +24,7 @@
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="voice" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="voice" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="bePossessedByUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="possessAwards" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="Belongings" representedClassName="Belongings" syncable="YES">
@@ -158,11 +158,11 @@
     </entity>
     <elements>
         <element name="AreaStatistics" positionX="115" positionY="-198" width="128" height="178"/>
-        <element name="Award" positionX="-461" positionY="-396" width="128" height="253"/>
+        <element name="Award" positionX="-479" positionY="-388" width="128" height="253"/>
         <element name="Belongings" positionX="-927" positionY="293" width="128" height="148"/>
         <element name="BrushingStatistics" positionX="16" positionY="-199" width="128" height="210"/>
         <element name="Cabinet" positionX="-126" positionY="-423" width="128" height="118"/>
-        <element name="CalenderItem" positionX="-189" positionY="-99" width="128" height="165"/>
+        <element name="CalenderItem" positionX="-144" positionY="-36" width="128" height="165"/>
         <element name="CustomerServices" positionX="-918" positionY="459" width="128" height="133"/>
         <element name="InferenceEngine" positionX="-738" positionY="477" width="128" height="133"/>
         <element name="Item" positionX="-317" positionY="-420" width="128" height="150"/>

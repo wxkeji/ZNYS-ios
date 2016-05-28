@@ -188,7 +188,7 @@
 
 - (VerifyPasswordView *)keyboardView{
     if (!_keyboardView) {
-        _keyboardView = [[VerifyPasswordView alloc] init];
+        _keyboardView = [[VerifyPasswordView alloc] initWithFrame:CGRectMake(CustomWidth(41), CustomHeight(240), CustomWidth(294), CustomHeight(280))];
         _keyboardView.layer.cornerRadius = 8.0f;
         
         WS(weakSelf, self);

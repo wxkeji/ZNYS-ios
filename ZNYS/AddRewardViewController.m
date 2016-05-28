@@ -108,15 +108,19 @@
 }
 
 #pragma mark RewardItemViewDelegate
-
-- (void)addReward:(NSInteger)start range:(NSInteger)range{
-    AddRewardView * addRewardView = [[AddRewardView alloc] init];
-    
-    MAKAFakeRootAlertView * alertView = [[MAKAFakeRootAlertView alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
-    [alertView setUpView:addRewardView];
-    alertView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-    [alertView show];
-}
+//
+//- (void)addReward:(NSInteger)start range:(NSInteger)range{
+//    AddRewardView * addRewardView = [[AddRewardView alloc] init];
+//    
+//    MAKAFakeRootAlertView * alertView = [[MAKAFakeRootAlertView alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+//    [alertView setUpView:addRewardView];
+//    alertView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+//    [alertView show];
+//}
+//
+//- (void)showNextPage:(rewardListModel *)model{
+//
+//}
 
 #pragma mark event action
 
@@ -214,6 +218,9 @@
             
             MAKAFakeRootAlertView * alertView = [[MAKAFakeRootAlertView alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
             [alertView setUpView:addRewardView];
+            addRewardView.dismissBlock = ^{
+                [alertView dismiss];
+            };
             alertView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
             [alertView show];
         };

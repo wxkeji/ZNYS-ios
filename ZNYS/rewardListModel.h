@@ -14,4 +14,6 @@
 
 @property (nonatomic,assign) NSInteger range;
 
+@property (nonatomic,strong) NSString * recordUrl;
+
 @end
