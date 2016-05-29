@@ -95,7 +95,7 @@
 }
 
 
-- (BOOL)addAwardWithAwarduuid:(NSString*)uuid voicePath:(NSString*)voicePath coin:(NSUInteger*)coin
+- (BOOL)addAwardWithAwarduuid:(NSString*)uuid voicePath:(NSString*)voicePath coin:(NSUInteger)coin
 {
     NSPredicate* predicate = [NSPredicate predicateWithFormat:@"uuid = %@",uuid];
     
@@ -115,12 +115,21 @@
 {
     NSPredicate* predicate = [NSPredicate predicateWithFormat:@"uuid = %@",awarduuid];
     //理论上不存在两个uuid相等的奖品，可以直接取结果数组的第一项作为找到的奖品
-    Award* matchedAward = [[CoreDataHelper sharedInstance] retrieveAwardsWithPredicate:predicate][0];
+    
+    NSArray* result ;
+    result =  [[CoreDataHelper sharedInstance] retrieveAwardsWithPredicate:predicate];
+    Award* matchedAward;
+    if ([result count]) {
+        matchedAward = result[0];
+    } else {
+        matchedAward = nil;
+    }
     if (!matchedAward) {
         return NO;
     }
     matchedAward.price = matchedAward.minPrice;
     matchedAward.status = @"notAdded";
+    [[CoreDataHelper sharedInstance] save];
     return YES;
 }
 

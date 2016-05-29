@@ -35,6 +35,7 @@
 
 
 
+- (Award*)createAward;
 - (Award*)createNewAwardWithAward:(Award*)award;
 -(NSArray*)retrieveAwardsWithPredicate:(NSPredicate*)predicate;
 @end

@@ -14,14 +14,13 @@
     <entity name="Award" representedClassName="Award" syncable="YES">
         <attribute name="awardDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="exchangeData" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="level" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="maxPrice" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="minPrice" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="maxPrice" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="minPrice" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pitcureURL" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="price" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="priority" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="priority" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
@@ -160,7 +159,7 @@
     </entity>
     <elements>
         <element name="AreaStatistics" positionX="115" positionY="-198" width="128" height="178"/>
-        <element name="Award" positionX="-479" positionY="-388" width="128" height="285"/>
+        <element name="Award" positionX="-479" positionY="-388" width="128" height="268"/>
         <element name="Belongings" positionX="-927" positionY="293" width="128" height="148"/>
         <element name="BrushingStatistics" positionX="16" positionY="-199" width="128" height="210"/>
         <element name="Cabinet" positionX="-126" positionY="-423" width="128" height="118"/>

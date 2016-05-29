@@ -20,8 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, retain) NSString *awardDescription;
 @property (nullable, nonatomic, retain) NSString *exchangeData;
-@property (nullable, nonatomic, assign) NSUInteger *id;
-@property (nullable, nonatomic, assign) NSUInteger *level;
+//@property (nullable, nonatomic, assign) NSUInteger *id;
+@property (nonatomic, assign) int32_t level;
 @property (nullable, nonatomic, retain) NSString *name;
 
 
@@ -34,15 +34,15 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  默认的兑换金币数
  */
-@property (nullable, nonatomic, assign) NSUInteger *price;
+@property (nonatomic, assign) int32_t price;
 /**
  *  最小金币数
  */
-@property (nullable, nonatomic, assign) NSUInteger *minPrice;
+@property ( nonatomic, assign) int32_t minPrice;
 /**
  *  最大金币数
  */
-@property (nullable, nonatomic, assign) NSUInteger *maxPrice;
+@property (nonatomic, assign) int32_t maxPrice;
 
 /**
  *  对应且只有,已添加和未添加@"added",@"notAdded"
@@ -67,7 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *voice;
 
 
-@property (nullable, nonatomic, assign) NSUInteger *priority;
+@property (nonatomic, assign) int32_t priority;
 
 @property (nullable, nonatomic, retain) User *bePossessedByUser;
 

@@ -25,7 +25,7 @@
  *
  *  @return 返回一个数组（消费类，拥有类，活动类），然后每个数组包含每一类的model数组
  */
-- (NSArray*)getNotAddedAwardWithUseruuid:(NSString*)uuid ;
+- (NSArray*)getNotAddedAwardWithUseruuid:(NSString*)uuid;
 
 
 /**
@@ -35,7 +35,7 @@
  *
  *  @return 返回一个数组（消费类，拥有类，活动类），然后每个数组包含每一类的model数组
  */
-- (NSArray*)getAddedAwadWithUseruuid:(NSString*)uuid;
+- (NSArray*)getAddedAwardWithUseruuid:(NSString*)uuid;
 
 
 /**
