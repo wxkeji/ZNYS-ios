@@ -235,10 +235,15 @@ NSString* storeFilename = @"database.sqlite";
     savedObject.userID = award.userID;
     savedObject.uuid = award.uuid;
     savedObject.voice = award.voice;
+    savedObject.minPrice = award.minPrice;
+    savedObject.maxPrice = award.maxPrice;
     
     [self save];
     return award;
 }
+
+
+
 -(NSArray*)retrieveAwardsWithPredicate:(NSPredicate*)predicate
 {
     if (predicate) {

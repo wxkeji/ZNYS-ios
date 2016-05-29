@@ -11,23 +11,64 @@
 
 #import "Award.h"
 
+
+
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Award (CoreDataProperties)
 
 @property (nullable, nonatomic, retain) NSString *awardDescription;
 @property (nullable, nonatomic, retain) NSString *exchangeData;
-@property (nullable, nonatomic, retain) NSNumber *id;
-@property (nullable, nonatomic, retain) NSNumber *level;
+@property (nullable, nonatomic, assign) NSUInteger *id;
+@property (nullable, nonatomic, assign) NSUInteger *level;
 @property (nullable, nonatomic, retain) NSString *name;
+
+
+
+
+/**
+ *  奖品图片文件的名字
+ */
 @property (nullable, nonatomic, retain) NSString *pitcureURL;
-@property (nullable, nonatomic, retain) NSNumber *price;
-@property (nullable, nonatomic, retain) NSNumber *priority;
+/**
+ *  默认的兑换金币数
+ */
+@property (nullable, nonatomic, assign) NSUInteger *price;
+/**
+ *  最小金币数
+ */
+@property (nullable, nonatomic, assign) NSUInteger *minPrice;
+/**
+ *  最大金币数
+ */
+@property (nullable, nonatomic, assign) NSUInteger *maxPrice;
+
+/**
+ *  对应且只有,已添加和未添加@"added",@"notAdded"
+ */
 @property (nullable, nonatomic, retain) NSString *status;
+/**
+ *  奖品类型，@"consume",@"possess",@"activity"，对应消费类，拥有类，huodonglei
+ */
 @property (nullable, nonatomic, retain) NSString *type;
+/**
+ *  奖品对应的用户UUID
+ */
 @property (nullable, nonatomic, retain) NSString *userID;
+/**
+ *  奖品的UUID
+ */
 @property (nullable, nonatomic, retain) NSString *uuid;
-@property (nullable, nonatomic, retain) NSNumber *voice;
+
+/**
+ *  奖品的录音文件的路径
+ */
+@property (nullable, nonatomic, retain) NSString *voice;
+
+
+@property (nullable, nonatomic, assign) NSUInteger *priority;
+
 @property (nullable, nonatomic, retain) User *bePossessedByUser;
 
 @end
