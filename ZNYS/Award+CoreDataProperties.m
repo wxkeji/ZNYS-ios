@@ -15,7 +15,6 @@
 
 @dynamic awardDescription;
 @dynamic exchangeData;
-@dynamic id;
 @dynamic level;
 @dynamic name;
 @dynamic pitcureURL;

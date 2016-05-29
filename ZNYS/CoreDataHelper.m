@@ -108,7 +108,7 @@ NSString* storeFilename = @"database.sqlite";
     {
         NSLog(@"Failed to add store. Error: %@", error);
         abort();
-        //要是在这里崩溃了，可以到输出的日志里面找到类似 //Users/EricCheung/Library/Developer/CoreSimulator/Devices/FB072C5D-BACF-4CBD-B9C2-5F6A964244AD/data/Containers/Data/Application/023B8309-ED5A-4F83-A2B6-5A1123CF21A6/Documents/Stores/database.sqlite) 的一个URL，然后把这个url对应的那个database.sqlite文件删除就好了   by张恒铭
+        //要是在这里崩溃了，可以在debug宏为1的时候，到输出的日志里面找到类似 //Users/EricCheung/Library/Developer/CoreSimulator/Devices/FB072C5D-BACF-4CBD-B9C2-5F6A964244AD/data/Containers/Data/Application/023B8309-ED5A-4F83-A2B6-5A1123CF21A6/Documents/Stores/database.sqlite) 的一个URL，然后把这个url对应的那个database.sqlite文件删除就好了(找不到的话可以在控制台按command+f搜索sqlite)   by张恒铭
     }
     else
     {
@@ -219,12 +219,19 @@ NSString* storeFilename = @"database.sqlite";
 }
 
 #pragma mark - Award releated methods
+- (Award*)createAward
+{
+    Award* savedObject =  [NSEntityDescription insertNewObjectForEntityForName:@"Award" inManagedObjectContext:self.context];
+//    Award* savedObject = [[Award alloc] initWithEntity:@"Award" insertIntoManagedObjectContext:self.context];
+    return savedObject;
+
+}
 - (Award*)createNewAwardWithAward:(Award*)award
 {
     Award* savedObject =  [NSEntityDescription insertNewObjectForEntityForName:@"Award" inManagedObjectContext:self.context];
     savedObject.awardDescription = award.description;
     savedObject.exchangeData = award.exchangeData;
-    savedObject.id = award.id;
+    //savedObject.id = award.id;
     savedObject.level = award.level;
     savedObject.name = award.name;
     savedObject.pitcureURL = award.pitcureURL;
@@ -235,10 +242,15 @@ NSString* storeFilename = @"database.sqlite";
     savedObject.userID = award.userID;
     savedObject.uuid = award.uuid;
     savedObject.voice = award.voice;
+    savedObject.minPrice = award.minPrice;
+    savedObject.maxPrice = award.maxPrice;
     
     [self save];
     return award;
 }
+
+
+
 -(NSArray*)retrieveAwardsWithPredicate:(NSPredicate*)predicate
 {
     if (predicate) {
