@@ -9,6 +9,7 @@
 //
 
 #import "AwardManager.h"
+#import "User.h"
 
 @implementation AwardManager
 +(instancetype)sharedInstance
@@ -40,21 +41,21 @@
 
 
 
-- (NSArray*)getNotAddedAwardWithUseruuid:(NSString*)uuid
+- (NSMutableArray <NSMutableArray<Award *> *>*)getNotAddedAwardWithUseruuid:(NSString*)uuid
 {
-    NSMutableArray* resultArray = [NSMutableArray array];
-    NSArray* consumeArray = [NSMutableArray array];
-    NSArray* possessArray = [NSMutableArray array];
-    NSArray* activityArray = [NSMutableArray array];
+    NSMutableArray<NSMutableArray<Award *> *>* resultArray = [NSMutableArray array];
+    NSMutableArray<Award *>* consumeArray = [NSMutableArray array];
+    NSMutableArray<Award *>* possessArray = [NSMutableArray array];
+    NSMutableArray<Award *>* activityArray = [NSMutableArray array];
     
     NSPredicate* consumePredicate = [NSPredicate predicateWithFormat:@"type == %@ && status == %@ && userID == %@",@"consume",@"notAdded",uuid];
-    consumeArray = [[CoreDataHelper sharedInstance] retrieveAwardsWithPredicate:consumePredicate];
+    consumeArray = (NSMutableArray<Award *>*)[[CoreDataHelper sharedInstance] retrieveAwardsWithPredicate:consumePredicate];
     
     NSPredicate* possessPredicate = [NSPredicate predicateWithFormat:@"type == %@ && status == %@ && userID == %@",@"possess",@"notAdded",uuid];
-    possessArray = [[CoreDataHelper sharedInstance] retrieveAwardsWithPredicate:possessPredicate];
+    possessArray = (NSMutableArray<Award *>*)[[CoreDataHelper sharedInstance] retrieveAwardsWithPredicate:possessPredicate];
     
     NSPredicate* activityPredicate = [NSPredicate predicateWithFormat:@"type == %@ && status == %@ &&userID = %@",@"activity",@"notAdded",uuid];
-    activityArray = [[CoreDataHelper sharedInstance] retrieveAwardsWithPredicate:activityPredicate];
+    activityArray = (NSMutableArray<Award *>*)[[CoreDataHelper sharedInstance] retrieveAwardsWithPredicate:activityPredicate];
     
     
     
@@ -68,21 +69,21 @@
 
 
 
-- (NSArray*)getAddedAwardWithUseruuid:(NSString*)uuid
+- (NSMutableArray <NSMutableArray<Award *> *>*)getAddedAwardWithUseruuid:(NSString*)uuid
 {
-    NSMutableArray* resultArray = [NSMutableArray array];
-    NSArray* consumeArray = [NSMutableArray array];
-    NSArray* possessArray = [NSMutableArray array];
-    NSArray* activityArray = [NSMutableArray array];
+    NSMutableArray<NSMutableArray<Award *> *>* resultArray = [NSMutableArray array];
+    NSMutableArray<Award *>* consumeArray = [NSMutableArray array];
+    NSMutableArray<Award *>* possessArray = [NSMutableArray array];
+    NSMutableArray<Award *>* activityArray = [NSMutableArray array];
     
     NSPredicate* consumePredicate = [NSPredicate predicateWithFormat:@"type == %@ && status == %@ && userID == %@",@"consume",@"added",uuid];
-    consumeArray = [[CoreDataHelper sharedInstance] retrieveAwardsWithPredicate:consumePredicate];
+    consumeArray = (NSMutableArray<Award *>*)[[CoreDataHelper sharedInstance] retrieveAwardsWithPredicate:consumePredicate];
     
     NSPredicate* possessPredicate = [NSPredicate predicateWithFormat:@"type == %@ && status == %@ && userID == %@",@"possess",@"added",uuid];
-    possessArray = [[CoreDataHelper sharedInstance] retrieveAwardsWithPredicate:possessPredicate];
+    possessArray = (NSMutableArray<Award *>*)[[CoreDataHelper sharedInstance] retrieveAwardsWithPredicate:possessPredicate];
     
     NSPredicate* activityPredicate = [NSPredicate predicateWithFormat:@"type == %@ && status == %@ &&userID = %@",@"activity",@"added",uuid];
-    activityArray = [[CoreDataHelper sharedInstance] retrieveAwardsWithPredicate:activityPredicate];
+    activityArray = (NSMutableArray<Award *>*)[[CoreDataHelper sharedInstance] retrieveAwardsWithPredicate:activityPredicate];
     
     
     
@@ -95,7 +96,7 @@
 }
 
 
-- (BOOL)addAwardWithAwarduuid:(NSString*)uuid voicePath:(NSString*)voicePath coin:(NSUInteger)coin
+- (BOOL)addAwardWithAwarduuid:(NSString*)uuid voicePath:(NSString*)voicePath coin:(int32_t)coin
 {
     NSPredicate* predicate = [NSPredicate predicateWithFormat:@"uuid = %@",uuid];
     
@@ -105,7 +106,9 @@
         //从数据库里取出来的对象的修改可以直接反映在数据库中
         matchedAward.voice = voicePath;
         matchedAward.price = coin;
+        matchedAward.status = @"added";
         [[CoreDataHelper sharedInstance] save];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"AddAwardSuccess" object:nil];
         return YES;
     }
     return NO;
@@ -127,18 +130,42 @@
     if (!matchedAward) {
         return NO;
     }
+    [User currentUser].tokenOwned = [NSNumber numberWithInteger:[[User currentUser].tokenOwned integerValue]-matchedAward.price];
     matchedAward.price = matchedAward.minPrice;
     matchedAward.status = @"notAdded";
     [[CoreDataHelper sharedInstance] save];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"exchangeAwardSuccess" object:nil];
     return YES;
 }
 
-- (NSArray*)getAllAddedAwardWithUseruuid:(NSString*)userUUID
-{
-    NSArray* resultArray;
-     NSPredicate* predicate = [NSPredicate predicateWithFormat:@"status == %@ && userID == %@",@"added",userUUID];
+- (BOOL)deleteAwardWithAwardUUID:(NSString *)awarduuid{
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"uuid = %@",awarduuid];
+    //理论上不存在两个uuid相等的奖品，可以直接取结果数组的第一项作为找到的奖品
     
-    resultArray = [[CoreDataHelper sharedInstance] retrieveAwardsWithPredicate:predicate];
+    NSArray* result ;
+    result =  [[CoreDataHelper sharedInstance] retrieveAwardsWithPredicate:predicate];
+    Award* matchedAward;
+    if ([result count]) {
+        matchedAward = result[0];
+    } else {
+        matchedAward = nil;
+    }
+    if (!matchedAward) {
+        return NO;
+    }
+    matchedAward.price = matchedAward.minPrice;
+    matchedAward.status = @"notAdded";
+    [[CoreDataHelper sharedInstance] save];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"deleteAwardSuccess" object:nil];
+    return YES;
+}
+
+- (NSMutableArray<Award *>*)getAllAddedAwardWithUseruuid:(NSString*)userUUID
+{
+    NSMutableArray * resultArray;
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"status == %@ && userID == %@",@"added",userUUID];
+    
+    resultArray = (NSMutableArray <Award *>*)[[CoreDataHelper sharedInstance] retrieveAwardsWithPredicate:predicate];
     
     return resultArray;
 }

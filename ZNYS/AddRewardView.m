@@ -79,15 +79,15 @@ typedef NS_ENUM(NSUInteger, IsInRecordingType) {
     [self removeObserver:self forKeyPath:@"isRecording"];
 }
 
-- (instancetype)initWithModel:(rewardListModel *)model{
+- (instancetype)initWithModel:(Award *)model{
     self = [super init];
     if (self) {
         self.backgroundColor = [UIColor redColor];
         self.isRecording = HaventRecord;
         self.model = model;
-        self.model.recordUrl = [NSString string];
-        [self setNumArrayWithNum:model.range startFrom:model.coins];
-        [self setCoinsNumWithMininum:model.coins];
+        self.model.voice = [NSString string];
+      //  [self setNumArrayWithNum:model.range startFrom:model.coins];
+        [self setCoinsNumWithMininum:model.price];
         
          [self addObserver:self forKeyPath:@"isRecording" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
         
@@ -237,10 +237,10 @@ typedef NS_ENUM(NSUInteger, IsInRecordingType) {
  */
 -(NSURL *)getSavePath{
     NSString *urlStr=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    urlStr=[urlStr stringByAppendingPathComponent:kRecordAudioFile];
+    urlStr=[urlStr stringByAppendingPathComponent:[NSString stringWithFormat:@"%@-%@.caf",self.model.userID,self.model.uuid]];
     NSLog(@"file path:%@",urlStr);
     NSURL *url=[NSURL fileURLWithPath:urlStr];
-    self.model.recordUrl = urlStr;
+    self.model.voice = urlStr;
     return url;
 }
 
@@ -278,7 +278,7 @@ typedef NS_ENUM(NSUInteger, IsInRecordingType) {
     NSString *documentsDirectory= [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
     NSFileManager * fileManager = [NSFileManager defaultManager];
     NSError * error;
-    if ([fileManager removeItemAtPath:self.model.recordUrl error:&error] != YES)
+    if ([fileManager removeItemAtPath:self.model.voice error:&error] != YES)
         NSLog(@"Unable to delete file: %@", [error localizedDescription]);
     //显示文件目录的内容
     NSLog(@"Documentsdirectory: %@",
@@ -297,8 +297,13 @@ typedef NS_ENUM(NSUInteger, IsInRecordingType) {
 
 - (void)tapGesture:(UITapGestureRecognizer *)sender{
     NSLog(@"addReward");
-    if (self.dismissBlock) {
-        self.dismissBlock();
+    
+    if ([[AwardManager sharedInstance] addAwardWithAwarduuid:self.model.uuid voicePath:self.model.voice coin:(int32_t)[self.chooseNumberPickerView getSetPrice]]) {
+        if (self.dismissBlock) {
+            self.dismissBlock();
+        }
+    }else{
+        [SVProgressHUD showErrorWithStatus:@"添加错误，请重试"];
     }
 }
 

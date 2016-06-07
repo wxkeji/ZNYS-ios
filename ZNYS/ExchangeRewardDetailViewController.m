@@ -9,6 +9,7 @@
 
 #import "ExchangeRewardDetailViewController.h"
 #import "VerifyPasswordView.h"
+#import "AwardManager.h"
 
 @interface ExchangeRewardDetailViewController ()
 
@@ -55,7 +56,7 @@
     _inputArray = nil;
 }
 
-- (instancetype)initWithModel:(rewardListModel *)model{
+- (instancetype)initWithModel:(Award *)model{
     self = [super init];
     if (self) {
         self.model = model;
@@ -79,6 +80,7 @@
     [self.view addSubview:self.passwordView];
     [self.view addSubview:self.tipsLabel];
     [self.view addSubview:self.itemView];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:@"exchangeAwardSuccess" object:nil];
     
     WS(weakSelf, self);
     [self.backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -140,7 +142,7 @@
 
 #pragma mark RewardItemDelegate
 
-- (void)playRecord:(rewardListModel *)model{
+- (void)playRecord:(Award *)model{
     
 }
 
@@ -198,6 +200,9 @@
     }
 }
 
+- (void)refresh{
+    self.coinLabel.text = [NSString stringWithFormat:@"%@",[User currentUserTokenOwned]];
+}
 
 #pragma mark event action
 
@@ -243,7 +248,7 @@
 - (UILabel *)userLabel{
     if (!_userLabel) {
         _userLabel = [[UILabel alloc] initWithCustomFont:15.f];
-        _userLabel.text = @"宝宝";
+        _userLabel.text = [User currentUserName];
         _userLabel.textColor = [UIColor blueColor];
         _userLabel.textAlignment = NSTextAlignmentCenter;
     }
@@ -253,7 +258,7 @@
 - (UILabel *)coinLabel{
     if (!_coinLabel) {
         _coinLabel = [[UILabel alloc] initWithCustomFont:15.f];
-        _coinLabel.text = @"0";
+        _coinLabel.text = [NSString stringWithFormat:@"%@",[User currentUserTokenOwned]];
         _coinLabel.textColor = [UIColor blueColor];
         _coinLabel.textAlignment = NSTextAlignmentCenter;
     }
@@ -263,7 +268,16 @@
 - (RewardItemView *)itemView{
     if (!_itemView) {
         _itemView = [[RewardItemView alloc] initWithFrame:CGRectMake(CustomWidth(10), CustomHeight(270), CustomWidth(120), CustomHeight(160)) type:RecordType model:self.model];
-        _itemView.coinLabel.text = [NSString stringWithFormat:@"x %ld",(long)self.model.coins];
+        _itemView.coinLabel.text = [NSString stringWithFormat:@"x %ld",(long)self.model.price];
+        if ([self.model.pitcureURL isEqualToString:@"testImage1"]) {
+            _itemView.bgView.backgroundColor = [UIColor greenColor];
+        }else if ([self.model.pitcureURL isEqualToString:@"testImage2"]){
+            _itemView.bgView.backgroundColor = [UIColor redColor];
+        }else if ([self.model.pitcureURL isEqualToString:@"testImage3"]){
+            _itemView.bgView.backgroundColor = [UIColor cyanColor];
+        }else{
+            _itemView.bgView.backgroundColor = [UIColor yellowColor];
+        }
         _itemView.selectButton.hidden = YES;
         _itemView.delegate = self;
     }
@@ -283,6 +297,7 @@
             if (self.inputArray.count == 3) {
                 BOOL isCorrect = ([[weakSelf.inputArray objectAtIndex:0] integerValue] == [[weakSelf.tipsArray objectAtIndex:0] integerValue]) && ([[weakSelf.inputArray objectAtIndex:1] integerValue] == [[weakSelf.tipsArray objectAtIndex:1] integerValue]) && ([[weakSelf.inputArray objectAtIndex:2] integerValue] == [[weakSelf.tipsArray objectAtIndex:2] integerValue]);
                 if (isCorrect) {
+                    [[AwardManager sharedInstance] exchangeAwardWithAwarduuid:weakSelf.model.uuid];
                     [SVProgressHUD showInfoWithStatus:@"兑换成功"];
                     [weakSelf.navigationController popViewControllerAnimated:YES];
                 }else{

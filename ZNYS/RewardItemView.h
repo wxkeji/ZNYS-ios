@@ -7,15 +7,15 @@
 //
 
 #import "ZNYSBaseView.h"
-#import "rewardListModel.h"
+#import "Award.h"
 
 @protocol RewardItemViewDelegate <NSObject>
 
 @optional
 - (void)startDelete;
-- (void)playRecord:(rewardListModel *)model;
-- (void)addReward:(rewardListModel *)model;
-- (void)showNextPage:(rewardListModel *)model;
+- (void)playRecord:(Award *)model;
+- (void)addReward:(Award *)model;
+- (void)showNextPage:(Award *)model;
 
 @end
 
@@ -39,10 +39,10 @@ typedef enum : NSUInteger {
 
 @property (nonatomic,assign) ItemType itemType;
 
-@property (nonatomic,strong) rewardListModel * model;
+@property (nonatomic,strong) Award * model;
 
 @property (nonatomic,weak) id<RewardItemViewDelegate> delegate;
 
-- (instancetype)initWithFrame:(CGRect)frame type:(ItemType)type model:(rewardListModel *)model;
+- (instancetype)initWithFrame:(CGRect)frame type:(ItemType)type model:(Award *)model;
 
 @end

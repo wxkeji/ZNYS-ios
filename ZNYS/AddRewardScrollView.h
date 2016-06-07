@@ -7,20 +7,22 @@
 //
 
 #import "ZNYSBaseView.h"
-#import "rewardListModel.h"
+#import "Award.h"
+#import "CoreDataHelper.h"
+#import "AwardManager.h"
 #import "RewardItemView.h"
 
-typedef void(^AddRewardBlock)(rewardListModel * model);
+typedef void(^AddRewardBlock)(Award * model);
 
 @interface AddRewardScrollView : ZNYSBaseView<RewardItemViewDelegate>
 
 @property (nonatomic,strong) UIScrollView * scrollView;
 
-@property (nonatomic,strong) NSMutableArray<rewardListModel *> * cDataArray;
+@property (nonatomic,strong) NSMutableArray<Award *> * cDataArray;
 
-@property (nonatomic,strong) NSMutableArray<rewardListModel *> * pDataArray;
+@property (nonatomic,strong) NSMutableArray<Award *> * pDataArray;
 
-@property (nonatomic,strong) NSMutableArray<rewardListModel *> * aDataArray;
+@property (nonatomic,strong) NSMutableArray<Award *> * aDataArray;
 
 @property (nonatomic,strong) UIScrollView * consumeScrollView;
 
@@ -29,5 +31,7 @@ typedef void(^AddRewardBlock)(rewardListModel * model);
 @property (nonatomic,strong) UIScrollView * activityScrollView;
 
 @property (nonatomic,copy) AddRewardBlock addRewardBlock;
+
+- (void)refresh;
 
 @end

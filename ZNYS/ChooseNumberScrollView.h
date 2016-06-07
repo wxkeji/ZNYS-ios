@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "ToolMacroes.h"
 #import <Masonry.h>
-#import "rewardListModel.h"
+#import "Award.h"
 
 @interface ChooseNumberScrollView : UIScrollView
 
-- (instancetype)initWithModel:(rewardListModel *)model andFrame:(CGRect)frame;
+@property (nonatomic,strong) Award * model;
+
+- (instancetype)initWithModel:(Award *)model andFrame:(CGRect)frame;
+
+- (NSInteger)getSetPrice;
 
 @end

@@ -7,7 +7,9 @@
 //
 
 #import "ExchangeRewardViewController.h"
-#import "rewardListModel.h"
+#import "Award.h"
+#import "CoreDataHelper.h"
+#import "AwardManager.h"
 #import "ExchangeRewardDetailViewController.h"
 
 @interface ExchangeRewardViewController ()
@@ -26,7 +28,7 @@
 
 @property (nonatomic,strong) UILabel * coinLabel;
 
-@property (nonatomic,strong) NSMutableArray<rewardListModel *> * dataArray;
+@property (nonatomic,strong) NSMutableArray<Award *> * dataArray;
 
 @end
 
@@ -57,6 +59,7 @@
     [self.view addSubview:self.coinLabel];
     [self.view addSubview:self.coinView];
     [self.view addSubview:self.itemScrollView];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:@"exchangeAwardSuccess" object:nil];
     
     WS(weakSelf, self);
     [self.backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -111,13 +114,53 @@
 
 #pragma mark RewardItemViewDelegate
 
-- (void)playRecord:(rewardListModel *)model{
+- (void)playRecord:(Award *)model{
     NSLog(@"vvvv");
 }
 
-- (void)showNextPage:(rewardListModel *)model{
+- (void)showNextPage:(Award *)model{
     ExchangeRewardDetailViewController * vc = [[ExchangeRewardDetailViewController alloc] initWithModel:model];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark private method
+
+- (void)refresh{
+    self.coinLabel.text = [NSString stringWithFormat:@"%@",[User currentUserTokenOwned]];
+    
+    for (RewardItemView * item in self.itemScrollView.subviews) {
+        [item removeFromSuperview];
+    }
+    self.dataArray = nil;
+    
+    self.dataArray = [[AwardManager sharedInstance] getAllAddedAwardWithUseruuid:[User currentUserUUID]];
+    [self initItemScrollView];
+}
+
+- (void)initItemScrollView{
+
+    CGFloat width = CustomWidth(107);
+    CGFloat height = CustomHeight(142);
+    
+    for (NSInteger i = 0; i<self.dataArray.count; i++) {
+        RewardItemView * item = [[RewardItemView alloc] initWithFrame:CGRectMake(13+(i%3)*CustomWidth(120),CustomHeight(14)+(i/3)*CustomHeight(175),width,height) type:RecordType model:[self.dataArray objectAtIndex:i]];
+        item.tag = [self.dataArray objectAtIndex:i].price;
+        item.selectButton.hidden = YES;
+        item.coinLabel.text = [NSString stringWithFormat:@"x %ld",(long)[self.dataArray objectAtIndex:i].price];
+        if ([[self.dataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage1"]) {
+            item.bgView.backgroundColor = [UIColor greenColor];
+        }else if ([[self.dataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage2"]){
+            item.bgView.backgroundColor = [UIColor redColor];
+        }else if ([[self.dataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage3"]){
+            item.bgView.backgroundColor = [UIColor cyanColor];
+        }else{
+            item.bgView.backgroundColor = [UIColor yellowColor];
+        }
+        item.delegate = self;
+        item.model = [self.dataArray objectAtIndex:i];
+        [_itemScrollView addSubview:item];
+    }
+    
 }
 
 #pragma mark event action
@@ -164,7 +207,7 @@
 - (UILabel *)userLabel{
     if (!_userLabel) {
         _userLabel = [[UILabel alloc] initWithCustomFont:15.f];
-        _userLabel.text = @"宝宝";
+        _userLabel.text = [User currentUserName];
         _userLabel.textColor = [UIColor blueColor];
         _userLabel.textAlignment = NSTextAlignmentCenter;
     }
@@ -174,7 +217,7 @@
 - (UILabel *)coinLabel{
     if (!_coinLabel) {
         _coinLabel = [[UILabel alloc] initWithCustomFont:15.f];
-        _coinLabel.text = @"0";
+        _coinLabel.text = [NSString stringWithFormat:@"%@",[User currentUserTokenOwned]];
         _coinLabel.textColor = [UIColor blueColor];
         _coinLabel.textAlignment = NSTextAlignmentCenter;
     }
@@ -191,31 +234,16 @@
         _itemScrollView.showsVerticalScrollIndicator = FALSE;
         _itemScrollView.showsHorizontalScrollIndicator = YES;
         
-        CGFloat width = CustomWidth(107);
-        CGFloat height = CustomHeight(142);
-        
-        for (NSInteger i = 0; i<self.dataArray.count; i++) {
-            RewardItemView * item = [[RewardItemView alloc] initWithFrame:CGRectMake(13+(i%3)*CustomWidth(120),CustomHeight(14)+(i/3)*CustomHeight(175),width,height) type:RecordType model:[self.dataArray objectAtIndex:i]];
-            item.tag = [self.dataArray objectAtIndex:i].coins;
-            item.selectButton.hidden = YES;
-            item.coinLabel.text = [NSString stringWithFormat:@"x %ld",(long)[self.dataArray objectAtIndex:i].coins];
-            item.delegate = self;
-            [_itemScrollView addSubview:item];
-        }
-
-    }
+        [self initItemScrollView];
+          }
     return _itemScrollView;
 }
 
-- (NSMutableArray<rewardListModel*> *)dataArray{
+- (NSMutableArray<Award*> *)dataArray{
    
     if (!_dataArray) {
         _dataArray = [[NSMutableArray alloc] init];
-        for (NSInteger i = 0; i<30; i++) {
-            rewardListModel * model = [[rewardListModel alloc] init];
-            model.coins = i;
-            [_dataArray addObject:model];
-        }
+        _dataArray = [[AwardManager sharedInstance] getAllAddedAwardWithUseruuid:[User currentUserUUID]];
     }
     return _dataArray;
 }

@@ -12,6 +12,8 @@
 #import "SelectBirthView.h"
 #import "ToolMacroes.h"
 #import "CoreDataHelper.h"
+#import "Award.h"
+#import "Award+CoreDataProperties.h"
 #import <SVProgressHUD.h>
 #import "CabinetViewController.h"
 
@@ -195,6 +197,156 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark private method
+
+- (void)addRewardData{
+    
+    Award* testAward1 = [[CoreDataHelper sharedInstance] createAward];
+    testAward1.pitcureURL = @"testImage1";
+    testAward1.minPrice = 1;
+    testAward1.price = 5;
+    testAward1.maxPrice = 10;
+    testAward1.voice = @"录音路径.mp3";
+    testAward1.status = @"notAdded";
+    testAward1.type = @"consume";
+    testAward1.userID = [User currentUserUUID];
+    testAward1.uuid = [[NSUUID UUID] UUIDString];
+    
+    
+    Award* testAward2 = [[CoreDataHelper sharedInstance] createAward];
+    testAward2.pitcureURL = @"testImage2";
+    testAward2.minPrice = 5;
+    testAward2.price = 8;
+    testAward2.maxPrice = 10;
+    testAward2.voice = @"录音路径.mp3";
+    testAward2.status = @"notAdded";
+    testAward2.type = @"possess";
+    testAward2.userID = [User currentUserUUID];
+    testAward2.uuid = [[NSUUID UUID] UUIDString];
+    
+    
+    
+    Award* testAward3 = [[CoreDataHelper sharedInstance] createAward];
+    testAward3.pitcureURL = @"testImage3";
+    testAward3.minPrice = 1;
+    testAward3.price = 5;
+    testAward3.maxPrice = 10;
+    testAward3.voice = @"录音路径.mp3";
+    testAward3.status = @"notAdded";
+    testAward3.type = @"activity";
+    testAward3.userID = [User currentUserUUID];
+    testAward3.uuid = [[NSUUID UUID] UUIDString];
+    
+    
+    
+    Award* testAward4 = [[CoreDataHelper sharedInstance] createAward];
+    testAward4.pitcureURL = @"testImage1";
+    testAward4.minPrice = 10;
+    testAward4.price = 20;
+    testAward4.maxPrice = 30;
+    testAward4.voice = @"录音路径.mp3";
+    testAward4.status = @"added";
+    testAward4.type = @"consume";
+    testAward4.userID = [User currentUserUUID];
+    testAward4.uuid = [[NSUUID UUID] UUIDString];
+    
+    
+    Award* testAward5 =[[CoreDataHelper sharedInstance] createAward];
+    testAward5.pitcureURL = @"testImage1";
+    testAward5.minPrice = 1;
+    testAward5.price = 5;
+    testAward5.maxPrice = 10;
+    testAward5.voice = @"录音路径.mp3";
+    testAward5.status = @"added";
+    testAward5.type = @"possess";
+    testAward5.userID = [User currentUserUUID];
+    testAward5.uuid = [[NSUUID UUID] UUIDString];
+    
+    
+    
+    Award* testAward6 = [[CoreDataHelper sharedInstance] createAward];
+    testAward6.pitcureURL = @"testImage2";
+    testAward6.minPrice = 12;
+    testAward6.price = 13;
+    testAward6.maxPrice = 15;
+    testAward6.voice = @"录音路径.mp3";
+    testAward6.status = @"added";
+    testAward6.type = @"activity";
+    testAward6.userID = [User currentUserUUID];
+    testAward6.uuid = [[NSUUID UUID] UUIDString];
+    
+    
+    
+    Award* testAward7 = [[CoreDataHelper sharedInstance] createAward];
+    testAward7.pitcureURL = @"testImage2";
+    testAward7.minPrice = 6;
+    testAward7.price = 9;
+    testAward7.maxPrice = 10;
+    testAward7.voice = @"录音路径.mp3";
+    testAward7.status = @"added";
+    testAward7.type = @"consume";
+    testAward7.userID = [User currentUserUUID];
+    testAward7.uuid = [[NSUUID UUID] UUIDString];
+    
+    
+    
+    Award* testAward8 =[[CoreDataHelper sharedInstance] createAward];
+    testAward8.pitcureURL = @"testImage3";
+    testAward8.minPrice = 1;
+    testAward8.price = 5;
+    testAward8.maxPrice = 10;
+    testAward8.voice = @"录音路径.mp3";
+    testAward8.status = @"notAdded";
+    testAward8.type = @"consume";
+    testAward8.userID = [User currentUserUUID];
+    testAward8.uuid = [[NSUUID UUID] UUIDString];
+    
+    
+    
+    Award* testAward9 =[[CoreDataHelper sharedInstance] createAward];
+    testAward9.pitcureURL = @"testImage2";
+    testAward9.minPrice = 1;
+    testAward9.price = 5;
+    testAward9.maxPrice = 10;
+    testAward9.voice = @"录音路径.mp3";
+    testAward9.status = @"notAdded";
+    testAward9.type = @"consume";
+    testAward9.userID = [User currentUserUUID];
+    testAward9.uuid = [[NSUUID UUID] UUIDString];
+    
+    
+    
+    Award* testAward10 = [[CoreDataHelper sharedInstance] createAward];
+    testAward10.pitcureURL = @"testImage4";
+    testAward10.minPrice = 1;
+    testAward10.price = 5;
+    testAward10.maxPrice = 10;
+    testAward10.voice = @"录音路径.mp3";
+    testAward10.status = @"notAdded";
+    testAward10.type = @"consume";
+    testAward10.userID = [User currentUserUUID];
+    testAward10.uuid = [[NSUUID UUID] UUIDString];
+    
+    
+    
+    
+    Award* testAward11 = [[CoreDataHelper sharedInstance] createAward];
+    testAward11.pitcureURL = @"testImage1";
+    testAward11.minPrice = 1;
+    testAward11.price = 5;
+    testAward11.maxPrice = 10;
+    testAward11.voice = @"录音路径.mp3";
+    testAward11.status = @"notAdded";
+    testAward11.type = @"consume";
+    testAward11.userID = [User currentUserUUID];
+    testAward11.uuid = [[NSUUID UUID] UUIDString];
+    
+    
+    [[CoreDataHelper sharedInstance] save];
+    
+
+}
+
 #pragma mark event action
 
 - (void)addButtonAction{
@@ -226,6 +378,7 @@
         NSString * uid = [[CoreDataHelper sharedInstance] createUserWithBirthday:self.addAccountView.birthButton.titleLabel.text gender:gender nickName:name];
         if (uid) {
              [[NSUserDefaults standardUserDefaults]setObject:uid forKey:@"currentUserUID"];
+            [self addRewardData];
             
             [SVProgressHUD showInfoWithStatus:@"添加用户成功"];
             UIStoryboard * storyBoard = [UIStoryboard storyboardWithName:@"Cabinet" bundle:[NSBundle mainBundle]];
@@ -237,7 +390,8 @@
     }else{
         NSString * uid = [[CoreDataHelper sharedInstance] createUserWithBirthday:self.addAccountView.birthButton.titleLabel.text gender:gender nickName:name];
         if (uid) {
-           
+            [self addRewardData];
+            
             [SVProgressHUD showInfoWithStatus:@"添加用户成功"];
             [self.navigationController popViewControllerAnimated:YES];
         }else{

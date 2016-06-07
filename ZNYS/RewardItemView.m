@@ -33,7 +33,7 @@
     _coinBackView = nil;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame type:(ItemType)type model:(rewardListModel *)model{
+- (instancetype)initWithFrame:(CGRect)frame type:(ItemType)type model:(Award *)model{
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
@@ -152,7 +152,7 @@
 - (UIImageView *)bgView{
     if (!_bgView) {
         _bgView = [[UIImageView alloc] init];
-        _bgView.backgroundColor = [UIColor yellowColor];
+       
     }
     return _bgView;
 }
@@ -216,9 +216,9 @@
     return _coinBackView;
 }
 
-- (rewardListModel *)model{
+- (Award *)model{
     if (!_model) {
-        _model = [[rewardListModel alloc] init];
+        _model = [[Award alloc] init];
     }
     return _model;
 }

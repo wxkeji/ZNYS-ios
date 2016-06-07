@@ -25,7 +25,7 @@
  *
  *  @return 返回一个数组（消费类，拥有类，活动类），然后每个数组包含每一类的model数组
  */
-- (NSArray*)getNotAddedAwardWithUseruuid:(NSString*)uuid;
+- (NSMutableArray <NSMutableArray<Award *> *>*)getNotAddedAwardWithUseruuid:(NSString*)uuid;
 
 
 /**
@@ -35,7 +35,7 @@
  *
  *  @return 返回一个数组（消费类，拥有类，活动类），然后每个数组包含每一类的model数组
  */
-- (NSArray*)getAddedAwardWithUseruuid:(NSString*)uuid;
+- (NSMutableArray <NSMutableArray<Award *> *>*)getAddedAwardWithUseruuid:(NSString*)uuid;
 
 
 /**
@@ -47,7 +47,7 @@
  *
  *  @return 返回是否添加成功
  */
-- (BOOL)addAwardWithAwarduuid:(NSString*)uuid voicePath:(NSString*)voicePath coin:(NSUInteger*)coin;
+- (BOOL)addAwardWithAwarduuid:(NSString*)uuid voicePath:(NSString*)voicePath coin:(int32_t)coin;
 
 
 /**
@@ -60,11 +60,20 @@
 - (BOOL)exchangeAwardWithAwarduuid:(NSString*)awarduuid;
 
 /**
+ *  删除奖品接口
+ *
+ *  @param awarduuid 奖品的uuid
+ *
+ *  @return 是否删除成功
+ */
+- (BOOL)deleteAwardWithAwardUUID:(NSString *)awarduuid;
+
+/**
  *  获取用户全部已添加的奖品(不会按照)
  *
  *  @param userUUID 用户的UUid
  *
  *  @return 包含所有已添加奖品的model的数组
  */
-- (NSArray*)getAllAddedAwardWithUseruuid:(NSString*)userUUID;
+- (NSMutableArray <Award *>*)getAllAddedAwardWithUseruuid:(NSString*)userUUID;
 @end

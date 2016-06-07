@@ -15,21 +15,23 @@
 
 #pragma mark life cycle
 
-- (instancetype)initWithModel:(rewardListModel *)model andFrame:(CGRect)frame{
+- (instancetype)initWithModel:(Award *)model andFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
+        self.model = model;
         self.backgroundColor = [UIColor clearColor];
-        self.pagingEnabled = YES;
+     //   self.pagingEnabled = YES;
         self.scrollEnabled = YES;
-        self.contentSize = CGSizeMake(CustomWidth(106), (model.range+3)*CustomHeight(30));
+//        self.clipsToBounds = NO;
+        self.contentSize = CGSizeMake(CustomWidth(106), (model.maxPrice-model.minPrice+3)*CustomHeight(30));
         
-        for (NSInteger i = model.coins-1, j = 0; j < model.range+2 ; i++,j++) {
+        for (NSInteger i = model.minPrice-1, j = 0; i <= model.maxPrice+1 ; i++,j++) {
             UIView * v = [[UIView alloc] initWithFrame:CGRectMake(0, j*CustomHeight(30), CustomWidth(106), CustomHeight(30))];
             v.backgroundColor = [UIColor clearColor];
             
             UILabel * label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CustomWidth(106), CustomHeight(30))];
             label.backgroundColor = [UIColor clearColor];
-            if (i == (model.coins-1) || i == model.range+1+model.coins) {
+            if (i == (model.minPrice-1) || i == model.maxPrice+1) {
                 label.text = @" ";
             }else{
              label.text = [NSString stringWithFormat:@"%ld",(long)i];
@@ -46,22 +48,9 @@
     return self;
 }
 
-//- (void)layoutSubviews{
-//    WS(weakSelf, self);
-////    [self.line1 mas_makeConstraints:^(MASConstraintMaker *make) {
-////        make.top.equalTo(weakSelf.mas_top).with.offset(CustomHeight(78));
-////        make.left.equalTo(weakSelf.mas_left).with.offset(0);
-////        make.right.equalTo(weakSelf.mas_right).with.offset(0);
-////        make.height.mas_equalTo(CustomHeight(15));
-////    }];
-////    
-////    [self.line2 mas_makeConstraints:^(MASConstraintMaker *make) {
-////        make.bottom.equalTo(weakSelf.mas_bottom).with.offset(-CustomHeight(78));
-////        make.left.equalTo(weakSelf.mas_left).with.offset(0);
-////        make.right.equalTo(weakSelf.mas_right).with.offset(0);
-////        make.height.mas_equalTo(CustomHeight(2));
-////    }];
-//
-//}
-//
+- (NSInteger)getSetPrice{
+    CGFloat height = CustomHeight(30);
+    NSInteger price = self.model.minPrice+((self.contentOffset.y/height));
+    return price;
+}
 @end

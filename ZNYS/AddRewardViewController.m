@@ -46,6 +46,7 @@
     [self.view addSubview:self.possessButton];
     [self.view addSubview:self.activityButton];
     [self.view addSubview:self.scrollView];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:@"AddAwardSuccess" object:nil];
     
     self.consumeButton.selected = YES;
     self.consumeButton.backgroundColor = [UIColor blueColor];
@@ -121,6 +122,12 @@
 //- (void)showNextPage:(rewardListModel *)model{
 //
 //}
+
+#pragma mark private method
+
+- (void)refresh{
+    [self.scrollView refresh];
+}
 
 #pragma mark event action
 
@@ -212,7 +219,7 @@
         _scrollView = [[AddRewardScrollView alloc] init];
         _scrollView.scrollView.delegate = self;
         
-        _scrollView.addRewardBlock = ^(rewardListModel * model){
+        _scrollView.addRewardBlock = ^(Award * model){
             AddRewardView * addRewardView = [[AddRewardView alloc] initWithModel:model];
             addRewardView.frame = CGRectMake(0, 0, CustomWidth(300), CustomHeight(350));
             

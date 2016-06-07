@@ -7,19 +7,19 @@
 //
 
 #import "ZNYSBaseView.h"
-#import "rewardListModel.h"
+#import "AwardManager.h"
 #import <AVFoundation/AVFoundation.h>
 
 typedef void(^DismissBlock)();
 
 @interface AddRewardView : ZNYSBaseView<UIPickerViewDelegate,UIPickerViewDataSource,UIScrollViewDelegate,AVAudioRecorderDelegate>
 
-@property (nonatomic,strong) rewardListModel * model;
+@property (nonatomic,strong) Award * model;
 
 @property (nonatomic,copy) DismissBlock dismissBlock;
 
 //- (instancetype)initWithRange:(NSInteger)range startFrom:(NSInteger)startNum;
 
-- (instancetype)initWithModel:(rewardListModel *)model;
+- (instancetype)initWithModel:(Award *)model;
 
 @end

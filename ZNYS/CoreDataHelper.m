@@ -167,7 +167,7 @@ NSString* storeFilename = @"database.sqlite";
     user.nickName = nickName;
     user.photoNumber = @0;
     user.starsOwned = @0;
-    user.tokenOwned = @0;
+    user.tokenOwned = [NSNumber numberWithInteger:1000];
     user.uuid = [[NSUUID UUID] UUIDString];
     [self save];
     [[NSUserDefaults standardUserDefaults]setObject:user.uuid forKey:@"currentUserUID"];

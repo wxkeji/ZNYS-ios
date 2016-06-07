@@ -36,16 +36,162 @@
     return self;
 }
 
+- (void)refresh{
+    self.pDataArray = nil;
+    self.cDataArray = nil;
+    self.aDataArray = nil;
+    
+    for (RewardItemView * item in self.possessScrollView.subviews) {
+        [item removeFromSuperview];
+    }
+    for (RewardItemView * item in self.consumeScrollView.subviews) {
+        [item removeFromSuperview];
+    }
+    for (RewardItemView * item in self.activityScrollView.subviews) {
+        [item removeFromSuperview];
+    }
+    
+    [self initConsumeScrollView];
+    [self initActivityScrollView];
+    [self initPossessScrollView];
+}
+
 #pragma mark RewardItemViewDelegate
 
-- (void)addReward:(rewardListModel *)model{
+- (void)addReward:(Award *)model{
     if (self.addRewardBlock) {
         self.addRewardBlock(model);
     }
 }
 
-- (void)showNextPage:(rewardListModel *)model{
+- (void)showNextPage:(Award *)model{
 
+}
+
+#pragma mark private method
+
+- (void)initConsumeScrollView{
+    for (NSInteger i = 0; i<self.cDataArray.count; i++) {
+        if ([[self.cDataArray objectAtIndex:i].status isEqualToString:@"added"]){
+            RewardItemView * item = [[RewardItemView alloc] initWithFrame:CGRectMake(13+(i%3)*CustomWidth(120),(i/3)*CustomHeight(175),CustomWidth(106),CustomHeight(160)) type:CheckType model:[self.cDataArray objectAtIndex:i]];
+            item.tag = i;
+            item.delegate = self;
+            item.model = [self.cDataArray objectAtIndex:i];
+            item.selectButton.hidden = YES;
+            item.coinLabel.text = [NSString stringWithFormat:@"x %ld",(long)[self.cDataArray objectAtIndex:i].price];
+            if ([[self.cDataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage1"]) {
+                item.bgView.backgroundColor = [UIColor greenColor];
+            }else if ([[self.cDataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage2"]){
+                item.bgView.backgroundColor = [UIColor redColor];
+            }else if ([[self.cDataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage3"]){
+                item.bgView.backgroundColor = [UIColor cyanColor];
+            }else{
+                item.bgView.backgroundColor = [UIColor yellowColor];
+            }
+            [_consumeScrollView addSubview:item];
+        }else{
+            RewardItemView * item = [[RewardItemView alloc] initWithFrame:CGRectMake(13+(i%3)*CustomWidth(120),(i/3)*CustomHeight(175),CustomWidth(106),CustomHeight(160)) type:AddType model:[self.cDataArray objectAtIndex:i]];
+            item.tag = i;
+            item.delegate = self;
+            item.model = [self.cDataArray objectAtIndex:i];
+            item.selectButton.hidden = YES;
+            item.coinLabel.text = [NSString stringWithFormat:@"x %ld",(long)[self.cDataArray objectAtIndex:i].price];
+            if ([[self.cDataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage1"]) {
+                item.bgView.backgroundColor = [UIColor greenColor];
+            }else if ([[self.cDataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage2"]){
+                item.bgView.backgroundColor = [UIColor redColor];
+            }else if ([[self.cDataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage3"]){
+                item.bgView.backgroundColor = [UIColor cyanColor];
+            }else{
+                item.bgView.backgroundColor = [UIColor yellowColor];
+            }
+            [_consumeScrollView addSubview:item];
+        }
+    }
+}
+
+- (void)initPossessScrollView{
+    
+    for (NSInteger i = 0; i<self.pDataArray.count; i++) {
+        if ([[self.pDataArray objectAtIndex:i].status isEqualToString:@"added"]){
+            RewardItemView * item = [[RewardItemView alloc] initWithFrame:CGRectMake(13+(i%3)*CustomWidth(120),(i/3)*CustomHeight(175),CustomWidth(106),CustomHeight(160)) type:CheckType model:[self.pDataArray objectAtIndex:i]];
+            item.tag = i;
+            item.delegate = self;
+            item.model = [self.pDataArray objectAtIndex:i];
+            item.selectButton.hidden = YES;
+            item.coinLabel.text = [NSString stringWithFormat:@"x %ld",(long)[self.pDataArray objectAtIndex:i].price];
+            if ([[self.pDataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage1"]) {
+                item.bgView.backgroundColor = [UIColor greenColor];
+            }else if ([[self.pDataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage2"]){
+                item.bgView.backgroundColor = [UIColor redColor];
+            }else if ([[self.pDataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage3"]){
+                item.bgView.backgroundColor = [UIColor cyanColor];
+            }else{
+                item.bgView.backgroundColor = [UIColor yellowColor];
+            }
+            [_possessScrollView addSubview:item];
+        }else{
+            RewardItemView * item = [[RewardItemView alloc] initWithFrame:CGRectMake(13+(i%3)*CustomWidth(120),(i/3)*CustomHeight(175),CustomWidth(106),CustomHeight(160)) type:AddType model:[self.pDataArray objectAtIndex:i]];
+            item.tag = i;
+            item.delegate = self;
+            item.model = [self.pDataArray objectAtIndex:i];
+            item.selectButton.hidden = YES;
+            item.coinLabel.text = [NSString stringWithFormat:@"x %ld",(long)[self.pDataArray objectAtIndex:i].price];
+            if ([[self.pDataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage1"]) {
+                item.bgView.backgroundColor = [UIColor greenColor];
+            }else if ([[self.pDataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage2"]){
+                item.bgView.backgroundColor = [UIColor redColor];
+            }else if ([[self.pDataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage3"]){
+                item.bgView.backgroundColor = [UIColor cyanColor];
+            }else{
+                item.bgView.backgroundColor = [UIColor yellowColor];
+            }
+            [_possessScrollView addSubview:item];
+            
+        }
+    }
+}
+
+- (void)initActivityScrollView{
+    for (NSInteger i = 0; i<self.aDataArray.count; i++) {
+        if ([[self.aDataArray objectAtIndex:i].status isEqualToString:@"added"]){
+            RewardItemView * item = [[RewardItemView alloc] initWithFrame:CGRectMake(13+(i%3)*CustomWidth(120),(i/3)*CustomHeight(175),CustomWidth(106),CustomHeight(160)) type:CheckType model:[self.aDataArray objectAtIndex:i]];
+            item.tag = i;
+            item.delegate = self;
+            item.model = [self.aDataArray objectAtIndex:i];
+            item.selectButton.hidden = YES;
+            item.coinLabel.text = [NSString stringWithFormat:@"x %ld",(long)[self.aDataArray objectAtIndex:i].price];
+            if ([[self.aDataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage1"]) {
+                item.bgView.backgroundColor = [UIColor greenColor];
+            }else if ([[self.aDataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage2"]){
+                item.bgView.backgroundColor = [UIColor redColor];
+            }else if ([[self.aDataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage3"]){
+                item.bgView.backgroundColor = [UIColor cyanColor];
+            }else{
+                item.bgView.backgroundColor = [UIColor yellowColor];
+            }
+            
+            [_activityScrollView addSubview:item];
+        }else{
+            RewardItemView * item = [[RewardItemView alloc] initWithFrame:CGRectMake(13+(i%3)*CustomWidth(120),(i/3)*CustomHeight(175),CustomWidth(106),CustomHeight(160)) type:AddType model:[self.aDataArray objectAtIndex:i]];
+            item.tag = i;
+            item.delegate = self;
+            item.model = [self.aDataArray objectAtIndex:i];
+            item.selectButton.hidden = YES;
+            item.coinLabel.text = [NSString stringWithFormat:@"x %ld",(long)[self.aDataArray objectAtIndex:i].price];
+            if ([[self.aDataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage1"]) {
+                item.bgView.backgroundColor = [UIColor greenColor];
+            }else if ([[self.aDataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage2"]){
+                item.bgView.backgroundColor = [UIColor redColor];
+            }else if ([[self.aDataArray objectAtIndex:i].pitcureURL isEqualToString:@"testImage3"]){
+                item.bgView.backgroundColor = [UIColor cyanColor];
+            }else{
+                item.bgView.backgroundColor = [UIColor yellowColor];
+            }
+            
+            [_activityScrollView addSubview:item];
+        }
+    }
 }
 
 #pragma mark getters and setters
@@ -70,15 +216,7 @@
         _consumeScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT)];
         _consumeScrollView.backgroundColor = [UIColor whiteColor];
         _consumeScrollView.contentSize = CGSizeMake(kSCREEN_WIDTH, ((self.cDataArray.count/3)+1)*CustomHeight(200));
-        
-        for (NSInteger i = 0; i<self.cDataArray.count; i++) {
-            RewardItemView * item = [[RewardItemView alloc] initWithFrame:CGRectMake(13+(i%3)*CustomWidth(120),(i/3)*CustomHeight(175),CustomWidth(106),CustomHeight(160)) type:AddType model:[self.cDataArray objectAtIndex:i]];
-            item.tag = i;
-            item.delegate = self;
-            item.selectButton.hidden = YES;
-            item.coinLabel.text = [NSString stringWithFormat:@"x %ld",(long)[self.cDataArray objectAtIndex:i].coins];
-            [_consumeScrollView addSubview:item];
-        }
+        [self initConsumeScrollView];
     }
     return _consumeScrollView;
 }
@@ -88,15 +226,7 @@
         _possessScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(kSCREEN_WIDTH, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT)];
         _possessScrollView.backgroundColor = [UIColor whiteColor];
         _possessScrollView.contentSize = CGSizeMake(kSCREEN_WIDTH, ((self.pDataArray.count/3)+1)*CustomHeight(200));
-        
-        for (NSInteger i = 0; i<self.pDataArray.count; i++) {
-            RewardItemView * item = [[RewardItemView alloc] initWithFrame:CGRectMake(13+(i%3)*CustomWidth(120),(i/3)*CustomHeight(175),CustomWidth(106),CustomHeight(160)) type:AddType model:[self.pDataArray objectAtIndex:i]];
-            item.tag = i;
-            item.delegate = self;
-            item.selectButton.hidden = YES;
-            item.coinLabel.text = [NSString stringWithFormat:@"x %ld",(long)[self.pDataArray objectAtIndex:i].coins];
-            [_possessScrollView addSubview:item];
-        }
+        [self initPossessScrollView];
     }
     return _possessScrollView;
 }
@@ -106,53 +236,51 @@
         _activityScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(kSCREEN_WIDTH*2, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT)];
         _activityScrollView.backgroundColor = [UIColor whiteColor];
         _activityScrollView.contentSize = CGSizeMake(kSCREEN_WIDTH, ((self.aDataArray.count/3)+1)*CustomHeight(200));
-        
-        for (NSInteger i = 0; i<self.aDataArray.count; i++) {
-            RewardItemView * item = [[RewardItemView alloc] initWithFrame:CGRectMake(13+(i%3)*CustomWidth(120),(i/3)*CustomHeight(175),CustomWidth(106),CustomHeight(160)) type:AddType model:[self.aDataArray objectAtIndex:i]];
-            item.tag = i;
-            item.delegate = self;
-            item.selectButton.hidden = YES;
-            item.coinLabel.text = [NSString stringWithFormat:@"x %ld",(long)[self.aDataArray objectAtIndex:i].coins];
-            [_activityScrollView addSubview:item];
-        }
+        [self initActivityScrollView];
     }
     return _activityScrollView;
 }
 
-- (NSMutableArray<rewardListModel *> *)cDataArray{
+- (NSMutableArray<Award *> *)cDataArray{
     if (!_cDataArray) {
         _cDataArray = [[NSMutableArray alloc] init];
-        for (NSInteger i = 0; i<15; i++) {
-            rewardListModel * model = [[rewardListModel alloc] init];
-            model.coins = i;
-            model.range = i+5;
-            [_cDataArray addObject:model];
+        NSMutableArray<Award *> *cNotAddedArray = [[[AwardManager sharedInstance] getNotAddedAwardWithUseruuid:[User currentUserUUID]] objectAtIndex:0];
+        NSMutableArray<Award *> *cAddedArray = [[[AwardManager sharedInstance] getAddedAwardWithUseruuid:[User currentUserUUID]] objectAtIndex:0];
+        for (Award * award in cAddedArray) {
+            [_cDataArray addObject:award];
+        }
+        for (Award * award in cNotAddedArray) {
+            [_cDataArray addObject:award];
         }
     }
     return _cDataArray;
 }
 
-- (NSMutableArray<rewardListModel *> *)pDataArray{
+- (NSMutableArray<Award *> *)pDataArray{
     if (!_pDataArray) {
         _pDataArray = [[NSMutableArray alloc] init];
-        for (NSInteger i = 0; i<5; i++) {
-            rewardListModel * model = [[rewardListModel alloc] init];
-            model.coins = i;
-            model.range = i+5;
-            [_pDataArray addObject:model];
+        NSMutableArray<Award *> *pNotAddedArray = [[[AwardManager sharedInstance] getNotAddedAwardWithUseruuid:[User currentUserUUID]] objectAtIndex:1];
+        NSMutableArray<Award *> *pAddedArray = [[[AwardManager sharedInstance] getAddedAwardWithUseruuid:[User currentUserUUID]] objectAtIndex:1];
+        for (Award * award in pAddedArray) {
+            [_pDataArray addObject:award];
+        }
+        for (Award * award in pNotAddedArray) {
+            [_pDataArray addObject:award];
         }
     }
     return _pDataArray;
 }
 
-- (NSMutableArray<rewardListModel *> *)aDataArray{
+- (NSMutableArray<Award *> *)aDataArray{
     if (!_aDataArray) {
         _aDataArray = [[NSMutableArray alloc] init];
-        for (NSInteger i = 0; i<20; i++) {
-            rewardListModel * model = [[rewardListModel alloc] init];
-            model.coins = i;
-            model.range = i+9;
-            [_aDataArray addObject:model];
+        NSMutableArray<Award *> *aNotAddedArray = [[[AwardManager sharedInstance] getNotAddedAwardWithUseruuid:[User currentUserUUID]] objectAtIndex:2];
+        NSMutableArray<Award *> *aAddedArray = [[[AwardManager sharedInstance] getAddedAwardWithUseruuid:[User currentUserUUID]] objectAtIndex:2];
+        for (Award * award in aAddedArray) {
+            [_aDataArray addObject:award];
+        }
+        for (Award * award in aNotAddedArray) {
+            [_aDataArray addObject:award];
         }
     }
     return _aDataArray;

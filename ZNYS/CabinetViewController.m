@@ -75,7 +75,7 @@
     
     self.level.text = [NSString stringWithFormat:@"LV%ld",[self.userLevel integerValue]];
     self.username.text = [User currentUserName];
-    self.stars.text = [NSString stringWithFormat:@"%@",[User currentUserStarsOwned]];
+    self.stars.text = [NSString stringWithFormat:@"%@",[User currentUserTokenOwned]];
     
     //测试等级按钮
     UIButton * levelButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -116,7 +116,7 @@
     self.userLevel = [User currentUserLevel];
     self.level.text = [NSString stringWithFormat:@"LV%@",self.userLevel];
     self.username.text = [User currentUserName];
-    self.stars.text = [NSString stringWithFormat:@"%@",[User currentUserStarsOwned]];
+    self.stars.text = [NSString stringWithFormat:@"%@",[User currentUserTokenOwned]];
     [self refreshCabinet];
 }
 

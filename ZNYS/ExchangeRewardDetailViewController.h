@@ -7,13 +7,13 @@
 //
 
 #import "ZNYSBaseController.h"
-#import "rewardListModel.h"
+#import "Award.h"
 #import "RewardItemView.h"
 
 @interface ExchangeRewardDetailViewController : ZNYSBaseController<RewardItemViewDelegate>
 
-@property (nonatomic,strong) rewardListModel * model;
+@property (nonatomic,strong) Award * model;
 
-- (instancetype)initWithModel:(rewardListModel *)model;
+- (instancetype)initWithModel:(Award *)model;
 
 @end
