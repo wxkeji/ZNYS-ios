@@ -8,6 +8,7 @@
 
 #import "CabinetViewController.h"
 #import "CalendarViewController.h"
+#import "BrushCalendarViewController.h"
 #import "IsParentViewController.h"
 #import "Config.h"
 #import "NSArray+ForceBound.h"
@@ -122,7 +123,7 @@
 
 - (void)initButtonEvents
 {
-    [self.calendarButton addTarget:self action:@selector(toCalendar) forControlEvents:UIControlEventTouchUpInside];
+    [self.calendarButton addTarget:self action:@selector(toBrushCalendar) forControlEvents:UIControlEventTouchUpInside];
     [self.settingsButton addTarget:self action:@selector(toSetting) forControlEvents:UIControlEventTouchUpInside];
     [self.connectToothBrushButton addTarget:self action:@selector(toConnectBrush) forControlEvents:UIControlEventTouchUpInside];
 }
@@ -350,13 +351,12 @@
     NSLog(@"Item was touched.");
 }
 
-
-- (void)toCalendar
+- (void)toBrushCalendar
 {
-    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Calendar" bundle:nil];
-    CalendarViewController *cvc = [story instantiateViewControllerWithIdentifier:@"CalendarViewController"];
-    [self.navigationController pushViewController:cvc animated:YES];
+    BrushCalendarViewController * bcvc = [[BrushCalendarViewController alloc] init];
+    [self.navigationController pushViewController:bcvc animated:YES];
 }
+
 
 - (void)toSetting{
     VerifyPasswordViewController * viewController = [[VerifyPasswordViewController alloc] init];
@@ -395,6 +395,12 @@
 }
 
 #pragma mark - 历史遗留代码
+- (void)toCalendar
+{
+    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Calendar" bundle:nil];
+    CalendarViewController *cvc = [story instantiateViewControllerWithIdentifier:@"CalendarViewController"];
+    [self.navigationController pushViewController:cvc animated:YES];
+}
 
 - (IBAction)synchronize:(id)sender
 {
