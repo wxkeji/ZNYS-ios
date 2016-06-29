@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 7.0">
     <entity name="AreaStatistics" representedClassName="AreaStatistics" syncable="YES">
         <attribute name="areaName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="brushingStatisticsID" optional="YES" attributeType="String" syncable="YES"/>
@@ -57,12 +57,15 @@
         <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="hasItem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="inCabinet" inverseEntity="Item" syncable="YES"/>
     </entity>
-    <entity name="CalenderItem" syncable="YES">
+    <entity name="CalendarItem" representedClassName="CalendarItem" syncable="YES">
         <attribute name="awardCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="connectStarNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eveningStarNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="firstAwardID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="morningStarNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="starNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="belongToUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="possessCalenderItem" inverseEntity="User" syncable="YES"/>
@@ -153,7 +156,7 @@
         <relationship name="beViewedByCustomerService" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CustomerServices" inverseName="viewUsers" inverseEntity="CustomerServices" syncable="YES"/>
         <relationship name="possessAwards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Award" inverseName="bePossessedByUser" inverseEntity="Award" syncable="YES"/>
         <relationship name="possessBelongings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Belongings" inverseName="bePossessedByUser" inverseEntity="Belongings" syncable="YES"/>
-        <relationship name="possessCalenderItem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CalenderItem" inverseName="belongToUser" inverseEntity="CalenderItem" syncable="YES"/>
+        <relationship name="possessCalenderItem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CalendarItem" inverseName="belongToUser" inverseEntity="CalendarItem" syncable="YES"/>
         <relationship name="possessItem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="bePossessedByUser" inverseEntity="Item" syncable="YES"/>
         <relationship name="possessToothBrushes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ToothBrush" inverseName="bePossessedByUser" inverseEntity="ToothBrush" syncable="YES"/>
     </entity>
@@ -163,7 +166,7 @@
         <element name="Belongings" positionX="-927" positionY="293" width="128" height="148"/>
         <element name="BrushingStatistics" positionX="16" positionY="-199" width="128" height="210"/>
         <element name="Cabinet" positionX="-126" positionY="-423" width="128" height="118"/>
-        <element name="CalenderItem" positionX="-144" positionY="-36" width="128" height="165"/>
+        <element name="CalendarItem" positionX="-144" positionY="-36" width="128" height="208"/>
         <element name="CustomerServices" positionX="-918" positionY="459" width="128" height="133"/>
         <element name="InferenceEngine" positionX="-738" positionY="477" width="128" height="133"/>
         <element name="Item" positionX="-317" positionY="-420" width="128" height="150"/>

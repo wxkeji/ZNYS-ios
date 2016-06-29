@@ -26,6 +26,9 @@
 		451D6A1F1C9A8434000B6A91 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 451D6A1E1C9A8434000B6A91 /* Model.xcdatamodeld */; };
 		451D6A211C9A8445000B6A91 /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 451D6A201C9A8445000B6A91 /* Model.xcdatamodel */; };
 		454112741C95BE9600BE4DE9 /* ZNYSprogressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */; };
+		455AAA751D24104800BE3F27 /* CalendarItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 455AAA721D24104800BE3F27 /* CalendarItem+CoreDataProperties.m */; };
+		455AAA761D24104800BE3F27 /* CalendarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 455AAA741D24104800BE3F27 /* CalendarItem.m */; };
+		455AAA791D2410C000BE3F27 /* CalendarItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 455AAA781D2410C000BE3F27 /* CalendarItemManager.m */; };
 		4576E3E21CCFD37800A1BA2B /* AwardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4576E3E11CCFD37800A1BA2B /* AwardManager.m */; };
 		458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458093901C21448000CB9BF9 /* CoreData.framework */; };
 		458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 458093941C21453200CB9BF9 /* CoreDataHelper.m */; };
@@ -175,6 +178,12 @@
 		451D6A201C9A8445000B6A91 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		454112721C95BE9600BE4DE9 /* ZNYSprogressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNYSprogressBar.h; sourceTree = "<group>"; };
 		454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNYSprogressBar.m; sourceTree = "<group>"; };
+		455AAA711D24104800BE3F27 /* CalendarItem+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CalendarItem+CoreDataProperties.h"; sourceTree = "<group>"; };
+		455AAA721D24104800BE3F27 /* CalendarItem+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CalendarItem+CoreDataProperties.m"; sourceTree = "<group>"; };
+		455AAA731D24104800BE3F27 /* CalendarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarItem.h; sourceTree = "<group>"; };
+		455AAA741D24104800BE3F27 /* CalendarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarItem.m; sourceTree = "<group>"; };
+		455AAA771D2410C000BE3F27 /* CalendarItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarItemManager.h; sourceTree = "<group>"; };
+		455AAA781D2410C000BE3F27 /* CalendarItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarItemManager.m; sourceTree = "<group>"; };
 		4576E3E01CCFD37800A1BA2B /* AwardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwardManager.h; sourceTree = "<group>"; };
 		4576E3E11CCFD37800A1BA2B /* AwardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwardManager.m; sourceTree = "<group>"; };
 		458093901C21448000CB9BF9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -567,6 +576,8 @@
 			children = (
 				458093931C21453200CB9BF9 /* CoreDataHelper.h */,
 				458093941C21453200CB9BF9 /* CoreDataHelper.m */,
+				455AAA771D2410C000BE3F27 /* CalendarItemManager.h */,
+				455AAA781D2410C000BE3F27 /* CalendarItemManager.m */,
 				4576E3E01CCFD37800A1BA2B /* AwardManager.h */,
 				4576E3E11CCFD37800A1BA2B /* AwardManager.m */,
 			);
@@ -659,6 +670,10 @@
 				45BC408E1C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m */,
 				45BC408F1C2469D9006A185F /* BrushingStatistics.h */,
 				45BC40901C2469D9006A185F /* BrushingStatistics.m */,
+				455AAA711D24104800BE3F27 /* CalendarItem+CoreDataProperties.h */,
+				455AAA721D24104800BE3F27 /* CalendarItem+CoreDataProperties.m */,
+				455AAA731D24104800BE3F27 /* CalendarItem.h */,
+				455AAA741D24104800BE3F27 /* CalendarItem.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -1186,6 +1201,7 @@
 				64CCBD8E1CD30B94003EFFAD /* AddRewardButtonView.m in Sources */,
 				45BC409C1C2469D9006A185F /* Rules.m in Sources */,
 				64CCBD971CD5BA1F003EFFAD /* MAKAFakeRootAlertView.m in Sources */,
+				455AAA751D24104800BE3F27 /* CalendarItem+CoreDataProperties.m in Sources */,
 				6476646A1C3CB1A000386E05 /* UITextField+Font.m in Sources */,
 				64CCBD821CD30361003EFFAD /* AddRewardViewController.m in Sources */,
 				C43136441BC279800097A91B /* RightToLeftSegue.m in Sources */,
@@ -1200,6 +1216,7 @@
 				645A016F1C37B5B800556395 /* AddAccountView.m in Sources */,
 				45BC409B1C2469D9006A185F /* Rules+CoreDataProperties.m in Sources */,
 				645A018B1C37C9AC00556395 /* UILabel+Font.m in Sources */,
+				455AAA761D24104800BE3F27 /* CalendarItem.m in Sources */,
 				647E05D41C3B71E800ADB810 /* SwitchUserView.m in Sources */,
 				645A01901C37CB2500556395 /* ZNYSBaseController.m in Sources */,
 				643ADB071CD8AA2A00723BB5 /* ExchangeRewardDetailViewController.m in Sources */,
@@ -1226,6 +1243,7 @@
 				0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */,
 				4576E3E21CCFD37800A1BA2B /* AwardManager.m in Sources */,
 				64CCBD941CD4909F003EFFAD /* AddRewardScrollView.m in Sources */,
+				455AAA791D2410C000BE3F27 /* CalendarItemManager.m in Sources */,
 				45BC40911C2469D9006A185F /* User+CoreDataProperties.m in Sources */,
 				0421D3741B8126C700BF6065 /* CabinetItem.m in Sources */,
 				45BC40A01C2469D9006A185F /* Belongings.m in Sources */,
