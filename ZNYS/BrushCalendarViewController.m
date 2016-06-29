@@ -1,5 +1,5 @@
 //
-//  CalenderViewController.m
+//  CalendarViewController.m
 //  ZNYS
 //
 //  Created by yu243e on 16/6/21.
@@ -8,6 +8,7 @@
 
 #import "BrushCalendarViewController.h"
 #import "CoreDataHelper.h"
+#import "CalendarView.h"
 
 @interface BrushCalendarViewController ()
 
@@ -23,6 +24,13 @@
 
 @property (nonatomic,strong) UILabel * coinLabel;
 
+@property (nonatomic, strong) CalendarView * calendarView;
+
+@property (nonatomic, strong) UILabel *dateLabel;
+
+@property (nonatomic, strong) UILabel *goalLabel;
+
+- (NSInteger)currentWeekday;
 @end
 
 @implementation BrushCalendarViewController
@@ -36,6 +44,9 @@
     _userLabel = nil;
     _coinLabel = nil;
     _coinView = nil;
+    _calendarView = nil;
+    _dateLabel = nil;
+    _goalLabel = nil;
 }
 
 - (void)viewDidLoad {
@@ -49,6 +60,9 @@
     [self.view addSubview:self.userLabel];
     [self.view addSubview:self.coinLabel];
     [self.view addSubview:self.coinView];
+    [self.view addSubview:self.calendarView];
+    [self.view addSubview:self.dateLabel];
+    [self.view addSubview:self.goalLabel];
     
     WS(weakSelf, self);
     [self.backgroundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -95,8 +109,41 @@
         make.height.mas_equalTo(CustomHeight(17));
     }];
     
+    
+//    [self.calendarView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(weakSelf.view.mas_top).with.offset(CustomHeight(205));
+//        make.centerX.mas_equalTo(weakSelf.view.mas_centerX);
+//        
+//    }];
+    
+    
+    [self.dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(weakSelf.view.mas_top).with.offset(CustomWidth(513));
+        make.centerY.mas_equalTo(weakSelf.view.mas_centerY);
+        make.width.mas_equalTo(CustomWidth(375));
+        make.height.mas_equalTo(CustomHeight(30));
+    }];
+    
+    [self.goalLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(weakSelf.view.mas_bottom).with.offset(CustomWidth(-40));
+        make.left.equalTo(weakSelf.view.mas_left).with.offset(CustomWidth(170));
+        make.width.mas_equalTo(CustomWidth(180));
+        make.height.mas_equalTo(CustomHeight(30));
+    }];
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    
+    
+    [super viewWillAppear:animated];
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"\n\ncalendarView %@\n",NSStringFromCGRect(self.calendarView.frame));
+    for (UIImageView *aImage in self.calendarView.dayBackgroundArray) {
+        NSLog(@"dayBackgroundArray %ld %@\n",(long)aImage.tag, NSStringFromCGRect(aImage.frame));
+    }
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -112,6 +159,13 @@
 }
 */
 #pragma mark private met
+
+- (NSInteger)currentWeekday:(NSDate *)date{
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSInteger weekday = [gregorianCalendar component:NSCalendarUnitWeekday fromDate:date];
+    NSLog(@"%ld weekday",weekday);
+    return weekday;
+}
 
 #pragma mark event action
 
@@ -175,4 +229,65 @@
     return _coinLabel;
 }
 
+- (CalendarView *)calendarView {
+    if(!_calendarView) {
+        //周日到周六 1 - 7
+        _calendarView = [[CalendarView alloc] initWithFrame:CGRectMake(CustomWidth(2.5), CustomHeight(190), CustomWidth(370), CustomHeight(280)) firstDay:[self currentWeekday:[NSDate date]]];
+        _calendarView.layer.cornerRadius = 8.0f;
+        [_calendarView changeTodayBackgroundColor:2];
+        _calendarView.buttonClickBlock = ^(NSInteger number){
+            NSLog(@"tap %ld",(long)number);
+        };
+    }
+    
+    return _calendarView;
+}
+
+- (UILabel *)dateLabel {
+    if(!_dateLabel) {
+        NSDate *firstDate;
+        NSDate *lastDate;
+        NSString *firstDateString;
+        NSString *lastDateString;
+        
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+        [formatter setDateFormat:@"YYYY年MM月dd日"];
+        
+        //firstDate = 测试日期
+        NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+        dateComponents.day = 10;
+        dateComponents.month = 6;
+        dateComponents.year = 2016;
+        NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+        firstDate = [gregorianCalendar dateFromComponents:dateComponents];
+        
+        //firstDay
+        firstDateString = [formatter stringFromDate:firstDate];
+        
+        //lastDay
+        lastDate = [[NSDate alloc]initWithTimeInterval:(NSTimeInterval)(21*24*60*60) sinceDate:firstDate];
+        lastDateString = [formatter stringFromDate:lastDate];
+        
+        _dateLabel = [[UILabel alloc]init];
+        _dateLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@", firstDateString, lastDateString];
+        _dateLabel.textAlignment = NSTextAlignmentCenter;
+        
+        _dateLabel.textColor = [UIColor whiteColor];
+        _dateLabel.backgroundColor = RGBCOLOR(16,180,255);
+    }
+    return _dateLabel;
+}
+
+- (UILabel *)goalLabel {
+    if (!_goalLabel) {
+        _goalLabel = [[UILabel alloc]init];
+        _goalLabel.text = [[NSString alloc]initWithFormat:@"我要在21天消灭蛀牙"];
+        
+        _dateLabel.textColor = RGBCOLOR(15,112,135);
+        _goalLabel.backgroundColor = RGBCOLOR(16,180,255);
+        
+    }
+    return _goalLabel;
+}
 @end

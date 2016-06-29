@@ -21,7 +21,7 @@
 #define RGBCOLOR(r,g,b)          [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
 #define RGBACOLOR(r,g,b,a)       [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
 
-#define CustomWidth(width)  (width/375.0f)*kSCREEN_WIDTH
-#define CustomHeight(height)  (height/667.0f)*kSCREEN_HEIGHT
+#define CustomWidth(width)  ((width)/375.0f)*kSCREEN_WIDTH
+#define CustomHeight(height)  ((height)/667.0f)*kSCREEN_HEIGHT
 
 #endif /* ToolMacroes_h */
