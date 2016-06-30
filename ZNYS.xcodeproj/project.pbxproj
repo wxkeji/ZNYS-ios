@@ -23,9 +23,19 @@
 		0487D7801B74548F00756EF8 /* ZNYSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D77F1B74548F00756EF8 /* ZNYSTests.m */; };
 		04A7510F1C43D9E500B3F537 /* GiftList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A7510E1C43D9E500B3F537 /* GiftList.plist */; };
 		04C978F31C44BE100046DB4A /* GiftItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C978F21C44BE100046DB4A /* GiftItem.m */; };
+		14AE2882E3EA6C1FFF32284D /* libPods-ZNYS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BE4FFF790A33BC1EB578A8 /* libPods-ZNYS.a */; };
+		3C98A2241D24FF0700046BE8 /* BrushCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2231D24FF0700046BE8 /* BrushCalendarViewController.m */; };
+		3C98A2291D24FF1800046BE8 /* CalendarDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2261D24FF1800046BE8 /* CalendarDetailView.m */; };
+		3C98A22A1D24FF1800046BE8 /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2281D24FF1800046BE8 /* CalendarView.m */; };
+		3C98A22E1D24FF4700046BE8 /* dayBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C98A22C1D24FF4700046BE8 /* dayBackground.png */; };
+		3C98A22F1D24FF4700046BE8 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C98A22D1D24FF4700046BE8 /* star.png */; };
+		3C98A2311D2501F400046BE8 /* brushCalendarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C98A2301D2501F400046BE8 /* brushCalendarBackground.png */; };
 		451D6A1F1C9A8434000B6A91 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 451D6A1E1C9A8434000B6A91 /* Model.xcdatamodeld */; };
 		451D6A211C9A8445000B6A91 /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 451D6A201C9A8445000B6A91 /* Model.xcdatamodel */; };
 		454112741C95BE9600BE4DE9 /* ZNYSprogressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */; };
+		455AAA751D24104800BE3F27 /* CalendarItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 455AAA721D24104800BE3F27 /* CalendarItem+CoreDataProperties.m */; };
+		455AAA761D24104800BE3F27 /* CalendarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 455AAA741D24104800BE3F27 /* CalendarItem.m */; };
+		455AAA791D2410C000BE3F27 /* CalendarItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 455AAA781D2410C000BE3F27 /* CalendarItemManager.m */; };
 		4576E3E21CCFD37800A1BA2B /* AwardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4576E3E11CCFD37800A1BA2B /* AwardManager.m */; };
 		458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458093901C21448000CB9BF9 /* CoreData.framework */; };
 		458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 458093941C21453200CB9BF9 /* CoreDataHelper.m */; };
@@ -71,10 +81,12 @@
 		45EB69D11C40B2C800160457 /* BCTopBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69CB1C40B2C800160457 /* BCTopBar.png */; };
 		45EB69D21C40B2C800160457 /* BCTopBarReturnButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69CC1C40B2C800160457 /* BCTopBarReturnButton.png */; };
 		45EB69D41C415DDE00160457 /* BCBottomPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69D31C415DDE00160457 /* BCBottomPattern.png */; };
+		45F786601D0D00E400E4F91D /* ToothBrushManagentMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F7865F1D0D00E400E4F91D /* ToothBrushManagentMainView.m */; };
+		45F786631D0D010400E4F91D /* ToothBrushManagentMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F786621D0D010400E4F91D /* ToothBrushManagentMainViewController.m */; };
 		6412FC9B1C476AB400DF8FC5 /* RewardListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6412FC9A1C476AB400DF8FC5 /* RewardListViewController.m */; };
 		6412FCA11C477F0C00DF8FC5 /* RewardItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6412FCA01C477F0C00DF8FC5 /* RewardItemView.m */; };
 		64337DC81C3B8DD400C9D811 /* ThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64337DC71C3B8DD400C9D811 /* ThumbView.m */; };
-		643ADB071CD8AA2A00723BB5 /* ExchangeRewardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 643ADB061CD8AA2A00723BB5 /* ExchangeRewardDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		643ADB071CD8AA2A00723BB5 /* ExchangeRewardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 643ADB061CD8AA2A00723BB5 /* ExchangeRewardDetailViewController.m */; };
 		645A016F1C37B5B800556395 /* AddAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016A1C37B5B800556395 /* AddAccountView.m */; };
 		645A01701C37B5B800556395 /* SelectBirthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016C1C37B5B800556395 /* SelectBirthView.m */; };
 		645A01711C37B5B800556395 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016E1C37B5B800556395 /* AddAccountViewController.m */; };
@@ -102,21 +114,20 @@
 		647E05D41C3B71E800ADB810 /* SwitchUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E05D31C3B71E800ADB810 /* SwitchUserView.m */; };
 		6488AE071CF53D2D00AE062D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6488AE061CF53D2D00AE062D /* AVFoundation.framework */; };
 		6488AE091CF53D3800AE062D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6488AE081CF53D3800AE062D /* CoreAudio.framework */; };
-		64CCBD821CD30361003EFFAD /* AddRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD811CD30361003EFFAD /* AddRewardViewController.m */; settings = {ASSET_TAGS = (); }; };
-		64CCBD851CD30460003EFFAD /* AddRewardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD841CD30460003EFFAD /* AddRewardView.m */; settings = {ASSET_TAGS = (); }; };
-		64CCBD881CD30B6B003EFFAD /* ZNYSBaseNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD871CD30B6B003EFFAD /* ZNYSBaseNavigationBar.m */; settings = {ASSET_TAGS = (); }; };
-		64CCBD8B1CD30B7E003EFFAD /* rewardListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD8A1CD30B7E003EFFAD /* rewardListModel.m */; settings = {ASSET_TAGS = (); }; };
-		64CCBD8E1CD30B94003EFFAD /* AddRewardButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD8D1CD30B94003EFFAD /* AddRewardButtonView.m */; settings = {ASSET_TAGS = (); }; };
-		64CCBD911CD314E6003EFFAD /* ChooseNumberScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD901CD314E6003EFFAD /* ChooseNumberScrollView.m */; settings = {ASSET_TAGS = (); }; };
-		64CCBD941CD4909F003EFFAD /* AddRewardScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD931CD4909F003EFFAD /* AddRewardScrollView.m */; settings = {ASSET_TAGS = (); }; };
-		64CCBD971CD5BA1F003EFFAD /* MAKAFakeRootAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD961CD5BA1F003EFFAD /* MAKAFakeRootAlertView.m */; settings = {ASSET_TAGS = (); }; };
-		64CCBD9A1CD88A16003EFFAD /* ExchangeRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD991CD88A16003EFFAD /* ExchangeRewardViewController.m */; settings = {ASSET_TAGS = (); }; };
+		64CCBD821CD30361003EFFAD /* AddRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD811CD30361003EFFAD /* AddRewardViewController.m */; };
+		64CCBD851CD30460003EFFAD /* AddRewardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD841CD30460003EFFAD /* AddRewardView.m */; };
+		64CCBD881CD30B6B003EFFAD /* ZNYSBaseNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD871CD30B6B003EFFAD /* ZNYSBaseNavigationBar.m */; };
+		64CCBD8B1CD30B7E003EFFAD /* rewardListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD8A1CD30B7E003EFFAD /* rewardListModel.m */; };
+		64CCBD8E1CD30B94003EFFAD /* AddRewardButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD8D1CD30B94003EFFAD /* AddRewardButtonView.m */; };
+		64CCBD911CD314E6003EFFAD /* ChooseNumberScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD901CD314E6003EFFAD /* ChooseNumberScrollView.m */; };
+		64CCBD941CD4909F003EFFAD /* AddRewardScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD931CD4909F003EFFAD /* AddRewardScrollView.m */; };
+		64CCBD971CD5BA1F003EFFAD /* MAKAFakeRootAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD961CD5BA1F003EFFAD /* MAKAFakeRootAlertView.m */; };
+		64CCBD9A1CD88A16003EFFAD /* ExchangeRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD991CD88A16003EFFAD /* ExchangeRewardViewController.m */; };
 		6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F368F061BBCCE1700D273C9 /* IsParentViewController.m */; };
 		6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F368F071BBCCE1700D273C9 /* IsParentViewController.xib */; };
 		6F3962821C3A12C100C78F84 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F3962811C3A12C100C78F84 /* Cabinet.storyboard */; };
 		6F3962841C3A13E200C78F84 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F3962831C3A13E200C78F84 /* Calendar.storyboard */; };
 		6FC69C131BBC4DBD0074C38E /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */; };
-		840ACE02D000AED2E3D3E8A8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 683F419A9E2D0C36989BFD4A /* libPods.a */; };
 		C43136411BC26CF90097A91B /* LeftToRightSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = C43136401BC26CF90097A91B /* LeftToRightSegue.m */; };
 		C43136441BC279800097A91B /* RightToLeftSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = C43136431BC279800097A91B /* RightToLeftSegue.m */; };
 		C43136471BC282C30097A91B /* IsParentToCabinetSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = C43136461BC282C30097A91B /* IsParentToCabinetSegue.m */; };
@@ -170,9 +181,24 @@
 		04A7510E1C43D9E500B3F537 /* GiftList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GiftList.plist; sourceTree = "<group>"; };
 		04C978F11C44BE100046DB4A /* GiftItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftItem.h; sourceTree = "<group>"; };
 		04C978F21C44BE100046DB4A /* GiftItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftItem.m; sourceTree = "<group>"; };
+		3C98A2221D24FF0700046BE8 /* BrushCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushCalendarViewController.h; sourceTree = "<group>"; };
+		3C98A2231D24FF0700046BE8 /* BrushCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushCalendarViewController.m; sourceTree = "<group>"; };
+		3C98A2251D24FF1800046BE8 /* CalendarDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDetailView.h; sourceTree = "<group>"; };
+		3C98A2261D24FF1800046BE8 /* CalendarDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDetailView.m; sourceTree = "<group>"; };
+		3C98A2271D24FF1800046BE8 /* CalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarView.h; sourceTree = "<group>"; };
+		3C98A2281D24FF1800046BE8 /* CalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarView.m; sourceTree = "<group>"; };
+		3C98A22C1D24FF4700046BE8 /* dayBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dayBackground.png; sourceTree = "<group>"; };
+		3C98A22D1D24FF4700046BE8 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		3C98A2301D2501F400046BE8 /* brushCalendarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brushCalendarBackground.png; sourceTree = "<group>"; };
 		451D6A201C9A8445000B6A91 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		454112721C95BE9600BE4DE9 /* ZNYSprogressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNYSprogressBar.h; sourceTree = "<group>"; };
 		454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNYSprogressBar.m; sourceTree = "<group>"; };
+		455AAA711D24104800BE3F27 /* CalendarItem+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CalendarItem+CoreDataProperties.h"; sourceTree = "<group>"; };
+		455AAA721D24104800BE3F27 /* CalendarItem+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CalendarItem+CoreDataProperties.m"; sourceTree = "<group>"; };
+		455AAA731D24104800BE3F27 /* CalendarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarItem.h; sourceTree = "<group>"; };
+		455AAA741D24104800BE3F27 /* CalendarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarItem.m; sourceTree = "<group>"; };
+		455AAA771D2410C000BE3F27 /* CalendarItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarItemManager.h; sourceTree = "<group>"; };
+		455AAA781D2410C000BE3F27 /* CalendarItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarItemManager.m; sourceTree = "<group>"; };
 		4576E3E01CCFD37800A1BA2B /* AwardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwardManager.h; sourceTree = "<group>"; };
 		4576E3E11CCFD37800A1BA2B /* AwardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwardManager.m; sourceTree = "<group>"; };
 		458093901C21448000CB9BF9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -245,6 +271,10 @@
 		45EB69CB1C40B2C800160457 /* BCTopBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCTopBar.png; sourceTree = "<group>"; };
 		45EB69CC1C40B2C800160457 /* BCTopBarReturnButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCTopBarReturnButton.png; sourceTree = "<group>"; };
 		45EB69D31C415DDE00160457 /* BCBottomPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCBottomPattern.png; sourceTree = "<group>"; };
+		45F7865E1D0D00E400E4F91D /* ToothBrushManagentMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToothBrushManagentMainView.h; sourceTree = "<group>"; };
+		45F7865F1D0D00E400E4F91D /* ToothBrushManagentMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToothBrushManagentMainView.m; sourceTree = "<group>"; };
+		45F786611D0D010400E4F91D /* ToothBrushManagentMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToothBrushManagentMainViewController.h; sourceTree = "<group>"; };
+		45F786621D0D010400E4F91D /* ToothBrushManagentMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToothBrushManagentMainViewController.m; sourceTree = "<group>"; };
 		6412FC991C476AB400DF8FC5 /* RewardListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardListViewController.h; sourceTree = "<group>"; };
 		6412FC9A1C476AB400DF8FC5 /* RewardListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardListViewController.m; sourceTree = "<group>"; };
 		6412FC9F1C477F0C00DF8FC5 /* RewardItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardItemView.h; sourceTree = "<group>"; };
@@ -324,7 +354,10 @@
 		6FC69C101BBC4DBD0074C38E /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		6FC69C111BBC4DBD0074C38E /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		869812908A6DD8477FF731F8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		90BE4FFF790A33BC1EB578A8 /* libPods-ZNYS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZNYS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C03429B6C007A30E11C265 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		95D5691AAB0097B916FF9D6E /* Pods-ZNYS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZNYS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZNYS/Pods-ZNYS.debug.xcconfig"; sourceTree = "<group>"; };
+		9F041B2DDFC46297669F9D2D /* Pods-ZNYS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZNYS.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZNYS/Pods-ZNYS.release.xcconfig"; sourceTree = "<group>"; };
 		C431363F1BC26CF90097A91B /* LeftToRightSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftToRightSegue.h; sourceTree = "<group>"; };
 		C43136401BC26CF90097A91B /* LeftToRightSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftToRightSegue.m; sourceTree = "<group>"; };
 		C43136421BC279800097A91B /* RightToLeftSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightToLeftSegue.h; sourceTree = "<group>"; };
@@ -355,8 +388,8 @@
 				6488AE091CF53D3800AE062D /* CoreAudio.framework in Frameworks */,
 				6488AE071CF53D2D00AE062D /* AVFoundation.framework in Frameworks */,
 				458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */,
-				840ACE02D000AED2E3D3E8A8 /* libPods.a in Frameworks */,
 				45E8756E1C44E52C009A5DDB /* libBLELib.a in Frameworks */,
+				14AE2882E3EA6C1FFF32284D /* libPods-ZNYS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,11 +589,60 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3C98A21E1D24FEC000046BE8 /* CalendarModule */ = {
+			isa = PBXGroup;
+			children = (
+				3C98A2211D24FEEB00046BE8 /* Controller */,
+				3C98A2201D24FEE500046BE8 /* View */,
+				3C98A21F1D24FED400046BE8 /* Model */,
+			);
+			name = CalendarModule;
+			sourceTree = "<group>";
+		};
+		3C98A21F1D24FED400046BE8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3C98A2201D24FEE500046BE8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3C98A2251D24FF1800046BE8 /* CalendarDetailView.h */,
+				3C98A2261D24FF1800046BE8 /* CalendarDetailView.m */,
+				3C98A2271D24FF1800046BE8 /* CalendarView.h */,
+				3C98A2281D24FF1800046BE8 /* CalendarView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3C98A2211D24FEEB00046BE8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3C98A2221D24FF0700046BE8 /* BrushCalendarViewController.h */,
+				3C98A2231D24FF0700046BE8 /* BrushCalendarViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		3C98A22B1D24FF2700046BE8 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				3C98A2301D2501F400046BE8 /* brushCalendarBackground.png */,
+				3C98A22C1D24FF4700046BE8 /* dayBackground.png */,
+				3C98A22D1D24FF4700046BE8 /* star.png */,
+			);
+			name = Calendar;
+			sourceTree = "<group>";
+		};
 		458093921C2144B700CB9BF9 /* CoreDataHelper */ = {
 			isa = PBXGroup;
 			children = (
 				458093931C21453200CB9BF9 /* CoreDataHelper.h */,
 				458093941C21453200CB9BF9 /* CoreDataHelper.m */,
+				455AAA771D2410C000BE3F27 /* CalendarItemManager.h */,
+				455AAA781D2410C000BE3F27 /* CalendarItemManager.m */,
 				4576E3E01CCFD37800A1BA2B /* AwardManager.h */,
 				4576E3E11CCFD37800A1BA2B /* AwardManager.m */,
 			);
@@ -645,10 +727,6 @@
 				45BC40821C2469D9006A185F /* Rules+CoreDataProperties.m */,
 				45BC40831C2469D9006A185F /* Rules.h */,
 				45BC40841C2469D9006A185F /* Rules.m */,
-				45BC40851C2469D9006A185F /* ToothBrush+CoreDataProperties.h */,
-				45BC40861C2469D9006A185F /* ToothBrush+CoreDataProperties.m */,
-				45BC40871C2469D9006A185F /* ToothBrush.h */,
-				45BC40881C2469D9006A185F /* ToothBrush.m */,
 				45BC40891C2469D9006A185F /* Belongings+CoreDataProperties.h */,
 				45BC408A1C2469D9006A185F /* Belongings+CoreDataProperties.m */,
 				45BC408B1C2469D9006A185F /* Belongings.h */,
@@ -657,6 +735,10 @@
 				45BC408E1C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m */,
 				45BC408F1C2469D9006A185F /* BrushingStatistics.h */,
 				45BC40901C2469D9006A185F /* BrushingStatistics.m */,
+				455AAA711D24104800BE3F27 /* CalendarItem+CoreDataProperties.h */,
+				455AAA721D24104800BE3F27 /* CalendarItem+CoreDataProperties.m */,
+				455AAA731D24104800BE3F27 /* CalendarItem.h */,
+				455AAA741D24104800BE3F27 /* CalendarItem.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -712,12 +794,52 @@
 			name = ToothBrushConnecting;
 			sourceTree = "<group>";
 		};
+		45F7865A1D0D007D00E4F91D /* ToothBrushManagementModule */ = {
+			isa = PBXGroup;
+			children = (
+				45F7865D1D0D009F00E4F91D /* controller */,
+				45F7865C1D0D009A00E4F91D /* view */,
+				45F7865B1D0D009600E4F91D /* model */,
+			);
+			name = ToothBrushManagementModule;
+			sourceTree = "<group>";
+		};
+		45F7865B1D0D009600E4F91D /* model */ = {
+			isa = PBXGroup;
+			children = (
+				45BC40851C2469D9006A185F /* ToothBrush+CoreDataProperties.h */,
+				45BC40861C2469D9006A185F /* ToothBrush+CoreDataProperties.m */,
+				45BC40871C2469D9006A185F /* ToothBrush.h */,
+				45BC40881C2469D9006A185F /* ToothBrush.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		45F7865C1D0D009A00E4F91D /* view */ = {
+			isa = PBXGroup;
+			children = (
+				45F7865E1D0D00E400E4F91D /* ToothBrushManagentMainView.h */,
+				45F7865F1D0D00E400E4F91D /* ToothBrushManagentMainView.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		45F7865D1D0D009F00E4F91D /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				45F786611D0D010400E4F91D /* ToothBrushManagentMainViewController.h */,
+				45F786621D0D010400E4F91D /* ToothBrushManagentMainViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 		63353D4AB29EDC413AD1EB41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				6488AE081CF53D3800AE062D /* CoreAudio.framework */,
 				6488AE061CF53D2D00AE062D /* AVFoundation.framework */,
 				683F419A9E2D0C36989BFD4A /* libPods.a */,
+				90BE4FFF790A33BC1EB578A8 /* libPods-ZNYS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -778,6 +900,8 @@
 		645A01651C37B51D00556395 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3C98A21E1D24FEC000046BE8 /* CalendarModule */,
+				45F7865A1D0D007D00E4F91D /* ToothBrushManagementModule */,
 				6412FC951C476A4600DF8FC5 /* UserRewardModule */,
 				645A01661C37B52A00556395 /* UserAccountModule */,
 				458093DD1C231BE500CB9BF9 /* BrushConnectingModule */,
@@ -871,6 +995,7 @@
 		645A017A1C37BBA000556395 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				3C98A22B1D24FF2700046BE8 /* Calendar */,
 				45EB69C61C40B2B100160457 /* ToothBrushConnecting */,
 				645A017B1C37BBA600556395 /* UserAccount */,
 			);
@@ -955,6 +1080,8 @@
 			children = (
 				91C03429B6C007A30E11C265 /* Pods.debug.xcconfig */,
 				869812908A6DD8477FF731F8 /* Pods.release.xcconfig */,
+				95D5691AAB0097B916FF9D6E /* Pods-ZNYS.debug.xcconfig */,
+				9F041B2DDFC46297669F9D2D /* Pods-ZNYS.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -966,11 +1093,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0487D7831B74548F00756EF8 /* Build configuration list for PBXNativeTarget "ZNYS" */;
 			buildPhases = (
-				7492CCC6575E8E324CD396BF /* Check Pods Manifest.lock */,
+				7492CCC6575E8E324CD396BF /* [CP] Check Pods Manifest.lock */,
 				0487D75C1B74548F00756EF8 /* Sources */,
 				0487D75D1B74548F00756EF8 /* Frameworks */,
 				0487D75E1B74548F00756EF8 /* Resources */,
-				C6CF789D48CA643A4251B0F0 /* Copy Pods Resources */,
+				C6CF789D48CA643A4251B0F0 /* [CP] Copy Pods Resources */,
+				A0D38C16E211DB89498B7434 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1052,6 +1180,7 @@
 				645A01831C37C56D00556395 /* 华康娃娃体.TTF in Resources */,
 				45EB69CD1C40B2C800160457 /* BCBackground.png in Resources */,
 				45DC5E681C421B80000D6A7A /* 进度90.png in Resources */,
+				3C98A22F1D24FF4700046BE8 /* star.png in Resources */,
 				45DC5E601C421B80000D6A7A /* 进度10.png in Resources */,
 				647E05BF1C3A5C1D00ADB810 /* userAccount_back@2x.png in Resources */,
 				45EB69CF1C40B2C800160457 /* BCProgress_fill.png in Resources */,
@@ -1060,6 +1189,7 @@
 				041365FA1BAD8AA600CD0604 /* DialogView.xib in Resources */,
 				45EB69D21C40B2C800160457 /* BCTopBarReturnButton.png in Resources */,
 				45DC5E5F1C421B80000D6A7A /* 进度0.png in Resources */,
+				3C98A2311D2501F400046BE8 /* brushCalendarBackground.png in Resources */,
 				45DC5E631C421B80000D6A7A /* 进度40.png in Resources */,
 				6476646D1C3E600F00386E05 /* 勋章描述.json in Resources */,
 				45DC5E621C421B80000D6A7A /* 进度30.png in Resources */,
@@ -1067,6 +1197,7 @@
 				45EB69D41C415DDE00160457 /* BCBottomPattern.png in Resources */,
 				6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */,
 				0487D7711B74548F00756EF8 /* Images.xcassets in Resources */,
+				3C98A22E1D24FF4700046BE8 /* dayBackground.png in Resources */,
 				45DC5E661C421B80000D6A7A /* 进度70.png in Resources */,
 				6F3962821C3A12C100C78F84 /* Cabinet.storyboard in Resources */,
 				45DC5E611C421B80000D6A7A /* 进度20.png in Resources */,
@@ -1087,14 +1218,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7492CCC6575E8E324CD396BF /* Check Pods Manifest.lock */ = {
+		7492CCC6575E8E324CD396BF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1102,19 +1233,34 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		C6CF789D48CA643A4251B0F0 /* Copy Pods Resources */ = {
+		A0D38C16E211DB89498B7434 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZNYS/Pods-ZNYS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6CF789D48CA643A4251B0F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZNYS/Pods-ZNYS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1126,8 +1272,10 @@
 			files = (
 				645A01841C37C58E00556395 /* 华康娃娃体.TTF in Sources */,
 				64CCBD8E1CD30B94003EFFAD /* AddRewardButtonView.m in Sources */,
+				3C98A2241D24FF0700046BE8 /* BrushCalendarViewController.m in Sources */,
 				45BC409C1C2469D9006A185F /* Rules.m in Sources */,
 				64CCBD971CD5BA1F003EFFAD /* MAKAFakeRootAlertView.m in Sources */,
+				455AAA751D24104800BE3F27 /* CalendarItem+CoreDataProperties.m in Sources */,
 				6476646A1C3CB1A000386E05 /* UITextField+Font.m in Sources */,
 				64CCBD821CD30361003EFFAD /* AddRewardViewController.m in Sources */,
 				C43136441BC279800097A91B /* RightToLeftSegue.m in Sources */,
@@ -1136,11 +1284,13 @@
 				645A01711C37B5B800556395 /* AddAccountViewController.m in Sources */,
 				C431364A1BC29A840097A91B /* NormalModeControllerViewController.m in Sources */,
 				64CCBD8B1CD30B7E003EFFAD /* rewardListModel.m in Sources */,
+				45F786601D0D00E400E4F91D /* ToothBrushManagentMainView.m in Sources */,
 				0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */,
 				C460E0401BC509D3000608BD /* DesignModeController.m in Sources */,
 				645A016F1C37B5B800556395 /* AddAccountView.m in Sources */,
 				45BC409B1C2469D9006A185F /* Rules+CoreDataProperties.m in Sources */,
 				645A018B1C37C9AC00556395 /* UILabel+Font.m in Sources */,
+				455AAA761D24104800BE3F27 /* CalendarItem.m in Sources */,
 				647E05D41C3B71E800ADB810 /* SwitchUserView.m in Sources */,
 				645A01901C37CB2500556395 /* ZNYSBaseController.m in Sources */,
 				643ADB071CD8AA2A00723BB5 /* ExchangeRewardDetailViewController.m in Sources */,
@@ -1167,6 +1317,7 @@
 				0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */,
 				4576E3E21CCFD37800A1BA2B /* AwardManager.m in Sources */,
 				64CCBD941CD4909F003EFFAD /* AddRewardScrollView.m in Sources */,
+				455AAA791D2410C000BE3F27 /* CalendarItemManager.m in Sources */,
 				45BC40911C2469D9006A185F /* User+CoreDataProperties.m in Sources */,
 				0421D3741B8126C700BF6065 /* CabinetItem.m in Sources */,
 				45BC40A01C2469D9006A185F /* Belongings.m in Sources */,
@@ -1174,6 +1325,7 @@
 				458094631C23DE3100CB9BF9 /* ConnectingView.m in Sources */,
 				45BC40921C2469D9006A185F /* User.m in Sources */,
 				64CCBD9A1CD88A16003EFFAD /* ExchangeRewardViewController.m in Sources */,
+				3C98A2291D24FF1800046BE8 /* CalendarDetailView.m in Sources */,
 				45BC409E1C2469D9006A185F /* ToothBrush.m in Sources */,
 				64CCBD851CD30460003EFFAD /* AddRewardView.m in Sources */,
 				45BC40961C2469D9006A185F /* AreaStatistics.m in Sources */,
@@ -1185,6 +1337,7 @@
 				645A019C1C37CEF700556395 /* VerifyPasswordView.m in Sources */,
 				45BD02F81CCBDEE600A14E95 /* Award+CoreDataProperties.m in Sources */,
 				0421D3791B830D0B00BF6065 /* ItemState.m in Sources */,
+				45F786631D0D010400E4F91D /* ToothBrushManagentMainViewController.m in Sources */,
 				0421D3721B8126C700BF6065 /* CabinetViewController.m in Sources */,
 				458094661C23DE4100CB9BF9 /* ConnectedView.m in Sources */,
 				C460E03D1BC5021F000608BD /* LackToothModeControllerViewController.m in Sources */,
@@ -1198,6 +1351,7 @@
 				04C978F31C44BE100046DB4A /* GiftItem.m in Sources */,
 				64CCBD911CD314E6003EFFAD /* ChooseNumberScrollView.m in Sources */,
 				647E05D11C3B710A00ADB810 /* UserDetailView.m in Sources */,
+				3C98A22A1D24FF1800046BE8 /* CalendarView.m in Sources */,
 				45BC409F1C2469D9006A185F /* Belongings+CoreDataProperties.m in Sources */,
 				645A01701C37B5B800556395 /* SelectBirthView.m in Sources */,
 				0487D7661B74548F00756EF8 /* main.m in Sources */,
@@ -1330,7 +1484,7 @@
 		};
 		0487D7841B74548F00756EF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91C03429B6C007A30E11C265 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 95D5691AAB0097B916FF9D6E /* Pods-ZNYS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1349,7 +1503,7 @@
 		};
 		0487D7851B74548F00756EF8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 869812908A6DD8477FF731F8 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 9F041B2DDFC46297669F9D2D /* Pods-ZNYS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
