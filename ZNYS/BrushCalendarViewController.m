@@ -9,6 +9,8 @@
 #import "BrushCalendarViewController.h"
 #import "CoreDataHelper.h"
 #import "CalendarView.h"
+#import "CalendarDetailView.h"
+#import "MAKAFakeRootAlertView.h"
 
 @interface BrushCalendarViewController ()
 
@@ -30,7 +32,9 @@
 
 @property (nonatomic, strong) UILabel *goalLabel;
 
-- (NSInteger)currentWeekday;
+//@property (nonatomic, strong) CalendarDetailView* calendarDetailView;
+
+- (NSInteger)currentWeekday:(NSDate *)date;
 @end
 
 @implementation BrushCalendarViewController
@@ -47,6 +51,7 @@
     _calendarView = nil;
     _dateLabel = nil;
     _goalLabel = nil;
+    //_calendarDetailView = nil;
 }
 
 - (void)viewDidLoad {
@@ -235,8 +240,21 @@
         _calendarView = [[CalendarView alloc] initWithFrame:CGRectMake(CustomWidth(2.5), CustomHeight(190), CustomWidth(370), CustomHeight(280)) firstDay:[self currentWeekday:[NSDate date]]];
         _calendarView.layer.cornerRadius = 8.0f;
         [_calendarView changeTodayBackgroundColor:2];
+        
         _calendarView.buttonClickBlock = ^(NSInteger number){
             NSLog(@"tap %ld",(long)number);
+            
+            CalendarDetailView *calendarDetailView = [[CalendarDetailView alloc] init];
+            calendarDetailView.frame = CGRectMake(0, 0, CustomWidth(300), CustomHeight(350));
+            
+            MAKAFakeRootAlertView * alertView = [[MAKAFakeRootAlertView alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+            
+            [alertView setUpView:calendarDetailView];
+            calendarDetailView.dismissBlock = ^{
+                [alertView dismiss];
+            };
+            alertView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+            [alertView show];
         };
     }
     
@@ -290,4 +308,11 @@
     }
     return _goalLabel;
 }
+
+//- (CalendarDetailView *)calendarDetailView {
+//    if (!_calendarDetailView) {
+//        _calendarDetailView = [[CalendarDetailView alloc]init];
+//    }
+//    return _calendarDetailView;
+//}
 @end
