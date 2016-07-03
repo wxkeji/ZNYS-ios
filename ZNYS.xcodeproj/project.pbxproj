@@ -24,6 +24,12 @@
 		04A7510F1C43D9E500B3F537 /* GiftList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A7510E1C43D9E500B3F537 /* GiftList.plist */; };
 		04C978F31C44BE100046DB4A /* GiftItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C978F21C44BE100046DB4A /* GiftItem.m */; };
 		14AE2882E3EA6C1FFF32284D /* libPods-ZNYS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BE4FFF790A33BC1EB578A8 /* libPods-ZNYS.a */; };
+		3C62CE4D1D2650F500402FE1 /* arrow_head_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C62CE4C1D2650F500402FE1 /* arrow_head_right.png */; };
+		3C62CE4F1D26540D00402FE1 /* arrow_head_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C62CE4E1D26540D00402FE1 /* arrow_head_left.png */; };
+		3C62CE521D28126C00402FE1 /* CalendarDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE511D28126C00402FE1 /* CalendarDetailModel.m */; };
+		3C62CE561D2819E100402FE1 /* bluetoothReward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C62CE531D2819E100402FE1 /* bluetoothReward.png */; };
+		3C62CE571D2819E100402FE1 /* dayTimeReward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C62CE541D2819E100402FE1 /* dayTimeReward.png */; };
+		3C62CE581D2819E100402FE1 /* nightReward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C62CE551D2819E100402FE1 /* nightReward.png */; };
 		3C98A2241D24FF0700046BE8 /* BrushCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2231D24FF0700046BE8 /* BrushCalendarViewController.m */; };
 		3C98A2291D24FF1800046BE8 /* CalendarDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2261D24FF1800046BE8 /* CalendarDetailView.m */; };
 		3C98A22A1D24FF1800046BE8 /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2281D24FF1800046BE8 /* CalendarView.m */; };
@@ -181,6 +187,13 @@
 		04A7510E1C43D9E500B3F537 /* GiftList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GiftList.plist; sourceTree = "<group>"; };
 		04C978F11C44BE100046DB4A /* GiftItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftItem.h; sourceTree = "<group>"; };
 		04C978F21C44BE100046DB4A /* GiftItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftItem.m; sourceTree = "<group>"; };
+		3C62CE4C1D2650F500402FE1 /* arrow_head_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_head_right.png; sourceTree = "<group>"; };
+		3C62CE4E1D26540D00402FE1 /* arrow_head_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_head_left.png; sourceTree = "<group>"; };
+		3C62CE501D28126C00402FE1 /* CalendarDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDetailModel.h; sourceTree = "<group>"; };
+		3C62CE511D28126C00402FE1 /* CalendarDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDetailModel.m; sourceTree = "<group>"; };
+		3C62CE531D2819E100402FE1 /* bluetoothReward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluetoothReward.png; sourceTree = "<group>"; };
+		3C62CE541D2819E100402FE1 /* dayTimeReward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dayTimeReward.png; sourceTree = "<group>"; };
+		3C62CE551D2819E100402FE1 /* nightReward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nightReward.png; sourceTree = "<group>"; };
 		3C98A2221D24FF0700046BE8 /* BrushCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushCalendarViewController.h; sourceTree = "<group>"; };
 		3C98A2231D24FF0700046BE8 /* BrushCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushCalendarViewController.m; sourceTree = "<group>"; };
 		3C98A2251D24FF1800046BE8 /* CalendarDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDetailView.h; sourceTree = "<group>"; };
@@ -602,6 +615,8 @@
 		3C98A21F1D24FED400046BE8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3C62CE501D28126C00402FE1 /* CalendarDetailModel.h */,
+				3C62CE511D28126C00402FE1 /* CalendarDetailModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -629,8 +644,13 @@
 		3C98A22B1D24FF2700046BE8 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				3C62CE531D2819E100402FE1 /* bluetoothReward.png */,
+				3C62CE541D2819E100402FE1 /* dayTimeReward.png */,
+				3C62CE551D2819E100402FE1 /* nightReward.png */,
 				3C98A2301D2501F400046BE8 /* brushCalendarBackground.png */,
 				3C98A22C1D24FF4700046BE8 /* dayBackground.png */,
+				3C62CE4E1D26540D00402FE1 /* arrow_head_left.png */,
+				3C62CE4C1D2650F500402FE1 /* arrow_head_right.png */,
 				3C98A22D1D24FF4700046BE8 /* star.png */,
 			);
 			name = Calendar;
@@ -901,7 +921,6 @@
 			isa = PBXGroup;
 			children = (
 				3C98A21E1D24FEC000046BE8 /* CalendarModule */,
-
 				45F7865A1D0D007D00E4F91D /* ToothBrushManagementModule */,
 				6412FC951C476A4600DF8FC5 /* UserRewardModule */,
 				645A01661C37B52A00556395 /* UserAccountModule */,
@@ -1098,7 +1117,7 @@
 				0487D75C1B74548F00756EF8 /* Sources */,
 				0487D75D1B74548F00756EF8 /* Frameworks */,
 				0487D75E1B74548F00756EF8 /* Resources */,
-				C6CF789D48CA643A4251B0F0 /* Copy Pods Resources */,
+				C6CF789D48CA643A4251B0F0 /* [CP] Copy Pods Resources */,
 				A0D38C16E211DB89498B7434 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -1174,7 +1193,9 @@
 				0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */,
 				647E05C21C3A5C1D00ADB810 /* userAccount_logo@3x.png in Resources */,
 				45DC5E691C421B80000D6A7A /* 进度100.png in Resources */,
+				3C62CE561D2819E100402FE1 /* bluetoothReward.png in Resources */,
 				45DC5E641C421B80000D6A7A /* 进度50.png in Resources */,
+				3C62CE571D2819E100402FE1 /* dayTimeReward.png in Resources */,
 				0421D3711B8126C700BF6065 /* Settings.storyboard in Resources */,
 				45EB69D11C40B2C800160457 /* BCTopBar.png in Resources */,
 				45DC5E651C421B80000D6A7A /* 进度60.png in Resources */,
@@ -1184,6 +1205,7 @@
 				3C98A22F1D24FF4700046BE8 /* star.png in Resources */,
 				45DC5E601C421B80000D6A7A /* 进度10.png in Resources */,
 				647E05BF1C3A5C1D00ADB810 /* userAccount_back@2x.png in Resources */,
+				3C62CE4F1D26540D00402FE1 /* arrow_head_left.png in Resources */,
 				45EB69CF1C40B2C800160457 /* BCProgress_fill.png in Resources */,
 				04A7510F1C43D9E500B3F537 /* GiftList.plist in Resources */,
 				647E05C11C3A5C1D00ADB810 /* userAccount_logo@2x.png in Resources */,
@@ -1195,8 +1217,10 @@
 				6476646D1C3E600F00386E05 /* 勋章描述.json in Resources */,
 				45DC5E621C421B80000D6A7A /* 进度30.png in Resources */,
 				6F3962841C3A13E200C78F84 /* Calendar.storyboard in Resources */,
+				3C62CE4D1D2650F500402FE1 /* arrow_head_right.png in Resources */,
 				45EB69D41C415DDE00160457 /* BCBottomPattern.png in Resources */,
 				6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */,
+				3C62CE581D2819E100402FE1 /* nightReward.png in Resources */,
 				0487D7711B74548F00756EF8 /* Images.xcassets in Resources */,
 				3C98A22E1D24FF4700046BE8 /* dayBackground.png in Resources */,
 				45DC5E661C421B80000D6A7A /* 进度70.png in Resources */,
@@ -1301,6 +1325,7 @@
 				45BC40A11C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m in Sources */,
 				45839C321CBF6A4C000E878D /* CustomProgressBar.m in Sources */,
 				45BC40A21C2469D9006A185F /* BrushingStatistics.m in Sources */,
+				3C62CE521D28126C00402FE1 /* CalendarDetailModel.m in Sources */,
 				C4DBC6881BC4C41F00285604 /* FeedbackPopView.m in Sources */,
 				45BC40981C2469D9006A185F /* CustomerServices.m in Sources */,
 				645A01961C37CBBF00556395 /* ZNYSBaseView.m in Sources */,

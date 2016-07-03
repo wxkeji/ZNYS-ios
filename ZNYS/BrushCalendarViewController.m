@@ -11,6 +11,8 @@
 #import "CalendarView.h"
 #import "CalendarDetailView.h"
 #import "MAKAFakeRootAlertView.h"
+#import "CalendarItemManager.h"
+#import "CalendarDetailModel.h"
 
 @interface BrushCalendarViewController ()
 
@@ -32,9 +34,13 @@
 
 @property (nonatomic, strong) UILabel *goalLabel;
 
+@property (nonatomic, strong) NSMutableArray<CalendarItem *> * calendarItemArray;
 //@property (nonatomic, strong) CalendarDetailView* calendarDetailView;
 
 - (NSInteger)currentWeekday:(NSDate *)date;
+
+- (NSMutableArray<CalendarDetailModel *> *)transformCalendarItemToDetailModels:(CalendarItem *)calendarItem;
+
 @end
 
 @implementation BrushCalendarViewController
@@ -51,6 +57,7 @@
     _calendarView = nil;
     _dateLabel = nil;
     _goalLabel = nil;
+    _calendarItemArray = nil;
     //_calendarDetailView = nil;
 }
 
@@ -165,6 +172,7 @@
 */
 #pragma mark private met
 
+
 - (NSInteger)currentWeekday:(NSDate *)date{
     NSCalendar *gregorianCalendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSInteger weekday = [gregorianCalendar component:NSCalendarUnitWeekday fromDate:date];
@@ -172,6 +180,35 @@
     return weekday;
 }
 
+- (NSMutableArray<CalendarDetailModel *> *)transformCalendarItemToDetailModels:(CalendarItem *)calendarItem {
+    NSMutableArray<CalendarDetailModel *> * calendarDetailModels = [[NSMutableArray alloc] init];
+    
+    if ([calendarItem.morningStarNumber integerValue]> 0) {
+        CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
+        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"dayTimeReward"];
+        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"star"];
+        calendarDetailModel.reinforcerCount = [calendarItem.morningStarNumber integerValue];
+        [calendarDetailModels addObject:calendarDetailModel];
+    }
+    
+    if ([calendarItem.eveningStarNumber integerValue] > 0) {
+        CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
+        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"nightReward"];
+        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"star"];
+        calendarDetailModel.reinforcerCount = [calendarItem.eveningStarNumber integerValue];
+        [calendarDetailModels addObject:calendarDetailModel];
+    }
+    
+    if ([calendarItem.connectStarNumber integerValue] > 0) {
+        CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
+        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"bluetoothReward"];
+        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"star"];
+        calendarDetailModel.reinforcerCount = [calendarItem.connectStarNumber integerValue];
+        [calendarDetailModels addObject:calendarDetailModel];
+    }
+    
+    return calendarDetailModels;
+}
 #pragma mark event action
 
 - (void)dismissButtonClicked{
@@ -241,11 +278,12 @@
         _calendarView.layer.cornerRadius = 8.0f;
         [_calendarView changeTodayBackgroundColor:2];
         
+         WS(weakSelf, self);
         _calendarView.buttonClickBlock = ^(NSInteger number){
             NSLog(@"tap %ld",(long)number);
             
-            CalendarDetailView *calendarDetailView = [[CalendarDetailView alloc] init];
-            calendarDetailView.frame = CGRectMake(0, 0, CustomWidth(300), CustomHeight(350));
+            CalendarDetailView *calendarDetailView = [[CalendarDetailView alloc] initWithModel:[weakSelf transformCalendarItemToDetailModels:weakSelf.calendarItemArray[0]]];
+            calendarDetailView.frame = CGRectMake(0, 0, CustomWidth(275), CustomHeight(330));
             
             MAKAFakeRootAlertView * alertView = [[MAKAFakeRootAlertView alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
             
@@ -309,6 +347,22 @@
     return _goalLabel;
 }
 
+- (NSMutableArray<CalendarItem *> *)calendarItemArray{
+    if (!_calendarItemArray) {
+        _calendarItemArray = [[NSMutableArray alloc] init];
+        //NSMutableArray<CalendarItem *> *_calendarItemArray = [CalendarItemManager sharedInstance];
+        
+        
+        /*------------------------插入假数据-----------------------------------*/
+        CalendarItem *calendarItem = [[CalendarItemManager sharedInstance] createCalendarItem];
+        calendarItem.connectStarNumber = @1;
+        calendarItem.morningStarNumber = @4;
+        calendarItem.eveningStarNumber = @2;
+        
+        [_calendarItemArray addObject:calendarItem];
+    }
+    return _calendarItemArray;
+}
 //- (CalendarDetailView *)calendarDetailView {
 //    if (!_calendarDetailView) {
 //        _calendarDetailView = [[CalendarDetailView alloc]init];

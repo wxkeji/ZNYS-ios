@@ -7,14 +7,16 @@
 //
 
 #import "ZNYSBaseView.h"
-@class CalendarItem;
+#import "CalendarItem+CoreDataProperties.h"
+#import "CalendarDetailModel.h"
 
 typedef void(^DismissBlock)();
 
-@interface CalendarDetailView : ZNYSBaseView
+@interface CalendarDetailView : ZNYSBaseView<UIScrollViewDelegate>
 
-@property (nonatomic,copy) DismissBlock dismissBlock;
+@property (nonatomic, copy) DismissBlock dismissBlock;
+@property (nonatomic, strong) NSMutableArray<CalendarDetailModel *> * models;
 
-- (instancetype)initWithModel:(CalendarItem *)model;
+- (instancetype)initWithModel:(NSMutableArray<CalendarDetailModel *> *) models;
 
 @end

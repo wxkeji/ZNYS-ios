@@ -114,7 +114,7 @@
 
 #pragma mark private method
 
-//正式使用用带有星星的图片setBackgroundImage
+//颜色→UIimage 为了动画效果
 - (UIImage *)imageWithColor:(UIColor *)color {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);
