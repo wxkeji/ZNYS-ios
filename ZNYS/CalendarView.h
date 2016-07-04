@@ -8,16 +8,20 @@
 
 #import "ZNYSBaseView.h"
 
+@class CalendarModel;
+
 typedef void(^ButtonClickBlock)(NSInteger number);
 
 @interface CalendarView : ZNYSBaseView
 
 @property (nonatomic,copy) ButtonClickBlock buttonClickBlock;
-@property (nonatomic, strong) NSMutableArray <UIButton *> * dayBackgroundArray;
 
-
-- (void)changeTodayBackgroundColor:(NSInteger) tag;
 
 //周日到周六 1 - 7
 - (instancetype)initWithFrame:(CGRect)frame firstDay:(NSInteger)weekDay;
+
+- (void)setModels:(NSMutableArray<CalendarModel *> *) models ;
+- (void)changeTodayButtonColor:(NSInteger) tag;
+
+
 @end

@@ -5,7 +5,7 @@
 //  Created by yu243e on 16/6/29.
 //  Copyright © 2016年 Woodseen. All rights reserved.
 //
-#define debug
+//#define debug
 
 #import "CalendarDetailView.h"
 #import "MAKAFakeRootAlertView.h"
@@ -52,6 +52,10 @@
 - (instancetype)initWithModel:(NSMutableArray<CalendarDetailModel *> *)models {
     self = [self init];
     if (self) {
+        if (!models) {
+            return  self;
+        }
+        
         self.models = models;
         
         [self addSubview:self.backgroundImageView];

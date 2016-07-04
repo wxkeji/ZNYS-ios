@@ -30,6 +30,8 @@
 		3C62CE561D2819E100402FE1 /* bluetoothReward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C62CE531D2819E100402FE1 /* bluetoothReward.png */; };
 		3C62CE571D2819E100402FE1 /* dayTimeReward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C62CE541D2819E100402FE1 /* dayTimeReward.png */; };
 		3C62CE581D2819E100402FE1 /* nightReward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C62CE551D2819E100402FE1 /* nightReward.png */; };
+		3C62CE5B1D294CD700402FE1 /* CalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE5A1D294CD700402FE1 /* CalendarModel.m */; };
+		3C62CE611D29FFE300402FE1 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE601D29FFE300402FE1 /* NSDate+Helper.m */; };
 		3C98A2241D24FF0700046BE8 /* BrushCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2231D24FF0700046BE8 /* BrushCalendarViewController.m */; };
 		3C98A2291D24FF1800046BE8 /* CalendarDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2261D24FF1800046BE8 /* CalendarDetailView.m */; };
 		3C98A22A1D24FF1800046BE8 /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2281D24FF1800046BE8 /* CalendarView.m */; };
@@ -194,6 +196,10 @@
 		3C62CE531D2819E100402FE1 /* bluetoothReward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluetoothReward.png; sourceTree = "<group>"; };
 		3C62CE541D2819E100402FE1 /* dayTimeReward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dayTimeReward.png; sourceTree = "<group>"; };
 		3C62CE551D2819E100402FE1 /* nightReward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nightReward.png; sourceTree = "<group>"; };
+		3C62CE591D294CD700402FE1 /* CalendarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarModel.h; sourceTree = "<group>"; };
+		3C62CE5A1D294CD700402FE1 /* CalendarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarModel.m; sourceTree = "<group>"; };
+		3C62CE5F1D29FFE300402FE1 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
+		3C62CE601D29FFE300402FE1 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
 		3C98A2221D24FF0700046BE8 /* BrushCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushCalendarViewController.h; sourceTree = "<group>"; };
 		3C98A2231D24FF0700046BE8 /* BrushCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushCalendarViewController.m; sourceTree = "<group>"; };
 		3C98A2251D24FF1800046BE8 /* CalendarDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDetailView.h; sourceTree = "<group>"; };
@@ -617,6 +623,8 @@
 			children = (
 				3C62CE501D28126C00402FE1 /* CalendarDetailModel.h */,
 				3C62CE511D28126C00402FE1 /* CalendarDetailModel.m */,
+				3C62CE591D294CD700402FE1 /* CalendarModel.h */,
+				3C62CE5A1D294CD700402FE1 /* CalendarModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1042,6 +1050,8 @@
 				645A019E1C3A146E00556395 /* UIButton+Font.m */,
 				647664681C3CB1A000386E05 /* UITextField+Font.h */,
 				647664691C3CB1A000386E05 /* UITextField+Font.m */,
+				3C62CE5F1D29FFE300402FE1 /* NSDate+Helper.h */,
+				3C62CE601D29FFE300402FE1 /* NSDate+Helper.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1296,6 +1306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				645A01841C37C58E00556395 /* 华康娃娃体.TTF in Sources */,
+				3C62CE5B1D294CD700402FE1 /* CalendarModel.m in Sources */,
 				64CCBD8E1CD30B94003EFFAD /* AddRewardButtonView.m in Sources */,
 				3C98A2241D24FF0700046BE8 /* BrushCalendarViewController.m in Sources */,
 				45BC409C1C2469D9006A185F /* Rules.m in Sources */,
@@ -1354,6 +1365,7 @@
 				3C98A2291D24FF1800046BE8 /* CalendarDetailView.m in Sources */,
 				45BC409E1C2469D9006A185F /* ToothBrush.m in Sources */,
 				64CCBD851CD30460003EFFAD /* AddRewardView.m in Sources */,
+				3C62CE611D29FFE300402FE1 /* NSDate+Helper.m in Sources */,
 				45BC40961C2469D9006A185F /* AreaStatistics.m in Sources */,
 				6FC69C131BBC4DBD0074C38E /* CalendarViewController.m in Sources */,
 				45BC409D1C2469D9006A185F /* ToothBrush+CoreDataProperties.m in Sources */,

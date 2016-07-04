@@ -7,10 +7,15 @@
 //
 
 #import "CalendarView.h"
+#import "CalendarModel.h"
 
 @interface CalendarView()
+@property (nonatomic, strong) NSMutableArray <CalendarModel *> * models;
+@property (nonatomic, strong) NSMutableArray <UIButton *> * dayButtonArray;
 @property (nonatomic, strong) NSMutableArray <UILabel *> * weekLabelArray;
 @property (nonatomic, assign) NSInteger fisrtDayWeek;
+
+- (void)addStarImageAndLabel:(UIButton *)dayButton  withModel:(CalendarModel *)model;
 @end
 
 @implementation CalendarView
@@ -57,55 +62,40 @@
         }
         for (NSInteger i = 0; i < 21; i++) {
             //color 生成背景图片用
-            UIColor *dayBackgroundColor;
+            UIColor *dayButtonColor;
             switch (i / 7) {
                 case 0:
-                    dayBackgroundColor = RGBCOLOR(48,225,183);
+                    dayButtonColor = RGBCOLOR(48,225,183);
                     break;
                 case 1:
-                    dayBackgroundColor = RGBCOLOR(107,212,247);
+                    dayButtonColor = RGBCOLOR(107,212,247);
                     break;
                 case 2:
-                    dayBackgroundColor = RGBCOLOR(68,182,219);
+                    dayButtonColor = RGBCOLOR(68,182,219);
                     break;
                 default:
                     break;
             }
             
-            UIButton *dayBackground = [UIButton buttonWithType:UIButtonTypeCustom];
-            dayBackground.frame = CGRectMake((interval + (self.frame.size.width)/7.0*(i%7)), (interval + self.frame.size.height/3.6 * (weekLabelHeightScale + (i/7))), width, height);
-            [dayBackground setBackgroundImage:[self imageWithColor:dayBackgroundColor] forState:UIControlStateNormal];
+            UIButton *dayButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            dayButton.frame = CGRectMake((interval + (self.frame.size.width)/7.0*(i%7)), (interval + self.frame.size.height/3.6 * (weekLabelHeightScale + (i/7))), width, height);
+            [dayButton setBackgroundImage:[self imageWithColor:dayButtonColor] forState:UIControlStateNormal];
             
             
             
-            //加入星星
-            UIImage *starImage =[UIImage imageNamed:@"star"];
-            //[dayBackground addSubview:[[UIImageView alloc]initWithImage:starImage]];
-            [dayBackground setImage:starImage forState:UIControlStateNormal];
-            dayBackground.imageView.contentMode = UIViewContentModeScaleAspectFit;
-                //微调位置
-            dayBackground.imageEdgeInsets = UIEdgeInsetsMake(height*0.05, 0.0, 0.0, 0.0);
-            
-            //加入文字
-            UILabel *starNumLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, width, height)];
-            [starNumLabel setText:@"3"];
-            [starNumLabel setTextColor:[UIColor grayColor]];
-            [starNumLabel setTextAlignment:NSTextAlignmentCenter];
-            starNumLabel.adjustsFontSizeToFitWidth = YES;
-            [dayBackground addSubview:starNumLabel];
-
+           
             
             //圆角
-            dayBackground.layer.masksToBounds = YES;
-            dayBackground.layer.cornerRadius = 6.0;
+            dayButton.layer.masksToBounds = YES;
+            dayButton.layer.cornerRadius = 6.0;
             
             //Tag
-            dayBackground.tag = i+1;
+            dayButton.tag = i;
             
-            [dayBackground addTarget:self action:@selector(dayButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+            [dayButton addTarget:self action:@selector(dayButtonAction:) forControlEvents:UIControlEventTouchUpInside];
 
-            [self addSubview:dayBackground];
-            [self.dayBackgroundArray addObject:dayBackground];
+            [self addSubview:dayButton];
+            [self.dayButtonArray addObject:dayButton];
         }
     }
     return self;
@@ -113,6 +103,32 @@
 
 
 #pragma mark private method
+- (void)addStarImageAndLabel:(UIButton *)dayButton withModel:(CalendarModel *)model {
+    //size
+    //周高度
+    CGFloat weekLabelHeightScale = 0.6;
+    //空白间隔
+    CGFloat interval = self.frame.size.width/100;
+    //宽
+    CGFloat width = self.frame.size.width/7.0 - interval*2;
+    //高
+    CGFloat height = self.frame.size.height/(3 + weekLabelHeightScale) - interval*2;
+    
+    //加入星星
+    UIImage *starImage =[UIImage imageNamed:@"star"];
+    [dayButton setImage:starImage forState:UIControlStateNormal];
+    dayButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    //微调位置
+    dayButton.imageEdgeInsets = UIEdgeInsetsMake(height*0.05, 0.0, 0.0, 0.0);
+    
+    //加入文字
+    UILabel *starNumLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, width, height)];
+    [starNumLabel setText:[NSString stringWithFormat:@"%ld",model.starNum]];
+    [starNumLabel setTextColor:[UIColor grayColor]];
+    [starNumLabel setTextAlignment:NSTextAlignmentCenter];
+    starNumLabel.adjustsFontSizeToFitWidth = YES;
+
+}
 
 //颜色→UIimage 为了动画效果
 - (UIImage *)imageWithColor:(UIColor *)color {
@@ -166,9 +182,11 @@
 }
 #pragma mark event action
 
-- (void)changeTodayBackgroundColor:(NSInteger) tag {
-    if (tag >= 1) {
-        [self.dayBackgroundArray[tag - 1] setBackgroundImage:[self imageWithColor:RGBCOLOR(237,133,51)] forState:UIControlStateNormal];
+- (void)changeTodayButtonColor:(NSInteger) tag {
+    if (tag >= 0 && tag < 21) {
+        [self.dayButtonArray[tag] setBackgroundImage:[self imageWithColor:RGBCOLOR(237,133,51)] forState:UIControlStateNormal];
+    } else {
+        NSLog(@"tag invalid");
     }
 }
 
@@ -179,10 +197,27 @@
 }
 
 #pragma mark getters and setters
-- (NSMutableArray <UIButton *> *)dayBackgroundArray {
-    if (!_dayBackgroundArray) {
-        _dayBackgroundArray = [[NSMutableArray alloc]initWithCapacity:21];    }
-    return _dayBackgroundArray;
+- (void)setModels:(NSMutableArray<CalendarModel *> *) models {
+    if ([models count] != 21) {
+        NSLog(@"models count != 21 ");
+        return ;
+    }
+    _models = models;
+    for (CalendarModel *model in _models) {
+        if (model.future == YES) {
+            self.dayButtonArray[model.tag].userInteractionEnabled = NO;
+        } else {
+            if (model.validData == YES) {
+                [self addStarImageAndLabel:self.dayButtonArray[model.tag] withModel:model];
+            }
+        }
+    }
+}
+
+- (NSMutableArray <UIButton *> *)dayButtonArray {
+    if (!_dayButtonArray) {
+        _dayButtonArray = [[NSMutableArray alloc]initWithCapacity:21];    }
+    return _dayButtonArray;
 }
 
 - (NSMutableArray <UILabel *> *)weekLabelArray {
