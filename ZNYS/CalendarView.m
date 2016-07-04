@@ -127,6 +127,7 @@
     [starNumLabel setTextColor:[UIColor grayColor]];
     [starNumLabel setTextAlignment:NSTextAlignmentCenter];
     starNumLabel.adjustsFontSizeToFitWidth = YES;
+    [dayButton addSubview:starNumLabel];
 
 }
 
