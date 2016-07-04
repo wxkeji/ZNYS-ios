@@ -17,4 +17,8 @@
 
 - (CalendarItem*)createCalendarItem;
 
+
+- (NSArray<CalendarItem*>*)getCalendarItemsByUserID:(NSString*)userID;
+
+- (void)save;
 @end

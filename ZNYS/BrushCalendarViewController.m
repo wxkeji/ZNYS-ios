@@ -345,13 +345,14 @@
         _calendarItemArray = [[NSMutableArray alloc] init];
         //NSMutableArray<CalendarItem *> *_calendarItemArray = [CalendarItemManager sharedInstance];
         
-        
+#ifdef insertTestData
         /*------------------------插入假数据-----------------------------------*/
         CalendarItem *calendarItem = [[CalendarItemManager sharedInstance] createCalendarItem];
         calendarItem.connectStarNumber = @0;
         calendarItem.morningStarNumber = @5;
         calendarItem.eveningStarNumber = @4;
         calendarItem.starNumber = @9;
+        calendarItem.userID = [User currentUserUUID];
         calendarItem.date = @"2016-07-02";
         [_calendarItemArray addObject:calendarItem];
         
@@ -360,6 +361,7 @@
         calendarItem2.morningStarNumber = @8;
         calendarItem2.eveningStarNumber = @2;
         calendarItem2.starNumber = @11;
+        calendarItem2.userID = [User currentUserUUID];
         calendarItem2.date = @"2016-06-20";
         [_calendarItemArray addObject:calendarItem2];
         
@@ -368,6 +370,7 @@
         calendarItem3.morningStarNumber = @4;
         calendarItem3.eveningStarNumber = @2;
         calendarItem3.starNumber = @7;
+        calendarItem3.userID = [User currentUserUUID];
         calendarItem3.date = @"2016-07-01";
         [_calendarItemArray addObject:calendarItem3];
         
@@ -376,6 +379,7 @@
         calendarItem4.morningStarNumber = @4;
         calendarItem4.eveningStarNumber = @2;
         calendarItem4.starNumber = @7;
+        calendarItem4.userID = [User currentUserUUID];
         calendarItem4.date = @"2016-07-04";
         [_calendarItemArray addObject:calendarItem4];
         
@@ -384,9 +388,14 @@
         calendarItem5.morningStarNumber = @4;
         calendarItem5.eveningStarNumber = @2;
         calendarItem5.starNumber = @7;
+        calendarItem5.userID = [User currentUserUUID];
         calendarItem5.date = @"2016-07-05";
         
         [_calendarItemArray addObject:calendarItem5];
+        
+#else
+        _calendarItemArray = [[CalendarItemManager sharedInstance] getCalendarItemsByUserID:[User currentUserUUID]];
+#endif
     }
     return _calendarItemArray;
 }

@@ -25,4 +25,15 @@
     CalendarItem* item = [NSEntityDescription insertNewObjectForEntityForName:@"CalendarItem" inManagedObjectContext:[CoreDataHelper sharedInstance].context];
     return item;
 }
+
+- (NSArray<CalendarItem*>*)getCalendarItemsByUserID:(NSString*)userID {
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"userID = %@",userID];
+    NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"CalendarItem"];
+    [request setPredicate:predicate];
+    return [[CoreDataHelper sharedInstance].context executeFetchRequest:request error:nil];
+}
+
+- (void)save {
+    [[CoreDataHelper sharedInstance] save];
+}
 @end
