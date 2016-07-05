@@ -178,6 +178,9 @@
 }
 
 - (void)hiddenButton {
+    self.leftButton.userInteractionEnabled = YES;
+    self.rightButton.userInteractionEnabled = YES;
+    
     NSInteger offset =  (self.scrollView.contentOffset.x) / (self.scrollView.frame.size.width);
     NSInteger maxOffset = (self.scrollView.contentSize.width) / (self.scrollView.frame.size.width) - 1;
     if (offset == 0) {
@@ -203,11 +206,13 @@
 - (void)leftButtonAction {
     CGPoint contentOffset = CGPointMake(self.scrollView.contentOffset.x - self.scrollView.frame.size.width,  0.0);
     [self.scrollView setContentOffset:contentOffset animated:YES];
+    self.leftButton.userInteractionEnabled = NO;
 }
 
 - (void)rightButtonAction {
     CGPoint contentOffset = CGPointMake(self.scrollView.contentOffset.x + self.scrollView.frame.size.width,  0.0);
     [self.scrollView setContentOffset:contentOffset animated:YES];
+    self.rightButton.userInteractionEnabled = NO;
 }
 #pragma mark getters and setters
 
