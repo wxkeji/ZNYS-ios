@@ -5,7 +5,7 @@
 //  Created by yu243e on 16/6/21.
 //  Copyright © 2016年 Woodseen. All rights reserved.
 //
-
+#define insertTestData
 #import "BrushCalendarViewController.h"
 #import "CoreDataHelper.h"
 #import "CalendarView.h"
@@ -18,32 +18,24 @@
 
 @interface BrushCalendarViewController ()
 
+//view
 @property (nonatomic, strong) UIButton * dismissButton;
-
 @property (nonatomic, strong) UIImageView * backgroundImageView;
-
 @property (nonatomic,strong) UIImageView * userImageView;
-
 @property (nonatomic,strong) UILabel * userLabel;
-
 @property (nonatomic,strong) UIImageView * coinView;
-
 @property (nonatomic,strong) UILabel * coinLabel;
-
 @property (nonatomic, strong) CalendarView * calendarView;
-
 @property (nonatomic, strong) UILabel *dateLabel;
-
 @property (nonatomic, strong) UILabel *goalLabel;
 
-
-
+//model
 @property (nonatomic, strong) NSMutableArray<CalendarItem *> * calendarItemArray;
-
-@property (nonatomic, strong) NSMutableArray<CalendarModel *> * calendarModelArray;
-
-
 @property (nonatomic, strong) NSDate *firstDate;
+
+//transformModel
+@property (nonatomic, strong) NSMutableArray<CalendarModel *> * calendarModelArray;
+@property (nonatomic, strong) NSMutableArray<NSMutableArray<CalendarDetailModel *>*> * calendarDetailModelArray;
 
 - (CalendarItem *)calendarItemFromArrayWithDate: (NSDate *)date ;
 - (NSMutableArray<CalendarDetailModel *> *)transformCalendarItemToDetailModels:(CalendarItem *)calendarItem;
@@ -64,8 +56,12 @@
     _calendarView = nil;
     _dateLabel = nil;
     _goalLabel = nil;
+    
+    _firstDate = nil;
     _calendarItemArray = nil;
+    
     _calendarModelArray = nil;
+    _calendarDetailModelArray =nil;
 }
 
 - (void)viewDidLoad {
@@ -165,6 +161,9 @@
 
 #pragma mark private met
 - (CalendarItem *)calendarItemFromArrayWithDate: (NSDate *)date {
+    if(!date) {
+        return nil;
+    }
     NSTimeInterval timeOffset = 24*60*60;
     for(CalendarItem * calendarItem in self.calendarItemArray) {
         NSTimeInterval timeInterval = [[NSDate dateFromString:calendarItem.date] timeIntervalSinceDate:date];
@@ -176,11 +175,11 @@
 }
 
 - (NSMutableArray<CalendarDetailModel *> *)transformCalendarItemToDetailModels:(CalendarItem *)calendarItem {
-    if (!calendarItem) {
-        return nil;
-    }
     NSMutableArray<CalendarDetailModel *> * calendarDetailModels = [[NSMutableArray alloc] init];
     
+    if (!calendarItem) {
+        return  calendarDetailModels;
+    }
     if ([calendarItem.morningStarNumber integerValue]> 0) {
         CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
         calendarDetailModel.pictureURL = [NSString stringWithFormat:@"dayTimeReward"];
@@ -273,11 +272,14 @@
     if(!_calendarView) {
         //周日到周六 1 - 7
         _calendarView = [[CalendarView alloc] initWithFrame:CGRectMake(CustomWidth(2.5), CustomHeight(190), CustomWidth(370), CustomHeight(280)) firstDay:[NSDate  currentWeek:self.firstDate]];
-        _calendarView.layer.cornerRadius = 8.0f;
+        
         [_calendarView setModels:self.calendarModelArray];
         NSInteger dayOffset = ([[NSDate date] timeIntervalSinceDate:self.firstDate]) / (60*24*60);
         [_calendarView changeTodayButtonColor:(dayOffset)];
         
+        
+        _calendarView.layer.cornerRadius = 8.0f;
+
         
          WS(weakSelf, self);
         _calendarView.buttonClickBlock = ^(NSInteger tag){
@@ -286,7 +288,7 @@
 #           endif
             
             if (weakSelf.calendarModelArray[tag].validData == YES) {
-                CalendarDetailView *calendarDetailView = [[CalendarDetailView alloc] initWithModel:[weakSelf transformCalendarItemToDetailModels:[weakSelf calendarItemFromArrayWithDate:weakSelf.calendarModelArray[tag].date]]];
+                CalendarDetailView *calendarDetailView = [[CalendarDetailView alloc] initWithModel:weakSelf.calendarDetailModelArray[tag]];
                 calendarDetailView.frame = CGRectMake(0, 0, CustomWidth(275), CustomHeight(330));
                 MAKAFakeRootAlertView * alertView = [[MAKAFakeRootAlertView alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
                 
@@ -312,11 +314,11 @@
         
         
         //firstDay
-        firstDateString = [NSDate stringFromDate:self.firstDate withFormat:@"yyyy年MM月dd日"];
+        firstDateString = [NSDate stringFromDate:self.firstDate withFormat:@"yyyy年 MM月dd日"];
         
         //lastDay
         lastDate = [[NSDate alloc]initWithTimeInterval:(NSTimeInterval)(20*24*60*60) sinceDate:self.firstDate];
-        lastDateString = [NSDate stringFromDate:lastDate withFormat:@"yyyy年MM月dd日"];
+        lastDateString = [NSDate stringFromDate:lastDate withFormat:@"MM月dd日"];
         
         _dateLabel = [[UILabel alloc]init];
         _dateLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@", firstDateString, lastDateString];
@@ -338,6 +340,22 @@
         
     }
     return _goalLabel;
+}
+
+
+//当前周期第一天
+- (NSDate *)firstDate {
+    if (!_firstDate) {
+        //firstDate = 测试日期
+        
+        _firstDate = [NSDate beginningOfDay:[NSDate dateFromString:@"2016-06-24"]];
+        
+//        NSLog(@"firstDate %@", _firstDate);
+//        NSLog(@"dateFromString %@", [NSDate stringFromDate:[NSDate dateFromString:@"2016-10-06"]]);
+//        NSLog(@"first %@", [_firstDate descriptionWithLocale:[NSLocale currentLocale]]);
+//        NSLog(@"first today %@", [NSDate stringFromDate:[NSDate beginningOfDay:_firstDate]]);
+    }
+    return _firstDate;
 }
 
 - (NSMutableArray<CalendarItem *> *)calendarItemArray{
@@ -402,7 +420,7 @@
 
 - (NSMutableArray<CalendarModel *> *)calendarModelArray {
     if (!_calendarModelArray) {
-        _calendarModelArray = [[NSMutableArray alloc]init];
+        _calendarModelArray = [[NSMutableArray alloc]initWithCapacity:21];
         
         NSTimeInterval timeOffset = 24*60*60;
         NSDate * date;
@@ -441,24 +459,14 @@
     return _calendarModelArray;
 }
 
-//当前周期第一天
-- (NSDate *)firstDate {
-    if (!_firstDate) {
-        //firstDate = 测试日期
-        
-        _firstDate = [NSDate beginningOfDay:[NSDate dateFromString:@"2016-06-24"]];
-        
-//        NSLog(@"firstDate %@", _firstDate);
-//        NSLog(@"dateFromString %@", [NSDate stringFromDate:[NSDate dateFromString:@"2016-10-06"]]);
-//        NSLog(@"first %@", [_firstDate descriptionWithLocale:[NSLocale currentLocale]]);
-//        NSLog(@"first today %@", [NSDate stringFromDate:[NSDate beginningOfDay:_firstDate]]);
+- (NSMutableArray<NSMutableArray<CalendarDetailModel *>*> *)calendarDetailModelArray {
+    if (!_calendarDetailModelArray) {
+        _calendarDetailModelArray = [[NSMutableArray alloc]initWithCapacity:21];
+        for (NSInteger i = 0 ; i < 21; i++) {
+            NSMutableArray *modelArray = [self transformCalendarItemToDetailModels:[self calendarItemFromArrayWithDate:self.calendarModelArray[i].date]];
+            [_calendarDetailModelArray addObject:modelArray];
+        }
     }
-    return _firstDate;
+    return _calendarDetailModelArray;
 }
-//- (CalendarDetailView *)calendarDetailView {
-//    if (!_calendarDetailView) {
-//        _calendarDetailView = [[CalendarDetailView alloc]init];
-//    }
-//    return _calendarDetailView;
-//}
 @end
