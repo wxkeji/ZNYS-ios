@@ -23,6 +23,8 @@
 
 @property(nonatomic,strong) UIImageView* indicatorView;
 @property(nonatomic,strong) UILabel*     indicatorLabel;
+
+@property(nonatomic,assign)float currentProgress;
 @end
 
 @implementation ConnectingView
