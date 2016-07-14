@@ -7,8 +7,10 @@
 //
 
 #import "ToothBrushManagentMainViewController.h"
-
+#import "ToothBrushManagentMainView.h"
 @interface ToothBrushManagentMainViewController ()
+
+@property(nonatomic,strong)ToothBrushManagentMainView* mainView;
 
 @end
 
@@ -16,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    [self.view addSubview:self.mainView];
     // Do any additional setup after loading the view.
 }
 
@@ -33,5 +37,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (ToothBrushManagentMainView *)mainView {
+	if(_mainView == nil) {
+		_mainView = [[ToothBrushManagentMainView alloc] initWithFrame:self.view.bounds];
+	}
+	return _mainView;
+}
 
 @end

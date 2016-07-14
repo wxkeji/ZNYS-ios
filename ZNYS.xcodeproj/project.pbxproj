@@ -44,6 +44,11 @@
 		455AAA751D24104800BE3F27 /* CalendarItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 455AAA721D24104800BE3F27 /* CalendarItem+CoreDataProperties.m */; };
 		455AAA761D24104800BE3F27 /* CalendarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 455AAA741D24104800BE3F27 /* CalendarItem.m */; };
 		455AAA791D2410C000BE3F27 /* CalendarItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 455AAA781D2410C000BE3F27 /* CalendarItemManager.m */; };
+		455B1B221D361DD0002D85E3 /* ToothbrushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B211D361DD0002D85E3 /* ToothbrushManager.m */; };
+		455B1B241D365A88002D85E3 /* SCUTB8.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 455B1B231D365A87002D85E3 /* SCUTB8.gpx */; };
+		455B1B271D366F0E002D85E3 /* ToothBrushCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B261D366F0E002D85E3 /* ToothBrushCollectionViewCell.m */; };
+		455B1B2A1D3672C5002D85E3 /* CollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B291D3672C5002D85E3 /* CollectionViewLayout.m */; };
+		455B1B2E1D376B44002D85E3 /* ToothBrushManagentFindView.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B2D1D376B44002D85E3 /* ToothBrushManagentFindView.m */; };
 		4576E3E21CCFD37800A1BA2B /* AwardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4576E3E11CCFD37800A1BA2B /* AwardManager.m */; };
 		458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458093901C21448000CB9BF9 /* CoreData.framework */; };
 		458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 458093941C21453200CB9BF9 /* CoreDataHelper.m */; };
@@ -89,6 +94,7 @@
 		45EB69D11C40B2C800160457 /* BCTopBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69CB1C40B2C800160457 /* BCTopBar.png */; };
 		45EB69D21C40B2C800160457 /* BCTopBarReturnButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69CC1C40B2C800160457 /* BCTopBarReturnButton.png */; };
 		45EB69D41C415DDE00160457 /* BCBottomPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69D31C415DDE00160457 /* BCBottomPattern.png */; };
+		45EF67D41D33D50600611BF4 /* SettingBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EF67D31D33D50600611BF4 /* SettingBaseView.m */; };
 		45F786601D0D00E400E4F91D /* ToothBrushManagentMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F7865F1D0D00E400E4F91D /* ToothBrushManagentMainView.m */; };
 		45F786631D0D010400E4F91D /* ToothBrushManagentMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F786621D0D010400E4F91D /* ToothBrushManagentMainViewController.m */; };
 		6412FC9B1C476AB400DF8FC5 /* RewardListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6412FC9A1C476AB400DF8FC5 /* RewardListViewController.m */; };
@@ -218,6 +224,15 @@
 		455AAA741D24104800BE3F27 /* CalendarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarItem.m; sourceTree = "<group>"; };
 		455AAA771D2410C000BE3F27 /* CalendarItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarItemManager.h; sourceTree = "<group>"; };
 		455AAA781D2410C000BE3F27 /* CalendarItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarItemManager.m; sourceTree = "<group>"; };
+		455B1B201D361DD0002D85E3 /* ToothbrushManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToothbrushManager.h; sourceTree = "<group>"; };
+		455B1B211D361DD0002D85E3 /* ToothbrushManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToothbrushManager.m; sourceTree = "<group>"; };
+		455B1B231D365A87002D85E3 /* SCUTB8.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SCUTB8.gpx; sourceTree = "<group>"; };
+		455B1B251D366F0E002D85E3 /* ToothBrushCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToothBrushCollectionViewCell.h; sourceTree = "<group>"; };
+		455B1B261D366F0E002D85E3 /* ToothBrushCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToothBrushCollectionViewCell.m; sourceTree = "<group>"; };
+		455B1B281D3672C5002D85E3 /* CollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewLayout.h; sourceTree = "<group>"; };
+		455B1B291D3672C5002D85E3 /* CollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewLayout.m; sourceTree = "<group>"; };
+		455B1B2C1D376B44002D85E3 /* ToothBrushManagentFindView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToothBrushManagentFindView.h; sourceTree = "<group>"; };
+		455B1B2D1D376B44002D85E3 /* ToothBrushManagentFindView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToothBrushManagentFindView.m; sourceTree = "<group>"; };
 		4576E3E01CCFD37800A1BA2B /* AwardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwardManager.h; sourceTree = "<group>"; };
 		4576E3E11CCFD37800A1BA2B /* AwardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwardManager.m; sourceTree = "<group>"; };
 		458093901C21448000CB9BF9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -290,6 +305,8 @@
 		45EB69CB1C40B2C800160457 /* BCTopBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCTopBar.png; sourceTree = "<group>"; };
 		45EB69CC1C40B2C800160457 /* BCTopBarReturnButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCTopBarReturnButton.png; sourceTree = "<group>"; };
 		45EB69D31C415DDE00160457 /* BCBottomPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCBottomPattern.png; sourceTree = "<group>"; };
+		45EF67D21D33D50600611BF4 /* SettingBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingBaseView.h; sourceTree = "<group>"; };
+		45EF67D31D33D50600611BF4 /* SettingBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingBaseView.m; sourceTree = "<group>"; };
 		45F7865E1D0D00E400E4F91D /* ToothBrushManagentMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToothBrushManagentMainView.h; sourceTree = "<group>"; };
 		45F7865F1D0D00E400E4F91D /* ToothBrushManagentMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToothBrushManagentMainView.m; sourceTree = "<group>"; };
 		45F786611D0D010400E4F91D /* ToothBrushManagentMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToothBrushManagentMainViewController.h; sourceTree = "<group>"; };
@@ -543,6 +560,7 @@
 		0487D7571B74548E00756EF8 = {
 			isa = PBXGroup;
 			children = (
+				455B1B231D365A87002D85E3 /* SCUTB8.gpx */,
 				458093901C21448000CB9BF9 /* CoreData.framework */,
 				0487D7621B74548F00756EF8 /* ZNYS */,
 				0487D77C1B74548F00756EF8 /* ZNYSTests */,
@@ -662,6 +680,13 @@
 				3C98A22D1D24FF4700046BE8 /* star.png */,
 			);
 			name = Calendar;
+			sourceTree = "<group>";
+		};
+		455B1B2B1D376A4E002D85E3 /* EvaluateModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = EvaluateModule;
 			sourceTree = "<group>";
 		};
 		458093921C2144B700CB9BF9 /* CoreDataHelper */ = {
@@ -835,6 +860,8 @@
 		45F7865B1D0D009600E4F91D /* model */ = {
 			isa = PBXGroup;
 			children = (
+				455B1B201D361DD0002D85E3 /* ToothbrushManager.h */,
+				455B1B211D361DD0002D85E3 /* ToothbrushManager.m */,
 				45BC40851C2469D9006A185F /* ToothBrush+CoreDataProperties.h */,
 				45BC40861C2469D9006A185F /* ToothBrush+CoreDataProperties.m */,
 				45BC40871C2469D9006A185F /* ToothBrush.h */,
@@ -848,6 +875,12 @@
 			children = (
 				45F7865E1D0D00E400E4F91D /* ToothBrushManagentMainView.h */,
 				45F7865F1D0D00E400E4F91D /* ToothBrushManagentMainView.m */,
+				455B1B251D366F0E002D85E3 /* ToothBrushCollectionViewCell.h */,
+				455B1B261D366F0E002D85E3 /* ToothBrushCollectionViewCell.m */,
+				455B1B281D3672C5002D85E3 /* CollectionViewLayout.h */,
+				455B1B291D3672C5002D85E3 /* CollectionViewLayout.m */,
+				455B1B2C1D376B44002D85E3 /* ToothBrushManagentFindView.h */,
+				455B1B2D1D376B44002D85E3 /* ToothBrushManagentFindView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -928,6 +961,7 @@
 		645A01651C37B51D00556395 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				455B1B2B1D376A4E002D85E3 /* EvaluateModule */,
 				3C98A21E1D24FEC000046BE8 /* CalendarModule */,
 				45F7865A1D0D007D00E4F91D /* ToothBrushManagementModule */,
 				6412FC951C476A4600DF8FC5 /* UserRewardModule */,
@@ -1065,6 +1099,8 @@
 				645A018F1C37CB2500556395 /* ZNYSBaseController.m */,
 				645A01941C37CBBF00556395 /* ZNYSBaseView.h */,
 				645A01951C37CBBF00556395 /* ZNYSBaseView.m */,
+				45EF67D21D33D50600611BF4 /* SettingBaseView.h */,
+				45EF67D31D33D50600611BF4 /* SettingBaseView.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -1229,6 +1265,7 @@
 				6F3962841C3A13E200C78F84 /* Calendar.storyboard in Resources */,
 				3C62CE4D1D2650F500402FE1 /* arrow_head_right.png in Resources */,
 				45EB69D41C415DDE00160457 /* BCBottomPattern.png in Resources */,
+				455B1B241D365A88002D85E3 /* SCUTB8.gpx in Resources */,
 				6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */,
 				3C62CE581D2819E100402FE1 /* nightReward.png in Resources */,
 				0487D7711B74548F00756EF8 /* Images.xcassets in Resources */,
@@ -1324,7 +1361,10 @@
 				0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */,
 				C460E0401BC509D3000608BD /* DesignModeController.m in Sources */,
 				645A016F1C37B5B800556395 /* AddAccountView.m in Sources */,
+				45EF67D41D33D50600611BF4 /* SettingBaseView.m in Sources */,
 				45BC409B1C2469D9006A185F /* Rules+CoreDataProperties.m in Sources */,
+				455B1B271D366F0E002D85E3 /* ToothBrushCollectionViewCell.m in Sources */,
+				455B1B2A1D3672C5002D85E3 /* CollectionViewLayout.m in Sources */,
 				645A018B1C37C9AC00556395 /* UILabel+Font.m in Sources */,
 				455AAA761D24104800BE3F27 /* CalendarItem.m in Sources */,
 				647E05D41C3B71E800ADB810 /* SwitchUserView.m in Sources */,
@@ -1368,6 +1408,7 @@
 				3C62CE611D29FFE300402FE1 /* NSDate+Helper.m in Sources */,
 				45BC40961C2469D9006A185F /* AreaStatistics.m in Sources */,
 				6FC69C131BBC4DBD0074C38E /* CalendarViewController.m in Sources */,
+				455B1B2E1D376B44002D85E3 /* ToothBrushManagentFindView.m in Sources */,
 				45BC409D1C2469D9006A185F /* ToothBrush+CoreDataProperties.m in Sources */,
 				041366001BAD8C9A00CD0604 /* DialogView.m in Sources */,
 				0469BFBE1BADC22F0055DF4A /* Fortune.m in Sources */,
@@ -1383,6 +1424,7 @@
 				6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */,
 				451D6A211C9A8445000B6A91 /* Model.xcdatamodel in Sources */,
 				C43136471BC282C30097A91B /* IsParentToCabinetSegue.m in Sources */,
+				455B1B221D361DD0002D85E3 /* ToothbrushManager.m in Sources */,
 				458094691C23DE5700CB9BF9 /* ConnectingViewController.m in Sources */,
 				C4A025001BBE678000771969 /* settingIndexController.m in Sources */,
 				45BC40971C2469D9006A185F /* CustomerServices+CoreDataProperties.m in Sources */,

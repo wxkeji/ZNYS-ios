@@ -13,6 +13,7 @@
 #import "CabinetViewController.h"
 #import "User.h"
 #import "RewardListViewController.h"
+#import "ToothBrushManagentMainViewController.h"
 
 @interface SettingViewController ()
 
@@ -85,9 +86,15 @@
         
         WS(weakSelf, self);
         _buttonView.buttonClickBlock = ^(NSInteger tag){
-            switch (tag) {
+            switch (tag - baseTag) {
                 case 0:
                     [weakSelf.navigationController pushViewController:[[RewardListViewController alloc] init] animated:YES];
+                    break;
+                    
+                case 6:
+                {
+                    [weakSelf.navigationController pushViewController:[[ToothBrushManagentMainViewController alloc] init] animated:YES];
+                }
                     break;
                     
                 default:

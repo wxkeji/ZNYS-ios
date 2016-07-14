@@ -12,6 +12,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "User.h"
+#import "ToothBrush.h"
 @interface CoreDataHelper :NSObject
 @property (nonatomic, readonly) NSManagedObjectContext* context;
 @property (nonatomic, readonly) NSManagedObjectModel* model;
@@ -38,4 +39,8 @@
 - (Award*)createAward;
 - (Award*)createNewAwardWithAward:(Award*)award;
 -(NSArray*)retrieveAwardsWithPredicate:(NSPredicate*)predicate;
+
+
+- (ToothBrush*)createToothBrush;
+- (NSArray*)retrieveToothBrushWithPredicate:(NSPredicate*)predicate;
 @end

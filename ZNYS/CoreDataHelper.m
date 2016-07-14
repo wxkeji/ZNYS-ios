@@ -264,4 +264,24 @@ NSString* storeFilename = @"database.sqlite";
         return [self.context executeFetchRequest:request error:nil];
     }
 }
+
+
+
+- (ToothBrush*)createToothBrush {
+    ToothBrush* savedObject =  [NSEntityDescription insertNewObjectForEntityForName:@"ToothBrush" inManagedObjectContext:self.context];
+    return savedObject;
+}
+
+-(NSArray*)retrieveToothBrushWithPredicate:(NSPredicate *)predicate {
+    if (predicate) {
+        NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"ToothBrush"];
+        [request setPredicate:predicate];
+        return [self.context executeFetchRequest:request error:nil];
+    }
+    else
+    {
+        NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"ToothBrush"];
+        return [self.context executeFetchRequest:request error:nil];
+    }
+}
 @end

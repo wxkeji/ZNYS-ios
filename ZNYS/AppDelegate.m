@@ -11,12 +11,30 @@
 #import "User.h"
 #import "CabinetViewController.h"
 #import "AddAccountViewController.h"
+
+static AppDelegate* singleton;
 @interface AppDelegate ()
+
+@property(nonatomic,strong) UINavigationController* currentNavi;
 
 @end
 
 @implementation AppDelegate
+
++(instancetype)sharedInstance {
+    return singleton;
+}
+
+- (UIViewController*)getCurrentTopViewController {
+    return self.currentNavi.topViewController;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    if (!singleton) {
+        singleton = self;
+    }
+    
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     UIStoryboard * storyBoard = [UIStoryboard storyboardWithName:@"Cabinet" bundle:[NSBundle mainBundle]];
     if ([[CoreDataHelper sharedInstance] whetherThereIsUser]) {
@@ -24,6 +42,7 @@
          UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:viewController];
         nav.navigationBarHidden = YES;
         self.window.rootViewController = nav;
+        self.currentNavi = nav;
         [self.window makeKeyAndVisible];
     }else{
         AddAccountViewController * viewController = [[AddAccountViewController alloc] init];

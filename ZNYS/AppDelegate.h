@@ -15,5 +15,9 @@
 
 @property (weak, nonatomic) ZNYSBaseController * currentController;
 
+
++ (instancetype)sharedInstance;
+
+- (UIViewController*)getCurrentTopViewController;
 @end
 

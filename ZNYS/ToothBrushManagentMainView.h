@@ -7,8 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingBaseView.h"
 
-@interface ToothBrushManagentMainView : UIView
+@protocol ToothBrushMangementViewControllerProtocol <NSObject>
+
+- (void)onBrushButtonClicked:(UIButton*)brushButton;
+
+@end
+
+@interface ToothBrushManagentMainView : SettingBaseView
 
 - (instancetype)initWithFrame:(CGRect)frame;
+
+- (void)setToothBrushNumber:(NSInteger)number;
+
+- (void)setUserNickname:(NSString*)nickname;
+
+@property(nonatomic,weak) id<ToothBrushMangementViewControllerProtocol> viewController;
+
 @end
