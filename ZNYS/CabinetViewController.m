@@ -390,7 +390,7 @@
     
     // 旧版连接
     //无意义frame
-    ConnectedResultView * connectedView = [[ConnectedResultView alloc]initWithFrame:CGRectMake(0, 0, 400, 400)];
+    ConnectedResultView * connectedView = [[ConnectedResultView alloc]initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH*0.95, kSCREEN_WIDTH*0.95)];
     MAKAFakeRootAlertView * alertView = [[MAKAFakeRootAlertView alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     
     [alertView setUpView:connectedView];

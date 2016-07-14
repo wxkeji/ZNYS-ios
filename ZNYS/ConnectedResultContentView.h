@@ -12,4 +12,6 @@
 @interface ConnectedResultContentView : ZNYSBaseView
 
 @property(nonatomic, strong) CalendarItem * model;
+
+- (instancetype)initWithModel:(CalendarItem *)model;
 @end
