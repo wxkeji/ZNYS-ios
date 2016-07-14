@@ -16,7 +16,7 @@
 
 @interface SensorDataHandler : NSObject
 
-+(instancetype) sharedInstance;
+//+(instancetype) sharedInstance;
 
 -(void)pushAcceleration:(AccelerationPackage*)acceleration;
 -(NSArray*)pushQuaternion:(QuaternionPackage*)quaternion;
@@ -24,6 +24,7 @@
 -(void)classifyAreas;
 -(void)statisticalAnalyseAll;
 -(AnalysisResultSet*)getFinalResult;
+-(AnalysisResultSet*)analysisAndGetFinalResult;
 
 -(void)clearStatistic;
 @end

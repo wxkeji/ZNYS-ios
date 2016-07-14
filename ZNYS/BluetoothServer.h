@@ -9,26 +9,66 @@
 //
 //This class is singleton class, aims to encapsulate bluetooth operation and provide essential interface.
 
-
-
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
-//#import "DataParser.h"
+#import "SensorDataHandler.h"
+#import "AnalysisResultSet.h"
 @import CoreBluetooth;
 @import QuartzCore;
+
+
+typedef NS_ENUM(NSUInteger,BLSDataType)
+{
+    BLS_ONLINE_DATA,
+    BLS_OFFLINE_DATA
+};
+
+typedef NS_ENUM(NSUInteger,DataType) {
+    DATA_TYPE_ACCELERATION,//加速度
+    DATA_TYPE_QUATARNION//四元数
+};
+
+@protocol BluetoothServerProtocol <NSObject>
+
+-(void)findNewToothBrushDevice:(CBPeripheral*)peripheral advertisementdata:(NSDictionary*)data RSSI:(NSNumber*)rssi;
+
+- (void)didConnectToothBrush:(CBPeripheral*)toothBrush;
+
+- (void)dataTransferFinished;
+
+- (void)connectedResult:(BOOL) isConnected;
+
+- (void)dataTransferStatusUpdated:(BLSDataType)dataType packageReceived:(NSUInteger)num;
+
+@end
+
+
+
+
+
+
 @interface BluetoothServer : NSObject<CBCentralManagerDelegate,CBPeripheralDelegate>
 
 #pragma mark - property
+
 @property(nonatomic) BOOL connected;//A flag that indicates whether the peripheral is connected.YES means connected, No means disconnected
+@property(nonatomic,strong) NSMutableArray* sensorDataHandlersArray;
+@property(nonatomic,weak) id<BluetoothServerProtocol> delegate;
+//@property(nonatomic,copy) AnalysisResultSet*(^dataTransferFinishBlock)();//数据传输完成时会调用该block
 
 #pragma mark - Initialization method
 +(BluetoothServer*) defaultServer;
+
+
 #pragma mark - APIs
 -(void)scan;//开启蓝牙的状态下，扫描并自动连接到硬件（一般用时不超过五秒），连接后self.connected将变成YES
--(void)connectDeviceWithCompletionBlock:(void(^)(void))completion failedBlock:(void(^)(void))fail;//修改后的连接牙刷算法
+-(void)connectDeviceWithFinishBlock:(void(^)(BOOL isConnected))completion;/*WithCompletionBlock:(void(^)(void))completion failedBlock:(void(^)(void))fail*/;
 -(void)stopScan;
+- (void)startReceiveDataWithType:(NSUInteger)dataType;
+-(BOOL)allDataIsReceived;
+#pragma mark - Encapsulated APIs,通过这些API可以控制牙刷
 
-#pragma mark - Encapsulated APIs
+
 -(NSData*)getBrushUUID;
 -(void)setTargetTime:(NSString*)time;//设置刷牙目标时间
 -(void)light;//亮灯
