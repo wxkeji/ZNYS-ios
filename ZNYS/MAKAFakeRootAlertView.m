@@ -153,6 +153,7 @@ static FakeAlertViewBackground * fakeAlertViewBackground;
         window.windowLevel = UIWindowLevelAlert;
         window.rootViewController = viewController;
         _backgroundWindow = window;
+        [_backgroundWindow  addSubview:self];
     }
     [_backgroundWindow makeKeyAndVisible];
     

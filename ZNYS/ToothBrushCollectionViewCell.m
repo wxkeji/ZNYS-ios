@@ -30,6 +30,8 @@
 @end
 @implementation ToothBrushCollectionViewCell
 
+
+
 -(instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     self.layer.cornerRadius = 10.0f;
@@ -46,33 +48,40 @@
 #pragma mark - private methods
 - (void)addSubviewConstraints {
     WS(weakSelf, self);
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker* make) {
-        make.centerX.equalTo(weakSelf.mas_centerX);
-//        make
-    }];
-    
-    [self.bindTimeHintLabel mas_makeConstraints:^(MASConstraintMaker* make) {
-        
-    }];
-    
-    [self.bindTimeContentLabel mas_makeConstraints:^(MASConstraintMaker* make) {
-        
-    }];
-    
-    [self.lastConnectTimeHintLabel mas_makeConstraints:^(MASConstraintMaker* make) {
-        
-    }];
-    
-    [self.lastConnectTimeContentLabel mas_makeConstraints:^(MASConstraintMaker* make) {
-        
-    }];
-    
     [self.toothbrushItemView mas_makeConstraints:^(MASConstraintMaker* make) {
         make.height.equalTo(@92);
         make.width.equalTo(@18);
         make.left.equalTo(weakSelf.mas_left).with.offset(15);
         make.top.equalTo(weakSelf.mas_top).with.offset(36);
     }];
+    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker* make) {
+        make.centerX.equalTo(weakSelf.mas_centerX);
+        make.top.equalTo(weakSelf.mas_top).with.offset(10);
+//        make
+    }];
+    
+    [self.bindTimeHintLabel mas_makeConstraints:^(MASConstraintMaker* make) {
+        make.left.equalTo(weakSelf.toothbrushItemView.mas_right).with.offset(CustomWidth(5));
+        make.top.equalTo(weakSelf.titleLabel.mas_bottom).with.offset(CustomHeight(20));
+        
+    }];
+    
+    [self.bindTimeContentLabel mas_makeConstraints:^(MASConstraintMaker* make) {
+        make.left.equalTo(weakSelf.bindTimeHintLabel.mas_right);
+        make.baseline.equalTo(weakSelf.bindTimeHintLabel.mas_baseline);
+    }];
+    
+    [self.lastConnectTimeHintLabel mas_makeConstraints:^(MASConstraintMaker* make) {
+        make.left.equalTo(weakSelf.bindTimeHintLabel.mas_left);
+        make.top.equalTo(weakSelf.bindTimeHintLabel.mas_bottom).with.offset(10);
+    }];
+    
+    [self.lastConnectTimeContentLabel mas_makeConstraints:^(MASConstraintMaker* make) {
+        make.left.equalTo(weakSelf.lastConnectTimeHintLabel);
+        make.top.equalTo(weakSelf.lastConnectTimeHintLabel.mas_bottom).with.offset(10);
+    }];
+    
+
     
 
 }
@@ -93,7 +102,7 @@
 - (UILabel *)titleLabel {
 	if(_titleLabel == nil) {
 		_titleLabel = [[UILabel alloc] init];
-        [_titleLabel setFont:[UIFont systemFontOfSize:25.0f]];
+        [_titleLabel setFont:[UIFont systemFontOfSize:15.0f]];
         [_titleLabel sizeToFit];
         [_titleLabel setText:@"测试用牙刷"];
         [_titleLabel setTextColor:[UIColor whiteColor]];
@@ -107,6 +116,7 @@
 	if(_bindTimeHintLabel == nil) {
 		_bindTimeHintLabel = [[UILabel alloc] init];
         [_bindTimeHintLabel setTextColor:[UIColor whiteColor]];
+        _bindTimeHintLabel.text = @"绑定时间:";
         [_bindTimeHintLabel setFont:[UIFont systemFontOfSize:15.f]];
     }
 	return _bindTimeHintLabel;
@@ -115,7 +125,10 @@
 - (UILabel *)bindTimeContentLabel {
 	if(_bindTimeContentLabel == nil) {
 		_bindTimeContentLabel = [[UILabel alloc] init];
-	}
+     	_bindTimeContentLabel.text = @"2016-01-01";
+        [_bindTimeContentLabel setTextColor:[UIColor yellowColor]];
+        [_bindTimeContentLabel setFont:[UIFont systemFontOfSize:15.f]];
+    }
 	return _bindTimeContentLabel;
 }
 
@@ -123,6 +136,7 @@
 	if(_lastConnectTimeHintLabel == nil) {
 		_lastConnectTimeHintLabel = [[UILabel alloc] init];
         [_lastConnectTimeHintLabel setTextColor:[UIColor whiteColor]];
+        _lastConnectTimeHintLabel.text = @"上次连接时间:";
         [_lastConnectTimeHintLabel setFont:[UIFont systemFontOfSize:15.f]];
 	}
 	return _lastConnectTimeHintLabel;
@@ -131,6 +145,10 @@
 - (UILabel *)lastConnectTimeContentLabel {
 	if(_lastConnectTimeContentLabel == nil) {
 		_lastConnectTimeContentLabel = [[UILabel alloc] init];
+        [_lastConnectTimeContentLabel sizeToFit];
+        [_lastConnectTimeContentLabel setTextColor:[UIColor yellowColor]];
+        _lastConnectTimeContentLabel.text = @"1990-01-01";
+        [_lastConnectTimeContentLabel setFont:[UIFont systemFontOfSize:15.f]];
 	}
 	return _lastConnectTimeContentLabel;
 }

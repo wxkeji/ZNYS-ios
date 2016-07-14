@@ -51,7 +51,7 @@
         <relationship name="includeAreaStatistics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AreaStatistics" inverseName="beIncludedByBrushingStatistics" inverseEntity="AreaStatistics" syncable="YES"/>
     </entity>
     <entity name="Cabinet" syncable="YES">
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="cabinetID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="image_url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
@@ -126,11 +126,11 @@
     </entity>
     <entity name="ToothBrush" representedClassName="ToothBrush" syncable="YES">
         <attribute name="bindTime" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="lastConnectTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="macAddress" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nickname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="toothbrushID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="userUUID" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="bePossessedByUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="possessToothBrushes" inverseEntity="User" syncable="YES"/>
         <relationship name="possessBrushingStatistics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BrushingStatistics" inverseName="bePossessedByToothBrush" inverseEntity="BrushingStatistics" syncable="YES"/>

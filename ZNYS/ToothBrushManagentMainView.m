@@ -21,8 +21,7 @@
 @property (nonatomic,strong) UILabel* toothBrushHintLabel;
 @property (nonatomic,strong) UILabel* toothBrushBindingNumberLabel;
 @property (nonatomic,strong) UILabel* titleLabel;
-@property (nonatomic,strong) UILabel* babysToothBrushHintLabel;
-@property (nonatomic,strong) UILabel* findNewToothBrushHintLabel;
+
 
 
 @property(nonatomic,strong) ToothBrushManagentFindView* findView;
@@ -44,6 +43,8 @@
     [self.headerView addSubview:self.toothBrushHintLabel];
     [self.headerView addSubview:self.toothBrushBindingNumberLabel];
     
+    
+    [self.bottomView addSubview:self.findView];
     [self setConstraints];
     
     return self;
@@ -173,21 +174,6 @@
 	return _titleLabel;
 }
 
-- (UILabel *)babysToothBrushHintLabel {
-	if(_babysToothBrushHintLabel == nil) {
-		_babysToothBrushHintLabel = [[UILabel alloc] initWithCustomFont:15.0f];
-        _babysToothBrushHintLabel.text = @"宝宝的牙刷";
-	}
-	return _babysToothBrushHintLabel;
-}
-
-- (UILabel *)findNewToothBrushHintLabel {
-	if(_findNewToothBrushHintLabel == nil) {
-		_findNewToothBrushHintLabel = [[UILabel alloc] initWithCustomFont:15.0f];
-        _findNewToothBrushHintLabel.text = @"新发现的牙刷";
-	}
-	return _findNewToothBrushHintLabel;
-}
 
 //- (UICollectionView *)babysToothBrushCollectionView {
 //	if(_babysToothBrushCollectionView == nil) {
@@ -215,5 +201,13 @@
 
 
 
+
+- (ToothBrushManagentFindView *)findView {
+	if(_findView == nil) {
+		_findView = [[ToothBrushManagentFindView alloc] initWithFrame:self.bottomView.bounds];
+        [_findView setBackgroundColor:[UIColor whiteColor]];
+	}
+	return _findView;
+}
 
 @end

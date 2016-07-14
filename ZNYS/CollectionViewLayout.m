@@ -7,8 +7,8 @@
 //
 
 
-#define itemWidth CustomWidth(150)
-#define itemHeight CustomHeight(180)
+#define itemWidth CustomWidth(180)
+#define itemHeight CustomHeight(130)
 
 #import "CollectionViewLayout.h"
 #import "ToolMacroes.h"
@@ -19,7 +19,7 @@
     if (self) {
         self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         self.itemSize = CGSizeMake(itemWidth, itemHeight);
-        self.sectionInset = UIEdgeInsetsMake(CustomWidth(10),CustomWidth(10),CustomWidth(10), CustomWidth(10));
+        self.sectionInset = UIEdgeInsetsMake(CustomWidth(30),CustomWidth(10),CustomWidth(60), CustomWidth(10));
 
     }
     return self;
