@@ -32,6 +32,8 @@
 		3C62CE581D2819E100402FE1 /* nightReward.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C62CE551D2819E100402FE1 /* nightReward.png */; };
 		3C62CE5B1D294CD700402FE1 /* CalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE5A1D294CD700402FE1 /* CalendarModel.m */; };
 		3C62CE611D29FFE300402FE1 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE601D29FFE300402FE1 /* NSDate+Helper.m */; };
+		3C877D831D37362B0068ADED /* ConnectedResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C877D821D37362B0068ADED /* ConnectedResultView.m */; };
+		3C877D861D3739750068ADED /* ConnectedResultContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C877D851D3739750068ADED /* ConnectedResultContentView.m */; };
 		3C98A2241D24FF0700046BE8 /* BrushCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2231D24FF0700046BE8 /* BrushCalendarViewController.m */; };
 		3C98A2291D24FF1800046BE8 /* CalendarDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2261D24FF1800046BE8 /* CalendarDetailView.m */; };
 		3C98A22A1D24FF1800046BE8 /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2281D24FF1800046BE8 /* CalendarView.m */; };
@@ -206,6 +208,10 @@
 		3C62CE5A1D294CD700402FE1 /* CalendarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarModel.m; sourceTree = "<group>"; };
 		3C62CE5F1D29FFE300402FE1 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
 		3C62CE601D29FFE300402FE1 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
+		3C877D811D37362B0068ADED /* ConnectedResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedResultView.h; sourceTree = "<group>"; };
+		3C877D821D37362B0068ADED /* ConnectedResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectedResultView.m; sourceTree = "<group>"; };
+		3C877D841D3739750068ADED /* ConnectedResultContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedResultContentView.h; sourceTree = "<group>"; };
+		3C877D851D3739750068ADED /* ConnectedResultContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectedResultContentView.m; sourceTree = "<group>"; };
 		3C98A2221D24FF0700046BE8 /* BrushCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushCalendarViewController.h; sourceTree = "<group>"; };
 		3C98A2231D24FF0700046BE8 /* BrushCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushCalendarViewController.m; sourceTree = "<group>"; };
 		3C98A2251D24FF1800046BE8 /* CalendarDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDetailView.h; sourceTree = "<group>"; };
@@ -738,6 +744,10 @@
 				458094651C23DE4100CB9BF9 /* ConnectedView.m */,
 				454112721C95BE9600BE4DE9 /* ZNYSprogressBar.h */,
 				454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */,
+				3C877D811D37362B0068ADED /* ConnectedResultView.h */,
+				3C877D821D37362B0068ADED /* ConnectedResultView.m */,
+				3C877D841D3739750068ADED /* ConnectedResultContentView.h */,
+				3C877D851D3739750068ADED /* ConnectedResultContentView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1204,6 +1214,7 @@
 				TargetAttributes = {
 					0487D75F1B74548F00756EF8 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 49VALGA2P9;
 					};
 					0487D7781B74548F00756EF8 = {
 						CreatedOnToolsVersion = 6.4;
@@ -1384,6 +1395,7 @@
 				C4DC701F1BBFA0F4004AB6A7 /* DIYGoalController.m in Sources */,
 				C43BC7621BC541FF00C332DD /* IsParentToSettingSegue.m in Sources */,
 				458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */,
+				3C877D861D3739750068ADED /* ConnectedResultContentView.m in Sources */,
 				647E05CB1C3A6C4C00ADB810 /* SettingButtonView.m in Sources */,
 				45BC409A1C2469D9006A185F /* InferenceEngine.m in Sources */,
 				647664641C3BBF0C00386E05 /* AddAccountButton.m in Sources */,
@@ -1416,6 +1428,7 @@
 				645A019C1C37CEF700556395 /* VerifyPasswordView.m in Sources */,
 				45BD02F81CCBDEE600A14E95 /* Award+CoreDataProperties.m in Sources */,
 				0421D3791B830D0B00BF6065 /* ItemState.m in Sources */,
+				3C877D831D37362B0068ADED /* ConnectedResultView.m in Sources */,
 				45F786631D0D010400E4F91D /* ToothBrushManagentMainViewController.m in Sources */,
 				0421D3721B8126C700BF6065 /* CabinetViewController.m in Sources */,
 				458094661C23DE4100CB9BF9 /* ConnectedView.m in Sources */,
@@ -1568,6 +1581,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ZNYS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1578,6 +1592,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1587,6 +1602,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ZNYS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1597,6 +1613,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
