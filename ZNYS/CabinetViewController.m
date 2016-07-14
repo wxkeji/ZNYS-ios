@@ -21,6 +21,8 @@
 #import "CabinetItem.h"
 #import "GiftItem.h"
 #import "ExchangeRewardViewController.h"
+#import "ConnectedResultView.h"
+#import "MAKAFakeRootAlertView.h"
 @interface CabinetViewController ()
 
 //奖品柜的两个ScrollView
@@ -365,8 +367,21 @@
 
 -(void)toConnectBrush
 {
-    ConnectingViewController* cvc = [[ConnectingViewController alloc] init];
-    [self.navigationController pushViewController:cvc animated:YES];
+    
+    // 旧版连接
+    //无意义frame
+    ConnectedResultView * connectedView = [[ConnectedResultView alloc]initWithFrame:CGRectMake(0, 0, 400, 400)];
+    MAKAFakeRootAlertView * alertView = [[MAKAFakeRootAlertView alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    [alertView setUpView:connectedView];
+    connectedView.dismissBlock = ^{
+        [alertView dismiss];
+    };
+    alertView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+    [alertView show];
+
+//    ConnectingViewController* cvc = [[ConnectingViewController alloc] init];
+//    [self.navigationController pushViewController:cvc animated:YES];
 }
 
 - (IBAction)ExchangeRewardButtonClicked:(id)sender {

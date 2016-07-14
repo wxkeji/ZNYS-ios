@@ -13,11 +13,12 @@
 
 @interface ConnectedResultView()
 
+@property (nonatomic, strong) UIImageView *backgroundImageView;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIButton *leftButton;
 @property (nonatomic, strong) UIButton *rightButton;
 @property (nonatomic, strong) NSMutableArray<ConnectedResultContentView *> * contentViewArray;
-@property (nonatomic) NSInteger calendarItemNum;
+@property (nonatomic) NSInteger contentNum;
 @property (nonatomic, strong) NSMutableArray<CalendarItem *> * models;
 
 - (void)rightButtonAction;
@@ -44,14 +45,14 @@
     if (self) {
         //蓝色背景
         [self setBackgroundColor:RGBCOLOR(147, 214, 243)];
-        
     }
     return self;
 }
 
-- (instancetype)init{
-    self = [self init];
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
     if (self) {
+        [self addSubview:self.backgroundImageView];
         [self addSubview:self.scrollView];
         [self addSubview:self.rightButton];
         [self addSubview:self.leftButton];
@@ -86,39 +87,20 @@
             make.centerY.equalTo(weakSelf.scrollView.mas_centerY);
         }];
         
-        [self.reinforcerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(weakSelf.mas_centerX).with.offset(CustomWidth(-50));
-            make.top.lessThanOrEqualTo(weakSelf.scrollView.mas_bottom).with.offset(CustomHeight(20));
-            make.width.mas_equalTo(CustomWidth(40));
-            make.height.mas_equalTo(CustomHeight(40));
-        }];
-        
-        [self.reinforcerLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(weakSelf.mas_centerX).with.offset(CustomWidth(10));
-            make.width.mas_equalTo(CustomWidth(20));
-            make.centerY.equalTo(weakSelf.reinforcerImageView.mas_centerY).offset(CustomWidth(-1));
-        }];
-        
         
         //scrollView 内容
-        self.calendarItemNum = [self.models count];
         
-        self.scrollView.contentSize = CGSizeMake ((CustomHeight(200) * self.calendarItemNum), CustomHeight(200));
+        self.contentNum = [self.models count];
+        self.scrollView.contentSize = CGSizeMake ((CustomHeight(200) * self.contentNum), CustomHeight(200));
         
-        NSInteger offset = 0;
-        for (CalendarDetailModel *model in self.models) {
-            UIImageView * ImageView = [[UIImageView alloc]initWithFrame:CGRectMake(offset + CustomHeight(15),  CustomHeight(15), CustomHeight(170),  CustomHeight(170))];
-            
-            UIImage * image = [UIImage imageNamed:model.pictureURL];
-            [ImageView setImage:image];
-            [self.scrollView addSubview:ImageView];
+        NSInteger offset = CustomHeight(200);
+        for (NSInteger i = 0; i < self.contentNum; i++) {
+            [self.contentViewArray[i] setFrame:CGRectMake(i*offset + CustomHeight(15),  CustomHeight(15), CustomHeight(170),  CustomHeight(170))];
+            [self.scrollView addSubview:self.contentViewArray[i]];
             //初值
-            if (offset == 0) {
-                [self.reinforcerImageView setImage:[UIImage imageNamed:model.reinforcerPictureURL]];
-                self.reinforcerLabel.text = [NSString stringWithFormat:@"%ld",(long)model.reinforcerCount];
+            if (i == 0) {
                 self.leftButton.hidden = YES;
             }
-            offset += CustomHeight(200);
         }
         
         [self.scrollView setDelegate:self];
@@ -189,8 +171,6 @@
 
 - (void)changeReinforcerImageAndLabel {
     NSInteger offset =  (self.scrollView.contentOffset.x) / (self.scrollView.frame.size.width);
-    [self.reinforcerImageView setImage:[UIImage imageNamed:self.models[offset].reinforcerPictureURL]];
-    self.reinforcerLabel.text = [NSString stringWithFormat:@"%ld",(long)self.models[offset].reinforcerCount];
 }
 #pragma mark event action
 
@@ -216,28 +196,6 @@
     return _backgroundImageView;
 }
 
-- (UIImageView *)reinforcerImageView {
-    if (!_reinforcerImageView) {
-        _reinforcerImageView = [[UIImageView alloc]init];
-        [_reinforcerImageView setImage:[UIImage imageNamed:@"star"]];
-        //[_reinforcerImageView setBackgroundColor:[UIColor whiteColor]];
-    }
-    return _reinforcerImageView;
-}
-
-- (UILabel *)reinforcerLabel {
-    if (!_reinforcerLabel) {
-        _reinforcerLabel = [[UILabel alloc]init];
-        _reinforcerLabel.text = [[NSString alloc]initWithFormat:@"0"];
-        _reinforcerLabel.font = [UIFont systemFontOfSize:50];
-        _reinforcerLabel.textColor = RGBCOLOR(147, 214, 243);
-        
-        _reinforcerLabel.adjustsFontSizeToFitWidth = YES;
-        _reinforcerLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
-        //[_reinforcerLabel setBackgroundColor:[UIColor whiteColor]];
-    }
-    return _reinforcerLabel;
-}
 
 - (UIScrollView *)scrollView {
     if (!_scrollView) {
@@ -267,4 +225,15 @@
     return _leftButton;
 }
 
+- (NSMutableArray<ConnectedResultContentView *> * )contentViewArray {
+    if (!_contentViewArray) {
+        _contentViewArray = [[NSMutableArray alloc]init];
+        for (CalendarItem *calendarItem in self.models) {
+            ConnectedResultContentView *view = [[ConnectedResultContentView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+            [view setModel:calendarItem];
+            [_contentViewArray addObject:view];
+        }
+    }
+    return _contentViewArray;
+}
 @end
