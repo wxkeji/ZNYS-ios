@@ -47,10 +47,11 @@
 		455AAA761D24104800BE3F27 /* CalendarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 455AAA741D24104800BE3F27 /* CalendarItem.m */; };
 		455AAA791D2410C000BE3F27 /* CalendarItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 455AAA781D2410C000BE3F27 /* CalendarItemManager.m */; };
 		455B1B221D361DD0002D85E3 /* ToothbrushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B211D361DD0002D85E3 /* ToothbrushManager.m */; };
-		455B1B241D365A88002D85E3 /* SCUTB8.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 455B1B231D365A87002D85E3 /* SCUTB8.gpx */; };
 		455B1B271D366F0E002D85E3 /* ToothBrushCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B261D366F0E002D85E3 /* ToothBrushCollectionViewCell.m */; };
 		455B1B2A1D3672C5002D85E3 /* CollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B291D3672C5002D85E3 /* CollectionViewLayout.m */; };
 		455B1B2E1D376B44002D85E3 /* ToothBrushManagentFindView.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B2D1D376B44002D85E3 /* ToothBrushManagentFindView.m */; };
+		455B1B311D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B301D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m */; };
+		455B1B341D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B331D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.m */; };
 		4576E3E21CCFD37800A1BA2B /* AwardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4576E3E11CCFD37800A1BA2B /* AwardManager.m */; };
 		458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458093901C21448000CB9BF9 /* CoreData.framework */; };
 		458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 458093941C21453200CB9BF9 /* CoreDataHelper.m */; };
@@ -232,13 +233,16 @@
 		455AAA781D2410C000BE3F27 /* CalendarItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarItemManager.m; sourceTree = "<group>"; };
 		455B1B201D361DD0002D85E3 /* ToothbrushManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToothbrushManager.h; sourceTree = "<group>"; };
 		455B1B211D361DD0002D85E3 /* ToothbrushManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToothbrushManager.m; sourceTree = "<group>"; };
-		455B1B231D365A87002D85E3 /* SCUTB8.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SCUTB8.gpx; sourceTree = "<group>"; };
 		455B1B251D366F0E002D85E3 /* ToothBrushCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToothBrushCollectionViewCell.h; sourceTree = "<group>"; };
 		455B1B261D366F0E002D85E3 /* ToothBrushCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToothBrushCollectionViewCell.m; sourceTree = "<group>"; };
 		455B1B281D3672C5002D85E3 /* CollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewLayout.h; sourceTree = "<group>"; };
 		455B1B291D3672C5002D85E3 /* CollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewLayout.m; sourceTree = "<group>"; };
 		455B1B2C1D376B44002D85E3 /* ToothBrushManagentFindView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToothBrushManagentFindView.h; sourceTree = "<group>"; };
 		455B1B2D1D376B44002D85E3 /* ToothBrushManagentFindView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToothBrushManagentFindView.m; sourceTree = "<group>"; };
+		455B1B2F1D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindToothBrushCollectionViewDatasource.h; sourceTree = "<group>"; };
+		455B1B301D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindToothBrushCollectionViewDatasource.m; sourceTree = "<group>"; };
+		455B1B321D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindNewToothBrushCollectionviewDatasource.h; sourceTree = "<group>"; };
+		455B1B331D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindNewToothBrushCollectionviewDatasource.m; sourceTree = "<group>"; };
 		4576E3E01CCFD37800A1BA2B /* AwardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwardManager.h; sourceTree = "<group>"; };
 		4576E3E11CCFD37800A1BA2B /* AwardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwardManager.m; sourceTree = "<group>"; };
 		458093901C21448000CB9BF9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -566,7 +570,6 @@
 		0487D7571B74548E00756EF8 = {
 			isa = PBXGroup;
 			children = (
-				455B1B231D365A87002D85E3 /* SCUTB8.gpx */,
 				458093901C21448000CB9BF9 /* CoreData.framework */,
 				0487D7621B74548F00756EF8 /* ZNYS */,
 				0487D77C1B74548F00756EF8 /* ZNYSTests */,
@@ -876,6 +879,10 @@
 				45BC40861C2469D9006A185F /* ToothBrush+CoreDataProperties.m */,
 				45BC40871C2469D9006A185F /* ToothBrush.h */,
 				45BC40881C2469D9006A185F /* ToothBrush.m */,
+				455B1B2F1D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.h */,
+				455B1B301D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m */,
+				455B1B321D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.h */,
+				455B1B331D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -1276,7 +1283,6 @@
 				6F3962841C3A13E200C78F84 /* Calendar.storyboard in Resources */,
 				3C62CE4D1D2650F500402FE1 /* arrow_head_right.png in Resources */,
 				45EB69D41C415DDE00160457 /* BCBottomPattern.png in Resources */,
-				455B1B241D365A88002D85E3 /* SCUTB8.gpx in Resources */,
 				6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */,
 				3C62CE581D2819E100402FE1 /* nightReward.png in Resources */,
 				0487D7711B74548F00756EF8 /* Images.xcassets in Resources */,
@@ -1397,6 +1403,7 @@
 				458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */,
 				3C877D861D3739750068ADED /* ConnectedResultContentView.m in Sources */,
 				647E05CB1C3A6C4C00ADB810 /* SettingButtonView.m in Sources */,
+				455B1B311D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m in Sources */,
 				45BC409A1C2469D9006A185F /* InferenceEngine.m in Sources */,
 				647664641C3BBF0C00386E05 /* AddAccountButton.m in Sources */,
 				6412FC9B1C476AB400DF8FC5 /* RewardListViewController.m in Sources */,
@@ -1415,6 +1422,7 @@
 				45BC40921C2469D9006A185F /* User.m in Sources */,
 				64CCBD9A1CD88A16003EFFAD /* ExchangeRewardViewController.m in Sources */,
 				3C98A2291D24FF1800046BE8 /* CalendarDetailView.m in Sources */,
+				455B1B341D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.m in Sources */,
 				45BC409E1C2469D9006A185F /* ToothBrush.m in Sources */,
 				64CCBD851CD30460003EFFAD /* AddRewardView.m in Sources */,
 				3C62CE611D29FFE300402FE1 /* NSDate+Helper.m in Sources */,
@@ -1580,7 +1588,7 @@
 			baseConfigurationReference = 95D5691AAB0097B916FF9D6E /* Pods-ZNYS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 543198902@qq.com (2EZ48W4M9J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ZNYS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1601,7 +1609,7 @@
 			baseConfigurationReference = 9F041B2DDFC46297669F9D2D /* Pods-ZNYS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 543198902@qq.com (2EZ48W4M9J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ZNYS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

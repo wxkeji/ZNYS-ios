@@ -23,6 +23,8 @@
 #import "ExchangeRewardViewController.h"
 #import "ConnectedResultView.h"
 #import "MAKAFakeRootAlertView.h"
+#import "ToothBrushManagentFindView.h"
+#import "ToothBrushCollectionViewCell.h"
 @interface CabinetViewController ()
 
 //奖品柜的两个ScrollView
@@ -55,6 +57,9 @@
 
 @property (strong, nonatomic) NSNumber* userLevel;
 
+
+@property (nonatomic,strong) ToothBrushManagentFindView* findView;
+@property(nonatomic,strong) UIButton* overlayView;
 @end
 
 @implementation CabinetViewController
@@ -127,7 +132,7 @@
 {
     [self.calendarButton addTarget:self action:@selector(toBrushCalendar) forControlEvents:UIControlEventTouchUpInside];
     [self.settingsButton addTarget:self action:@selector(toSetting) forControlEvents:UIControlEventTouchUpInside];
-    [self.connectToothBrushButton addTarget:self action:@selector(toConnectBrush) forControlEvents:UIControlEventTouchUpInside];
+    [self.connectToothBrushButton addTarget:self action:@selector(onSyncButtonClickded) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)initCabinet
@@ -313,6 +318,11 @@
     return CGRectMake(buttonX, buttonY, buttonWidth, buttonHeight);
 }
 
+
+-(void)dismissFindView {
+    [self.findView removeFromSuperview];
+    [self.overlayView removeFromSuperview];
+}
 #pragma mark KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
@@ -365,6 +375,16 @@
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
+-(void)onSyncButtonClickded{
+    
+    [self.view addSubview:self.overlayView];
+    
+    [self.view addSubview:self.findView];
+    [self.findView addSyncButton];
+    
+    
+}
+
 -(void)toConnectBrush
 {
     
@@ -408,7 +428,28 @@
     }
     return _giftList;
 }
-
+-(ToothBrushManagentFindView*)findView {
+    if (!_findView) {
+        _findView   = [[ToothBrushManagentFindView alloc] initWithFrame:CGRectMake(0, 0.298*kSCREEN_HEIGHT, kSCREEN_WIDTH, (1-0.298)*kSCREEN_HEIGHT)];
+        WS(weakSelf, self);
+        _findView.syncButtonActionBlock = ^(UIButton* button) {
+            [weakSelf toConnectBrush];
+            [weakSelf dismissFindView];
+        };
+        WS(weakFindView, _findView);
+        _findView.bindedActionBlock = ^(UICollectionView* view, NSIndexPath*indexPath) {
+            [[view cellForItemAtIndexPath:weakFindView.currentSelectedBindIndex] setBackgroundColor:cellOriginalColor];
+            [[view cellForItemAtIndexPath:indexPath] setBackgroundColor:cellSelectedColor];
+            [weakFindView enableSyncButton];
+        };
+        _findView.newToothbrushActionBlock = ^(UICollectionView* view, NSIndexPath* indexPath) {
+            [[view cellForItemAtIndexPath:weakFindView.currentSelectedNewFindIndex] setBackgroundColor:cellOriginalColor];
+            [[view cellForItemAtIndexPath:indexPath] setBackgroundColor:cellSelectedColor];
+            [weakFindView enableSyncButton];
+        };
+    }
+    return _findView;
+}
 #pragma mark - 历史遗留代码
 - (void)toCalendar
 {
@@ -429,6 +470,19 @@
 //}
 - (IBAction)unwindSegue:(UIStoryboardSegue *)sender{
     
+}
+
+
+
+- (UIButton *)overlayView {
+	if(_overlayView == nil) {
+        _overlayView = [[UIButton alloc] initWithFrame:self.view.bounds];
+        [_overlayView setBackgroundColor:[UIColor whiteColor]];
+        _overlayView.opaque = YES;
+        _overlayView.alpha = 0.8;
+        [_overlayView addTarget:self action:@selector(dismissFindView) forControlEvents:UIControlEventTouchUpInside];
+	}
+	return _overlayView;
 }
 
 @end//  ViewController

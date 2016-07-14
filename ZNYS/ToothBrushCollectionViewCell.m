@@ -117,7 +117,7 @@
 		_bindTimeHintLabel = [[UILabel alloc] init];
         [_bindTimeHintLabel setTextColor:[UIColor whiteColor]];
         _bindTimeHintLabel.text = @"绑定时间:";
-        [_bindTimeHintLabel setFont:[UIFont systemFontOfSize:15.f]];
+        [_bindTimeHintLabel setFont:[UIFont systemFontOfSize:12.0f]];
     }
 	return _bindTimeHintLabel;
 }
@@ -127,7 +127,7 @@
 		_bindTimeContentLabel = [[UILabel alloc] init];
      	_bindTimeContentLabel.text = @"2016-01-01";
         [_bindTimeContentLabel setTextColor:[UIColor yellowColor]];
-        [_bindTimeContentLabel setFont:[UIFont systemFontOfSize:15.f]];
+        [_bindTimeContentLabel setFont:[UIFont systemFontOfSize:12.0f]];
     }
 	return _bindTimeContentLabel;
 }
@@ -137,7 +137,7 @@
 		_lastConnectTimeHintLabel = [[UILabel alloc] init];
         [_lastConnectTimeHintLabel setTextColor:[UIColor whiteColor]];
         _lastConnectTimeHintLabel.text = @"上次连接时间:";
-        [_lastConnectTimeHintLabel setFont:[UIFont systemFontOfSize:15.f]];
+        [_lastConnectTimeHintLabel setFont:[UIFont systemFontOfSize:12.0f]];
 	}
 	return _lastConnectTimeHintLabel;
 }
@@ -148,7 +148,7 @@
         [_lastConnectTimeContentLabel sizeToFit];
         [_lastConnectTimeContentLabel setTextColor:[UIColor yellowColor]];
         _lastConnectTimeContentLabel.text = @"1990-01-01";
-        [_lastConnectTimeContentLabel setFont:[UIFont systemFontOfSize:15.f]];
+        [_lastConnectTimeContentLabel setFont:[UIFont systemFontOfSize:12.0f]];
 	}
 	return _lastConnectTimeContentLabel;
 }

@@ -9,11 +9,10 @@
 #import "ToothBrushManagentFindView.h"
 #import "CollectionViewLayout.h"
 #import "ToothBrushCollectionViewCell.h"
+#import "BindToothBrushCollectionViewDatasource.h"
+#import "FindNewToothBrushCollectionviewDatasource.h"
 
 
-static NSString* const cellId = @"collectionViewCellIdentifier";
-static NSString* const headerId = @"collectionViewHeaderIdentifier";
-static NSString* const footerId = @"collectionViewFooterIdentifier";
 
 @interface ToothBrushManagentFindView()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -23,8 +22,16 @@ static NSString* const footerId = @"collectionViewFooterIdentifier";
 @property(nonatomic,strong) CollectionViewLayout* linearLayout;
 
 
+
+@property(nonatomic,strong) BindToothBrushCollectionViewDatasource* bindedDataSouce;
+
+@property(nonatomic,strong) FindNewToothBrushCollectionviewDatasource* foundDataSouce;
+
+
 @property (nonatomic,strong) UILabel* babysToothBrushHintLabel;
 @property (nonatomic,strong) UILabel* findNewToothBrushHintLabel;
+
+@property (nonatomic,strong) UIButton* syncButton;
 
 @end
 @implementation ToothBrushManagentFindView
@@ -32,81 +39,84 @@ static NSString* const footerId = @"collectionViewFooterIdentifier";
 -(instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     
+    self.bindedDataSouce = [BindToothBrushCollectionViewDatasource sharedInstance];
+    self.foundDataSouce = [FindNewToothBrushCollectionviewDatasource sharedInstance];
+    
     [self setBackgroundColor:[UIColor whiteColor]];
     
     [self addSubview:self.babysToothBrushCollectionView];
     
     [self addSubview:self.findNewToothBrushCollectionView];
+    
+    
+    [self addSubview:self.babysToothBrushHintLabel];
+    [self addSubview:self.findNewToothBrushHintLabel];
+    
+    
+    [self addConstraints];
     return self;
 }
 
 
-
-#pragma mark - collectionveiw datasource
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 2;
-}
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+- (void)addConstraints {
+    WS(weakSelf, self);
+    [self.babysToothBrushHintLabel mas_makeConstraints:^(MASConstraintMaker* make) {
+        make.left.equalTo(weakSelf.mas_left).with.offset(10);
+        make.top.equalTo(weakSelf.mas_top).with.offset(10);
+    }];
     
-    return 5;
-}
-
--(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    ToothBrushCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
-    
-    
-
-    
-    
-    
-    return cell;
+    [self.findNewToothBrushHintLabel mas_makeConstraints:^(MASConstraintMaker* make) {
+        make.left.equalTo(weakSelf.babysToothBrushHintLabel);
+        make.bottom.equalTo(weakSelf.findNewToothBrushCollectionView.mas_top).with.offset(-10);
+    }];
 }
 
-// 和UITableView类似，UICollectionView也可设置段头段尾
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-//{
-//    if([kind isEqualToString:UICollectionElementKindSectionHeader])
-//    {
-//        UICollectionReusableView *headerView = [self.babysToothBrushCollectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerId forIndexPath:indexPath];
-//        if(headerView == nil)
-//        {
-//            headerView = [[UICollectionReusableView alloc] init];
-//        }
-//        headerView.backgroundColor = [UIColor grayColor];
-//        
-//        return headerView;
-//    }
-//    else if([kind isEqualToString:UICollectionElementKindSectionFooter])
-//    {
-//        UICollectionReusableView *footerView = [self.babysToothBrushCollectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:footerId forIndexPath:indexPath];
-//        if(footerView == nil)
-//        {
-//            footerView = [[UICollectionReusableView alloc] init];
-//        }
-//        footerView.backgroundColor = [UIColor lightGrayColor];
-//        
-//        return footerView;
-//    }
-//    
-//    return nil;
-//}
+- (void)addSyncButton {
+    [self addSubview:self.syncButton ];
+}
+-(void)enableSyncButton {
+    [self.syncButton setBackgroundColor:cellOriginalColor];
+    self.syncButton.userInteractionEnabled = YES;
+}
+-(void)disableSyncButton {
+    [self.syncButton setBackgroundColor:[UIColor grayColor]];
+    self.syncButton.userInteractionEnabled = NO;
+}
+-(void)onSyncButtonClicked:(UIButton*)button {
+    if (self.syncButtonActionBlock) {
+        self.syncButtonActionBlock(button);
+    }
+}
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (collectionView == self.babysToothBrushCollectionView) {
+        if (self.bindedActionBlock) {
+            self.bindedActionBlock(collectionView,indexPath);
+        }
+        self.currentSelectedBindIndex = indexPath;
+    } else if(collectionView == self.findNewToothBrushCollectionView){
+        if (self.newToothbrushActionBlock) {
+            self.newToothbrushActionBlock(collectionView,indexPath);
+        }
+        self.currentSelectedNewFindIndex = indexPath;
+    }
+
+}
 
 
 #pragma mark - getters
 - (UICollectionView *)babysToothBrushCollectionView {
 	if(_babysToothBrushCollectionView == nil) {
-        _babysToothBrushCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 30, kSCREEN_WIDTH, 200) collectionViewLayout:self.linearLayout];
+        _babysToothBrushCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 30, kSCREEN_WIDTH, CustomHeight(150)) collectionViewLayout:self.linearLayout];
         [_babysToothBrushCollectionView setBackgroundColor:[UIColor whiteColor]];
 //        _babysToothBrushCollectionView.collectionViewLayout = self.linearLayout;
         _babysToothBrushCollectionView.delegate = self;
-        _babysToothBrushCollectionView.dataSource = self;
+        _babysToothBrushCollectionView.dataSource = self.bindedDataSouce;
         
 
         [_babysToothBrushCollectionView registerClass:[ToothBrushCollectionViewCell class] forCellWithReuseIdentifier:cellId];
         [_babysToothBrushCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerId];
         [_babysToothBrushCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footerId];
-	}
-	return _babysToothBrushCollectionView;
+	}	return _babysToothBrushCollectionView;
 }
 
 - (CollectionViewLayout *)linearLayout {
@@ -136,12 +146,12 @@ static NSString* const footerId = @"collectionViewFooterIdentifier";
 
 - (UICollectionView *)findNewToothBrushCollectionView {
 	if(_findNewToothBrushCollectionView == nil) {
-		_findNewToothBrushCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, CGRectGetHeight(self.bounds) - 200 - 30, kSCREEN_WIDTH, 200) collectionViewLayout:self.linearLayout];
+		_findNewToothBrushCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, CGRectGetHeight(self.bounds) - 200 - 30, kSCREEN_WIDTH, CustomHeight(150)) collectionViewLayout:self.linearLayout];
         
         [_findNewToothBrushCollectionView setBackgroundColor:[UIColor whiteColor]];
         //        _babysToothBrushCollectionView.collectionViewLayout = self.linearLayout;
         _findNewToothBrushCollectionView.delegate = self;
-        _findNewToothBrushCollectionView.dataSource = self;
+        _findNewToothBrushCollectionView.dataSource = self.foundDataSouce;
         
         
         [_findNewToothBrushCollectionView registerClass:[ToothBrushCollectionViewCell class] forCellWithReuseIdentifier:cellId];
@@ -149,6 +159,19 @@ static NSString* const footerId = @"collectionViewFooterIdentifier";
         [_findNewToothBrushCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footerId];
 	}
 	return _findNewToothBrushCollectionView;
+}
+
+- (UIButton *)syncButton {
+	if(_syncButton == nil) {
+		_syncButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_syncButton setFrame:CGRectMake(CGRectGetWidth(self.frame)/2 - CustomWidth(350)/2, CGRectGetHeight(self.frame) - CustomHeight(45) - 10, CustomWidth(350), CustomHeight(45))];
+        _syncButton.layer.cornerRadius = 8.0f;
+        [_syncButton setBackgroundColor:[UIColor grayColor]];
+        [_syncButton addTarget:self action:@selector(onSyncButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        _syncButton.selected = NO;
+        [_syncButton setTitle:@"同步数据" forState:UIControlStateNormal];
+	}
+	return _syncButton;
 }
 
 @end

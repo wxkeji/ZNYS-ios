@@ -19,7 +19,7 @@
     if (self) {
         self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         self.itemSize = CGSizeMake(itemWidth, itemHeight);
-        self.sectionInset = UIEdgeInsetsMake(CustomWidth(30),CustomWidth(10),CustomWidth(60), CustomWidth(10));
+        self.sectionInset = UIEdgeInsetsMake(CustomWidth(10),CustomWidth(10),CustomWidth(10), CustomWidth(10));
 
     }
     return self;

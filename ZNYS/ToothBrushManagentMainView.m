@@ -118,7 +118,7 @@
 	if(_iconView == nil) {
 		_iconView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CustomWidth(100) , CustomHeight(100))];
         _iconView.layer.cornerRadius = 10.0f;
-        [_iconView setBackgroundColor:[UIColor redColor]];
+        [_iconView setBackgroundColor:[UIColor whiteColor]];
 	}
 	return _iconView;
 }
