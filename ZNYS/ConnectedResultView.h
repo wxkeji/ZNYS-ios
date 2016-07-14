@@ -10,7 +10,8 @@
 
 typedef void(^DismissBlock)();
 
-@interface ConnectedResultView : ZNYSBaseView
+@interface ConnectedResultView : ZNYSBaseView<UIScrollViewDelegate>
+
 
 @property (nonatomic, copy) DismissBlock dismissBlock;
 

@@ -5,12 +5,14 @@
 //  Created by yu243e on 16/7/14.
 //  Copyright © 2016年 Woodseen. All rights reserved.
 //
+#define insertTestData
 
 #import "ConnectedResultView.h"
 #import "MAKAFakeRootAlertView.h"
 #import "CalendarItemManager.h"
 #import "ConnectedResultContentView.h"
 
+#define offsetWidth (kSCREEN_WIDTH * 0.8)
 @interface ConnectedResultView()
 
 @property (nonatomic, strong) UIImageView *backgroundImageView;
@@ -68,9 +70,9 @@
         
         [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(weakSelf.mas_centerX);
-            make.top.equalTo(weakSelf.mas_top).with.offset(CustomHeight(40));
-            make.width.mas_equalTo(CustomHeight(200));
-            make.height.mas_equalTo(CustomHeight(200));
+            make.top.equalTo(weakSelf.mas_top).with.offset(CustomHeight(12));
+            make.width.mas_equalTo(kSCREEN_WIDTH*0.8);
+            make.height.mas_equalTo(kSCREEN_WIDTH*0.8);
         }];
         
         [self.rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -91,11 +93,11 @@
         //scrollView 内容
         
         self.contentNum = [self.models count];
-        self.scrollView.contentSize = CGSizeMake ((CustomHeight(200) * self.contentNum), CustomHeight(200));
+        self.scrollView.contentSize = CGSizeMake ((offsetWidth * self.contentNum), offsetWidth);
         
-        NSInteger offset = CustomHeight(200);
+        NSInteger offset = offsetWidth;
         for (NSInteger i = 0; i < self.contentNum; i++) {
-            [self.contentViewArray[i] setFrame:CGRectMake(i*offset + CustomHeight(15),  CustomHeight(15), CustomHeight(170),  CustomHeight(170))];
+            [self.contentViewArray[i] setFrame:CGRectMake(i*offset + CustomHeight(1),  CustomHeight(1), offsetWidth-2,  offsetWidth-2)];
             [self.scrollView addSubview:self.contentViewArray[i]];
             //初值
             if (i == 0) {
@@ -229,11 +231,56 @@
     if (!_contentViewArray) {
         _contentViewArray = [[NSMutableArray alloc]init];
         for (CalendarItem *calendarItem in self.models) {
-            ConnectedResultContentView *view = [[ConnectedResultContentView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
-            [view setModel:calendarItem];
+            ConnectedResultContentView *view = [[ConnectedResultContentView alloc]initWithModel:calendarItem];
             [_contentViewArray addObject:view];
         }
     }
     return _contentViewArray;
 }
+
+- (NSMutableArray<CalendarItem *> *)models {
+    if (!_models) {
+        _models = [[NSMutableArray alloc] init];
+        //NSMutableArray<CalendarItem *> *_models = [CalendarItemManager sharedInstance];
+        
+#ifdef insertTestData
+        /*------------------------插入假数据-----------------------------------*/
+        
+        
+        CalendarItem *calendarItem2 = [[CalendarItemManager sharedInstance] createCalendarItem];
+        calendarItem2.connectStarNumber = @1;
+        calendarItem2.morningStarNumber = @8;
+        calendarItem2.eveningStarNumber = @2;
+        calendarItem2.starNumber = @11;
+        calendarItem2.userID = [User currentUserUUID];
+        calendarItem2.date = @"2016-06-20";
+        [_models addObject:calendarItem2];
+        
+        CalendarItem *calendarItem3 = [[CalendarItemManager sharedInstance] createCalendarItem];
+        calendarItem3.connectStarNumber = @1;
+        calendarItem3.morningStarNumber = @4;
+        calendarItem3.eveningStarNumber = @2;
+        calendarItem3.starNumber = @7;
+        calendarItem3.userID = [User currentUserUUID];
+        calendarItem3.date = @"2016-07-01";
+        [_models addObject:calendarItem3];
+        
+        CalendarItem *calendarItem = [[CalendarItemManager sharedInstance] createCalendarItem];
+        calendarItem.connectStarNumber = @0;
+        calendarItem.morningStarNumber = @5;
+        calendarItem.eveningStarNumber = @4;
+        calendarItem.starNumber = @9;
+        calendarItem.userID = [User currentUserUUID];
+        calendarItem.date = @"2016-07-02";
+        [_models addObject:calendarItem];
+        
+        
+#else
+        
+#endif
+    }
+    return _models;
+}
+
+
 @end
