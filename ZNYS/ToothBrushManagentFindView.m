@@ -41,7 +41,8 @@
     
     self.bindedDataSouce = [BindToothBrushCollectionViewDatasource sharedInstance];
     self.foundDataSouce = [FindNewToothBrushCollectionviewDatasource sharedInstance];
-    
+    self.bindedDataSouce.findView = self;
+    self.foundDataSouce.findView = self;
     [self setBackgroundColor:[UIColor whiteColor]];
     
     [self addSubview:self.babysToothBrushCollectionView];
@@ -93,11 +94,19 @@
             self.bindedActionBlock(collectionView,indexPath);
         }
         self.currentSelectedBindIndex = indexPath;
+        
+        [[self.findNewToothBrushCollectionView cellForItemAtIndexPath:self.currentSelectedNewFindIndex] setBackgroundColor:cellOriginalColor];
+        self.selectedType = selectedCollectionViewTypeBinded;
     } else if(collectionView == self.findNewToothBrushCollectionView){
         if (self.newToothbrushActionBlock) {
             self.newToothbrushActionBlock(collectionView,indexPath);
         }
+        
         self.currentSelectedNewFindIndex = indexPath;
+        
+        [[self.babysToothBrushCollectionView cellForItemAtIndexPath:self.currentSelectedBindIndex] setBackgroundColor:cellOriginalColor];
+        
+        self.selectedType = selectedCollectionViewTypeNewFind;
     }
 
 }

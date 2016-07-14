@@ -8,7 +8,6 @@
 
 #import "FindNewToothBrushCollectionviewDatasource.h"
 #import "ToothBrushCollectionViewCell.h"
-#import "ToothBrushManagentFindView.h"
 #import "ToothbrushManager.h"
 @implementation FindNewToothBrushCollectionviewDatasource
 +(instancetype)sharedInstance {
@@ -35,6 +34,14 @@
     ToothBrushCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
     
     
+    //因为Cell重用的问题，这里要确认显示出来的cell如果不是选中的index，就保持原有背景色
+    NSIndexPath* selectedIndexPath = self.findView.currentSelectedNewFindIndex;
+    BOOL isIndexPathEqual = selectedIndexPath&&(indexPath.section == selectedIndexPath.section && indexPath.row == selectedIndexPath.row);
+    if (!isIndexPathEqual || self.findView.selectedType != selectedCollectionViewTypeNewFind) {
+        [cell setBackgroundColor:cellOriginalColor];
+    } else {
+        [cell setBackgroundColor:cellSelectedColor];
+    }
     
     
     

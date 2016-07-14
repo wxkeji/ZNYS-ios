@@ -18,7 +18,10 @@ typedef void(^BindToothBrushClickBlock)(UICollectionView* collectionView,NSIndex
 typedef void(^NewFindToothBrushClickBlock)(UICollectionView* collectionView,NSIndexPath* indexPath);
 typedef void (^SyncButtonAction)(UIButton* button);
 
-
+typedef NS_ENUM(NSInteger,SelectedCollectionViewType) {
+    selectedCollectionViewTypeBinded,
+    selectedCollectionViewTypeNewFind
+};
 @protocol FindViewControllerProtocol <NSObject>
 
 
@@ -41,6 +44,7 @@ typedef void (^SyncButtonAction)(UIButton* button);
 @property(nonatomic,copy) SyncButtonAction syncButtonActionBlock;
 
 
+@property(nonatomic,assign)SelectedCollectionViewType selectedType;
 
 @property(nonatomic,weak) id<FindViewControllerProtocol> viewController;
 
@@ -51,7 +55,7 @@ typedef void (^SyncButtonAction)(UIButton* button);
 -(void)enableSyncButton;
 -(void)disableSyncButton;
 @property(nonatomic,weak) NSIndexPath* currentSelectedBindIndex;
-@property(nonatomic,weak)NSIndexPath* currentSelectedNewFindIndex;
+@property(nonatomic,weak) NSIndexPath* currentSelectedNewFindIndex;
 
 
 
