@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "ToothBrushManagentFindView.h"
 @interface BindToothBrushCollectionViewDatasource : NSObject<UICollectionViewDataSource>
+
+@property(nonatomic,weak) ToothBrushManagentFindView* findView;
 
 +(instancetype)sharedInstance;
 

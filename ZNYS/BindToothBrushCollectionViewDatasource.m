@@ -8,7 +8,6 @@
 
 #import "BindToothBrushCollectionViewDatasource.h"
 #import "ToothBrushCollectionViewCell.h"
-#import "ToothBrushManagentFindView.h"
 #import "ToothbrushManager.h"
 @implementation BindToothBrushCollectionViewDatasource
 
@@ -33,12 +32,16 @@
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     ToothBrushCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
     
-    
-    
-    
-    
+    NSIndexPath* selectedIndexPath = self.findView.currentSelectedBindIndex;
+    BOOL isIndexPathEqual = selectedIndexPath&&(indexPath.section == selectedIndexPath.section && indexPath.row == selectedIndexPath.row);
+    if (!isIndexPathEqual || self.findView.selectedType != selectedCollectionViewTypeBinded) {
+        [cell setBackgroundColor:cellOriginalColor];
+    } else {
+        [cell setBackgroundColor:cellSelectedColor];
+    }
     
     return cell;
 }

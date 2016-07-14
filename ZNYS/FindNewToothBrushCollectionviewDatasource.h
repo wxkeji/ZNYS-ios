@@ -14,6 +14,7 @@
 @property(nonatomic,weak) ToothBrushManagentFindView* findView;
 
 +(instancetype)sharedInstance;
-
+-(void)test;
+    
 
 @end
