@@ -40,6 +40,8 @@
 		3C98A22E1D24FF4700046BE8 /* dayBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C98A22C1D24FF4700046BE8 /* dayBackground.png */; };
 		3C98A22F1D24FF4700046BE8 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C98A22D1D24FF4700046BE8 /* star.png */; };
 		3C98A2311D2501F400046BE8 /* brushCalendarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C98A2301D2501F400046BE8 /* brushCalendarBackground.png */; };
+		3CA855EF1D65546800320E4C /* PresentedBaseModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA855EE1D65546800320E4C /* PresentedBaseModalViewController.m */; };
+		3CA855F21D65586200320E4C /* CalendarDetailModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA855F11D65586200320E4C /* CalendarDetailModalViewController.m */; };
 		451D6A1F1C9A8434000B6A91 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 451D6A1E1C9A8434000B6A91 /* Model.xcdatamodeld */; };
 		451D6A211C9A8445000B6A91 /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 451D6A201C9A8445000B6A91 /* Model.xcdatamodel */; };
 		454112741C95BE9600BE4DE9 /* ZNYSprogressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */; };
@@ -222,6 +224,10 @@
 		3C98A22C1D24FF4700046BE8 /* dayBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dayBackground.png; sourceTree = "<group>"; };
 		3C98A22D1D24FF4700046BE8 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		3C98A2301D2501F400046BE8 /* brushCalendarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brushCalendarBackground.png; sourceTree = "<group>"; };
+		3CA855ED1D65546800320E4C /* PresentedBaseModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentedBaseModalViewController.h; sourceTree = "<group>"; };
+		3CA855EE1D65546800320E4C /* PresentedBaseModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentedBaseModalViewController.m; sourceTree = "<group>"; };
+		3CA855F01D65586200320E4C /* CalendarDetailModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDetailModalViewController.h; sourceTree = "<group>"; };
+		3CA855F11D65586200320E4C /* CalendarDetailModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDetailModalViewController.m; sourceTree = "<group>"; };
 		451D6A201C9A8445000B6A91 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		454112721C95BE9600BE4DE9 /* ZNYSprogressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNYSprogressBar.h; sourceTree = "<group>"; };
 		454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNYSprogressBar.m; sourceTree = "<group>"; };
@@ -672,6 +678,8 @@
 			children = (
 				3C98A2221D24FF0700046BE8 /* BrushCalendarViewController.h */,
 				3C98A2231D24FF0700046BE8 /* BrushCalendarViewController.m */,
+				3CA855F01D65586200320E4C /* CalendarDetailModalViewController.h */,
+				3CA855F11D65586200320E4C /* CalendarDetailModalViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -1118,6 +1126,8 @@
 				645A01951C37CBBF00556395 /* ZNYSBaseView.m */,
 				45EF67D21D33D50600611BF4 /* SettingBaseView.h */,
 				45EF67D31D33D50600611BF4 /* SettingBaseView.m */,
+				3CA855ED1D65546800320E4C /* PresentedBaseModalViewController.h */,
+				3CA855EE1D65546800320E4C /* PresentedBaseModalViewController.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -1381,6 +1391,7 @@
 				45EF67D41D33D50600611BF4 /* SettingBaseView.m in Sources */,
 				45BC409B1C2469D9006A185F /* Rules+CoreDataProperties.m in Sources */,
 				455B1B271D366F0E002D85E3 /* ToothBrushCollectionViewCell.m in Sources */,
+				3CA855F21D65586200320E4C /* CalendarDetailModalViewController.m in Sources */,
 				455B1B2A1D3672C5002D85E3 /* CollectionViewLayout.m in Sources */,
 				645A018B1C37C9AC00556395 /* UILabel+Font.m in Sources */,
 				455AAA761D24104800BE3F27 /* CalendarItem.m in Sources */,
@@ -1389,6 +1400,7 @@
 				643ADB071CD8AA2A00723BB5 /* ExchangeRewardDetailViewController.m in Sources */,
 				64CCBD881CD30B6B003EFFAD /* ZNYSBaseNavigationBar.m in Sources */,
 				4580946C1C23DE6400CB9BF9 /* ConnectedViewController.m in Sources */,
+				3CA855EF1D65546800320E4C /* PresentedBaseModalViewController.m in Sources */,
 				047D3D391B8A02DA00871627 /* NSArray+ForceBound.m in Sources */,
 				45BC40A11C2469D9006A185F /* BrushingStatistics+CoreDataProperties.m in Sources */,
 				45839C321CBF6A4C000E878D /* CustomProgressBar.m in Sources */,
@@ -1598,7 +1610,7 @@
 					"$(PROJECT_DIR)/ZNYS/BLELib",
 					"$(PROJECT_DIR)/ZNYS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka;
+				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka.yu243e;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1619,7 +1631,7 @@
 					"$(PROJECT_DIR)/ZNYS/BLELib",
 					"$(PROJECT_DIR)/ZNYS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka;
+				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka.yu243e;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

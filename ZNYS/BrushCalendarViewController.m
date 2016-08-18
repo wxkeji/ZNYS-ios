@@ -7,6 +7,7 @@
 //
 #define insertTestData
 #import "BrushCalendarViewController.h"
+#import "CalendarDetailModalViewController.h"
 #import "CoreDataHelper.h"
 #import "CalendarView.h"
 #import "CalendarDetailView.h"
@@ -21,10 +22,10 @@
 //view
 @property (nonatomic, strong) UIButton * dismissButton;
 @property (nonatomic, strong) UIImageView * backgroundImageView;
-@property (nonatomic,strong) UIImageView * userImageView;
-@property (nonatomic,strong) UILabel * userLabel;
-@property (nonatomic,strong) UIImageView * coinView;
-@property (nonatomic,strong) UILabel * coinLabel;
+@property (nonatomic, strong) UIImageView * userImageView;
+@property (nonatomic, strong) UILabel * userLabel;
+@property (nonatomic, strong) UIImageView * coinView;
+@property (nonatomic, strong) UILabel * coinLabel;
 @property (nonatomic, strong) CalendarView * calendarView;
 @property (nonatomic, strong) UILabel *dateLabel;
 @property (nonatomic, strong) UILabel *goalLabel;
@@ -35,7 +36,7 @@
 
 //transformModel
 @property (nonatomic, strong) NSMutableArray<CalendarModel *> * calendarModelArray;
-@property (nonatomic, strong) NSMutableArray<NSMutableArray<CalendarDetailModel *>*> * calendarDetailModelArray;
+@property (nonatomic, strong) NSMutableArray<NSMutableArray<CalendarDetailModel *>*> * calendarDetailModelsArray;
 
 - (CalendarItem *)calendarItemFromArrayWithDate: (NSDate *)date ;
 - (NSMutableArray<CalendarDetailModel *> *)transformCalendarItemToDetailModels:(CalendarItem *)calendarItem;
@@ -44,26 +45,7 @@
 
 @implementation BrushCalendarViewController
 
-#pragma mark life cycle
-
-- (void)dealloc{
-    _dismissButton = nil;
-    _backgroundImageView = nil;
-    _userImageView = nil;
-    _userLabel = nil;
-    _coinLabel = nil;
-    _coinView = nil;
-    _calendarView = nil;
-    _dateLabel = nil;
-    _goalLabel = nil;
-    
-    _firstDate = nil;
-    _calendarItemArray = nil;
-    
-    _calendarModelArray = nil;
-    _calendarDetailModelArray =nil;
-}
-
+#pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -79,13 +61,30 @@
     [self.view addSubview:self.dateLabel];
     [self.view addSubview:self.goalLabel];
     
+    [self layoutPageSubviews];
+    
+    [self.dismissButton addTarget:self action:@selector(dismissButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    WS(weakSelf, self);
+    self.calendarView.buttonClickBlock = ^(NSInteger tag){
+        if (weakSelf.calendarModelArray[tag].validData == YES) {
+            CalendarDetailModalViewController *presentedModalViewController = [[CalendarDetailModalViewController alloc]init];
+            presentedModalViewController.calendarDetailModels = weakSelf.calendarDetailModelsArray[tag];
+            
+            presentedModalViewController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+            presentedModalViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            [weakSelf presentViewController:presentedModalViewController animated:YES completion:nil];
+        }
+    };
+}
+
+- (void)layoutPageSubviews {
     WS(weakSelf, self);
     [self.backgroundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.view.mas_left).with.offset(0);
         make.right.equalTo(weakSelf.view.mas_right).with.offset(0);
         make.top.equalTo(weakSelf.view.mas_top).with.offset(0);
         make.bottom.equalTo(weakSelf.view.mas_bottom).with.offset(0);
-
+        
     }];
     
     [self.dismissButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -138,10 +137,13 @@
         make.height.mas_equalTo(CustomHeight(30));
     }];
 }
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
    
+    self.calendarView.frame = CGRectMake(CustomWidth(2.5), CustomHeight(190), CustomWidth(370), CustomHeight(280));
 }
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 //    NSLog(@"\n\ncalendarView %@\n",NSStringFromCGRect(self.calendarView.frame));
@@ -151,12 +153,6 @@
 //    for (CalendarModel *model in self.calendarModelArray) {
 //        NSLog(@"%@",model);
 //    }
-    
-    
-}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
 }
 
 #pragma mark private met
@@ -218,7 +214,6 @@
     if (!_dismissButton) {
         _dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _dismissButton.backgroundColor = [UIColor grayColor];
-        [_dismissButton addTarget:self action:@selector(dismissButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     }
     return _dismissButton;
 }
@@ -271,35 +266,14 @@
 - (CalendarView *)calendarView {
     if(!_calendarView) {
         //周日到周六 1 - 7
-        _calendarView = [[CalendarView alloc] initWithFrame:CGRectMake(CustomWidth(2.5), CustomHeight(190), CustomWidth(370), CustomHeight(280)) firstDay:[NSDate  currentWeek:self.firstDate]];
+        _calendarView = [[CalendarView alloc] init];
         
+        [_calendarView setFirstDayWeek:[NSDate  currentWeek:self.firstDate]];
         [_calendarView setModels:self.calendarModelArray];
         NSInteger dayOffset = ([[NSDate date] timeIntervalSinceDate:self.firstDate]) / (60*24*60);
         [_calendarView changeTodayButtonColor:(dayOffset)];
         
-        
         _calendarView.layer.cornerRadius = 8.0f;
-
-        
-         WS(weakSelf, self);
-        _calendarView.buttonClickBlock = ^(NSInteger tag){
-#           ifdef debug
-            NSLog(@"tap %ld",(long)tag);
-#           endif
-            
-            if (weakSelf.calendarModelArray[tag].validData == YES) {
-                CalendarDetailView *calendarDetailView = [[CalendarDetailView alloc] initWithModel:weakSelf.calendarDetailModelArray[tag]];
-                calendarDetailView.frame = CGRectMake(0, 0, CustomWidth(275), CustomHeight(330));
-                MAKAFakeRootAlertView * alertView = [[MAKAFakeRootAlertView alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
-                
-                [alertView setUpView:calendarDetailView];
-                calendarDetailView.dismissBlock = ^{
-                    [alertView dismiss];
-                };
-                alertView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-                [alertView show];
-            }
-        };
     }
     
     return _calendarView;
@@ -310,8 +284,6 @@
         NSDate *lastDate;
         NSString *firstDateString;
         NSString *lastDateString;
-        
-        
         
         //firstDay
         firstDateString = [NSDate stringFromDate:self.firstDate withFormat:@"yyyy年 MM月dd日"];
@@ -459,14 +431,14 @@
     return _calendarModelArray;
 }
 
-- (NSMutableArray<NSMutableArray<CalendarDetailModel *>*> *)calendarDetailModelArray {
-    if (!_calendarDetailModelArray) {
-        _calendarDetailModelArray = [[NSMutableArray alloc]initWithCapacity:21];
+- (NSMutableArray<NSMutableArray<CalendarDetailModel *>*> *)calendarDetailModelsArray {
+    if (!_calendarDetailModelsArray) {
+        _calendarDetailModelsArray = [[NSMutableArray alloc]initWithCapacity:21];
         for (NSInteger i = 0 ; i < 21; i++) {
             NSMutableArray *modelArray = [self transformCalendarItemToDetailModels:[self calendarItemFromArrayWithDate:self.calendarModelArray[i].date]];
-            [_calendarDetailModelArray addObject:modelArray];
+            [_calendarDetailModelsArray addObject:modelArray];
         }
     }
-    return _calendarDetailModelArray;
+    return _calendarDetailModelsArray;
 }
 @end
