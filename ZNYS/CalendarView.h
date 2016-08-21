@@ -15,8 +15,6 @@ typedef void(^ButtonClickBlock)(NSInteger number);
 
 @property (nonatomic,copy) ButtonClickBlock buttonClickBlock;
 
-
-
 - (void)setModels:(NSMutableArray<CalendarModel *> *)models;
 - (void)changeTodayButtonColor:(NSInteger)tag;
 //周日到周六 1 - 7

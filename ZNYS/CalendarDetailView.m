@@ -5,10 +5,9 @@
 //  Created by yu243e on 16/6/29.
 //  Copyright © 2016年 Woodseen. All rights reserved.
 //
-//#define debug
 
 #import "CalendarDetailView.h"
-#import "MAKAFakeRootAlertView.h"
+#import "CalendarDetailModel.h"
 
 @interface CalendarDetailView()
 
@@ -31,6 +30,8 @@
     if (self) {
         //蓝色背景
         [self setBackgroundColor:RGBCOLOR(147, 214, 243)];
+        self.layer.cornerRadius = 8.0f;
+        self.layer.masksToBounds = YES;
         
         [self addSubview:self.backgroundImageView];
         [self addSubview:self.reinforcerImageView];
@@ -95,17 +96,13 @@
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-#ifdef debug
     NSLog(@"scrollViewDidEndDecelerating");
-#endif
     [self hiddenButton];
     [self changeReinforcerImageAndLabel];
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-#ifdef debug
     NSLog(@"scrollViewDidEndScrollingAnimation");
-#endif
     [self hiddenButton];
     [self changeReinforcerImageAndLabel];
 
@@ -202,6 +199,8 @@
         //深的蓝色，暂代图片
         _backgroundImageView = [[UIImageView alloc]init];
         [_backgroundImageView setImage:[self imageWithColor:RGBCOLOR(29,168,237)]];
+        
+        
     }
     return _backgroundImageView;
 }

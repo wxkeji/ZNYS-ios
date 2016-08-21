@@ -141,7 +141,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
    
-    self.calendarView.frame = CGRectMake(CustomWidth(2.5), CustomHeight(190), CustomWidth(370), CustomHeight(280));
+    self.calendarView.frame = CGRectMake(CustomWidth(2.5f), CustomHeight(190), CustomWidth(370), CustomHeight(280));
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -272,8 +272,6 @@
         [_calendarView setModels:self.calendarModelArray];
         NSInteger dayOffset = ([[NSDate date] timeIntervalSinceDate:self.firstDate]) / (60*24*60);
         [_calendarView changeTodayButtonColor:(dayOffset)];
-        
-        _calendarView.layer.cornerRadius = 8.0f;
     }
     
     return _calendarView;
@@ -322,6 +320,7 @@
         
         _firstDate = [NSDate beginningOfDay:[NSDate dateFromString:@"2016-06-24"]];
         
+        //2016-06-24
 //        NSLog(@"firstDate %@", _firstDate);
 //        NSLog(@"dateFromString %@", [NSDate stringFromDate:[NSDate dateFromString:@"2016-10-06"]]);
 //        NSLog(@"first %@", [_firstDate descriptionWithLocale:[NSLocale currentLocale]]);

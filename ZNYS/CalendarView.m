@@ -26,16 +26,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         //self.backgroundColor = RGBCOLOR(180, 239, 192);
-        NSEnumerator *enumerator = nil;
         
-        enumerator = [self.weekLabelArray objectEnumerator];
-        UILabel *weekLabel = nil;
-        while (weekLabel = [enumerator nextObject]) {
+        for (UILabel *weekLabel in self.weekLabelArray) {
             [self addSubview:weekLabel];
         }
-        enumerator = [self.dayButtonArray objectEnumerator];
-        UIButton *dayButton = nil;
-        while (dayButton = [enumerator nextObject]) {
+        for(UIButton *dayButton in self.dayButtonArray) {
             [self addSubview:dayButton];
             [dayButton addTarget:self action:@selector(dayButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         }

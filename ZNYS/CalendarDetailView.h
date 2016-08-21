@@ -7,11 +7,13 @@
 //
 
 #import "ZNYSBaseView.h"
-#import "CalendarItem+CoreDataProperties.h"
-#import "CalendarDetailModel.h"
+@class CalendarDetailModel;
+@class CalendarDetailView;
 
-@interface CalendarDetailView : ZNYSBaseView<UIScrollViewDelegate>
+@interface CalendarDetailView : ZNYSBaseView <UIScrollViewDelegate>
 
 - (void)setModels:(NSMutableArray<CalendarDetailModel *> *)models;
 
 @end
+
+

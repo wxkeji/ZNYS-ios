@@ -7,7 +7,7 @@
 //
 
 #import "PresentedBaseModalViewController.h"
-#import "CalendarDetailModel.h"
+@class CalendarDetailModel;
 
 @interface CalendarDetailModalViewController : PresentedBaseModalViewController
 @property (nonatomic, strong) NSMutableArray<CalendarDetailModel *> * calendarDetailModels;
