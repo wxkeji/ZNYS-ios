@@ -113,7 +113,7 @@
 #pragma mark - private method
 - (void)addStarImageAndLabel:(UIButton *)dayButton withModel:(CalendarModel *)model {
     //加入星星
-    UIImage *starImage =[UIImage imageNamed:@"star"];
+    UIImage *starImage =[UIImage imageNamed:@"calendar_star"];
     [dayButton setImage:starImage forState:UIControlStateNormal];
     
     //加入文字

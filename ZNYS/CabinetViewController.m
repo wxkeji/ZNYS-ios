@@ -7,7 +7,6 @@
 //
 
 #import "CabinetViewController.h"
-#import "CalendarViewController.h"
 #import "BrushCalendarViewController.h"
 #import "IsParentViewController.h"
 #import "Config.h"
@@ -119,6 +118,7 @@
     NSNumber * result = [NSNumber numberWithInteger:addResult];
     [self setValue:result forKey:@"userLevel"];
 }
+
 
 - (void)userDetailChange{
     self.userLevel = [User currentUserLevel];
@@ -451,13 +451,6 @@
     return _findView;
 }
 #pragma mark - 历史遗留代码
-- (void)toCalendar
-{
-    UIStoryboard *story=[UIStoryboard storyboardWithName:@"Calendar" bundle:nil];
-    CalendarViewController *cvc = [story instantiateViewControllerWithIdentifier:@"CalendarViewController"];
-    [self.navigationController pushViewController:cvc animated:YES];
-}
-
 - (IBAction)synchronize:(id)sender
 {
     

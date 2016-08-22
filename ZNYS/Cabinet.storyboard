@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -21,11 +21,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="首页背景图" translatesAutoresizingMaskIntoConstraints="NO" id="x4a-LD-G2w">
                                 <rect key="frame" x="0.0" y="0.0" width="379" height="667"/>
-                                <animations/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izw-VE-VdG">
                                 <rect key="frame" x="17" y="15" width="41" height="41"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="izw-VE-VdG" secondAttribute="height" multiplier="1:1" id="0TF-8n-QyD"/>
                                     <constraint firstAttribute="width" constant="41" id="BtO-b1-dpn"/>
@@ -56,7 +54,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTs-nz-99L">
                                 <rect key="frame" x="316" y="15" width="41" height="41"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="4ab-aw-rBn"/>
                                     <constraint firstAttribute="width" constant="48" id="Bje-lz-Rki"/>
@@ -81,7 +78,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xzv-wH-yHx" userLabel="Synchronize Button">
                                 <rect key="frame" x="148" y="527" width="76" height="76"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Xzv-wH-yHx" secondAttribute="height" multiplier="100:100" id="RqC-TZ-1dH"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="aEX-Un-WqC"/>
@@ -107,16 +103,12 @@
                                         <exclude reference="rJT-T1-zsr"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="112.5" y="565" width="172" height="171"/>
-                                </variation>
                                 <connections>
                                     <action selector="synchronize:" destination="RwR-oK-OO2" eventType="touchUpInside" id="Gzv-3p-HUy"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lv 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiC-AY-YMC" userLabel="等级">
                                 <rect key="frame" x="335" y="202" width="40" height="26"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NiC-AY-YMC" secondAttribute="height" multiplier="61:21" constant="-35.523809523809518" id="OAA-Lv-0NN"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="U2W-Oa-C0j"/>
@@ -138,7 +130,6 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="昵称" translatesAutoresizingMaskIntoConstraints="NO" id="eO3-gV-aut">
                                         <rect key="frame" x="216" y="158" width="15" height="15"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="2Fc-TX-Nxj"/>
                                             <constraint firstAttribute="height" priority="999" constant="15" id="6Ev-iD-mYC"/>
@@ -166,7 +157,6 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小明" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwv-pm-Uew">
                                         <rect key="frame" x="239" y="159" width="36" height="18"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="axZ-Wn-BjE"/>
                                             <constraint firstAttribute="width" constant="36" id="ys2-Dm-jrh"/>
@@ -181,13 +171,9 @@
                                                 <exclude reference="ys2-Dm-jrh"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="139" y="157" width="36" height="18"/>
-                                        </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="056" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgh-wn-OMW">
                                         <rect key="frame" x="328" y="157" width="36" height="21"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="1iS-vY-L6F"/>
                                             <constraint firstAttribute="height" constant="21" id="pEa-d9-Qzd"/>
@@ -204,7 +190,6 @@
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="星星图标" translatesAutoresizingMaskIntoConstraints="NO" id="8SI-gz-JZb">
                                         <rect key="frame" x="294" y="152" width="31" height="27"/>
-                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="19" id="TvA-rw-FrN"/>
                                             <constraint firstAttribute="width" secondItem="8SI-gz-JZb" secondAttribute="height" multiplier="31:27" id="awO-51-nUQ"/>
@@ -225,7 +210,6 @@
                                         </variation>
                                     </imageView>
                                 </subviews>
-                                <animations/>
                                 <constraints>
                                     <constraint firstItem="zwv-pm-Uew" firstAttribute="centerY" secondItem="mMV-YN-7ku" secondAttribute="centerY" id="5Wp-R2-Brk"/>
                                     <constraint firstItem="eO3-gV-aut" firstAttribute="centerY" secondItem="mMV-YN-7ku" secondAttribute="centerY" id="WId-DN-Gdr"/>
@@ -281,7 +265,6 @@
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="奖品柜" translatesAutoresizingMaskIntoConstraints="NO" id="XMz-7C-6dI" userLabel="奖品柜轮廓">
                                 <rect key="frame" x="-4" y="229" width="277" height="217"/>
-                                <animations/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XMz-7C-6dI" secondAttribute="height" multiplier="750:585" id="FRX-rf-Hhy"/>
@@ -294,15 +277,12 @@
                             </imageView>
                             <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uR9-Vb-wq3" userLabel="奖品柜第一栏">
                                 <rect key="frame" x="0.0" y="243" width="265" height="143"/>
-                                <animations/>
                             </scrollView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K9p-qk-ohK" userLabel="奖品柜第二栏">
                                 <rect key="frame" x="0.0" y="285" width="600" height="144"/>
-                                <animations/>
                             </scrollView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="首页卡通人头" translatesAutoresizingMaskIntoConstraints="NO" id="Ahj-MN-x6B">
                                 <rect key="frame" x="178" y="177" width="245" height="94"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="233" id="5Eg-9h-HDx"/>
                                     <constraint firstAttribute="height" constant="94" id="Md0-hN-13W"/>
@@ -326,7 +306,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="广告位" translatesAutoresizingMaskIntoConstraints="NO" id="ZoT-eC-V2w">
                                 <rect key="frame" x="-4" y="619" width="383" height="48"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="PhW-nU-dai"/>
                                     <constraint firstAttribute="height" constant="57" id="Vhz-78-bme"/>
@@ -347,7 +326,6 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Qp-Oe-nU0" userLabel="Book Button">
                                 <rect key="frame" x="248" y="15" width="41" height="41"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7Qp-Oe-nU0" secondAttribute="height" multiplier="1:1" id="QPY-k0-iOK"/>
                                     <constraint firstAttribute="height" constant="48" id="Wbm-PI-446"/>
@@ -374,7 +352,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="K9p-qk-ohK" firstAttribute="top" secondItem="uR9-Vb-wq3" secondAttribute="bottom" constant="16" id="0Th-Xo-mhg">
@@ -432,7 +409,7 @@
                             <constraint firstItem="mMV-YN-7ku" firstAttribute="centerX" secondItem="35h-ih-lmJ" secondAttribute="centerX" id="luD-b5-ltE"/>
                             <constraint firstItem="x4a-LD-G2w" firstAttribute="top" secondItem="35h-ih-lmJ" secondAttribute="topMargin" id="mVz-js-1zF"/>
                             <constraint firstItem="x4a-LD-G2w" firstAttribute="leading" secondItem="35h-ih-lmJ" secondAttribute="leadingMargin" constant="-16" id="nt5-Im-r4w"/>
-                            <constraint firstItem="Ahj-MN-x6B" firstAttribute="top" secondItem="mMV-YN-7ku" secondAttribute="bottom" constant="11" id="nve-mF-mRY"/>
+                            <constraint firstItem="Ahj-MN-x6B" firstAttribute="top" secondItem="mMV-YN-7ku" secondAttribute="bottom" priority="760" constant="11" id="nve-mF-mRY"/>
                             <constraint firstItem="x4a-LD-G2w" firstAttribute="top" secondItem="35h-ih-lmJ" secondAttribute="top" id="qb8-Zs-XsA"/>
                             <constraint firstItem="ZoT-eC-V2w" firstAttribute="leading" secondItem="35h-ih-lmJ" secondAttribute="leading" id="qoT-v4-Zq4"/>
                             <constraint firstItem="uR9-Vb-wq3" firstAttribute="leading" secondItem="35h-ih-lmJ" secondAttribute="leading" id="qvL-QK-jVy"/>
@@ -581,7 +558,7 @@
         <image name="日历按钮" width="95" height="94"/>
         <image name="星星图标" width="59" height="57"/>
         <image name="昵称" width="28" height="31"/>
-        <image name="知识库按钮" width="95" height="94"/>
+        <image name="知识库按钮" width="93" height="93"/>
         <image name="系统设置按钮" width="94" height="94"/>
         <image name="首页卡通人头" width="467" height="206"/>
         <image name="首页背景图" width="750" height="1334"/>

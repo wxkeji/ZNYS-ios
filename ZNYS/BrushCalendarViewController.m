@@ -61,7 +61,7 @@
     [self.view addSubview:self.dateLabel];
     [self.view addSubview:self.goalLabel];
     
-    [self layoutPageSubviews];
+    [self setupConstraintsForSubviews];
     
     [self.dismissButton addTarget:self action:@selector(dismissButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     WS(weakSelf, self);
@@ -77,7 +77,7 @@
     };
 }
 
-- (void)layoutPageSubviews {
+- (void)setupConstraintsForSubviews {
     WS(weakSelf, self);
     [self.backgroundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.view.mas_left).with.offset(0);
@@ -178,24 +178,24 @@
     }
     if ([calendarItem.morningStarNumber integerValue]> 0) {
         CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
-        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"dayTimeReward"];
-        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"star"];
+        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"calendar_reward_dayTime"];
+        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"calendar_star"];
         calendarDetailModel.reinforcerCount = [calendarItem.morningStarNumber integerValue];
         [calendarDetailModels addObject:calendarDetailModel];
     }
     
     if ([calendarItem.eveningStarNumber integerValue] > 0) {
         CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
-        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"nightReward"];
-        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"star"];
+        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"calendar_reward_night"];
+        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"calendar_star"];
         calendarDetailModel.reinforcerCount = [calendarItem.eveningStarNumber integerValue];
         [calendarDetailModels addObject:calendarDetailModel];
     }
     
     if ([calendarItem.connectStarNumber integerValue] > 0) {
         CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
-        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"bluetoothReward"];
-        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"star"];
+        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"calendar_reward_bluetooh"];
+        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"calendar_star"];
         calendarDetailModel.reinforcerCount = [calendarItem.connectStarNumber integerValue];
         [calendarDetailModels addObject:calendarDetailModel];
     }
@@ -221,8 +221,7 @@
 - (UIView *)backgroundImageView{
     if (!_backgroundImageView) {
         _backgroundImageView = [[UIImageView alloc] init];
-        _backgroundImageView.image = [UIImage imageNamed:@"brushCalendarBackground"];
-        //_backgroundImageView.backgroundColor = [UIColor blueColor];
+        _backgroundImageView.image = [UIImage imageNamed:@"calendar_background_temp"];
     }
     return _backgroundImageView;
 }

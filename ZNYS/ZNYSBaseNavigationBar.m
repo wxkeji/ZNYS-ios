@@ -16,16 +16,10 @@
 @implementation ZNYSBaseNavigationBar
 
 #pragma mark life cycle
-
-- (void)dealloc{
-    _dismissButton = nil;
-    _title = nil;
-    _rightButton = nil;
-}
-
 - (instancetype)init{
-    self = [super initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, CustomHeight(78))];
+    self = [super initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, 78)];
     if (self) {
+        
         [self addSubview:self.dismissButton];
         [self addSubview:self.title];
         [self addSubview:self.rightButton];
@@ -34,22 +28,22 @@
         [self.dismissButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(weakSelf.mas_left).with.offset(CustomWidth(15));
             make.centerY.mas_equalTo(weakSelf.title.mas_centerY);
-            make.width.mas_equalTo(CustomWidth(32));
-            make.height.mas_equalTo(CustomHeight(32));
+            make.width.mas_equalTo(44);
+            make.height.mas_equalTo(44);
         }];
         
         [self.title mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(weakSelf.mas_centerX);
             make.top.equalTo(weakSelf.mas_top).with.offset(CustomHeight(30));
-            make.width.mas_equalTo(CustomWidth(110));
-            make.height.mas_equalTo(CustomHeight(27));
+            make.width.mas_equalTo(110);
+            make.height.mas_equalTo(27);
         }];
         
         [self.rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(weakSelf.mas_right).with.offset(-CustomWidth(10));
+            make.right.equalTo(weakSelf.mas_right).with.offset(-10);
             make.centerY.mas_equalTo(weakSelf.dismissButton.mas_centerY);
-            make.width.mas_equalTo(CustomWidth(40));
-            make.height.mas_equalTo(CustomHeight(20));
+            make.width.mas_equalTo(44);
+            make.height.mas_equalTo(20);
         }];
     }
     return self;

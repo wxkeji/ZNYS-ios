@@ -5,20 +5,11 @@
 //  Created by yu243e on 16/8/18.
 //  Copyright © 2016年 Woodseen. All rights reserved.
 //
-
+//  继承不是很好的方法，但是能节省一些复制粘贴，暂时这样。
 #import "ZNYSBaseController.h"
 
 @interface PresentedBaseModalViewController : ZNYSBaseController
 
-
-
-//自定义 View 的 getter方法
-@property (nonatomic, strong) UIView *customView;
-//实现layoutPageSubviews方法加入约束
-//Override viewWillAppear 方法设置 frame
-
 - (void)dismissModalView;
 - (void)setBackgroundViewAlpha:(CGFloat)alpha;
-
-
 @end
