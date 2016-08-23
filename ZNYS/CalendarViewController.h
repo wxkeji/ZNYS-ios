@@ -8,6 +8,6 @@
 
 #import "ZNYSBaseController.h"
 
-@interface BrushCalendarViewController : ZNYSBaseController
+@interface CalendarViewController : ZNYSBaseController
 
 @end

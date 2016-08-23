@@ -41,10 +41,10 @@
             
             if ((i%2)) {
                 //numberButton.backgroundColor = RGBCOLOR(251, 144, 58);
-                [numberButton setBackgroundImage:[self imageWithColor:RGBCOLOR(251, 144, 58)] forState:UIControlStateNormal];
+                [numberButton setBackgroundImage:[UIImage imageWithColor:RGBCOLOR(251, 144, 58)] forState:UIControlStateNormal];
             }else{
                 //numberButton.backgroundColor = RGBCOLOR(250, 166, 44);
-                [numberButton setBackgroundImage:[self imageWithColor:RGBCOLOR(250, 166, 44)] forState:UIControlStateNormal];
+                [numberButton setBackgroundImage:[UIImage imageWithColor:RGBCOLOR(250, 166, 44)] forState:UIControlStateNormal];
             }
             
             numberButton.layer.masksToBounds = YES;
@@ -56,21 +56,6 @@
 }
 
 #pragma mark private method
-
-//颜色→UIimage 添加动画
-- (UIImage *)imageWithColor:(UIColor *)color {
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
-}
 
 #pragma mark event action
 

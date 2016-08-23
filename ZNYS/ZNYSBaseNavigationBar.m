@@ -63,7 +63,8 @@
 - (UIButton *)dismissButton{
     if (!_dismissButton) {
         _dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _dismissButton.backgroundColor = [UIColor blueColor];
+        [_dismissButton setImage:[UIImage imageNamed:@"navigation/dismissButton"] forState:UIControlStateNormal];
+        //_dismissButton.backgroundColor = [UIColor blueColor];
         [_dismissButton addTarget:self action:@selector(dismissButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     }
     return _dismissButton;

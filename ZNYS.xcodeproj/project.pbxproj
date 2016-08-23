@@ -18,18 +18,21 @@
 		047D3D391B8A02DA00871627 /* NSArray+ForceBound.m in Sources */ = {isa = PBXBuildFile; fileRef = 047D3D381B8A02DA00871627 /* NSArray+ForceBound.m */; };
 		0487D7661B74548F00756EF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D7651B74548F00756EF8 /* main.m */; };
 		0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D7681B74548F00756EF8 /* AppDelegate.m */; };
-		0487D7711B74548F00756EF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0487D7701B74548F00756EF8 /* Images.xcassets */; };
 		0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0487D7721B74548F00756EF8 /* LaunchScreen.xib */; };
 		0487D7801B74548F00756EF8 /* ZNYSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D77F1B74548F00756EF8 /* ZNYSTests.m */; };
 		04A7510F1C43D9E500B3F537 /* GiftList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A7510E1C43D9E500B3F537 /* GiftList.plist */; };
 		04C978F31C44BE100046DB4A /* GiftItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C978F21C44BE100046DB4A /* GiftItem.m */; };
 		14AE2882E3EA6C1FFF32284D /* libPods-ZNYS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BE4FFF790A33BC1EB578A8 /* libPods-ZNYS.a */; };
+		3C37F4851D6BE0D500D879E0 /* UIImage+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C37F4841D6BE0D500D879E0 /* UIImage+Helper.m */; };
+		3C37F4891D6BE2EE00D879E0 /* CatogoriesImportHelper.h in Sources */ = {isa = PBXBuildFile; fileRef = 3C37F4881D6BE2EE00D879E0 /* CatogoriesImportHelper.h */; };
+		3C584C0C1D6B3EB3000E3BCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C584C0B1D6B3EB3000E3BCE /* Images.xcassets */; };
 		3C62CE521D28126C00402FE1 /* CalendarDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE511D28126C00402FE1 /* CalendarDetailModel.m */; };
 		3C62CE5B1D294CD700402FE1 /* CalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE5A1D294CD700402FE1 /* CalendarModel.m */; };
 		3C62CE611D29FFE300402FE1 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE601D29FFE300402FE1 /* NSDate+Helper.m */; };
+		3C7B57341D6BF3F100D5E487 /* UserInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B57331D6BF3F100D5E487 /* UserInformationView.m */; };
 		3C877D831D37362B0068ADED /* ConnectedResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C877D821D37362B0068ADED /* ConnectedResultView.m */; };
 		3C877D861D3739750068ADED /* ConnectedResultContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C877D851D3739750068ADED /* ConnectedResultContentView.m */; };
-		3C98A2241D24FF0700046BE8 /* BrushCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2231D24FF0700046BE8 /* BrushCalendarViewController.m */; };
+		3C98A2241D24FF0700046BE8 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2231D24FF0700046BE8 /* CalendarViewController.m */; };
 		3C98A2291D24FF1800046BE8 /* CalendarDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2261D24FF1800046BE8 /* CalendarDetailView.m */; };
 		3C98A22A1D24FF1800046BE8 /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2281D24FF1800046BE8 /* CalendarView.m */; };
 		3CA855EF1D65546800320E4C /* PresentedBaseModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA855EE1D65546800320E4C /* PresentedBaseModalViewController.m */; };
@@ -182,7 +185,6 @@
 		0487D7651B74548F00756EF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0487D7671B74548F00756EF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0487D7681B74548F00756EF8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0487D7701B74548F00756EF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0487D7731B74548F00756EF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0487D7791B74548F00756EF8 /* ZNYSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZNYSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0487D77E1B74548F00756EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -190,18 +192,24 @@
 		04A7510E1C43D9E500B3F537 /* GiftList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GiftList.plist; sourceTree = "<group>"; };
 		04C978F11C44BE100046DB4A /* GiftItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftItem.h; sourceTree = "<group>"; };
 		04C978F21C44BE100046DB4A /* GiftItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftItem.m; sourceTree = "<group>"; };
+		3C37F4831D6BE0D500D879E0 /* UIImage+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Helper.h"; sourceTree = "<group>"; };
+		3C37F4841D6BE0D500D879E0 /* UIImage+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Helper.m"; sourceTree = "<group>"; };
+		3C37F4881D6BE2EE00D879E0 /* CatogoriesImportHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatogoriesImportHelper.h; sourceTree = "<group>"; };
+		3C584C0B1D6B3EB3000E3BCE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3C62CE501D28126C00402FE1 /* CalendarDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDetailModel.h; sourceTree = "<group>"; };
 		3C62CE511D28126C00402FE1 /* CalendarDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDetailModel.m; sourceTree = "<group>"; };
 		3C62CE591D294CD700402FE1 /* CalendarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarModel.h; sourceTree = "<group>"; };
 		3C62CE5A1D294CD700402FE1 /* CalendarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarModel.m; sourceTree = "<group>"; };
 		3C62CE5F1D29FFE300402FE1 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
 		3C62CE601D29FFE300402FE1 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
+		3C7B57321D6BF3F100D5E487 /* UserInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformationView.h; sourceTree = "<group>"; };
+		3C7B57331D6BF3F100D5E487 /* UserInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformationView.m; sourceTree = "<group>"; };
 		3C877D811D37362B0068ADED /* ConnectedResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedResultView.h; sourceTree = "<group>"; };
 		3C877D821D37362B0068ADED /* ConnectedResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectedResultView.m; sourceTree = "<group>"; };
 		3C877D841D3739750068ADED /* ConnectedResultContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedResultContentView.h; sourceTree = "<group>"; };
 		3C877D851D3739750068ADED /* ConnectedResultContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectedResultContentView.m; sourceTree = "<group>"; };
-		3C98A2221D24FF0700046BE8 /* BrushCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushCalendarViewController.h; sourceTree = "<group>"; };
-		3C98A2231D24FF0700046BE8 /* BrushCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushCalendarViewController.m; sourceTree = "<group>"; };
+		3C98A2221D24FF0700046BE8 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		3C98A2231D24FF0700046BE8 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		3C98A2251D24FF1800046BE8 /* CalendarDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDetailView.h; sourceTree = "<group>"; };
 		3C98A2261D24FF1800046BE8 /* CalendarDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDetailView.m; sourceTree = "<group>"; };
 		3C98A2271D24FF1800046BE8 /* CalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarView.h; sourceTree = "<group>"; };
@@ -585,7 +593,7 @@
 				043B7B751BAD30F60094BB3E /* Controller */,
 				043B7B741BAD30DA0094BB3E /* View */,
 				043B7B731BAD30BA0094BB3E /* Model */,
-				0487D7701B74548F00756EF8 /* Images.xcassets */,
+				3C584C0B1D6B3EB3000E3BCE /* Images.xcassets */,
 				0487D7631B74548F00756EF8 /* Supporting Files */,
 			);
 			path = ZNYS;
@@ -615,6 +623,15 @@
 				0487D77E1B74548F00756EF8 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3C7B57311D6BF3C400D5E487 /* Commom */ = {
+			isa = PBXGroup;
+			children = (
+				3C7B57321D6BF3F100D5E487 /* UserInformationView.h */,
+				3C7B57331D6BF3F100D5E487 /* UserInformationView.m */,
+			);
+			name = Commom;
 			sourceTree = "<group>";
 		};
 		3C98A21E1D24FEC000046BE8 /* CalendarModule */ = {
@@ -654,8 +671,8 @@
 			children = (
 				3CA855F01D65586200320E4C /* CalendarDetailModalViewController.h */,
 				3CA855F11D65586200320E4C /* CalendarDetailModalViewController.m */,
-				3C98A2221D24FF0700046BE8 /* BrushCalendarViewController.h */,
-				3C98A2231D24FF0700046BE8 /* BrushCalendarViewController.m */,
+				3C98A2221D24FF0700046BE8 /* CalendarViewController.h */,
+				3C98A2231D24FF0700046BE8 /* CalendarViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -947,6 +964,7 @@
 		645A01651C37B51D00556395 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3C7B57311D6BF3C400D5E487 /* Commom */,
 				455B1B2B1D376A4E002D85E3 /* EvaluateModule */,
 				3C98A21E1D24FEC000046BE8 /* CalendarModule */,
 				45F7865A1D0D007D00E4F91D /* ToothBrushManagementModule */,
@@ -1063,6 +1081,7 @@
 		645A01881C37C97100556395 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				3C37F4881D6BE2EE00D879E0 /* CatogoriesImportHelper.h */,
 				645A01891C37C9AC00556395 /* UILabel+Font.h */,
 				645A018A1C37C9AC00556395 /* UILabel+Font.m */,
 				645A019D1C3A146E00556395 /* UIButton+Font.h */,
@@ -1071,6 +1090,8 @@
 				647664691C3CB1A000386E05 /* UITextField+Font.m */,
 				3C62CE5F1D29FFE300402FE1 /* NSDate+Helper.h */,
 				3C62CE601D29FFE300402FE1 /* NSDate+Helper.m */,
+				3C37F4831D6BE0D500D879E0 /* UIImage+Helper.h */,
+				3C37F4841D6BE0D500D879E0 /* UIImage+Helper.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1224,6 +1245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6476646F1C3E604200386E05 /* MetalList.plist in Resources */,
+				3C584C0C1D6B3EB3000E3BCE /* Images.xcassets in Resources */,
 				0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */,
 				647E05C21C3A5C1D00ADB810 /* userAccount_logo@3x.png in Resources */,
 				45DC5E691C421B80000D6A7A /* 进度100.png in Resources */,
@@ -1247,7 +1269,6 @@
 				45DC5E621C421B80000D6A7A /* 进度30.png in Resources */,
 				45EB69D41C415DDE00160457 /* BCBottomPattern.png in Resources */,
 				6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */,
-				0487D7711B74548F00756EF8 /* Images.xcassets in Resources */,
 				45DC5E661C421B80000D6A7A /* 进度70.png in Resources */,
 				6F3962821C3A12C100C78F84 /* Cabinet.storyboard in Resources */,
 				45DC5E611C421B80000D6A7A /* 进度20.png in Resources */,
@@ -1323,7 +1344,7 @@
 				645A01841C37C58E00556395 /* 华康娃娃体.TTF in Sources */,
 				3C62CE5B1D294CD700402FE1 /* CalendarModel.m in Sources */,
 				64CCBD8E1CD30B94003EFFAD /* AddRewardButtonView.m in Sources */,
-				3C98A2241D24FF0700046BE8 /* BrushCalendarViewController.m in Sources */,
+				3C98A2241D24FF0700046BE8 /* CalendarViewController.m in Sources */,
 				45BC409C1C2469D9006A185F /* Rules.m in Sources */,
 				64CCBD971CD5BA1F003EFFAD /* MAKAFakeRootAlertView.m in Sources */,
 				455AAA751D24104800BE3F27 /* CalendarItem+CoreDataProperties.m in Sources */,
@@ -1334,6 +1355,7 @@
 				645A01931C37CB7300556395 /* VerifyPasswordViewController.m in Sources */,
 				645A01711C37B5B800556395 /* AddAccountViewController.m in Sources */,
 				C431364A1BC29A840097A91B /* NormalModeControllerViewController.m in Sources */,
+				3C37F4891D6BE2EE00D879E0 /* CatogoriesImportHelper.h in Sources */,
 				64CCBD8B1CD30B7E003EFFAD /* rewardListModel.m in Sources */,
 				45F786601D0D00E400E4F91D /* ToothBrushManagentMainView.m in Sources */,
 				0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */,
@@ -1377,6 +1399,7 @@
 				4576E3E21CCFD37800A1BA2B /* AwardManager.m in Sources */,
 				64CCBD941CD4909F003EFFAD /* AddRewardScrollView.m in Sources */,
 				455AAA791D2410C000BE3F27 /* CalendarItemManager.m in Sources */,
+				3C37F4851D6BE0D500D879E0 /* UIImage+Helper.m in Sources */,
 				45BC40911C2469D9006A185F /* User+CoreDataProperties.m in Sources */,
 				0421D3741B8126C700BF6065 /* CabinetItem.m in Sources */,
 				45BC40A01C2469D9006A185F /* Belongings.m in Sources */,
@@ -1397,6 +1420,7 @@
 				451D6A1F1C9A8434000B6A91 /* Model.xcdatamodeld in Sources */,
 				645A019C1C37CEF700556395 /* VerifyPasswordView.m in Sources */,
 				45BD02F81CCBDEE600A14E95 /* Award+CoreDataProperties.m in Sources */,
+				3C7B57341D6BF3F100D5E487 /* UserInformationView.m in Sources */,
 				0421D3791B830D0B00BF6065 /* ItemState.m in Sources */,
 				3C877D831D37362B0068ADED /* ConnectedResultView.m in Sources */,
 				45F786631D0D010400E4F91D /* ToothBrushManagentMainViewController.m in Sources */,

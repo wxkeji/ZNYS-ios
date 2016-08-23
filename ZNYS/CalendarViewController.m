@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Woodseen. All rights reserved.
 //
 #define insertTestData
-#import "BrushCalendarViewController.h"
+#import "CalendarViewController.h"
 #import "CalendarDetailModalViewController.h"
 #import "CoreDataHelper.h"
 #import "CalendarView.h"
@@ -17,16 +17,23 @@
 #import "CalendarDetailModel.h"
 #import "CalendarModel.h"
 
-@interface BrushCalendarViewController ()
+@interface CalendarViewController ()
 
 //view
 @property (nonatomic, strong) UIButton * dismissButton;
-@property (nonatomic, strong) UIImageView * backgroundImageView;
+
+@property (nonatomic, strong) UIImageView * backgroundImageViewTop;
+@property (nonatomic, strong) UIImageView * backgroundImageViewDown;
+
+@property (nonatomic, strong) UIImageView * backgroundLogoImageView;
+
 @property (nonatomic, strong) UIImageView * userImageView;
 @property (nonatomic, strong) UILabel * userLabel;
 @property (nonatomic, strong) UIImageView * coinView;
 @property (nonatomic, strong) UILabel * coinLabel;
+
 @property (nonatomic, strong) CalendarView * calendarView;
+
 @property (nonatomic, strong) UILabel *dateLabel;
 @property (nonatomic, strong) UILabel *goalLabel;
 
@@ -43,7 +50,7 @@
 
 @end
 
-@implementation BrushCalendarViewController
+@implementation CalendarViewController
 
 #pragma mark - life cycle
 - (void)viewDidLoad {
@@ -51,7 +58,9 @@
     
     self.nav.hidden = YES;
     
-    [self.view addSubview:self.backgroundImageView];
+    [self.view addSubview:self.backgroundImageViewTop];
+    [self.view addSubview:self.backgroundImageViewDown];
+    [self.view addSubview:self.backgroundLogoImageView];
     [self.view addSubview:self.dismissButton];
     [self.view addSubview:self.userImageView];
     [self.view addSubview:self.userLabel];
@@ -79,14 +88,31 @@
 
 - (void)setupConstraintsForSubviews {
     WS(weakSelf, self);
-    [self.backgroundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.view.mas_left).with.offset(0);
-        make.right.equalTo(weakSelf.view.mas_right).with.offset(0);
-        make.top.equalTo(weakSelf.view.mas_top).with.offset(0);
-        make.bottom.equalTo(weakSelf.view.mas_bottom).with.offset(0);
+    CGFloat logoHeight = CustomHeight(85);
+    [self.backgroundImageViewTop mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.view.mas_left);
+        make.right.equalTo(weakSelf.view.mas_right);
+        make.top.equalTo(weakSelf.view.mas_top);
+        make.bottom.equalTo(weakSelf.view.mas_top).with.offset(145+10+logoHeight*0.6f);
         
     }];
     
+    [self.backgroundImageViewDown mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.view.mas_left);
+        make.right.equalTo(weakSelf.view.mas_right);
+        make.top.equalTo(weakSelf.dateLabel.mas_top);
+        make.bottom.equalTo(weakSelf.view.mas_bottom);
+        
+    }];
+    
+    [self.backgroundLogoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(weakSelf.userImageView.mas_bottom).offset(10);
+//        make.baseline.equalTo(weakSelf.backgroundImageViewTop.mas_bottom);
+//        make.width.mas_equalTo(CustomWidth(233));
+        make.height.mas_equalTo(logoHeight);
+        make.centerX.equalTo(weakSelf.view.mas_centerX);
+        
+    }];
     [self.dismissButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.view.mas_left).with.offset(CustomWidth(15));
         make.top.equalTo(weakSelf.view.mas_top).with.offset(CustomHeight(30));
@@ -122,7 +148,13 @@
         make.height.mas_equalTo(CustomHeight(17));
     }];
     
-    
+    [self.calendarView  mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(weakSelf.backgroundImageViewTop.mas_bottom).with.offset(CustomWidth(5));
+        make.width.mas_equalTo(CustomWidth(370));
+        make.height.mas_equalTo(CustomHeight(280));
+        make.centerX.equalTo(weakSelf.view.mas_centerX);
+    }];
+
     [self.dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.view.mas_top).with.offset(CustomWidth(513));
         
@@ -141,18 +173,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
    
-    self.calendarView.frame = CGRectMake(CustomWidth(2.5f), CustomHeight(190), CustomWidth(370), CustomHeight(280));
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-//    NSLog(@"\n\ncalendarView %@\n",NSStringFromCGRect(self.calendarView.frame));
-//    for (UIImageView *aImage in self.calendarView.dayButtonArray) {
-//        NSLog(@"dayButtonArray %ld %@\n",(long)aImage.tag, NSStringFromCGRect(aImage.frame));
-//    }
-//    for (CalendarModel *model in self.calendarModelArray) {
-//        NSLog(@"%@",model);
-//    }
+//    self.calendarView.frame = CGRectMake(CustomWidth(2.5f), CustomHeight(190), CustomWidth(370), CustomHeight(280));
 }
 
 #pragma mark private met
@@ -178,24 +199,24 @@
     }
     if ([calendarItem.morningStarNumber integerValue]> 0) {
         CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
-        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"calendar_reward_dayTime"];
-        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"calendar_star"];
+        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"calendar/reward_dayTime"];
+        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"calendar/star"];
         calendarDetailModel.reinforcerCount = [calendarItem.morningStarNumber integerValue];
         [calendarDetailModels addObject:calendarDetailModel];
     }
     
     if ([calendarItem.eveningStarNumber integerValue] > 0) {
         CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
-        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"calendar_reward_night"];
-        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"calendar_star"];
+        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"calendar/reward_night"];
+        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"calendar/star"];
         calendarDetailModel.reinforcerCount = [calendarItem.eveningStarNumber integerValue];
         [calendarDetailModels addObject:calendarDetailModel];
     }
     
     if ([calendarItem.connectStarNumber integerValue] > 0) {
         CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
-        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"calendar_reward_bluetooh"];
-        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"calendar_star"];
+        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"calendar/reward_bluetooh"];
+        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"calendar/star"];
         calendarDetailModel.reinforcerCount = [calendarItem.connectStarNumber integerValue];
         [calendarDetailModels addObject:calendarDetailModel];
     }
@@ -213,17 +234,36 @@
 - (UIButton *)dismissButton{
     if (!_dismissButton) {
         _dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _dismissButton.backgroundColor = [UIColor grayColor];
+        [_dismissButton setImage:[UIImage imageNamed:@"navigation/homeButton"] forState:UIControlStateNormal];
     }
     return _dismissButton;
 }
 
-- (UIView *)backgroundImageView{
-    if (!_backgroundImageView) {
-        _backgroundImageView = [[UIImageView alloc] init];
-        _backgroundImageView.image = [UIImage imageNamed:@"calendar_background_temp"];
+- (UIView *)backgroundImageViewTop{
+    if (!_backgroundImageViewTop) {
+        _backgroundImageViewTop = [[UIImageView alloc] init];
+        _backgroundImageViewTop.image = [UIImage imageWithColor:[UIColor blueColor]];
+        //_backgroundImageViewTop.backgroundColor = [UIColor blueColor];
     }
-    return _backgroundImageView;
+    return _backgroundImageViewTop;
+}
+
+- (UIView *)backgroundLogoImageView{
+    if (!_backgroundLogoImageView) {
+        _backgroundLogoImageView = [[UIImageView alloc] init];
+        _backgroundLogoImageView.image = [UIImage imageNamed:@"children/logo_boy"];
+        _backgroundLogoImageView.contentMode = UIViewContentModeScaleAspectFit;
+    }
+    return _backgroundLogoImageView;
+}
+
+- (UIView *)backgroundImageViewDown{
+    if (!_backgroundImageViewDown) {
+        _backgroundImageViewDown = [[UIImageView alloc] init];
+        _backgroundImageViewDown.image = [UIImage imageWithColor:[UIColor blueColor]];
+        //_backgroundImageViewDown.backgroundColor = [UIColor blueColor];
+    }
+    return _backgroundImageViewDown;
 }
 
 - (UIImageView *)userImageView{

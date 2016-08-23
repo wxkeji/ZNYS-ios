@@ -198,7 +198,7 @@
     if (!_backgroundImageView) {
         //深的蓝色，暂代图片
         _backgroundImageView = [[UIImageView alloc]init];
-        [_backgroundImageView setImage:[self imageWithColor:RGBCOLOR(29,168,237)]];
+        [_backgroundImageView setImage:[UIImage imageWithColor:RGBCOLOR(29,168,237)]];
         
         
     }
@@ -208,7 +208,7 @@
 - (UIImageView *)reinforcerImageView {
     if (!_reinforcerImageView) {
         _reinforcerImageView = [[UIImageView alloc]init];
-        [_reinforcerImageView setImage:[UIImage imageNamed:@"calendar_star"]];
+        [_reinforcerImageView setImage:[UIImage imageNamed:@"calendar/calendardetail_star"]];
     }
     return _reinforcerImageView;
 }
@@ -240,7 +240,7 @@
 - (UIButton *)rightButton {
     if (!_rightButton) {
         _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_rightButton setBackgroundImage:[UIImage imageNamed:@"calendar_arrowRight_boy"] forState:UIControlStateNormal];
+        [_rightButton setBackgroundImage:[UIImage imageNamed:@"calendar/arrowRight_boy"] forState:UIControlStateNormal];
     }
     return _rightButton;
 }
@@ -248,7 +248,7 @@
 - (UIButton *)leftButton {
     if (!_leftButton) {
         _leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_leftButton setBackgroundImage:[UIImage imageNamed:@"calendar_arrowLeft_boy"] forState:UIControlStateNormal];
+        [_leftButton setBackgroundImage:[UIImage imageNamed:@"calendar/arrowLeft_boy"] forState:UIControlStateNormal];
     }
     return _leftButton;
 }

@@ -1,5 +1,5 @@
 //
-//  ViewController.m
+//  CalendarViewController.m
 //  ZNYS
 //
 //  Created by mac on 15/8/7.
@@ -7,7 +7,7 @@
 //
 
 #import "CabinetViewController.h"
-#import "BrushCalendarViewController.h"
+#import "CalendarViewController.h"
 #import "IsParentViewController.h"
 #import "Config.h"
 #import "NSArray+ForceBound.h"
@@ -130,7 +130,7 @@
 
 - (void)initButtonEvents
 {
-    [self.calendarButton addTarget:self action:@selector(toBrushCalendar) forControlEvents:UIControlEventTouchUpInside];
+    [self.calendarButton addTarget:self action:@selector(toCalendar) forControlEvents:UIControlEventTouchUpInside];
     [self.settingsButton addTarget:self action:@selector(toSetting) forControlEvents:UIControlEventTouchUpInside];
     [self.connectToothBrushButton addTarget:self action:@selector(onSyncButtonClickded) forControlEvents:UIControlEventTouchUpInside];
 }
@@ -363,10 +363,10 @@
     NSLog(@"Item was touched.");
 }
 
-- (void)toBrushCalendar
+- (void)toCalendar
 {
-    BrushCalendarViewController * bcvc = [[BrushCalendarViewController alloc] init];
-    [self.navigationController pushViewController:bcvc animated:YES];
+    CalendarViewController * cvc = [[CalendarViewController alloc] init];
+    [self.navigationController pushViewController:cvc animated:YES];
 }
 
 

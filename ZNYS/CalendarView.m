@@ -76,7 +76,7 @@
 #pragma mark - public method
 - (void)changeTodayButtonColor:(NSInteger)tag {
     if (tag >= 0 && tag < 21) {
-        [self.dayButtonArray[tag] setBackgroundImage:[self imageWithColor:RGBCOLOR(237,133,51)] forState:UIControlStateNormal];
+        [self.dayButtonArray[tag] setBackgroundImage:[UIImage imageWithColor:RGBCOLOR(237,133,51)] forState:UIControlStateNormal];
     } else {
         NSLog(@"tag invalid 当天不在当前日历中");
     }
@@ -113,7 +113,7 @@
 #pragma mark - private method
 - (void)addStarImageAndLabel:(UIButton *)dayButton withModel:(CalendarModel *)model {
     //加入星星
-    UIImage *starImage =[UIImage imageNamed:@"calendar_star"];
+    UIImage *starImage =[UIImage imageNamed:@"calendar/star"];
     [dayButton setImage:starImage forState:UIControlStateNormal];
     
     //加入文字
@@ -125,21 +125,6 @@
     starNumLabel.adjustsFontSizeToFitWidth = YES;
     [self.dayButtonStarNumLabelArray addObject:starNumLabel];
     [dayButton addSubview:starNumLabel];
-}
-
-//颜色→UIimage 为了动画效果
-- (UIImage *)imageWithColor:(UIColor *)color {
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
 }
 
 - (NSString *)changeNumberToString:(NSInteger)number{
@@ -211,7 +196,7 @@
                     dayButtonColor = RGBCOLOR(68,182,219);
                     break;
             }
-            [dayButton setBackgroundImage:[self imageWithColor:dayButtonColor] forState:UIControlStateNormal];
+            [dayButton setBackgroundImage:[UIImage imageWithColor:dayButtonColor] forState:UIControlStateNormal];
             
             dayButton.layer.masksToBounds = YES;
             dayButton.layer.cornerRadius = 6.0;

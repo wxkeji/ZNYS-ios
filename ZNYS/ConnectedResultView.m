@@ -118,39 +118,20 @@
 #pragma mark UIScrollViewDelegate
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-#ifdef debug
     NSLog(@"scrollViewDidEndDecelerating");
-#endif
     [self hiddenButton];
     [self changeReinforcerImageAndLabel];
 }
 
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-#ifdef debug
     NSLog(@"scrollViewDidEndScrollingAnimation");
-#endif
     [self hiddenButton];
     [self changeReinforcerImageAndLabel];
     
 }
 
 #pragma mark private method
-
-//颜色→UIimage 暂时代替背景使用
-- (UIImage *)imageWithColor:(UIColor *)color {
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
-}
 
 - (void)hiddenButton {
     self.leftButton.userInteractionEnabled = YES;
@@ -193,7 +174,7 @@
     if (!_backgroundImageView) {
         //深的蓝色，暂代图片
         _backgroundImageView = [[UIImageView alloc]init];
-        [_backgroundImageView setImage:[self imageWithColor:RGBCOLOR(29,168,237)]];
+        [_backgroundImageView setImage:[UIImage imageWithColor:RGBCOLOR(29,168,237)]];
     }
     return _backgroundImageView;
 }
