@@ -7,13 +7,16 @@
 //
 #define insertTestData
 #import "CalendarViewController.h"
-#import "CalendarDetailModalViewController.h"
+
 #import "CoreDataHelper.h"
+
+#import "CalendarDetailModalViewController.h"
 #import "CalendarView.h"
 #import "CalendarDetailView.h"
-#import "MAKAFakeRootAlertView.h"
+#import "UserInformationView.h"
+
 #import "CalendarItemManager.h"
-#import "CalendarItem+CoreDataProperties.h"
+
 #import "CalendarDetailModel.h"
 #import "CalendarModel.h"
 
@@ -22,19 +25,16 @@
 //view
 @property (nonatomic, strong) UIButton * dismissButton;
 
-@property (nonatomic, strong) UIImageView * backgroundImageViewTop;
-@property (nonatomic, strong) UIImageView * backgroundImageViewDown;
+@property (nonatomic, strong) UIImageView *backgroundImageViewTop;
+@property (nonatomic, strong) UIImageView *backgroundImageViewDown;
+@property (nonatomic, strong) UIImageView *backgroundLogoImageView;
 
-@property (nonatomic, strong) UIImageView * backgroundLogoImageView;
-
-@property (nonatomic, strong) UIImageView * userImageView;
-@property (nonatomic, strong) UILabel * userLabel;
-@property (nonatomic, strong) UIImageView * coinView;
-@property (nonatomic, strong) UILabel * coinLabel;
-
-@property (nonatomic, strong) CalendarView * calendarView;
+@property (nonatomic, strong) UserInformationView *userInformationView;
+@property (nonatomic, strong) CalendarView *calendarView;
 
 @property (nonatomic, strong) UILabel *dateLabel;
+
+@property (nonatomic, strong) UIImageView *goalImageView;
 @property (nonatomic, strong) UILabel *goalLabel;
 
 //model
@@ -44,9 +44,6 @@
 //transformModel
 @property (nonatomic, strong) NSMutableArray<CalendarModel *> * calendarModelArray;
 @property (nonatomic, strong) NSMutableArray<NSMutableArray<CalendarDetailModel *>*> * calendarDetailModelsArray;
-
-- (CalendarItem *)calendarItemFromArrayWithDate: (NSDate *)date ;
-- (NSMutableArray<CalendarDetailModel *> *)transformCalendarItemToDetailModels:(CalendarItem *)calendarItem;
 
 @end
 
@@ -62,12 +59,10 @@
     [self.view addSubview:self.backgroundImageViewDown];
     [self.view addSubview:self.backgroundLogoImageView];
     [self.view addSubview:self.dismissButton];
-    [self.view addSubview:self.userImageView];
-    [self.view addSubview:self.userLabel];
-    [self.view addSubview:self.coinLabel];
-    [self.view addSubview:self.coinView];
+    [self.view addSubview:self.userInformationView];
     [self.view addSubview:self.calendarView];
     [self.view addSubview:self.dateLabel];
+    [self.view addSubview:self.goalImageView];
     [self.view addSubview:self.goalLabel];
     
     [self setupConstraintsForSubviews];
@@ -89,12 +84,14 @@
 - (void)setupConstraintsForSubviews {
     WS(weakSelf, self);
     CGFloat logoHeight = CustomHeight(85);
+    //logo 不包括突出部分高度
+    CGFloat logoBaseHeight = logoHeight*125.62601f/152.f;
+    CGFloat navigationAndUserHeight = 20+52+52;
     [self.backgroundImageViewTop mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.view.mas_left);
         make.right.equalTo(weakSelf.view.mas_right);
         make.top.equalTo(weakSelf.view.mas_top);
-        make.bottom.equalTo(weakSelf.view.mas_top).with.offset(145+10+logoHeight*0.6f);
-        
+        make.bottom.equalTo(weakSelf.view.mas_top).with.offset(navigationAndUserHeight + logoHeight);
     }];
     
     [self.backgroundImageViewDown mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -106,50 +103,28 @@
     }];
     
     [self.backgroundLogoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakSelf.userImageView.mas_bottom).offset(10);
+        make.bottom.equalTo(weakSelf.backgroundImageViewTop.mas_bottom).offset(logoHeight -logoBaseHeight);
 //        make.baseline.equalTo(weakSelf.backgroundImageViewTop.mas_bottom);
 //        make.width.mas_equalTo(CustomWidth(233));
-        make.height.mas_equalTo(logoHeight);
+        make.height.mas_equalTo(logoHeight);//可能只能放大图缩放使用？
         make.centerX.equalTo(weakSelf.view.mas_centerX);
         
     }];
     [self.dismissButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.view.mas_left).with.offset(CustomWidth(15));
-        make.top.equalTo(weakSelf.view.mas_top).with.offset(CustomHeight(30));
-        make.width.mas_equalTo(CustomWidth(50));
-        make.height.mas_equalTo(CustomHeight(50));
+        make.left.equalTo(weakSelf.view.mas_left).with.offset(15);
+        make.top.equalTo(weakSelf.view.mas_top).with.offset(28);
+        make.width.mas_equalTo(44);
+        make.height.mas_equalTo(44);
     }];
     
-    [self.userImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.view.mas_left).with.offset(CustomWidth(125));
-        make.top.equalTo(weakSelf.view.mas_top).with.offset(CustomHeight(100));
-        make.width.mas_equalTo(CustomWidth(20));
-        make.height.mas_equalTo(CustomHeight(20));
-    }];
-    
-    [self.userLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.userImageView.mas_right).with.offset(CustomWidth(2));
-        make.centerY.mas_equalTo(weakSelf.userImageView.mas_centerY);
-        make.width.mas_equalTo(CustomWidth(50));
-        make.height.mas_equalTo(CustomHeight(17));
-    }];
-    
-    [self.coinView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.userLabel.mas_right).with.offset(CustomWidth(2));
-        make.centerY.mas_equalTo(weakSelf.userImageView.mas_centerY);
-        make.width.mas_equalTo(CustomWidth(20));
-        make.height.mas_equalTo(CustomHeight(20));
-    }];
-    
-    [self.coinLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.coinView.mas_right).with.offset(CustomWidth(2));
-        make.centerY.mas_equalTo(weakSelf.userImageView.mas_centerY);
-        make.width.mas_equalTo(CustomWidth(50));
-        make.height.mas_equalTo(CustomHeight(17));
+    [self.userInformationView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.view.mas_left);
+        make.right.equalTo(weakSelf.view.mas_right);
+        make.top.equalTo(weakSelf.view.mas_top).with.offset(80);
     }];
     
     [self.calendarView  mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakSelf.backgroundImageViewTop.mas_bottom).with.offset(CustomWidth(5));
+        make.top.equalTo(weakSelf.backgroundImageViewTop.mas_bottom).with.offset(ZNYSGetSizeByWidth(-1, 5, 15));
         make.width.mas_equalTo(CustomWidth(370));
         make.height.mas_equalTo(CustomHeight(280));
         make.centerX.equalTo(weakSelf.view.mas_centerX);
@@ -162,9 +137,16 @@
         make.height.mas_equalTo(CustomHeight(30));
     }];
     
+    [self.goalImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(weakSelf.dateLabel.mas_bottom).with.offset(CustomWidth(10));
+        make.left.equalTo(weakSelf.view.mas_left).with.offset(CustomWidth(20));
+        make.height.mas_equalTo(CustomWidth(100));
+        make.width.mas_lessThanOrEqualTo(CustomWidth(350));
+    }];
+    
     [self.goalLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(weakSelf.view.mas_bottom).with.offset(CustomWidth(-40));
-        make.left.equalTo(weakSelf.view.mas_left).with.offset(CustomWidth(170));
+        make.bottom.equalTo(weakSelf.view.mas_bottom).with.offset(CustomWidth(-35));
+        make.left.equalTo(weakSelf.view.mas_left).with.offset(CustomWidth(175));
         make.width.mas_equalTo(CustomWidth(180));
         make.height.mas_equalTo(CustomHeight(30));
     }];
@@ -173,6 +155,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 //    self.calendarView.frame = CGRectMake(CustomWidth(2.5f), CustomHeight(190), CustomWidth(370), CustomHeight(280));
 }
 
@@ -242,7 +225,7 @@
 - (UIView *)backgroundImageViewTop{
     if (!_backgroundImageViewTop) {
         _backgroundImageViewTop = [[UIImageView alloc] init];
-        _backgroundImageViewTop.image = [UIImage imageWithColor:[UIColor blueColor]];
+        _backgroundImageViewTop.image = [UIImage imageWithColor:RGBCOLOR(139, 213, 245)];
         //_backgroundImageViewTop.backgroundColor = [UIColor blueColor];
     }
     return _backgroundImageViewTop;
@@ -260,46 +243,17 @@
 - (UIView *)backgroundImageViewDown{
     if (!_backgroundImageViewDown) {
         _backgroundImageViewDown = [[UIImageView alloc] init];
-        _backgroundImageViewDown.image = [UIImage imageWithColor:[UIColor blueColor]];
+        _backgroundImageViewDown.image = [UIImage imageWithColor:RGBCOLOR(139, 213, 245)];
         //_backgroundImageViewDown.backgroundColor = [UIColor blueColor];
     }
     return _backgroundImageViewDown;
 }
 
-- (UIImageView *)userImageView{
-    if (!_userImageView) {
-        _userImageView = [[UIImageView alloc] init];
-        _userImageView.backgroundColor = [UIColor purpleColor];
+- (UserInformationView *)userInformationView {
+    if (!_userInformationView) {
+        _userInformationView = [[UserInformationView alloc]init];
     }
-    return _userImageView;
-}
-
-- (UIImageView *)coinView{
-    if (!_coinView) {
-        _coinView = [[UIImageView alloc] init];
-        _coinView.backgroundColor = [UIColor purpleColor];
-    }
-    return _coinView;
-}
-
-- (UILabel *)userLabel{
-    if (!_userLabel) {
-        _userLabel = [[UILabel alloc] initWithCustomFont:15.f];
-        _userLabel.text = [User currentUserName];
-        _userLabel.textColor = [UIColor blueColor];
-        _userLabel.textAlignment = NSTextAlignmentCenter;
-    }
-    return _userLabel;
-}
-
-- (UILabel *)coinLabel{
-    if (!_coinLabel) {
-        _coinLabel = [[UILabel alloc] initWithCustomFont:15.f];
-        _coinLabel.text = [NSString stringWithFormat:@"%@",[User currentUserTokenOwned]];
-        _coinLabel.textColor = [UIColor blueColor];
-        _coinLabel.textAlignment = NSTextAlignmentCenter;
-    }
-    return _coinLabel;
+    return _userInformationView;
 }
 
 - (CalendarView *)calendarView {
@@ -339,12 +293,21 @@
     return _dateLabel;
 }
 
+- (UIView *)goalImageView{
+    if (!_goalImageView) {
+        _goalImageView = [[UIImageView alloc] init];
+        _goalImageView.image = [UIImage imageNamed:@"calendar/goal_boy"];
+        _goalImageView.contentMode = UIViewContentModeScaleAspectFit;
+    }
+    return _goalImageView;
+}
+
 - (UILabel *)goalLabel {
     if (!_goalLabel) {
         _goalLabel = [[UILabel alloc]init];
         _goalLabel.text = [[NSString alloc]initWithFormat:@"我要在21天消灭蛀牙"];
         
-        _dateLabel.textColor = RGBCOLOR(15,112,135);
+        _goalLabel.textColor = RGBCOLOR(15,112,135);
         _goalLabel.backgroundColor = RGBCOLOR(16,180,255);
         
     }

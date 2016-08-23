@@ -30,6 +30,7 @@
 		3C62CE5B1D294CD700402FE1 /* CalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE5A1D294CD700402FE1 /* CalendarModel.m */; };
 		3C62CE611D29FFE300402FE1 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE601D29FFE300402FE1 /* NSDate+Helper.m */; };
 		3C7B57341D6BF3F100D5E487 /* UserInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B57331D6BF3F100D5E487 /* UserInformationView.m */; };
+		3C7B57361D6C325600D5E487 /* ToolMacroes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B57351D6C325600D5E487 /* ToolMacroes.m */; };
 		3C877D831D37362B0068ADED /* ConnectedResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C877D821D37362B0068ADED /* ConnectedResultView.m */; };
 		3C877D861D3739750068ADED /* ConnectedResultContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C877D851D3739750068ADED /* ConnectedResultContentView.m */; };
 		3C98A2241D24FF0700046BE8 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2231D24FF0700046BE8 /* CalendarViewController.m */; };
@@ -204,6 +205,7 @@
 		3C62CE601D29FFE300402FE1 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
 		3C7B57321D6BF3F100D5E487 /* UserInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformationView.h; sourceTree = "<group>"; };
 		3C7B57331D6BF3F100D5E487 /* UserInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformationView.m; sourceTree = "<group>"; };
+		3C7B57351D6C325600D5E487 /* ToolMacroes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolMacroes.m; sourceTree = "<group>"; };
 		3C877D811D37362B0068ADED /* ConnectedResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedResultView.h; sourceTree = "<group>"; };
 		3C877D821D37362B0068ADED /* ConnectedResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectedResultView.m; sourceTree = "<group>"; };
 		3C877D841D3739750068ADED /* ConnectedResultContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedResultContentView.h; sourceTree = "<group>"; };
@@ -625,13 +627,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3C7B57311D6BF3C400D5E487 /* Commom */ = {
+		3C7B57311D6BF3C400D5E487 /* UserInformation */ = {
 			isa = PBXGroup;
 			children = (
 				3C7B57321D6BF3F100D5E487 /* UserInformationView.h */,
 				3C7B57331D6BF3F100D5E487 /* UserInformationView.m */,
 			);
-			name = Commom;
+			name = UserInformation;
 			sourceTree = "<group>";
 		};
 		3C98A21E1D24FEC000046BE8 /* CalendarModule */ = {
@@ -964,7 +966,7 @@
 		645A01651C37B51D00556395 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				3C7B57311D6BF3C400D5E487 /* Commom */,
+				3C7B57311D6BF3C400D5E487 /* UserInformation */,
 				455B1B2B1D376A4E002D85E3 /* EvaluateModule */,
 				3C98A21E1D24FEC000046BE8 /* CalendarModule */,
 				45F7865A1D0D007D00E4F91D /* ToothBrushManagementModule */,
@@ -989,6 +991,7 @@
 			isa = PBXGroup;
 			children = (
 				645A01681C37B56900556395 /* ToolMacroes.h */,
+				3C7B57351D6C325600D5E487 /* ToolMacroes.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1397,6 +1400,7 @@
 				45BD02F91CCBDEE600A14E95 /* Award.m in Sources */,
 				0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */,
 				4576E3E21CCFD37800A1BA2B /* AwardManager.m in Sources */,
+				3C7B57361D6C325600D5E487 /* ToolMacroes.m in Sources */,
 				64CCBD941CD4909F003EFFAD /* AddRewardScrollView.m in Sources */,
 				455AAA791D2410C000BE3F27 /* CalendarItemManager.m in Sources */,
 				3C37F4851D6BE0D500D879E0 /* UIImage+Helper.m in Sources */,

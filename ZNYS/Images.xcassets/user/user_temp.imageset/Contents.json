@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "resizing" : {
-        "mode" : "3-part-horizontal",
-        "center" : {
-          "mode" : "tile",
-          "width" : 3
-        },
-        "cap-insets" : {
-          "right" : 38,
-          "left" : 312
-        }
-      },
       "idiom" : "universal",
-      "filename" : "目标.png",
+      "filename" : "IMG_4651.JPG",
       "scale" : "1x"
     },
     {

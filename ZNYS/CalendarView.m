@@ -10,13 +10,13 @@
 #import "CalendarModel.h"
 
 @interface CalendarView()
+
 @property (nonatomic, strong) NSMutableArray <CalendarModel *> * models;
 @property (nonatomic, strong) NSMutableArray <UIButton *> * dayButtonArray;
 @property (nonatomic, strong) NSMutableArray <UILabel *> * dayButtonStarNumLabelArray;
 @property (nonatomic, strong) NSMutableArray <UILabel *> * weekLabelArray;
 @property (nonatomic, assign) NSInteger firstDayWeek;
 
-- (void)addStarImageAndLabel:(UIButton *)dayButton  withModel:(CalendarModel *)model;
 @end
 
 @implementation CalendarView

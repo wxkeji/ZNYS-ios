@@ -42,8 +42,8 @@
         
         [self setupConstraintsForSubviews];
         
-        [_leftButton addTarget:self action:@selector(leftButtonAction) forControlEvents:UIControlEventTouchUpInside];
-        [_rightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
+        [self.leftButton addTarget:self action:@selector(leftButtonAction) forControlEvents:UIControlEventTouchUpInside];
+        [self.rightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
         [self.scrollView setDelegate:self];
     }
     return self;
@@ -140,22 +140,6 @@
 }
 
 #pragma mark - private method
-
-//颜色→UIimage 暂时代替背景使用
-- (UIImage *)imageWithColor:(UIColor *)color {
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
-}
-
 - (void)hiddenButton {
     self.leftButton.userInteractionEnabled = YES;
     self.rightButton.userInteractionEnabled = YES;
@@ -180,6 +164,7 @@
     [self.reinforcerImageView setImage:[UIImage imageNamed:self.models[offset].reinforcerPictureURL]];
     self.reinforcerLabel.text = [NSString stringWithFormat:@"%ld",(long)self.models[offset].reinforcerCount];
 }
+
 #pragma mark - event action
 - (void)leftButtonAction {
     CGPoint contentOffset = CGPointMake(self.scrollView.contentOffset.x - self.scrollView.frame.size.width,  0.0);
@@ -196,11 +181,8 @@
 #pragma mark - getters and setters
 - (UIImageView *)backgroundImageView {
     if (!_backgroundImageView) {
-        //深的蓝色，暂代图片
         _backgroundImageView = [[UIImageView alloc]init];
         [_backgroundImageView setImage:[UIImage imageWithColor:RGBCOLOR(29,168,237)]];
-        
-        
     }
     return _backgroundImageView;
 }
