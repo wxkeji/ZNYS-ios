@@ -11,3 +11,6 @@
 #import "UITextField+Font.h"
 #import "NSDate+Helper.h"
 #import "UIImage+Helper.h"
+#import "UIColor+Helper.h"
+#import "UIImage+Theme.h"
+#import "UIColor+Theme.h"

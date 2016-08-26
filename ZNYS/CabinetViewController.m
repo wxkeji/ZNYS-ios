@@ -68,6 +68,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //加入滑动返回 但是可能会造成 strange effects
+    //http://stackoverflow.com/questions/24710258/no-swipe-back-when-hiding-navigation-bar-in-uinavigationcontroller
+    [self.navigationController.interactivePopGestureRecognizer setDelegate:nil];
     
     [self.view layoutIfNeeded];
     

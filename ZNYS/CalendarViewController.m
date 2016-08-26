@@ -65,11 +65,21 @@
     [self.view addSubview:self.goalImageView];
     [self.view addSubview:self.goalLabel];
     
+    [[ThemeManager sharedManager] configureThemeWithNamed:@"boy"];
+    [self configureTheme];
+    
     [self setupConstraintsForSubviews];
     
     [self.dismissButton addTarget:self action:@selector(dismissButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     WS(weakSelf, self);
     self.calendarView.buttonClickBlock = ^(NSInteger tag){
+        //主题测试代码
+        if ([[ThemeManager sharedManager].currentThemeName isEqualToString:@"girl"]) {
+            [[ThemeManager sharedManager] configureThemeWithNamed:@"boy"];
+        } else {
+            [[ThemeManager sharedManager] configureThemeWithNamed:@"girl"];
+        }
+        [weakSelf configureTheme];
         if (weakSelf.calendarModelArray[tag].validData == YES) {
             CalendarDetailModalViewController *presentedModalViewController = [[CalendarDetailModalViewController alloc]init];
             presentedModalViewController.calendarDetailModels = weakSelf.calendarDetailModelsArray[tag];
@@ -154,12 +164,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-   
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-//    self.calendarView.frame = CGRectMake(CustomWidth(2.5f), CustomHeight(190), CustomWidth(370), CustomHeight(280));
 }
 
-#pragma mark private met
+#pragma mark private method
+- (void)configureTheme {
+    [self.calendarView configureTheme];
+}
+
 - (CalendarItem *)calendarItemFromArrayWithDate: (NSDate *)date {
     if(!date) {
         return nil;
@@ -261,7 +272,7 @@
         //周日到周六 1 - 7
         _calendarView = [[CalendarView alloc] init];
         
-        [_calendarView setFirstDayWeek:[NSDate  currentWeek:self.firstDate]];
+        [_calendarView configureFirstDayWeek:[NSDate  currentWeek:self.firstDate]];
         [_calendarView setModels:self.calendarModelArray];
         NSInteger dayOffset = ([[NSDate date] timeIntervalSinceDate:self.firstDate]) / (60*24*60);
         [_calendarView changeTodayButtonColor:(dayOffset)];
@@ -306,6 +317,7 @@
     if (!_goalLabel) {
         _goalLabel = [[UILabel alloc]init];
         _goalLabel.text = [[NSString alloc]initWithFormat:@"我要在21天消灭蛀牙"];
+        _goalLabel.adjustsFontSizeToFitWidth = YES;
         
         _goalLabel.textColor = RGBCOLOR(15,112,135);
         _goalLabel.backgroundColor = RGBCOLOR(16,180,255);

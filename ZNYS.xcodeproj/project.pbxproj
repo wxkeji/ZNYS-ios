@@ -38,6 +38,11 @@
 		3C98A22A1D24FF1800046BE8 /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2281D24FF1800046BE8 /* CalendarView.m */; };
 		3CA855EF1D65546800320E4C /* PresentedBaseModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA855EE1D65546800320E4C /* PresentedBaseModalViewController.m */; };
 		3CA855F21D65586200320E4C /* CalendarDetailModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA855F11D65586200320E4C /* CalendarDetailModalViewController.m */; };
+		3CC8F5FB1D6F216400E286E7 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F5FA1D6F216400E286E7 /* UIColor+Helper.m */; };
+		3CC8F5FD1D6F25B700E286E7 /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F5FC1D6F25B700E286E7 /* ThemeManager.m */; };
+		3CC8F5FF1D6F25F900E286E7 /* ThemeManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F5FE1D6F25F900E286E7 /* ThemeManager.h */; };
+		3CC8F6021D6FDEEC00E286E7 /* UIImage+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F6011D6FDEEC00E286E7 /* UIImage+Theme.m */; };
+		3CC8F6051D6FE47600E286E7 /* UIColor+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F6041D6FE47600E286E7 /* UIColor+Theme.m */; };
 		451D6A1F1C9A8434000B6A91 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 451D6A1E1C9A8434000B6A91 /* Model.xcdatamodeld */; };
 		451D6A211C9A8445000B6A91 /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 451D6A201C9A8445000B6A91 /* Model.xcdatamodel */; };
 		454112741C95BE9600BE4DE9 /* ZNYSprogressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */; };
@@ -220,6 +225,14 @@
 		3CA855EE1D65546800320E4C /* PresentedBaseModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentedBaseModalViewController.m; sourceTree = "<group>"; };
 		3CA855F01D65586200320E4C /* CalendarDetailModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDetailModalViewController.h; sourceTree = "<group>"; };
 		3CA855F11D65586200320E4C /* CalendarDetailModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDetailModalViewController.m; sourceTree = "<group>"; };
+		3CC8F5F91D6F216400E286E7 /* UIColor+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Helper.h"; sourceTree = "<group>"; };
+		3CC8F5FA1D6F216400E286E7 /* UIColor+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Helper.m"; sourceTree = "<group>"; };
+		3CC8F5FC1D6F25B700E286E7 /* ThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
+		3CC8F5FE1D6F25F900E286E7 /* ThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeManager.h; sourceTree = "<group>"; };
+		3CC8F6001D6FDEEC00E286E7 /* UIImage+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Theme.h"; sourceTree = "<group>"; };
+		3CC8F6011D6FDEEC00E286E7 /* UIImage+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Theme.m"; sourceTree = "<group>"; };
+		3CC8F6031D6FE47600E286E7 /* UIColor+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Theme.h"; sourceTree = "<group>"; };
+		3CC8F6041D6FE47600E286E7 /* UIColor+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Theme.m"; sourceTree = "<group>"; };
 		451D6A201C9A8445000B6A91 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		454112721C95BE9600BE4DE9 /* ZNYSprogressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNYSprogressBar.h; sourceTree = "<group>"; };
 		454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNYSprogressBar.m; sourceTree = "<group>"; };
@@ -460,8 +473,8 @@
 		042F08321C43A37E0091F5C4 /* Cabinet */ = {
 			isa = PBXGroup;
 			children = (
-				0421D3651B8126C700BF6065 /* CabinetViewController.m */,
 				0421D3671B8126C700BF6065 /* CabinetViewController.h */,
+				0421D3651B8126C700BF6065 /* CabinetViewController.m */,
 			);
 			name = Cabinet;
 			sourceTree = "<group>";
@@ -634,6 +647,15 @@
 				3C7B57331D6BF3F100D5E487 /* UserInformationView.m */,
 			);
 			name = UserInformation;
+			sourceTree = "<group>";
+		};
+		3C7F294A1D6E8B5D0004CD9A /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				3CC8F5FE1D6F25F900E286E7 /* ThemeManager.h */,
+				3CC8F5FC1D6F25B700E286E7 /* ThemeManager.m */,
+			);
+			name = Theme;
 			sourceTree = "<group>";
 		};
 		3C98A21E1D24FEC000046BE8 /* CalendarModule */ = {
@@ -966,6 +988,7 @@
 		645A01651C37B51D00556395 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3C7F294A1D6E8B5D0004CD9A /* Theme */,
 				3C7B57311D6BF3C400D5E487 /* UserInformation */,
 				455B1B2B1D376A4E002D85E3 /* EvaluateModule */,
 				3C98A21E1D24FEC000046BE8 /* CalendarModule */,
@@ -1095,6 +1118,12 @@
 				3C62CE601D29FFE300402FE1 /* NSDate+Helper.m */,
 				3C37F4831D6BE0D500D879E0 /* UIImage+Helper.h */,
 				3C37F4841D6BE0D500D879E0 /* UIImage+Helper.m */,
+				3CC8F5F91D6F216400E286E7 /* UIColor+Helper.h */,
+				3CC8F5FA1D6F216400E286E7 /* UIColor+Helper.m */,
+				3CC8F6001D6FDEEC00E286E7 /* UIImage+Theme.h */,
+				3CC8F6011D6FDEEC00E286E7 /* UIImage+Theme.m */,
+				3CC8F6031D6FE47600E286E7 /* UIColor+Theme.h */,
+				3CC8F6041D6FE47600E286E7 /* UIColor+Theme.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1354,6 +1383,7 @@
 				6476646A1C3CB1A000386E05 /* UITextField+Font.m in Sources */,
 				64CCBD821CD30361003EFFAD /* AddRewardViewController.m in Sources */,
 				C43136441BC279800097A91B /* RightToLeftSegue.m in Sources */,
+				3CC8F5FB1D6F216400E286E7 /* UIColor+Helper.m in Sources */,
 				C43136411BC26CF90097A91B /* LeftToRightSegue.m in Sources */,
 				645A01931C37CB7300556395 /* VerifyPasswordViewController.m in Sources */,
 				645A01711C37B5B800556395 /* AddAccountViewController.m in Sources */,
@@ -1388,12 +1418,14 @@
 				645A019F1C3A146E00556395 /* UIButton+Font.m in Sources */,
 				C4DC701F1BBFA0F4004AB6A7 /* DIYGoalController.m in Sources */,
 				C43BC7621BC541FF00C332DD /* IsParentToSettingSegue.m in Sources */,
+				3CC8F6021D6FDEEC00E286E7 /* UIImage+Theme.m in Sources */,
 				458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */,
 				3C877D861D3739750068ADED /* ConnectedResultContentView.m in Sources */,
 				647E05CB1C3A6C4C00ADB810 /* SettingButtonView.m in Sources */,
 				455B1B311D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m in Sources */,
 				45BC409A1C2469D9006A185F /* InferenceEngine.m in Sources */,
 				647664641C3BBF0C00386E05 /* AddAccountButton.m in Sources */,
+				3CC8F5FF1D6F25F900E286E7 /* ThemeManager.h in Sources */,
 				6412FC9B1C476AB400DF8FC5 /* RewardListViewController.m in Sources */,
 				647E05CE1C3B70A500ADB810 /* UserAccountViewController.m in Sources */,
 				45BC40951C2469D9006A185F /* AreaStatistics+CoreDataProperties.m in Sources */,
@@ -1421,11 +1453,13 @@
 				45BC409D1C2469D9006A185F /* ToothBrush+CoreDataProperties.m in Sources */,
 				041366001BAD8C9A00CD0604 /* DialogView.m in Sources */,
 				0469BFBE1BADC22F0055DF4A /* Fortune.m in Sources */,
+				3CC8F6051D6FE47600E286E7 /* UIColor+Theme.m in Sources */,
 				451D6A1F1C9A8434000B6A91 /* Model.xcdatamodeld in Sources */,
 				645A019C1C37CEF700556395 /* VerifyPasswordView.m in Sources */,
 				45BD02F81CCBDEE600A14E95 /* Award+CoreDataProperties.m in Sources */,
 				3C7B57341D6BF3F100D5E487 /* UserInformationView.m in Sources */,
 				0421D3791B830D0B00BF6065 /* ItemState.m in Sources */,
+				3CC8F5FD1D6F25B700E286E7 /* ThemeManager.m in Sources */,
 				3C877D831D37362B0068ADED /* ConnectedResultView.m in Sources */,
 				45F786631D0D010400E4F91D /* ToothBrushManagentMainViewController.m in Sources */,
 				0421D3721B8126C700BF6065 /* CabinetViewController.m in Sources */,
@@ -1581,14 +1615,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: 543198902@qq.com (2EZ48W4M9J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ZNYS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZNYS/BLELib",
 					"$(PROJECT_DIR)/ZNYS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka;
+				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka.yu243e;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1602,14 +1636,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: 543198902@qq.com (2EZ48W4M9J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ZNYS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZNYS/BLELib",
 					"$(PROJECT_DIR)/ZNYS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka;
+				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka.yu243e;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

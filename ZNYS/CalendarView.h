@@ -18,6 +18,7 @@ typedef void(^ButtonClickBlock)(NSInteger number);
 - (void)setModels:(NSMutableArray<CalendarModel *> *)models;
 - (void)changeTodayButtonColor:(NSInteger)tag;
 //周日到周六 1 - 7
-- (void)setFirstDayWeek:(NSInteger)firstDayWeek;
+- (void)configureFirstDayWeek:(NSInteger)firstDayWeek;
+- (void)configureTheme;
 
 @end

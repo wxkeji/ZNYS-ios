@@ -99,7 +99,7 @@
     }
 }
 
-- (void)setFirstDayWeek:(NSInteger)firstDayWeek {
+- (void)configureFirstDayWeek:(NSInteger)firstDayWeek {
     if (_firstDayWeek == firstDayWeek) {
         return;
     }
@@ -110,6 +110,28 @@
     
     [self setNeedsLayout];
 }
+
+- (void)configureTheme {
+    [self.dayButtonArray enumerateObjectsUsingBlock:^(UIButton * _Nonnull dayButton, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIImage *dayButtonBackgroundImage;
+        switch (idx / 7) {
+            case 0:
+                dayButtonBackgroundImage = [UIImage themedImageWithNamed:@"calendar/calendarView_firstRow"];
+                break;
+            case 1:
+                dayButtonBackgroundImage = [UIImage themedImageWithNamed:@"calendar/calendarView_secondRow"];
+                break;
+            case 2:
+                dayButtonBackgroundImage = [UIImage themedImageWithNamed:@"calendar/calendarView_thirdRow"];
+                break;
+        }
+        [dayButton setBackgroundImage:dayButtonBackgroundImage forState:UIControlStateNormal];
+    }];
+    
+    for (UILabel *weekLabel in self.weekLabelArray) {
+        weekLabel.textColor = [UIColor colorWithThemedImageNamed:@"color/main"];
+    }
+}
 #pragma mark - private method
 - (void)addStarImageAndLabel:(UIButton *)dayButton withModel:(CalendarModel *)model {
     //加入星星
@@ -119,7 +141,7 @@
     //加入文字
     UILabel *starNumLabel = [[UILabel alloc]init];
     //WithFrame:CGRectMake(0, 0, width, height)];不能在这里设置 frame
-    [starNumLabel setText:[NSString stringWithFormat:@"%ld",model.starNum]];
+    [starNumLabel setText:[NSString stringWithFormat:@"%ld",(long)model.starNum]];
     [starNumLabel setTextColor:[UIColor grayColor]];
     [starNumLabel setTextAlignment:NSTextAlignmentCenter];
     starNumLabel.adjustsFontSizeToFitWidth = YES;
@@ -184,19 +206,19 @@
         _dayButtonArray = [[NSMutableArray alloc]initWithCapacity:21];
         for (NSInteger i = 0; i < 21; i++) {
             UIButton *dayButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            UIColor *dayButtonColor = nil;
-            switch (i / 7) {
-                case 0:
-                    dayButtonColor = RGBCOLOR(48,225,183);
-                    break;
-                case 1:
-                    dayButtonColor = RGBCOLOR(107,212,247);
-                    break;
-                case 2:
-                    dayButtonColor = RGBCOLOR(68,182,219);
-                    break;
-            }
-            [dayButton setBackgroundImage:[UIImage imageWithColor:dayButtonColor] forState:UIControlStateNormal];
+//            UIColor *dayButtonColor = nil;
+//            switch (i / 7) {
+//                case 0:
+//                    dayButtonColor = RGBCOLOR(48,225,183);
+//                    break;
+//                case 1:
+//                    dayButtonColor = RGBCOLOR(107,212,247);
+//                    break;
+//                case 2:
+//                    dayButtonColor = RGBCOLOR(68,182,219);
+//                    break;
+//            }
+//            [dayButton setBackgroundImage:[UIImage imageWithColor:dayButtonColor] forState:UIControlStateNormal];
             
             dayButton.layer.masksToBounds = YES;
             dayButton.layer.cornerRadius = 6.0;
@@ -224,7 +246,6 @@
         _weekLabelArray = [[NSMutableArray alloc]initWithCapacity:7];
         for (NSInteger i = 0; i < 7; i++) {
             UILabel *label = [[UILabel alloc] initWithCustomFont:50.f];
-            label.textColor = RGBCOLOR(113,177,200);
             label.text = [[NSString alloc]initWithFormat: @"周%@",[self changeNumberToString:(i+1)]];
             //布局相关
             label.adjustsFontSizeToFitWidth = YES;
