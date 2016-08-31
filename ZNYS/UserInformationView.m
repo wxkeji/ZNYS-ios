@@ -26,7 +26,6 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        //蓝色背景
         self.backgroundColor = [UIColor clearColor];
         
         [self addSubview:self.userImageView];

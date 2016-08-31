@@ -10,7 +10,7 @@
 
 @implementation NSArray(ForceBound)
 
-- (id)objectAtIndex:(NSUInteger)index
+- (id)objectAtIndexWithForceBound:(NSUInteger)index
 {
     if(index < self.count)
     {

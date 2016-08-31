@@ -5,6 +5,7 @@
 //  Created by mac on 15/8/7.
 //  Copyright (c) 2015年 Woodseen. All rights reserved.
 //
+#import "ChildrenHomeViewController.h"
 
 #import "CabinetViewController.h"
 #import "CalendarViewController.h"
@@ -173,7 +174,7 @@
             state = NotActiveted;
         }
         
-        NSDictionary * itemDic = [jsonArray objectAtIndex:(i-1)];
+        NSDictionary * itemDic = [jsonArray objectAtIndexWithForceBound:(i-1)];
         CabinetItem *gloryItem = [[CabinetItem alloc] initWithDictionary:[itemDic objectForKey:[NSString stringWithFormat:@"Level%ld",(long)i]] imageName:littleCar state:state tag:i style:0 starsToActivate:i];
         [self.gloryList addObject:gloryItem];
     }
@@ -368,8 +369,12 @@
 
 - (void)toCalendar
 {
-    CalendarViewController * cvc = [[CalendarViewController alloc] init];
-    [self.navigationController pushViewController:cvc animated:YES];
+    ChildrenHomeViewController *chvc = [[ChildrenHomeViewController alloc] init];
+    [self.navigationController pushViewController:chvc animated:YES];
+
+//    
+//    CalendarViewController * cvc = [[CalendarViewController alloc] init];
+//    [self.navigationController pushViewController:cvc animated:YES];
 }
 
 
@@ -391,8 +396,7 @@
 -(void)toConnectBrush
 {
     
-    // 旧版连接
-    //无意义frame
+        //无意义frame
     ConnectedResultView * connectedView = [[ConnectedResultView alloc]initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH*0.95, kSCREEN_WIDTH*0.95)];
     MAKAFakeRootAlertView * alertView = [[MAKAFakeRootAlertView alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -403,6 +407,7 @@
     alertView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
     [alertView show];
 
+    // 旧版连接
 //    ConnectingViewController* cvc = [[ConnectingViewController alloc] init];
 //    [self.navigationController pushViewController:cvc animated:YES];
 }

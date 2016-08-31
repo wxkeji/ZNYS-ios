@@ -10,4 +10,5 @@
 
 @interface NSArray(ForceBound)
 
+- (id)objectAtIndexWithForceBound:(NSUInteger)index;
 @end

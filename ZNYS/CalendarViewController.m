@@ -168,7 +168,19 @@
 
 #pragma mark private method
 - (void)configureTheme {
+    self.backgroundImageViewTop.image = [UIImage themedImageWithNamed:@"color/primary"];
+    self.backgroundImageViewDown.image = [UIImage themedImageWithNamed:@"color/primary"];
+    self.backgroundLogoImageView.image = [UIImage themedImageWithNamed:@"children/logo"];
+    
+    [self.dismissButton setImage:[UIImage themedImageWithNamed:@"navigation/homeButton"] forState:UIControlStateNormal];
+    
+    self.dateLabel.backgroundColor = [UIColor colorWithThemedImageNamed:@"color/primary_darker"];
     [self.calendarView configureTheme];
+    self.goalImageView.image = [UIImage themedImageWithNamed:@"calendar/goal"];
+    
+    //temp 测试
+    self.goalLabel.textColor = RGBCOLOR(15,112,135);
+    self.goalLabel.backgroundColor = RGBCOLOR(16,180,255);
 }
 
 - (CalendarItem *)calendarItemFromArrayWithDate: (NSDate *)date {
@@ -217,6 +229,7 @@
     
     return calendarDetailModels;
 }
+
 #pragma mark event action
 
 - (void)dismissButtonClicked{
@@ -228,7 +241,6 @@
 - (UIButton *)dismissButton{
     if (!_dismissButton) {
         _dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_dismissButton setImage:[UIImage imageNamed:@"navigation/homeButton"] forState:UIControlStateNormal];
     }
     return _dismissButton;
 }
@@ -236,8 +248,7 @@
 - (UIView *)backgroundImageViewTop{
     if (!_backgroundImageViewTop) {
         _backgroundImageViewTop = [[UIImageView alloc] init];
-        _backgroundImageViewTop.image = [UIImage imageWithColor:RGBCOLOR(139, 213, 245)];
-        //_backgroundImageViewTop.backgroundColor = [UIColor blueColor];
+        _backgroundImageViewTop.contentMode = UIViewContentModeScaleToFill;
     }
     return _backgroundImageViewTop;
 }
@@ -245,7 +256,6 @@
 - (UIView *)backgroundLogoImageView{
     if (!_backgroundLogoImageView) {
         _backgroundLogoImageView = [[UIImageView alloc] init];
-        _backgroundLogoImageView.image = [UIImage imageNamed:@"children/logo_boy"];
         _backgroundLogoImageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     return _backgroundLogoImageView;
@@ -254,8 +264,7 @@
 - (UIView *)backgroundImageViewDown{
     if (!_backgroundImageViewDown) {
         _backgroundImageViewDown = [[UIImageView alloc] init];
-        _backgroundImageViewDown.image = [UIImage imageWithColor:RGBCOLOR(139, 213, 245)];
-        //_backgroundImageViewDown.backgroundColor = [UIColor blueColor];
+        _backgroundImageViewDown.contentMode = UIViewContentModeScaleToFill;
     }
     return _backgroundImageViewDown;
 }
@@ -299,7 +308,6 @@
         _dateLabel.textAlignment = NSTextAlignmentCenter;
         
         _dateLabel.textColor = [UIColor whiteColor];
-        _dateLabel.backgroundColor = RGBCOLOR(16,180,255);
     }
     return _dateLabel;
 }
@@ -307,7 +315,6 @@
 - (UIView *)goalImageView{
     if (!_goalImageView) {
         _goalImageView = [[UIImageView alloc] init];
-        _goalImageView.image = [UIImage imageNamed:@"calendar/goal_boy"];
         _goalImageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     return _goalImageView;
@@ -318,9 +325,6 @@
         _goalLabel = [[UILabel alloc]init];
         _goalLabel.text = [[NSString alloc]initWithFormat:@"我要在21天消灭蛀牙"];
         _goalLabel.adjustsFontSizeToFitWidth = YES;
-        
-        _goalLabel.textColor = RGBCOLOR(15,112,135);
-        _goalLabel.backgroundColor = RGBCOLOR(16,180,255);
         
     }
     return _goalLabel;

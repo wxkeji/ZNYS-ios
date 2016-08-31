@@ -9,15 +9,20 @@
 #import "CalendarView.h"
 #import "CalendarModel.h"
 
+//为了使todayTag == 0代表 todayTag 不在日历中
+static const NSInteger kButtonBaseTag = 10000;
+
 @interface CalendarView()
 
 @property (nonatomic, strong) NSMutableArray <CalendarModel *> * models;
 @property (nonatomic, strong) NSMutableArray <UIButton *> * dayButtonArray;
 @property (nonatomic, strong) NSMutableArray <UILabel *> * dayButtonStarNumLabelArray;
 @property (nonatomic, strong) NSMutableArray <UILabel *> * weekLabelArray;
+@property (nonatomic, assign) NSInteger todayTag;
 @property (nonatomic, assign) NSInteger firstDayWeek;
 
 @end
+
 
 @implementation CalendarView
 
@@ -25,8 +30,6 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        //self.backgroundColor = RGBCOLOR(180, 239, 192);
-        
         for (UILabel *weekLabel in self.weekLabelArray) {
             [self addSubview:weekLabel];
         }
@@ -76,7 +79,7 @@
 #pragma mark - public method
 - (void)changeTodayButtonColor:(NSInteger)tag {
     if (tag >= 0 && tag < 21) {
-        [self.dayButtonArray[tag] setBackgroundImage:[UIImage imageWithColor:RGBCOLOR(237,133,51)] forState:UIControlStateNormal];
+        self.todayTag = tag + kButtonBaseTag;
     } else {
         NSLog(@"tag invalid 当天不在当前日历中");
     }
@@ -129,7 +132,12 @@
     }];
     
     for (UILabel *weekLabel in self.weekLabelArray) {
-        weekLabel.textColor = [UIColor colorWithThemedImageNamed:@"color/main"];
+        weekLabel.textColor = [UIColor colorWithThemedImageNamed:@"color/primary"];
+    }
+    
+    if (self.todayTag) {
+        [self.dayButtonArray[self.todayTag - kButtonBaseTag] setBackgroundImage:[UIImage themedImageWithNamed:@"calendar/calendarView_today"] forState:UIControlStateNormal];
+        //RGBCOLOR(237,133,51)
     }
 }
 #pragma mark - private method
@@ -188,7 +196,7 @@
 #pragma mark - event action
 - (void)dayButtonAction:(UIButton*)button {
     if (self.buttonClickBlock) {
-        self.buttonClickBlock(button.tag);
+        self.buttonClickBlock(button.tag - kButtonBaseTag);
     }
 }
 
@@ -206,24 +214,11 @@
         _dayButtonArray = [[NSMutableArray alloc]initWithCapacity:21];
         for (NSInteger i = 0; i < 21; i++) {
             UIButton *dayButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//            UIColor *dayButtonColor = nil;
-//            switch (i / 7) {
-//                case 0:
-//                    dayButtonColor = RGBCOLOR(48,225,183);
-//                    break;
-//                case 1:
-//                    dayButtonColor = RGBCOLOR(107,212,247);
-//                    break;
-//                case 2:
-//                    dayButtonColor = RGBCOLOR(68,182,219);
-//                    break;
-//            }
-//            [dayButton setBackgroundImage:[UIImage imageWithColor:dayButtonColor] forState:UIControlStateNormal];
             
             dayButton.layer.masksToBounds = YES;
             dayButton.layer.cornerRadius = 6.0;
             
-            dayButton.tag = i;
+            dayButton.tag = i + kButtonBaseTag;
             
             //为星星准备 布局相关
             dayButton.imageView.contentMode = UIViewContentModeScaleAspectFit;

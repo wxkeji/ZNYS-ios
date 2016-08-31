@@ -29,6 +29,9 @@
 #define ZNYSGetSizeBy2x3x(x2, x3) [ToolMacroes getUniversalSizeBy2x:(x2) and3x:(x3)]
 //#define ZNYSGetSizeBy1x(x1) [ToolMacroes getUniversalSizeBy1x:(x1)]
 
+#define LAYOUTEDGE 16
+#define LAYOUTBUTTONSIZE 44
+
 #endif /* ToolMacroes_h */
 
 @interface ToolMacroes:NSObject
