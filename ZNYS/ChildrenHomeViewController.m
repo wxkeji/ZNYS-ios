@@ -26,6 +26,7 @@
 @property (nonatomic, strong) UIButton *calendarButton;
 
 @property (nonatomic, strong) UserInformationView *userInformationView;
+@property (nonatomic, strong) UIButton *userDetailInformationButton;
 
 @property (nonatomic, strong) UIButton *connectToothBrushButton;
 
@@ -47,7 +48,8 @@
     [self.view addSubview:self.calendarButton];
     
     [self.view addSubview:self.userInformationView];
-
+    [self.view addSubview:self.userDetailInformationButton];
+    
     [self.view addSubview:self.connectToothBrushButton];
     
     [[ThemeManager sharedManager] configureThemeWithNamed:@"boy"];
@@ -58,6 +60,8 @@
     [self.settingButton addTarget:self action:@selector(toSetting) forControlEvents:UIControlEventTouchUpInside];
     [self.awardButton addTarget:self action:@selector(toExchangeReward) forControlEvents:UIControlEventTouchUpInside];
     [self.calendarButton addTarget:self action:@selector(toCalendar) forControlEvents:UIControlEventTouchUpInside];
+    [self.userDetailInformationButton addTarget:self action:@selector(expandUserDetailInformation) forControlEvents:UIControlEventTouchUpInside];
+    
     [self.connectToothBrushButton addTarget:self action:@selector(toConnectedResult) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -105,7 +109,15 @@
         make.left.equalTo(weakSelf.view.mas_left);
         make.right.equalTo(weakSelf.view.mas_right);
         make.top.equalTo(weakSelf.view.mas_top).with.offset(USER_INFORMATIN_Y);
+        make.height.mas_equalTo(MIN_BUTTON_H_W);
     }];
+    
+    [self.userDetailInformationButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(weakSelf.userInformationView.mas_top).offset(-NAVGATION_USER_INTERVAL/2.);
+        make.bottom.equalTo(weakSelf.userInformationView.mas_bottom).offset(NAVGATION_USER_INTERVAL/2.);
+        make.width.mas_equalTo(kSCREEN_WIDTH);
+        make.left.equalTo(self.view.mas_left);
+    }];//覆盖 userInformationView
     
     [self.connectToothBrushButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(weakSelf.view.mas_centerX);
@@ -137,7 +149,11 @@
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
--(void)toConnectedResult {
+- (void)expandUserDetailInformation {
+    
+}
+
+- (void)toConnectedResult {
     
     //无意义frame
     ConnectedResultView * connectedView = [[ConnectedResultView alloc]initWithFrame:CGRectZero];
@@ -201,6 +217,15 @@
         _userInformationView = [[UserInformationView alloc]init];
     }
     return _userInformationView;
+}
+
+- (UIButton *)userDetailInformationButton {
+    if (!_userDetailInformationButton) {
+        _userDetailInformationButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _userDetailInformationButton.backgroundColor = [UIColor clearColor];
+        [_userDetailInformationButton setBackgroundImage:[UIImage imageWithColor:RGBACOLOR(0, 0, 0, BUTTON_TOUCH_ALPHA)] forState:UIControlStateHighlighted];
+    }
+    return _userDetailInformationButton;
 }
 
 - (UIButton *)connectToothBrushButton {

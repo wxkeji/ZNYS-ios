@@ -224,7 +224,7 @@
 		3C98A2281D24FF1800046BE8 /* CalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarView.m; sourceTree = "<group>"; };
 		3CA18E851D753C3D00DE8EF4 /* ChildrenHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildrenHomeViewController.h; sourceTree = "<group>"; };
 		3CA18E861D753C3D00DE8EF4 /* ChildrenHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildrenHomeViewController.m; sourceTree = "<group>"; };
-		3CA18E881D767F8D00DE8EF4 /* LayoutMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LayoutMacro.h; sourceTree = "<group>"; };
+		3CA18E881D767F8D00DE8EF4 /* DesignMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignMacro.h; sourceTree = "<group>"; };
 		3CA855ED1D65546800320E4C /* PresentedBaseModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentedBaseModalViewController.h; sourceTree = "<group>"; };
 		3CA855EE1D65546800320E4C /* PresentedBaseModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentedBaseModalViewController.m; sourceTree = "<group>"; };
 		3CA855F01D65586200320E4C /* CalendarDetailModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDetailModalViewController.h; sourceTree = "<group>"; };
@@ -1053,7 +1053,7 @@
 			children = (
 				645A01681C37B56900556395 /* ToolMacroes.h */,
 				3C7B57351D6C325600D5E487 /* ToolMacroes.m */,
-				3CA18E881D767F8D00DE8EF4 /* LayoutMacro.h */,
+				3CA18E881D767F8D00DE8EF4 /* DesignMacro.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";

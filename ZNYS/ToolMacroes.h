@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Woodseen. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-#import "LayoutMacro.h"
+#import "DesignMacro.h"
 
 #ifndef ToolMacroes_h
 #define ToolMacroes_h
