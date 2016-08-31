@@ -46,10 +46,10 @@
 - (void)setupConstraintsForSubviews {
     WS(weakSelf, self);
     [self.userImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.mas_left).with.offset(15);
+        make.left.equalTo(weakSelf.mas_left).with.offset(MIN_EDGE_X);
         make.top.equalTo(weakSelf.mas_top).with.offset(0);
-        make.width.mas_equalTo(44);//44x44@1x
-        make.height.mas_equalTo(44);
+        make.width.mas_equalTo(MIN_BUTTON_H_W);//MIN_EDGE_XxMIN_EDGE_X@1x
+        make.height.mas_equalTo(MIN_BUTTON_H_W);
     }];
     
     [self.userNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -81,30 +81,30 @@
     }];//选择适合6的分辨率 缩放使用
     
     [self.settingButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.view.mas_left).with.offset(15);
-        make.top.equalTo(weakSelf.view.mas_top).with.offset(28);
-        make.width.mas_equalTo(44);
-        make.height.mas_equalTo(44);
+        make.left.equalTo(weakSelf.view.mas_left).with.offset(MIN_EDGE_X);
+        make.top.equalTo(weakSelf.view.mas_top).with.offset(NAVIGATION_BUTTON_Y);
+        make.width.mas_equalTo(MIN_BUTTON_H_W);
+        make.height.mas_equalTo(MIN_BUTTON_H_W);
     }];
     
     [self.awardButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(weakSelf.view.mas_right).with.offset(-CustomWidth(20) - 44 - 15);
-        make.top.equalTo(weakSelf.view.mas_top).with.offset(28);
-        make.width.mas_equalTo(44);
-        make.height.mas_equalTo(44);
+        make.right.equalTo(weakSelf.view.mas_right).with.offset(-CustomWidth(20) - MIN_BUTTON_H_W - MIN_EDGE_X);
+        make.top.equalTo(weakSelf.view.mas_top).with.offset(NAVIGATION_BUTTON_Y);
+        make.width.mas_equalTo(MIN_BUTTON_H_W);
+        make.height.mas_equalTo(MIN_BUTTON_H_W);
     }];
     
     [self.calendarButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(weakSelf.view.mas_right).with.offset(-15);
-        make.top.equalTo(weakSelf.view.mas_top).with.offset(28);
-        make.width.mas_equalTo(44);
-        make.height.mas_equalTo(44);
+        make.right.equalTo(weakSelf.view.mas_right).with.offset(-MIN_EDGE_X);
+        make.top.equalTo(weakSelf.view.mas_top).with.offset(NAVIGATION_BUTTON_Y);
+        make.width.mas_equalTo(MIN_BUTTON_H_W);
+        make.height.mas_equalTo(MIN_BUTTON_H_W);
     }];
     
     [self.userInformationView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.view.mas_left);
         make.right.equalTo(weakSelf.view.mas_right);
-        make.top.equalTo(weakSelf.view.mas_top).with.offset(80);
+        make.top.equalTo(weakSelf.view.mas_top).with.offset(USER_INFORMATIN_Y);
     }];
     
     [self.connectToothBrushButton mas_makeConstraints:^(MASConstraintMaker *make) {

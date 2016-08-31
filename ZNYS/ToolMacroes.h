@@ -6,6 +6,7 @@
 //  Copyright © 2016年 Woodseen. All rights reserved.
 //
 #import <UIKit/UIKit.h>
+#import "LayoutMacro.h"
 
 #ifndef ToolMacroes_h
 #define ToolMacroes_h
@@ -28,9 +29,6 @@
 #define ZNYSGetSizeByWidth(w320, w375, w414) [ToolMacroes getUniversalSizeByWidth320:(w320) width375:(w375) width414:(w414)]
 #define ZNYSGetSizeBy2x3x(x2, x3) [ToolMacroes getUniversalSizeBy2x:(x2) and3x:(x3)]
 //#define ZNYSGetSizeBy1x(x1) [ToolMacroes getUniversalSizeBy1x:(x1)]
-
-#define LAYOUTEDGE 16
-#define LAYOUTBUTTONSIZE 44
 
 #endif /* ToolMacroes_h */
 

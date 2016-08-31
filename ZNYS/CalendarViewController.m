@@ -121,20 +121,20 @@
         
     }];
     [self.dismissButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.view.mas_left).with.offset(15);
-        make.top.equalTo(weakSelf.view.mas_top).with.offset(28);
-        make.width.mas_equalTo(44);
-        make.height.mas_equalTo(44);
+        make.left.equalTo(weakSelf.view.mas_left).with.offset(MIN_EDGE_X);
+        make.top.equalTo(weakSelf.view.mas_top).with.offset(NAVIGATION_BUTTON_Y);
+        make.width.mas_equalTo(MIN_BUTTON_H_W);
+        make.height.mas_equalTo(MIN_BUTTON_H_W);
     }];
     
     [self.userInformationView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.view.mas_left);
         make.right.equalTo(weakSelf.view.mas_right);
-        make.top.equalTo(weakSelf.view.mas_top).with.offset(80);
+        make.top.equalTo(weakSelf.view.mas_top).with.offset(USER_INFORMATIN_Y);
     }];
     
     [self.calendarView  mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakSelf.backgroundImageViewTop.mas_bottom).with.offset(ZNYSGetSizeByWidth(-1, 5, 15));
+        make.top.equalTo(weakSelf.backgroundImageViewTop.mas_bottom).with.offset(ZNYSGetSizeByWidth(-1, 5, MIN_EDGE_X));
         make.width.mas_equalTo(CustomWidth(370));
         make.height.mas_equalTo(CustomHeight(280));
         make.centerX.equalTo(weakSelf.view.mas_centerX);
