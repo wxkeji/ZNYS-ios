@@ -240,11 +240,10 @@ static const NSInteger kButtonBaseTag = 10000;
     if (!_weekLabelArray) {
         _weekLabelArray = [[NSMutableArray alloc]initWithCapacity:7];
         for (NSInteger i = 0; i < 7; i++) {
-            UILabel *label = [[UILabel alloc] initWithCustomFont:50.f];
+            UILabel *label = [[UILabel alloc] initWithCustomFont:kAutoFontSize];
             label.text = [[NSString alloc]initWithFormat: @"周%@",[self changeNumberToString:(i+1)]];
             //布局相关
             label.adjustsFontSizeToFitWidth = YES;
-            
             [_weekLabelArray addObject:label];
         }
         

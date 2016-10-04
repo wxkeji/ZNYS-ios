@@ -67,7 +67,6 @@
     
     [[ThemeManager sharedManager] configureThemeWithNamed:@"boy"];
     [self configureTheme];
-    
     [self setupConstraintsForSubviews];
     
     [self.dismissButton addTarget:self action:@selector(dismissButtonClicked) forControlEvents:UIControlEventTouchUpInside];
@@ -134,7 +133,7 @@
     }];
     
     [self.calendarView  mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakSelf.backgroundImageViewTop.mas_bottom).with.offset(ZNYSGetSizeByWidth(-1, 5, MIN_EDGE_X));
+        make.top.equalTo(weakSelf.backgroundImageViewTop.mas_bottom).with.offset(ZNYSGetSizeByWidth(-3, 5, MIN_EDGE_X));
         make.width.mas_equalTo(CustomWidth(370));
         make.height.mas_equalTo(CustomHeight(280));
         make.centerX.equalTo(weakSelf.view.mas_centerX);
@@ -149,15 +148,15 @@
     
     [self.goalImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.dateLabel.mas_bottom).with.offset(CustomWidth(10));
-        make.left.equalTo(weakSelf.view.mas_left).with.offset(CustomWidth(20));
+        make.left.equalTo(weakSelf.view.mas_left).with.offset(CustomWidth(16));
         make.height.mas_equalTo(CustomWidth(100));
-        make.width.mas_lessThanOrEqualTo(CustomWidth(350));
+        make.width.mas_equalTo(CustomWidth(350));
     }];
     
     [self.goalLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(weakSelf.view.mas_bottom).with.offset(CustomWidth(-35));
-        make.left.equalTo(weakSelf.view.mas_left).with.offset(CustomWidth(175));
-        make.width.mas_equalTo(CustomWidth(180));
+        make.top.equalTo(weakSelf.goalImageView.mas_top).with.offset(CustomWidth(52));
+        make.left.equalTo(weakSelf.view.mas_left).with.offset(CustomWidth(134));
+        make.width.mas_equalTo(CustomWidth(220));
         make.height.mas_equalTo(CustomHeight(30));
     }];
 }
@@ -174,13 +173,11 @@
     
     [self.dismissButton setImage:[UIImage themedImageWithNamed:@"navigation/homeButton"] forState:UIControlStateNormal];
     
-    self.dateLabel.backgroundColor = [UIColor colorWithThemedImageNamed:@"color/primary_darker"];
+    self.dateLabel.backgroundColor = [UIColor colorWithThemedImageNamed:@"color/primary_dark"];
     [self.calendarView configureTheme];
     self.goalImageView.image = [UIImage themedImageWithNamed:@"calendar/goal"];
     
-    //temp 测试
-    self.goalLabel.textColor = RGBCOLOR(15,112,135);
-    self.goalLabel.backgroundColor = RGBCOLOR(16,180,255);
+    self.goalLabel.textColor = [UIColor colorWithThemedImageNamed:@"color/primary_dark"];
 }
 
 - (CalendarItem *)calendarItemFromArrayWithDate: (NSDate *)date {
@@ -323,8 +320,10 @@
 - (UILabel *)goalLabel {
     if (!_goalLabel) {
         _goalLabel = [[UILabel alloc]init];
+        [_goalLabel setFont:[UIFont fontWithName:kCustomFont size:kAutoFontSize]];
         _goalLabel.text = [[NSString alloc]initWithFormat:@"我要在21天消灭蛀牙"];
         _goalLabel.adjustsFontSizeToFitWidth = YES;
+        _goalLabel.textAlignment = NSTextAlignmentLeft;
         
     }
     return _goalLabel;

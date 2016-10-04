@@ -17,7 +17,7 @@
 #pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self configureTheme];
     [self.view addSubview:self.calendarDetailView];
 }
 
@@ -25,10 +25,14 @@
     [super viewWillAppear:animated];
     
     CGFloat width = CustomWidth(275);
-    CGFloat height = CustomHeight(330);
+    CGFloat height = CustomHeight(320);
     CGFloat x = (kSCREEN_WIDTH - width)/2.;
     CGFloat y = (kSCREEN_HEIGHT - height)/2.;
     self.calendarDetailView.frame = CGRectMake(x ,y ,width , height);
+}
+#pragma mark - private methods
+- (void)configureTheme {
+    [self.calendarDetailView configureTheme];
 }
 
 #pragma mark - getters and setters

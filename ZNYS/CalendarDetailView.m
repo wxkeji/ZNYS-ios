@@ -28,9 +28,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        //蓝色背景
-        [self setBackgroundColor:RGBCOLOR(107,212,247)];
-        self.layer.cornerRadius = 8.0f;
+        self.layer.cornerRadius = kDefaultCornerRadius;
         self.layer.masksToBounds = YES;
         
         [self addSubview:self.backgroundImageView];
@@ -51,12 +49,6 @@
 
 - (void)setupConstraintsForSubviews {
     WS(weakSelf, self);
-    [self.backgroundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.mas_left).with.offset(0);
-        make.top.equalTo(weakSelf.mas_top).with.offset(0);
-        make.width.mas_equalTo(weakSelf.mas_width);
-        make.height.mas_equalTo(weakSelf.mas_height);
-    }];
     
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(weakSelf.mas_centerX);
@@ -79,11 +71,19 @@
         make.centerY.equalTo(weakSelf.scrollView.mas_centerY);
     }];
     
+    CGFloat reinforceImageViewToBottom = 15;
     [self.reinforcerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.mas_centerX).with.offset(CustomWidth(-50));
-        make.top.lessThanOrEqualTo(weakSelf.scrollView.mas_bottom).with.offset(CustomHeight(20));
+        make.bottom.equalTo(weakSelf.mas_bottom).with.offset(CustomHeight(-reinforceImageViewToBottom));
         make.width.mas_equalTo(CustomWidth(40));
         make.height.mas_equalTo(CustomHeight(40));
+    }];
+    
+    [self.backgroundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.mas_left).with.offset(0);
+        make.bottom.equalTo(weakSelf.mas_bottom).with.offset(0);
+        make.width.mas_equalTo(weakSelf.mas_width);
+        make.top.equalTo(weakSelf.reinforcerImageView.mas_top).with.offset(CustomHeight(-reinforceImageViewToBottom));
     }];
     
     [self.reinforcerLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -139,6 +139,14 @@
 
 }
 
+- (void)configureTheme {
+    [self setBackgroundColor:[UIColor colorWithThemedImageNamed:@"color/primary"]];
+    [self.backgroundImageView setImage:[UIImage themedImageWithNamed:@"color/primary_dark"]];
+    self.reinforcerLabel.textColor = [UIColor colorWithThemedImageNamed:@"color/primary_light"];
+    [self.rightButton setBackgroundImage:[UIImage themedImageWithNamed:@"calendar/arrowRight"] forState:UIControlStateNormal];
+    [self.leftButton setBackgroundImage:[UIImage themedImageWithNamed:@"calendar/arrowLeft"] forState:UIControlStateNormal];
+}
+
 #pragma mark - private method
 - (void)hiddenButton {
     self.leftButton.userInteractionEnabled = YES;
@@ -182,7 +190,7 @@
 - (UIImageView *)backgroundImageView {
     if (!_backgroundImageView) {
         _backgroundImageView = [[UIImageView alloc]init];
-        [_backgroundImageView setImage:[UIImage imageWithColor:RGBCOLOR(29,168,237)]];
+        
     }
     return _backgroundImageView;
 }
@@ -199,8 +207,8 @@
     if (!_reinforcerLabel) {
         _reinforcerLabel = [[UILabel alloc]init];
         _reinforcerLabel.text = [[NSString alloc]initWithFormat:@"0"];
-        _reinforcerLabel.font = [UIFont systemFontOfSize:50];
-        _reinforcerLabel.textColor = RGBCOLOR(147, 214, 243);
+        _reinforcerLabel.font = [UIFont systemFontOfSize:kAutoFontSize];
+        
         
         _reinforcerLabel.adjustsFontSizeToFitWidth = YES;
         _reinforcerLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
@@ -212,8 +220,9 @@
 - (UIScrollView *)scrollView {
     if (!_scrollView) {
         _scrollView = [[UIScrollView alloc] init];
-        self.scrollView.directionalLockEnabled = YES;
-        self.scrollView.pagingEnabled = YES;
+        _scrollView.directionalLockEnabled = YES;
+        _scrollView.pagingEnabled = YES;
+        _scrollView.showsHorizontalScrollIndicator = NO;
         [_scrollView setBackgroundColor:[UIColor clearColor]];
     }
     return _scrollView;
@@ -222,7 +231,6 @@
 - (UIButton *)rightButton {
     if (!_rightButton) {
         _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_rightButton setBackgroundImage:[UIImage imageNamed:@"calendar/arrowRight_boy"] forState:UIControlStateNormal];
     }
     return _rightButton;
 }
@@ -230,7 +238,6 @@
 - (UIButton *)leftButton {
     if (!_leftButton) {
         _leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_leftButton setBackgroundImage:[UIImage imageNamed:@"calendar/arrowLeft_boy"] forState:UIControlStateNormal];
     }
     return _leftButton;
 }

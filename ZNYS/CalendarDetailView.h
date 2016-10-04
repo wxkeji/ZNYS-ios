@@ -13,6 +13,7 @@
 @interface CalendarDetailView : ZNYSBaseView <UIScrollViewDelegate>
 
 - (void)setModels:(NSMutableArray<CalendarDetailModel *> *)models;
+- (void)configureTheme;
 
 @end
 

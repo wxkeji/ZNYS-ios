@@ -24,7 +24,6 @@
 		04C978F31C44BE100046DB4A /* GiftItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C978F21C44BE100046DB4A /* GiftItem.m */; };
 		14AE2882E3EA6C1FFF32284D /* libPods-ZNYS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BE4FFF790A33BC1EB578A8 /* libPods-ZNYS.a */; };
 		3C37F4851D6BE0D500D879E0 /* UIImage+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C37F4841D6BE0D500D879E0 /* UIImage+Helper.m */; };
-		3C37F4891D6BE2EE00D879E0 /* CatogoriesImportHelper.h in Sources */ = {isa = PBXBuildFile; fileRef = 3C37F4881D6BE2EE00D879E0 /* CatogoriesImportHelper.h */; };
 		3C584C0C1D6B3EB3000E3BCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C584C0B1D6B3EB3000E3BCE /* Images.xcassets */; };
 		3C62CE521D28126C00402FE1 /* CalendarDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE511D28126C00402FE1 /* CalendarDetailModel.m */; };
 		3C62CE5B1D294CD700402FE1 /* CalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE5A1D294CD700402FE1 /* CalendarModel.m */; };
@@ -41,9 +40,10 @@
 		3CA855F21D65586200320E4C /* CalendarDetailModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA855F11D65586200320E4C /* CalendarDetailModalViewController.m */; };
 		3CC8F5FB1D6F216400E286E7 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F5FA1D6F216400E286E7 /* UIColor+Helper.m */; };
 		3CC8F5FD1D6F25B700E286E7 /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F5FC1D6F25B700E286E7 /* ThemeManager.m */; };
-		3CC8F5FF1D6F25F900E286E7 /* ThemeManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F5FE1D6F25F900E286E7 /* ThemeManager.h */; };
 		3CC8F6021D6FDEEC00E286E7 /* UIImage+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F6011D6FDEEC00E286E7 /* UIImage+Theme.m */; };
 		3CC8F6051D6FE47600E286E7 /* UIColor+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F6041D6FE47600E286E7 /* UIColor+Theme.m */; };
+		3CCCAED21DA3979400D9A525 /* DesignMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCAED11DA3979400D9A525 /* DesignMacro.m */; };
+		3CCCAED31DA39BE600D9A525 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F3962811C3A12C100C78F84 /* Cabinet.storyboard */; };
 		451D6A1F1C9A8434000B6A91 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 451D6A1E1C9A8434000B6A91 /* Model.xcdatamodeld */; };
 		451D6A211C9A8445000B6A91 /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 451D6A201C9A8445000B6A91 /* Model.xcdatamodel */; };
 		454112741C95BE9600BE4DE9 /* ZNYSprogressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */; };
@@ -112,7 +112,6 @@
 		645A01701C37B5B800556395 /* SelectBirthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016C1C37B5B800556395 /* SelectBirthView.m */; };
 		645A01711C37B5B800556395 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A016E1C37B5B800556395 /* AddAccountViewController.m */; };
 		645A01831C37C56D00556395 /* 华康娃娃体.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 645A01821C37C56D00556395 /* 华康娃娃体.TTF */; };
-		645A01841C37C58E00556395 /* 华康娃娃体.TTF in Sources */ = {isa = PBXBuildFile; fileRef = 645A01821C37C56D00556395 /* 华康娃娃体.TTF */; };
 		645A018B1C37C9AC00556395 /* UILabel+Font.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A018A1C37C9AC00556395 /* UILabel+Font.m */; };
 		645A01901C37CB2500556395 /* ZNYSBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A018F1C37CB2500556395 /* ZNYSBaseController.m */; };
 		645A01931C37CB7300556395 /* VerifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A01921C37CB7300556395 /* VerifyPasswordViewController.m */; };
@@ -146,7 +145,6 @@
 		64CCBD9A1CD88A16003EFFAD /* ExchangeRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CCBD991CD88A16003EFFAD /* ExchangeRewardViewController.m */; };
 		6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F368F061BBCCE1700D273C9 /* IsParentViewController.m */; };
 		6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F368F071BBCCE1700D273C9 /* IsParentViewController.xib */; };
-		6F3962821C3A12C100C78F84 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F3962811C3A12C100C78F84 /* Cabinet.storyboard */; };
 		C43136411BC26CF90097A91B /* LeftToRightSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = C43136401BC26CF90097A91B /* LeftToRightSegue.m */; };
 		C43136441BC279800097A91B /* RightToLeftSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = C43136431BC279800097A91B /* RightToLeftSegue.m */; };
 		C43136471BC282C30097A91B /* IsParentToCabinetSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = C43136461BC282C30097A91B /* IsParentToCabinetSegue.m */; };
@@ -237,6 +235,7 @@
 		3CC8F6011D6FDEEC00E286E7 /* UIImage+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Theme.m"; sourceTree = "<group>"; };
 		3CC8F6031D6FE47600E286E7 /* UIColor+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Theme.h"; sourceTree = "<group>"; };
 		3CC8F6041D6FE47600E286E7 /* UIColor+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Theme.m"; sourceTree = "<group>"; };
+		3CCCAED11DA3979400D9A525 /* DesignMacro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignMacro.m; sourceTree = "<group>"; };
 		451D6A201C9A8445000B6A91 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		454112721C95BE9600BE4DE9 /* ZNYSprogressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNYSprogressBar.h; sourceTree = "<group>"; };
 		454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNYSprogressBar.m; sourceTree = "<group>"; };
@@ -1054,6 +1053,7 @@
 				645A01681C37B56900556395 /* ToolMacroes.h */,
 				3C7B57351D6C325600D5E487 /* ToolMacroes.m */,
 				3CA18E881D767F8D00DE8EF4 /* DesignMacro.h */,
+				3CCCAED11DA3979400D9A525 /* DesignMacro.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1315,6 +1315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CCCAED31DA39BE600D9A525 /* Cabinet.storyboard in Resources */,
 				6476646F1C3E604200386E05 /* MetalList.plist in Resources */,
 				3C584C0C1D6B3EB3000E3BCE /* Images.xcassets in Resources */,
 				0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */,
@@ -1341,7 +1342,6 @@
 				45EB69D41C415DDE00160457 /* BCBottomPattern.png in Resources */,
 				6F368F091BBCCE1700D273C9 /* IsParentViewController.xib in Resources */,
 				45DC5E661C421B80000D6A7A /* 进度70.png in Resources */,
-				6F3962821C3A12C100C78F84 /* Cabinet.storyboard in Resources */,
 				45DC5E611C421B80000D6A7A /* 进度20.png in Resources */,
 				647E05C01C3A5C1D00ADB810 /* userAccount_back@3x.png in Resources */,
 				45EB69D01C40B2C800160457 /* BCProgressEmpty.png in Resources */,
@@ -1412,11 +1412,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				645A01841C37C58E00556395 /* 华康娃娃体.TTF in Sources */,
 				3C62CE5B1D294CD700402FE1 /* CalendarModel.m in Sources */,
 				64CCBD8E1CD30B94003EFFAD /* AddRewardButtonView.m in Sources */,
 				3C98A2241D24FF0700046BE8 /* CalendarViewController.m in Sources */,
 				45BC409C1C2469D9006A185F /* Rules.m in Sources */,
+				3CCCAED21DA3979400D9A525 /* DesignMacro.m in Sources */,
 				64CCBD971CD5BA1F003EFFAD /* MAKAFakeRootAlertView.m in Sources */,
 				455AAA751D24104800BE3F27 /* CalendarItem+CoreDataProperties.m in Sources */,
 				6476646A1C3CB1A000386E05 /* UITextField+Font.m in Sources */,
@@ -1428,7 +1428,6 @@
 				645A01931C37CB7300556395 /* VerifyPasswordViewController.m in Sources */,
 				645A01711C37B5B800556395 /* AddAccountViewController.m in Sources */,
 				C431364A1BC29A840097A91B /* NormalModeControllerViewController.m in Sources */,
-				3C37F4891D6BE2EE00D879E0 /* CatogoriesImportHelper.h in Sources */,
 				64CCBD8B1CD30B7E003EFFAD /* rewardListModel.m in Sources */,
 				45F786601D0D00E400E4F91D /* ToothBrushManagentMainView.m in Sources */,
 				0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */,
@@ -1465,7 +1464,6 @@
 				455B1B311D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m in Sources */,
 				45BC409A1C2469D9006A185F /* InferenceEngine.m in Sources */,
 				647664641C3BBF0C00386E05 /* AddAccountButton.m in Sources */,
-				3CC8F5FF1D6F25F900E286E7 /* ThemeManager.h in Sources */,
 				6412FC9B1C476AB400DF8FC5 /* RewardListViewController.m in Sources */,
 				647E05CE1C3B70A500ADB810 /* UserAccountViewController.m in Sources */,
 				45BC40951C2469D9006A185F /* AreaStatistics+CoreDataProperties.m in Sources */,
@@ -1663,7 +1661,7 @@
 					"$(PROJECT_DIR)/ZNYS/BLELib",
 					"$(PROJECT_DIR)/ZNYS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka;
+				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka.yu243e;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1685,7 +1683,7 @@
 					"$(PROJECT_DIR)/ZNYS/BLELib",
 					"$(PROJECT_DIR)/ZNYS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka;
+				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka.yu243e;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
