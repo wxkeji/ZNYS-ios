@@ -38,6 +38,7 @@
 		3CA18E871D753C3D00DE8EF4 /* ChildrenHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA18E861D753C3D00DE8EF4 /* ChildrenHomeViewController.m */; };
 		3CA855EF1D65546800320E4C /* PresentedBaseModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA855EE1D65546800320E4C /* PresentedBaseModalViewController.m */; };
 		3CA855F21D65586200320E4C /* CalendarDetailModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA855F11D65586200320E4C /* CalendarDetailModalViewController.m */; };
+		3CB1E23E1DA5313F001075F4 /* UserDetailInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB1E23D1DA5313F001075F4 /* UserDetailInformationView.m */; };
 		3CC8F5FB1D6F216400E286E7 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F5FA1D6F216400E286E7 /* UIColor+Helper.m */; };
 		3CC8F5FD1D6F25B700E286E7 /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F5FC1D6F25B700E286E7 /* ThemeManager.m */; };
 		3CC8F6021D6FDEEC00E286E7 /* UIImage+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F6011D6FDEEC00E286E7 /* UIImage+Theme.m */; };
@@ -227,6 +228,8 @@
 		3CA855EE1D65546800320E4C /* PresentedBaseModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentedBaseModalViewController.m; sourceTree = "<group>"; };
 		3CA855F01D65586200320E4C /* CalendarDetailModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDetailModalViewController.h; sourceTree = "<group>"; };
 		3CA855F11D65586200320E4C /* CalendarDetailModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDetailModalViewController.m; sourceTree = "<group>"; };
+		3CB1E23C1DA5313F001075F4 /* UserDetailInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailInformationView.h; sourceTree = "<group>"; };
+		3CB1E23D1DA5313F001075F4 /* UserDetailInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailInformationView.m; sourceTree = "<group>"; };
 		3CC8F5F91D6F216400E286E7 /* UIColor+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Helper.h"; sourceTree = "<group>"; };
 		3CC8F5FA1D6F216400E286E7 /* UIColor+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Helper.m"; sourceTree = "<group>"; };
 		3CC8F5FC1D6F25B700E286E7 /* ThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
@@ -591,7 +594,6 @@
 				45DC5E6A1C4235DD000D6A7A /* Library */,
 				645A018C1C37CAE100556395 /* Base */,
 				645A01881C37C97100556395 /* Categories */,
-				645A01781C37BB7B00556395 /* Resource */,
 				645A01671C37B53E00556395 /* Utils */,
 				645A01651C37B51D00556395 /* Modules */,
 				458093961C2160FF00CB9BF9 /* Data Model */,
@@ -637,6 +639,8 @@
 			children = (
 				3C7B57321D6BF3F100D5E487 /* UserInformationView.h */,
 				3C7B57331D6BF3F100D5E487 /* UserInformationView.m */,
+				3CB1E23C1DA5313F001075F4 /* UserDetailInformationView.h */,
+				3CB1E23D1DA5313F001075F4 /* UserDetailInformationView.m */,
 			);
 			name = UserInformation;
 			sourceTree = "<group>";
@@ -1176,6 +1180,7 @@
 				645A01951C37CBBF00556395 /* ZNYSBaseView.m */,
 				45EF67D21D33D50600611BF4 /* SettingBaseView.h */,
 				45EF67D31D33D50600611BF4 /* SettingBaseView.m */,
+				645A01781C37BB7B00556395 /* Resource */,
 				64CCBD861CD30B6B003EFFAD /* ZNYSBaseNavigationBar.h */,
 				64CCBD871CD30B6B003EFFAD /* ZNYSBaseNavigationBar.m */,
 				3CA855ED1D65546800320E4C /* PresentedBaseModalViewController.h */,
@@ -1519,6 +1524,7 @@
 				645A01701C37B5B800556395 /* SelectBirthView.m in Sources */,
 				0487D7661B74548F00756EF8 /* main.m in Sources */,
 				647E05C81C3A6C1900ADB810 /* SettingHeaderView.m in Sources */,
+				3CB1E23E1DA5313F001075F4 /* UserDetailInformationView.m in Sources */,
 				647E05C51C3A6B4B00ADB810 /* SettingViewController.m in Sources */,
 				6412FCA11C477F0C00DF8FC5 /* RewardItemView.m in Sources */,
 				64337DC81C3B8DD400C9D811 /* ThumbView.m in Sources */,
@@ -1661,7 +1667,7 @@
 					"$(PROJECT_DIR)/ZNYS/BLELib",
 					"$(PROJECT_DIR)/ZNYS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka.yu243e;
+				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1683,7 +1689,7 @@
 					"$(PROJECT_DIR)/ZNYS/BLELib",
 					"$(PROJECT_DIR)/ZNYS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka.yu243e;
+				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;

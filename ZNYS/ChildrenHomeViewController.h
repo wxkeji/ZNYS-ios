@@ -7,7 +7,8 @@
 //
 
 #import "ZNYSBaseController.h"
+#import "UserDetailInformationView.h"
 
-@interface ChildrenHomeViewController : ZNYSBaseController
+@interface ChildrenHomeViewController : ZNYSBaseController<UserDetailInforationViewDelegate>
 
 @end

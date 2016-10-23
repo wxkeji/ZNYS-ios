@@ -478,9 +478,9 @@
 - (UIButton *)overlayView {
 	if(_overlayView == nil) {
         _overlayView = [[UIButton alloc] initWithFrame:self.view.bounds];
-        [_overlayView setBackgroundColor:[UIColor whiteColor]];
-        _overlayView.opaque = YES;
-        _overlayView.alpha = 0.8;
+        [_overlayView setBackgroundColor:[UIColor blackColor]];
+        _overlayView.opaque = NO;
+        _overlayView.alpha = MODAL_ALPHA;
         [_overlayView addTarget:self action:@selector(dismissFindView) forControlEvents:UIControlEventTouchUpInside];
 	}
 	return _overlayView;

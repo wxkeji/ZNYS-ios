@@ -52,24 +52,24 @@
     
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(weakSelf.mas_centerX);
-        make.top.equalTo(weakSelf.mas_top).with.offset(CustomHeight(40));
+        make.top.equalTo(weakSelf.mas_top).with.offset(CustomHeight(30));
         make.width.mas_equalTo(CustomHeight(200));
         make.height.mas_equalTo(CustomHeight(200));
     }];
     
     [self.rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.scrollView.mas_right).with.offset(CustomWidth(5));
-        make.width.mas_equalTo(CustomWidth(20));
+        make.left.equalTo(weakSelf.scrollView.mas_right).with.offset(CustomWidth(2));
+        make.width.mas_equalTo(CustomWidth(30));
         make.height.mas_equalTo(CustomHeight(30));
         make.centerY.equalTo(weakSelf.scrollView.mas_centerY);
-    }];
+    }]; //30X30
     
     [self.leftButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(weakSelf.scrollView.mas_left).with.offset(CustomWidth(-5));
-        make.width.mas_equalTo(CustomWidth(20));
+        make.right.equalTo(weakSelf.scrollView.mas_left).with.offset(CustomWidth(-2));
+        make.width.mas_equalTo(CustomWidth(30));
         make.height.mas_equalTo(CustomHeight(30));
         make.centerY.equalTo(weakSelf.scrollView.mas_centerY);
-    }];
+    }]; //30X30
     
     CGFloat reinforceImageViewToBottom = 15;
     [self.reinforcerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -143,8 +143,9 @@
     [self setBackgroundColor:[UIColor colorWithThemedImageNamed:@"color/primary"]];
     [self.backgroundImageView setImage:[UIImage themedImageWithNamed:@"color/primary_dark"]];
     self.reinforcerLabel.textColor = [UIColor colorWithThemedImageNamed:@"color/primary_light"];
-    [self.rightButton setBackgroundImage:[UIImage themedImageWithNamed:@"calendar/arrowRight"] forState:UIControlStateNormal];
-    [self.leftButton setBackgroundImage:[UIImage themedImageWithNamed:@"calendar/arrowLeft"] forState:UIControlStateNormal];
+    
+    self.rightButton.tintColor = [UIColor colorWithThemedImageNamed:@"color/primary_dark"];
+    self.leftButton.tintColor = [UIColor colorWithThemedImageNamed:@"color/primary_dark"];
 }
 
 #pragma mark - private method
@@ -231,6 +232,7 @@
 - (UIButton *)rightButton {
     if (!_rightButton) {
         _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_rightButton setBackgroundImage:[UIImage themedImageWithNamed:@"calendar/arrowRight"] forState:UIControlStateNormal];
     }
     return _rightButton;
 }
@@ -238,6 +240,7 @@
 - (UIButton *)leftButton {
     if (!_leftButton) {
         _leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_leftButton setBackgroundImage:[UIImage themedImageWithNamed:@"calendar/arrowLeft"] forState:UIControlStateNormal];
     }
     return _leftButton;
 }

@@ -8,6 +8,7 @@
 
 #import "ChildrenHomeViewController.h"
 #import "UserInformationView.h"
+#import "UserDetailInformationView.h"
 
 //点击跳转
 #import "CalendarViewController.h"
@@ -27,9 +28,11 @@
 
 @property (nonatomic, strong) UserInformationView *userInformationView;
 @property (nonatomic, strong) UIButton *userDetailInformationButton;
+@property (nonatomic, strong) UserDetailInformationView *userDetailInformationView;
 
 @property (nonatomic, strong) UIButton *connectToothBrushButton;
 
+@property (nonatomic, strong) UIButton *modalViewBackgroundButton;
 @end
 
 @implementation ChildrenHomeViewController
@@ -63,6 +66,8 @@
     [self.userDetailInformationButton addTarget:self action:@selector(expandUserDetailInformation) forControlEvents:UIControlEventTouchUpInside];
     
     [self.connectToothBrushButton addTarget:self action:@selector(toConnectedResult) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.modalViewBackgroundButton addTarget:self action:@selector(disMissModalViewBackground) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)setupConstraintsForSubviews {
@@ -125,9 +130,15 @@
         make.width.mas_equalTo(100);
         make.height.mas_equalTo(100);
     }];//连接按钮100x100
+    
 }
 
-#pragma mark private method
+#pragma mark - UserDetailInformationViewDelegate
+- (void)dismissUserDetailView {
+    [self disMissModalViewBackground];
+}
+
+#pragma mark - private method
 - (void)configureTheme {
     self.backgroundImageViewTop.image = [UIImage themedImageWithNamed:@"color/primary"];
     self.backgroundLogoImageView.image = [UIImage themedImageWithNamed:@"children/logo"];
@@ -150,7 +161,18 @@
 }
 
 - (void)expandUserDetailInformation {
-    
+    [self showModalViewBackground];
+    [self.modalViewBackgroundButton addSubview:self.userDetailInformationView];
+    self.userDetailInformationView.delegate = self;
+    WS(weakSelf, self);
+    [self.userDetailInformationView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(kSCREEN_WIDTH);
+        make.left.mas_equalTo(0);
+        make.height.mas_equalTo(mainHeight + self.userDetailInformationView.hasSwitchView * switchHeight);
+        make.top.equalTo(weakSelf.view.mas_top);
+    }];
+    [self.view layoutIfNeeded];
+    [self.userDetailInformationView showAnimationWithDelay:modalAnimationDuration];
 }
 
 - (void)toConnectedResult {
@@ -173,6 +195,35 @@
 
 }
 
+/*
+ *  模态弹窗相关
+ */
+static const NSTimeInterval modalAnimationDuration = 0.3;
+- (void)showModalViewBackground {
+    self.modalViewBackgroundButton.frame = self.userDetailInformationButton.frame;
+    self.modalViewBackgroundButton.alpha = 0.6;
+    [self.view addSubview:self.modalViewBackgroundButton];
+    [UIView animateWithDuration:modalAnimationDuration animations:^{
+        self.modalViewBackgroundButton.frame = self.view.bounds;
+        self.modalViewBackgroundButton.alpha = 1.0;
+    }];
+}
+- (void)disMissModalViewBackground {
+    WS(weakSelf, self);
+    NSTimeInterval delay = [self.userDetailInformationView showCloseAnimation];
+    [UIView animateWithDuration:modalAnimationDuration
+                          delay:delay
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+        weakSelf.modalViewBackgroundButton.alpha = 0.0;
+    }
+                     completion:^(BOOL finished) {
+                         [self.userDetailInformationView removeFromSuperview];
+                         [self.modalViewBackgroundButton removeFromSuperview];
+                         self.userDetailInformationView = nil;
+                         self.modalViewBackgroundButton.frame = self.userDetailInformationButton.frame;
+    }];
+}
 #pragma mark getters and setters
 - (UIView *)backgroundImageViewTop{
     if (!_backgroundImageViewTop) {
@@ -227,6 +278,12 @@
     }
     return _userDetailInformationButton;
 }
+- (UserDetailInformationView *)userDetailInformationView {
+    if (!_userDetailInformationView) {
+        _userDetailInformationView = [[UserDetailInformationView alloc] init];
+    }
+    return _userDetailInformationView;
+}
 
 - (UIButton *)connectToothBrushButton {
     if (!_connectToothBrushButton) {
@@ -235,4 +292,12 @@
     return _connectToothBrushButton;
 }
 
+- (UIButton *)modalViewBackgroundButton {
+    if (!_modalViewBackgroundButton) {
+        _modalViewBackgroundButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _modalViewBackgroundButton.opaque = NO;
+        _modalViewBackgroundButton.backgroundColor = RGBACOLOR(0, 0, 0, MODAL_ALPHA);
+    }
+    return _modalViewBackgroundButton;
+}
 @end
