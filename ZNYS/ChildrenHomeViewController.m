@@ -164,13 +164,10 @@
     [self showModalViewBackground];
     [self.modalViewBackgroundButton addSubview:self.userDetailInformationView];
     self.userDetailInformationView.delegate = self;
-    WS(weakSelf, self);
     [self.userDetailInformationView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(kSCREEN_WIDTH);
         make.left.mas_equalTo(0);
-        make.height.mas_equalTo(mainHeight + self.userDetailInformationView.hasSwitchView * switchHeight);
-        make.top.equalTo(weakSelf.view.mas_top);
-    }];
+        make.top.equalTo(self.view.mas_top);
+    }]; //  不需要高度和宽度，已在 view 中定义 intrinsic
     [self.view layoutIfNeeded];
     [self.userDetailInformationView showAnimationWithDelay:modalAnimationDuration];
 }

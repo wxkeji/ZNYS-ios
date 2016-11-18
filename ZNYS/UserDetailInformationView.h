@@ -7,14 +7,14 @@
 //
 
 #import "ZNYSBaseView.h"
+@class User;
 @protocol UserDetailInforationViewDelegate;
-static const CGFloat mainHeight = 200;
-static const CGFloat switchHeight = 100;
+@protocol UserDetailInforationViewDatasource;
 
 @interface UserDetailInformationView : ZNYSBaseView
 
 @property (nonatomic, weak) id<UserDetailInforationViewDelegate> delegate;
-@property (nonatomic, assign, readonly) BOOL hasSwitchView;   //是否有两个用户
+
 - (void)showAnimationWithDelay:(NSTimeInterval)delay;
 - (NSTimeInterval)showCloseAnimation;
 
@@ -24,4 +24,10 @@ static const CGFloat switchHeight = 100;
 
 - (void)dismissUserDetailView;
 
+@end
+@protocol UserDetailInforationViewDatasource <NSObject>
+
+//requestUserAcount 以确定是否加入切换条
+- (NSInteger)numberOfUsers;
+- (User *)userAtIndex:(NSInteger)index;
 @end

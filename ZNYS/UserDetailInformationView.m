@@ -5,19 +5,24 @@
 //  Created by yu243e on 16/10/5.
 //  Copyright © 2016年 Woodseen. All rights reserved.
 //
-
+#import "User.h"
 #import "UserDetailInformationView.h"
 @interface UserDetailInformationView()
 
 @property (nonatomic, strong) UIImageView *mainBackgroundImageView;
 
 @property (nonatomic, strong) UIImageView *switchBackgroundImageView;
+@property (nonatomic, strong) UICollectionView *switchCollectionView;
 
 @property (nonatomic, strong) UIButton *closeOrConfirmButton;
 @property (nonatomic, assign) BOOL isCloseButton;   //button 状态
-@property (nonatomic, assign, readwrite) BOOL hasSwitchView;   //是否有两个用户
+@property (nonatomic, assign) BOOL hasSwitchView;   //是否有两个用户
+@property (nonatomic, assign) BOOL userCount;
 
 @end
+
+static const CGFloat mainHeight = 200;
+static const CGFloat switchHeight = 100;
 
 @implementation UserDetailInformationView
 
@@ -27,7 +32,7 @@
     if (self) {
         self.isCloseButton = true;
         [self changeButtonState];
-        self.hasSwitchView = [self judgeSwitchView];
+        self.hasSwitchView = [self judgeSwitchView];    //初始化时判断一次
         
         [self addSubview:self.mainBackgroundImageView];
         [self.mainBackgroundImageView addSubview:self.closeOrConfirmButton];
@@ -39,6 +44,12 @@
         [self.closeOrConfirmButton addTarget:self action:@selector(closeOrConfirmButtonTap) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
+}
+
+//返回当前View定义的大小，则不需要外部约束
+- (CGSize)intrinsicContentSize
+{
+    return CGSizeMake(kSCREEN_WIDTH, mainHeight + self.hasSwitchView * switchHeight);
 }
 
 static const CGFloat mainInitTop = -180;
@@ -95,7 +106,7 @@ static const CGFloat mainInitTop = -180;
 - (NSTimeInterval)showCloseAnimation {
     WS(weakSelf, self);
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        [weakSelf closeAnimation];
+        [weakSelf changeCloseLayoutforAnimation];
         [weakSelf layoutIfNeeded];
     } completion:^(BOOL finished) {
         if (self.hasSwitchView) {
@@ -109,7 +120,7 @@ static const CGFloat mainInitTop = -180;
 
 #pragma mark - private methods
 - (BOOL)judgeSwitchView {
-    return true;
+    return NO;
 }
 - (void)changeButtonState {
     if (self.isCloseButton) {
@@ -129,7 +140,7 @@ static const CGFloat mainInitTop = -180;
         make.left.equalTo(weakSelf.mas_left).with.offset(0);
     }];
 }
-- (void)closeAnimation {
+- (void)changeCloseLayoutforAnimation {
     WS(weakSelf, self);
     [weakSelf.mainBackgroundImageView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(mainInitTop-switchHeight);
@@ -163,13 +174,18 @@ static const CGFloat mainInitTop = -180;
     }
     return _switchBackgroundImageView;
 }
+- (UIScrollView *)switchCollectionView {
+    if (!_switchCollectionView) {
+        _switchCollectionView = [[UICollectionView alloc] init];
+        _switchCollectionView.backgroundColor = [UIColor clearColor];
+    }
+    return _switchCollectionView;
+}
 - (UIButton *)closeOrConfirmButton {
     if (!_closeOrConfirmButton) {
         _closeOrConfirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
     }
     return _closeOrConfirmButton;
 }
-- (BOOL)hasSwitchView {
-    return YES;
-}
+
 @end
