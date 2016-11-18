@@ -33,7 +33,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(void){
-        [[BluetoothServer defaultServer] scan];
+//        [[BluetoothServer defaultServer] scan];
        // [self didConnect];
     });
     self.currentProgress = 0.0f;
