@@ -23,6 +23,7 @@
 		04A7510F1C43D9E500B3F537 /* GiftList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A7510E1C43D9E500B3F537 /* GiftList.plist */; };
 		04C978F31C44BE100046DB4A /* GiftItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C978F21C44BE100046DB4A /* GiftItem.m */; };
 		14AE2882E3EA6C1FFF32284D /* libPods-ZNYS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BE4FFF790A33BC1EB578A8 /* libPods-ZNYS.a */; };
+		3C15B7161DE5876800609717 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C15B7141DE5876800609717 /* Model.xcdatamodeld */; };
 		3C37F4851D6BE0D500D879E0 /* UIImage+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C37F4841D6BE0D500D879E0 /* UIImage+Helper.m */; };
 		3C584C0C1D6B3EB3000E3BCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C584C0B1D6B3EB3000E3BCE /* Images.xcassets */; };
 		3C62CE521D28126C00402FE1 /* CalendarDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE511D28126C00402FE1 /* CalendarDetailModel.m */; };
@@ -45,8 +46,6 @@
 		3CC8F6051D6FE47600E286E7 /* UIColor+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F6041D6FE47600E286E7 /* UIColor+Theme.m */; };
 		3CCCAED21DA3979400D9A525 /* DesignMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCAED11DA3979400D9A525 /* DesignMacro.m */; };
 		3CCCAED31DA39BE600D9A525 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F3962811C3A12C100C78F84 /* Cabinet.storyboard */; };
-		451D6A1F1C9A8434000B6A91 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 451D6A1E1C9A8434000B6A91 /* Model.xcdatamodeld */; };
-		451D6A211C9A8445000B6A91 /* Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 451D6A201C9A8445000B6A91 /* Model.xcdatamodel */; };
 		454112741C95BE9600BE4DE9 /* ZNYSprogressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */; };
 		455AAA751D24104800BE3F27 /* CalendarItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 455AAA721D24104800BE3F27 /* CalendarItem+CoreDataProperties.m */; };
 		455AAA761D24104800BE3F27 /* CalendarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 455AAA741D24104800BE3F27 /* CalendarItem.m */; };
@@ -198,6 +197,7 @@
 		04A7510E1C43D9E500B3F537 /* GiftList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GiftList.plist; sourceTree = "<group>"; };
 		04C978F11C44BE100046DB4A /* GiftItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftItem.h; sourceTree = "<group>"; };
 		04C978F21C44BE100046DB4A /* GiftItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftItem.m; sourceTree = "<group>"; };
+		3C15B7151DE5876800609717 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		3C37F4831D6BE0D500D879E0 /* UIImage+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Helper.h"; sourceTree = "<group>"; };
 		3C37F4841D6BE0D500D879E0 /* UIImage+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Helper.m"; sourceTree = "<group>"; };
 		3C37F4881D6BE2EE00D879E0 /* CatogoriesImportHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatogoriesImportHelper.h; sourceTree = "<group>"; };
@@ -239,7 +239,6 @@
 		3CC8F6031D6FE47600E286E7 /* UIColor+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Theme.h"; sourceTree = "<group>"; };
 		3CC8F6041D6FE47600E286E7 /* UIColor+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Theme.m"; sourceTree = "<group>"; };
 		3CCCAED11DA3979400D9A525 /* DesignMacro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignMacro.m; sourceTree = "<group>"; };
-		451D6A201C9A8445000B6A91 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		454112721C95BE9600BE4DE9 /* ZNYSprogressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNYSprogressBar.h; sourceTree = "<group>"; };
 		454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNYSprogressBar.m; sourceTree = "<group>"; };
 		455AAA711D24104800BE3F27 /* CalendarItem+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CalendarItem+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -479,8 +478,7 @@
 		043B7B731BAD30BA0094BB3E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				451D6A1E1C9A8434000B6A91 /* Model.xcdatamodeld */,
-				451D6A201C9A8445000B6A91 /* Model.xcdatamodel */,
+				3C15B7141DE5876800609717 /* Model.xcdatamodeld */,
 				458094A31C242E8400CB9BF9 /* Entities */,
 				458093921C2144B700CB9BF9 /* CoreDataHelper */,
 				0469BFBF1BADCBCE0055DF4A /* ItemManagement */,
@@ -1497,7 +1495,6 @@
 				041366001BAD8C9A00CD0604 /* DialogView.m in Sources */,
 				0469BFBE1BADC22F0055DF4A /* Fortune.m in Sources */,
 				3CC8F6051D6FE47600E286E7 /* UIColor+Theme.m in Sources */,
-				451D6A1F1C9A8434000B6A91 /* Model.xcdatamodeld in Sources */,
 				645A019C1C37CEF700556395 /* VerifyPasswordView.m in Sources */,
 				45BD02F81CCBDEE600A14E95 /* Award+CoreDataProperties.m in Sources */,
 				3C7B57341D6BF3F100D5E487 /* UserInformationView.m in Sources */,
@@ -1510,12 +1507,12 @@
 				C460E03D1BC5021F000608BD /* LackToothModeControllerViewController.m in Sources */,
 				45BC40991C2469D9006A185F /* InferenceEngine+CoreDataProperties.m in Sources */,
 				6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */,
-				451D6A211C9A8445000B6A91 /* Model.xcdatamodel in Sources */,
 				C43136471BC282C30097A91B /* IsParentToCabinetSegue.m in Sources */,
 				455B1B221D361DD0002D85E3 /* ToothbrushManager.m in Sources */,
 				458094691C23DE5700CB9BF9 /* ConnectingViewController.m in Sources */,
 				C4A025001BBE678000771969 /* settingIndexController.m in Sources */,
 				45BC40971C2469D9006A185F /* CustomerServices+CoreDataProperties.m in Sources */,
+				3C15B7161DE5876800609717 /* Model.xcdatamodeld in Sources */,
 				04C978F31C44BE100046DB4A /* GiftItem.m in Sources */,
 				64CCBD911CD314E6003EFFAD /* ChooseNumberScrollView.m in Sources */,
 				647E05D11C3B710A00ADB810 /* UserDetailView.m in Sources */,
@@ -1763,10 +1760,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		451D6A1E1C9A8434000B6A91 /* Model.xcdatamodeld */ = {
+		3C15B7141DE5876800609717 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				3C15B7151DE5876800609717 /* Model.xcdatamodel */,
 			);
+			currentVersion = 3C15B7151DE5876800609717 /* Model.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

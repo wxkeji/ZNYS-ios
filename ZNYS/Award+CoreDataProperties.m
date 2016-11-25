@@ -26,5 +26,7 @@
 @dynamic uuid;
 @dynamic voice;
 @dynamic bePossessedByUser;
+@dynamic minPrice;
+@dynamic maxPrice;
 
 @end
