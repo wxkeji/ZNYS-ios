@@ -632,6 +632,43 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3C6866A21DF51A400054705A /* ThemeAndColor */ = {
+			isa = PBXGroup;
+			children = (
+				3CC8F6001D6FDEEC00E286E7 /* UIImage+Theme.h */,
+				3CC8F6011D6FDEEC00E286E7 /* UIImage+Theme.m */,
+				3CC8F6031D6FE47600E286E7 /* UIColor+Theme.h */,
+				3CC8F6041D6FE47600E286E7 /* UIColor+Theme.m */,
+				3C37F4831D6BE0D500D879E0 /* UIImage+Helper.h */,
+				3C37F4841D6BE0D500D879E0 /* UIImage+Helper.m */,
+				3CC8F5F91D6F216400E286E7 /* UIColor+Helper.h */,
+				3CC8F5FA1D6F216400E286E7 /* UIColor+Helper.m */,
+			);
+			name = ThemeAndColor;
+			sourceTree = "<group>";
+		};
+		3C6866A31DF51A5A0054705A /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				645A01891C37C9AC00556395 /* UILabel+Font.h */,
+				645A018A1C37C9AC00556395 /* UILabel+Font.m */,
+				645A019D1C3A146E00556395 /* UIButton+Font.h */,
+				645A019E1C3A146E00556395 /* UIButton+Font.m */,
+				647664681C3CB1A000386E05 /* UITextField+Font.h */,
+				647664691C3CB1A000386E05 /* UITextField+Font.m */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
+		3C6866A41DF51A680054705A /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				3C62CE5F1D29FFE300402FE1 /* NSDate+Helper.h */,
+				3C62CE601D29FFE300402FE1 /* NSDate+Helper.m */,
+			);
+			name = Date;
+			sourceTree = "<group>";
+		};
 		3C7B57311D6BF3C400D5E487 /* UserInformation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1149,22 +1186,9 @@
 			isa = PBXGroup;
 			children = (
 				3C37F4881D6BE2EE00D879E0 /* CatogoriesImportHelper.h */,
-				645A01891C37C9AC00556395 /* UILabel+Font.h */,
-				645A018A1C37C9AC00556395 /* UILabel+Font.m */,
-				645A019D1C3A146E00556395 /* UIButton+Font.h */,
-				645A019E1C3A146E00556395 /* UIButton+Font.m */,
-				647664681C3CB1A000386E05 /* UITextField+Font.h */,
-				647664691C3CB1A000386E05 /* UITextField+Font.m */,
-				3C62CE5F1D29FFE300402FE1 /* NSDate+Helper.h */,
-				3C62CE601D29FFE300402FE1 /* NSDate+Helper.m */,
-				3C37F4831D6BE0D500D879E0 /* UIImage+Helper.h */,
-				3C37F4841D6BE0D500D879E0 /* UIImage+Helper.m */,
-				3CC8F5F91D6F216400E286E7 /* UIColor+Helper.h */,
-				3CC8F5FA1D6F216400E286E7 /* UIColor+Helper.m */,
-				3CC8F6001D6FDEEC00E286E7 /* UIImage+Theme.h */,
-				3CC8F6011D6FDEEC00E286E7 /* UIImage+Theme.m */,
-				3CC8F6031D6FE47600E286E7 /* UIColor+Theme.h */,
-				3CC8F6041D6FE47600E286E7 /* UIColor+Theme.m */,
+				3C6866A41DF51A680054705A /* Date */,
+				3C6866A31DF51A5A0054705A /* Font */,
+				3C6866A21DF51A400054705A /* ThemeAndColor */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1281,12 +1305,13 @@
 		0487D7581B74548F00756EF8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Woodseen;
 				TargetAttributes = {
 					0487D75F1B74548F00756EF8 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 49VALGA2P9;
+						ProvisioningStyle = Automatic;
 					};
 					0487D7781B74548F00756EF8 = {
 						CreatedOnToolsVersion = 6.4;
@@ -1579,8 +1604,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: pengfei yin (25NQ2Q84LT)";
@@ -1588,6 +1615,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1623,8 +1651,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: pengfei yin (25NQ2Q84LT)";
@@ -1656,6 +1686,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 543198902@qq.com (2EZ48W4M9J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 49VALGA2P9;
 				INFOPLIST_FILE = ZNYS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1664,7 +1695,7 @@
 					"$(PROJECT_DIR)/ZNYS/BLELib",
 					"$(PROJECT_DIR)/ZNYS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.animita.ZNYS.yu243e;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1678,6 +1709,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 543198902@qq.com (2EZ48W4M9J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 49VALGA2P9;
 				INFOPLIST_FILE = ZNYS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1686,7 +1718,7 @@
 					"$(PROJECT_DIR)/ZNYS/BLELib",
 					"$(PROJECT_DIR)/ZNYS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = im.maka.maka;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.animita.ZNYS.yu243e;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1697,6 +1729,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1716,6 +1749,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
