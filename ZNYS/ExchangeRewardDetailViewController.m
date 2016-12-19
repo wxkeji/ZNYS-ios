@@ -202,7 +202,7 @@
 }
 
 - (void)refresh{
-    self.coinLabel.text = [NSString stringWithFormat:@"%@",[[UserManager sharedInstance] currentUserTokenOwned]];
+    self.coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[UserManager sharedInstance] currentUserTokenOwned]];
 }
 
 #pragma mark event action
@@ -259,7 +259,7 @@
 - (UILabel *)coinLabel{
     if (!_coinLabel) {
         _coinLabel = [[UILabel alloc] initWithCustomFont:15.f];
-        _coinLabel.text = [NSString stringWithFormat:@"%@",[[UserManager sharedInstance] currentUserTokenOwned]];
+        _coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[UserManager sharedInstance] currentUserTokenOwned]];
         _coinLabel.textColor = [UIColor blueColor];
         _coinLabel.textAlignment = NSTextAlignmentCenter;
     }
