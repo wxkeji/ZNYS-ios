@@ -10,6 +10,7 @@
 
 #import "AwardManager.h"
 #import "User.h"
+#import "UserManager.h"
 
 @implementation AwardManager
 +(instancetype)sharedInstance
@@ -130,7 +131,8 @@
     if (!matchedAward) {
         return NO;
     }
-    [User currentUser].tokenOwned = [NSNumber numberWithInteger:[[User currentUser].tokenOwned integerValue]-matchedAward.price];
+    [[UserManager sharedInstance] changeCurrentTokensByAdding:-matchedAward.price];
+    
     matchedAward.price = matchedAward.minPrice;
     matchedAward.status = @"notAdded";
     [[CoreDataHelper sharedInstance] save];

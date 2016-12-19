@@ -23,6 +23,8 @@
 		04A7510F1C43D9E500B3F537 /* GiftList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A7510E1C43D9E500B3F537 /* GiftList.plist */; };
 		04C978F31C44BE100046DB4A /* GiftItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C978F21C44BE100046DB4A /* GiftItem.m */; };
 		14AE2882E3EA6C1FFF32284D /* libPods-ZNYS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BE4FFF790A33BC1EB578A8 /* libPods-ZNYS.a */; };
+		3C10DB881E078A5600A551A5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C10DB851E078A5600A551A5 /* User.m */; };
+		3C10DB891E078A5600A551A5 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C10DB871E078A5600A551A5 /* User+CoreDataProperties.m */; };
 		3C15B7161DE5876800609717 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C15B7141DE5876800609717 /* Model.xcdatamodeld */; };
 		3C37F4851D6BE0D500D879E0 /* UIImage+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C37F4841D6BE0D500D879E0 /* UIImage+Helper.m */; };
 		3C584C0C1D6B3EB3000E3BCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C584C0B1D6B3EB3000E3BCE /* Images.xcassets */; };
@@ -40,6 +42,7 @@
 		3CA855EF1D65546800320E4C /* PresentedBaseModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA855EE1D65546800320E4C /* PresentedBaseModalViewController.m */; };
 		3CA855F21D65586200320E4C /* CalendarDetailModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA855F11D65586200320E4C /* CalendarDetailModalViewController.m */; };
 		3CB1E23E1DA5313F001075F4 /* UserDetailInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB1E23D1DA5313F001075F4 /* UserDetailInformationView.m */; };
+		3CC63A431E03DF5A00A856F6 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC63A421E03DF5A00A856F6 /* UserManager.m */; };
 		3CC8F5FB1D6F216400E286E7 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F5FA1D6F216400E286E7 /* UIColor+Helper.m */; };
 		3CC8F5FD1D6F25B700E286E7 /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F5FC1D6F25B700E286E7 /* ThemeManager.m */; };
 		3CC8F6021D6FDEEC00E286E7 /* UIImage+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F6011D6FDEEC00E286E7 /* UIImage+Theme.m */; };
@@ -65,8 +68,6 @@
 		4580946C1C23DE6400CB9BF9 /* ConnectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4580946B1C23DE6400CB9BF9 /* ConnectedViewController.m */; };
 		45839C321CBF6A4C000E878D /* CustomProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45839C301CBF6A4C000E878D /* CustomProgressBar.m */; };
 		45839C331CBF6A4C000E878D /* ProgressRectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 45839C311CBF6A4C000E878D /* ProgressRectangle.png */; };
-		45BC40911C2469D9006A185F /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC406E1C2469D9006A185F /* User+CoreDataProperties.m */; };
-		45BC40921C2469D9006A185F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC40701C2469D9006A185F /* User.m */; };
 		45BC40951C2469D9006A185F /* AreaStatistics+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC40761C2469D9006A185F /* AreaStatistics+CoreDataProperties.m */; };
 		45BC40961C2469D9006A185F /* AreaStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC40781C2469D9006A185F /* AreaStatistics.m */; };
 		45BC40971C2469D9006A185F /* CustomerServices+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BC407A1C2469D9006A185F /* CustomerServices+CoreDataProperties.m */; };
@@ -197,6 +198,10 @@
 		04A7510E1C43D9E500B3F537 /* GiftList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GiftList.plist; sourceTree = "<group>"; };
 		04C978F11C44BE100046DB4A /* GiftItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftItem.h; sourceTree = "<group>"; };
 		04C978F21C44BE100046DB4A /* GiftItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftItem.m; sourceTree = "<group>"; };
+		3C10DB841E078A5600A551A5 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		3C10DB851E078A5600A551A5 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		3C10DB861E078A5600A551A5 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3C10DB871E078A5600A551A5 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3C15B7151DE5876800609717 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		3C37F4831D6BE0D500D879E0 /* UIImage+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Helper.h"; sourceTree = "<group>"; };
 		3C37F4841D6BE0D500D879E0 /* UIImage+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Helper.m"; sourceTree = "<group>"; };
@@ -230,6 +235,8 @@
 		3CA855F11D65586200320E4C /* CalendarDetailModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDetailModalViewController.m; sourceTree = "<group>"; };
 		3CB1E23C1DA5313F001075F4 /* UserDetailInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailInformationView.h; sourceTree = "<group>"; };
 		3CB1E23D1DA5313F001075F4 /* UserDetailInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailInformationView.m; sourceTree = "<group>"; };
+		3CC63A411E03DF5A00A856F6 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		3CC63A421E03DF5A00A856F6 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		3CC8F5F91D6F216400E286E7 /* UIColor+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Helper.h"; sourceTree = "<group>"; };
 		3CC8F5FA1D6F216400E286E7 /* UIColor+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Helper.m"; sourceTree = "<group>"; };
 		3CC8F5FC1D6F25B700E286E7 /* ThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeManager.m; sourceTree = "<group>"; };
@@ -275,10 +282,6 @@
 		45839C2F1CBF6A4C000E878D /* CustomProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomProgressBar.h; sourceTree = "<group>"; };
 		45839C301CBF6A4C000E878D /* CustomProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomProgressBar.m; sourceTree = "<group>"; };
 		45839C311CBF6A4C000E878D /* ProgressRectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgressRectangle.png; sourceTree = "<group>"; };
-		45BC406D1C2469D9006A185F /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
-		45BC406E1C2469D9006A185F /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
-		45BC406F1C2469D9006A185F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		45BC40701C2469D9006A185F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		45BC40751C2469D9006A185F /* AreaStatistics+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AreaStatistics+CoreDataProperties.h"; sourceTree = "<group>"; };
 		45BC40761C2469D9006A185F /* AreaStatistics+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AreaStatistics+CoreDataProperties.m"; sourceTree = "<group>"; };
 		45BC40771C2469D9006A185F /* AreaStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaStatistics.h; sourceTree = "<group>"; };
@@ -479,8 +482,10 @@
 			isa = PBXGroup;
 			children = (
 				3C15B7141DE5876800609717 /* Model.xcdatamodeld */,
+				458093931C21453200CB9BF9 /* CoreDataHelper.h */,
+				458093941C21453200CB9BF9 /* CoreDataHelper.m */,
 				458094A31C242E8400CB9BF9 /* Entities */,
-				458093921C2144B700CB9BF9 /* CoreDataHelper */,
+				458093921C2144B700CB9BF9 /* Manager */,
 				0469BFBF1BADCBCE0055DF4A /* ItemManagement */,
 				0469BFBB1BADC2140055DF4A /* Fortune */,
 				043B7B771BAD31380094BB3E /* Config */,
@@ -783,17 +788,17 @@
 			name = EvaluateModule;
 			sourceTree = "<group>";
 		};
-		458093921C2144B700CB9BF9 /* CoreDataHelper */ = {
+		458093921C2144B700CB9BF9 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				458093931C21453200CB9BF9 /* CoreDataHelper.h */,
-				458093941C21453200CB9BF9 /* CoreDataHelper.m */,
 				455AAA771D2410C000BE3F27 /* CalendarItemManager.h */,
 				455AAA781D2410C000BE3F27 /* CalendarItemManager.m */,
 				4576E3E01CCFD37800A1BA2B /* AwardManager.h */,
 				4576E3E11CCFD37800A1BA2B /* AwardManager.m */,
+				3CC63A411E03DF5A00A856F6 /* UserManager.h */,
+				3CC63A421E03DF5A00A856F6 /* UserManager.m */,
 			);
-			name = CoreDataHelper;
+			name = Manager;
 			sourceTree = "<group>";
 		};
 		458093961C2160FF00CB9BF9 /* Data Model */ = {
@@ -858,10 +863,6 @@
 				45BD02F51CCBDEE600A14E95 /* Award+CoreDataProperties.m */,
 				45BD02F61CCBDEE600A14E95 /* Award.h */,
 				45BD02F71CCBDEE600A14E95 /* Award.m */,
-				45BC406D1C2469D9006A185F /* User+CoreDataProperties.h */,
-				45BC406E1C2469D9006A185F /* User+CoreDataProperties.m */,
-				45BC406F1C2469D9006A185F /* User.h */,
-				45BC40701C2469D9006A185F /* User.m */,
 				45BC40751C2469D9006A185F /* AreaStatistics+CoreDataProperties.h */,
 				45BC40761C2469D9006A185F /* AreaStatistics+CoreDataProperties.m */,
 				45BC40771C2469D9006A185F /* AreaStatistics.h */,
@@ -878,6 +879,10 @@
 				45BC40821C2469D9006A185F /* Rules+CoreDataProperties.m */,
 				45BC40831C2469D9006A185F /* Rules.h */,
 				45BC40841C2469D9006A185F /* Rules.m */,
+				3C10DB841E078A5600A551A5 /* User.h */,
+				3C10DB851E078A5600A551A5 /* User.m */,
+				3C10DB861E078A5600A551A5 /* User+CoreDataProperties.h */,
+				3C10DB871E078A5600A551A5 /* User+CoreDataProperties.m */,
 				45BC40891C2469D9006A185F /* Belongings+CoreDataProperties.h */,
 				45BC408A1C2469D9006A185F /* Belongings+CoreDataProperties.m */,
 				45BC408B1C2469D9006A185F /* Belongings.h */,
@@ -888,8 +893,8 @@
 				45BC40901C2469D9006A185F /* BrushingStatistics.m */,
 				455AAA711D24104800BE3F27 /* CalendarItem+CoreDataProperties.h */,
 				455AAA721D24104800BE3F27 /* CalendarItem+CoreDataProperties.m */,
-				455AAA731D24104800BE3F27 /* CalendarItem.h */,
 				455AAA741D24104800BE3F27 /* CalendarItem.m */,
+				455AAA731D24104800BE3F27 /* CalendarItem.h */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -1450,6 +1455,7 @@
 				6476646A1C3CB1A000386E05 /* UITextField+Font.m in Sources */,
 				3CA18E871D753C3D00DE8EF4 /* ChildrenHomeViewController.m in Sources */,
 				64CCBD821CD30361003EFFAD /* AddRewardViewController.m in Sources */,
+				3CC63A431E03DF5A00A856F6 /* UserManager.m in Sources */,
 				C43136441BC279800097A91B /* RightToLeftSegue.m in Sources */,
 				3CC8F5FB1D6F216400E286E7 /* UIColor+Helper.m in Sources */,
 				C43136411BC26CF90097A91B /* LeftToRightSegue.m in Sources */,
@@ -1457,6 +1463,7 @@
 				645A01711C37B5B800556395 /* AddAccountViewController.m in Sources */,
 				C431364A1BC29A840097A91B /* NormalModeControllerViewController.m in Sources */,
 				64CCBD8B1CD30B7E003EFFAD /* rewardListModel.m in Sources */,
+				3C10DB891E078A5600A551A5 /* User+CoreDataProperties.m in Sources */,
 				45F786601D0D00E400E4F91D /* ToothBrushManagentMainView.m in Sources */,
 				0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */,
 				C460E0401BC509D3000608BD /* DesignModeController.m in Sources */,
@@ -1489,6 +1496,7 @@
 				458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */,
 				3C877D861D3739750068ADED /* ConnectedResultContentView.m in Sources */,
 				647E05CB1C3A6C4C00ADB810 /* SettingButtonView.m in Sources */,
+				3C10DB881E078A5600A551A5 /* User.m in Sources */,
 				455B1B311D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m in Sources */,
 				45BC409A1C2469D9006A185F /* InferenceEngine.m in Sources */,
 				647664641C3BBF0C00386E05 /* AddAccountButton.m in Sources */,
@@ -1502,12 +1510,10 @@
 				64CCBD941CD4909F003EFFAD /* AddRewardScrollView.m in Sources */,
 				455AAA791D2410C000BE3F27 /* CalendarItemManager.m in Sources */,
 				3C37F4851D6BE0D500D879E0 /* UIImage+Helper.m in Sources */,
-				45BC40911C2469D9006A185F /* User+CoreDataProperties.m in Sources */,
 				0421D3741B8126C700BF6065 /* CabinetItem.m in Sources */,
 				45BC40A01C2469D9006A185F /* Belongings.m in Sources */,
 				454112741C95BE9600BE4DE9 /* ZNYSprogressBar.m in Sources */,
 				458094631C23DE3100CB9BF9 /* ConnectingView.m in Sources */,
-				45BC40921C2469D9006A185F /* User.m in Sources */,
 				64CCBD9A1CD88A16003EFFAD /* ExchangeRewardViewController.m in Sources */,
 				3C98A2291D24FF1800046BE8 /* CalendarDetailView.m in Sources */,
 				455B1B341D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.m in Sources */,

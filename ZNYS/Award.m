@@ -7,7 +7,6 @@
 //
 
 #import "Award.h"
-#import "User.h"
 
 @implementation Award
 

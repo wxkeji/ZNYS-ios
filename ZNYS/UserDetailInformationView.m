@@ -5,7 +5,7 @@
 //  Created by yu243e on 16/10/5.
 //  Copyright © 2016年 Woodseen. All rights reserved.
 //
-#import "User.h"
+#import "UserManager.h"
 #import "UserDetailInformationView.h"
 @interface UserDetailInformationView()
 
@@ -33,6 +33,7 @@ static const CGFloat switchHeight = 100;
         self.isCloseButton = true;
         [self changeButtonState];
         self.hasSwitchView = [self judgeSwitchView];    //初始化时判断一次
+        //??? yu 是否可能造成状态不一致？
         
         [self addSubview:self.mainBackgroundImageView];
         [self.mainBackgroundImageView addSubview:self.closeOrConfirmButton];
@@ -120,7 +121,7 @@ static const CGFloat mainInitTop = -180;
 
 #pragma mark - private methods
 - (BOOL)judgeSwitchView {
-    return NO;
+    return [[UserManager sharedInstance] currentUserCount] > 1;
 }
 - (void)changeButtonState {
     if (self.isCloseButton) {

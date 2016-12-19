@@ -17,7 +17,7 @@
 #import "UILabel+Font.h"
 #import "VerifyPasswordViewController.h"
 #import "ConnectingViewController.h"
-#import "User.h"
+#import "UserManager.h"
 #import "CabinetItem.h"
 #import "GiftItem.h"
 #import "ExchangeRewardViewController.h"
@@ -81,12 +81,12 @@
     
     //设置屏幕上的信息
     
-    self.userLevel = [User currentUserLevel];
+    self.userLevel = @([[UserManager sharedInstance] currentUserLevel]);
     [self addObserver:self forKeyPath:@"userLevel" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     
     self.level.text = [NSString stringWithFormat:@"LV%ld",[self.userLevel integerValue]];
-    self.username.text = [User currentUserName];
-    self.stars.text = [NSString stringWithFormat:@"%@",[User currentUserTokenOwned]];
+    self.username.text = [[UserManager sharedInstance] currentUserName];
+    self.stars.text = [NSString stringWithFormat:@"%@",@([[UserManager sharedInstance] currentUserTokenOwned])];
     
     //测试等级按钮
     UIButton * levelButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -125,10 +125,10 @@
 
 
 - (void)userDetailChange{
-    self.userLevel = [User currentUserLevel];
+    self.userLevel = @([[UserManager sharedInstance] currentUserLevel]);
     self.level.text = [NSString stringWithFormat:@"LV%@",self.userLevel];
-    self.username.text = [User currentUserName];
-    self.stars.text = [NSString stringWithFormat:@"%@",[User currentUserTokenOwned]];
+    self.username.text = [[UserManager sharedInstance] currentUserName];
+    self.stars.text = [NSString stringWithFormat:@"%@",@([[UserManager sharedInstance] currentUserTokenOwned])];
     [self refreshCabinet];
 }
 

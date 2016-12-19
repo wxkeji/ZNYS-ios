@@ -161,21 +161,21 @@
         <relationship name="possessToothBrushes" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="ToothBrush" inverseName="bePossessedByUser" inverseEntity="ToothBrush" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CalendarItem" positionX="-63" positionY="-18" width="128" height="208"/>
-        <element name="Cabinet" positionX="-54" positionY="-9" width="128" height="118"/>
-        <element name="Belongings" positionX="-36" positionY="9" width="128" height="148"/>
-        <element name="ToothBrush" positionX="-216" positionY="216" width="128" height="178"/>
-        <element name="User" positionX="-99" positionY="396" width="128" height="388"/>
-        <element name="Rules" positionX="18" positionY="63" width="128" height="133"/>
-        <element name="Award" positionX="160" positionY="522" width="128" height="270"/>
-        <element name="Picture" positionX="205" positionY="36" width="128" height="90"/>
         <element name="AreaStatistics" positionX="324" positionY="117" width="128" height="180"/>
+        <element name="Award" positionX="160" positionY="522" width="128" height="270"/>
+        <element name="Belongings" positionX="-36" positionY="9" width="128" height="148"/>
+        <element name="BrushingStatistics" positionX="277" positionY="-207" width="128" height="208"/>
+        <element name="Cabinet" positionX="-54" positionY="-9" width="128" height="118"/>
+        <element name="CalendarItem" positionX="-63" positionY="-18" width="128" height="208"/>
         <element name="CustomerServices" positionX="-135" positionY="261" width="128" height="133"/>
         <element name="InferenceEngine" positionX="250" positionY="315" width="128" height="133"/>
         <element name="Item" positionX="-207" positionY="12" width="128" height="148"/>
-        <element name="Scene" positionX="-216" positionY="-117" width="128" height="75"/>
-        <element name="BrushingStatistics" positionX="277" positionY="-207" width="128" height="208"/>
         <element name="Knowledge" positionX="-72" positionY="-135" width="128" height="120"/>
         <element name="Parameter" positionX="70" positionY="-99" width="128" height="90"/>
+        <element name="Picture" positionX="205" positionY="36" width="128" height="90"/>
+        <element name="Rules" positionX="18" positionY="63" width="128" height="133"/>
+        <element name="Scene" positionX="-216" positionY="-117" width="128" height="75"/>
+        <element name="ToothBrush" positionX="-216" positionY="216" width="128" height="178"/>
+        <element name="User" positionX="-99" positionY="396" width="128" height="390"/>
     </elements>
 </model>

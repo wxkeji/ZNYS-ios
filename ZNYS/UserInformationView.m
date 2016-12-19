@@ -8,6 +8,7 @@
 
 #import "UserInformationView.h"
 #import "CoreDataHelper.h"
+#import "UserManager.h"
 @interface UserInformationView()
 
 
@@ -100,7 +101,7 @@
 - (UILabel *)userNameLabel{
     if (!_userNameLabel) {
         _userNameLabel = [[UILabel alloc] initWithCustomFont:15.f];
-        _userNameLabel.text = [User currentUserName];
+        _userNameLabel.text = [[UserManager sharedInstance] currentUserName];
         _userNameLabel.textColor = [UIColor whiteColor];
         _userNameLabel.textAlignment = NSTextAlignmentCenter;
     }
@@ -119,7 +120,7 @@
 - (UILabel *)coinLabel{
     if (!_coinLabel) {
         _coinLabel = [[UILabel alloc] initWithCustomFont:15.f];
-        _coinLabel.text = [NSString stringWithFormat:@"%@",[User currentUserTokenOwned]];
+        _coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[UserManager sharedInstance] currentUserTokenOwned]];
         _coinLabel.textColor = [UIColor whiteColor];
         _coinLabel.textAlignment = NSTextAlignmentCenter;
     }
@@ -138,10 +139,10 @@
 - (UILabel *)levelLabel{
     if (!_levelLabel) {
         _levelLabel = [[UILabel alloc] initWithCustomFont:15.f];
-        if (![User currentUserLevel]) {
+        if (![[UserManager sharedInstance] currentUserLevel]) {
             _levelLabel.text = [NSString stringWithFormat:@"%d",0];
         } else {
-            _levelLabel.text = [NSString stringWithFormat:@"%@",[User currentUserLevel]];
+            _levelLabel.text = [NSString stringWithFormat:@"%@",@([[UserManager sharedInstance] currentUserLevel])];
         }
         _levelLabel.textColor = [UIColor whiteColor];
         _levelLabel.textAlignment = NSTextAlignmentCenter;

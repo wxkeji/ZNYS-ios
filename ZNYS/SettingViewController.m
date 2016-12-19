@@ -11,7 +11,7 @@
 #import "SettingHeaderView.h"
 #import "UserAccountViewController.h"
 #import "CabinetViewController.h"
-#import "User.h"
+#import "UserManager.h"
 #import "RewardListViewController.h"
 #import "ToothBrushManagentMainViewController.h"
 
@@ -73,7 +73,7 @@
 
 #pragma mark private method
 - (void)refreshUserDetail{
-    self.headerView.nameLabel.text = [User currentUserName];
+    self.headerView.nameLabel.text = [[UserManager sharedInstance] currentUserName];
 }
 
 #pragma mark event action

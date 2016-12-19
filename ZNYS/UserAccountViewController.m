@@ -10,7 +10,7 @@
 #import "AddAccountViewController.h"
 #import "UserDetailView.h"
 #import "SwitchUserView.h"
-#import "User.h"
+#import "UserManager.h"
 #import "CoreDataHelper.h"
 
 @interface UserAccountViewController ()
@@ -126,10 +126,10 @@
 }
 
 - (void)refreshDetail{
-    self.userDetailView.birthdayLabel.text = [User currentUserBirthday];
-    self.userDetailView.nameLabel.text = [User currentUserName];
-    self.userDetailView.brushLabel.text = [NSString stringWithFormat:@"%ld把",(long)[User currentUsersNumberOfToothBushes]];
-    self.userDetailView.coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[User currentUserTokenOwned] integerValue]];
+    self.userDetailView.birthdayLabel.text = [[UserManager sharedInstance] currentUserBirthday];
+    self.userDetailView.nameLabel.text = [[UserManager sharedInstance] currentUserName];
+    self.userDetailView.brushLabel.text = [NSString stringWithFormat:@"%ld把",(long)[[UserManager sharedInstance] currentUsersNumberOfToothBushes]];
+    self.userDetailView.coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[UserManager sharedInstance] currentUserTokenOwned]];
     //头像变化
 }
 

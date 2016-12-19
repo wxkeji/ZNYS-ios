@@ -9,7 +9,7 @@
 #import "ToothbrushManager.h"
 #import "CoreDataHelper.h"
 #import "ToothBrush+CoreDataProperties.h"
-#import "User.h"
+#import "UserManager.h"
 @implementation ToothbrushManager
 
 + (instancetype)sharedInstance {
@@ -24,7 +24,7 @@
 }
 
 - (NSArray*)getCurrentUsersToothBrushes {
-    NSArray* result = [[CoreDataHelper sharedInstance] retrieveToothBrushWithPredicate:[NSPredicate predicateWithFormat:@"userUUID = %@",[User currentUserUUID]]];
+    NSArray* result = [[CoreDataHelper sharedInstance] retrieveToothBrushWithPredicate:[NSPredicate predicateWithFormat:@"userUUID = %@",[[UserManager sharedInstance] currentUserUUID]]];
     if (result.count > 0) {
         return result;
     } else {

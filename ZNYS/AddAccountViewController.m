@@ -16,6 +16,7 @@
 #import "Award+CoreDataProperties.h"
 #import <SVProgressHUD.h>
 #import "CabinetViewController.h"
+#import "UserManager.h"
 
 @interface AddAccountViewController ()
 
@@ -209,7 +210,7 @@
     testAward1.voice = @"录音路径.mp3";
     testAward1.status = @"notAdded";
     testAward1.type = @"consume";
-    testAward1.userID = [User currentUserUUID];
+    testAward1.userID = [[UserManager sharedInstance] currentUserUUID];
     testAward1.uuid = [[NSUUID UUID] UUIDString];
     
     
@@ -221,7 +222,7 @@
     testAward2.voice = @"录音路径.mp3";
     testAward2.status = @"notAdded";
     testAward2.type = @"possess";
-    testAward2.userID = [User currentUserUUID];
+    testAward2.userID = [[UserManager sharedInstance] currentUserUUID];
     testAward2.uuid = [[NSUUID UUID] UUIDString];
     
     
@@ -234,7 +235,7 @@
     testAward3.voice = @"录音路径.mp3";
     testAward3.status = @"notAdded";
     testAward3.type = @"activity";
-    testAward3.userID = [User currentUserUUID];
+    testAward3.userID = [[UserManager sharedInstance] currentUserUUID];
     testAward3.uuid = [[NSUUID UUID] UUIDString];
     
     
@@ -247,7 +248,7 @@
     testAward4.voice = @"录音路径.mp3";
     testAward4.status = @"added";
     testAward4.type = @"consume";
-    testAward4.userID = [User currentUserUUID];
+    testAward4.userID = [[UserManager sharedInstance] currentUserUUID];
     testAward4.uuid = [[NSUUID UUID] UUIDString];
     
     
@@ -259,7 +260,7 @@
     testAward5.voice = @"录音路径.mp3";
     testAward5.status = @"added";
     testAward5.type = @"possess";
-    testAward5.userID = [User currentUserUUID];
+    testAward5.userID = [[UserManager sharedInstance] currentUserUUID];
     testAward5.uuid = [[NSUUID UUID] UUIDString];
     
     
@@ -272,7 +273,7 @@
     testAward6.voice = @"录音路径.mp3";
     testAward6.status = @"added";
     testAward6.type = @"activity";
-    testAward6.userID = [User currentUserUUID];
+    testAward6.userID = [[UserManager sharedInstance] currentUserUUID];
     testAward6.uuid = [[NSUUID UUID] UUIDString];
     
     
@@ -285,7 +286,7 @@
     testAward7.voice = @"录音路径.mp3";
     testAward7.status = @"added";
     testAward7.type = @"consume";
-    testAward7.userID = [User currentUserUUID];
+    testAward7.userID = [[UserManager sharedInstance] currentUserUUID];
     testAward7.uuid = [[NSUUID UUID] UUIDString];
     
     
@@ -298,7 +299,7 @@
     testAward8.voice = @"录音路径.mp3";
     testAward8.status = @"notAdded";
     testAward8.type = @"consume";
-    testAward8.userID = [User currentUserUUID];
+    testAward8.userID = [[UserManager sharedInstance] currentUserUUID];
     testAward8.uuid = [[NSUUID UUID] UUIDString];
     
     
@@ -311,7 +312,7 @@
     testAward9.voice = @"录音路径.mp3";
     testAward9.status = @"notAdded";
     testAward9.type = @"consume";
-    testAward9.userID = [User currentUserUUID];
+    testAward9.userID = [[UserManager sharedInstance] currentUserUUID];
     testAward9.uuid = [[NSUUID UUID] UUIDString];
     
     
@@ -324,7 +325,7 @@
     testAward10.voice = @"录音路径.mp3";
     testAward10.status = @"notAdded";
     testAward10.type = @"consume";
-    testAward10.userID = [User currentUserUUID];
+    testAward10.userID = [[UserManager sharedInstance] currentUserUUID];
     testAward10.uuid = [[NSUUID UUID] UUIDString];
     
     
@@ -338,7 +339,7 @@
     testAward11.voice = @"录音路径.mp3";
     testAward11.status = @"notAdded";
     testAward11.type = @"consume";
-    testAward11.userID = [User currentUserUUID];
+    testAward11.userID = [[UserManager sharedInstance] currentUserUUID];
     testAward11.uuid = [[NSUUID UUID] UUIDString];
     
     
@@ -418,9 +419,9 @@
         
         if (self.style == 0) {
             _addAccountView.titleLabel.text = @"修改用户";
-            _addAccountView.nameTextField.text = [User currentUserName];
-            [_addAccountView.birthButton setTitle:[User currentUserBirthday] forState:UIControlStateNormal];
-            if ([[User currentUserGender] isEqualToString:@"boy"]) {
+            _addAccountView.nameTextField.text = [[UserManager sharedInstance] currentUserName];
+            [_addAccountView.birthButton setTitle:[[UserManager sharedInstance] currentUserBirthday] forState:UIControlStateNormal];
+            if ([[[UserManager sharedInstance] currentUserGender] isEqualToString:@"boy"]) {
                 _addAccountView.boysButton.selected = YES;
                 _addAccountView.girlsButton.selected = NO;
             }else{

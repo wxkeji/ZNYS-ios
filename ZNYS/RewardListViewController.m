@@ -14,7 +14,7 @@
 #import "AwardManager.h"
 #import "Award+CoreDataProperties.h"
 #import "Award.h"
-#import "User.h"
+#import "UserManager.h"
 
 @interface RewardListViewController ()
 
@@ -219,7 +219,7 @@
 
 - (NSMutableArray<Award *> *)dataArray{
     if (!_dataArray) {
-        _dataArray = [[AwardManager sharedInstance] getAllAddedAwardWithUseruuid:[User currentUserUUID]];
+        _dataArray = [[AwardManager sharedInstance] getAllAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUserUUID]];
     }
     return _dataArray;
 }
@@ -241,17 +241,17 @@
 - (void)testButtonClicked
 {
 //    NSArray* shit;
-//    shit = [[AwardManager sharedInstance] getAllAddedAwardWithUseruuid:[User currentUserUUID]];
+//    shit = [[AwardManager sharedInstance] getAllAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUserUUID]];
 //    Award* firstResult = (Award*)shit[0];
 //    
 //    NSLog(@"看看结果是什么来的%d",firstResult.minPrice);
 //    
 //    
 //    NSArray* shit2;
-//    shit2 = [[AwardManager sharedInstance] getAddedAwardWithUseruuid:[User currentUserUUID]];
+//    shit2 = [[AwardManager sharedInstance] getAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUserUUID]];
 //    
 //    NSArray* shit3;
-//    shit3 = [[AwardManager sharedInstance] getNotAddedAwardWithUseruuid:[User currentUserUUID]];
+//    shit3 = [[AwardManager sharedInstance] getNotAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUserUUID]];
 //    
 //    for(Award* fuck in shit)
 //    {
@@ -259,7 +259,7 @@
 //    }
 //    
 //    NSArray* shitshit;
-//    shitshit = [[AwardManager sharedInstance] getAllAddedAwardWithUseruuid:[User currentUserUUID]];
+//    shitshit = [[AwardManager sharedInstance] getAllAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUserUUID]];
 //    
 //    for(Award* aaaa in shitshit)
 //    {

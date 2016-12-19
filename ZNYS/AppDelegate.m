@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "CoreDataHelper.h"
-#import "User.h"
 #import "CabinetViewController.h"
 #import "AddAccountViewController.h"
 

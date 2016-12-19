@@ -10,6 +10,7 @@
 #import "ExchangeRewardDetailViewController.h"
 #import "VerifyPasswordView.h"
 #import "AwardManager.h"
+#import "UserManager.h"
 
 @interface ExchangeRewardDetailViewController ()
 
@@ -201,7 +202,7 @@
 }
 
 - (void)refresh{
-    self.coinLabel.text = [NSString stringWithFormat:@"%@",[User currentUserTokenOwned]];
+    self.coinLabel.text = [NSString stringWithFormat:@"%@",[[UserManager sharedInstance] currentUserTokenOwned]];
 }
 
 #pragma mark event action
@@ -248,7 +249,7 @@
 - (UILabel *)userLabel{
     if (!_userLabel) {
         _userLabel = [[UILabel alloc] initWithCustomFont:15.f];
-        _userLabel.text = [User currentUserName];
+        _userLabel.text = [[UserManager sharedInstance] currentUserName];
         _userLabel.textColor = [UIColor blueColor];
         _userLabel.textAlignment = NSTextAlignmentCenter;
     }
@@ -258,7 +259,7 @@
 - (UILabel *)coinLabel{
     if (!_coinLabel) {
         _coinLabel = [[UILabel alloc] initWithCustomFont:15.f];
-        _coinLabel.text = [NSString stringWithFormat:@"%@",[User currentUserTokenOwned]];
+        _coinLabel.text = [NSString stringWithFormat:@"%@",[[UserManager sharedInstance] currentUserTokenOwned]];
         _coinLabel.textColor = [UIColor blueColor];
         _coinLabel.textAlignment = NSTextAlignmentCenter;
     }

@@ -10,7 +10,7 @@
 
 @implementation CalendarItemManager
 
-+(instancetype)sharedInstance
++ (instancetype)sharedInstance
 {
     static CalendarItemManager* sharedManager;
     static dispatch_once_t onceToken;

@@ -11,8 +11,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "User.h"
 #import "ToothBrush.h"
+@class Award;
+
 @interface CoreDataHelper :NSObject
 @property (nonatomic, readonly) NSManagedObjectContext* context;
 @property (nonatomic, readonly) NSManagedObjectModel* model;
