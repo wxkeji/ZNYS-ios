@@ -7,7 +7,7 @@
 //
 
 #import "CalendarItem.h"
-#import "User.h"
+#import "User+CoreDataClass.h"
 
 @implementation CalendarItem
 

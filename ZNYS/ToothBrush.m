@@ -8,7 +8,7 @@
 
 #import "ToothBrush.h"
 #import "BrushingStatistics.h"
-#import "User.h"
+#import "User+CoreDataClass.h"
 #warning ??? 未指定的位置 coreData
 @implementation ToothBrush
 

@@ -8,7 +8,7 @@
 
 #import "CustomerServices.h"
 #import "InferenceEngine.h"
-#import "User.h"
+#import "User+CoreDataClass.h"
 
 @implementation CustomerServices
 

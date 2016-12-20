@@ -7,7 +7,7 @@
 //
 
 #import "Belongings.h"
-#import "User.h"
+#import "User+CoreDataClass.h"
 
 @implementation Belongings
 

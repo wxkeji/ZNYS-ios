@@ -23,8 +23,6 @@
 		04A7510F1C43D9E500B3F537 /* GiftList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A7510E1C43D9E500B3F537 /* GiftList.plist */; };
 		04C978F31C44BE100046DB4A /* GiftItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C978F21C44BE100046DB4A /* GiftItem.m */; };
 		14AE2882E3EA6C1FFF32284D /* libPods-ZNYS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90BE4FFF790A33BC1EB578A8 /* libPods-ZNYS.a */; };
-		3C10DB881E078A5600A551A5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C10DB851E078A5600A551A5 /* User.m */; };
-		3C10DB891E078A5600A551A5 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C10DB871E078A5600A551A5 /* User+CoreDataProperties.m */; };
 		3C15B7161DE5876800609717 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C15B7141DE5876800609717 /* Model.xcdatamodeld */; };
 		3C37F4851D6BE0D500D879E0 /* UIImage+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C37F4841D6BE0D500D879E0 /* UIImage+Helper.m */; };
 		3C584C0C1D6B3EB3000E3BCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C584C0B1D6B3EB3000E3BCE /* Images.xcassets */; };
@@ -198,10 +196,6 @@
 		04A7510E1C43D9E500B3F537 /* GiftList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GiftList.plist; sourceTree = "<group>"; };
 		04C978F11C44BE100046DB4A /* GiftItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftItem.h; sourceTree = "<group>"; };
 		04C978F21C44BE100046DB4A /* GiftItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftItem.m; sourceTree = "<group>"; };
-		3C10DB841E078A5600A551A5 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		3C10DB851E078A5600A551A5 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		3C10DB861E078A5600A551A5 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
-		3C10DB871E078A5600A551A5 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3C15B7151DE5876800609717 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		3C37F4831D6BE0D500D879E0 /* UIImage+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Helper.h"; sourceTree = "<group>"; };
 		3C37F4841D6BE0D500D879E0 /* UIImage+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Helper.m"; sourceTree = "<group>"; };
@@ -879,10 +873,6 @@
 				45BC40821C2469D9006A185F /* Rules+CoreDataProperties.m */,
 				45BC40831C2469D9006A185F /* Rules.h */,
 				45BC40841C2469D9006A185F /* Rules.m */,
-				3C10DB841E078A5600A551A5 /* User.h */,
-				3C10DB851E078A5600A551A5 /* User.m */,
-				3C10DB861E078A5600A551A5 /* User+CoreDataProperties.h */,
-				3C10DB871E078A5600A551A5 /* User+CoreDataProperties.m */,
 				45BC40891C2469D9006A185F /* Belongings+CoreDataProperties.h */,
 				45BC408A1C2469D9006A185F /* Belongings+CoreDataProperties.m */,
 				45BC408B1C2469D9006A185F /* Belongings.h */,
@@ -1463,7 +1453,6 @@
 				645A01711C37B5B800556395 /* AddAccountViewController.m in Sources */,
 				C431364A1BC29A840097A91B /* NormalModeControllerViewController.m in Sources */,
 				64CCBD8B1CD30B7E003EFFAD /* rewardListModel.m in Sources */,
-				3C10DB891E078A5600A551A5 /* User+CoreDataProperties.m in Sources */,
 				45F786601D0D00E400E4F91D /* ToothBrushManagentMainView.m in Sources */,
 				0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */,
 				C460E0401BC509D3000608BD /* DesignModeController.m in Sources */,
@@ -1496,7 +1485,6 @@
 				458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */,
 				3C877D861D3739750068ADED /* ConnectedResultContentView.m in Sources */,
 				647E05CB1C3A6C4C00ADB810 /* SettingButtonView.m in Sources */,
-				3C10DB881E078A5600A551A5 /* User.m in Sources */,
 				455B1B311D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m in Sources */,
 				45BC409A1C2469D9006A185F /* InferenceEngine.m in Sources */,
 				647664641C3BBF0C00386E05 /* AddAccountButton.m in Sources */,

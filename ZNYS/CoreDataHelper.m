@@ -7,7 +7,7 @@
 //
 
 #import "CoreDataHelper.h"
-#import "User.h"
+#import "User+CoreDataClass.h"
 #import "Award.h"
 @implementation CoreDataHelper
 

@@ -9,7 +9,6 @@
 //
 
 #import "AwardManager.h"
-#import "User.h"
 #import "UserManager.h"
 
 @implementation AwardManager
