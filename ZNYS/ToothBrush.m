@@ -9,7 +9,7 @@
 #import "ToothBrush.h"
 #import "BrushingStatistics.h"
 #import "User+CoreDataClass.h"
-#warning ??? 未指定的位置 coreData
+#warning ??? coreData but not in entity folder
 @implementation ToothBrush
 
 // Insert code here to add functionality to your managed object subclass
