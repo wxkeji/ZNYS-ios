@@ -9,6 +9,10 @@
 #import "ChildrenHomeViewController.h"
 #import "UserInformationView.h"
 #import "UserDetailInformationView.h"
+#import "UserDetailsViewController.h"
+
+//模态presetation
+#import "ModalPresentationController.h"
 
 //点击跳转
 #import "CalendarViewController.h"
@@ -160,16 +164,32 @@
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
+// 废弃 旧版
+//- (void)expandUserDetailInformation {
+//    [self showModalViewBackground];
+//    [self.modalViewBackgroundButton addSubview:self.userDetailInformationView];
+//    self.userDetailInformationView.delegate = self;
+//    [self.userDetailInformationView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(0);
+//        make.top.equalTo(self.view.mas_top);
+//    }]; //  不需要高度和宽度，已在 view 中定义 intrinsic
+//    [self.view layoutIfNeeded];
+//    [self.userDetailInformationView showAnimationWithDelay:modalAnimationDuration];
+//}
+
 - (void)expandUserDetailInformation {
-    [self showModalViewBackground];
-    [self.modalViewBackgroundButton addSubview:self.userDetailInformationView];
-    self.userDetailInformationView.delegate = self;
-    [self.userDetailInformationView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(0);
-        make.top.equalTo(self.view.mas_top);
-    }]; //  不需要高度和宽度，已在 view 中定义 intrinsic
-    [self.view layoutIfNeeded];
-    [self.userDetailInformationView showAnimationWithDelay:modalAnimationDuration];
+    UserDetailsViewController * modalViewController = [[UserDetailsViewController alloc] init];
+    
+    //因为没有被强持有，必须用NS_VALID_UNTIL_END_OF_SCOPE 保持其存在
+    //参考 APPLE Custom View Controller Presentations and Transitions
+    ModalPresentationController *presentationController NS_VALID_UNTIL_END_OF_SCOPE;
+    presentationController = [[ModalPresentationController alloc] initWithPresentedViewController:modalViewController presentingViewController:self];
+    [presentationController setModalStyle:ZNYSModalPresentationStyleFromTop];
+    
+    modalViewController.transitioningDelegate = presentationController;
+    
+    modalViewController.modalPresentationStyle = UIModalPresentationCustom;
+    [self presentViewController:modalViewController animated:YES completion:nil];
 }
 
 - (void)toConnectedResult {

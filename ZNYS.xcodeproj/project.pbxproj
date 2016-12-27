@@ -47,6 +47,8 @@
 		3CC8F6051D6FE47600E286E7 /* UIColor+Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F6041D6FE47600E286E7 /* UIColor+Theme.m */; };
 		3CCCAED21DA3979400D9A525 /* DesignMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCCAED11DA3979400D9A525 /* DesignMacro.m */; };
 		3CCCAED31DA39BE600D9A525 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F3962811C3A12C100C78F84 /* Cabinet.storyboard */; };
+		3CF4C0A71E0D14F600C5EBC7 /* ModalPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF4C0A61E0D14F600C5EBC7 /* ModalPresentationController.m */; };
+		3CF4C0AD1E0D162800C5EBC7 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF4C0AC1E0D162800C5EBC7 /* UserDetailsViewController.m */; };
 		454112741C95BE9600BE4DE9 /* ZNYSprogressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */; };
 		455AAA751D24104800BE3F27 /* CalendarItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 455AAA721D24104800BE3F27 /* CalendarItem+CoreDataProperties.m */; };
 		455AAA761D24104800BE3F27 /* CalendarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 455AAA741D24104800BE3F27 /* CalendarItem.m */; };
@@ -240,6 +242,10 @@
 		3CC8F6031D6FE47600E286E7 /* UIColor+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Theme.h"; sourceTree = "<group>"; };
 		3CC8F6041D6FE47600E286E7 /* UIColor+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Theme.m"; sourceTree = "<group>"; };
 		3CCCAED11DA3979400D9A525 /* DesignMacro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignMacro.m; sourceTree = "<group>"; };
+		3CF4C0A51E0D14F600C5EBC7 /* ModalPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalPresentationController.h; sourceTree = "<group>"; };
+		3CF4C0A61E0D14F600C5EBC7 /* ModalPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalPresentationController.m; sourceTree = "<group>"; };
+		3CF4C0AB1E0D162800C5EBC7 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
+		3CF4C0AC1E0D162800C5EBC7 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
 		454112721C95BE9600BE4DE9 /* ZNYSprogressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNYSprogressBar.h; sourceTree = "<group>"; };
 		454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNYSprogressBar.m; sourceTree = "<group>"; };
 		455AAA711D24104800BE3F27 /* CalendarItem+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CalendarItem+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -675,6 +681,8 @@
 				3C7B57331D6BF3F100D5E487 /* UserInformationView.m */,
 				3CB1E23C1DA5313F001075F4 /* UserDetailInformationView.h */,
 				3CB1E23D1DA5313F001075F4 /* UserDetailInformationView.m */,
+				3CF4C0AB1E0D162800C5EBC7 /* UserDetailsViewController.h */,
+				3CF4C0AC1E0D162800C5EBC7 /* UserDetailsViewController.m */,
 			);
 			name = UserInformation;
 			sourceTree = "<group>";
@@ -1058,6 +1066,8 @@
 		645A01651C37B51D00556395 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3CF4C0A51E0D14F600C5EBC7 /* ModalPresentationController.h */,
+				3CF4C0A61E0D14F600C5EBC7 /* ModalPresentationController.m */,
 				3C7F294A1D6E8B5D0004CD9A /* Theme */,
 				3C7B57311D6BF3C400D5E487 /* UserInformation */,
 				3CA18E7D1D7534DC00DE8EF4 /* ChildrenHome */,
@@ -1438,6 +1448,7 @@
 				3C62CE5B1D294CD700402FE1 /* CalendarModel.m in Sources */,
 				64CCBD8E1CD30B94003EFFAD /* AddRewardButtonView.m in Sources */,
 				3C98A2241D24FF0700046BE8 /* CalendarViewController.m in Sources */,
+				3CF4C0A71E0D14F600C5EBC7 /* ModalPresentationController.m in Sources */,
 				45BC409C1C2469D9006A185F /* Rules.m in Sources */,
 				3CCCAED21DA3979400D9A525 /* DesignMacro.m in Sources */,
 				64CCBD971CD5BA1F003EFFAD /* MAKAFakeRootAlertView.m in Sources */,
@@ -1498,6 +1509,7 @@
 				64CCBD941CD4909F003EFFAD /* AddRewardScrollView.m in Sources */,
 				455AAA791D2410C000BE3F27 /* CalendarItemManager.m in Sources */,
 				3C37F4851D6BE0D500D879E0 /* UIImage+Helper.m in Sources */,
+				3CF4C0AD1E0D162800C5EBC7 /* UserDetailsViewController.m in Sources */,
 				0421D3741B8126C700BF6065 /* CabinetItem.m in Sources */,
 				45BC40A01C2469D9006A185F /* Belongings.m in Sources */,
 				454112741C95BE9600BE4DE9 /* ZNYSprogressBar.m in Sources */,
@@ -1682,7 +1694,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 49VALGA2P9;
 				INFOPLIST_FILE = ZNYS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1693,6 +1705,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1705,7 +1718,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 49VALGA2P9;
 				INFOPLIST_FILE = ZNYS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1716,6 +1729,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

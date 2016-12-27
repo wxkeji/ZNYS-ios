@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Woodseen. All rights reserved.
 //
 //设计的常量
-
+#import <UIKit/UIKit.h>
 #ifndef DesignMacro_h
 #define DesignMacro_h
 

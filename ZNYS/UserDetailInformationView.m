@@ -9,12 +9,12 @@
 #import "UserDetailInformationView.h"
 @interface UserDetailInformationView()
 
-@property (nonatomic, strong) UIImageView *mainBackgroundImageView;
+@property (nonatomic, strong) UIImageView *topContentView;
+@property (nonatomic, strong) UIButton *closeOrConfirmButton;
 
-@property (nonatomic, strong) UIImageView *switchBackgroundImageView;
+@property (nonatomic, strong) UIImageView *switcherView;
 @property (nonatomic, strong) UICollectionView *switchCollectionView;
 
-@property (nonatomic, strong) UIButton *closeOrConfirmButton;
 @property (nonatomic, assign) BOOL isCloseButton;   //button 状态
 @property (nonatomic, assign) BOOL hasSwitchView;   //是否有两个用户
 @property (nonatomic, assign) BOOL userCount;
@@ -22,7 +22,7 @@
 @end
 
 static const CGFloat mainHeight = 200;
-static const CGFloat switchHeight = 100;
+static const CGFloat switcherHeight = 100;
 
 @implementation UserDetailInformationView
 
@@ -31,15 +31,15 @@ static const CGFloat switchHeight = 100;
     self = [super initWithFrame:frame];
     if (self) {
         self.isCloseButton = true;
-        [self changeButtonState];
+        [self settingButtonState];
         self.hasSwitchView = [self judgeSwitchView];    //初始化时判断一次
         //??? yu 是否可能造成状态不一致？
         
-        [self addSubview:self.mainBackgroundImageView];
-        [self.mainBackgroundImageView addSubview:self.closeOrConfirmButton];
-        self.mainBackgroundImageView.userInteractionEnabled = true;
+        [self addSubview:self.topContentView];
+        [self.topContentView addSubview:self.closeOrConfirmButton];
+        self.topContentView.userInteractionEnabled = true;
         if (self.hasSwitchView) {
-            [self addSubview:self.switchBackgroundImageView];
+            [self addSubview:self.switcherView];
         }
         [self setupConstraintsForSubviews];
         [self.closeOrConfirmButton addTarget:self action:@selector(closeOrConfirmButtonTap) forControlEvents:UIControlEventTouchUpInside];
@@ -50,7 +50,7 @@ static const CGFloat switchHeight = 100;
 //返回当前View定义的大小，则不需要外部约束
 - (CGSize)intrinsicContentSize
 {
-    return CGSizeMake(kSCREEN_WIDTH, mainHeight + self.hasSwitchView * switchHeight);
+    return CGSizeMake(kSCREEN_WIDTH, mainHeight + self.hasSwitchView * switcherHeight);
 }
 
 static const CGFloat mainInitTop = -180;
@@ -58,7 +58,7 @@ static const CGFloat mainInitTop = -180;
     CGFloat switchInitLeft = [UIScreen mainScreen].bounds.size.width;
     
     WS(weakSelf, self);
-    [self.mainBackgroundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.topContentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.mas_left).with.offset(0);
         make.top.mas_equalTo(mainInitTop);
         make.width.mas_equalTo(kSCREEN_WIDTH);
@@ -66,16 +66,16 @@ static const CGFloat mainInitTop = -180;
     }];
     [self.closeOrConfirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(weakSelf.mas_right).with.offset(-MIN_EDGE_X);
-        make.top.equalTo(weakSelf.mainBackgroundImageView.mas_top).offset(NAVIGATION_BUTTON_Y);
+        make.top.equalTo(weakSelf.topContentView.mas_top).offset(NAVIGATION_BUTTON_Y);
         make.width.mas_equalTo(MIN_BUTTON_H_W);
         make.height.mas_equalTo(MIN_BUTTON_H_W);
     }];
     if (self.hasSwitchView) {
-        [self.switchBackgroundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.switcherView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(weakSelf.mas_top).offset(mainHeight);
             make.width.mas_equalTo(kSCREEN_WIDTH);
             make.left.equalTo(weakSelf.mas_left).with.offset(switchInitLeft);
-            make.height.mas_equalTo(switchHeight);
+            make.height.mas_equalTo(switcherHeight);
         }];
     }
 }
@@ -111,7 +111,7 @@ static const CGFloat mainInitTop = -180;
         [weakSelf layoutIfNeeded];
     } completion:^(BOOL finished) {
         if (self.hasSwitchView) {
-            [weakSelf.switchBackgroundImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+            [weakSelf.switcherView mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.left.equalTo(weakSelf.mas_left).with.offset(kSCREEN_WIDTH);
             }];
         }
@@ -123,7 +123,7 @@ static const CGFloat mainInitTop = -180;
 - (BOOL)judgeSwitchView {
     return [[UserManager sharedInstance] currentUserCount] > 1;
 }
-- (void)changeButtonState {
+- (void)settingButtonState {
     if (self.isCloseButton) {
         [self.closeOrConfirmButton setImage:[UIImage themedImageWithNamed:@"user/close"] forState:UIControlStateNormal];
     } else {
@@ -131,24 +131,24 @@ static const CGFloat mainInitTop = -180;
     }
 }
 - (void)changeMainLayoutForAnimation {
-    [self.mainBackgroundImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+    [self.topContentView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(0);
     }];
 }
 - (void)changeSwitchLayoutForAnimation {
     WS(weakSelf, self);
-    [self.switchBackgroundImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+    [self.switcherView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.mas_left).with.offset(0);
     }];
 }
 - (void)changeCloseLayoutforAnimation {
     WS(weakSelf, self);
-    [weakSelf.mainBackgroundImageView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(mainInitTop-switchHeight);
+    [weakSelf.topContentView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(mainInitTop-switcherHeight);
     }];
     if (weakSelf.hasSwitchView) {
-        [weakSelf.switchBackgroundImageView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(@(-switchHeight));
+        [weakSelf.switcherView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(@(-switcherHeight));
         }];
     }
 }
@@ -161,19 +161,19 @@ static const CGFloat mainInitTop = -180;
 }
 
 #pragma mark - getters and setters
-- (UIImageView *)mainBackgroundImageView {
-    if (!_mainBackgroundImageView) {
-        _mainBackgroundImageView = [[UIImageView alloc] init];
-        _mainBackgroundImageView.backgroundColor = [UIColor colorWithThemedImageNamed:@"color/primary_dark"];
+- (UIImageView *)topContentView {
+    if (!_topContentView) {
+        _topContentView = [[UIImageView alloc] init];
+        _topContentView.backgroundColor = [UIColor colorWithThemedImageNamed:@"color/primary_dark"];
     }
-    return _mainBackgroundImageView;
+    return _topContentView;
 }
-- (UIImageView *)switchBackgroundImageView {
-    if (!_switchBackgroundImageView) {
-        _switchBackgroundImageView = [[UIImageView alloc] init];
-        _switchBackgroundImageView.backgroundColor = [UIColor colorWithThemedImageNamed:@"color/primary"];
+- (UIImageView *)switcherView {
+    if (!_switcherView) {
+        _switcherView = [[UIImageView alloc] init];
+        _switcherView.backgroundColor = [UIColor colorWithThemedImageNamed:@"color/primary"];
     }
-    return _switchBackgroundImageView;
+    return _switcherView;
 }
 - (UIScrollView *)switchCollectionView {
     if (!_switchCollectionView) {
