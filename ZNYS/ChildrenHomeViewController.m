@@ -8,7 +8,6 @@
 
 #import "ChildrenHomeViewController.h"
 #import "UserInformationView.h"
-#import "UserDetailInformationView.h"
 #import "UserDetailsViewController.h"
 
 //模态presetation
@@ -31,12 +30,10 @@
 @property (nonatomic, strong) UIButton *calendarButton;
 
 @property (nonatomic, strong) UserInformationView *userInformationView;
-@property (nonatomic, strong) UIButton *userDetailInformationButton;
-@property (nonatomic, strong) UserDetailInformationView *userDetailInformationView;
+@property (nonatomic, strong) UIButton *userDetailsButton;
 
 @property (nonatomic, strong) UIButton *connectToothBrushButton;
 
-@property (nonatomic, strong) UIButton *modalViewBackgroundButton;
 @end
 
 @implementation ChildrenHomeViewController
@@ -55,7 +52,7 @@
     [self.view addSubview:self.calendarButton];
     
     [self.view addSubview:self.userInformationView];
-    [self.view addSubview:self.userDetailInformationButton];
+    [self.view addSubview:self.userDetailsButton];
     
     [self.view addSubview:self.connectToothBrushButton];
     
@@ -67,11 +64,9 @@
     [self.settingButton addTarget:self action:@selector(toSetting) forControlEvents:UIControlEventTouchUpInside];
     [self.awardButton addTarget:self action:@selector(toExchangeReward) forControlEvents:UIControlEventTouchUpInside];
     [self.calendarButton addTarget:self action:@selector(toCalendar) forControlEvents:UIControlEventTouchUpInside];
-    [self.userDetailInformationButton addTarget:self action:@selector(expandUserDetailInformation) forControlEvents:UIControlEventTouchUpInside];
+    [self.userDetailsButton addTarget:self action:@selector(expandUserDetailInformation) forControlEvents:UIControlEventTouchUpInside];
     
     [self.connectToothBrushButton addTarget:self action:@selector(toConnectedResult) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.modalViewBackgroundButton addTarget:self action:@selector(disMissModalViewBackground) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)setupConstraintsForSubviews {
@@ -121,7 +116,7 @@
         make.height.mas_equalTo(MIN_BUTTON_H_W);
     }];
     
-    [self.userDetailInformationButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.userDetailsButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.userInformationView.mas_top).offset(-NAVGATION_USER_INTERVAL/2.);
         make.bottom.equalTo(weakSelf.userInformationView.mas_bottom).offset(NAVGATION_USER_INTERVAL/2.);
         make.width.mas_equalTo(kSCREEN_WIDTH);
@@ -135,11 +130,6 @@
         make.height.mas_equalTo(100);
     }];//连接按钮100x100
     
-}
-
-#pragma mark - UserDetailInformationViewDelegate
-- (void)dismissUserDetailView {
-    [self disMissModalViewBackground];
 }
 
 #pragma mark - private method
@@ -164,19 +154,6 @@
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
-// 废弃 旧版
-//- (void)expandUserDetailInformation {
-//    [self showModalViewBackground];
-//    [self.modalViewBackgroundButton addSubview:self.userDetailInformationView];
-//    self.userDetailInformationView.delegate = self;
-//    [self.userDetailInformationView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.mas_equalTo(0);
-//        make.top.equalTo(self.view.mas_top);
-//    }]; //  不需要高度和宽度，已在 view 中定义 intrinsic
-//    [self.view layoutIfNeeded];
-//    [self.userDetailInformationView showAnimationWithDelay:modalAnimationDuration];
-//}
-
 - (void)expandUserDetailInformation {
     UserDetailsViewController * modalViewController = [[UserDetailsViewController alloc] init];
     
@@ -184,7 +161,7 @@
     //参考 APPLE Custom View Controller Presentations and Transitions
     ModalPresentationController *presentationController NS_VALID_UNTIL_END_OF_SCOPE;
     presentationController = [[ModalPresentationController alloc] initWithPresentedViewController:modalViewController presentingViewController:self];
-    [presentationController setModalStyle:ZNYSModalPresentationStyleFromTop];
+    [presentationController setModalStyle:CHYCModalPresentationStyleFromTop];
     
     modalViewController.transitioningDelegate = presentationController;
     
@@ -212,35 +189,6 @@
 
 }
 
-/*
- *  模态弹窗相关
- */
-static const NSTimeInterval modalAnimationDuration = 0.3;
-- (void)showModalViewBackground {
-    self.modalViewBackgroundButton.frame = self.userDetailInformationButton.frame;
-    self.modalViewBackgroundButton.alpha = 0.6;
-    [self.view addSubview:self.modalViewBackgroundButton];
-    [UIView animateWithDuration:modalAnimationDuration animations:^{
-        self.modalViewBackgroundButton.frame = self.view.bounds;
-        self.modalViewBackgroundButton.alpha = 1.0;
-    }];
-}
-- (void)disMissModalViewBackground {
-    WS(weakSelf, self);
-    NSTimeInterval delay = [self.userDetailInformationView showCloseAnimation];
-    [UIView animateWithDuration:modalAnimationDuration
-                          delay:delay
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-        weakSelf.modalViewBackgroundButton.alpha = 0.0;
-    }
-                     completion:^(BOOL finished) {
-                         [self.userDetailInformationView removeFromSuperview];
-                         [self.modalViewBackgroundButton removeFromSuperview];
-                         self.userDetailInformationView = nil;
-                         self.modalViewBackgroundButton.frame = self.userDetailInformationButton.frame;
-    }];
-}
 #pragma mark getters and setters
 - (UIView *)backgroundImageViewTop{
     if (!_backgroundImageViewTop) {
@@ -287,19 +235,13 @@ static const NSTimeInterval modalAnimationDuration = 0.3;
     return _userInformationView;
 }
 
-- (UIButton *)userDetailInformationButton {
-    if (!_userDetailInformationButton) {
-        _userDetailInformationButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _userDetailInformationButton.backgroundColor = [UIColor clearColor];
-        [_userDetailInformationButton setBackgroundImage:[UIImage imageWithColor:RGBACOLOR(0, 0, 0, BUTTON_TOUCH_ALPHA)] forState:UIControlStateHighlighted];
+- (UIButton *)userDetailsButton {
+    if (!_userDetailsButton) {
+        _userDetailsButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _userDetailsButton.backgroundColor = [UIColor clearColor];
+        [_userDetailsButton setBackgroundImage:[UIImage imageWithColor:RGBACOLOR(0, 0, 0, BUTTON_TOUCH_ALPHA)] forState:UIControlStateHighlighted];
     }
-    return _userDetailInformationButton;
-}
-- (UserDetailInformationView *)userDetailInformationView {
-    if (!_userDetailInformationView) {
-        _userDetailInformationView = [[UserDetailInformationView alloc] init];
-    }
-    return _userDetailInformationView;
+    return _userDetailsButton;
 }
 
 - (UIButton *)connectToothBrushButton {
@@ -307,14 +249,5 @@ static const NSTimeInterval modalAnimationDuration = 0.3;
         _connectToothBrushButton = [UIButton buttonWithType:UIButtonTypeCustom];
     }
     return _connectToothBrushButton;
-}
-
-- (UIButton *)modalViewBackgroundButton {
-    if (!_modalViewBackgroundButton) {
-        _modalViewBackgroundButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _modalViewBackgroundButton.opaque = NO;
-        _modalViewBackgroundButton.backgroundColor = RGBACOLOR(0, 0, 0, MODAL_ALPHA);
-    }
-    return _modalViewBackgroundButton;
 }
 @end

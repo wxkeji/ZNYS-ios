@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef NS_ENUM(NSInteger, ZNYSModalPresentationStyle) {
-    ZNYSModalPresentationStyleFromTop,
-    ZNYSModalPresentationStyleFromBottom
+typedef NS_ENUM(NSInteger, CHYCModalPresentationStyle) {
+    CHYCModalPresentationStyleCenter = 0,
+    CHYCModalPresentationStyleFromTop,
+    CHYCModalPresentationStyleFromBottom,
 };
 
 @interface ModalPresentationController : UIPresentationController <UIViewControllerTransitioningDelegate>
 
-@property (nonatomic, assign) ZNYSModalPresentationStyle modalStyle;
+@property (nonatomic, assign) CHYCModalPresentationStyle modalStyle;
+
 @end

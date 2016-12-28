@@ -11,7 +11,6 @@
 
 @interface UserDetailsViewController ()
 
-@property (nonatomic, strong) UIButton *backgroundButton;
 @property (nonatomic, strong) UIView *contentView;
 
 @property (nonatomic, strong) UIImageView *topContentView;
@@ -34,11 +33,13 @@ static const CGFloat switcherHeight = 100;
 #pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.view.backgroundColor = [UIColor clearColor];
     
-    [self.view addSubview:self.backgroundButton];
-    [self.backgroundButton addTarget:self action:@selector(backgroundButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    self.hasSwitchView = [self judgeSwitchView];    //初始化时判断一次
+    if (self.hasSwitchView) {
+        [self.contentView addSubview:self.switcherView];
+    }
+    [self updatePreferredContentSize];  //更新UIViewConroller.view的 size
     
     [self.view addSubview:self.contentView];
     [self.contentView addSubview:self.topContentView];
@@ -49,23 +50,18 @@ static const CGFloat switcherHeight = 100;
     [self settingButtonState];
     [self.closeOrConfirmButton addTarget:self action:@selector(closeOrConfirmButtonTap) forControlEvents:UIControlEventTouchUpInside];
     
-    self.hasSwitchView = [self judgeSwitchView];    //初始化时判断一次
-    //??? yu 是否可能造成状态不一致？
-    if (self.hasSwitchView) {
-        [self.contentView addSubview:self.switcherView];
-    }
-    
     [self setupConstraintsForSubviews];
 }
 
-- (void)setupConstraintsForSubviews {
-    [self.backgroundButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view.mas_left);
-        make.top.equalTo(self.view.mas_top);
-        make.width.mas_equalTo(kSCREEN_WIDTH);
-        make.height.mas_equalTo(kSCREEN_HEIGHT);
-    }];
+- (void)updatePreferredContentSize {
+    CGFloat contentSizeWidth = kSCREEN_WIDTH;
+    CGFloat contentSizeHeight = mainHeight + self.hasSwitchView * switcherHeight;
     
+    self.preferredContentSize = CGSizeMake(contentSizeWidth, contentSizeHeight);
+}
+
+
+- (void)setupConstraintsForSubviews {
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left);
         make.top.equalTo(self.view.mas_top);
@@ -101,10 +97,6 @@ static const CGFloat switcherHeight = 100;
 }
 
 #pragma mark - event response
-- (void)backgroundButtonClicked {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 - (void)closeOrConfirmButtonTap {
     if (self.isCloseButton) {
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -123,14 +115,6 @@ static const CGFloat switcherHeight = 100;
 }
 
 #pragma mark - getters and setters
-- (UIView *)backgroundButton {
-    if (!_backgroundButton) {
-        _backgroundButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _backgroundButton.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.0];
-    }
-    return _backgroundButton;
-}
-
 - (UIView *)contentView {
     if (!_contentView) {
         _contentView = [[UIView alloc] init];
