@@ -56,7 +56,7 @@
     
     [self.view addSubview:self.connectToothBrushButton];
     
-    [[ThemeManager sharedManager] configureThemeWithNamed:@"boy"];
+    [[ThemeManager sharedManager] configureTheme:ZNYSThemeStyleUnspecified];
     [self configureTheme];
     
     [self setupConstraintsForSubviews];

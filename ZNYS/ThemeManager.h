@@ -6,9 +6,14 @@
 //  Copyright © 2016年 Woodseen. All rights reserved.
 //
 #import <Foundation/Foundation.h>
+typedef NS_ENUM(NSUInteger, ZNYSThemeStyle) {
+    ZNYSThemeStyleUnspecified,
+    ZNYSThemeStyleBlue,
+    ZNYSThemeStylePink
+};
 
 @interface ThemeManager : NSObject
 + (ThemeManager *)sharedManager;
-- (BOOL)configureThemeWithNamed:(NSString *)name;
+- (BOOL)configureTheme:(ZNYSThemeStyle)themeStyle;
 - (NSString *)currentThemeName;
 @end

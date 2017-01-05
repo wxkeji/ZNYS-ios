@@ -10,7 +10,7 @@
 static ThemeManager *_themeManager = nil;
 
 @interface ThemeManager()
-@property (nonatomic, copy) NSString *themeName;
+@property (nonatomic, assign) ZNYSThemeStyle themeStyle;
 @end
 
 @implementation ThemeManager
@@ -23,16 +23,29 @@ static ThemeManager *_themeManager = nil;
     return _themeManager;
 }
 
-- (BOOL)configureThemeWithNamed:(NSString *)name {
-    if ([self.themeName isEqualToString:name]) {
+- (BOOL)configureTheme:(ZNYSThemeStyle)themeStyle {
+    if (self.themeStyle == themeStyle) {
         return NO;
     } else {
-        self.themeName = name;
+        if (self.themeStyle == ZNYSThemeStyleUnspecified && themeStyle == ZNYSThemeStyleBlue) {
+            self.themeStyle = themeStyle;
+            return NO;
+        }
+        self.themeStyle = themeStyle;
         return YES;
     }
 }
 
 - (NSString *)currentThemeName {
-    return self.themeName;
+    switch (self.themeStyle) {
+        case ZNYSThemeStyleUnspecified:
+            //no_break
+        case ZNYSThemeStyleBlue:
+            return @"boy";
+            break;
+        case ZNYSThemeStylePink:
+            return @"girl";
+            break;
+    }
 }
 @end

@@ -67,7 +67,7 @@
     [self.view addSubview:self.goalImageView];
     [self.view addSubview:self.goalLabel];
     
-    [[ThemeManager sharedManager] configureThemeWithNamed:@"boy"];
+    [[ThemeManager sharedManager] configureTheme:ZNYSThemeStyleBlue];
     [self configureTheme];
     [self setupConstraintsForSubviews];
     
@@ -76,9 +76,9 @@
     self.calendarView.buttonClickBlock = ^(NSInteger tag){
         //主题测试代码
         if ([[ThemeManager sharedManager].currentThemeName isEqualToString:@"girl"]) {
-            [[ThemeManager sharedManager] configureThemeWithNamed:@"boy"];
+            [[ThemeManager sharedManager] configureTheme:ZNYSThemeStyleBlue];
         } else {
-            [[ThemeManager sharedManager] configureThemeWithNamed:@"girl"];
+            [[ThemeManager sharedManager] configureTheme:ZNYSThemeStylePink];
         }
         [weakSelf configureTheme];
         if (weakSelf.calendarModelArray[tag].validData == YES) {

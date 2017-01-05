@@ -27,9 +27,13 @@
 }
 
 #pragma mark - all
-#warning 未实现 currentUserCount
+#warning 实现 currentUserCount
 - (NSInteger)currentUserCount {
-    return 2;
+    return [self allUsers].count;
+}
+
+- (NSArray *)allUsers {
+    return [[CoreDataHelper sharedInstance] retrieveUsers:nil];
 }
 
 #pragma mark - currentUser read
@@ -94,7 +98,7 @@
 #pragma mark - currentUser write
 
 /**
- 改变代笔数
+ 改变代币数
 
  @param numbers 可以是整数或复数
  @return 成功返回YES
