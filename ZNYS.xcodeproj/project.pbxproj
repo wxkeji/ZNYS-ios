@@ -27,6 +27,8 @@
 		3C210B5F1E1361A500F0390B /* UserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C210B5D1E1361A500F0390B /* UserCollectionViewCell.m */; };
 		3C210B601E1361A500F0390B /* UserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C210B5E1E1361A500F0390B /* UserCollectionViewCell.xib */; };
 		3C278A041E13AD2400EF2376 /* UserCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C278A031E13AD2400EF2376 /* UserCollectionViewFlowLayout.m */; };
+		3C32FC431E1E47DA001D09F4 /* MyUserDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C32FC401E1E47DA001D09F4 /* MyUserDetailsView.m */; };
+		3C32FC441E1E47DA001D09F4 /* MyUserDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C32FC421E1E47DA001D09F4 /* MyUserDetailsView.xib */; };
 		3C37F4851D6BE0D500D879E0 /* UIImage+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C37F4841D6BE0D500D879E0 /* UIImage+Helper.m */; };
 		3C584C0C1D6B3EB3000E3BCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C584C0B1D6B3EB3000E3BCE /* Images.xcassets */; };
 		3C62CE521D28126C00402FE1 /* CalendarDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE511D28126C00402FE1 /* CalendarDetailModel.m */; };
@@ -34,8 +36,6 @@
 		3C62CE611D29FFE300402FE1 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE601D29FFE300402FE1 /* NSDate+Helper.m */; };
 		3C7B57341D6BF3F100D5E487 /* UserInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B57331D6BF3F100D5E487 /* UserInformationView.m */; };
 		3C7B57361D6C325600D5E487 /* ToolMacroes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B57351D6C325600D5E487 /* ToolMacroes.m */; };
-		3C7E5BBF1E1CFCFE002BAC51 /* UserDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7E5BBC1E1CFCFE002BAC51 /* UserDetailsView.m */; };
-		3C7E5BC01E1CFCFE002BAC51 /* UserDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C7E5BBE1E1CFCFE002BAC51 /* UserDetailsView.xib */; };
 		3C877D831D37362B0068ADED /* ConnectedResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C877D821D37362B0068ADED /* ConnectedResultView.m */; };
 		3C877D861D3739750068ADED /* ConnectedResultContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C877D851D3739750068ADED /* ConnectedResultContentView.m */; };
 		3C98A2241D24FF0700046BE8 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2231D24FF0700046BE8 /* CalendarViewController.m */; };
@@ -208,6 +208,9 @@
 		3C210B5E1E1361A500F0390B /* UserCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCollectionViewCell.xib; sourceTree = "<group>"; };
 		3C278A021E13AD2400EF2376 /* UserCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		3C278A031E13AD2400EF2376 /* UserCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		3C32FC401E1E47DA001D09F4 /* MyUserDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUserDetailsView.m; sourceTree = "<group>"; };
+		3C32FC411E1E47DA001D09F4 /* MyUserDetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUserDetailsView.h; sourceTree = "<group>"; };
+		3C32FC421E1E47DA001D09F4 /* MyUserDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyUserDetailsView.xib; sourceTree = "<group>"; };
 		3C37F4831D6BE0D500D879E0 /* UIImage+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Helper.h"; sourceTree = "<group>"; };
 		3C37F4841D6BE0D500D879E0 /* UIImage+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Helper.m"; sourceTree = "<group>"; };
 		3C37F4881D6BE2EE00D879E0 /* CatogoriesImportHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatogoriesImportHelper.h; sourceTree = "<group>"; };
@@ -221,9 +224,6 @@
 		3C7B57321D6BF3F100D5E487 /* UserInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformationView.h; sourceTree = "<group>"; };
 		3C7B57331D6BF3F100D5E487 /* UserInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformationView.m; sourceTree = "<group>"; };
 		3C7B57351D6C325600D5E487 /* ToolMacroes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolMacroes.m; sourceTree = "<group>"; };
-		3C7E5BBC1E1CFCFE002BAC51 /* UserDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsView.m; sourceTree = "<group>"; };
-		3C7E5BBD1E1CFCFE002BAC51 /* UserDetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsView.h; sourceTree = "<group>"; };
-		3C7E5BBE1E1CFCFE002BAC51 /* UserDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailsView.xib; sourceTree = "<group>"; };
 		3C877D811D37362B0068ADED /* ConnectedResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedResultView.h; sourceTree = "<group>"; };
 		3C877D821D37362B0068ADED /* ConnectedResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectedResultView.m; sourceTree = "<group>"; };
 		3C877D841D3739750068ADED /* ConnectedResultContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectedResultContentView.h; sourceTree = "<group>"; };
@@ -691,14 +691,14 @@
 				3C7B57331D6BF3F100D5E487 /* UserInformationView.m */,
 				3CF4C0AB1E0D162800C5EBC7 /* UserDetailsViewController.h */,
 				3CF4C0AC1E0D162800C5EBC7 /* UserDetailsViewController.m */,
-				3C7E5BBC1E1CFCFE002BAC51 /* UserDetailsView.m */,
-				3C7E5BBD1E1CFCFE002BAC51 /* UserDetailsView.h */,
-				3C7E5BBE1E1CFCFE002BAC51 /* UserDetailsView.xib */,
 				3C210B5C1E1361A500F0390B /* UserCollectionViewCell.h */,
 				3C210B5D1E1361A500F0390B /* UserCollectionViewCell.m */,
 				3C210B5E1E1361A500F0390B /* UserCollectionViewCell.xib */,
 				3C278A021E13AD2400EF2376 /* UserCollectionViewFlowLayout.h */,
 				3C278A031E13AD2400EF2376 /* UserCollectionViewFlowLayout.m */,
+				3C32FC411E1E47DA001D09F4 /* MyUserDetailsView.h */,
+				3C32FC401E1E47DA001D09F4 /* MyUserDetailsView.m */,
+				3C32FC421E1E47DA001D09F4 /* MyUserDetailsView.xib */,
 			);
 			name = UserInformation;
 			sourceTree = "<group>";
@@ -1291,7 +1291,7 @@
 				0487D75D1B74548F00756EF8 /* Frameworks */,
 				0487D75E1B74548F00756EF8 /* Resources */,
 				C6CF789D48CA643A4251B0F0 /* [CP] Copy Pods Resources */,
-				A0D38C16E211DB89498B7434 /* Embed Pods Frameworks */,
+				A0D38C16E211DB89498B7434 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1381,10 +1381,10 @@
 				45DC5E601C421B80000D6A7A /* 进度10.png in Resources */,
 				647E05BF1C3A5C1D00ADB810 /* userAccount_back@2x.png in Resources */,
 				45EB69CF1C40B2C800160457 /* BCProgress_fill.png in Resources */,
+				3C32FC441E1E47DA001D09F4 /* MyUserDetailsView.xib in Resources */,
 				04A7510F1C43D9E500B3F537 /* GiftList.plist in Resources */,
 				647E05C11C3A5C1D00ADB810 /* userAccount_logo@2x.png in Resources */,
 				041365FA1BAD8AA600CD0604 /* DialogView.xib in Resources */,
-				3C7E5BC01E1CFCFE002BAC51 /* UserDetailsView.xib in Resources */,
 				45EB69D21C40B2C800160457 /* BCTopBarReturnButton.png in Resources */,
 				45DC5E5F1C421B80000D6A7A /* 进度0.png in Resources */,
 				45DC5E631C421B80000D6A7A /* 进度40.png in Resources */,
@@ -1426,14 +1426,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A0D38C16E211DB89498B7434 /* Embed Pods Frameworks */ = {
+		A0D38C16E211DB89498B7434 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1513,7 +1513,7 @@
 				C43BC7621BC541FF00C332DD /* IsParentToSettingSegue.m in Sources */,
 				3CC8F6021D6FDEEC00E286E7 /* UIImage+Theme.m in Sources */,
 				458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */,
-				3C7E5BBF1E1CFCFE002BAC51 /* UserDetailsView.m in Sources */,
+				3C32FC431E1E47DA001D09F4 /* MyUserDetailsView.m in Sources */,
 				3C877D861D3739750068ADED /* ConnectedResultContentView.m in Sources */,
 				647E05CB1C3A6C4C00ADB810 /* SettingButtonView.m in Sources */,
 				455B1B311D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m in Sources */,

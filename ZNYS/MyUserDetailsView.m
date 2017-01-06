@@ -1,14 +1,16 @@
 //
-//  UserDetailsView.m
+//  MyUserDetailsView.m
 //  ZNYS
 //
 //  Created by yu243e on 17/1/4.
 //  Copyright © 2017年 Woodseen. All rights reserved.
 //
 
-#import "UserDetailsView.h"
+//  前缀不能与无 storyboard 的 ViewController 相同
 
-@implementation UserDetailsView
+#import "MyUserDetailsView.h"
+
+@implementation MyUserDetailsView
 
 - (void)awakeFromNib{
     [super awakeFromNib];
@@ -17,7 +19,7 @@
 }
 
 + (instancetype)loadViewFromNib {
-    UserDetailsView *view = [[NSBundle mainBundle] loadNibNamed:@"UserDetailsView" owner:nil options:nil].firstObject;
+    MyUserDetailsView *view = [[NSBundle mainBundle] loadNibNamed:@"MyUserDetailsView" owner:nil options:nil].firstObject;
     return view;
 }
 @end

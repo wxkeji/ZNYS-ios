@@ -10,7 +10,7 @@
 #import "UserCollectionViewCell.h"
 #import "UserManager.h"
 #import "User+CoreDataClass.h"
-#import "UserDetailsView.h"
+#import "MyUserDetailsView.h"
 
 typedef NS_ENUM(NSInteger, ZNYSUserDetailsButtonState) {
     ZNYSUserDetailsButtonStateUnspecified   = 0,
@@ -24,7 +24,7 @@ typedef NS_ENUM(NSInteger, ZNYSUserDetailsButtonState) {
 
 @property (nonatomic, strong) UIImageView *topContentView;
 @property (nonatomic, strong) UIButton *closeOrConfirmButton;
-@property (nonatomic, strong) UserDetailsView *userDetailsView;
+@property (nonatomic, strong) MyUserDetailsView *userDetailsView;
 
 @property (nonatomic, strong) UIImageView *switcherView;
 @property (nonatomic, strong) UICollectionView *switchCollectionView;
@@ -47,7 +47,7 @@ static NSTimeInterval swichAnimationTime = 0.3;
 #pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithThemedImageNamed:@"color/primary_dark"];
+    [self configureTheme];
     
     self.hasSwitchView = [self judgeSwitchView];    //初始化时判断一次
     if (self.hasSwitchView) {
@@ -65,11 +65,10 @@ static NSTimeInterval swichAnimationTime = 0.3;
     [self.contentView addSubview:self.topContentView];
     self.topContentView.userInteractionEnabled = YES;
     
-    [self.userDetailsView setFrame:CGRectMake(20, 20, 300, 300)];
     [self.topContentView addSubview:self.userDetailsView];
     
     [self.topContentView addSubview:self.closeOrConfirmButton];
-    [self settingButtonState:ZNYSUserDetailsButtonStateClose Animated:NO];
+    [self settingButtonState:ZNYSUserDetailsButtonStateClose animated:NO];
     [self.closeOrConfirmButton addTarget:self action:@selector(closeOrConfirmButtonTap) forControlEvents:UIControlEventTouchUpInside];
     
     [self setupConstraintsForSubviews];
@@ -96,12 +95,12 @@ static NSTimeInterval swichAnimationTime = 0.3;
         make.width.mas_equalTo(kSCREEN_WIDTH);
         make.height.mas_equalTo(mainHeight);
     }];
-//    [self.userDetailsView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(self.view.mas_left);
-//        make.top.equalTo(self.view.mas_top);
-//        make.width.mas_equalTo(kSCREEN_WIDTH);
-//        make.height.mas_equalTo(mainHeight);
-//    }];
+    [self.userDetailsView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left);
+        make.top.equalTo(self.view.mas_top);
+        make.width.mas_equalTo(kSCREEN_WIDTH);
+        make.height.mas_equalTo(mainHeight);
+    }];
     [self.closeOrConfirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.view.mas_right).with.offset(-MIN_EDGE_X);
         make.top.equalTo(self.topContentView.mas_top).offset(NAVIGATION_BUTTON_Y);
@@ -135,12 +134,14 @@ static NSTimeInterval swichAnimationTime = 0.3;
     NSLog(@"select %@", @(indexPath.row));
     if ([self.selectedIndexPath isEqual:indexPath]) {
         [collectionView deselectItemAtIndexPath:indexPath animated:YES];
-        
-        [self settingButtonState:ZNYSUserDetailsButtonStateClose Animated:YES];
+        [self showUserDetails:[[UserManager sharedInstance] currentUser] animated:YES];
+        [self settingButtonState:ZNYSUserDetailsButtonStateClose animated:YES];
         self.selectedIndexPath = nil;
     } else {
+        [self showUserDetails:[[UserManager sharedInstance] allUsers][indexPath.row] animated:YES];
+        
         [collectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
-        [self settingButtonState:ZNYSUserDetailsButtonStateConfirm Animated:YES];
+        [self settingButtonState:ZNYSUserDetailsButtonStateConfirm animated:YES];
         self.selectedIndexPath = indexPath;
     }
 }
@@ -159,10 +160,6 @@ static NSTimeInterval swichAnimationTime = 0.3;
     return cell;
 }
 
-#pragma mark - private methods
-- (void)showUserDetails:(User *)user {
-}
-
 #pragma mark - event response
 - (void)closeOrConfirmButtonTap {
     switch (self.buttonState) {
@@ -174,10 +171,47 @@ static NSTimeInterval swichAnimationTime = 0.3;
     }
 }
 #pragma mark - private methods
+- (void)configureTheme {
+    self.view.backgroundColor = [UIColor colorWithThemedImageNamed:@"color/primary_dark"];
+}
 - (BOOL)judgeSwitchView {
     return [[UserManager sharedInstance] currentUserCount] > 1;
 }
-- (void)settingButtonState:(ZNYSUserDetailsButtonState)buttonState Animated:(BOOL)flag  {
+- (void)showUserDetails:(User *)user animated:(BOOL)flag {
+    if (flag == NO) {
+        self.userDetailsView = [self userDetailsViewWithUser:user];
+        return;
+    }
+    MyUserDetailsView *fromView = self.userDetailsView;
+    MyUserDetailsView *toView = [self userDetailsViewWithUser:user];
+    self.userDetailsView = toView;
+    toView.frame = fromView.frame;
+    toView.alpha = 0.f;
+    [self.topContentView insertSubview:toView aboveSubview:fromView];
+    [UIView animateWithDuration:swichAnimationTime animations:^{
+        fromView.alpha = 0.2f;
+        toView.alpha = 1.f;
+        [self configureTheme];
+    } completion:^(BOOL finished) {
+        [fromView removeFromSuperview];
+    }];
+}
+- (MyUserDetailsView *)userDetailsViewWithUser:(User *)user {
+    //+++ 未完成
+    if (user.uuid != [[UserManager sharedInstance] currentUserUUID]) {
+        [[ThemeManager sharedManager] configureTheme:ZNYSThemeStylePink];
+    } else {
+        [[ThemeManager sharedManager] configureTheme:ZNYSThemeStyleBlue];
+    }
+    MyUserDetailsView *tempUserDetailsView = [MyUserDetailsView loadViewFromNib];
+    [tempUserDetailsView.userNameLabel setText:user.nickName];
+    [tempUserDetailsView.levelLabel setText:[NSString stringWithFormat:@"%@",user.level]];
+    [tempUserDetailsView.coinLabel setText:[NSString stringWithFormat:@"%@", user.tokenOwned]];
+    
+    
+    return tempUserDetailsView;
+}
+- (void)settingButtonState:(ZNYSUserDetailsButtonState)buttonState animated:(BOOL)flag  {
     BOOL animationFlag = flag;
     if (self.buttonState == ZNYSUserDetailsButtonStateUnspecified) {
         animationFlag = NO;
@@ -239,9 +273,9 @@ static NSTimeInterval swichAnimationTime = 0.3;
     }
     return _switchCollectionView;
 }
-- (UserDetailsView *)userDetailsView {
+- (MyUserDetailsView *)userDetailsView {
     if (!_userDetailsView) {
-        _userDetailsView = [UserDetailsView loadViewFromNib];
+        _userDetailsView = [MyUserDetailsView loadViewFromNib];
     }
     return _userDetailsView;
 }

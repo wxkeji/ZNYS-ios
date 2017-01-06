@@ -27,7 +27,6 @@
 }
 
 #pragma mark - all
-#warning 实现 currentUserCount
 - (NSInteger)currentUserCount {
     return [self allUsers].count;
 }
