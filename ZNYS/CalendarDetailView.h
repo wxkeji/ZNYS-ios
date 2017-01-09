@@ -10,11 +10,15 @@
 @class CalendarDetailModel;
 @class CalendarDetailView;
 
+@protocol CalendarDetailViewDataSource <NSObject>
+- (NSUInteger)numberOfItemsInView;
+- (UIImage *)itemImageAtIndex:(NSUInteger)index;
+- (NSUInteger)numberOfCoinsAtIndex:(NSUInteger)index;
+@end
+
 @interface CalendarDetailView : ZNYSBaseView <UIScrollViewDelegate>
-
-- (void)setModels:(NSMutableArray<CalendarDetailModel *> *)models;
+@property (nonatomic, weak) id<CalendarDetailViewDataSource> dataSource;
 - (void)configureTheme;
-
 @end
 
 

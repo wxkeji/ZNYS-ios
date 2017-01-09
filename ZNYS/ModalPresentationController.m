@@ -10,8 +10,8 @@
 #import "DesignMacro.h"
 
 static const CGFloat modalDimmingViewAlpha = MODAL_ALPHA;
-static const NSTimeInterval modalTransitionDuration = 0.3f;
-static const NSTimeInterval modalDismissTransitionDuration = 0.3f;
+static const NSTimeInterval modalTransitionDuration = 0.25f;
+static const NSTimeInterval modalDismissTransitionDuration = 0.25f;
 //初始动画和结束动画(centerStyle) view长宽各为
 static const CGFloat modalCenterInitialViewSizeRatio = 0.6f;
 static const CGFloat modalCenterInitialViewAlpha = 0.5f;

@@ -9,7 +9,7 @@
 #import "CalendarDetailModalViewController.h"
 #import "CalendarDetailView.h"
 
-@interface CalendarDetailModalViewController ()
+@interface CalendarDetailModalViewController () <CalendarDetailViewDataSource>
 @property (nonatomic, strong) CalendarDetailView *calendarDetailView;
 @end
 
@@ -17,19 +17,35 @@
 #pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor clearColor];
+    
     [self configureTheme];
+    [self updatePreferredContentSize];  //更新UIViewConroller.view的 size
+    
     [self.view addSubview:self.calendarDetailView];
 }
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    CGFloat width = CustomWidth(275);
-    CGFloat height = CustomHeight(320);
-    CGFloat x = (kSCREEN_WIDTH - width)/2.;
-    CGFloat y = (kSCREEN_HEIGHT - height)/2.;
-    self.calendarDetailView.frame = CGRectMake(x ,y ,width , height);
+- (void)updatePreferredContentSize {
+    self.preferredContentSize = CGSizeMake(CustomWidth(275), CustomHeight(320));
 }
+
+- (void)viewDidLayoutSubviews {
+    self.calendarDetailView.frame = self.view.bounds;
+}
+#pragma mark - CalendarDetailViewDataSource
+//+++ 需要连接数据
+- (NSUInteger)numberOfItemsInView {
+    return 2;
+}
+
+- (NSUInteger)numberOfCoinsAtIndex:(NSUInteger)index {
+    return index + 3;
+}
+
+- (UIImage *)itemImageAtIndex:(NSUInteger)index {
+    UIImage *temp = [UIImage imageNamed:@"calendar/reward_dayTime"];
+    return temp;
+}
+
 #pragma mark - private methods
 - (void)configureTheme {
     [self.calendarDetailView configureTheme];
@@ -39,7 +55,7 @@
 - (CalendarDetailView *)calendarDetailView {
     if (!_calendarDetailView) {
         _calendarDetailView = [[CalendarDetailView alloc] init];
-        [_calendarDetailView setModels:self.calendarDetailModels];
+        _calendarDetailView.dataSource = self;
     }
     return _calendarDetailView;
 }

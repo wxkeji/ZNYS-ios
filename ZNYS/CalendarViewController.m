@@ -10,6 +10,8 @@
 
 #import "CoreDataHelper.h"
 
+#import "ModalPresentationController.h"
+
 #import "CalendarDetailModalViewController.h"
 #import "CalendarView.h"
 #import "CalendarDetailView.h"
@@ -17,7 +19,6 @@
 
 #import "CalendarItemManager.h"
 
-#import "CalendarDetailModel.h"
 #import "CalendarModel.h"
 
 #import "UserManager.h"
@@ -45,7 +46,6 @@
 
 //transformModel
 @property (nonatomic, strong) NSMutableArray<CalendarModel *> * calendarModelArray;
-@property (nonatomic, strong) NSMutableArray<NSMutableArray<CalendarDetailModel *>*> * calendarDetailModelsArray;
 
 @end
 
@@ -81,13 +81,19 @@
             [[ThemeManager sharedManager] configureTheme:ZNYSThemeStylePink];
         }
         [weakSelf configureTheme];
+        
         if (weakSelf.calendarModelArray[tag].validData == YES) {
-            CalendarDetailModalViewController *presentedModalViewController = [[CalendarDetailModalViewController alloc]init];
-            presentedModalViewController.calendarDetailModels = weakSelf.calendarDetailModelsArray[tag];
+            CalendarDetailModalViewController * modalViewController = [[CalendarDetailModalViewController alloc] init];
             
-            presentedModalViewController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-            presentedModalViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-            [weakSelf presentViewController:presentedModalViewController animated:YES completion:nil];
+            //因为没有被强持有，必须用NS_VALID_UNTIL_END_OF_SCOPE 保持其存在
+            //参考 APPLE Custom View Controller Presentations and Transitions
+            ModalPresentationController *presentationController NS_VALID_UNTIL_END_OF_SCOPE;
+            presentationController = [[ModalPresentationController alloc] initWithPresentedViewController:modalViewController presentingViewController:self];
+            [presentationController setModalStyle:CHYCModalPresentationStyleCenter];
+            
+            modalViewController.transitioningDelegate = presentationController;
+            modalViewController.modalPresentationStyle = UIModalPresentationCustom;
+            [weakSelf presentViewController:modalViewController animated:YES completion:nil];
         }
     };
 }
@@ -163,10 +169,6 @@
     }];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
 #pragma mark private method
 - (void)configureTheme {
     self.backgroundImageViewTop.image = [UIImage themedImageWithNamed:@"color/primary"];
@@ -196,47 +198,46 @@
     return nil;
 }
 
-- (NSMutableArray<CalendarDetailModel *> *)transformCalendarItemToDetailModels:(CalendarItem *)calendarItem {
-    NSMutableArray<CalendarDetailModel *> * calendarDetailModels = [[NSMutableArray alloc] init];
-    
-    if (!calendarItem) {
-        return  calendarDetailModels;
-    }
-    if ([calendarItem.morningStarNumber integerValue]> 0) {
-        CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
-        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"calendar/reward_dayTime"];
-        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"calendar/star"];
-        calendarDetailModel.reinforcerCount = [calendarItem.morningStarNumber integerValue];
-        [calendarDetailModels addObject:calendarDetailModel];
-    }
-    
-    if ([calendarItem.eveningStarNumber integerValue] > 0) {
-        CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
-        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"calendar/reward_night"];
-        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"calendar/star"];
-        calendarDetailModel.reinforcerCount = [calendarItem.eveningStarNumber integerValue];
-        [calendarDetailModels addObject:calendarDetailModel];
-    }
-    
-    if ([calendarItem.connectStarNumber integerValue] > 0) {
-        CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
-        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"calendar/reward_bluetooh"];
-        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"calendar/star"];
-        calendarDetailModel.reinforcerCount = [calendarItem.connectStarNumber integerValue];
-        [calendarDetailModels addObject:calendarDetailModel];
-    }
-    
-    return calendarDetailModels;
-}
+//废弃
+//- (NSMutableArray<CalendarDetailModel *> *)transformCalendarItemToDetailModels:(CalendarItem *)calendarItem {
+//    NSMutableArray<CalendarDetailModel *> * calendarDetailModels = [[NSMutableArray alloc] init];
+//    
+//    if (!calendarItem) {
+//        return  calendarDetailModels;
+//    }
+//    if ([calendarItem.morningStarNumber integerValue]> 0) {
+//        CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
+//        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"calendar/reward_dayTime"];
+//        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"calendar/star"];
+//        calendarDetailModel.reinforcerCount = [calendarItem.morningStarNumber integerValue];
+//        [calendarDetailModels addObject:calendarDetailModel];
+//    }
+//    
+//    if ([calendarItem.eveningStarNumber integerValue] > 0) {
+//        CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
+//        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"calendar/reward_night"];
+//        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"calendar/star"];
+//        calendarDetailModel.reinforcerCount = [calendarItem.eveningStarNumber integerValue];
+//        [calendarDetailModels addObject:calendarDetailModel];
+//    }
+//    
+//    if ([calendarItem.connectStarNumber integerValue] > 0) {
+//        CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
+//        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"calendar/reward_bluetooh"];
+//        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"calendar/star"];
+//        calendarDetailModel.reinforcerCount = [calendarItem.connectStarNumber integerValue];
+//        [calendarDetailModels addObject:calendarDetailModel];
+//    }
+//    
+//    return calendarDetailModels;
+//}
 
 #pragma mark event action
-
 - (void)dismissButtonClicked{
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark getters and setters
-
 - (UIButton *)dismissButton{
     if (!_dismissButton) {
         _dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -447,16 +448,5 @@
         
     }
     return _calendarModelArray;
-}
-
-- (NSMutableArray<NSMutableArray<CalendarDetailModel *>*> *)calendarDetailModelsArray {
-    if (!_calendarDetailModelsArray) {
-        _calendarDetailModelsArray = [[NSMutableArray alloc]initWithCapacity:21];
-        for (NSInteger i = 0 ; i < 21; i++) {
-            NSMutableArray *modelArray = [self transformCalendarItemToDetailModels:[self calendarItemFromArrayWithDate:self.calendarModelArray[i].date]];
-            [_calendarDetailModelsArray addObject:modelArray];
-        }
-    }
-    return _calendarDetailModelsArray;
 }
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "CalendarDetailView.h"
-#import "CalendarDetailModel.h"
 
 @interface CalendarDetailView()
 
@@ -48,95 +47,92 @@
 }
 
 - (void)setupConstraintsForSubviews {
-    WS(weakSelf, self);
-    
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(weakSelf.mas_centerX);
-        make.top.equalTo(weakSelf.mas_top).with.offset(CustomHeight(30));
+        make.centerX.equalTo(self.mas_centerX);
+        make.top.equalTo(self.mas_top).with.offset(CustomHeight(30));
         make.width.mas_equalTo(CustomHeight(200));
         make.height.mas_equalTo(CustomHeight(200));
     }];
     
     [self.rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.scrollView.mas_right).with.offset(CustomWidth(2));
+        make.left.equalTo(self.scrollView.mas_right).with.offset(CustomWidth(2));
         make.width.mas_equalTo(CustomWidth(30));
-        make.height.mas_equalTo(CustomHeight(30));
-        make.centerY.equalTo(weakSelf.scrollView.mas_centerY);
-    }]; //30X30
+        make.height.mas_equalTo(44);
+        make.centerY.equalTo(self.scrollView.mas_centerY);
+    }]; //30X44 (应替换为带有透明区域的图片 满足点按大小要求
     
     [self.leftButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(weakSelf.scrollView.mas_left).with.offset(CustomWidth(-2));
+        make.right.equalTo(self.scrollView.mas_left).with.offset(CustomWidth(-2));
         make.width.mas_equalTo(CustomWidth(30));
-        make.height.mas_equalTo(CustomHeight(30));
-        make.centerY.equalTo(weakSelf.scrollView.mas_centerY);
-    }]; //30X30
+        make.height.mas_equalTo(44);
+        make.centerY.equalTo(self.scrollView.mas_centerY);
+    }]; //30X44
     
     CGFloat reinforceImageViewToBottom = 15;
     [self.reinforcerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.mas_centerX).with.offset(CustomWidth(-50));
-        make.bottom.equalTo(weakSelf.mas_bottom).with.offset(CustomHeight(-reinforceImageViewToBottom));
+        make.left.equalTo(self.mas_centerX).with.offset(CustomWidth(-50));
+        make.bottom.equalTo(self.mas_bottom).with.offset(CustomHeight(-reinforceImageViewToBottom));
         make.width.mas_equalTo(CustomWidth(40));
         make.height.mas_equalTo(CustomHeight(40));
     }];
     
     [self.backgroundImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.mas_left).with.offset(0);
-        make.bottom.equalTo(weakSelf.mas_bottom).with.offset(0);
-        make.width.mas_equalTo(weakSelf.mas_width);
-        make.top.equalTo(weakSelf.reinforcerImageView.mas_top).with.offset(CustomHeight(-reinforceImageViewToBottom));
+        make.left.equalTo(self.mas_left).with.offset(0);
+        make.bottom.equalTo(self.mas_bottom).with.offset(0);
+        make.width.mas_equalTo(self.mas_width);
+        make.top.equalTo(self.reinforcerImageView.mas_top).with.offset(CustomHeight(-reinforceImageViewToBottom));
     }];
     
     [self.reinforcerLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.mas_centerX).with.offset(CustomWidth(10));
+        make.left.equalTo(self.mas_centerX).with.offset(CustomWidth(10));
         make.width.mas_equalTo(CustomWidth(20));
-        make.centerY.equalTo(weakSelf.reinforcerImageView.mas_centerY).offset(CustomWidth(-1));
+        make.centerY.equalTo(self.reinforcerImageView.mas_centerY).offset(CustomWidth(-1));
     }];
 
 }
 #pragma mark - UIScrollViewDelegate
-
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSLog(@"scrollViewDidEndDecelerating");
     [self hiddenButton];
-    [self changeReinforcerImageAndLabel];
+    [self changeReinforceLabel];
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
     NSLog(@"scrollViewDidEndScrollingAnimation");
     [self hiddenButton];
-    [self changeReinforcerImageAndLabel];
-
+    [self changeReinforceLabel];
 }
 
 #pragma mark - public method
-- (void)setModels:(NSMutableArray<CalendarDetailModel *> *)models {
-    if (!models) {
+- (void)setDataSource:(id<CalendarDetailViewDataSource>)dataSource {
+    if (_dataSource == dataSource && dataSource != NULL) {
         return;
     }
-    _models = models;
+    _dataSource = dataSource;
     
-    self.calendarItemNum = [_models count];
-    
-    //scrollView 内容
-    self.calendarItemNum = [self.models count];
+    self.calendarItemNum = [dataSource numberOfItemsInView];
     self.scrollView.contentSize = CGSizeMake ((CustomHeight(200) * self.calendarItemNum), CustomHeight(200));
     
+    //为scrollView设置图片
     NSInteger offset = 0;
-    for (CalendarDetailModel *model in self.models) {
+    for (int i = 0; i < self.calendarItemNum; i++) {
         UIImageView * ImageView = [[UIImageView alloc]initWithFrame:CGRectMake(offset + CustomHeight(15),  CustomHeight(15), CustomHeight(170),  CustomHeight(170))];
-        
-        UIImage * image = [UIImage imageNamed:model.pictureURL];
+        UIImage * image = [dataSource itemImageAtIndex:i];
         [ImageView setImage:image];
         [self.scrollView addSubview:ImageView];
-        //初值
-        if (offset == 0) {
-            [self.reinforcerImageView setImage:[UIImage imageNamed:model.reinforcerPictureURL]];
-            self.reinforcerLabel.text = [NSString stringWithFormat:@"%ld",(long)model.reinforcerCount];
-            self.leftButton.hidden = YES;
-        }
+        
         offset += CustomHeight(200);
     }
-
+    
+    //初始化弹出窗的数字和左右按钮
+    self.reinforcerLabel.text = [NSString stringWithFormat:@"%ld",(unsigned long)[dataSource numberOfCoinsAtIndex:0]];
+    if ([self.dataSource numberOfItemsInView] <= 1) {
+        self.leftButton.hidden = YES;
+        self.rightButton.hidden = YES;
+    } else {
+        self.leftButton.hidden = YES;
+        self.rightButton.hidden = NO;
+    }
 }
 
 - (void)configureTheme {
@@ -153,8 +149,15 @@
     self.leftButton.userInteractionEnabled = YES;
     self.rightButton.userInteractionEnabled = YES;
     
-    NSInteger offset =  (self.scrollView.contentOffset.x) / (self.scrollView.frame.size.width);
-    NSInteger maxOffset = (self.scrollView.contentSize.width) / (self.scrollView.frame.size.width) - 1;
+    if ([self.dataSource numberOfItemsInView] <= 1) {
+        self.leftButton.hidden = YES;
+        self.rightButton.hidden = YES;
+        return;
+    }
+    //注意 仅在已经有 frame（已经显示时可以使用该方法计算）
+    //+10 防止转换误差 CGFloat → NSInteger
+    NSInteger offset =  (self.scrollView.contentOffset.x + 10) / (self.scrollView.frame.size.width);
+    NSInteger maxOffset = (self.scrollView.contentSize.width + 10) / (self.scrollView.frame.size.width) - 1;
     if (offset == 0) {
         self.leftButton.hidden = YES;
     } else {
@@ -168,10 +171,9 @@
     }
 }
 
-- (void)changeReinforcerImageAndLabel {
+- (void)changeReinforceLabel {
     NSInteger offset =  (self.scrollView.contentOffset.x) / (self.scrollView.frame.size.width);
-    [self.reinforcerImageView setImage:[UIImage imageNamed:self.models[offset].reinforcerPictureURL]];
-    self.reinforcerLabel.text = [NSString stringWithFormat:@"%ld",(long)self.models[offset].reinforcerCount];
+    self.reinforcerLabel.text = [NSString stringWithFormat:@"%ld",(unsigned long)[self.dataSource numberOfCoinsAtIndex:offset]];
 }
 
 #pragma mark - event action
@@ -199,7 +201,7 @@
 - (UIImageView *)reinforcerImageView {
     if (!_reinforcerImageView) {
         _reinforcerImageView = [[UIImageView alloc]init];
-        [_reinforcerImageView setImage:[UIImage imageNamed:@"calendar/calendardetail_star"]];
+        [_reinforcerImageView setImage:[UIImage imageNamed:@"calendar/calendarDetail_star"]];
     }
     return _reinforcerImageView;
 }
@@ -207,13 +209,10 @@
 - (UILabel *)reinforcerLabel {
     if (!_reinforcerLabel) {
         _reinforcerLabel = [[UILabel alloc]init];
-        _reinforcerLabel.text = [[NSString alloc]initWithFormat:@"0"];
-        _reinforcerLabel.font = [UIFont systemFontOfSize:kAutoFontSize];
+        _reinforcerLabel.font = [UIFont systemFontOfSize:24];
         
-        
-        _reinforcerLabel.adjustsFontSizeToFitWidth = YES;
+//        _reinforcerLabel.adjustsFontSizeToFitWidth = YES;
         _reinforcerLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
-        //[_reinforcerLabel setBackgroundColor:[UIColor whiteColor]];
     }
     return _reinforcerLabel;
 }
