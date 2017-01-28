@@ -62,10 +62,11 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
-Contact GitHub API Training Shop Blog About
-=======
 ./ZNYS.xcworkspace/
 Pods/Manifest.lock
+*.scuserstate
+project.xcworkspace/
+xcuserdata/
 Pods/Headers/Private/Masonry/MASCompositeConstraint.h
 Pods/Headers/Private/Masonry/MASConstraint+Private.h
 Pods/Headers/Private/Masonry/MASConstraint.h

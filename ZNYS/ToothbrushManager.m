@@ -11,9 +11,8 @@
 #import "ToothBrush+CoreDataProperties.h"
 #import "UserManager.h"
 @implementation ToothbrushManager
-
+static ToothbrushManager* instance;
 + (instancetype)sharedInstance {
-    static ToothbrushManager* instance;
     static dispatch_once_t onceToken;
     if (!instance) {
         dispatch_once(&onceToken, ^{
@@ -21,6 +20,9 @@
         });
     }
     return instance;
+}
+-(void)releaseInstance {
+    instance = nil;
 }
 
 - (NSArray*)getCurrentUsersToothBrushes {

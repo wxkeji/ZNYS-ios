@@ -62,6 +62,7 @@
 		455B1B2E1D376B44002D85E3 /* ToothBrushManagentFindView.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B2D1D376B44002D85E3 /* ToothBrushManagentFindView.m */; };
 		455B1B311D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B301D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m */; };
 		455B1B341D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B331D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.m */; };
+		455B1B371D38087F002D85E3 /* libBLELib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 455B1B361D38087F002D85E3 /* libBLELib.a */; };
 		4576E3E21CCFD37800A1BA2B /* AwardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4576E3E11CCFD37800A1BA2B /* AwardManager.m */; };
 		458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458093901C21448000CB9BF9 /* CoreData.framework */; };
 		458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 458093941C21453200CB9BF9 /* CoreDataHelper.m */; };
@@ -98,7 +99,6 @@
 		45DC5E671C421B80000D6A7A /* 进度80.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E5C1C421B80000D6A7A /* 进度80.png */; };
 		45DC5E681C421B80000D6A7A /* 进度90.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E5D1C421B80000D6A7A /* 进度90.png */; };
 		45DC5E691C421B80000D6A7A /* 进度100.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E5E1C421B80000D6A7A /* 进度100.png */; };
-		45E8756E1C44E52C009A5DDB /* libBLELib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E8756D1C44E52C009A5DDB /* libBLELib.a */; };
 		45EB69CD1C40B2C800160457 /* BCBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69C71C40B2C800160457 /* BCBackground.png */; };
 		45EB69CF1C40B2C800160457 /* BCProgress_fill.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69C91C40B2C800160457 /* BCProgress_fill.png */; };
 		45EB69D01C40B2C800160457 /* BCProgressEmpty.png in Resources */ = {isa = PBXBuildFile; fileRef = 45EB69CA1C40B2C800160457 /* BCProgressEmpty.png */; };
@@ -273,6 +273,10 @@
 		455B1B301D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindToothBrushCollectionViewDatasource.m; sourceTree = "<group>"; };
 		455B1B321D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindNewToothBrushCollectionviewDatasource.h; sourceTree = "<group>"; };
 		455B1B331D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindNewToothBrushCollectionviewDatasource.m; sourceTree = "<group>"; };
+		455B1B361D38087F002D85E3 /* libBLELib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBLELib.a; sourceTree = "<group>"; };
+		455B1B381D38088A002D85E3 /* BLELib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLELib.h; sourceTree = "<group>"; };
+		455B1B391D38088A002D85E3 /* BluetoothServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BluetoothServer.h; sourceTree = "<group>"; };
+		455B1B3A1D38088A002D85E3 /* SensorDataHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SensorDataHandler.h; sourceTree = "<group>"; };
 		4576E3E01CCFD37800A1BA2B /* AwardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwardManager.h; sourceTree = "<group>"; };
 		4576E3E11CCFD37800A1BA2B /* AwardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwardManager.m; sourceTree = "<group>"; };
 		458093901C21448000CB9BF9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -332,9 +336,6 @@
 		45DC5E5C1C421B80000D6A7A /* 进度80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度80.png"; sourceTree = "<group>"; };
 		45DC5E5D1C421B80000D6A7A /* 进度90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度90.png"; sourceTree = "<group>"; };
 		45DC5E5E1C421B80000D6A7A /* 进度100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度100.png"; sourceTree = "<group>"; };
-		45DC5E6D1C423606000D6A7A /* BluetoothServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothServer.h; sourceTree = "<group>"; };
-		45DC5E6E1C423606000D6A7A /* SensorDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorDataHandler.h; sourceTree = "<group>"; };
-		45E8756D1C44E52C009A5DDB /* libBLELib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBLELib.a; sourceTree = "<group>"; };
 		45EB69C71C40B2C800160457 /* BCBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCBackground.png; sourceTree = "<group>"; };
 		45EB69C91C40B2C800160457 /* BCProgress_fill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCProgress_fill.png; sourceTree = "<group>"; };
 		45EB69CA1C40B2C800160457 /* BCProgressEmpty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BCProgressEmpty.png; sourceTree = "<group>"; };
@@ -457,8 +458,8 @@
 				6488AE091CF53D3800AE062D /* CoreAudio.framework in Frameworks */,
 				6488AE071CF53D2D00AE062D /* AVFoundation.framework in Frameworks */,
 				458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */,
-				45E8756E1C44E52C009A5DDB /* libBLELib.a in Frameworks */,
 				14AE2882E3EA6C1FFF32284D /* libPods-ZNYS.a in Frameworks */,
+				455B1B371D38087F002D85E3 /* libBLELib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,7 +593,6 @@
 		0487D7621B74548F00756EF8 /* ZNYS */ = {
 			isa = PBXGroup;
 			children = (
-				45DC5E6A1C4235DD000D6A7A /* Library */,
 				645A018C1C37CAE100556395 /* Base */,
 				645A01881C37C97100556395 /* Categories */,
 				645A01671C37B53E00556395 /* Utils */,
@@ -748,6 +748,18 @@
 			sourceTree = "<group>";
 		};
 		458093921C2144B700CB9BF9 /* Manager */ = {
+		455B1B351D38086E002D85E3 /* BluetoothModule */ = {
+			isa = PBXGroup;
+			children = (
+				455B1B381D38088A002D85E3 /* BLELib.h */,
+				455B1B391D38088A002D85E3 /* BluetoothServer.h */,
+				455B1B3A1D38088A002D85E3 /* SensorDataHandler.h */,
+				455B1B361D38087F002D85E3 /* libBLELib.a */,
+			);
+			name = BluetoothModule;
+			sourceTree = "<group>";
+		};
+		458093921C2144B700CB9BF9 /* CoreDataHelper */ = {
 			isa = PBXGroup;
 			children = (
 				455AAA771D2410C000BE3F27 /* CalendarItemManager.h */,
@@ -852,33 +864,6 @@
 				455AAA731D24104800BE3F27 /* CalendarItem.h */,
 			);
 			name = Entities;
-			sourceTree = "<group>";
-		};
-		45DC5E6A1C4235DD000D6A7A /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				45DC5E6B1C4235E4000D6A7A /* BluetoothModule */,
-			);
-			name = Library;
-			sourceTree = "<group>";
-		};
-		45DC5E6B1C4235E4000D6A7A /* BluetoothModule */ = {
-			isa = PBXGroup;
-			children = (
-				45E8756D1C44E52C009A5DDB /* libBLELib.a */,
-				45DC5E6C1C423606000D6A7A /* Header */,
-			);
-			name = BluetoothModule;
-			sourceTree = "<group>";
-		};
-		45DC5E6C1C423606000D6A7A /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				45DC5E6D1C423606000D6A7A /* BluetoothServer.h */,
-				45DC5E6E1C423606000D6A7A /* SensorDataHandler.h */,
-			);
-			name = Header;
-			path = BLELib;
 			sourceTree = "<group>";
 		};
 		45EB69C61C40B2B100160457 /* ToothBrushConnecting */ = {
@@ -1028,6 +1013,7 @@
 				3C7F294A1D6E8B5D0004CD9A /* Theme */,
 				3C7B57311D6BF3C400D5E487 /* UserInformation */,
 				3CA18E7D1D7534DC00DE8EF4 /* ChildrenHome */,
+				455B1B351D38086E002D85E3 /* BluetoothModule */,
 				455B1B2B1D376A4E002D85E3 /* EvaluateModule */,
 				3C98A21E1D24FEC000046BE8 /* CalendarModule */,
 				45F7865A1D0D007D00E4F91D /* ToothBrushManagementModule */,

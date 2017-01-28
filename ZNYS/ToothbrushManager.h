@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "CoreDataHelper.h"
 #import "ToothBrush+CoreDataProperties.h"
-
-@interface ToothbrushManager : NSObject
+#import "BluetoothServer.h"
+@interface ToothbrushManager : NSObject<BluetoothServerProtocol>
 
 
 + (instancetype)sharedInstance;
+
+-(void)releaseInstance;
 
 - (NSArray*)getCurrentUsersToothBrushes;
 
