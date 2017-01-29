@@ -14,7 +14,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "SensorDataHandler.h"
-#import "AnalysisResultSet.h"
+//#import "AnalysisResultSet.h"
 @import CoreBluetooth;
 @import QuartzCore;
 
