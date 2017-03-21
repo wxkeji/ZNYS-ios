@@ -451,8 +451,8 @@
 				<string>0487D7621B74548F00756EF8</string>
 				<string>0487D77C1B74548F00756EF8</string>
 				<string>0487D7611B74548F00756EF8</string>
-				<string>DBFDA703871AFF6CB28D8090</string>
 				<string>63353D4AB29EDC413AD1EB41</string>
+				<string>0A8B649836190409F31280B7</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -665,8 +665,8 @@
 				<string>6488AE091CF53D3800AE062D</string>
 				<string>6488AE071CF53D2D00AE062D</string>
 				<string>458093911C21448000CB9BF9</string>
-				<string>14AE2882E3EA6C1FFF32284D</string>
 				<string>455B1B371D38087F002D85E3</string>
+				<string>F65C251D041073CA2D1B1BE1</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -731,7 +731,6 @@
 				<string>0487D75E1B74548F00756EF8</string>
 				<string>C6CF789D48CA643A4251B0F0</string>
 				<string>A0D38C16E211DB89498B7434</string>
-				<string>586C31B9AD780B8644576BF1</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -1243,7 +1242,7 @@
 		<key>0487D7841B74548F00756EF8</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>95D5691AAB0097B916FF9D6E</string>
+			<string>3A4B640B30852A7412A6975C</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
@@ -1285,7 +1284,7 @@
 		<key>0487D7851B74548F00756EF8</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>9F041B2DDFC46297669F9D2D</string>
+			<string>9066BF09658D51D40F61813A</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
@@ -1450,12 +1449,34 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>14AE2882E3EA6C1FFF32284D</key>
+		<key>0A8B649836190409F31280B7</key>
 		<dict>
-			<key>fileRef</key>
-			<string>90BE4FFF790A33BC1EB578A8</string>
+			<key>children</key>
+			<array>
+				<string>3A4B640B30852A7412A6975C</string>
+				<string>9066BF09658D51D40F61813A</string>
+			</array>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3A4B640B30852A7412A6975C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-ZNYS.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-ZNYS/Pods-ZNYS.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>3C15B7141DE5876800609717</key>
 		<dict>
@@ -4342,38 +4363,13 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>586C31B9AD780B8644576BF1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-ZNYS/Pods-ZNYS-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
 		<key>63353D4AB29EDC413AD1EB41</key>
 		<dict>
 			<key>children</key>
 			<array>
 				<string>6488AE081CF53D3800AE062D</string>
 				<string>6488AE061CF53D2D00AE062D</string>
-				<string>683F419A9E2D0C36989BFD4A</string>
-				<string>90BE4FFF790A33BC1EB578A8</string>
+				<string>BEEBEACA3E3B7F71747A2C3E</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -5852,19 +5848,6 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>683F419A9E2D0C36989BFD4A</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
 		<key>6F368F051BBCCE1700D273C9</key>
 		<dict>
 			<key>fileEncoding</key>
@@ -5961,65 +5944,7 @@ fi
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
 		</dict>
-		<key>869812908A6DD8477FF731F8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods/Pods.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>90BE4FFF790A33BC1EB578A8</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-ZNYS.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>91C03429B6C007A30E11C265</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods/Pods.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>95D5691AAB0097B916FF9D6E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-ZNYS.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-ZNYS/Pods-ZNYS.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9F041B2DDFC46297669F9D2D</key>
+		<key>9066BF09658D51D40F61813A</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -6057,6 +5982,19 @@ fi
 </string>
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
+		</dict>
+		<key>BEEBEACA3E3B7F71747A2C3E</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-ZNYS.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>C431363F1BC26CF90097A91B</key>
 		<dict>
@@ -6448,21 +6386,12 @@ fi
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
 		</dict>
-		<key>DBFDA703871AFF6CB28D8090</key>
+		<key>F65C251D041073CA2D1B1BE1</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>91C03429B6C007A30E11C265</string>
-				<string>869812908A6DD8477FF731F8</string>
-				<string>95D5691AAB0097B916FF9D6E</string>
-				<string>9F041B2DDFC46297669F9D2D</string>
-			</array>
+			<key>fileRef</key>
+			<string>BEEBEACA3E3B7F71747A2C3E</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXBuildFile</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>
