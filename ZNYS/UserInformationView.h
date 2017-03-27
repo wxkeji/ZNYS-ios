@@ -10,4 +10,5 @@
 
 @interface UserInformationView : ZNYSBaseView
 
+- (void)userSwitch;
 @end

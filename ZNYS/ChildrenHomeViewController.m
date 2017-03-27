@@ -67,6 +67,11 @@
     [self.userDetailsButton addTarget:self action:@selector(expandUserDetailInformation) forControlEvents:UIControlEventTouchUpInside];
     
     [self.connectToothBrushButton addTarget:self action:@selector(toConnectedResult) forControlEvents:UIControlEventTouchUpInside];
+    
+    //为用户改变做注册通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDetailChange) name:@"userDidSwitch" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDetailChange) name:@"userDidCreate" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDetailChange) name:@"userDetailDidChange" object:nil];
 }
 
 - (void)setupConstraintsForSubviews {
@@ -132,6 +137,10 @@
     
 }
 
+- (void)dealloc {
+    //销毁观察者
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 #pragma mark - private method
 - (void)configureTheme {
     self.backgroundImageViewTop.image = [UIImage themedImageWithNamed:@"color/primary"];
@@ -143,6 +152,10 @@
     [self.connectToothBrushButton setImage:[UIImage themedImageWithNamed:@"childrenHome/connectButton"] forState:UIControlStateNormal];
 }
 
+- (void)userDetailChange {
+    [self.userInformationView userSwitch];
+    [self configureTheme];
+}
 #pragma mark event action
 - (void)toCalendar {
     CalendarViewController * vc = [[CalendarViewController alloc] init];

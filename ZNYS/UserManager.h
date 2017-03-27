@@ -15,6 +15,7 @@
 //ALL User
 - (NSInteger)currentUserCount;
 - (NSArray *)allUsers;
+- (NSArray *)allUsersExceptCurrent;
 
 //当前 User
 - (User *)currentUser;
@@ -28,7 +29,8 @@
 - (NSInteger)currentUserTokenOwned;
 - (NSInteger)currentUsersNumberOfToothBushes;
 
-//操作数量
+//write
+- (void)changeCurrentUser:(User *)user;
 - (BOOL)changeCurrentTokensByAdding:(NSInteger)number;
 
 @end

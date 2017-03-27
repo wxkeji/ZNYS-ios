@@ -33,6 +33,8 @@ typedef NS_ENUM(NSInteger, ZNYSUserDetailsButtonState) {
 @property (nonatomic, assign) ZNYSUserDetailsButtonState buttonState;   //button 状态
 @property (nonatomic, assign) BOOL hasSwitchView;   //是否有两个用户
 
+@property (nonatomic, strong) NSIndexPath *selectedUserIndex;    //选择的用户
+
 @end
 
 static const CGFloat mainHeight = 250;
@@ -72,6 +74,8 @@ static NSTimeInterval swichAnimationTime = 0.3;
     [self.closeOrConfirmButton addTarget:self action:@selector(closeOrConfirmButtonTap) forControlEvents:UIControlEventTouchUpInside];
     
     [self setupConstraintsForSubviews];
+    
+    [self showUserDetails:[[UserManager sharedInstance] currentUser] animated:YES];
 }
 - (void)updatePreferredContentSize {
     CGFloat contentSizeWidth = kSCREEN_WIDTH;
@@ -138,7 +142,9 @@ static NSTimeInterval swichAnimationTime = 0.3;
         [self settingButtonState:ZNYSUserDetailsButtonStateClose animated:YES];
         self.selectedIndexPath = nil;
     } else {
-        [self showUserDetails:[[UserManager sharedInstance] allUsers][indexPath.row] animated:YES];
+        [self showUserDetails:[[UserManager sharedInstance] allUsersExceptCurrent][indexPath.row] animated:YES];
+        //记录选中的 user 位置
+        self.selectedUserIndex = indexPath;
         
         [collectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
         [self settingButtonState:ZNYSUserDetailsButtonStateConfirm animated:YES];
@@ -153,7 +159,7 @@ static NSTimeInterval swichAnimationTime = 0.3;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UserCollectionViewCell *cell = (UserCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:userCellID forIndexPath:indexPath];
-    //!!! temp
+    //!!! temp todo 设置合理的用户头像和用户名字
     [cell.userImageView setImage:[UIImage imageNamed:@"user/user_temp"]];
     [cell.userNameLabel setText:[NSString stringWithFormat:@"index %ld", (long)indexPath.row]];
     
@@ -164,6 +170,8 @@ static NSTimeInterval swichAnimationTime = 0.3;
 - (void)closeOrConfirmButtonTap {
     switch (self.buttonState) {
         case ZNYSUserDetailsButtonStateConfirm:
+            [[UserManager sharedInstance] changeCurrentUser:[[UserManager sharedInstance] allUsersExceptCurrent][self.selectedUserIndex.row]];
+            [self dismissViewControllerAnimated:YES completion:nil];
             break;
         default:
             [self dismissViewControllerAnimated:YES completion:nil];
@@ -179,6 +187,7 @@ static NSTimeInterval swichAnimationTime = 0.3;
 }
 - (void)showUserDetails:(User *)user animated:(BOOL)flag {
     if (flag == NO) {
+        //BUG 不能为NO
         self.userDetailsView = [self userDetailsViewWithUser:user];
         return;
     }
@@ -197,12 +206,12 @@ static NSTimeInterval swichAnimationTime = 0.3;
     }];
 }
 - (MyUserDetailsView *)userDetailsViewWithUser:(User *)user {
-    //+++ 未完成
-    if (user.uuid != [[UserManager sharedInstance] currentUserUUID]) {
-        [[ThemeManager sharedManager] configureTheme:ZNYSThemeStylePink];
-    } else {
-        [[ThemeManager sharedManager] configureTheme:ZNYSThemeStyleBlue];
-    }
+    //+++ temp todo 未完成 测试用
+//    if (user.uuid != [[UserManager sharedInstance] currentUserUUID]) {
+//        [[ThemeManager sharedManager] configureTheme:ZNYSThemeStylePink];
+//    } else {
+//        [[ThemeManager sharedManager] configureTheme:ZNYSThemeStyleBlue];
+//    }
     MyUserDetailsView *tempUserDetailsView = [MyUserDetailsView loadViewFromNib];
     [tempUserDetailsView.userNameLabel setText:user.nickName];
     [tempUserDetailsView.levelLabel setText:[NSString stringWithFormat:@"%@",user.level]];
