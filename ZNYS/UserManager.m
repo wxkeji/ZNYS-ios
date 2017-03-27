@@ -109,7 +109,7 @@
 - (void)changeCurrentUser:(User *)user {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:user.uuid forKey:@"currentUserUID"];
-    self.user = nil;
+    self.user = user;
     [[NSNotificationCenter defaultCenter] postNotificationName:@"userDidSwitch" object:nil];
 }
 /**
