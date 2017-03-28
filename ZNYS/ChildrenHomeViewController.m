@@ -13,6 +13,8 @@
 //模态presetation
 #import "ModalPresentationController.h"
 
+#import "ThemeManager.h"
+#import "UserManager.h"
 //点击跳转
 #import "CalendarViewController.h"
 #import "VerifyPasswordViewController.h"
@@ -56,9 +58,6 @@
     
     [self.view addSubview:self.connectToothBrushButton];
     
-    [[ThemeManager sharedManager] configureTheme:ZNYSThemeStyleUnspecified];
-    [self configureTheme];
-    
     [self setupConstraintsForSubviews];
     
     [self.settingButton addTarget:self action:@selector(toSetting) forControlEvents:UIControlEventTouchUpInside];
@@ -67,6 +66,9 @@
     [self.userDetailsButton addTarget:self action:@selector(expandUserDetailInformation) forControlEvents:UIControlEventTouchUpInside];
     
     [self.connectToothBrushButton addTarget:self action:@selector(toConnectedResult) forControlEvents:UIControlEventTouchUpInside];
+    
+    //设置用户详细信息和主题
+    [self userDetailChange];
     
     //为用户改变做注册通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDetailChange) name:@"userDidSwitch" object:nil];
@@ -154,6 +156,12 @@
 
 - (void)userDetailChange {
     [self.userInformationView userSwitch];
+
+    ZNYSThemeStyle themeStyle = [ThemeManager sharedManager].themeStyle;
+    ZNYSThemeStyle newStyle = [[UserManager sharedInstance] currentUserThemeStyle];
+    if (themeStyle != newStyle) {
+        [[ThemeManager sharedManager] configureTheme:newStyle];
+    }
     [self configureTheme];
 }
 #pragma mark event action

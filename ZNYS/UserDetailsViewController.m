@@ -135,7 +135,6 @@ static NSTimeInterval swichAnimationTime = 0.3;
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"select %@", @(indexPath.row));
     if ([self.selectedIndexPath isEqual:indexPath]) {
         [collectionView deselectItemAtIndexPath:indexPath animated:YES];
         [self showUserDetails:[[UserManager sharedInstance] currentUser] animated:YES];
@@ -161,7 +160,8 @@ static NSTimeInterval swichAnimationTime = 0.3;
     UserCollectionViewCell *cell = (UserCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:userCellID forIndexPath:indexPath];
     //!!! temp todo 设置合理的用户头像和用户名字
     [cell.userImageView setImage:[UIImage imageNamed:@"user/user_temp"]];
-    [cell.userNameLabel setText:[NSString stringWithFormat:@"index %ld", (long)indexPath.row]];
+    NSString *userNickName = ((User *)[[UserManager sharedInstance] allUsersExceptCurrent][indexPath.row]).nickName;
+    [cell.userNameLabel setText:userNickName];
     
     return cell;
 }
@@ -217,7 +217,7 @@ static NSTimeInterval swichAnimationTime = 0.3;
     [tempUserDetailsView.levelLabel setText:[NSString stringWithFormat:@"%@",user.level]];
     [tempUserDetailsView.coinLabel setText:[NSString stringWithFormat:@"%@", user.tokenOwned]];
     
-    
+    NSLog(@"------ 用户性别 %@",user.gender);
     return tempUserDetailsView;
 }
 - (void)settingButtonState:(ZNYSUserDetailsButtonState)buttonState animated:(BOOL)flag  {

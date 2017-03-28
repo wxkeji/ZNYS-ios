@@ -6,6 +6,7 @@
 //  Copyright © 2016年 Woodseen. All rights reserved.
 //
 #import "User+CoreDataClass.h"
+#import "themeManager.h"
 #import <Foundation/Foundation.h>
 @interface UserManager : NSObject
 
@@ -28,6 +29,8 @@
 - (NSInteger)currentUserStarsOwned;
 - (NSInteger)currentUserTokenOwned;
 - (NSInteger)currentUsersNumberOfToothBushes;
+
+- (ZNYSThemeStyle)currentUserThemeStyle;
 
 //write
 - (void)changeCurrentUser:(User *)user;

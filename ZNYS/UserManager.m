@@ -64,6 +64,15 @@
     return self.user;
 }
 
+- (ZNYSThemeStyle)currentUserThemeStyle {
+    NSLog(@"++++ %@", [self currentUserGender]);
+    if ([[self currentUser].gender isEqualToString:@"0"]) {
+        return ZNYSThemeStyleBlue;
+    } else {
+        return ZNYSThemeStylePink;
+    }
+}
+
 - (NSString *)currentUserName
 {
     return [self currentUser].nickName;
