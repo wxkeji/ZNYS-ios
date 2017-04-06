@@ -35,6 +35,17 @@
     return [[CoreDataHelper sharedInstance] retrieveUsers:nil];
 }
 
+- (NSArray *)allUsersExceptCurrent {
+    NSMutableArray *allUser = [[[CoreDataHelper sharedInstance] retrieveUsers:nil] mutableCopy];
+    for (int i = 0; i < allUser.count; i++) {
+        if ([[self currentUser].uuid isEqualToString:((User *)allUser[i]).uuid]) {
+            [allUser removeObjectAtIndex:i];
+            break;
+        }
+    }
+    return allUser;
+}
+
 #pragma mark - currentUser read
 - (User *)currentUser
 {
@@ -51,6 +62,15 @@
         }
     }
     return self.user;
+}
+
+- (ZNYSThemeStyle)currentUserThemeStyle {
+    NSLog(@"++++ %@", [self currentUserGender]);
+    if ([[self currentUser].gender isEqualToString:@"0"]) {
+        return ZNYSThemeStyleBlue;
+    } else {
+        return ZNYSThemeStylePink;
+    }
 }
 
 - (NSString *)currentUserName
@@ -95,7 +115,12 @@
 }
 
 #pragma mark - currentUser write
-
+- (void)changeCurrentUser:(User *)user {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:user.uuid forKey:@"currentUserUID"];
+    self.user = user;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"userDidSwitch" object:nil];
+}
 /**
  改变代币数
 

@@ -10,7 +10,7 @@
 static ThemeManager *_themeManager = nil;
 
 @interface ThemeManager()
-@property (nonatomic, assign) ZNYSThemeStyle themeStyle;
+@property (nonatomic, readwrite, assign) ZNYSThemeStyle themeStyle;
 @end
 
 @implementation ThemeManager

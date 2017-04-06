@@ -6,6 +6,7 @@
 //  Copyright © 2016年 Woodseen. All rights reserved.
 //
 #import "User+CoreDataClass.h"
+#import "themeManager.h"
 #import <Foundation/Foundation.h>
 @interface UserManager : NSObject
 
@@ -15,6 +16,7 @@
 //ALL User
 - (NSInteger)currentUserCount;
 - (NSArray *)allUsers;
+- (NSArray *)allUsersExceptCurrent;
 
 //当前 User
 - (User *)currentUser;
@@ -28,7 +30,10 @@
 - (NSInteger)currentUserTokenOwned;
 - (NSInteger)currentUsersNumberOfToothBushes;
 
-//操作数量
+- (ZNYSThemeStyle)currentUserThemeStyle;
+
+//write
+- (void)changeCurrentUser:(User *)user;
 - (BOOL)changeCurrentTokensByAdding:(NSInteger)number;
 
 @end

@@ -83,6 +83,11 @@
 }
 
 #pragma mark - public method
+- (void)userSwitch {
+    self.userNameLabel.text = [[UserManager sharedInstance] currentUserName];
+    self.coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[UserManager sharedInstance] currentUserTokenOwned]];
+    self.levelLabel.text = [NSString stringWithFormat:@"%@",@([[UserManager sharedInstance] currentUserLevel])];
+}
 
 #pragma mark - private method
 

@@ -13,6 +13,8 @@ typedef NS_ENUM(NSUInteger, ZNYSThemeStyle) {
 };
 
 @interface ThemeManager : NSObject
+@property (nonatomic, readonly, assign) ZNYSThemeStyle themeStyle;
+
 + (ThemeManager *)sharedManager;
 - (BOOL)configureTheme:(ZNYSThemeStyle)themeStyle;
 - (NSString *)currentThemeName;
