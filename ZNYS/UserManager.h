@@ -16,7 +16,7 @@
 //ALL User
 - (NSInteger)currentUserCount;
 - (NSArray *)allUsers;
-- (NSArray *)allUsersExceptCurrent;
+- (NSArray *)allUsersExceptUUID:(NSString *)uuid;
 
 //当前 User
 - (User *)currentUser;

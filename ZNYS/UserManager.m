@@ -27,29 +27,46 @@
 }
 
 #pragma mark - all
+-(NSArray *)retrieveUsers:(NSPredicate*)predicate
+{
+    NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+    [request setPredicate:predicate];
+    return [[CoreDataHelper sharedInstance].context executeFetchRequest:request error:nil];
+}
+
 - (NSInteger)currentUserCount {
     return [self allUsers].count;
 }
 
 - (NSArray *)allUsers {
-    return [[CoreDataHelper sharedInstance] retrieveUsers:nil];
+    return [self retrieveUsers:nil];
 }
 
-- (NSArray *)allUsersExceptCurrent {
-    NSMutableArray *allUser = [[[CoreDataHelper sharedInstance] retrieveUsers:nil] mutableCopy];
-    for (int i = 0; i < allUser.count; i++) {
-        if ([[self currentUser].uuid isEqualToString:((User *)allUser[i]).uuid]) {
-            [allUser removeObjectAtIndex:i];
-            break;
+// 传入 nil 则取当前以外
+- (NSArray *)allUsersExceptUUID:(NSString *)uuid {
+    NSMutableArray *retrieveUsers = [[self retrieveUsers:nil] mutableCopy];
+    if (uuid == nil) {
+        for (int i = 0; i < retrieveUsers.count; i++) {
+            if ([[self currentUser].uuid isEqualToString:((User *)retrieveUsers[i]).uuid]) {
+                [retrieveUsers removeObjectAtIndex:i];
+                break;
+            }
+        }
+    } else {
+        for (int i = 0; i < retrieveUsers.count; i++) {
+            if ([uuid isEqualToString:((User *)retrieveUsers[i]).uuid]) {
+                [retrieveUsers removeObjectAtIndex:i];
+                break;
+            }
         }
     }
-    return allUser;
+    return retrieveUsers;
 }
 
 #pragma mark - currentUser read
 - (User *)currentUser
 {
-    //+++ !!! 这种方式必须保证修改用户语句不在此处之外
+    //!!! 这种方式必须保证修改用户语句不在此处之外
     if (!self.user) {
         NSString * uuid =   [[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserUID"];
         if(uuid)
@@ -58,7 +75,9 @@
             User * currentUser =   [[CoreDataHelper sharedInstance] retrieveUsers:[NSPredicate predicateWithFormat:@"uuid = %@",uuid]][0];
             self.user = currentUser;
         } else {
-            //+++ NSUserDefault没有当前 User 应有默认或异常处理。
+            //否则设定用户为第一个用户
+            User * currentUser =   [[CoreDataHelper sharedInstance] retrieveUsers:[NSPredicate predicateWithFormat:@"uuid = %@",uuid]][0];
+            [self setUser:currentUser];
         }
     }
     return self.user;

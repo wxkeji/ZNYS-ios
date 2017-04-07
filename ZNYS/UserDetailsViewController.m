@@ -141,7 +141,7 @@ static NSTimeInterval swichAnimationTime = 0.3;
         [self settingButtonState:ZNYSUserDetailsButtonStateClose animated:YES];
         self.selectedIndexPath = nil;
     } else {
-        [self showUserDetails:[[UserManager sharedInstance] allUsersExceptCurrent][indexPath.row] animated:YES];
+        [self showUserDetails:[[UserManager sharedInstance] allUsersExceptUUID:nil][indexPath.row] animated:YES];
         //记录选中的 user 位置
         self.selectedUserIndex = indexPath;
         
@@ -160,7 +160,7 @@ static NSTimeInterval swichAnimationTime = 0.3;
     UserCollectionViewCell *cell = (UserCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:userCellID forIndexPath:indexPath];
     //!!! temp todo 设置合理的用户头像和用户名字
     [cell.userImageView setImage:[UIImage imageNamed:@"user/user_temp"]];
-    NSString *userNickName = ((User *)[[UserManager sharedInstance] allUsersExceptCurrent][indexPath.row]).nickName;
+    NSString *userNickName = ((User *)[[UserManager sharedInstance] allUsersExceptUUID:nil][indexPath.row]).nickName;
     [cell.userNameLabel setText:userNickName];
     
     return cell;
@@ -170,7 +170,7 @@ static NSTimeInterval swichAnimationTime = 0.3;
 - (void)closeOrConfirmButtonTap {
     switch (self.buttonState) {
         case ZNYSUserDetailsButtonStateConfirm:
-            [[UserManager sharedInstance] changeCurrentUser:[[UserManager sharedInstance] allUsersExceptCurrent][self.selectedUserIndex.row]];
+            [[UserManager sharedInstance] changeCurrentUser:[[UserManager sharedInstance] allUsersExceptUUID:nil][self.selectedUserIndex.row]];
             [self dismissViewControllerAnimated:YES completion:nil];
             break;
         default:
