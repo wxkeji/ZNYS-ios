@@ -11,7 +11,6 @@
 #import "UserDetailView.h"
 #import "SwitchUserView.h"
 #import "UserManager.h"
-#import "CoreDataHelper.h"
 
 @interface UserAccountViewController ()
 
@@ -134,7 +133,7 @@
 }
 
 - (void)newUserDetail{
-    self.switchUserView.dataArray = [[CoreDataHelper sharedInstance] retrieveOtherUsersExcept:[[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserUID"]];
+    self.switchUserView.dataArray = [[UserManager sharedInstance] retrieveOtherUsersExcept:nil];
     [self.switchUserView refresh];
     [self refreshDetail];
 }

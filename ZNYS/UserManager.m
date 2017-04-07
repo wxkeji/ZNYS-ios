@@ -42,7 +42,16 @@
     return [self retrieveUsers:nil];
 }
 
-// 传入 nil 则取当前以外
+-(BOOL)whetherThereIsUser
+{
+    if([self retrieveUsers:nil].count)
+    {
+        return YES;
+    }
+    else
+        return NO;
+}
+// 传入 nil 则取当前用户以外的所有用户
 - (NSArray *)allUsersExceptUUID:(NSString *)uuid {
     NSMutableArray *retrieveUsers = [[self retrieveUsers:nil] mutableCopy];
     if (uuid == nil) {
@@ -63,6 +72,27 @@
     return retrieveUsers;
 }
 
+//符合黄丕臻的要求的返回数据  传入 nil 即排除当前 user
+- (NSArray *)retrieveOtherUsersExcept:(NSString *)uuid
+{
+    NSArray* tempResult;
+    if (uuid == nil) {
+        tempResult = [self allUsersExceptUUID:nil];
+    } else {
+        tempResult = [self retrieveUsers:[NSPredicate predicateWithFormat:@"uuid != %@",uuid]];
+    }
+    NSMutableArray *arrayReturned = [[NSMutableArray alloc] init];
+    if (tempResult.count > 0)
+    {
+        for (User *user in tempResult)
+        {
+            [arrayReturned addObject:@{@"name":user.nickName,@"thumb":user.photoNumber,@"uuid":user.uuid}];
+        }
+        return arrayReturned;
+        
+    }
+    else return nil;
+}
 #pragma mark - currentUser read
 - (User *)currentUser
 {
@@ -72,11 +102,11 @@
         if(uuid)
         {
             //+++ 应考虑数据库异常
-            User * currentUser =   [[CoreDataHelper sharedInstance] retrieveUsers:[NSPredicate predicateWithFormat:@"uuid = %@",uuid]][0];
+            User * currentUser =   [self retrieveUsers:[NSPredicate predicateWithFormat:@"uuid = %@",uuid]][0];
             self.user = currentUser;
         } else {
             //否则设定用户为第一个用户
-            User * currentUser =   [[CoreDataHelper sharedInstance] retrieveUsers:[NSPredicate predicateWithFormat:@"uuid = %@",uuid]][0];
+            User * currentUser =   [self retrieveUsers:[NSPredicate predicateWithFormat:@"uuid = %@",uuid]][0];
             [self setUser:currentUser];
         }
     }

@@ -180,22 +180,7 @@ NSString* storeFilename = @"database.sqlite";
     [request setPredicate:predicate];
     return [self.context executeFetchRequest:request error:nil];
 }
--(NSArray*)retrieveOtherUsersExcept:(NSString*)uuid
-{
-    NSArray* tempResult = [self retrieveUsers:[NSPredicate predicateWithFormat:@"uuid != %@",uuid]];
-    NSMutableArray* arrayReturned = [[NSMutableArray alloc] init];
-    if (tempResult.count>0)
-    {
-        for (User* user in tempResult)
-        {
-            [arrayReturned addObject:@{@"name":user.nickName,@"thumb":user.photoNumber,@"uuid":user.uuid}];
-        }
-        return arrayReturned;
-
-    }
-    else return nil;
-}
--(BOOL)modifyUserInfoWithUUID:(NSString*)UUID
+- (BOOL)modifyUserInfoWithUUID:(NSString*)UUID
                      birthday:(NSString*)Birthday
                        gender:(NSString*)gender
                      nickname:(NSString*)nickname
@@ -207,15 +192,6 @@ NSString* storeFilename = @"database.sqlite";
     [self save];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"userDetailDidChange" object:nil];
     return YES;
-}
--(BOOL)whetherThereIsUser
-{
-   if([self retrieveUsers:nil].count)
-   {
-       return YES;
-   }
-    else
-    return NO;
 }
 
 #pragma mark - Award releated methods

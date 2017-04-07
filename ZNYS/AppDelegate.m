@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "CoreDataHelper.h"
+#import "UserManager.h"
 #import "CabinetViewController.h"
 #import "AddAccountViewController.h"
 
@@ -36,7 +36,7 @@ static AppDelegate* singleton;
     
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     UIStoryboard * storyBoard = [UIStoryboard storyboardWithName:@"Cabinet" bundle:[NSBundle mainBundle]];
-    if ([[CoreDataHelper sharedInstance] whetherThereIsUser]) {
+    if ([[UserManager sharedInstance] whetherThereIsUser]) {
         CabinetViewController * viewController = [storyBoard instantiateViewControllerWithIdentifier:@"CabinetViewController"];
          UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:viewController];
         nav.navigationBarHidden = YES;

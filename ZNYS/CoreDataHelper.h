@@ -27,15 +27,10 @@
 -(NSString*)createUserWithBirthday:(NSString*)birthday
                         gender:(NSString*)gender
                       nickName:(NSString*)nickName;
--(NSArray*)retrieveUsers:(NSPredicate*)predicate;
--(BOOL)whetherThereIsUser;
 -(BOOL)modifyUserInfoWithUUID:(NSString*)UUID
                      birthday:(NSString*)Birthday
                        gender:(NSString*)gender
                      nickname:(NSString*)nickname;
--(NSArray*)retrieveOtherUsersExcept:(NSString*)uuid;
-
-
 
 - (Award*)createAward;
 - (Award*)createNewAwardWithAward:(Award*)award;

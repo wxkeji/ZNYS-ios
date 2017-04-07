@@ -13,10 +13,12 @@
 
 + (instancetype)sharedInstance;
 
-//ALL User
+//ALL Users
 - (NSInteger)currentUserCount;
 - (NSArray *)allUsers;
 - (NSArray *)allUsersExceptUUID:(NSString *)uuid;
+- (NSArray *)retrieveOtherUsersExcept:(NSString *)uuid;
+- (BOOL)whetherThereIsUser;
 
 //当前 User
 - (User *)currentUser;

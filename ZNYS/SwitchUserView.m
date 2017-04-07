@@ -9,7 +9,7 @@
 #import "SwitchUserView.h"
 #import "AddAccountButton.h"
 #import "ThumbView.h"
-#import "CoreDataHelper.h"
+#import "UserManager.h"
 
 @interface SwitchUserView()
 
@@ -116,7 +116,7 @@
 
 - (NSArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = [[CoreDataHelper sharedInstance] retrieveOtherUsersExcept:[[NSUserDefaults standardUserDefaults] objectForKey:@"currentUserUID"]];
+        _dataArray = [[UserManager sharedInstance] retrieveOtherUsersExcept:nil];
         // [_dataArray addObject:@{@"name":@"阿花",@"thumb":@"boy"}];
     }
     return _dataArray;
