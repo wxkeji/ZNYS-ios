@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "Award.h"
-#warning 这样把 Award 直接 import 进来，就会直接被调用，是否有问题？
 #import "CoreDataHelper.h"
 
 @interface AwardManager : NSObject
