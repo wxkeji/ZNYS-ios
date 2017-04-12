@@ -219,7 +219,7 @@
 
 - (NSMutableArray<Award *> *)dataArray{
     if (!_dataArray) {
-        _dataArray = [[AwardManager sharedInstance] getAllAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUserUUID]];
+        _dataArray = [[AwardManager sharedInstance] getAllAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUser].uuid];
     }
     return _dataArray;
 }
@@ -241,17 +241,17 @@
 - (void)testButtonClicked
 {
 //    NSArray* shit;
-//    shit = [[AwardManager sharedInstance] getAllAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUserUUID]];
+//    shit = [[AwardManager sharedInstance] getAllAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUser].uuid];
 //    Award* firstResult = (Award*)shit[0];
 //    
 //    NSLog(@"看看结果是什么来的%d",firstResult.minPrice);
 //    
 //    
 //    NSArray* shit2;
-//    shit2 = [[AwardManager sharedInstance] getAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUserUUID]];
+//    shit2 = [[AwardManager sharedInstance] getAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUser].uuid];
 //    
 //    NSArray* shit3;
-//    shit3 = [[AwardManager sharedInstance] getNotAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUserUUID]];
+//    shit3 = [[AwardManager sharedInstance] getNotAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUser].uuid];
 //    
 //    for(Award* fuck in shit)
 //    {
@@ -259,7 +259,7 @@
 //    }
 //    
 //    NSArray* shitshit;
-//    shitshit = [[AwardManager sharedInstance] getAllAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUserUUID]];
+//    shitshit = [[AwardManager sharedInstance] getAllAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUser].uuid];
 //    
 //    for(Award* aaaa in shitshit)
 //    {

@@ -150,7 +150,7 @@
 - (UILabel *)nameLabel{
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc] initWithCustomFont:20.f];
-        _nameLabel.text = [[UserManager sharedInstance] currentUserName];
+        _nameLabel.text = [[UserManager sharedInstance] currentUser].nickName;
         _nameLabel.textColor = [UIColor whiteColor];
     }
     return _nameLabel;
@@ -159,7 +159,7 @@
 - (UILabel *)birthdayLabel{
     if (!_birthdayLabel) {
         _birthdayLabel = [[UILabel alloc] initWithCustomFont:20.f];
-        _birthdayLabel.text = [[UserManager sharedInstance] currentUserBirthday];
+        _birthdayLabel.text = [NSDate stringFromDate:[[UserManager sharedInstance] currentUser].birthday withFormat:@"yyyy年M月d日"];
         _birthdayLabel.textColor = [UIColor whiteColor];
     }
     return _birthdayLabel;
@@ -168,7 +168,7 @@
 - (UILabel *)coinLabel{
     if (!_coinLabel) {
         _coinLabel = [[UILabel alloc] initWithCustomFont:20.f];
-        _coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[UserManager sharedInstance] currentUserTokenOwned]];
+        _coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[UserManager sharedInstance] currentUser].tokensOwned];
         _coinLabel.textColor = [UIColor whiteColor];
     }
     return _coinLabel;
@@ -177,7 +177,7 @@
 - (UILabel *)brushLabel{
     if (!_brushLabel) {
         _brushLabel = [[UILabel alloc] initWithCustomFont:20.f];
-        _brushLabel.text = [NSString stringWithFormat:@"%ld把",(long)[[UserManager sharedInstance] currentUsersNumberOfToothBushes]];
+        _brushLabel.text = [NSString stringWithFormat:@"%ld把",(long)[[UserManager sharedInstance] currentUser].possessToothBrushes.count];
         _brushLabel.textColor = [UIColor whiteColor];
     }
     return _brushLabel;

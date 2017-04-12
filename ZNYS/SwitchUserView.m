@@ -50,10 +50,11 @@
                 thumbView.thumbButton.tag = i;
                 thumbView.nameLabel.text = [[self.dataArray objectAtIndex:i] objectForKey:@"name"];
                 thumbView.uuid = [[self.dataArray objectAtIndex:i] objectForKey:@"uuid"];
-                if ([[[self.dataArray objectAtIndex:i] objectForKey:@"thumb"] integerValue]) {
-                    [thumbView.thumbButton setBackgroundColor:[UIColor blueColor]];
-                }else{
+                //todo +++
+                if ([[[self.dataArray objectAtIndex:i] objectForKey:@"thumb"] boolValue]) {
                     [thumbView.thumbButton setBackgroundColor:[UIColor redColor]];
+                }else{
+                    [thumbView.thumbButton setBackgroundColor:[UIColor blueColor]];
                 }
                 [self addSubview:thumbView];
             }else if((count-1)<5){
@@ -89,10 +90,11 @@
                 thumbView.thumbButton.tag = i;
                 thumbView.nameLabel.text = [[self.dataArray objectAtIndex:i] objectForKey:@"name"];
                 thumbView.uuid = [[self.dataArray objectAtIndex:i] objectForKey:@"uuid"];
-                if ([[[self.dataArray objectAtIndex:i] objectForKey:@"thumb"] integerValue]) {
-                    [thumbView.thumbButton setBackgroundColor:[UIColor blueColor]];
-                }else{
+                //todo +++
+                if ([[[self.dataArray objectAtIndex:i] objectForKey:@"thumb"] boolValue]) {
                     [thumbView.thumbButton setBackgroundColor:[UIColor redColor]];
+                }else{
+                    [thumbView.thumbButton setBackgroundColor:[UIColor blueColor]];
                 }
                 [self addSubview:thumbView];
             }
@@ -117,7 +119,6 @@
 - (NSArray *)dataArray{
     if (!_dataArray) {
         _dataArray = [[UserManager sharedInstance] retrieveOtherUsersExcept:nil];
-        // [_dataArray addObject:@{@"name":@"阿花",@"thumb":@"boy"}];
     }
     return _dataArray;
 }

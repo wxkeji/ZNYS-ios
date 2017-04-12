@@ -136,22 +136,14 @@
         <relationship name="possessBrushingStatistics" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="BrushingStatistics" inverseName="bePossessedByToothBrush" inverseEntity="BrushingStatistics" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
-        <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="birthday" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="cycleCountOfHighestLevel" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="icon_url_local" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="icon_url_server" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="interationTime" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="isCurrentUser" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="isDelete" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="isRegistered" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="lastActiveTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="level" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="historyTokens" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="nickName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="photoNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="starsOwned" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="tokenOwned" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="photoURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="starsOwned" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tokensOwned" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="beViewedByCustomerService" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="CustomerServices" inverseName="viewUsers" inverseEntity="CustomerServices" syncable="YES"/>
         <relationship name="possessAwards" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Award" inverseName="bePossessedByUser" inverseEntity="Award" syncable="YES"/>
@@ -166,7 +158,7 @@
         <element name="Belongings" positionX="-36" positionY="9" width="128" height="148"/>
         <element name="BrushingStatistics" positionX="277" positionY="-207" width="128" height="208"/>
         <element name="Cabinet" positionX="-54" positionY="-9" width="128" height="118"/>
-        <element name="CalendarItem" positionX="-63" positionY="-18" width="128" height="208"/>
+        <element name="CalendarItem" positionX="-63" positionY="-18" width="128" height="210"/>
         <element name="CustomerServices" positionX="-135" positionY="261" width="128" height="133"/>
         <element name="InferenceEngine" positionX="250" positionY="315" width="128" height="133"/>
         <element name="Item" positionX="-207" positionY="12" width="128" height="148"/>
@@ -176,6 +168,6 @@
         <element name="Rules" positionX="18" positionY="63" width="128" height="133"/>
         <element name="Scene" positionX="-216" positionY="-117" width="128" height="75"/>
         <element name="ToothBrush" positionX="-216" positionY="216" width="128" height="178"/>
-        <element name="User" positionX="-99" positionY="396" width="128" height="390"/>
+        <element name="User" positionX="-99" positionY="396" width="128" height="270"/>
     </elements>
 </model>

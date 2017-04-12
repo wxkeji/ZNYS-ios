@@ -120,7 +120,7 @@
 - (UILabel *)nameLabel{
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc] initWithCustomFont:25.f];
-        _nameLabel.text = [[UserManager sharedInstance] currentUserName];
+        _nameLabel.text = [[UserManager sharedInstance] currentUser].nickName;
         _nameLabel.textColor = [UIColor whiteColor];
     }
     return _nameLabel;

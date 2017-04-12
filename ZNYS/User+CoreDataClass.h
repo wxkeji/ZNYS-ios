@@ -2,7 +2,7 @@
 //  User+CoreDataClass.h
 //  ZNYS
 //
-//  Created by yu243e on 2017/4/10.
+//  Created by yu243e on 2017/4/11.
 //  Copyright © 2017年 Woodseen. All rights reserved.
 //
 

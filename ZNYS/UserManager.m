@@ -9,6 +9,7 @@
 #import "UserManager.h"
 #import "User+CoreDataProperties.h"
 #import "CoreDataHelper.h"
+#import "NSDate+Helper.h"
 
 @interface UserManager()
 @property (nonatomic, strong, readwrite) User *user;
@@ -24,6 +25,22 @@
         sharedManager = [[UserManager alloc] init];
     });
     return sharedManager;
+}
+
+#pragma mark - helper
++ (NSInteger)levelFromHistoryTokens:(NSInteger)historyTokens {
+    NSInteger level = 1;
+    while (historyTokens >= 0) {
+        level += 1;
+        historyTokens = historyTokens - (NSInteger)pow(level - 1, 2);
+    }
+    level -= 1;
+    return level;
+}
+
+//todo +++ 返回默认头像 URL
++ (NSString *)defaultPhotoURLFromGender:(BOOL)gender {
+    return nil;
 }
 
 #pragma mark - all
@@ -72,6 +89,7 @@
     return retrieveUsers;
 }
 
+//thumb 决定黄丕臻写的选择用户界面的背景颜色，原为 photoNumber 字段
 //符合黄丕臻的要求的返回数据  传入 nil 即排除当前 user
 - (NSArray *)retrieveOtherUsersExcept:(NSString *)uuid
 {
@@ -86,7 +104,7 @@
     {
         for (User *user in tempResult)
         {
-            [arrayReturned addObject:@{@"name":user.nickName,@"thumb":user.photoNumber,@"uuid":user.uuid}];
+            [arrayReturned addObject:@{@"name":user.nickName,@"thumb":@(user.gender),@"uuid":user.uuid}];
         }
         return arrayReturned;
         
@@ -114,53 +132,11 @@
 }
 
 - (ZNYSThemeStyle)currentUserThemeStyle {
-    NSLog(@"++++ %@", [self currentUserGender]);
-    if ([[self currentUser].gender isEqualToString:@"0"]) {
+    if ([self currentUser].gender == NO) {
         return ZNYSThemeStyleBlue;
     } else {
         return ZNYSThemeStylePink;
     }
-}
-
-- (NSString *)currentUserName
-{
-    return [self currentUser].nickName;
-}
-- (NSString *)currentUserBirthday
-{
-    return [self currentUser].birthday;
-}
-- (NSNumber *)currentUserCycleCountOfHighestLevel
-{
-    return [self currentUser].cycleCountOfHighestLevel;
-}
-- (NSString *)currentUserGender
-{
-    return [self currentUser].gender;
-}
-- (NSInteger)currentUserLevel
-{
-    return [[self currentUser].level integerValue];
-}
-- (NSInteger)currentUserPhotoNumber
-{
-    return [[self currentUser].photoNumber integerValue];
-}
-- (NSInteger)currentUserStarsOwned
-{
-    return [[self currentUser].starsOwned integerValue];
-}
-- (NSInteger)currentUserTokenOwned
-{
-    return [[self currentUser].tokenOwned integerValue];
-}
-- (NSString *)currentUserUUID
-{
-    return [self currentUser].uuid;
-}
-- (NSInteger)currentUsersNumberOfToothBushes
-{
-    return [self currentUser].possessToothBrushes.count;
 }
 
 #pragma mark - currentUser write
@@ -177,12 +153,53 @@
  @return 成功返回YES
  */
 - (BOOL)changeCurrentTokensByAdding:(NSInteger)number {
-    NSInteger lastToken = [self currentUserTokenOwned] - number;
+    NSInteger lastToken = [self currentUser].tokensOwned - number;
     if (lastToken > 0) {
-        [self currentUser].tokenOwned = @([self currentUserTokenOwned] - number);
+        [self currentUser].tokensOwned = [self currentUser].tokensOwned - number;
     } else {
         return false;
     }
     return true;
 }
+
+//test +++
+-(NSString*)createUserWithBirthday:(NSString*)birthday
+                            gender:(BOOL)gender
+                          nickName:(NSString*)nickName
+{
+    User* user =  [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:[CoreDataHelper sharedInstance].context];
+    
+    user.birthday = [NSDate dateFromString:birthday withFormat:@"yyyy年M月d日"];
+    
+    user.gender = gender;
+    user.nickName = nickName;
+    user.starsOwned = 3;    //test
+    user.tokensOwned = 20;
+    user.historyTokens = 30;
+    user.photoURL = [UserManager defaultPhotoURLFromGender:user.gender];
+    user.level = [UserManager levelFromHistoryTokens:user.historyTokens];
+    user.uuid = [[NSUUID UUID] UUIDString];
+    
+    [[CoreDataHelper sharedInstance] save];
+    
+    [[NSUserDefaults standardUserDefaults]setObject:user.uuid forKey:@"currentUserUID"];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"userDidCreate" object:nil];
+    return user.uuid;
+}
+
+- (BOOL)modifyUserInfoWithUUID:(NSString*)UUID
+                      birthday:(NSString*)birthday
+                        gender:(BOOL)gender
+                      nickname:(NSString*)nickname
+{
+    User* userToBeModified  =  [self retrieveUsers:[NSPredicate predicateWithFormat:@"uuid = %@",UUID]][0];
+    userToBeModified.birthday = [NSDate dateFromString:birthday withFormat:@"yyyy年M月d日"];
+    userToBeModified.gender = gender;
+    userToBeModified.nickName = nickname;
+    [[CoreDataHelper sharedInstance] save];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"userDetailDidChange" object:nil];
+    return YES;
+}
+
 @end

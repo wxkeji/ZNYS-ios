@@ -151,7 +151,7 @@
         _boysButton.tag = 0;
 //        [_boysButton setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
 //        [_boysButton setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateSelected];
-        [_boysButton setBackgroundColor:[UIColor redColor]];
+        [_boysButton setBackgroundColor:[UIColor yellowColor]];
         [_boysButton addTarget:self action:@selector(thumbButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _boysButton;
@@ -163,7 +163,7 @@
         _girlsButton.tag = 1;
 //        [_girlsButton setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
 //        [_girlsButton setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateSelected];
-        [_girlsButton setBackgroundColor:[UIColor yellowColor]];
+        [_girlsButton setBackgroundColor:[UIColor grayColor]];
         [_girlsButton addTarget:self action:@selector(thumbButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _girlsButton;

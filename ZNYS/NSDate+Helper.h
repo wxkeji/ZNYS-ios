@@ -23,4 +23,6 @@
 + (NSDate *)beginningOfDay:(NSDate *)date;
 + (NSDate *)nextDay:(NSDate *)date;
 
++ (NSInteger)ageFromBirthdayDate:(NSDate *)date;
+
 @end

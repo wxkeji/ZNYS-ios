@@ -81,12 +81,12 @@
     
     //设置屏幕上的信息
     
-    self.userLevel = @([[UserManager sharedInstance] currentUserLevel]);
+    self.userLevel = @([[UserManager sharedInstance] currentUser].level);
     [self addObserver:self forKeyPath:@"userLevel" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     
     self.level.text = [NSString stringWithFormat:@"LV%ld",[self.userLevel integerValue]];
-    self.username.text = [[UserManager sharedInstance] currentUserName];
-    self.stars.text = [NSString stringWithFormat:@"%@",@([[UserManager sharedInstance] currentUserTokenOwned])];
+    self.username.text = [[UserManager sharedInstance] currentUser].nickName;
+    self.stars.text = [NSString stringWithFormat:@"%@",@([[UserManager sharedInstance] currentUser].tokensOwned)];
     
     //测试等级按钮
     UIButton * levelButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -125,10 +125,10 @@
 
 
 - (void)userDetailChange{
-    self.userLevel = @([[UserManager sharedInstance] currentUserLevel]);
+    self.userLevel = @([[UserManager sharedInstance] currentUser].level);
     self.level.text = [NSString stringWithFormat:@"LV%@",self.userLevel];
-    self.username.text = [[UserManager sharedInstance] currentUserName];
-    self.stars.text = [NSString stringWithFormat:@"%@",@([[UserManager sharedInstance] currentUserTokenOwned])];
+    self.username.text = [[UserManager sharedInstance] currentUser].nickName;
+    self.stars.text = [NSString stringWithFormat:@"%@",@([[UserManager sharedInstance] currentUser].tokensOwned)];
     [self refreshCabinet];
 }
 

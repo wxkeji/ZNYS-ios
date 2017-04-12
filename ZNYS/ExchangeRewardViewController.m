@@ -127,14 +127,14 @@
 #pragma mark private method
 
 - (void)refresh{
-    self.coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[UserManager sharedInstance] currentUserTokenOwned]];
+    self.coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[UserManager sharedInstance] currentUser].tokensOwned];
     
     for (RewardItemView * item in self.itemScrollView.subviews) {
         [item removeFromSuperview];
     }
     self.dataArray = nil;
     
-    self.dataArray = [[AwardManager sharedInstance] getAllAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUserUUID]];
+    self.dataArray = [[AwardManager sharedInstance] getAllAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUser].uuid];
     [self initItemScrollView];
 }
 
@@ -208,7 +208,7 @@
 - (UILabel *)userLabel{
     if (!_userLabel) {
         _userLabel = [[UILabel alloc] initWithCustomFont:15.f];
-        _userLabel.text = [[UserManager sharedInstance] currentUserName];
+        _userLabel.text = [[UserManager sharedInstance] currentUser].nickName;
         _userLabel.textColor = [UIColor blueColor];
         _userLabel.textAlignment = NSTextAlignmentCenter;
     }
@@ -218,7 +218,7 @@
 - (UILabel *)coinLabel{
     if (!_coinLabel) {
         _coinLabel = [[UILabel alloc] initWithCustomFont:15.f];
-        _coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[UserManager sharedInstance] currentUserTokenOwned]];
+        _coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[UserManager sharedInstance] currentUser].tokensOwned];
         _coinLabel.textColor = [UIColor blueColor];
         _coinLabel.textAlignment = NSTextAlignmentCenter;
     }
@@ -244,7 +244,7 @@
    
     if (!_dataArray) {
         _dataArray = [[NSMutableArray alloc] init];
-        _dataArray = [[AwardManager sharedInstance] getAllAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUserUUID]];
+        _dataArray = [[AwardManager sharedInstance] getAllAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUser].uuid];
     }
     return _dataArray;
 }

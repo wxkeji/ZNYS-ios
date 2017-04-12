@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.h
 //  ZNYS
 //
-//  Created by yu243e on 2017/4/10.
+//  Created by yu243e on 2017/4/11.
 //  Copyright © 2017年 Woodseen. All rights reserved.
 //
 
@@ -15,23 +15,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<User *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSString *age;
-@property (nullable, nonatomic, copy) NSString *birthday;
-@property (nullable, nonatomic, copy) NSNumber *cycleCountOfHighestLevel;
-@property (nullable, nonatomic, copy) NSString *gender;
-@property (nullable, nonatomic, copy) NSString *icon_url_local;
-@property (nullable, nonatomic, copy) NSString *icon_url_server;
-@property (nullable, nonatomic, copy) NSNumber *interationTime;
-@property (nullable, nonatomic, copy) NSNumber *isCurrentUser;
-@property (nullable, nonatomic, copy) NSNumber *isDelete;
-@property (nullable, nonatomic, copy) NSNumber *isRegistered;
-@property (nullable, nonatomic, copy) NSNumber *lastActiveTime;
-@property (nullable, nonatomic, copy) NSDecimalNumber *level;
+@property (nullable, nonatomic, copy) NSDate *birthday;
+@property (nonatomic) BOOL gender;
+@property (nonatomic) int16_t level;
 @property (nullable, nonatomic, copy) NSString *nickName;
-@property (nullable, nonatomic, copy) NSNumber *photoNumber;
-@property (nullable, nonatomic, copy) NSNumber *starsOwned;
-@property (nullable, nonatomic, copy) NSNumber *tokenOwned;
+@property (nullable, nonatomic, copy) NSString *photoURL;
+@property (nonatomic) int16_t starsOwned;
+@property (nonatomic) int16_t tokensOwned;
 @property (nullable, nonatomic, copy) NSString *uuid;
+@property (nonatomic) int16_t historyTokens;
 @property (nullable, nonatomic, retain) CustomerServices *beViewedByCustomerService;
 @property (nullable, nonatomic, retain) NSSet<Award *> *possessAwards;
 @property (nullable, nonatomic, retain) NSSet<Belongings *> *possessBelongings;

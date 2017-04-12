@@ -22,20 +22,17 @@
 
 //当前 User
 - (User *)currentUser;
-- (NSString *)currentUserUUID;
-- (NSString *)currentUserName;
-- (NSString *)currentUserBirthday;
-- (NSString *)currentUserGender;
-- (NSInteger)currentUserLevel;
-- (NSInteger)currentUserPhotoNumber;
-- (NSInteger)currentUserStarsOwned;
-- (NSInteger)currentUserTokenOwned;
-- (NSInteger)currentUsersNumberOfToothBushes;
-
 - (ZNYSThemeStyle)currentUserThemeStyle;
 
 //write
 - (void)changeCurrentUser:(User *)user;
 - (BOOL)changeCurrentTokensByAdding:(NSInteger)number;
 
+- (NSString*)createUserWithBirthday:(NSString *)birthday
+                            gender:(BOOL)gender
+                          nickName:(NSString *)nickName;
+- (BOOL)modifyUserInfoWithUUID:(NSString *)UUID
+                     birthday:(NSString *)Birthday
+                       gender:(BOOL)gender
+                     nickname:(NSString *)nickname;
 @end

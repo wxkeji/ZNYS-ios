@@ -234,7 +234,7 @@
         calendarItem2.morningStarNumber = @8;
         calendarItem2.eveningStarNumber = @2;
         calendarItem2.starNumber = @11;
-        calendarItem2.userID = [[UserManager sharedInstance] currentUserUUID];
+        calendarItem2.userID = [[UserManager sharedInstance] currentUser].uuid;
         calendarItem2.date = @"2016-06-20";
         [_models addObject:calendarItem2];
         
@@ -243,7 +243,7 @@
         calendarItem3.morningStarNumber = @4;
         calendarItem3.eveningStarNumber = @2;
         calendarItem3.starNumber = @7;
-        calendarItem3.userID = [[UserManager sharedInstance] currentUserUUID];
+        calendarItem3.userID = [[UserManager sharedInstance] currentUser].uuid;
         calendarItem3.date = @"2016-07-01";
         [_models addObject:calendarItem3];
         
@@ -252,7 +252,7 @@
         calendarItem.morningStarNumber = @5;
         calendarItem.eveningStarNumber = @4;
         calendarItem.starNumber = @9;
-        calendarItem.userID = [[UserManager sharedInstance] currentUserUUID];
+        calendarItem.userID = [[UserManager sharedInstance] currentUser].uuid;
         calendarItem.date = @"2016-07-02";
         [_models addObject:calendarItem];
         

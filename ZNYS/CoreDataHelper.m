@@ -143,57 +143,6 @@ NSString* storeFilename = @"database.sqlite";
     }
 }
 
-
-#pragma mark - test methods,can be deleted anytime
-
-
--(NSString*)createUserWithBirthday:(NSString*)birthday
-                            gender:(NSString*)gender
-                          nickName:(NSString*)nickName
-{
-    User* user =  [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat: @"yyyy-MM-dd"];
-    NSDate *birthDate= [dateFormatter dateFromString:birthday];
-    NSDate *now = [NSDate date];
-    NSTimeInterval timeInterval = [now timeIntervalSinceDate:birthDate];
-    double age = timeInterval/(60*60*24*365);//当前多少岁（年）
-    
-    user.age = [NSString stringWithFormat:@"%f",age];
-    user.birthday = birthday;
-    user.cycleCountOfHighestLevel = @0;
-    user.gender = gender;
-    user.level = @1;
-    user.nickName = nickName;
-    user.photoNumber = @0;
-    user.starsOwned = @0;
-    user.tokenOwned = [NSNumber numberWithInteger:1000];
-    user.uuid = [[NSUUID UUID] UUIDString];
-    [self save];
-    [[NSUserDefaults standardUserDefaults]setObject:user.uuid forKey:@"currentUserUID"];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"userDidCreate" object:nil];
-    return user.uuid;
-}
--(NSArray*)retrieveUsers:(NSPredicate*)predicate
-{
-    NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
-    [request setPredicate:predicate];
-    return [self.context executeFetchRequest:request error:nil];
-}
-- (BOOL)modifyUserInfoWithUUID:(NSString*)UUID
-                     birthday:(NSString*)Birthday
-                       gender:(NSString*)gender
-                     nickname:(NSString*)nickname
-{
-   User* userToBeModified  =  [self retrieveUsers:[NSPredicate predicateWithFormat:@"uuid = %@",UUID]][0];
-    userToBeModified.birthday = Birthday;
-    userToBeModified.gender = gender;
-    userToBeModified.nickName = nickname;
-    [self save];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"userDetailDidChange" object:nil];
-    return YES;
-}
-
 #pragma mark - Award releated methods
 - (Award*)createAward
 {

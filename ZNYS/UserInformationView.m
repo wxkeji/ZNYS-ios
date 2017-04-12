@@ -84,9 +84,9 @@
 
 #pragma mark - public method
 - (void)userSwitch {
-    self.userNameLabel.text = [[UserManager sharedInstance] currentUserName];
-    self.coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[UserManager sharedInstance] currentUserTokenOwned]];
-    self.levelLabel.text = [NSString stringWithFormat:@"%@",@([[UserManager sharedInstance] currentUserLevel])];
+    self.userNameLabel.text = [[UserManager sharedInstance] currentUser].nickName;
+    self.coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[UserManager sharedInstance] currentUser].tokensOwned];
+    self.levelLabel.text = [NSString stringWithFormat:@"%@",@([[UserManager sharedInstance] currentUser].level)];
 }
 
 #pragma mark - private method
@@ -106,7 +106,7 @@
 - (UILabel *)userNameLabel{
     if (!_userNameLabel) {
         _userNameLabel = [[UILabel alloc] initWithCustomFont:15.f];
-        _userNameLabel.text = [[UserManager sharedInstance] currentUserName];
+        _userNameLabel.text = [[UserManager sharedInstance] currentUser].nickName;
         _userNameLabel.textColor = [UIColor whiteColor];
         _userNameLabel.textAlignment = NSTextAlignmentCenter;
     }
@@ -125,7 +125,7 @@
 - (UILabel *)coinLabel{
     if (!_coinLabel) {
         _coinLabel = [[UILabel alloc] initWithCustomFont:15.f];
-        _coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[UserManager sharedInstance] currentUserTokenOwned]];
+        _coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[UserManager sharedInstance] currentUser].tokensOwned];
         _coinLabel.textColor = [UIColor whiteColor];
         _coinLabel.textAlignment = NSTextAlignmentCenter;
     }
@@ -144,10 +144,10 @@
 - (UILabel *)levelLabel{
     if (!_levelLabel) {
         _levelLabel = [[UILabel alloc] initWithCustomFont:15.f];
-        if (![[UserManager sharedInstance] currentUserLevel]) {
+        if (![[UserManager sharedInstance] currentUser].level) {
             _levelLabel.text = [NSString stringWithFormat:@"%d",0];
         } else {
-            _levelLabel.text = [NSString stringWithFormat:@"%@",@([[UserManager sharedInstance] currentUserLevel])];
+            _levelLabel.text = [NSString stringWithFormat:@"%@",@([[UserManager sharedInstance] currentUser].level)];
         }
         _levelLabel.textColor = [UIColor whiteColor];
         _levelLabel.textAlignment = NSTextAlignmentCenter;

@@ -245,8 +245,8 @@
 - (NSMutableArray<Award *> *)cDataArray{
     if (!_cDataArray) {
         _cDataArray = [[NSMutableArray alloc] init];
-        NSMutableArray<Award *> *cNotAddedArray = [[[AwardManager sharedInstance] getNotAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUserUUID]] objectAtIndex:0];
-        NSMutableArray<Award *> *cAddedArray = [[[AwardManager sharedInstance] getAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUserUUID]] objectAtIndex:0];
+        NSMutableArray<Award *> *cNotAddedArray = [[[AwardManager sharedInstance] getNotAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUser].uuid] objectAtIndex:0];
+        NSMutableArray<Award *> *cAddedArray = [[[AwardManager sharedInstance] getAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUser].uuid] objectAtIndex:0];
         for (Award * award in cAddedArray) {
             [_cDataArray addObject:award];
         }
@@ -260,8 +260,8 @@
 - (NSMutableArray<Award *> *)pDataArray{
     if (!_pDataArray) {
         _pDataArray = [[NSMutableArray alloc] init];
-        NSMutableArray<Award *> *pNotAddedArray = [[[AwardManager sharedInstance] getNotAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUserUUID]] objectAtIndex:1];
-        NSMutableArray<Award *> *pAddedArray = [[[AwardManager sharedInstance] getAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUserUUID]] objectAtIndex:1];
+        NSMutableArray<Award *> *pNotAddedArray = [[[AwardManager sharedInstance] getNotAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUser].uuid] objectAtIndex:1];
+        NSMutableArray<Award *> *pAddedArray = [[[AwardManager sharedInstance] getAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUser].uuid] objectAtIndex:1];
         for (Award * award in pAddedArray) {
             [_pDataArray addObject:award];
         }
@@ -275,8 +275,8 @@
 - (NSMutableArray<Award *> *)aDataArray{
     if (!_aDataArray) {
         _aDataArray = [[NSMutableArray alloc] init];
-        NSMutableArray<Award *> *aNotAddedArray = [[[AwardManager sharedInstance] getNotAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUserUUID]] objectAtIndex:2];
-        NSMutableArray<Award *> *aAddedArray = [[[AwardManager sharedInstance] getAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUserUUID]] objectAtIndex:2];
+        NSMutableArray<Award *> *aNotAddedArray = [[[AwardManager sharedInstance] getNotAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUser].uuid] objectAtIndex:2];
+        NSMutableArray<Award *> *aAddedArray = [[[AwardManager sharedInstance] getAddedAwardWithUseruuid:[[UserManager sharedInstance] currentUser].uuid] objectAtIndex:2];
         for (Award * award in aAddedArray) {
             [_aDataArray addObject:award];
         }

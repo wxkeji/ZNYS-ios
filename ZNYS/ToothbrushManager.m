@@ -26,7 +26,7 @@ static ToothbrushManager* instance;
 }
 
 - (NSArray*)getCurrentUsersToothBrushes {
-    NSArray* result = [[CoreDataHelper sharedInstance] retrieveToothBrushWithPredicate:[NSPredicate predicateWithFormat:@"userUUID = %@",[[UserManager sharedInstance] currentUserUUID]]];
+    NSArray* result = [[CoreDataHelper sharedInstance] retrieveToothBrushWithPredicate:[NSPredicate predicateWithFormat:@"userUUID = %@",[[UserManager sharedInstance] currentUser].uuid]];
     if (result.count > 0) {
         return result;
     } else {

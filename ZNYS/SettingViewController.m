@@ -73,7 +73,7 @@
 
 #pragma mark private method
 - (void)refreshUserDetail{
-    self.headerView.nameLabel.text = [[UserManager sharedInstance] currentUserName];
+    self.headerView.nameLabel.text = [[UserManager sharedInstance] currentUser].nickName;
 }
 
 #pragma mark event action

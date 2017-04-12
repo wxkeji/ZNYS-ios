@@ -40,10 +40,10 @@
 		3C98A2241D24FF0700046BE8 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2231D24FF0700046BE8 /* CalendarViewController.m */; };
 		3C98A2291D24FF1800046BE8 /* CalendarDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2261D24FF1800046BE8 /* CalendarDetailView.m */; };
 		3C98A22A1D24FF1800046BE8 /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C98A2281D24FF1800046BE8 /* CalendarView.m */; };
+		3C9DEFD31E9C84150022F332 /* User+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9DEFD01E9C84150022F332 /* User+CoreDataClass.m */; };
+		3C9DEFD41E9C84150022F332 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9DEFD21E9C84150022F332 /* User+CoreDataProperties.m */; };
 		3CA18E871D753C3D00DE8EF4 /* ChildrenHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA18E861D753C3D00DE8EF4 /* ChildrenHomeViewController.m */; };
 		3CA855F21D65586200320E4C /* CalendarDetailModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA855F11D65586200320E4C /* CalendarDetailModalViewController.m */; };
-		3CACD7731E9BD17B0072FCAD /* User+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CACD7701E9BD17B0072FCAD /* User+CoreDataClass.m */; };
-		3CACD7741E9BD17B0072FCAD /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CACD7721E9BD17B0072FCAD /* User+CoreDataProperties.m */; };
 		3CC63A431E03DF5A00A856F6 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC63A421E03DF5A00A856F6 /* UserManager.m */; };
 		3CC8F5FB1D6F216400E286E7 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F5FA1D6F216400E286E7 /* UIColor+Helper.m */; };
 		3CC8F5FD1D6F25B700E286E7 /* ThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F5FC1D6F25B700E286E7 /* ThemeManager.m */; };
@@ -236,15 +236,15 @@
 		3C98A2261D24FF1800046BE8 /* CalendarDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDetailView.m; sourceTree = "<group>"; };
 		3C98A2271D24FF1800046BE8 /* CalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarView.h; sourceTree = "<group>"; };
 		3C98A2281D24FF1800046BE8 /* CalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarView.m; sourceTree = "<group>"; };
+		3C9DEFCF1E9C84150022F332 /* User+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataClass.h"; sourceTree = "<group>"; };
+		3C9DEFD01E9C84150022F332 /* User+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataClass.m"; sourceTree = "<group>"; };
+		3C9DEFD11E9C84150022F332 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3C9DEFD21E9C84150022F332 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3CA18E851D753C3D00DE8EF4 /* ChildrenHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildrenHomeViewController.h; sourceTree = "<group>"; };
 		3CA18E861D753C3D00DE8EF4 /* ChildrenHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildrenHomeViewController.m; sourceTree = "<group>"; };
 		3CA18E881D767F8D00DE8EF4 /* DesignMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignMacro.h; sourceTree = "<group>"; };
 		3CA855F01D65586200320E4C /* CalendarDetailModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDetailModalViewController.h; sourceTree = "<group>"; };
 		3CA855F11D65586200320E4C /* CalendarDetailModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDetailModalViewController.m; sourceTree = "<group>"; };
-		3CACD76F1E9BD17B0072FCAD /* User+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataClass.h"; sourceTree = "<group>"; };
-		3CACD7701E9BD17B0072FCAD /* User+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataClass.m"; sourceTree = "<group>"; };
-		3CACD7711E9BD17B0072FCAD /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
-		3CACD7721E9BD17B0072FCAD /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3CC63A411E03DF5A00A856F6 /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		3CC63A421E03DF5A00A856F6 /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		3CC8F5F91D6F216400E286E7 /* UIColor+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Helper.h"; sourceTree = "<group>"; };
@@ -841,10 +841,10 @@
 		458094A31C242E8400CB9BF9 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				3CACD76F1E9BD17B0072FCAD /* User+CoreDataClass.h */,
-				3CACD7701E9BD17B0072FCAD /* User+CoreDataClass.m */,
-				3CACD7711E9BD17B0072FCAD /* User+CoreDataProperties.h */,
-				3CACD7721E9BD17B0072FCAD /* User+CoreDataProperties.m */,
+				3C9DEFCF1E9C84150022F332 /* User+CoreDataClass.h */,
+				3C9DEFD01E9C84150022F332 /* User+CoreDataClass.m */,
+				3C9DEFD11E9C84150022F332 /* User+CoreDataProperties.h */,
+				3C9DEFD21E9C84150022F332 /* User+CoreDataProperties.m */,
 				45BD02F41CCBDEE600A14E95 /* Award+CoreDataProperties.h */,
 				45BD02F51CCBDEE600A14E95 /* Award+CoreDataProperties.m */,
 				45BD02F61CCBDEE600A14E95 /* Award.h */,
@@ -1424,7 +1424,7 @@
 				455AAA761D24104800BE3F27 /* CalendarItem.m in Sources */,
 				647E05D41C3B71E800ADB810 /* SwitchUserView.m in Sources */,
 				645A01901C37CB2500556395 /* ZNYSBaseController.m in Sources */,
-				3CACD7731E9BD17B0072FCAD /* User+CoreDataClass.m in Sources */,
+				3C9DEFD31E9C84150022F332 /* User+CoreDataClass.m in Sources */,
 				643ADB071CD8AA2A00723BB5 /* ExchangeRewardDetailViewController.m in Sources */,
 				64CCBD881CD30B6B003EFFAD /* ZNYSBaseNavigationBar.m in Sources */,
 				4580946C1C23DE6400CB9BF9 /* ConnectedViewController.m in Sources */,
@@ -1439,7 +1439,7 @@
 				C4DC701F1BBFA0F4004AB6A7 /* DIYGoalController.m in Sources */,
 				C43BC7621BC541FF00C332DD /* IsParentToSettingSegue.m in Sources */,
 				3CC8F6021D6FDEEC00E286E7 /* UIImage+Theme.m in Sources */,
-				3CACD7741E9BD17B0072FCAD /* User+CoreDataProperties.m in Sources */,
+				3C9DEFD41E9C84150022F332 /* User+CoreDataProperties.m in Sources */,
 				458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */,
 				3C32FC431E1E47DA001D09F4 /* MyUserDetailsView.m in Sources */,
 				3C877D861D3739750068ADED /* ConnectedResultContentView.m in Sources */,

@@ -125,10 +125,10 @@
 }
 
 - (void)refreshDetail{
-    self.userDetailView.birthdayLabel.text = [[UserManager sharedInstance] currentUserBirthday];
-    self.userDetailView.nameLabel.text = [[UserManager sharedInstance] currentUserName];
-    self.userDetailView.brushLabel.text = [NSString stringWithFormat:@"%ld把",(long)[[UserManager sharedInstance] currentUsersNumberOfToothBushes]];
-    self.userDetailView.coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[UserManager sharedInstance] currentUserTokenOwned]];
+    self.userDetailView.birthdayLabel.text = [NSDate stringFromDate:[[UserManager sharedInstance] currentUser].birthday withFormat:@"yyyy年M月d日"];
+    self.userDetailView.nameLabel.text = [[UserManager sharedInstance] currentUser].nickName;
+    self.userDetailView.brushLabel.text = [NSString stringWithFormat:@"%ld把",(long)[[UserManager sharedInstance] currentUser].possessToothBrushes.count];
+    self.userDetailView.coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[UserManager sharedInstance] currentUser].tokensOwned];
     //头像变化
 }
 

@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.m
 //  ZNYS
 //
-//  Created by yu243e on 2017/4/10.
+//  Created by yu243e on 2017/4/11.
 //  Copyright © 2017年 Woodseen. All rights reserved.
 //
 
@@ -14,23 +14,15 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"User"];
 }
 
-@dynamic age;
 @dynamic birthday;
-@dynamic cycleCountOfHighestLevel;
 @dynamic gender;
-@dynamic icon_url_local;
-@dynamic icon_url_server;
-@dynamic interationTime;
-@dynamic isCurrentUser;
-@dynamic isDelete;
-@dynamic isRegistered;
-@dynamic lastActiveTime;
 @dynamic level;
 @dynamic nickName;
-@dynamic photoNumber;
+@dynamic photoURL;
 @dynamic starsOwned;
-@dynamic tokenOwned;
+@dynamic tokensOwned;
 @dynamic uuid;
+@dynamic historyTokens;
 @dynamic beViewedByCustomerService;
 @dynamic possessAwards;
 @dynamic possessBelongings;

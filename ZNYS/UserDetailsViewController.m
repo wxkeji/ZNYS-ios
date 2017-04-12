@@ -214,10 +214,10 @@ static NSTimeInterval swichAnimationTime = 0.3;
 //    }
     MyUserDetailsView *tempUserDetailsView = [MyUserDetailsView loadViewFromNib];
     [tempUserDetailsView.userNameLabel setText:user.nickName];
-    [tempUserDetailsView.levelLabel setText:[NSString stringWithFormat:@"%@",user.level]];
-    [tempUserDetailsView.coinLabel setText:[NSString stringWithFormat:@"%@", user.tokenOwned]];
+    [tempUserDetailsView.levelLabel setText:[NSString stringWithFormat:@"%d",user.level]];
+    [tempUserDetailsView.coinLabel setText:[NSString stringWithFormat:@"%@", @(user.tokensOwned)]];
     
-    NSLog(@"------ 用户性别 %@",user.gender);
+    NSLog(@"------ 用户性别 %d",user.gender);
     return tempUserDetailsView;
 }
 - (void)settingButtonState:(ZNYSUserDetailsButtonState)buttonState animated:(BOOL)flag  {
