@@ -7,7 +7,7 @@
 //
 
 #import "ZNYSBaseView.h"
-#import "Award.h"
+#import "Award+CoreDataClass.h"
 
 @protocol RewardItemViewDelegate <NSObject>
 

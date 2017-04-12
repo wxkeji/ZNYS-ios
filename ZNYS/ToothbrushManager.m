@@ -34,11 +34,12 @@ static ToothbrushManager* instance;
     }
 }
 
-
+//BUG +++  暂时 toothBrush.isConnected -> YES
+#warning BUG ToothBrushManager.m by yu
 - (ToothBrush*)getCurrentConnectedToothBrush {
     NSArray* toothBrushArray = [self getCurrentUsersToothBrushes];
     for (ToothBrush* toothBrush in toothBrushArray) {
-        if (toothBrush.isConnected) {
+        if (YES/*toothBrush.isConnected*/) {
             //返回第一个已连接的牙刷
             return toothBrush;
         }

@@ -1,24 +1,25 @@
 //
 //  ToothBrush+CoreDataProperties.m
-//  ZNYS
+//  
 //
-//  Created by 张恒铭 on 7/13/16.
-//  Copyright © 2016 Woodseen. All rights reserved.
+//  Created by yu243e on 2017/4/12.
 //
-//  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-//  to delete and recreate this implementation file for your updated model.
 //
 
 #import "ToothBrush+CoreDataProperties.h"
 
 @implementation ToothBrush (CoreDataProperties)
 
++ (NSFetchRequest<ToothBrush *> *)fetchRequest {
+	return [[NSFetchRequest alloc] initWithEntityName:@"ToothBrush"];
+}
+
 @dynamic bindTime;
-@dynamic toothbrushID;
 @dynamic lastConnectTime;
 @dynamic macAddress;
 @dynamic nickname;
 @dynamic photoNumber;
+@dynamic toothbrushID;
 @dynamic userUUID;
 @dynamic bePossessedByUser;
 @dynamic possessBrushingStatistics;

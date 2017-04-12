@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Award.h"
+#import "Award+CoreDataClass.h"
 #import "CoreDataHelper.h"
 
 @interface AwardManager : NSObject

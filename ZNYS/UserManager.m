@@ -169,7 +169,7 @@
 {
     User* user =  [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:[CoreDataHelper sharedInstance].context];
     
-    user.birthday = [NSDate dateFromString:birthday withFormat:@"yyyy年M月d日"];
+    user.birthday = birthday;
     
     user.gender = gender;
     user.nickName = nickName;
@@ -194,7 +194,7 @@
                       nickname:(NSString*)nickname
 {
     User* userToBeModified  =  [self retrieveUsers:[NSPredicate predicateWithFormat:@"uuid = %@",UUID]][0];
-    userToBeModified.birthday = [NSDate dateFromString:birthday withFormat:@"yyyy年M月d日"];
+    userToBeModified.birthday = birthday;
     userToBeModified.gender = gender;
     userToBeModified.nickName = nickname;
     [[CoreDataHelper sharedInstance] save];

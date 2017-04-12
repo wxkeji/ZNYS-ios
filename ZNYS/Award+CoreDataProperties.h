@@ -2,73 +2,33 @@
 //  Award+CoreDataProperties.h
 //  ZNYS
 //
-//  Created by 张恒铭 on 4/24/16.
-//  Copyright © 2016 Woodseen. All rights reserved.
-//
-//  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-//  to delete and recreate this implementation file for your updated model.
+//  Created by yu243e on 2017/4/12.
+//  Copyright © 2017年 Woodseen. All rights reserved.
 //
 
-#import "Award.h"
-
-
+#import "Award+CoreDataClass.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Award (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSString *awardDescription;
-@property (nullable, nonatomic, retain) NSString *exchangeData;
-//@property (nullable, nonatomic, assign) NSUInteger *id;
-@property (nonatomic, assign) int32_t level;
-@property (nullable, nonatomic, retain) NSString *name;
++ (NSFetchRequest<Award *> *)fetchRequest;
 
-
-
-
-/**
- *  奖品图片文件的名字
- */
-@property (nullable, nonatomic, retain) NSString *pitcureURL;
-/**
- *  默认的兑换金币数
- */
-@property (nonatomic, assign) int32_t price;
-/**
- *  最小金币数
- */
-@property ( nonatomic, assign) int32_t minPrice;
-/**
- *  最大金币数
- */
-@property (nonatomic, assign) int32_t maxPrice;
-
-/**
- *  对应且只有,已添加和未添加@"added",@"notAdded"
- */
-@property (nullable, nonatomic, retain) NSString *status;
-/**
- *  奖品类型，@"consume",@"possess",@"activity"，对应消费类，拥有类，huodonglei
- */
-@property (nullable, nonatomic, retain) NSString *type;
-/**
- *  奖品对应的用户UUID
- */
-@property (nullable, nonatomic, retain) NSString *userID;
-/**
- *  奖品的UUID
- */
-@property (nullable, nonatomic, retain) NSString *uuid;
-
-/**
- *  奖品的录音文件的路径
- */
-@property (nullable, nonatomic, retain) NSString *voice;
-
-
-@property (nonatomic, assign) int32_t priority;
-
+@property (nullable, nonatomic, copy) NSString *awardDescription;
+@property (nullable, nonatomic, copy) NSString *exchangeData;
+@property (nonatomic) int32_t level;
+@property (nonatomic) int32_t maxPrice;
+@property (nonatomic) int32_t minPrice;
+@property (nullable, nonatomic, copy) NSString *name;
+@property (nullable, nonatomic, copy) NSString *pitcureURL;
+@property (nonatomic) int32_t price;
+@property (nonatomic) int32_t priority;
+@property (nullable, nonatomic, copy) NSString *status;
+@property (nullable, nonatomic, copy) NSString *type;
+@property (nullable, nonatomic, copy) NSString *userID;
+@property (nullable, nonatomic, copy) NSString *uuid;
+@property (nullable, nonatomic, copy) NSString *voice;
 @property (nullable, nonatomic, retain) User *bePossessedByUser;
 
 @end

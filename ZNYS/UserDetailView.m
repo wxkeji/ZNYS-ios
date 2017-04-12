@@ -159,7 +159,7 @@
 - (UILabel *)birthdayLabel{
     if (!_birthdayLabel) {
         _birthdayLabel = [[UILabel alloc] initWithCustomFont:20.f];
-        _birthdayLabel.text = [NSDate stringFromDate:[[UserManager sharedInstance] currentUser].birthday withFormat:@"yyyy年M月d日"];
+        _birthdayLabel.text = [[UserManager sharedInstance] currentUser].birthday;
         _birthdayLabel.textColor = [UIColor whiteColor];
     }
     return _birthdayLabel;
@@ -177,7 +177,7 @@
 - (UILabel *)brushLabel{
     if (!_brushLabel) {
         _brushLabel = [[UILabel alloc] initWithCustomFont:20.f];
-        _brushLabel.text = [NSString stringWithFormat:@"%ld把",(long)[[UserManager sharedInstance] currentUser].possessToothBrushes.count];
+        _brushLabel.text = [NSString stringWithFormat:@"%ld把",(long)[[UserManager sharedInstance] currentUser].toothBrushes.count];
         _brushLabel.textColor = [UIColor whiteColor];
     }
     return _brushLabel;

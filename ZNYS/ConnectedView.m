@@ -8,6 +8,7 @@
 
 #import "ConnectedView.h"
 #import "ToolMacroes.h"
+#import "NSDate+Helper.h"
 #import "UILabel+Font.h"
 #import "UIButton+Font.h"
 #import "Masonry.h"
@@ -98,9 +99,7 @@
     if(!_topBarTextLabel)
     {
         _topBarTextLabel = [[UILabel alloc] initWithCustomFont:21.0f];
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
-        [formatter setDateFormat:@"YYYY年MM月DD日"];
-        _topBarTextLabel.text =[formatter stringFromDate:[NSDate date]];
+        _topBarTextLabel.text =[NSDate stringFromDate:[NSDate date] withFormat:@"YYYY年MM月DD日"];
         [_topBarTextLabel sizeToFit];
         _topBarTextLabel.textColor = [UIColor whiteColor];
         NSDictionary *attributesDictionary = [NSDictionary dictionaryWithObjectsAndKeys:

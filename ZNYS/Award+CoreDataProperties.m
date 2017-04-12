@@ -2,20 +2,23 @@
 //  Award+CoreDataProperties.m
 //  ZNYS
 //
-//  Created by 张恒铭 on 4/24/16.
-//  Copyright © 2016 Woodseen. All rights reserved.
-//
-//  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-//  to delete and recreate this implementation file for your updated model.
+//  Created by yu243e on 2017/4/12.
+//  Copyright © 2017年 Woodseen. All rights reserved.
 //
 
 #import "Award+CoreDataProperties.h"
 
 @implementation Award (CoreDataProperties)
 
++ (NSFetchRequest<Award *> *)fetchRequest {
+	return [[NSFetchRequest alloc] initWithEntityName:@"Award"];
+}
+
 @dynamic awardDescription;
 @dynamic exchangeData;
 @dynamic level;
+@dynamic maxPrice;
+@dynamic minPrice;
 @dynamic name;
 @dynamic pitcureURL;
 @dynamic price;
@@ -26,7 +29,5 @@
 @dynamic uuid;
 @dynamic voice;
 @dynamic bePossessedByUser;
-@dynamic minPrice;
-@dynamic maxPrice;
 
 @end

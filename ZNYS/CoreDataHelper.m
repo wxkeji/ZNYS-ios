@@ -8,7 +8,7 @@
 
 #import "CoreDataHelper.h"
 #import "User+CoreDataClass.h"
-#import "Award.h"
+#import "Award+CoreDataClass.h"
 @implementation CoreDataHelper
 
 #pragma mark - Initilization methods

@@ -11,14 +11,14 @@
 @implementation NSDate (Helper)
 + (NSString *)stringFromDate:(NSDate *)date {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat: @"yyyy-MM-dd"];
+    [dateFormatter setDateFormat: @"yyyy年M月d日"];
 //    [dateFormatter setLocale:[[NSLocale alloc]initWithLocaleIdentifier:@"en_US"]];
     return [dateFormatter stringFromDate:date];
 }
 
 + (NSDate *)dateFromString:(NSString *)string {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat: @"yyyy-MM-dd"];
+    [dateFormatter setDateFormat: @"yyyy年M月d日"];
     
     return [dateFormatter dateFromString:string];
 }

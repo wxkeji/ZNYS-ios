@@ -13,7 +13,7 @@
 #import "CoreDataHelper.h"
 #import "AwardManager.h"
 #import "Award+CoreDataProperties.h"
-#import "Award.h"
+#import "Award+CoreDataClass.h"
 #import "UserManager.h"
 
 @interface RewardListViewController ()

@@ -14,7 +14,7 @@
 + (NSString *)stringFromDate:(NSDate *)date;
 + (NSString *)stringFromDate:(NSDate *)date withFormat:(NSString *)format;
 
-/*string 形如 2016-10-06*/
+/*string 形如 2016年10月6日*/
 + (NSDate *)dateFromString:(NSString *)string;
 + (NSDate *)dateFromString:(NSString *)string withFormat:(NSString *)format;
 

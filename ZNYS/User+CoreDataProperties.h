@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.h
 //  ZNYS
 //
-//  Created by yu243e on 2017/4/11.
+//  Created by yu243e on 2017/4/12.
 //  Copyright © 2017年 Woodseen. All rights reserved.
 //
 
@@ -15,50 +15,37 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<User *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSDate *birthday;
+@property (nullable, nonatomic, copy) NSString *birthday;
 @property (nonatomic) BOOL gender;
+@property (nonatomic) int16_t historyTokens;
 @property (nonatomic) int16_t level;
 @property (nullable, nonatomic, copy) NSString *nickName;
 @property (nullable, nonatomic, copy) NSString *photoURL;
 @property (nonatomic) int16_t starsOwned;
 @property (nonatomic) int16_t tokensOwned;
 @property (nullable, nonatomic, copy) NSString *uuid;
-@property (nonatomic) int16_t historyTokens;
-@property (nullable, nonatomic, retain) CustomerServices *beViewedByCustomerService;
-@property (nullable, nonatomic, retain) NSSet<Award *> *possessAwards;
-@property (nullable, nonatomic, retain) NSSet<Belongings *> *possessBelongings;
-@property (nullable, nonatomic, retain) NSSet<CalendarItem *> *possessCalenderItem;
-@property (nullable, nonatomic, retain) NSSet<NSManagedObject *> *possessItem;
-@property (nullable, nonatomic, retain) NSSet<ToothBrush *> *possessToothBrushes;
+@property (nullable, nonatomic, retain) NSSet<Award *> *awards;
+@property (nullable, nonatomic, retain) NSSet<CalendarItem *> *calenderItems;
+@property (nullable, nonatomic, retain) NSSet<ToothBrush *> *toothBrushes;
 
 @end
 
 @interface User (CoreDataGeneratedAccessors)
 
-- (void)addPossessAwardsObject:(Award *)value;
-- (void)removePossessAwardsObject:(Award *)value;
-- (void)addPossessAwards:(NSSet<Award *> *)values;
-- (void)removePossessAwards:(NSSet<Award *> *)values;
+- (void)addAwardsObject:(Award *)value;
+- (void)removeAwardsObject:(Award *)value;
+- (void)addAwards:(NSSet<Award *> *)values;
+- (void)removeAwards:(NSSet<Award *> *)values;
 
-- (void)addPossessBelongingsObject:(Belongings *)value;
-- (void)removePossessBelongingsObject:(Belongings *)value;
-- (void)addPossessBelongings:(NSSet<Belongings *> *)values;
-- (void)removePossessBelongings:(NSSet<Belongings *> *)values;
+- (void)addCalenderItemsObject:(CalendarItem *)value;
+- (void)removeCalenderItemsObject:(CalendarItem *)value;
+- (void)addCalenderItems:(NSSet<CalendarItem *> *)values;
+- (void)removeCalenderItems:(NSSet<CalendarItem *> *)values;
 
-- (void)addPossessCalenderItemObject:(CalendarItem *)value;
-- (void)removePossessCalenderItemObject:(CalendarItem *)value;
-- (void)addPossessCalenderItem:(NSSet<CalendarItem *> *)values;
-- (void)removePossessCalenderItem:(NSSet<CalendarItem *> *)values;
-
-- (void)addPossessItemObject:(NSManagedObject *)value;
-- (void)removePossessItemObject:(NSManagedObject *)value;
-- (void)addPossessItem:(NSSet<NSManagedObject *> *)values;
-- (void)removePossessItem:(NSSet<NSManagedObject *> *)values;
-
-- (void)addPossessToothBrushesObject:(ToothBrush *)value;
-- (void)removePossessToothBrushesObject:(ToothBrush *)value;
-- (void)addPossessToothBrushes:(NSSet<ToothBrush *> *)values;
-- (void)removePossessToothBrushes:(NSSet<ToothBrush *> *)values;
+- (void)addToothBrushesObject:(ToothBrush *)value;
+- (void)removeToothBrushesObject:(ToothBrush *)value;
+- (void)addToothBrushes:(NSSet<ToothBrush *> *)values;
+- (void)removeToothBrushes:(NSSet<ToothBrush *> *)values;
 
 @end
 

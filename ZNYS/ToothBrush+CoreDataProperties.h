@@ -1,38 +1,38 @@
 //
 //  ToothBrush+CoreDataProperties.h
-//  ZNYS
+//  
 //
-//  Created by 张恒铭 on 7/13/16.
-//  Copyright © 2016 Woodseen. All rights reserved.
+//  Created by yu243e on 2017/4/12.
 //
-//  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
-//  to delete and recreate this implementation file for your updated model.
 //
 
-#import "ToothBrush.h"
+#import "ToothBrush+CoreDataClass.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ToothBrush (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSString *bindTime;
-@property (nullable, nonatomic, retain) NSNumber *toothbrushID;
-@property (nullable, nonatomic, retain) NSString *lastConnectTime;
-@property (nullable, nonatomic, retain) NSString *macAddress;
-@property (nullable, nonatomic, retain) NSString *nickname;
-@property (nullable, nonatomic, retain) NSNumber *photoNumber;
-@property (nullable, nonatomic, retain) NSString *userUUID;
++ (NSFetchRequest<ToothBrush *> *)fetchRequest;
+
+@property (nullable, nonatomic, copy) NSString *bindTime;
+@property (nullable, nonatomic, copy) NSString *lastConnectTime;
+@property (nullable, nonatomic, copy) NSString *macAddress;
+@property (nullable, nonatomic, copy) NSString *nickname;
+@property (nullable, nonatomic, copy) NSNumber *photoNumber;
+@property (nullable, nonatomic, copy) NSNumber *toothbrushID;
+@property (nullable, nonatomic, copy) NSString *userUUID;
 @property (nullable, nonatomic, retain) User *bePossessedByUser;
-@property (nullable, nonatomic, retain) NSSet<BrushingStatistics *> *possessBrushingStatistics;
+@property (nullable, nonatomic, retain) NSSet<BrushingStatistic *> *possessBrushingStatistics;
 
 @end
 
 @interface ToothBrush (CoreDataGeneratedAccessors)
 
-- (void)addPossessBrushingStatisticsObject:(BrushingStatistics *)value;
-- (void)removePossessBrushingStatisticsObject:(BrushingStatistics *)value;
-- (void)addPossessBrushingStatistics:(NSSet<BrushingStatistics *> *)values;
-- (void)removePossessBrushingStatistics:(NSSet<BrushingStatistics *> *)values;
+- (void)addPossessBrushingStatisticsObject:(BrushingStatistic *)value;
+- (void)removePossessBrushingStatisticsObject:(BrushingStatistic *)value;
+- (void)addPossessBrushingStatistics:(NSSet<BrushingStatistic *> *)values;
+- (void)removePossessBrushingStatistics:(NSSet<BrushingStatistic *> *)values;
 
 @end
 

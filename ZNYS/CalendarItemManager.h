@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CalendarItem.h"
+#import "CalendarItem+CoreDataClass.h"
 #import "CalendarItem+CoreDataProperties.h"
 #import "CoreDataHelper.h"
 @interface CalendarItemManager : NSObject

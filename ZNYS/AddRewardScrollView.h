@@ -7,7 +7,7 @@
 //
 
 #import "ZNYSBaseView.h"
-#import "Award.h"
+#import "Award+CoreDataClass.h"
 #import "CoreDataHelper.h"
 #import "AwardManager.h"
 #import "RewardItemView.h"

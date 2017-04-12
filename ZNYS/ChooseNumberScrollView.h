@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ToolMacroes.h"
 #import <Masonry.h>
-#import "Award.h"
+#import "Award+CoreDataClass.h"
 
 @interface ChooseNumberScrollView : UIScrollView
 

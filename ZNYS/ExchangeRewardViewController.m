@@ -7,7 +7,7 @@
 //
 
 #import "ExchangeRewardViewController.h"
-#import "Award.h"
+#import "Award+CoreDataClass.h"
 #import "CoreDataHelper.h"
 #import "AwardManager.h"
 #import "ExchangeRewardDetailViewController.h"

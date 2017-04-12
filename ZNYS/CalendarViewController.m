@@ -338,13 +338,8 @@
     if (!_firstDate) {
         //firstDate = 测试日期
         
-        _firstDate = [NSDate beginningOfDay:[NSDate dateFromString:@"2016-06-24"]];
+        _firstDate = [NSDate beginningOfDay:[NSDate dateFromString:@"2016年6月24日"]];
         
-        //2016-06-24
-//        NSLog(@"firstDate %@", _firstDate);
-//        NSLog(@"dateFromString %@", [NSDate stringFromDate:[NSDate dateFromString:@"2016-10-06"]]);
-//        NSLog(@"first %@", [_firstDate descriptionWithLocale:[NSLocale currentLocale]]);
-//        NSLog(@"first today %@", [NSDate stringFromDate:[NSDate beginningOfDay:_firstDate]]);
     }
     return _firstDate;
 }

@@ -12,7 +12,7 @@
 #import "SelectBirthView.h"
 #import "ToolMacroes.h"
 #import "CoreDataHelper.h"
-#import "Award.h"
+#import "Award+CoreDataClass.h"
 #import "Award+CoreDataProperties.h"
 #import <SVProgressHUD.h>
 #import "CabinetViewController.h"
@@ -421,7 +421,7 @@
         if (self.style == 0) {
             _addAccountView.titleLabel.text = @"修改用户";
             _addAccountView.nameTextField.text = [[UserManager sharedInstance] currentUser].nickName;
-            [_addAccountView.birthButton setTitle:[NSDate stringFromDate:[[UserManager sharedInstance] currentUser].birthday withFormat:@"yyyy年M月d日"] forState:UIControlStateNormal];
+            [_addAccountView.birthButton setTitle:[[UserManager sharedInstance] currentUser].birthday forState:UIControlStateNormal];
             if (![[UserManager sharedInstance] currentUser].gender) {
                 _addAccountView.boysButton.selected = YES;
                 _addAccountView.girlsButton.selected = NO;

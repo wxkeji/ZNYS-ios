@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.m
 //  ZNYS
 //
-//  Created by yu243e on 2017/4/11.
+//  Created by yu243e on 2017/4/12.
 //  Copyright © 2017年 Woodseen. All rights reserved.
 //
 
@@ -16,18 +16,15 @@
 
 @dynamic birthday;
 @dynamic gender;
+@dynamic historyTokens;
 @dynamic level;
 @dynamic nickName;
 @dynamic photoURL;
 @dynamic starsOwned;
 @dynamic tokensOwned;
 @dynamic uuid;
-@dynamic historyTokens;
-@dynamic beViewedByCustomerService;
-@dynamic possessAwards;
-@dynamic possessBelongings;
-@dynamic possessCalenderItem;
-@dynamic possessItem;
-@dynamic possessToothBrushes;
+@dynamic awards;
+@dynamic calenderItems;
+@dynamic toothBrushes;
 
 @end

@@ -1,9 +1,9 @@
 //
-//  CalendarItem.h
+//  CalendarItem+CoreDataClass.h
 //  ZNYS
 //
-//  Created by 张恒铭 on 6/29/16.
-//  Copyright © 2016 Woodseen. All rights reserved.
+//  Created by yu243e on 2017/4/12.
+//  Copyright © 2017年 Woodseen. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,8 +14,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CalendarItem : NSManagedObject
-
-// Insert code here to declare functionality of your managed object subclass
 
 @end
 

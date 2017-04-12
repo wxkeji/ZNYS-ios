@@ -1,5 +1,5 @@
 //
-//  User+CoreDataClass.h
+//  BrushingStatistic+CoreDataClass.h
 //  ZNYS
 //
 //  Created by yu243e on 2017/4/12.
@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Award, CalendarItem, ToothBrush;
+@class AreaStatistic, ToothBrush;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface User : NSManagedObject
+@interface BrushingStatistic : NSManagedObject
 
 @end
 
 NS_ASSUME_NONNULL_END
 
-#import "User+CoreDataProperties.h"
+#import "BrushingStatistic+CoreDataProperties.h"

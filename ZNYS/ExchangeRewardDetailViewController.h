@@ -7,7 +7,7 @@
 //
 
 #import "ZNYSBaseController.h"
-#import "Award.h"
+#import "Award+CoreDataClass.h"
 #import "RewardItemView.h"
 
 @interface ExchangeRewardDetailViewController : ZNYSBaseController<RewardItemViewDelegate>

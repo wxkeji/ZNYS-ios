@@ -11,7 +11,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "ToothBrush.h"
+#import "ToothBrush+CoreDataClass.h"
 @class Award;
 
 @interface CoreDataHelper :NSObject
