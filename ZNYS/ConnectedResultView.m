@@ -222,39 +222,54 @@
 
 - (NSMutableArray<CalendarItem *> *)models {
     if (!_models) {
-        _models = [[NSMutableArray alloc] init];
-        //NSMutableArray<CalendarItem *> *_models = [CalendarItemManager sharedInstance];
+        _models = [[NSMutableArray alloc] init];;
         
 #ifdef insertTestData
         /*------------------------插入假数据-----------------------------------*/
+        CalendarItem *calendarItem = [CalendarItemManager  createCalendarItem];
+        calendarItem.connectStarNumber = 0;
+        calendarItem.morningStarNumber = 5;
+        calendarItem.eveningStarNumber = 4;
+        calendarItem.starNumber = 9;
+        calendarItem.date = @"2016年7月2日";
+        calendarItem.user = [[UserManager sharedInstance] currentUser];
+        [_models addObject:calendarItem];
         
-        
-        CalendarItem *calendarItem2 = [[CalendarItemManager sharedInstance] createCalendarItem];
-        calendarItem2.connectStarNumber = @1;
-        calendarItem2.morningStarNumber = @8;
-        calendarItem2.eveningStarNumber = @2;
-        calendarItem2.starNumber = @11;
-        calendarItem2.userID = [[UserManager sharedInstance] currentUser].uuid;
-        calendarItem2.date = @"2016-06-20";
+        CalendarItem *calendarItem2 = [CalendarItemManager createCalendarItem];
+        calendarItem2.connectStarNumber = 1;
+        calendarItem2.morningStarNumber = 8;
+        calendarItem2.eveningStarNumber = 2;
+        calendarItem2.starNumber = 11;
+        calendarItem2.date = @"2016年6月12日";
+        calendarItem.user = [[UserManager sharedInstance] currentUser];
         [_models addObject:calendarItem2];
         
-        CalendarItem *calendarItem3 = [[CalendarItemManager sharedInstance] createCalendarItem];
-        calendarItem3.connectStarNumber = @1;
-        calendarItem3.morningStarNumber = @4;
-        calendarItem3.eveningStarNumber = @2;
-        calendarItem3.starNumber = @7;
-        calendarItem3.userID = [[UserManager sharedInstance] currentUser].uuid;
-        calendarItem3.date = @"2016-07-01";
+        CalendarItem *calendarItem3 = [CalendarItemManager createCalendarItem];
+        calendarItem3.connectStarNumber = 1;
+        calendarItem3.morningStarNumber = 4;
+        calendarItem3.eveningStarNumber = 2;
+        calendarItem3.starNumber = 7;
+        calendarItem3.date = @"2016年7月1日";
+        calendarItem.user = [[UserManager sharedInstance] currentUser];
         [_models addObject:calendarItem3];
         
-        CalendarItem *calendarItem = [[CalendarItemManager sharedInstance] createCalendarItem];
-        calendarItem.connectStarNumber = @0;
-        calendarItem.morningStarNumber = @5;
-        calendarItem.eveningStarNumber = @4;
-        calendarItem.starNumber = @9;
-        calendarItem.userID = [[UserManager sharedInstance] currentUser].uuid;
-        calendarItem.date = @"2016-07-02";
-        [_models addObject:calendarItem];
+        CalendarItem *calendarItem4 = [CalendarItemManager createCalendarItem];
+        calendarItem4.connectStarNumber = 1;
+        calendarItem4.morningStarNumber = 4;
+        calendarItem4.eveningStarNumber = 2;
+        calendarItem4.starNumber = 7;
+        calendarItem4.date = @"2016年7月4日";
+        calendarItem.user = [[UserManager sharedInstance] currentUser];
+        [_models addObject:calendarItem4];
+        
+        CalendarItem *calendarItem5 = [CalendarItemManager createCalendarItem];
+        calendarItem5.connectStarNumber = 1;
+        calendarItem5.morningStarNumber = 4;
+        calendarItem5.eveningStarNumber = 2;
+        calendarItem5.starNumber = 7;
+        calendarItem5.date = @"2016年7月5日";
+        calendarItem.user = [[UserManager sharedInstance] currentUser];
+        [_models addObject:calendarItem5];
         
         
 #else

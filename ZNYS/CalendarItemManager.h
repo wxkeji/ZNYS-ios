@@ -12,13 +12,5 @@
 #import "CoreDataHelper.h"
 @interface CalendarItemManager : NSObject
 
-+ (instancetype)sharedInstance;
-
-
-- (CalendarItem*)createCalendarItem;
-
-
-- (NSArray<CalendarItem*>*)getCalendarItemsByUserID:(NSString*)userID;
-
-- (void)save;
++ (CalendarItem*)createCalendarItem;
 @end

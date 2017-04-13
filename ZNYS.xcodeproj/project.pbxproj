@@ -30,7 +30,6 @@
 		3C32FC441E1E47DA001D09F4 /* MyUserDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C32FC421E1E47DA001D09F4 /* MyUserDetailsView.xib */; };
 		3C37F4851D6BE0D500D879E0 /* UIImage+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C37F4841D6BE0D500D879E0 /* UIImage+Helper.m */; };
 		3C584C0C1D6B3EB3000E3BCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C584C0B1D6B3EB3000E3BCE /* Images.xcassets */; };
-		3C5AFAE21E2352F000DC330B /* CalendarDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5AFAE11E2352F000DC330B /* CalendarDetailModel.m */; };
 		3C62CE5B1D294CD700402FE1 /* CalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE5A1D294CD700402FE1 /* CalendarModel.m */; };
 		3C62CE611D29FFE300402FE1 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE601D29FFE300402FE1 /* NSDate+Helper.m */; };
 		3C68BEA71E9E6A3900D1EA3B /* AreaStatistic+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C68BE901E9E6A3900D1EA3B /* AreaStatistic+CoreDataClass.m */; };
@@ -45,6 +44,7 @@
 		3C68BEB01E9E6A3900D1EA3B /* CalendarItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C68BEA21E9E6A3900D1EA3B /* CalendarItem+CoreDataProperties.m */; };
 		3C68BEBD1E9E6B5B00D1EA3B /* ToothBrush+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C68BEBA1E9E6B5B00D1EA3B /* ToothBrush+CoreDataClass.m */; };
 		3C68BEBE1E9E6B5B00D1EA3B /* ToothBrush+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C68BEBC1E9E6B5B00D1EA3B /* ToothBrush+CoreDataProperties.m */; };
+		3C68BEC11E9F25F800D1EA3B /* CalendarDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C68BEC01E9F25F800D1EA3B /* CalendarDetailModel.m */; };
 		3C7B57341D6BF3F100D5E487 /* UserInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B57331D6BF3F100D5E487 /* UserInformationView.m */; };
 		3C7B57361D6C325600D5E487 /* ToolMacroes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B57351D6C325600D5E487 /* ToolMacroes.m */; };
 		3C877D831D37362B0068ADED /* ConnectedResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C877D821D37362B0068ADED /* ConnectedResultView.m */; };
@@ -209,8 +209,6 @@
 		3C37F4841D6BE0D500D879E0 /* UIImage+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Helper.m"; sourceTree = "<group>"; };
 		3C37F4881D6BE2EE00D879E0 /* CatogoriesImportHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatogoriesImportHelper.h; sourceTree = "<group>"; };
 		3C584C0B1D6B3EB3000E3BCE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3C5AFAE01E2352F000DC330B /* CalendarDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDetailModel.h; sourceTree = "<group>"; };
-		3C5AFAE11E2352F000DC330B /* CalendarDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDetailModel.m; sourceTree = "<group>"; };
 		3C62CE591D294CD700402FE1 /* CalendarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarModel.h; sourceTree = "<group>"; };
 		3C62CE5A1D294CD700402FE1 /* CalendarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarModel.m; sourceTree = "<group>"; };
 		3C62CE5F1D29FFE300402FE1 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
@@ -239,6 +237,8 @@
 		3C68BEBA1E9E6B5B00D1EA3B /* ToothBrush+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ToothBrush+CoreDataClass.m"; sourceTree = "<group>"; };
 		3C68BEBB1E9E6B5B00D1EA3B /* ToothBrush+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ToothBrush+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3C68BEBC1E9E6B5B00D1EA3B /* ToothBrush+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ToothBrush+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3C68BEBF1E9F25F800D1EA3B /* CalendarDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDetailModel.h; sourceTree = "<group>"; };
+		3C68BEC01E9F25F800D1EA3B /* CalendarDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDetailModel.m; sourceTree = "<group>"; };
 		3C7B57321D6BF3F100D5E487 /* UserInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformationView.h; sourceTree = "<group>"; };
 		3C7B57331D6BF3F100D5E487 /* UserInformationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformationView.m; sourceTree = "<group>"; };
 		3C7B57351D6C325600D5E487 /* ToolMacroes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolMacroes.m; sourceTree = "<group>"; };
@@ -623,15 +623,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		3C5AFAE31E2352F500DC330B /* Deprecated */ = {
-			isa = PBXGroup;
-			children = (
-				3C5AFAE01E2352F000DC330B /* CalendarDetailModel.h */,
-				3C5AFAE11E2352F000DC330B /* CalendarDetailModel.m */,
-			);
-			name = Deprecated;
-			sourceTree = "<group>";
-		};
 		3C6866A21DF51A400054705A /* ThemeAndColor */ = {
 			isa = PBXGroup;
 			children = (
@@ -669,6 +660,15 @@
 			name = Date;
 			sourceTree = "<group>";
 		};
+		3C68BEC21E9F262000D1EA3B /* abandoned */ = {
+			isa = PBXGroup;
+			children = (
+				3C68BEBF1E9F25F800D1EA3B /* CalendarDetailModel.h */,
+				3C68BEC01E9F25F800D1EA3B /* CalendarDetailModel.m */,
+			);
+			name = abandoned;
+			sourceTree = "<group>";
+		};
 		3C7B57311D6BF3C400D5E487 /* UserInformation */ = {
 			isa = PBXGroup;
 			children = (
@@ -700,7 +700,7 @@
 		3C98A21E1D24FEC000046BE8 /* CalendarModule */ = {
 			isa = PBXGroup;
 			children = (
-				3C5AFAE31E2352F500DC330B /* Deprecated */,
+				3C68BEC21E9F262000D1EA3B /* abandoned */,
 				3CA855F01D65586200320E4C /* CalendarDetailModalViewController.h */,
 				3CA855F11D65586200320E4C /* CalendarDetailModalViewController.m */,
 				3C98A2221D24FF0700046BE8 /* CalendarViewController.h */,
@@ -1408,7 +1408,6 @@
 				4576E3E21CCFD37800A1BA2B /* AwardManager.m in Sources */,
 				3C7B57361D6C325600D5E487 /* ToolMacroes.m in Sources */,
 				64CCBD941CD4909F003EFFAD /* AddRewardScrollView.m in Sources */,
-				3C5AFAE21E2352F000DC330B /* CalendarDetailModel.m in Sources */,
 				455AAA791D2410C000BE3F27 /* CalendarItemManager.m in Sources */,
 				3C37F4851D6BE0D500D879E0 /* UIImage+Helper.m in Sources */,
 				3CF4C0AD1E0D162800C5EBC7 /* UserDetailsViewController.m in Sources */,
@@ -1432,6 +1431,7 @@
 				645A019C1C37CEF700556395 /* VerifyPasswordView.m in Sources */,
 				3C7B57341D6BF3F100D5E487 /* UserInformationView.m in Sources */,
 				0421D3791B830D0B00BF6065 /* ItemState.m in Sources */,
+				3C68BEC11E9F25F800D1EA3B /* CalendarDetailModel.m in Sources */,
 				3CC8F5FD1D6F25B700E286E7 /* ThemeManager.m in Sources */,
 				3C877D831D37362B0068ADED /* ConnectedResultView.m in Sources */,
 				45F786631D0D010400E4F91D /* ToothBrushManagentMainViewController.m in Sources */,

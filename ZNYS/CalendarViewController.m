@@ -41,7 +41,7 @@
 @property (nonatomic, strong) UILabel *goalLabel;
 
 //model
-@property (nonatomic, strong) NSMutableArray<CalendarItem *> * calendarItemArray;
+@property (nonatomic, strong) NSSet<CalendarItem *> * calendarItemSet;
 @property (nonatomic, strong) NSDate *firstDate;
 
 //transformModel
@@ -183,53 +183,19 @@
     
     self.goalLabel.textColor = [UIColor colorWithThemedImageNamed:@"color/primary_dark"];
 }
-
-- (CalendarItem *)calendarItemFromArrayWithDate: (NSDate *)date {
-    if(!date) {
-        return nil;
-    }
-    NSTimeInterval timeOffset = 24*60*60;
-    for(CalendarItem * calendarItem in self.calendarItemArray) {
-        NSTimeInterval timeInterval = [[NSDate dateFromString:calendarItem.date] timeIntervalSinceDate:date];
-        if (timeInterval >= 0 && timeInterval < timeOffset) {
-            return calendarItem;
-        }
-    }
-    return nil;
-}
-
-//废弃
-//- (NSMutableArray<CalendarDetailModel *> *)transformCalendarItemToDetailModels:(CalendarItem *)calendarItem {
-//    NSMutableArray<CalendarDetailModel *> * calendarDetailModels = [[NSMutableArray alloc] init];
-//    
-//    if (!calendarItem) {
-//        return  calendarDetailModels;
+// 返回指定日期的 CalendarItem
+//- (CalendarItem *)calendarItemFromArrayWithDate: (NSDate *)date {
+//    if(!date) {
+//        return nil;
 //    }
-//    if ([calendarItem.morningStarNumber integerValue]> 0) {
-//        CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
-//        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"calendar/reward_dayTime"];
-//        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"calendar/star"];
-//        calendarDetailModel.reinforcerCount = [calendarItem.morningStarNumber integerValue];
-//        [calendarDetailModels addObject:calendarDetailModel];
+//    NSTimeInterval timeOffset = 24*60*60;
+//    for(CalendarItem * calendarItem in self.calendarItemSet) {
+//        NSTimeInterval timeInterval = [[NSDate dateFromString:calendarItem.date] timeIntervalSinceDate:date];
+//        if (timeInterval >= 0 && timeInterval < timeOffset) {
+//            return calendarItem;
+//        }
 //    }
-//    
-//    if ([calendarItem.eveningStarNumber integerValue] > 0) {
-//        CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
-//        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"calendar/reward_night"];
-//        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"calendar/star"];
-//        calendarDetailModel.reinforcerCount = [calendarItem.eveningStarNumber integerValue];
-//        [calendarDetailModels addObject:calendarDetailModel];
-//    }
-//    
-//    if ([calendarItem.connectStarNumber integerValue] > 0) {
-//        CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
-//        calendarDetailModel.pictureURL = [NSString stringWithFormat:@"calendar/reward_bluetooh"];
-//        calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"calendar/star"];
-//        calendarDetailModel.reinforcerCount = [calendarItem.connectStarNumber integerValue];
-//        [calendarDetailModels addObject:calendarDetailModel];
-//    }
-//    
-//    return calendarDetailModels;
+//    return nil;
 //}
 
 #pragma mark event action
@@ -344,64 +310,62 @@
     return _firstDate;
 }
 
-- (NSMutableArray<CalendarItem *> *)calendarItemArray{
-    if (!_calendarItemArray) {
-        _calendarItemArray = [[NSMutableArray alloc] init];
-        //NSMutableArray<CalendarItem *> *_calendarItemArray = [CalendarItemManager sharedInstance];
-        
+- (NSSet<CalendarItem *> *)calendarItemSet{
+    if (!_calendarItemSet) {
 #ifdef insertTestData
         /*------------------------插入假数据-----------------------------------*/
-        CalendarItem *calendarItem = [[CalendarItemManager sharedInstance] createCalendarItem];
-        calendarItem.connectStarNumber = @0;
-        calendarItem.morningStarNumber = @5;
-        calendarItem.eveningStarNumber = @4;
-        calendarItem.starNumber = @9;
-        calendarItem.userID = [[UserManager sharedInstance] currentUser].uuid;
-        calendarItem.date = @"2016-07-02";
-        [_calendarItemArray addObject:calendarItem];
+        CalendarItem *calendarItem = [CalendarItemManager  createCalendarItem];
+        calendarItem.connectStarNumber = 0;
+        calendarItem.morningStarNumber = 5;
+        calendarItem.eveningStarNumber = 4;
+        calendarItem.starNumber = 9;
+        calendarItem.date = @"2016年7月2日";
+        calendarItem.user = [[UserManager sharedInstance] currentUser];
         
-        CalendarItem *calendarItem2 = [[CalendarItemManager sharedInstance] createCalendarItem];
-        calendarItem2.connectStarNumber = @1;
-        calendarItem2.morningStarNumber = @8;
-        calendarItem2.eveningStarNumber = @2;
-        calendarItem2.starNumber = @11;
-        calendarItem2.userID = [[UserManager sharedInstance] currentUser].uuid;
-        calendarItem2.date = @"2016-06-20";
-        [_calendarItemArray addObject:calendarItem2];
+        CalendarItem *calendarItem2 = [CalendarItemManager createCalendarItem];
+        calendarItem2.connectStarNumber = 1;
+        calendarItem2.morningStarNumber = 8;
+        calendarItem2.eveningStarNumber = 2;
+        calendarItem2.starNumber = 11;
+        calendarItem2.date = @"2016年6月12日";
+        calendarItem2.user = [[UserManager sharedInstance] currentUser];
+
+        CalendarItem *calendarItem3 = [CalendarItemManager createCalendarItem];
+        calendarItem3.connectStarNumber = 1;
+        calendarItem3.morningStarNumber = 4;
+        calendarItem3.eveningStarNumber = 2;
+        calendarItem3.starNumber = 7;
+        calendarItem3.date = @"2016年7月1日";
+        calendarItem3.user = [[UserManager sharedInstance] currentUser];
         
-        CalendarItem *calendarItem3 = [[CalendarItemManager sharedInstance] createCalendarItem];
-        calendarItem3.connectStarNumber = @1;
-        calendarItem3.morningStarNumber = @4;
-        calendarItem3.eveningStarNumber = @2;
-        calendarItem3.starNumber = @7;
-        calendarItem3.userID = [[UserManager sharedInstance] currentUser].uuid;
-        calendarItem3.date = @"2016-07-01";
-        [_calendarItemArray addObject:calendarItem3];
+        CalendarItem *calendarItem4 = [CalendarItemManager createCalendarItem];
+        calendarItem4.connectStarNumber = 1;
+        calendarItem4.morningStarNumber = 4;
+        calendarItem4.eveningStarNumber = 2;
+        calendarItem4.starNumber = 7;
+        calendarItem4.date = @"2016年7月4日";
+        calendarItem4.user = [[UserManager sharedInstance] currentUser];
         
-        CalendarItem *calendarItem4 = [[CalendarItemManager sharedInstance] createCalendarItem];
-        calendarItem4.connectStarNumber = @1;
-        calendarItem4.morningStarNumber = @4;
-        calendarItem4.eveningStarNumber = @2;
-        calendarItem4.starNumber = @7;
-        calendarItem4.userID = [[UserManager sharedInstance] currentUser].uuid;;
-        calendarItem4.date = @"2016-07-04";
-        [_calendarItemArray addObject:calendarItem4];
+        CalendarItem *calendarItem5 = [CalendarItemManager createCalendarItem];
+        calendarItem5.connectStarNumber = 1;
+        calendarItem5.morningStarNumber = 4;
+        calendarItem5.eveningStarNumber = 2;
+        calendarItem5.starNumber = 7;
+        calendarItem5.date = @"2016年7月5日";
+        calendarItem5.user = [[UserManager sharedInstance] currentUser];
         
-        CalendarItem *calendarItem5 = [[CalendarItemManager sharedInstance] createCalendarItem];
-        calendarItem5.connectStarNumber = @1;
-        calendarItem5.morningStarNumber = @4;
-        calendarItem5.eveningStarNumber = @2;
-        calendarItem5.starNumber = @7;
-        calendarItem5.userID = [[UserManager sharedInstance] currentUser].uuid;
-        calendarItem5.date = @"2016-07-05";
+        [[CoreDataHelper sharedInstance] save];
         
-        [_calendarItemArray addObject:calendarItem5];
+        _calendarItemSet = [[UserManager sharedInstance] currentUser].calenderItems;
         
+//        for (CalendarItem *calendarItem in _calendarItemSet) {
+//            NSLog(@"--%d %d %d %d %@",calendarItem.starNumber, calendarItem.morningStarNumber, calendarItem.eveningStarNumber, calendarItem.connectStarNumber, calendarItem.date);
+//        }
 #else
-        _calendarItemArray = [[CalendarItemManager sharedInstance] getCalendarItemsByUserID:[[UserManager sharedInstance] currentUser].uuid];
+        _calendarItemSet = [[UserManager sharedInstance] currentUser].calenderItems;
 #endif
     }
-    return _calendarItemArray;
+    return _calendarItemSet;
 }
 
 - (NSMutableArray<CalendarModel *> *)calendarModelArray {
@@ -418,10 +382,10 @@
             model.tag = i;
             
             BOOL find = NO;
-            for(CalendarItem * calendarItem in self.calendarItemArray) {
+            for(CalendarItem * calendarItem in self.calendarItemSet) {
                 NSTimeInterval timeInterval = [[NSDate dateFromString:calendarItem.date] timeIntervalSinceDate:date];
                 if (timeInterval >= 0 && timeInterval < timeOffset) {
-                    model.starNum = [calendarItem.starNumber integerValue];
+                    model.starNum = calendarItem.starNumber;
                     model.validData = YES;
                     find = YES;
                     break;

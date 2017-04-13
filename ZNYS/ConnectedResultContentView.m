@@ -91,27 +91,27 @@
     if (!calendarItem) {
         return  calendarDetailModels;
     }
-    if ([calendarItem.morningStarNumber integerValue]> 0) {
+    if (calendarItem.morningStarNumber> 0) {
         CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
         calendarDetailModel.pictureURL = [NSString stringWithFormat:@"dayTimeReward"];
         calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"star"];
-        calendarDetailModel.reinforcerCount = [calendarItem.morningStarNumber integerValue];
+        calendarDetailModel.reinforcerCount = calendarItem.morningStarNumber;
         [calendarDetailModels addObject:calendarDetailModel];
     }
     
-    if ([calendarItem.eveningStarNumber integerValue] > 0) {
+    if (calendarItem.eveningStarNumber > 0) {
         CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
         calendarDetailModel.pictureURL = [NSString stringWithFormat:@"nightReward"];
         calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"star"];
-        calendarDetailModel.reinforcerCount = [calendarItem.eveningStarNumber integerValue];
+        calendarDetailModel.reinforcerCount = calendarItem.eveningStarNumber;
         [calendarDetailModels addObject:calendarDetailModel];
     }
     
-    if ([calendarItem.connectStarNumber integerValue] > 0) {
+    if (calendarItem.connectStarNumber > 0) {
         CalendarDetailModel * calendarDetailModel = [[CalendarDetailModel alloc]init];
         calendarDetailModel.pictureURL = [NSString stringWithFormat:@"bluetoothReward"];
         calendarDetailModel.reinforcerPictureURL = [NSString stringWithFormat:@"star"];
-        calendarDetailModel.reinforcerCount = [calendarItem.connectStarNumber integerValue];
+        calendarDetailModel.reinforcerCount = calendarItem.connectStarNumber;
         [calendarDetailModels addObject:calendarDetailModel];
     }
     

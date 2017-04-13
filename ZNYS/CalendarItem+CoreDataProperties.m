@@ -2,7 +2,7 @@
 //  CalendarItem+CoreDataProperties.m
 //  ZNYS
 //
-//  Created by yu243e on 2017/4/12.
+//  Created by yu243e on 2017/4/13.
 //  Copyright © 2017年 Woodseen. All rights reserved.
 //
 
@@ -14,16 +14,11 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"CalendarItem"];
 }
 
-@dynamic awardCount;
 @dynamic connectStarNumber;
 @dynamic date;
 @dynamic eveningStarNumber;
-@dynamic firstAwardID;
-@dynamic id;
-@dynamic level;
 @dynamic morningStarNumber;
 @dynamic starNumber;
-@dynamic userID;
-@dynamic belongToUser;
+@dynamic user;
 
 @end

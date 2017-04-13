@@ -42,17 +42,12 @@
         <relationship name="includeAreaStatistics" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="AreaStatistic" inverseName="beIncludedByBrushingStatistics" inverseEntity="AreaStatistic" syncable="YES"/>
     </entity>
     <entity name="CalendarItem" representedClassName="CalendarItem" syncable="YES">
-        <attribute name="awardCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="connectStarNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="connectStarNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="eveningStarNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="firstAwardID" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="level" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="morningStarNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="starNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="userID" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="belongToUser" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="User" inverseName="calenderItems" inverseEntity="User" syncable="YES"/>
+        <attribute name="eveningStarNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="morningStarNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="starNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="calenderItems" inverseEntity="User" syncable="YES"/>
     </entity>
     <entity name="ToothBrush" representedClassName="ToothBrush" syncable="YES">
         <attribute name="bindTime" optional="YES" attributeType="String" syncable="YES"/>
@@ -76,14 +71,14 @@
         <attribute name="tokensOwned" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="awards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Award" inverseName="bePossessedByUser" inverseEntity="Award" syncable="YES"/>
-        <relationship name="calenderItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CalendarItem" inverseName="belongToUser" inverseEntity="CalendarItem" syncable="YES"/>
+        <relationship name="calenderItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CalendarItem" inverseName="user" inverseEntity="CalendarItem" syncable="YES"/>
         <relationship name="toothBrushes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ToothBrush" inverseName="bePossessedByUser" inverseEntity="ToothBrush" syncable="YES"/>
     </entity>
     <elements>
         <element name="AreaStatistic" positionX="324" positionY="117" width="128" height="180"/>
         <element name="Award" positionX="160" positionY="522" width="128" height="268"/>
         <element name="BrushingStatistic" positionX="277" positionY="-207" width="128" height="210"/>
-        <element name="CalendarItem" positionX="-63" positionY="-18" width="128" height="210"/>
+        <element name="CalendarItem" positionX="-63" positionY="-18" width="128" height="135"/>
         <element name="ToothBrush" positionX="-216" positionY="216" width="128" height="178"/>
         <element name="User" positionX="-99" positionY="396" width="128" height="223"/>
     </elements>
