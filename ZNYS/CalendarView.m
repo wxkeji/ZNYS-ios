@@ -149,7 +149,7 @@ static const NSInteger kButtonBaseTag = 10000;
     //加入文字
     UILabel *starNumLabel = [[UILabel alloc]init];
     //WithFrame:CGRectMake(0, 0, width, height)];不能在这里设置 frame
-    [starNumLabel setText:[NSString stringWithFormat:@"%ld",(long)model.starNum]];
+    [starNumLabel setText:[NSString stringWithFormat:@"%ld",(long)model.starNumber]];
     [starNumLabel setTextColor:[UIColor grayColor]];
     [starNumLabel setTextAlignment:NSTextAlignmentCenter];
     starNumLabel.adjustsFontSizeToFitWidth = YES;

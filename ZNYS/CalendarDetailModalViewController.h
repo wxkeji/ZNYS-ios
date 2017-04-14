@@ -6,6 +6,9 @@
 //  Copyright © 2016年 Woodseen. All rights reserved.
 //
 #import "ZNYSBaseController.h"
+#import "CalendarModel.h"
+
 @interface CalendarDetailModalViewController : ZNYSBaseController
 
+@property (nonatomic, strong) CalendarModel *calendarModel;
 @end

@@ -74,16 +74,11 @@
     [self.dismissButton addTarget:self action:@selector(dismissButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     WS(weakSelf, self);
     self.calendarView.buttonClickBlock = ^(NSInteger tag){
-        //主题测试代码
-//        if ([[ThemeManager sharedManager].currentThemeName isEqualToString:@"girl"]) {
-//            [[ThemeManager sharedManager] configureTheme:ZNYSThemeStyleBlue];
-//        } else {
-//            [[ThemeManager sharedManager] configureTheme:ZNYSThemeStylePink];
-//        }
         [weakSelf configureTheme];
         
         if (weakSelf.calendarModelArray[tag].validData == YES) {
             CalendarDetailModalViewController * modalViewController = [[CalendarDetailModalViewController alloc] init];
+            modalViewController.calendarModel = weakSelf.calendarModelArray[tag];
             
             //因为没有被强持有，必须用NS_VALID_UNTIL_END_OF_SCOPE 保持其存在
             //参考 APPLE Custom View Controller Presentations and Transitions
@@ -183,20 +178,6 @@
     
     self.goalLabel.textColor = [UIColor colorWithThemedImageNamed:@"color/primary_dark"];
 }
-// 返回指定日期的 CalendarItem
-//- (CalendarItem *)calendarItemFromArrayWithDate: (NSDate *)date {
-//    if(!date) {
-//        return nil;
-//    }
-//    NSTimeInterval timeOffset = 24*60*60;
-//    for(CalendarItem * calendarItem in self.calendarItemSet) {
-//        NSTimeInterval timeInterval = [[NSDate dateFromString:calendarItem.date] timeIntervalSinceDate:date];
-//        if (timeInterval >= 0 && timeInterval < timeOffset) {
-//            return calendarItem;
-//        }
-//    }
-//    return nil;
-//}
 
 #pragma mark event action
 - (void)dismissButtonClicked{
@@ -357,10 +338,6 @@
         [[CoreDataHelper sharedInstance] save];
         
         _calendarItemSet = [[UserManager sharedInstance] currentUser].calenderItems;
-        
-//        for (CalendarItem *calendarItem in _calendarItemSet) {
-//            NSLog(@"--%d %d %d %d %@",calendarItem.starNumber, calendarItem.morningStarNumber, calendarItem.eveningStarNumber, calendarItem.connectStarNumber, calendarItem.date);
-//        }
 #else
         _calendarItemSet = [[UserManager sharedInstance] currentUser].calenderItems;
 #endif
@@ -385,7 +362,10 @@
             for(CalendarItem * calendarItem in self.calendarItemSet) {
                 NSTimeInterval timeInterval = [[NSDate dateFromString:calendarItem.date] timeIntervalSinceDate:date];
                 if (timeInterval >= 0 && timeInterval < timeOffset) {
-                    model.starNum = calendarItem.starNumber;
+                    model.starNumber = calendarItem.starNumber;
+                    model.morningStarNumber = calendarItem.morningStarNumber;
+                    model.eveningStarNumber = calendarItem.eveningStarNumber;
+                    model.connectStarNumber = calendarItem.connectStarNumber;
                     model.validData = YES;
                     find = YES;
                     break;
@@ -393,7 +373,7 @@
             }
             if (find == NO) {
                 CalendarModel *model = [[CalendarModel alloc]init];
-                model.starNum = 0;
+                model.starNumber = 0;
                 model.validData = NO;
             }
             if ([[NSDate nextDay:[NSDate date]] timeIntervalSinceDate:date] <= 0) {
