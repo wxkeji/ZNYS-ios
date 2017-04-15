@@ -71,7 +71,6 @@
 		455B1B2E1D376B44002D85E3 /* ToothBrushManagentFindView.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B2D1D376B44002D85E3 /* ToothBrushManagentFindView.m */; };
 		455B1B311D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B301D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m */; };
 		455B1B341D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B331D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.m */; };
-		455B1B371D38087F002D85E3 /* libBLELib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 455B1B361D38087F002D85E3 /* libBLELib.a */; };
 		4576E3E21CCFD37800A1BA2B /* AwardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4576E3E11CCFD37800A1BA2B /* AwardManager.m */; };
 		458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458093901C21448000CB9BF9 /* CoreData.framework */; };
 		458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 458093941C21453200CB9BF9 /* CoreDataHelper.m */; };
@@ -81,6 +80,7 @@
 		4580946C1C23DE6400CB9BF9 /* ConnectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4580946B1C23DE6400CB9BF9 /* ConnectedViewController.m */; };
 		45839C321CBF6A4C000E878D /* CustomProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45839C301CBF6A4C000E878D /* CustomProgressBar.m */; };
 		45839C331CBF6A4C000E878D /* ProgressRectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 45839C311CBF6A4C000E878D /* ProgressRectangle.png */; };
+		45A843601EA1225A00E81B75 /* libBLEConnectModule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A8435D1EA1224B00E81B75 /* libBLEConnectModule.a */; };
 		45DC5E5F1C421B80000D6A7A /* 进度0.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E541C421B80000D6A7A /* 进度0.png */; };
 		45DC5E601C421B80000D6A7A /* 进度10.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E551C421B80000D6A7A /* 进度10.png */; };
 		45DC5E611C421B80000D6A7A /* 进度20.png in Resources */ = {isa = PBXBuildFile; fileRef = 45DC5E561C421B80000D6A7A /* 进度20.png */; };
@@ -162,6 +162,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0487D75F1B74548F00756EF8;
 			remoteInfo = ZNYS;
+		};
+		45A8435C1EA1224B00E81B75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45A843581EA1224B00E81B75 /* BLEConnectModule.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45A843161EA11EAC00E81B75;
+			remoteInfo = BLEConnectModule;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -288,8 +295,6 @@
 		455B1B301D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindToothBrushCollectionViewDatasource.m; sourceTree = "<group>"; };
 		455B1B321D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindNewToothBrushCollectionviewDatasource.h; sourceTree = "<group>"; };
 		455B1B331D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindNewToothBrushCollectionviewDatasource.m; sourceTree = "<group>"; };
-		455B1B361D38087F002D85E3 /* libBLELib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBLELib.a; sourceTree = "<group>"; };
-		455B1B381D38088A002D85E3 /* BLELib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLELib.h; sourceTree = "<group>"; };
 		455B1B391D38088A002D85E3 /* BluetoothServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BluetoothServer.h; sourceTree = "<group>"; };
 		455B1B3A1D38088A002D85E3 /* SensorDataHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SensorDataHandler.h; sourceTree = "<group>"; };
 		4576E3E01CCFD37800A1BA2B /* AwardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwardManager.h; sourceTree = "<group>"; };
@@ -308,6 +313,7 @@
 		45839C2F1CBF6A4C000E878D /* CustomProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomProgressBar.h; sourceTree = "<group>"; };
 		45839C301CBF6A4C000E878D /* CustomProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomProgressBar.m; sourceTree = "<group>"; };
 		45839C311CBF6A4C000E878D /* ProgressRectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgressRectangle.png; sourceTree = "<group>"; };
+		45A843581EA1224B00E81B75 /* BLEConnectModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BLEConnectModule.xcodeproj; path = BLEConnectModule/BLEConnectModule.xcodeproj; sourceTree = SOURCE_ROOT; };
 		45DC5E541C421B80000D6A7A /* 进度0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度0.png"; sourceTree = "<group>"; };
 		45DC5E551C421B80000D6A7A /* 进度10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度10.png"; sourceTree = "<group>"; };
 		45DC5E561C421B80000D6A7A /* 进度20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度20.png"; sourceTree = "<group>"; };
@@ -434,10 +440,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45A843601EA1225A00E81B75 /* libBLEConnectModule.a in Frameworks */,
 				6488AE091CF53D3800AE062D /* CoreAudio.framework in Frameworks */,
 				6488AE071CF53D2D00AE062D /* AVFoundation.framework in Frameworks */,
 				458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */,
-				455B1B371D38087F002D85E3 /* libBLELib.a in Frameworks */,
 				F65C251D041073CA2D1B1BE1 /* libPods-ZNYS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -738,10 +744,9 @@
 		455B1B351D38086E002D85E3 /* BluetoothModule */ = {
 			isa = PBXGroup;
 			children = (
-				455B1B381D38088A002D85E3 /* BLELib.h */,
+				45A843581EA1224B00E81B75 /* BLEConnectModule.xcodeproj */,
 				455B1B391D38088A002D85E3 /* BluetoothServer.h */,
 				455B1B3A1D38088A002D85E3 /* SensorDataHandler.h */,
-				455B1B361D38087F002D85E3 /* libBLELib.a */,
 			);
 			name = BluetoothModule;
 			sourceTree = "<group>";
@@ -843,6 +848,14 @@
 				3C68BEA21E9E6A3900D1EA3B /* CalendarItem+CoreDataProperties.m */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		45A843591EA1224B00E81B75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45A8435D1EA1224B00E81B75 /* libBLEConnectModule.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		45EB69C61C40B2B100160457 /* ToothBrushConnecting */ = {
@@ -1180,6 +1193,7 @@
 				0487D75E1B74548F00756EF8 /* Resources */,
 				C6CF789D48CA643A4251B0F0 /* [CP] Copy Pods Resources */,
 				A0D38C16E211DB89498B7434 /* [CP] Embed Pods Frameworks */,
+				02FAFE5C0877EABA323E1363 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1239,6 +1253,12 @@
 			mainGroup = 0487D7571B74548E00756EF8;
 			productRefGroup = 0487D7611B74548F00756EF8 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 45A843591EA1224B00E81B75 /* Products */;
+					ProjectRef = 45A843581EA1224B00E81B75 /* BLEConnectModule.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				0487D75F1B74548F00756EF8 /* ZNYS */,
@@ -1246,6 +1266,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		45A8435D1EA1224B00E81B75 /* libBLEConnectModule.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBLEConnectModule.a;
+			remoteRef = 45A8435C1EA1224B00E81B75 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0487D75E1B74548F00756EF8 /* Resources */ = {
@@ -1299,6 +1329,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		02FAFE5C0877EABA323E1363 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZNYS/Pods-ZNYS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7492CCC6575E8E324CD396BF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

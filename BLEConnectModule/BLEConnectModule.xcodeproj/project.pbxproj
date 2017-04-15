@@ -1,0 +1,355 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45A8431B1EA11EAC00E81B75 /* BLEConnectModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A8431A1EA11EAC00E81B75 /* BLEConnectModule.m */; };
+		45A8431C1EA11EAC00E81B75 /* BLEConnectModule.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 45A843191EA11EAC00E81B75 /* BLEConnectModule.h */; };
+		45A843491EA11F8D00E81B75 /* AccelerationPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A843311EA11F8D00E81B75 /* AccelerationPackage.m */; };
+		45A8434A1EA11F8D00E81B75 /* AnalysisResultItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A843331EA11F8D00E81B75 /* AnalysisResultItem.m */; };
+		45A8434B1EA11F8D00E81B75 /* AnalysisResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A843351EA11F8D00E81B75 /* AnalysisResultSet.m */; };
+		45A8434C1EA11F8D00E81B75 /* Area.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A843371EA11F8D00E81B75 /* Area.m */; };
+		45A8434D1EA11F8D00E81B75 /* AreaGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A843391EA11F8D00E81B75 /* AreaGroup.m */; };
+		45A8434E1EA11F8D00E81B75 /* QuaternionPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A8433B1EA11F8D00E81B75 /* QuaternionPackage.m */; };
+		45A8434F1EA11F8D00E81B75 /* SensorData.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A8433D1EA11F8D00E81B75 /* SensorData.m */; };
+		45A843501EA11F8D00E81B75 /* BLELib.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A843401EA11F8D00E81B75 /* BLELib.m */; };
+		45A843511EA11F8D00E81B75 /* BluetoothServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A843421EA11F8D00E81B75 /* BluetoothServer.m */; };
+		45A843521EA11F8D00E81B75 /* DataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A843441EA11F8D00E81B75 /* DataFactory.m */; };
+		45A843531EA11F8D00E81B75 /* DataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A843461EA11F8D00E81B75 /* DataParser.m */; };
+		45A843541EA11F8D00E81B75 /* SensorDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A843481EA11F8D00E81B75 /* SensorDataHandler.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		45A843141EA11EAC00E81B75 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				45A8431C1EA11EAC00E81B75 /* BLEConnectModule.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		45A843161EA11EAC00E81B75 /* libBLEConnectModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBLEConnectModule.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		45A843191EA11EAC00E81B75 /* BLEConnectModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLEConnectModule.h; sourceTree = "<group>"; };
+		45A8431A1EA11EAC00E81B75 /* BLEConnectModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEConnectModule.m; sourceTree = "<group>"; };
+		45A843301EA11F8D00E81B75 /* AccelerationPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccelerationPackage.h; sourceTree = "<group>"; };
+		45A843311EA11F8D00E81B75 /* AccelerationPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccelerationPackage.m; sourceTree = "<group>"; };
+		45A843321EA11F8D00E81B75 /* AnalysisResultItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisResultItem.h; sourceTree = "<group>"; };
+		45A843331EA11F8D00E81B75 /* AnalysisResultItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisResultItem.m; sourceTree = "<group>"; };
+		45A843341EA11F8D00E81B75 /* AnalysisResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalysisResultSet.h; sourceTree = "<group>"; };
+		45A843351EA11F8D00E81B75 /* AnalysisResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalysisResultSet.m; sourceTree = "<group>"; };
+		45A843361EA11F8D00E81B75 /* Area.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Area.h; sourceTree = "<group>"; };
+		45A843371EA11F8D00E81B75 /* Area.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Area.m; sourceTree = "<group>"; };
+		45A843381EA11F8D00E81B75 /* AreaGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaGroup.h; sourceTree = "<group>"; };
+		45A843391EA11F8D00E81B75 /* AreaGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaGroup.m; sourceTree = "<group>"; };
+		45A8433A1EA11F8D00E81B75 /* QuaternionPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuaternionPackage.h; sourceTree = "<group>"; };
+		45A8433B1EA11F8D00E81B75 /* QuaternionPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuaternionPackage.m; sourceTree = "<group>"; };
+		45A8433C1EA11F8D00E81B75 /* SensorData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorData.h; sourceTree = "<group>"; };
+		45A8433D1EA11F8D00E81B75 /* SensorData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorData.m; sourceTree = "<group>"; };
+		45A8433F1EA11F8D00E81B75 /* BLELib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLELib.h; sourceTree = "<group>"; };
+		45A843401EA11F8D00E81B75 /* BLELib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLELib.m; sourceTree = "<group>"; };
+		45A843411EA11F8D00E81B75 /* BluetoothServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothServer.h; sourceTree = "<group>"; };
+		45A843421EA11F8D00E81B75 /* BluetoothServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothServer.m; sourceTree = "<group>"; };
+		45A843431EA11F8D00E81B75 /* DataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFactory.h; sourceTree = "<group>"; };
+		45A843441EA11F8D00E81B75 /* DataFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFactory.m; sourceTree = "<group>"; };
+		45A843451EA11F8D00E81B75 /* DataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataParser.h; sourceTree = "<group>"; };
+		45A843461EA11F8D00E81B75 /* DataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataParser.m; sourceTree = "<group>"; };
+		45A843471EA11F8D00E81B75 /* SensorDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorDataHandler.h; sourceTree = "<group>"; };
+		45A843481EA11F8D00E81B75 /* SensorDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorDataHandler.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45A843131EA11EAC00E81B75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45A8430D1EA11EAC00E81B75 = {
+			isa = PBXGroup;
+			children = (
+				45A8432F1EA11F8D00E81B75 /* Entities */,
+				45A8433E1EA11F8D00E81B75 /* Services */,
+				45A843181EA11EAC00E81B75 /* BLEConnectModule */,
+				45A843171EA11EAC00E81B75 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		45A843171EA11EAC00E81B75 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45A843161EA11EAC00E81B75 /* libBLEConnectModule.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45A843181EA11EAC00E81B75 /* BLEConnectModule */ = {
+			isa = PBXGroup;
+			children = (
+				45A843191EA11EAC00E81B75 /* BLEConnectModule.h */,
+				45A8431A1EA11EAC00E81B75 /* BLEConnectModule.m */,
+			);
+			path = BLEConnectModule;
+			sourceTree = "<group>";
+		};
+		45A8432F1EA11F8D00E81B75 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				45A843301EA11F8D00E81B75 /* AccelerationPackage.h */,
+				45A843311EA11F8D00E81B75 /* AccelerationPackage.m */,
+				45A843321EA11F8D00E81B75 /* AnalysisResultItem.h */,
+				45A843331EA11F8D00E81B75 /* AnalysisResultItem.m */,
+				45A843341EA11F8D00E81B75 /* AnalysisResultSet.h */,
+				45A843351EA11F8D00E81B75 /* AnalysisResultSet.m */,
+				45A843361EA11F8D00E81B75 /* Area.h */,
+				45A843371EA11F8D00E81B75 /* Area.m */,
+				45A843381EA11F8D00E81B75 /* AreaGroup.h */,
+				45A843391EA11F8D00E81B75 /* AreaGroup.m */,
+				45A8433A1EA11F8D00E81B75 /* QuaternionPackage.h */,
+				45A8433B1EA11F8D00E81B75 /* QuaternionPackage.m */,
+				45A8433C1EA11F8D00E81B75 /* SensorData.h */,
+				45A8433D1EA11F8D00E81B75 /* SensorData.m */,
+			);
+			name = Entities;
+			path = BLEConnectModule/Entities;
+			sourceTree = "<group>";
+		};
+		45A8433E1EA11F8D00E81B75 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				45A8433F1EA11F8D00E81B75 /* BLELib.h */,
+				45A843401EA11F8D00E81B75 /* BLELib.m */,
+				45A843411EA11F8D00E81B75 /* BluetoothServer.h */,
+				45A843421EA11F8D00E81B75 /* BluetoothServer.m */,
+				45A843431EA11F8D00E81B75 /* DataFactory.h */,
+				45A843441EA11F8D00E81B75 /* DataFactory.m */,
+				45A843451EA11F8D00E81B75 /* DataParser.h */,
+				45A843461EA11F8D00E81B75 /* DataParser.m */,
+				45A843471EA11F8D00E81B75 /* SensorDataHandler.h */,
+				45A843481EA11F8D00E81B75 /* SensorDataHandler.m */,
+			);
+			name = Services;
+			path = BLEConnectModule/Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		45A843151EA11EAC00E81B75 /* BLEConnectModule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45A8431F1EA11EAC00E81B75 /* Build configuration list for PBXNativeTarget "BLEConnectModule" */;
+			buildPhases = (
+				45A843121EA11EAC00E81B75 /* Sources */,
+				45A843131EA11EAC00E81B75 /* Frameworks */,
+				45A843141EA11EAC00E81B75 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BLEConnectModule;
+			productName = BLEConnectModule;
+			productReference = 45A843161EA11EAC00E81B75 /* libBLEConnectModule.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45A8430E1EA11EAC00E81B75 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "张恒铭";
+				TargetAttributes = {
+					45A843151EA11EAC00E81B75 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 45A843111EA11EAC00E81B75 /* Build configuration list for PBXProject "BLEConnectModule" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 45A8430D1EA11EAC00E81B75;
+			productRefGroup = 45A843171EA11EAC00E81B75 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45A843151EA11EAC00E81B75 /* BLEConnectModule */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45A843121EA11EAC00E81B75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45A8434C1EA11F8D00E81B75 /* Area.m in Sources */,
+				45A843511EA11F8D00E81B75 /* BluetoothServer.m in Sources */,
+				45A843521EA11F8D00E81B75 /* DataFactory.m in Sources */,
+				45A843491EA11F8D00E81B75 /* AccelerationPackage.m in Sources */,
+				45A8434B1EA11F8D00E81B75 /* AnalysisResultSet.m in Sources */,
+				45A843501EA11F8D00E81B75 /* BLELib.m in Sources */,
+				45A8434F1EA11F8D00E81B75 /* SensorData.m in Sources */,
+				45A8431B1EA11EAC00E81B75 /* BLEConnectModule.m in Sources */,
+				45A843541EA11F8D00E81B75 /* SensorDataHandler.m in Sources */,
+				45A8434D1EA11F8D00E81B75 /* AreaGroup.m in Sources */,
+				45A8434E1EA11F8D00E81B75 /* QuaternionPackage.m in Sources */,
+				45A843531EA11F8D00E81B75 /* DataParser.m in Sources */,
+				45A8434A1EA11F8D00E81B75 /* AnalysisResultItem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		45A8431D1EA11EAC00E81B75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
+			};
+			name = Debug;
+		};
+		45A8431E1EA11EAC00E81B75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
+			};
+			name = Release;
+		};
+		45A843201EA11EAC00E81B75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		45A843211EA11EAC00E81B75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45A843111EA11EAC00E81B75 /* Build configuration list for PBXProject "BLEConnectModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45A8431D1EA11EAC00E81B75 /* Debug */,
+				45A8431E1EA11EAC00E81B75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45A8431F1EA11EAC00E81B75 /* Build configuration list for PBXNativeTarget "BLEConnectModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45A843201EA11EAC00E81B75 /* Debug */,
+				45A843211EA11EAC00E81B75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 45A8430E1EA11EAC00E81B75 /* Project object */;
+}
