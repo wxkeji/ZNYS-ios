@@ -63,6 +63,7 @@
 		3CCCAED31DA39BE600D9A525 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F3962811C3A12C100C78F84 /* Cabinet.storyboard */; };
 		3CF4C0A71E0D14F600C5EBC7 /* ModalPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF4C0A61E0D14F600C5EBC7 /* ModalPresentationController.m */; };
 		3CF4C0AD1E0D162800C5EBC7 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF4C0AC1E0D162800C5EBC7 /* UserDetailsViewController.m */; };
+		453FF57E1EA3D4BF00E2F80F /* AreaStatisticManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 453FF57D1EA3D4BF00E2F80F /* AreaStatisticManager.m */; };
 		454112741C95BE9600BE4DE9 /* ZNYSprogressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */; };
 		455AAA791D2410C000BE3F27 /* CalendarItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 455AAA781D2410C000BE3F27 /* CalendarItemManager.m */; };
 		455B1B221D361DD0002D85E3 /* ToothbrushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B211D361DD0002D85E3 /* ToothbrushManager.m */; };
@@ -169,6 +170,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 45A843161EA11EAC00E81B75;
 			remoteInfo = BLEConnectModule;
+		};
+		45FB0F4D1EA251210050DA6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45A843581EA1224B00E81B75 /* BLEConnectModule.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45FB0ECA1EA24F6D0050DA6B;
+			remoteInfo = TestTarget;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -279,6 +287,8 @@
 		3CF4C0A61E0D14F600C5EBC7 /* ModalPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalPresentationController.m; sourceTree = "<group>"; };
 		3CF4C0AB1E0D162800C5EBC7 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
 		3CF4C0AC1E0D162800C5EBC7 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
+		453FF57C1EA3D4BF00E2F80F /* AreaStatisticManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaStatisticManager.h; sourceTree = "<group>"; };
+		453FF57D1EA3D4BF00E2F80F /* AreaStatisticManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaStatisticManager.m; sourceTree = "<group>"; };
 		454112721C95BE9600BE4DE9 /* ZNYSprogressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNYSprogressBar.h; sourceTree = "<group>"; };
 		454112731C95BE9600BE4DE9 /* ZNYSprogressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNYSprogressBar.m; sourceTree = "<group>"; };
 		455AAA771D2410C000BE3F27 /* CalendarItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarItemManager.h; sourceTree = "<group>"; };
@@ -744,6 +754,7 @@
 		455B1B351D38086E002D85E3 /* BluetoothModule */ = {
 			isa = PBXGroup;
 			children = (
+				45FB0F4F1EA366090050DA6B /* DataBase */,
 				45A843581EA1224B00E81B75 /* BLEConnectModule.xcodeproj */,
 				455B1B391D38088A002D85E3 /* BluetoothServer.h */,
 				455B1B3A1D38088A002D85E3 /* SensorDataHandler.h */,
@@ -854,6 +865,7 @@
 			isa = PBXGroup;
 			children = (
 				45A8435D1EA1224B00E81B75 /* libBLEConnectModule.a */,
+				45FB0F4E1EA251210050DA6B /* TestTarget */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -927,6 +939,15 @@
 				45F786621D0D010400E4F91D /* ToothBrushManagentMainViewController.m */,
 			);
 			name = controller;
+			sourceTree = "<group>";
+		};
+		45FB0F4F1EA366090050DA6B /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				453FF57C1EA3D4BF00E2F80F /* AreaStatisticManager.h */,
+				453FF57D1EA3D4BF00E2F80F /* AreaStatisticManager.m */,
+			);
+			name = DataBase;
 			sourceTree = "<group>";
 		};
 		63353D4AB29EDC413AD1EB41 /* Frameworks */ = {
@@ -1275,6 +1296,13 @@
 			remoteRef = 45A8435C1EA1224B00E81B75 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		45FB0F4E1EA251210050DA6B /* TestTarget */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = TestTarget;
+			remoteRef = 45FB0F4D1EA251210050DA6B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -1500,6 +1528,7 @@
 				647E05C81C3A6C1900ADB810 /* SettingHeaderView.m in Sources */,
 				647E05C51C3A6B4B00ADB810 /* SettingViewController.m in Sources */,
 				6412FCA11C477F0C00DF8FC5 /* RewardItemView.m in Sources */,
+				453FF57E1EA3D4BF00E2F80F /* AreaStatisticManager.m in Sources */,
 				64337DC81C3B8DD400C9D811 /* ThumbView.m in Sources */,
 				3C68BEA81E9E6A3900D1EA3B /* AreaStatistic+CoreDataProperties.m in Sources */,
 			);

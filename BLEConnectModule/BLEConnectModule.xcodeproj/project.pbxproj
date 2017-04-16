@@ -21,6 +21,7 @@
 		45A843521EA11F8D00E81B75 /* DataFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A843441EA11F8D00E81B75 /* DataFactory.m */; };
 		45A843531EA11F8D00E81B75 /* DataParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A843461EA11F8D00E81B75 /* DataParser.m */; };
 		45A843541EA11F8D00E81B75 /* SensorDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A843481EA11F8D00E81B75 /* SensorDataHandler.m */; };
+		45FB0ECD1EA24F6D0050DA6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FB0ECC1EA24F6D0050DA6B /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +34,15 @@
 				45A8431C1EA11EAC00E81B75 /* BLEConnectModule.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45FB0EC81EA24F6D0050DA6B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -64,10 +74,19 @@
 		45A843461EA11F8D00E81B75 /* DataParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataParser.m; sourceTree = "<group>"; };
 		45A843471EA11F8D00E81B75 /* SensorDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorDataHandler.h; sourceTree = "<group>"; };
 		45A843481EA11F8D00E81B75 /* SensorDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorDataHandler.m; sourceTree = "<group>"; };
+		45FB0ECA1EA24F6D0050DA6B /* TestTarget */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TestTarget; sourceTree = BUILT_PRODUCTS_DIR; };
+		45FB0ECC1EA24F6D0050DA6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		45A843131EA11EAC00E81B75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45FB0EC71EA24F6D0050DA6B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -83,6 +102,7 @@
 				45A8432F1EA11F8D00E81B75 /* Entities */,
 				45A8433E1EA11F8D00E81B75 /* Services */,
 				45A843181EA11EAC00E81B75 /* BLEConnectModule */,
+				45FB0ECB1EA24F6D0050DA6B /* TestTarget */,
 				45A843171EA11EAC00E81B75 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				45A843161EA11EAC00E81B75 /* libBLEConnectModule.a */,
+				45FB0ECA1EA24F6D0050DA6B /* TestTarget */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +165,14 @@
 			path = BLEConnectModule/Services;
 			sourceTree = "<group>";
 		};
+		45FB0ECB1EA24F6D0050DA6B /* TestTarget */ = {
+			isa = PBXGroup;
+			children = (
+				45FB0ECC1EA24F6D0050DA6B /* main.m */,
+			);
+			path = TestTarget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -164,6 +193,23 @@
 			productReference = 45A843161EA11EAC00E81B75 /* libBLEConnectModule.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		45FB0EC91EA24F6D0050DA6B /* TestTarget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45FB0ED01EA24F6D0050DA6B /* Build configuration list for PBXNativeTarget "TestTarget" */;
+			buildPhases = (
+				45FB0EC61EA24F6D0050DA6B /* Sources */,
+				45FB0EC71EA24F6D0050DA6B /* Frameworks */,
+				45FB0EC81EA24F6D0050DA6B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestTarget;
+			productName = TestTarget;
+			productReference = 45FB0ECA1EA24F6D0050DA6B /* TestTarget */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -174,6 +220,10 @@
 				ORGANIZATIONNAME = "张恒铭";
 				TargetAttributes = {
 					45A843151EA11EAC00E81B75 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					45FB0EC91EA24F6D0050DA6B = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
@@ -192,6 +242,7 @@
 			projectRoot = "";
 			targets = (
 				45A843151EA11EAC00E81B75 /* BLEConnectModule */,
+				45FB0EC91EA24F6D0050DA6B /* TestTarget */,
 			);
 		};
 /* End PBXProject section */
@@ -214,6 +265,14 @@
 				45A8434E1EA11F8D00E81B75 /* QuaternionPackage.m in Sources */,
 				45A843531EA11F8D00E81B75 /* DataParser.m in Sources */,
 				45A8434A1EA11F8D00E81B75 /* AnalysisResultItem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45FB0EC61EA24F6D0050DA6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45FB0ECD1EA24F6D0050DA6B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +387,26 @@
 			};
 			name = Release;
 		};
+		45FB0ECE1EA24F6D0050DA6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		45FB0ECF1EA24F6D0050DA6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -348,6 +427,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		45FB0ED01EA24F6D0050DA6B /* Build configuration list for PBXNativeTarget "TestTarget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45FB0ECE1EA24F6D0050DA6B /* Debug */,
+				45FB0ECF1EA24F6D0050DA6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
