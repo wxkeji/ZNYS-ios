@@ -10,6 +10,7 @@
 #import "User+CoreDataProperties.h"
 #import "CoreDataHelper.h"
 #import "NSDate+Helper.h"
+#import <UIKit/UIKit.h>
 
 @interface UserManager()
 @property (nonatomic, strong, readwrite) User *user;
@@ -38,11 +39,15 @@
     return level;
 }
 
-//todo +++ 返回默认头像 URL
-+ (NSString *)defaultPhotoURLFromGender:(BOOL)gender {
-    return nil;
++ (UIImage *)UserAvatarImageWithUser:(User *)user {
+    UIImage *image;
+    if (!user.gender) {
+        image = [UIImage imageNamed:@"user/boyDefault"];
+    } else {
+        image = [UIImage imageNamed:@"user/girlDefault"];
+    }
+    return image;
 }
-
 #pragma mark - all
 -(NSArray *)retrieveUsers:(NSPredicate*)predicate
 {
@@ -131,6 +136,17 @@
     return self.user;
 }
 
+//此版本根据性别生成用户头像
+- (UIImage *)currentUserAvatarImage {
+    UIImage *image;
+    if (![self currentUser].gender) {
+        image = [UIImage imageNamed:@"user/boyDefault"];
+    } else {
+        image = [UIImage imageNamed:@"user/girlDefault"];
+    }
+    return image;
+}
+
 - (ZNYSThemeStyle)currentUserThemeStyle {
     if ([self currentUser].gender == NO) {
         return ZNYSThemeStyleBlue;
@@ -147,17 +163,22 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"userDidSwitch" object:nil];
 }
 /**
- 改变代币数
+ 改变代币数，如果增加同时改变历史代币数
 
- @param numbers 可以是整数或复数
+ @param numbers 可以是正数或负数
  @return 成功返回YES
  */
 - (BOOL)changeCurrentTokensByAdding:(NSInteger)number {
-    NSInteger lastToken = [self currentUser].tokensOwned - number;
-    if (lastToken > 0) {
-        [self currentUser].tokensOwned = [self currentUser].tokensOwned - number;
+    if (number > 0) {
+        [self currentUser].tokensOwned += number;
+        [self currentUser].historyTokens += number;
     } else {
-        return false;
+        NSInteger lastToken = [self currentUser].tokensOwned + number;
+        if (lastToken > 0) {
+            [self currentUser].tokensOwned = [self currentUser].tokensOwned + number;
+        } else {
+            return false;
+        }
     }
     return true;
 }
@@ -176,7 +197,6 @@
     user.starsOwned = 3;    //test
     user.tokensOwned = 20;
     user.historyTokens = 30;
-    user.photoURL = [UserManager defaultPhotoURLFromGender:user.gender];
     user.level = [UserManager levelFromHistoryTokens:user.historyTokens];
     user.uuid = [[NSUUID UUID] UUIDString];
     

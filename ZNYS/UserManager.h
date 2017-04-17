@@ -8,10 +8,14 @@
 #import "User+CoreDataClass.h"
 #import "themeManager.h"
 #import <Foundation/Foundation.h>
+@class UIImage;
+
 @interface UserManager : NSObject
 
-
 + (instancetype)sharedInstance;
+
+//Helper
++ (UIImage *)UserAvatarImageWithUser:(User *)user;
 
 //ALL Users
 - (NSInteger)currentUserCount;
@@ -22,6 +26,7 @@
 
 //当前 User
 - (User *)currentUser;
+- (UIImage *)currentUserAvatarImage;
 - (ZNYSThemeStyle)currentUserThemeStyle;
 
 //write

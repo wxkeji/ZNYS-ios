@@ -84,6 +84,7 @@
 
 #pragma mark - public method
 - (void)userSwitch {
+    self.userImageView.image = [[UserManager sharedInstance] currentUserAvatarImage];
     self.userNameLabel.text = [[UserManager sharedInstance] currentUser].nickName;
     self.coinLabel.text = [NSString stringWithFormat:@"%ld",(long)[[UserManager sharedInstance] currentUser].tokensOwned];
     self.levelLabel.text = [NSString stringWithFormat:@"%@",@([[UserManager sharedInstance] currentUser].level)];
@@ -97,7 +98,7 @@
 - (UIImageView *)userImageView{
     if (!_userImageView) {
         _userImageView = [[UIImageView alloc] init];
-        _userImageView.image = [UIImage imageNamed:@"user/user_temp"];
+        _userImageView.image = [[UserManager sharedInstance] currentUserAvatarImage];;
 //        _userNameLabel.layer.masksToBounds = YES;
     }
     return _userImageView;
