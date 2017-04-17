@@ -158,10 +158,11 @@ static NSTimeInterval swichAnimationTime = 0.3;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UserCollectionViewCell *cell = (UserCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:userCellID forIndexPath:indexPath];
-    //!!! temp todo 设置合理的用户头像和用户名字
-    [cell.userImageView setImage:[UIImage imageNamed:@"user/user_temp"]];
-    NSString *userNickName = ((User *)[[UserManager sharedInstance] allUsersExceptUUID:nil][indexPath.row]).nickName;
-    [cell.userNameLabel setText:userNickName];
+    
+    User *user = (User *)[[UserManager sharedInstance] allUsersExceptUUID:nil][indexPath.row];
+    
+    [cell.userImageView setImage:[UserManager UserAvatarImageWithUser:user]];
+    [cell.userNameLabel setText:user.nickName];
     
     return cell;
 }
@@ -206,18 +207,18 @@ static NSTimeInterval swichAnimationTime = 0.3;
     }];
 }
 - (MyUserDetailsView *)userDetailsViewWithUser:(User *)user {
-    //+++ temp todo 未完成 测试用
+    //+++ temp todo 未完成
 //    if (user.uuid != [[UserManager sharedInstance] currentUserUUID]) {
 //        [[ThemeManager sharedManager] configureTheme:ZNYSThemeStylePink];
 //    } else {
 //        [[ThemeManager sharedManager] configureTheme:ZNYSThemeStyleBlue];
 //    }
     MyUserDetailsView *tempUserDetailsView = [MyUserDetailsView loadViewFromNib];
+    [tempUserDetailsView.userImageView setImage:[UserManager UserAvatarImageWithUser:user]];
     [tempUserDetailsView.userNameLabel setText:user.nickName];
     [tempUserDetailsView.levelLabel setText:[NSString stringWithFormat:@"%d",user.level]];
     [tempUserDetailsView.coinLabel setText:[NSString stringWithFormat:@"%@", @(user.tokensOwned)]];
     
-    NSLog(@"------ 用户性别 %d",user.gender);
     return tempUserDetailsView;
 }
 - (void)settingButtonState:(ZNYSUserDetailsButtonState)buttonState animated:(BOOL)flag  {

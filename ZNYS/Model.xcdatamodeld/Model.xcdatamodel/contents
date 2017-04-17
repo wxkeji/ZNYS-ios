@@ -66,7 +66,6 @@
         <attribute name="historyTokens" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="nickName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="photoURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="starsOwned" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="tokensOwned" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
@@ -80,6 +79,6 @@
         <element name="BrushingStatistic" positionX="277" positionY="-207" width="128" height="210"/>
         <element name="CalendarItem" positionX="-63" positionY="-18" width="128" height="135"/>
         <element name="ToothBrush" positionX="-216" positionY="216" width="128" height="178"/>
-        <element name="User" positionX="-99" positionY="396" width="128" height="223"/>
+        <element name="User" positionX="-99" positionY="396" width="128" height="210"/>
     </elements>
 </model>

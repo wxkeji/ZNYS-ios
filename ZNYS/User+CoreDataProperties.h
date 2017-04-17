@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.h
 //  ZNYS
 //
-//  Created by yu243e on 2017/4/12.
+//  Created by yu243e on 2017/4/17.
 //  Copyright © 2017年 Woodseen. All rights reserved.
 //
 
@@ -20,7 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int16_t historyTokens;
 @property (nonatomic) int16_t level;
 @property (nullable, nonatomic, copy) NSString *nickName;
-@property (nullable, nonatomic, copy) NSString *photoURL;
 @property (nonatomic) int16_t starsOwned;
 @property (nonatomic) int16_t tokensOwned;
 @property (nullable, nonatomic, copy) NSString *uuid;
