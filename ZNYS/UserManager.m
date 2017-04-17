@@ -39,6 +39,7 @@
     return level;
 }
 
+//根据用户性别返回用户头像，后期再加入判断是否已有头像图片
 + (UIImage *)UserAvatarImageWithUser:(User *)user {
     UIImage *image;
     if (!user.gender) {
@@ -48,6 +49,7 @@
     }
     return image;
 }
+
 #pragma mark - all
 -(NSArray *)retrieveUsers:(NSPredicate*)predicate
 {
@@ -138,12 +140,7 @@
 
 //此版本根据性别生成用户头像
 - (UIImage *)currentUserAvatarImage {
-    UIImage *image;
-    if (![self currentUser].gender) {
-        image = [UIImage imageNamed:@"user/boyDefault"];
-    } else {
-        image = [UIImage imageNamed:@"user/girlDefault"];
-    }
+    UIImage *image = [UserManager UserAvatarImageWithUser:[self currentUser]];
     return image;
 }
 
