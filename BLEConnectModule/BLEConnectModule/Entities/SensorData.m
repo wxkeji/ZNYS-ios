@@ -29,32 +29,35 @@
 #pragma initializaition methods
 -(instancetype)init;
 {
-    @throw [NSException exceptionWithName:@"Wrong initialization method"
-                                   reason:@"Singleton, use method initPrivate"
-                                    userInfo:nil];
-}
-+(instancetype) DataStore
-{
-    static SensorData* defaultData;
-    if(!defaultData)
-    {
-        defaultData = [[self alloc ]initPrivate];
-    }
-    return defaultData;
-}
--(instancetype)initPrivate;
-{
     self = [super init];
-
     _accelerationXVector = [[NSMutableArray alloc]init];
     _accelerationYVector = [[NSMutableArray alloc]init];
     _yawVector = [[NSMutableArray alloc]init];
     _rollVector = [[NSMutableArray alloc]init];
     _pitchVector = [[NSMutableArray alloc]init];
     self.startTime = 0L;
-    
     return self;
 }
+//+(instancetype) DataStore
+//{
+//    static SensorData* defaultData;
+//    if(!defaultData)
+//    {
+//        defaultData = [[self alloc ]initPrivate];
+//    }
+//    return defaultData;
+//}
+//-(instancetype)initPrivate;
+//{
+//    self = [super init];
+//    _accelerationXVector = [[NSMutableArray alloc]init];
+//    _accelerationYVector = [[NSMutableArray alloc]init];
+//    _yawVector = [[NSMutableArray alloc]init];
+//    _rollVector = [[NSMutableArray alloc]init];
+//    _pitchVector = [[NSMutableArray alloc]init];
+//    self.startTime = 0L;
+//    return self;
+//}
 #pragma mark - Add Data
 -(void)pushAttitudeAngle:(int)yaw pitch:(int)pitch roll:(int)roll
 {
@@ -74,25 +77,25 @@
 {
     @try {
         switch (dataType) {
-        case ACCELERATION_AXIS_X:
-            return [[self.accelerationXVector objectAtIndex:index] intValue];
-            break;
-        case ACCELERATION_AXIS_Y:
-            return [[self.accelerationXVector objectAtIndex:index] intValue];
-            break;
-        case YAW:
-            return [[self.yawVector objectAtIndex:index] intValue];
-            break;
+            case ACCELERATION_AXIS_X:
+                return [[self.accelerationXVector objectAtIndex:index] intValue];
+                break;
+            case ACCELERATION_AXIS_Y:
+                return [[self.accelerationXVector objectAtIndex:index] intValue];
+                break;
+            case YAW:
+                return [[self.yawVector objectAtIndex:index] intValue];
+                break;
             case PITCH:
-            return [[self.pitchVector objectAtIndex:index] intValue];
-            break;
-        case ROLL:
-            return [[self.rollVector  objectAtIndex:index] intValue];
-            break;
-        default:
-            return INVALID_NON_TIMESTAMP_VALUE;
-            break;
-    }
+                return [[self.pitchVector objectAtIndex:index] intValue];
+                break;
+            case ROLL:
+                return [[self.rollVector  objectAtIndex:index] intValue];
+                break;
+            default:
+                return INVALID_NON_TIMESTAMP_VALUE;
+                break;
+        }
     }
     @catch (NSException* exception)
     {
@@ -127,7 +130,7 @@
     {
         NSLog(@"Exception occured! %@",exception);
     }
-
+    
 }
 
 -(int)getBeforeLastData:(int)dataType
@@ -158,7 +161,7 @@
     {
         NSLog(@"Exception occured! %@",exception);
     }
-
+    
 }
 
 
@@ -233,7 +236,7 @@
 
 -(void)clearStatistic
 {
-
+    
     _accelerationXVector = [[NSMutableArray alloc]init];
     _accelerationYVector = [[NSMutableArray alloc]init];
     _yawVector = [[NSMutableArray alloc]init];

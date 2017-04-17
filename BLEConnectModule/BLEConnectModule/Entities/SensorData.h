@@ -18,21 +18,15 @@
 #import "SensorData.h"
 @interface SensorData : NSObject
 
-
-
-
-
-
 @property(nonatomic,strong) NSMutableArray* accelerationXVector;
 @property(nonatomic,strong) NSMutableArray* accelerationYVector;
 @property(nonatomic,strong) NSMutableArray* yawVector;
 @property(nonatomic,strong) NSMutableArray* pitchVector;
 @property(nonatomic,strong) NSMutableArray* rollVector;
-
-
 @property long startTime;
-+(instancetype) DataStore;
--(instancetype) initPrivate;
+
+
+//+(instancetype) DataStore;
 
 
 -(void)pushAcceleration:(int)x :(int)y :(long)t;

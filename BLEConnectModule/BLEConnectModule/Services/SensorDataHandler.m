@@ -40,12 +40,12 @@
 #import "QuaternionPackage.h"
 #pragma mark - private variable and methods
 @interface SensorDataHandler()
-@property SensorData* sensorData;
+@property SensorData*                sensorData;
 @property(nonatomic) NSMutableArray* areas;
-@property NSMutableArray* lastPeakPoint;
-@property NSMutableArray* tempDirection;
-@property NSMutableArray* direction;
-@property int left_middle_yaw, right_middle_yaw, normalized_yaw, left_middle_pitch, right_middle_pitch;
+@property NSMutableArray*            lastPeakPoint;
+@property NSMutableArray*            tempDirection;
+@property NSMutableArray*            direction;
+@property int                        left_middle_yaw, right_middle_yaw, normalized_yaw, left_middle_pitch, right_middle_pitch;
 -(double)getNormalizedAngle:(double)angle;
 -(void)dispatchAngleDataToArea:(int)axis;
 -(void)buildCoordinate:(Area*)areaPointer;
@@ -83,15 +83,15 @@
 -(NSMutableArray*)sortArray
 {
     return [[self sortedArrayUsingComparator:^NSComparisonResult(id obj1,id obj2)
-    {
-        if ([obj1 intValue] > [obj2 intValue]) {
-            return (NSComparisonResult)NSOrderedAscending;
-        }
-        else
-            return (NSComparisonResult)NSOrderedDescending;
-    }] mutableCopy];
+             {
+                 if ([obj1 intValue] > [obj2 intValue]) {
+                     return (NSComparisonResult)NSOrderedAscending;
+                 }
+                 else
+                     return (NSComparisonResult)NSOrderedDescending;
+             }] mutableCopy];
 }     //留意mutbaleCopy方法
-        //原数组内容改变时，mutableCopy产生的对象里的内容也对应改变
+//原数组内容改变时，mutableCopy产生的对象里的内容也对应改变
 @end
 
 @implementation SensorDataHandler
@@ -120,28 +120,16 @@
         return angle + 360.0f;
     if (angle > 360.0f)
         return angle - 360.0f;
-        return angle;
+    return angle;
 }
 
 -(instancetype)init;
 {
-    @throw [NSException exceptionWithName:@"Wrong initialization method"
-        reason:@"Singleton, use method initPrivate"
-        userInfo:nil];
-}
-+(instancetype) sharedInstance
-{
-    static SensorDataHandler* instance;
-    if(!instance)
-    {
-        instance = [[self alloc ]initPrivate];
-    }
-    return instance;
-}
--(instancetype)initPrivate
-{
+    //    @throw [NSException exceptionWithName:@"SensorDataHandler:Wrong initialization method"
+    //        reason:@"Singleton, use method initPrivate"
+    //        userInfo:nil];
     self = [super init];
-    self.sensorData = [SensorData DataStore];
+    self.sensorData = [[SensorData alloc] init];
     self.lastPeakPoint = [[NSMutableArray alloc]init];
     self.areas = [[NSMutableArray alloc]init];
     self.left_middle_yaw = self.right_middle_yaw = self.left_middle_pitch = self.right_middle_pitch = -1;
@@ -156,6 +144,33 @@
     }
     return self;
 }
+//+(instancetype) sharedInstance
+//{
+//    static SensorDataHandler* instance;
+//    if(!instance)
+//    {
+//        instance = [[self alloc ]initPrivate];
+//    }
+//    return instance;
+//}
+//-(instancetype)initPrivate
+//{
+//    self = [super init];
+//    self.sensorData = [[SensorData alloc] init];
+//    self.lastPeakPoint = [[NSMutableArray alloc]init];
+//    self.areas = [[NSMutableArray alloc]init];
+//    self.left_middle_yaw = self.right_middle_yaw = self.left_middle_pitch = self.right_middle_pitch = -1;
+//    self.tempDirection = [[NSMutableArray alloc]init];
+//    self.direction = [[NSMutableArray alloc]init];
+//    for (int i = 0 ; i<2; i++)
+//    {//初始化x和Y轴的leak point , direction and temp direction
+//        [self.lastPeakPoint addInt:INVALID_NON_TIMESTAMP_VALUE];
+//        [self.direction addInt:0];//下标0 等同 ACCELERATION_AXIS_X, 1等同 ACCELERATION_AXIS_Y,下同
+//        [self.tempDirection addInt:1];
+//        [self.areas addObject:[[AreaGroup alloc] init]];
+//    }
+//    return self;
+//}
 -(BOOL)approximatelyEqualTo:(int)angleCompared :(int)targetAngle
 {
     return ( (angleCompared < targetAngle + ANGLE_ERROR) &&(angleCompared > targetAngle - ANGLE_ERROR) );
@@ -265,7 +280,7 @@
     areaPointer.rollVector = [areaPointer.rollVector sortArray];
     areaPointer.pitchVector= [areaPointer.pitchVector sortArray];
     areaPointer.yawMedian  = [areaPointer.yawVector retrieveInt:
-                             (int)([areaPointer.yawVector count]/2) ];
+                              (int)([areaPointer.yawVector count]/2) ];
     areaPointer.rollMedian = [areaPointer.rollVector retrieveInt:
                               (int)([areaPointer.rollVector count]/2)];
     areaPointer.pitchMedian= [areaPointer.pitchVector retrieveInt:
@@ -311,13 +326,13 @@
             return true;
         }
     }
-        else
+    else
+    {
+        if ((targetAngle > startAngle) && (targetAngle < endAngle))
         {
-            if ((targetAngle > startAngle) && (targetAngle < endAngle))
-            {
-                return true;
-            }
+            return true;
         }
+    }
     return false;
 }
 #pragma mark - 处理第二阶段
@@ -346,7 +361,7 @@
                         areaPointer.type = front_inner_up;
                 }
                 /*condition 4 in range between right_middle_yaw and normalized_yaw*/
-              else if([self isInRange:self.right_middle_yaw endAngle:self.normalized_yaw targetAngle:areaPointer.yawMedian])
+                else if([self isInRange:self.right_middle_yaw endAngle:self.normalized_yaw targetAngle:areaPointer.yawMedian])
                 {
                     if(abs(areaPointer.yawMedian - self.right_middle_pitch) < 10 )
                         areaPointer.type = right_middle_up;
@@ -357,12 +372,12 @@
                 else
                     areaPointer.type = unknown;
             }
-           
-             //刷下方的咬合面或下门牙内侧
+            
+            //刷下方的咬合面或下门牙内侧
             else if([self approximatelyEqualTo:areaPointer.rollMedian :180] || [self approximatelyEqualTo:areaPointer.rollMedian :-180])
             {
                 if(areaPointer.yawMedian == self.left_middle_yaw)
-                   areaPointer.type = left_middle_down;
+                    areaPointer.type = left_middle_down;
                 else if(areaPointer.yawMedian == self.right_middle_yaw)
                     areaPointer.type = right_middle_down;
                 else if([self isInRange:self.normalized_yaw endAngle:self.left_middle_yaw targetAngle:areaPointer.yawMedian])
@@ -431,21 +446,21 @@
             item.duration = [area getDuration];
             item.startTime = area.startTime;
             item.endTime = area.endTime;
-/*第一个分支*/if(area.type >= 0 && area.type < 7)
+            /*第一个分支*/if(area.type >= 0 && area.type < 7)
             {
                 if (j==0)
-                item.isCorrect = true;
+                    item.isCorrect = true;
                 else
-                item.isCorrect = false;
+                    item.isCorrect = false;
             }
-/*第二个分支*/else if(area.type >= 7 && area.type < 13)
+            /*第二个分支*/else if(area.type >= 7 && area.type < 13)
             {
                 if(j==1)
                     item.isCorrect = true;
                 else
                     item.isCorrect = false;
             }
-/*第三个分支*/else
+            /*第三个分支*/else
             {
                 item.isCorrect = false;
             }
@@ -454,6 +469,12 @@
     }//第一层for循环
     return analysisResultSet;
 }
+-(AnalysisResultSet*)analysisAndGetFinalResult
+{
+    [self classifyAreas];
+    [self statisticalAnalyseAll];
+    return [self getFinalResult];
+}
 #pragma mark - 清除数据
 -(void)clearStatistic
 {
@@ -461,7 +482,7 @@
     self.lastPeakPoint = nil;
     self.tempDirection = nil;
     self.direction = nil;
-    self.sensorData = [SensorData DataStore];
+    self.sensorData = [[SensorData alloc] init];
     self.lastPeakPoint = [[NSMutableArray alloc]init];
     self.areas = [[NSMutableArray alloc]init];
     self.left_middle_yaw = self.right_middle_yaw = self.left_middle_pitch = self.right_middle_pitch = -1;
