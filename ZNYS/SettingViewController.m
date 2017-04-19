@@ -73,7 +73,10 @@
 
 #pragma mark private method
 - (void)refreshUserDetail{
+    [self.headerView.thumbButton setImage:[[UserManager sharedInstance] currentUserAvatarImage] forState:UIControlStateNormal];
     self.headerView.nameLabel.text = [[UserManager sharedInstance] currentUser].nickName;
+    [self.headerView configureTheme];
+    
 }
 
 #pragma mark event action

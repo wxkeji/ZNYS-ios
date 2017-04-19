@@ -19,5 +19,7 @@ typedef void(^ThumbButtonBlock)();
 @property (nonatomic,copy) ThumbButtonBlock thumbButtonBlock;
 
 @property (nonatomic,strong) UILabel * nameLabel;
+@property (nonatomic,strong) UIButton * thumbButton;
 
+- (void)configureTheme;
 @end
