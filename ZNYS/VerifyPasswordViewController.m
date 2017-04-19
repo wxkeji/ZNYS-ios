@@ -22,7 +22,6 @@
 
 @property (nonatomic,strong) NSMutableArray * inputArray;
 
-@property (nonatomic,strong) UIImageView * logoImage;
 
 @property (nonatomic,strong) UIButton * dismissButton;
 
@@ -31,17 +30,6 @@
 @implementation VerifyPasswordViewController
 
 #pragma mark life cycle
-
-- (void)dealloc{
-    _titleLabel = nil;
-    _inputTipsLabel = nil;
-    _keyboardView = nil;
-    _tipsArray = nil;
-    _inputArray = nil;
-    _logoImage = nil;
-    _dismissButton = nil;
-}
-
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -52,7 +40,6 @@
     
     [self.view addSubview:self.titleLabel];
     [self.view addSubview:self.inputTipsLabel];
-    [self.view addSubview:self.logoImage];
     [self.view addSubview:self.keyboardView];
     [self.view addSubview:self.dismissButton];
     
@@ -72,20 +59,13 @@
     }];
     
     [self.inputTipsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.logoImage.mas_right).with.offset(2);
+        make.right.equalTo(weakSelf.titleLabel.mas_right).with.offset(0);
         make.top.equalTo(weakSelf.titleLabel.mas_bottom).with.offset(11);
         make.height.mas_equalTo(18);
     }];
     
-    [self.logoImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.keyboardView.mas_left).with.offset(-10);
-        make.top.equalTo(weakSelf.titleLabel.mas_bottom).with.offset(11);
-        make.height.mas_equalTo(0.307*kSCREEN_WIDTH);
-        make.width.mas_equalTo(0.307*kSCREEN_WIDTH);
-    }];
-    
     [self.keyboardView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakSelf.logoImage.mas_bottom).with.offset(-10);
+        make.centerY.mas_equalTo(weakSelf.view.mas_centerY);
         make.centerX.mas_equalTo(weakSelf.view.mas_centerX);
         make.width.mas_equalTo(0.784*kSCREEN_WIDTH);
         make.height.mas_equalTo(0.42*kSCREEN_HEIGHT);
@@ -212,14 +192,6 @@
     return _keyboardView;
 }
 
-- (UIImageView *)logoImage{
-    if (!_logoImage) {
-        _logoImage = [[UIImageView alloc] init];
-        _logoImage.backgroundColor =[UIColor redColor];
-        _logoImage.image = [UIImage imageNamed:@"userAccount_logo"];
-    }
-    return _logoImage;
-}
 
 - (NSMutableArray *)tipsArray{
     if (!_tipsArray) {
