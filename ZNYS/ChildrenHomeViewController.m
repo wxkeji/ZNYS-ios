@@ -65,7 +65,7 @@
     [self.calendarButton addTarget:self action:@selector(toCalendar) forControlEvents:UIControlEventTouchUpInside];
     [self.userDetailsButton addTarget:self action:@selector(expandUserDetailInformation) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.connectToothBrushButton addTarget:self action:@selector(toConnectedResult) forControlEvents:UIControlEventTouchUpInside];
+    [self.connectToothBrushButton addTarget:self action:@selector(connectButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     
     //设置用户详细信息和主题
     [self userDetailChange];
@@ -164,6 +164,7 @@
     }
     [self configureTheme];
 }
+
 #pragma mark event action
 - (void)toCalendar {
     CalendarViewController * vc = [[CalendarViewController alloc] init];
@@ -190,18 +191,9 @@
     [self presentViewController:modalViewController animated:YES completion:nil];
 }
 
-- (void)toConnectedResult {
+//在这里加入连接牙刷的代码
+- (void)connectButtonClicked {
     
-    //无意义frame
-    ConnectedResultView * connectedView = [[ConnectedResultView alloc]initWithFrame:CGRectZero];
-    MAKAFakeRootAlertView * alertView = [[MAKAFakeRootAlertView alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    [alertView setUpView:connectedView];
-    connectedView.dismissBlock = ^{
-        [alertView dismiss];
-    };
-    alertView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-    [alertView show];
 }
 
 - (void)toExchangeReward {
