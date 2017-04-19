@@ -12,16 +12,15 @@
 
 @interface VerifyPasswordViewController()
 
-@property (nonatomic,strong) UILabel * titleLabel;
-
-@property (nonatomic,strong) UILabel * inputTipsLabel;
+@property (nonatomic,strong) UILabel *titleLabel;
+@property (nonatomic,strong) UILabel *inputTipsLabel;
+//指示输入次数 表示为***
+@property (nonatomic, strong) UILabel *indicateLabel;
 
 @property (nonatomic,strong) VerifyPasswordView * keyboardView;
 
 @property (nonatomic,strong) NSMutableArray * tipsArray;
-
 @property (nonatomic,strong) NSMutableArray * inputArray;
-
 
 @property (nonatomic,strong) UIButton * dismissButton;
 
@@ -40,6 +39,7 @@
     
     [self.view addSubview:self.titleLabel];
     [self.view addSubview:self.inputTipsLabel];
+    [self.view addSubview:self.indicateLabel];
     [self.view addSubview:self.keyboardView];
     [self.view addSubview:self.dismissButton];
     
@@ -61,6 +61,12 @@
     [self.inputTipsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(weakSelf.titleLabel.mas_right).with.offset(0);
         make.top.equalTo(weakSelf.titleLabel.mas_bottom).with.offset(11);
+        make.height.mas_equalTo(18);
+    }];
+    
+    [self.indicateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.titleLabel.mas_left).with.offset(50);
+        make.top.equalTo(self.titleLabel.mas_bottom).with.offset(15);
         make.height.mas_equalTo(18);
     }];
     
@@ -166,6 +172,14 @@
     return _inputTipsLabel;
 }
 
+- (UILabel *)indicateLabel {
+    if (!_indicateLabel) {
+        _indicateLabel = [[UILabel alloc]initWithCustomFont:30.f];
+        _indicateLabel.textColor = RGBCOLOR(241, 141, 172);
+    }
+    return _indicateLabel;
+}
+
 - (VerifyPasswordView *)keyboardView{
     if (!_keyboardView) {
         _keyboardView = [[VerifyPasswordView alloc] initWithFrame:CGRectMake(CustomWidth(41), CustomHeight(240), CustomWidth(294), CustomHeight(280))];
@@ -175,6 +189,24 @@
         _keyboardView.buttonClickBlock = ^(NSInteger number){
             NSString * numberString = [NSString stringWithFormat:@"%ld",(long)number];
             [weakSelf.inputArray addObject:numberString];
+            
+            //加入指示
+            switch (weakSelf.inputArray.count) {
+                case 0:
+                    weakSelf.indicateLabel.text = @"";
+                    break;
+                case 1:
+                    weakSelf.indicateLabel.text = @"*";
+                    break;
+                case 2:
+                    weakSelf.indicateLabel.text = @"**";
+                    break;
+                case 3:
+                    weakSelf.indicateLabel.text = @"***";
+                    break;
+                default:
+                    break;
+            }
             
             if (self.inputArray.count == 3) {
                 BOOL isCorrect = ([[weakSelf.inputArray objectAtIndex:0] integerValue] == [[weakSelf.tipsArray objectAtIndex:0] integerValue]) && ([[weakSelf.inputArray objectAtIndex:1] integerValue] == [[weakSelf.tipsArray objectAtIndex:1] integerValue]) && ([[weakSelf.inputArray objectAtIndex:2] integerValue] == [[weakSelf.tipsArray objectAtIndex:2] integerValue]);
