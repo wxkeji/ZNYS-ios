@@ -69,9 +69,9 @@
         <attribute name="starsOwned" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="tokensOwned" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="awards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Award" inverseName="bePossessedByUser" inverseEntity="Award" syncable="YES"/>
-        <relationship name="calenderItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CalendarItem" inverseName="user" inverseEntity="CalendarItem" syncable="YES"/>
-        <relationship name="toothBrushes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ToothBrush" inverseName="bePossessedByUser" inverseEntity="ToothBrush" syncable="YES"/>
+        <relationship name="awards" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Award" inverseName="bePossessedByUser" inverseEntity="Award" syncable="YES"/>
+        <relationship name="calenderItems" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CalendarItem" inverseName="user" inverseEntity="CalendarItem" syncable="YES"/>
+        <relationship name="toothBrushes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ToothBrush" inverseName="bePossessedByUser" inverseEntity="ToothBrush" syncable="YES"/>
     </entity>
     <elements>
         <element name="AreaStatistic" positionX="324" positionY="117" width="128" height="180"/>
