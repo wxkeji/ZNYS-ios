@@ -70,7 +70,8 @@
 - (UIButton *)addButton{
     if (!_addButton) {
         _addButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _addButton.backgroundColor = [UIColor redColor];
+        NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"addAcount" ofType:@"png"];
+        [_addButton setImage:[UIImage imageWithContentsOfFile:imagePath] forState:UIControlStateNormal];
         [_addButton addTarget:self action:@selector(addButtonAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _addButton;
