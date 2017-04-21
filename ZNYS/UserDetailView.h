@@ -24,4 +24,6 @@ typedef void(^ModifyButtonBlock)();
 
 @property (nonatomic,copy) ModifyButtonBlock modifyButtonBlock;
 
+- (void)configureTheme;
+- (void)refresh;
 @end

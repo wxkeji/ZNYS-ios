@@ -23,6 +23,8 @@
 		04A7510F1C43D9E500B3F537 /* GiftList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A7510E1C43D9E500B3F537 /* GiftList.plist */; };
 		04C978F31C44BE100046DB4A /* GiftItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C978F21C44BE100046DB4A /* GiftItem.m */; };
 		3C15B7161DE5876800609717 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C15B7141DE5876800609717 /* Model.xcdatamodeld */; };
+		3C1765981EA8B65500BEA3F2 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C1765971EA8B65500BEA3F2 /* edit.png */; };
+		3C17659B1EA9B3FC00BEA3F2 /* addAcount.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C17659A1EA9B3FC00BEA3F2 /* addAcount.png */; };
 		3C210B5F1E1361A500F0390B /* UserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C210B5D1E1361A500F0390B /* UserCollectionViewCell.m */; };
 		3C210B601E1361A500F0390B /* UserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C210B5E1E1361A500F0390B /* UserCollectionViewCell.xib */; };
 		3C278A041E13AD2400EF2376 /* UserCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C278A031E13AD2400EF2376 /* UserCollectionViewFlowLayout.m */; };
@@ -278,6 +280,8 @@
 		04C978F21C44BE100046DB4A /* GiftItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftItem.m; sourceTree = "<group>"; };
 		3A4B640B30852A7412A6975C /* Pods-ZNYS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZNYS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZNYS/Pods-ZNYS.debug.xcconfig"; sourceTree = "<group>"; };
 		3C15B7151DE5876800609717 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		3C1765971EA8B65500BEA3F2 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
+		3C17659A1EA9B3FC00BEA3F2 /* addAcount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addAcount.png; sourceTree = "<group>"; };
 		3C210B5C1E1361A500F0390B /* UserCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCollectionViewCell.h; sourceTree = "<group>"; };
 		3C210B5D1E1361A500F0390B /* UserCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCollectionViewCell.m; sourceTree = "<group>"; };
 		3C210B5E1E1361A500F0390B /* UserCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -1375,10 +1379,12 @@
 		645A017B1C37BBA600556395 /* UserAccount */ = {
 			isa = PBXGroup;
 			children = (
+				3C1765971EA8B65500BEA3F2 /* edit.png */,
 				647E05BB1C3A5C1D00ADB810 /* userAccount_back@2x.png */,
 				647E05BC1C3A5C1D00ADB810 /* userAccount_back@3x.png */,
 				647E05BD1C3A5C1D00ADB810 /* userAccount_logo@2x.png */,
 				647E05BE1C3A5C1D00ADB810 /* userAccount_logo@3x.png */,
+				3C17659A1EA9B3FC00BEA3F2 /* addAcount.png */,
 			);
 			name = UserAccount;
 			sourceTree = "<group>";
@@ -1629,10 +1635,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CCCAED31DA39BE600D9A525 /* Cabinet.storyboard in Resources */,
+				3C1765981EA8B65500BEA3F2 /* edit.png in Resources */,
 				6476646F1C3E604200386E05 /* MetalList.plist in Resources */,
 				3C584C0C1D6B3EB3000E3BCE /* Images.xcassets in Resources */,
 				0487D7741B74548F00756EF8 /* LaunchScreen.xib in Resources */,
 				647E05C21C3A5C1D00ADB810 /* userAccount_logo@3x.png in Resources */,
+				3C17659B1EA9B3FC00BEA3F2 /* addAcount.png in Resources */,
 				45DC5E691C421B80000D6A7A /* 进度100.png in Resources */,
 				3C210B601E1361A500F0390B /* UserCollectionViewCell.xib in Resources */,
 				45DC5E641C421B80000D6A7A /* 进度50.png in Resources */,

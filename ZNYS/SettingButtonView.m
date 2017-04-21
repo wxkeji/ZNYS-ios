@@ -116,7 +116,7 @@
         _rewardListButton = [[UIButton alloc] initWithCustomFont:35.f];
         _rewardListButton.tag = baseTag+0;
         _rewardListButton.layer.cornerRadius = 10.f;
-        _rewardListButton.backgroundColor = [UIColor yellowColor];
+        _rewardListButton.backgroundColor = RGBCOLOR(244, 148, 187);
         [_rewardListButton setTitle:@"奖励清单" forState:UIControlStateNormal];
         [_rewardListButton addTarget:self action:@selector(buttonClickAction:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -129,7 +129,7 @@
         _brushModeButton.tag = baseTag+1;
         _brushModeButton.layer.cornerRadius = 10.f;
         _brushModeButton.titleLabel.numberOfLines = 2;
-        _brushModeButton.backgroundColor = [UIColor yellowColor];
+        _brushModeButton.backgroundColor = RGBCOLOR(228, 86, 133);
         [_brushModeButton setTitle:@"刷牙模式" forState:UIControlStateNormal];
         [_brushModeButton addTarget:self action:@selector(buttonClickAction:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -142,7 +142,7 @@
         _brushRecordButton.tag = baseTag+2;
         _brushRecordButton.layer.cornerRadius = 10.f;
         _brushRecordButton.titleLabel.numberOfLines = 2;
-        _brushRecordButton.backgroundColor = [UIColor yellowColor];
+        _brushRecordButton.backgroundColor = RGBCOLOR(76, 167, 208);
         [_brushRecordButton setTitle:@"刷牙记录" forState:UIControlStateNormal];
         [_brushRecordButton addTarget:self action:@selector(buttonClickAction:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -154,7 +154,7 @@
         _notiButton = [[UIButton alloc] initWithCustomFont:35.f];
         _notiButton.tag = baseTag+3;
         _notiButton.layer.cornerRadius = 10.f;
-        _notiButton.backgroundColor = [UIColor yellowColor];
+        _notiButton.backgroundColor = RGBCOLOR(123, 216, 191);
         [_notiButton setTitle:@"通知" forState:UIControlStateNormal];
         [_notiButton addTarget:self action:@selector(buttonClickAction:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -167,7 +167,7 @@
         _aboutButton.tag = baseTag+4;
         _aboutButton.layer.cornerRadius = 10.f;
         _aboutButton.titleLabel.numberOfLines = 2;
-        _aboutButton.backgroundColor = [UIColor yellowColor];
+        _aboutButton.backgroundColor = RGBCOLOR(89, 177, 176);
         [_aboutButton setTitle:@"关于我们" forState:UIControlStateNormal];
         [_aboutButton addTarget:self action:@selector(buttonClickAction:) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -192,7 +192,7 @@
         _toothBrushManagementButton.tag = baseTag+6;
         _toothBrushManagementButton.layer.cornerRadius = 10.0f;
         _toothBrushManagementButton.titleLabel.numberOfLines = 2;
-        [_toothBrushManagementButton setBackgroundColor:[UIColor yellowColor]];
+        [_toothBrushManagementButton setBackgroundColor:RGBCOLOR(39, 181, 251)];
         [_toothBrushManagementButton setTitle:@"宝宝的牙刷" forState:UIControlStateNormal];
         [_toothBrushManagementButton addTarget:self action:@selector(buttonClickAction:) forControlEvents:UIControlEventTouchUpInside];
 	}

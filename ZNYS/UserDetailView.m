@@ -26,21 +26,6 @@
 @implementation UserDetailView
 
 #pragma mark life cycle
-
-- (void)dealloc{
-    _thumbImage = nil;
-    _nameLabel = nil;
-    _birthdayLabel = nil;
-    _coinLabel = nil;
-    _brushLabel = nil;
-    _modifyButton = nil;
-    _modifyButtonBlock = nil;
-    _nameDesLabel = nil;
-    _birthdayDesLabel = nil;
-    _coinDesLabel = nil;
-    _brushDesLabel = nil;
-}
-
 - (instancetype)init{
     self = [super init];
     if (self) {
@@ -57,6 +42,8 @@
         [self addSubview:self.coinDesLabel];
         [self addSubview:self.brushDesLabel];
         
+        [self refresh];
+        [self configureTheme];
         WS(weakSelf, self);
         [self.thumbImage mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(weakSelf.mas_top).with.offset(0.061*kSCREEN_HEIGHT);
@@ -129,6 +116,18 @@
     return self;
 }
 
+#pragma mark - public method
+- (void)configureTheme {
+    self.backgroundColor = [UIColor colorWithThemedImageNamed:@"color/primary"];
+    
+}
+
+- (void)refresh {
+    [self.thumbImage setImage:[[UserManager sharedInstance] currentUserAvatarImage]];
+    self.nameLabel.text = [[UserManager sharedInstance] currentUser].nickName;
+    self.birthdayLabel.text = [[UserManager sharedInstance] currentUser].birthday;
+    self.brushLabel.text = [NSString stringWithFormat:@"%ld把",(long)[[UserManager sharedInstance] currentUser].toothBrushes.count];
+}
 #pragma mark event action
 
 - (void)modifyButtonAction{
@@ -150,7 +149,6 @@
 - (UILabel *)nameLabel{
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc] initWithCustomFont:20.f];
-        _nameLabel.text = [[UserManager sharedInstance] currentUser].nickName;
         _nameLabel.textColor = [UIColor whiteColor];
     }
     return _nameLabel;
@@ -159,7 +157,6 @@
 - (UILabel *)birthdayLabel{
     if (!_birthdayLabel) {
         _birthdayLabel = [[UILabel alloc] initWithCustomFont:20.f];
-        _birthdayLabel.text = [[UserManager sharedInstance] currentUser].birthday;
         _birthdayLabel.textColor = [UIColor whiteColor];
     }
     return _birthdayLabel;
@@ -177,7 +174,7 @@
 - (UILabel *)brushLabel{
     if (!_brushLabel) {
         _brushLabel = [[UILabel alloc] initWithCustomFont:20.f];
-        _brushLabel.text = [NSString stringWithFormat:@"%ld把",(long)[[UserManager sharedInstance] currentUser].toothBrushes.count];
+        
         _brushLabel.textColor = [UIColor whiteColor];
     }
     return _brushLabel;
@@ -187,7 +184,9 @@
     if (!_modifyButton) {
         _modifyButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_modifyButton addTarget:self action:@selector(modifyButtonAction) forControlEvents:UIControlEventTouchUpInside];
-        [_modifyButton setBackgroundColor:[UIColor redColor]];
+        
+        NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"edit" ofType:@"png"];
+        [_modifyButton setImage:[UIImage imageWithContentsOfFile:imagePath] forState:UIControlStateNormal];
     }
     return _modifyButton;
 }

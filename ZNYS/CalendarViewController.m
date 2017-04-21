@@ -168,7 +168,7 @@
 - (void)configureTheme {
     self.backgroundImageViewTop.image = [UIImage themedImageWithNamed:@"color/primary"];
     self.backgroundImageViewDown.image = [UIImage themedImageWithNamed:@"color/primary"];
-    self.backgroundLogoImageView.image = [UIImage themedImageWithNamed:@"children/logo"];
+    self.backgroundLogoImageView.image = [UIImage themedImageWithNamed:@"logo"];
     
     [self.dismissButton setImage:[UIImage themedImageWithNamed:@"navigation/homeButton"] forState:UIControlStateNormal];
     

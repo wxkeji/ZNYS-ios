@@ -71,7 +71,7 @@
         <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="awards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Award" inverseName="bePossessedByUser" inverseEntity="Award" syncable="YES"/>
         <relationship name="calenderItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CalendarItem" inverseName="user" inverseEntity="CalendarItem" syncable="YES"/>
-        <relationship name="toothBrushes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ToothBrush" inverseName="user" inverseEntity="ToothBrush" syncable="YES"/>
+        <relationship name="toothBrushes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ToothBrush" inverseName="user" inverseEntity="ToothBrush" syncable="YES"/>
     </entity>
     <elements>
         <element name="AreaStatistic" positionX="52" positionY="396" width="128" height="178"/>

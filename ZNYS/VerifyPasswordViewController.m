@@ -12,17 +12,15 @@
 
 @interface VerifyPasswordViewController()
 
-@property (nonatomic,strong) UILabel * titleLabel;
-
-@property (nonatomic,strong) UILabel * inputTipsLabel;
+@property (nonatomic,strong) UILabel *titleLabel;
+@property (nonatomic,strong) UILabel *inputTipsLabel;
+//指示输入次数 表示为***
+@property (nonatomic, strong) UILabel *indicateLabel;
 
 @property (nonatomic,strong) VerifyPasswordView * keyboardView;
 
 @property (nonatomic,strong) NSMutableArray * tipsArray;
-
 @property (nonatomic,strong) NSMutableArray * inputArray;
-
-@property (nonatomic,strong) UIImageView * logoImage;
 
 @property (nonatomic,strong) UIButton * dismissButton;
 
@@ -31,17 +29,6 @@
 @implementation VerifyPasswordViewController
 
 #pragma mark life cycle
-
-- (void)dealloc{
-    _titleLabel = nil;
-    _inputTipsLabel = nil;
-    _keyboardView = nil;
-    _tipsArray = nil;
-    _inputArray = nil;
-    _logoImage = nil;
-    _dismissButton = nil;
-}
-
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -52,7 +39,7 @@
     
     [self.view addSubview:self.titleLabel];
     [self.view addSubview:self.inputTipsLabel];
-    [self.view addSubview:self.logoImage];
+    [self.view addSubview:self.indicateLabel];
     [self.view addSubview:self.keyboardView];
     [self.view addSubview:self.dismissButton];
     
@@ -72,20 +59,19 @@
     }];
     
     [self.inputTipsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.logoImage.mas_right).with.offset(2);
+        make.right.equalTo(weakSelf.titleLabel.mas_right).with.offset(0);
         make.top.equalTo(weakSelf.titleLabel.mas_bottom).with.offset(11);
         make.height.mas_equalTo(18);
     }];
     
-    [self.logoImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.keyboardView.mas_left).with.offset(-10);
-        make.top.equalTo(weakSelf.titleLabel.mas_bottom).with.offset(11);
-        make.height.mas_equalTo(0.307*kSCREEN_WIDTH);
-        make.width.mas_equalTo(0.307*kSCREEN_WIDTH);
+    [self.indicateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.titleLabel.mas_left).with.offset(50);
+        make.top.equalTo(self.titleLabel.mas_bottom).with.offset(15);
+        make.height.mas_equalTo(18);
     }];
     
     [self.keyboardView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakSelf.logoImage.mas_bottom).with.offset(-10);
+        make.centerY.mas_equalTo(weakSelf.view.mas_centerY);
         make.centerX.mas_equalTo(weakSelf.view.mas_centerX);
         make.width.mas_equalTo(0.784*kSCREEN_WIDTH);
         make.height.mas_equalTo(0.42*kSCREEN_HEIGHT);
@@ -186,6 +172,14 @@
     return _inputTipsLabel;
 }
 
+- (UILabel *)indicateLabel {
+    if (!_indicateLabel) {
+        _indicateLabel = [[UILabel alloc]initWithCustomFont:30.f];
+        _indicateLabel.textColor = RGBCOLOR(241, 141, 172);
+    }
+    return _indicateLabel;
+}
+
 - (VerifyPasswordView *)keyboardView{
     if (!_keyboardView) {
         _keyboardView = [[VerifyPasswordView alloc] initWithFrame:CGRectMake(CustomWidth(41), CustomHeight(240), CustomWidth(294), CustomHeight(280))];
@@ -195,6 +189,24 @@
         _keyboardView.buttonClickBlock = ^(NSInteger number){
             NSString * numberString = [NSString stringWithFormat:@"%ld",(long)number];
             [weakSelf.inputArray addObject:numberString];
+            
+            //加入指示
+            switch (weakSelf.inputArray.count) {
+                case 0:
+                    weakSelf.indicateLabel.text = @"";
+                    break;
+                case 1:
+                    weakSelf.indicateLabel.text = @"*";
+                    break;
+                case 2:
+                    weakSelf.indicateLabel.text = @"**";
+                    break;
+                case 3:
+                    weakSelf.indicateLabel.text = @"***";
+                    break;
+                default:
+                    break;
+            }
             
             if (self.inputArray.count == 3) {
                 BOOL isCorrect = ([[weakSelf.inputArray objectAtIndex:0] integerValue] == [[weakSelf.tipsArray objectAtIndex:0] integerValue]) && ([[weakSelf.inputArray objectAtIndex:1] integerValue] == [[weakSelf.tipsArray objectAtIndex:1] integerValue]) && ([[weakSelf.inputArray objectAtIndex:2] integerValue] == [[weakSelf.tipsArray objectAtIndex:2] integerValue]);
@@ -212,14 +224,6 @@
     return _keyboardView;
 }
 
-- (UIImageView *)logoImage{
-    if (!_logoImage) {
-        _logoImage = [[UIImageView alloc] init];
-        _logoImage.backgroundColor =[UIColor redColor];
-        _logoImage.image = [UIImage imageNamed:@"userAccount_logo"];
-    }
-    return _logoImage;
-}
 
 - (NSMutableArray *)tipsArray{
     if (!_tipsArray) {

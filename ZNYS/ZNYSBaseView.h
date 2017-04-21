@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ToolMacroes.h"
 #import "CatogoriesImportHelper.h"
+#import "ThemeManager.h"
 #import <Masonry.h>
 #import <SVProgressHUD.h>
 
