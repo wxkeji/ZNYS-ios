@@ -17,6 +17,9 @@
 @import QuartzCore;
 
 
+#define SAVE_DATA_TO_DATABASE 1
+
+
 typedef NS_ENUM(NSUInteger,BLSDataType)
 {
     BLS_ONLINE_DATA,

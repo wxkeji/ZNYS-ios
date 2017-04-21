@@ -10,6 +10,7 @@
 #import "UserManager.h"
 #import "CabinetViewController.h"
 #import "AddAccountViewController.h"
+#import "TestManager.h"
 
 static AppDelegate* singleton;
 @interface AppDelegate ()
@@ -51,6 +52,8 @@ static AppDelegate* singleton;
         self.window.rootViewController = nav;
         [self.window makeKeyAndVisible];
     }
+    
+    
     return YES;
 }
 

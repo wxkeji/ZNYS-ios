@@ -7,7 +7,7 @@
 //
 
 #import "AreaStatistic+CoreDataClass.h"
-#import "BrushingStatistic.h"
+#import "BrushingStatistic+CoreDataClass.h"
 @implementation AreaStatistic
 
 @end

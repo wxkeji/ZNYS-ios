@@ -8,8 +8,11 @@
 
 #import "ToothbrushManager.h"
 #import "CoreDataHelper.h"
-#import "ToothBrush+CoreDataProperties.h"
+
 #import "UserManager.h"
+
+#define ENTITY_NAME @"ToothBrush"
+
 @implementation ToothbrushManager
 static ToothbrushManager* instance;
 + (instancetype)sharedInstance {
@@ -25,6 +28,27 @@ static ToothbrushManager* instance;
     instance = nil;
 }
 
+- (ToothBrush *)createInstance {
+    ToothBrush *instance = [[ToothBrush alloc] initWithContext:[CoreDataHelper sharedInstance].context];
+    
+    
+    return instance;
+
+}
+
+- (ToothBrush *)createTempInstance {
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:ENTITY_NAME inManagedObjectContext:[CoreDataHelper sharedInstance].context];
+    ToothBrush *toothBrush = [[ToothBrush alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:nil];
+    return toothBrush;
+}
+
+- (BOOL)saveInstance:(ToothBrush *)toothBrush {
+    NSManagedObjectContext *context = [CoreDataHelper sharedInstance].context;
+    [context insertObject:toothBrush];
+    [context save:nil];
+    return YES;
+}
+
 - (NSArray*)getCurrentUsersToothBrushes {
     NSArray* result = [[CoreDataHelper sharedInstance] retrieveToothBrushWithPredicate:[NSPredicate predicateWithFormat:@"userUUID = %@",[[UserManager sharedInstance] currentUser].uuid]];
     if (result.count > 0) {
@@ -33,6 +57,8 @@ static ToothbrushManager* instance;
         return nil;
     }
 }
+
+
 
 //BUG +++  暂时 toothBrush.isConnected -> YES
 #warning BUG ToothBrushManager.m by yu

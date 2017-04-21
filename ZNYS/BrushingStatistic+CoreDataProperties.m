@@ -1,9 +1,9 @@
 //
 //  BrushingStatistic+CoreDataProperties.m
-//  ZNYS
+//  
 //
-//  Created by yu243e on 2017/4/12.
-//  Copyright © 2017年 Woodseen. All rights reserved.
+//  Created by 张恒铭 on 4/18/17.
+//
 //
 
 #import "BrushingStatistic+CoreDataProperties.h"
@@ -23,7 +23,7 @@
 @dynamic strength;
 @dynamic timeSlot;
 @dynamic toothBrushID;
-@dynamic bePossessedByToothBrush;
-@dynamic includeAreaStatistics;
+@dynamic areaStatistic;
+@dynamic toothBrush;
 
 @end

@@ -57,8 +57,6 @@
     NSPredicate* activityPredicate = [NSPredicate predicateWithFormat:@"type == %@ && status == %@ &&userID = %@",@"activity",@"notAdded",uuid];
     activityArray = (NSMutableArray<Award *>*)[[CoreDataHelper sharedInstance] retrieveAwardsWithPredicate:activityPredicate];
     
-    
-    
     [resultArray addObject:consumeArray];
     [resultArray addObject:possessArray];
     [resultArray addObject:activityArray];

@@ -71,6 +71,7 @@
 //        NSLog(@"result %i",result);
 //    }];
     
+    [[BluetoothServer defaultServer] scan];
     
 }
 - (IBAction)readRTC:(id)sender

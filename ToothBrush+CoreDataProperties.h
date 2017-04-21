@@ -2,7 +2,7 @@
 //  ToothBrush+CoreDataProperties.h
 //  
 //
-//  Created by yu243e on 2017/4/12.
+//  Created by 张恒铭 on 4/18/17.
 //
 //
 
@@ -22,17 +22,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSNumber *photoNumber;
 @property (nullable, nonatomic, copy) NSNumber *toothbrushID;
 @property (nullable, nonatomic, copy) NSString *userUUID;
-@property (nullable, nonatomic, retain) User *bePossessedByUser;
-@property (nullable, nonatomic, retain) NSSet<BrushingStatistic *> *possessBrushingStatistics;
+@property (nullable, nonatomic, retain) NSSet<BrushingStatistic *> *brushingStatistic;
+@property (nullable, nonatomic, retain) User *user;
 
 @end
 
 @interface ToothBrush (CoreDataGeneratedAccessors)
 
-- (void)addPossessBrushingStatisticsObject:(BrushingStatistic *)value;
-- (void)removePossessBrushingStatisticsObject:(BrushingStatistic *)value;
-- (void)addPossessBrushingStatistics:(NSSet<BrushingStatistic *> *)values;
-- (void)removePossessBrushingStatistics:(NSSet<BrushingStatistic *> *)values;
+- (void)addBrushingStatisticObject:(BrushingStatistic *)value;
+- (void)removeBrushingStatisticObject:(BrushingStatistic *)value;
+- (void)addBrushingStatistic:(NSSet<BrushingStatistic *> *)values;
+- (void)removeBrushingStatistic:(NSSet<BrushingStatistic *> *)values;
 
 @end
 

@@ -24,6 +24,7 @@
 #define ON 0x01
 #define OFF 0x00
 
+
 long lastTimeStamp = 0;
 
 //Class extration of NSString, adding the function to NSString so that it can be converted to bytes(NSData)

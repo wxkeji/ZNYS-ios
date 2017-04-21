@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "AreaStatistic+CoreDataClass.h"
+#import "DatabaseBaseManager.h"
 
+@interface AreaStatisticManager : DatabaseBaseManager
 
-@interface AreaStatisticManager : NSObject
-
-+ (instancetype)sharedInstance;
+//+ (instancetype)sharedInstance;
 
 //CRUD
 - (AreaStatistic *)createAreaStatistic;

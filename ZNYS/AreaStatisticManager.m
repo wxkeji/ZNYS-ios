@@ -15,14 +15,14 @@ const NSString *entityName = @"AreaStatistic";
 
 @implementation AreaStatisticManager
 
-+ (instancetype)sharedInstance {
-    static AreaStatisticManager* instance;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [[AreaStatisticManager alloc] init];
-    });
-    return instance;
-}
+//+ (instancetype)sharedInstance {
+//    static AreaStatisticManager* instance;
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        instance = [[AreaStatisticManager alloc] init];
+//    });
+//    return instance;
+//}
 
 
 - (AreaStatistic *)createAreaStatistic {

@@ -32,18 +32,12 @@
 		3C584C0C1D6B3EB3000E3BCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C584C0B1D6B3EB3000E3BCE /* Images.xcassets */; };
 		3C62CE5B1D294CD700402FE1 /* CalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE5A1D294CD700402FE1 /* CalendarModel.m */; };
 		3C62CE611D29FFE300402FE1 /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C62CE601D29FFE300402FE1 /* NSDate+Helper.m */; };
-		3C68BEA71E9E6A3900D1EA3B /* AreaStatistic+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C68BE901E9E6A3900D1EA3B /* AreaStatistic+CoreDataClass.m */; };
-		3C68BEA81E9E6A3900D1EA3B /* AreaStatistic+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C68BE921E9E6A3900D1EA3B /* AreaStatistic+CoreDataProperties.m */; };
 		3C68BEA91E9E6A3900D1EA3B /* Award+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C68BE941E9E6A3900D1EA3B /* Award+CoreDataClass.m */; };
 		3C68BEAA1E9E6A3900D1EA3B /* Award+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C68BE961E9E6A3900D1EA3B /* Award+CoreDataProperties.m */; };
-		3C68BEAB1E9E6A3900D1EA3B /* BrushingStatistic+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C68BE981E9E6A3900D1EA3B /* BrushingStatistic+CoreDataClass.m */; };
-		3C68BEAC1E9E6A3900D1EA3B /* BrushingStatistic+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C68BE9A1E9E6A3900D1EA3B /* BrushingStatistic+CoreDataProperties.m */; };
 		3C68BEAD1E9E6A3900D1EA3B /* User+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C68BE9C1E9E6A3900D1EA3B /* User+CoreDataClass.m */; };
 		3C68BEAE1E9E6A3900D1EA3B /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C68BE9E1E9E6A3900D1EA3B /* User+CoreDataProperties.m */; };
 		3C68BEAF1E9E6A3900D1EA3B /* CalendarItem+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C68BEA01E9E6A3900D1EA3B /* CalendarItem+CoreDataClass.m */; };
 		3C68BEB01E9E6A3900D1EA3B /* CalendarItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C68BEA21E9E6A3900D1EA3B /* CalendarItem+CoreDataProperties.m */; };
-		3C68BEBD1E9E6B5B00D1EA3B /* ToothBrush+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C68BEBA1E9E6B5B00D1EA3B /* ToothBrush+CoreDataClass.m */; };
-		3C68BEBE1E9E6B5B00D1EA3B /* ToothBrush+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C68BEBC1E9E6B5B00D1EA3B /* ToothBrush+CoreDataProperties.m */; };
 		3C68BEC11E9F25F800D1EA3B /* CalendarDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C68BEC01E9F25F800D1EA3B /* CalendarDetailModel.m */; };
 		3C7B57341D6BF3F100D5E487 /* UserInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B57331D6BF3F100D5E487 /* UserInformationView.m */; };
 		3C7B57361D6C325600D5E487 /* ToolMacroes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B57351D6C325600D5E487 /* ToolMacroes.m */; };
@@ -78,6 +72,33 @@
 		455B1B2E1D376B44002D85E3 /* ToothBrushManagentFindView.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B2D1D376B44002D85E3 /* ToothBrushManagentFindView.m */; };
 		455B1B311D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B301D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m */; };
 		455B1B341D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.m in Sources */ = {isa = PBXBuildFile; fileRef = 455B1B331D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.m */; };
+		456B6F5D1EA67168004653A5 /* BrushingStatistic+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F5A1EA67168004653A5 /* BrushingStatistic+CoreDataClass.m */; };
+		456B6F5E1EA67168004653A5 /* BrushingStatistic+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F5A1EA67168004653A5 /* BrushingStatistic+CoreDataClass.m */; };
+		456B6F5F1EA67168004653A5 /* BrushingStatistic+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F5A1EA67168004653A5 /* BrushingStatistic+CoreDataClass.m */; };
+		456B6F601EA67168004653A5 /* BrushingStatistic+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F5C1EA67168004653A5 /* BrushingStatistic+CoreDataProperties.m */; };
+		456B6F611EA67168004653A5 /* BrushingStatistic+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F5C1EA67168004653A5 /* BrushingStatistic+CoreDataProperties.m */; };
+		456B6F621EA67168004653A5 /* BrushingStatistic+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F5C1EA67168004653A5 /* BrushingStatistic+CoreDataProperties.m */; };
+		456B6F681EA671B0004653A5 /* AreaStatistic+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F651EA671B0004653A5 /* AreaStatistic+CoreDataClass.m */; };
+		456B6F691EA671B0004653A5 /* AreaStatistic+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F651EA671B0004653A5 /* AreaStatistic+CoreDataClass.m */; };
+		456B6F6A1EA671B0004653A5 /* AreaStatistic+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F651EA671B0004653A5 /* AreaStatistic+CoreDataClass.m */; };
+		456B6F6B1EA671B0004653A5 /* AreaStatistic+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F671EA671B0004653A5 /* AreaStatistic+CoreDataProperties.m */; };
+		456B6F6C1EA671B0004653A5 /* AreaStatistic+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F671EA671B0004653A5 /* AreaStatistic+CoreDataProperties.m */; };
+		456B6F6D1EA671B0004653A5 /* AreaStatistic+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F671EA671B0004653A5 /* AreaStatistic+CoreDataProperties.m */; };
+		456B6F721EA671BD004653A5 /* ToothBrush+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F6F1EA671BD004653A5 /* ToothBrush+CoreDataClass.m */; };
+		456B6F731EA671BD004653A5 /* ToothBrush+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F6F1EA671BD004653A5 /* ToothBrush+CoreDataClass.m */; };
+		456B6F741EA671BD004653A5 /* ToothBrush+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F6F1EA671BD004653A5 /* ToothBrush+CoreDataClass.m */; };
+		456B6F751EA671BD004653A5 /* ToothBrush+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F711EA671BD004653A5 /* ToothBrush+CoreDataProperties.m */; };
+		456B6F761EA671BD004653A5 /* ToothBrush+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F711EA671BD004653A5 /* ToothBrush+CoreDataProperties.m */; };
+		456B6F771EA671BD004653A5 /* ToothBrush+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F711EA671BD004653A5 /* ToothBrush+CoreDataProperties.m */; };
+		456B6F7B1EA67F25004653A5 /* BrushingStatisticManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F7A1EA67F25004653A5 /* BrushingStatisticManager.m */; };
+		456B6F7C1EA67F25004653A5 /* BrushingStatisticManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F7A1EA67F25004653A5 /* BrushingStatisticManager.m */; };
+		456B6F7D1EA67F25004653A5 /* BrushingStatisticManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F7A1EA67F25004653A5 /* BrushingStatisticManager.m */; };
+		456B6F801EA67FC7004653A5 /* DatabaseBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F7F1EA67FC7004653A5 /* DatabaseBaseManager.m */; };
+		456B6F811EA67FC7004653A5 /* DatabaseBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F7F1EA67FC7004653A5 /* DatabaseBaseManager.m */; };
+		456B6F821EA67FC7004653A5 /* DatabaseBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F7F1EA67FC7004653A5 /* DatabaseBaseManager.m */; };
+		456B6F851EA79C07004653A5 /* TestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F841EA79C07004653A5 /* TestManager.m */; };
+		456B6F861EA79C07004653A5 /* TestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F841EA79C07004653A5 /* TestManager.m */; };
+		456B6F871EA79C07004653A5 /* TestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 456B6F841EA79C07004653A5 /* TestManager.m */; };
 		4576E3E21CCFD37800A1BA2B /* AwardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4576E3E11CCFD37800A1BA2B /* AwardManager.m */; };
 		458093911C21448000CB9BF9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458093901C21448000CB9BF9 /* CoreData.framework */; };
 		458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 458093941C21453200CB9BF9 /* CoreDataHelper.m */; };
@@ -273,18 +294,10 @@
 		3C62CE5A1D294CD700402FE1 /* CalendarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarModel.m; sourceTree = "<group>"; };
 		3C62CE5F1D29FFE300402FE1 /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
 		3C62CE601D29FFE300402FE1 /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
-		3C68BE8F1E9E6A3900D1EA3B /* AreaStatistic+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AreaStatistic+CoreDataClass.h"; sourceTree = "<group>"; };
-		3C68BE901E9E6A3900D1EA3B /* AreaStatistic+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AreaStatistic+CoreDataClass.m"; sourceTree = "<group>"; };
-		3C68BE911E9E6A3900D1EA3B /* AreaStatistic+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AreaStatistic+CoreDataProperties.h"; sourceTree = "<group>"; };
-		3C68BE921E9E6A3900D1EA3B /* AreaStatistic+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AreaStatistic+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3C68BE931E9E6A3900D1EA3B /* Award+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Award+CoreDataClass.h"; sourceTree = "<group>"; };
 		3C68BE941E9E6A3900D1EA3B /* Award+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Award+CoreDataClass.m"; sourceTree = "<group>"; };
 		3C68BE951E9E6A3900D1EA3B /* Award+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Award+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3C68BE961E9E6A3900D1EA3B /* Award+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Award+CoreDataProperties.m"; sourceTree = "<group>"; };
-		3C68BE971E9E6A3900D1EA3B /* BrushingStatistic+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BrushingStatistic+CoreDataClass.h"; sourceTree = "<group>"; };
-		3C68BE981E9E6A3900D1EA3B /* BrushingStatistic+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BrushingStatistic+CoreDataClass.m"; sourceTree = "<group>"; };
-		3C68BE991E9E6A3900D1EA3B /* BrushingStatistic+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BrushingStatistic+CoreDataProperties.h"; sourceTree = "<group>"; };
-		3C68BE9A1E9E6A3900D1EA3B /* BrushingStatistic+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BrushingStatistic+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3C68BE9B1E9E6A3900D1EA3B /* User+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataClass.h"; sourceTree = "<group>"; };
 		3C68BE9C1E9E6A3900D1EA3B /* User+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataClass.m"; sourceTree = "<group>"; };
 		3C68BE9D1E9E6A3900D1EA3B /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -293,10 +306,6 @@
 		3C68BEA01E9E6A3900D1EA3B /* CalendarItem+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CalendarItem+CoreDataClass.m"; sourceTree = "<group>"; };
 		3C68BEA11E9E6A3900D1EA3B /* CalendarItem+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CalendarItem+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3C68BEA21E9E6A3900D1EA3B /* CalendarItem+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CalendarItem+CoreDataProperties.m"; sourceTree = "<group>"; };
-		3C68BEB91E9E6B5B00D1EA3B /* ToothBrush+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ToothBrush+CoreDataClass.h"; sourceTree = "<group>"; };
-		3C68BEBA1E9E6B5B00D1EA3B /* ToothBrush+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ToothBrush+CoreDataClass.m"; sourceTree = "<group>"; };
-		3C68BEBB1E9E6B5B00D1EA3B /* ToothBrush+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ToothBrush+CoreDataProperties.h"; sourceTree = "<group>"; };
-		3C68BEBC1E9E6B5B00D1EA3B /* ToothBrush+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ToothBrush+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3C68BEBF1E9F25F800D1EA3B /* CalendarDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDetailModel.h; sourceTree = "<group>"; };
 		3C68BEC01E9F25F800D1EA3B /* CalendarDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDetailModel.m; sourceTree = "<group>"; };
 		3C7B57321D6BF3F100D5E487 /* UserInformationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformationView.h; sourceTree = "<group>"; };
@@ -389,6 +398,24 @@
 		455B1B301D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindToothBrushCollectionViewDatasource.m; sourceTree = "<group>"; };
 		455B1B321D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindNewToothBrushCollectionviewDatasource.h; sourceTree = "<group>"; };
 		455B1B331D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindNewToothBrushCollectionviewDatasource.m; sourceTree = "<group>"; };
+		456B6F591EA67168004653A5 /* BrushingStatistic+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BrushingStatistic+CoreDataClass.h"; sourceTree = "<group>"; };
+		456B6F5A1EA67168004653A5 /* BrushingStatistic+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BrushingStatistic+CoreDataClass.m"; sourceTree = "<group>"; };
+		456B6F5B1EA67168004653A5 /* BrushingStatistic+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BrushingStatistic+CoreDataProperties.h"; sourceTree = "<group>"; };
+		456B6F5C1EA67168004653A5 /* BrushingStatistic+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BrushingStatistic+CoreDataProperties.m"; sourceTree = "<group>"; };
+		456B6F641EA671B0004653A5 /* AreaStatistic+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AreaStatistic+CoreDataClass.h"; path = "../AreaStatistic+CoreDataClass.h"; sourceTree = "<group>"; };
+		456B6F651EA671B0004653A5 /* AreaStatistic+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AreaStatistic+CoreDataClass.m"; path = "../AreaStatistic+CoreDataClass.m"; sourceTree = "<group>"; };
+		456B6F661EA671B0004653A5 /* AreaStatistic+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AreaStatistic+CoreDataProperties.h"; path = "../AreaStatistic+CoreDataProperties.h"; sourceTree = "<group>"; };
+		456B6F671EA671B0004653A5 /* AreaStatistic+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AreaStatistic+CoreDataProperties.m"; path = "../AreaStatistic+CoreDataProperties.m"; sourceTree = "<group>"; };
+		456B6F6E1EA671BD004653A5 /* ToothBrush+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ToothBrush+CoreDataClass.h"; path = "../ToothBrush+CoreDataClass.h"; sourceTree = "<group>"; };
+		456B6F6F1EA671BD004653A5 /* ToothBrush+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ToothBrush+CoreDataClass.m"; path = "../ToothBrush+CoreDataClass.m"; sourceTree = "<group>"; };
+		456B6F701EA671BD004653A5 /* ToothBrush+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ToothBrush+CoreDataProperties.h"; path = "../ToothBrush+CoreDataProperties.h"; sourceTree = "<group>"; };
+		456B6F711EA671BD004653A5 /* ToothBrush+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ToothBrush+CoreDataProperties.m"; path = "../ToothBrush+CoreDataProperties.m"; sourceTree = "<group>"; };
+		456B6F791EA67F25004653A5 /* BrushingStatisticManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrushingStatisticManager.h; sourceTree = "<group>"; };
+		456B6F7A1EA67F25004653A5 /* BrushingStatisticManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrushingStatisticManager.m; sourceTree = "<group>"; };
+		456B6F7E1EA67FC7004653A5 /* DatabaseBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseBaseManager.h; sourceTree = "<group>"; };
+		456B6F7F1EA67FC7004653A5 /* DatabaseBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseBaseManager.m; sourceTree = "<group>"; };
+		456B6F831EA79C07004653A5 /* TestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestManager.h; sourceTree = "<group>"; };
+		456B6F841EA79C07004653A5 /* TestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestManager.m; sourceTree = "<group>"; };
 		4576E3E01CCFD37800A1BA2B /* AwardManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwardManager.h; sourceTree = "<group>"; };
 		4576E3E11CCFD37800A1BA2B /* AwardManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwardManager.m; sourceTree = "<group>"; };
 		458093901C21448000CB9BF9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -959,11 +986,27 @@
 		455B1B351D38086E002D85E3 /* BluetoothModule */ = {
 			isa = PBXGroup;
 			children = (
+				456B6F631EA67172004653A5 /* Model */,
 				454C8ED21EA5334100FDBAF8 /* BLEConnectModule */,
 				45FB0F4F1EA366090050DA6B /* DataBase */,
 				45A843581EA1224B00E81B75 /* BLEConnectModule.xcodeproj */,
 			);
 			name = BluetoothModule;
+			sourceTree = "<group>";
+		};
+		456B6F631EA67172004653A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				456B6F641EA671B0004653A5 /* AreaStatistic+CoreDataClass.h */,
+				456B6F651EA671B0004653A5 /* AreaStatistic+CoreDataClass.m */,
+				456B6F661EA671B0004653A5 /* AreaStatistic+CoreDataProperties.h */,
+				456B6F671EA671B0004653A5 /* AreaStatistic+CoreDataProperties.m */,
+				456B6F591EA67168004653A5 /* BrushingStatistic+CoreDataClass.h */,
+				456B6F5A1EA67168004653A5 /* BrushingStatistic+CoreDataClass.m */,
+				456B6F5B1EA67168004653A5 /* BrushingStatistic+CoreDataProperties.h */,
+				456B6F5C1EA67168004653A5 /* BrushingStatistic+CoreDataProperties.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		458093921C2144B700CB9BF9 /* Manager */ = {
@@ -1037,22 +1080,10 @@
 		458094A31C242E8400CB9BF9 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				3C68BEB91E9E6B5B00D1EA3B /* ToothBrush+CoreDataClass.h */,
-				3C68BEBA1E9E6B5B00D1EA3B /* ToothBrush+CoreDataClass.m */,
-				3C68BEBB1E9E6B5B00D1EA3B /* ToothBrush+CoreDataProperties.h */,
-				3C68BEBC1E9E6B5B00D1EA3B /* ToothBrush+CoreDataProperties.m */,
-				3C68BE8F1E9E6A3900D1EA3B /* AreaStatistic+CoreDataClass.h */,
-				3C68BE901E9E6A3900D1EA3B /* AreaStatistic+CoreDataClass.m */,
-				3C68BE911E9E6A3900D1EA3B /* AreaStatistic+CoreDataProperties.h */,
-				3C68BE921E9E6A3900D1EA3B /* AreaStatistic+CoreDataProperties.m */,
 				3C68BE931E9E6A3900D1EA3B /* Award+CoreDataClass.h */,
 				3C68BE941E9E6A3900D1EA3B /* Award+CoreDataClass.m */,
 				3C68BE951E9E6A3900D1EA3B /* Award+CoreDataProperties.h */,
 				3C68BE961E9E6A3900D1EA3B /* Award+CoreDataProperties.m */,
-				3C68BE971E9E6A3900D1EA3B /* BrushingStatistic+CoreDataClass.h */,
-				3C68BE981E9E6A3900D1EA3B /* BrushingStatistic+CoreDataClass.m */,
-				3C68BE991E9E6A3900D1EA3B /* BrushingStatistic+CoreDataProperties.h */,
-				3C68BE9A1E9E6A3900D1EA3B /* BrushingStatistic+CoreDataProperties.m */,
 				3C68BE9B1E9E6A3900D1EA3B /* User+CoreDataClass.h */,
 				3C68BE9C1E9E6A3900D1EA3B /* User+CoreDataClass.m */,
 				3C68BE9D1E9E6A3900D1EA3B /* User+CoreDataProperties.h */,
@@ -1111,6 +1142,10 @@
 		45F7865B1D0D009600E4F91D /* model */ = {
 			isa = PBXGroup;
 			children = (
+				456B6F6E1EA671BD004653A5 /* ToothBrush+CoreDataClass.h */,
+				456B6F6F1EA671BD004653A5 /* ToothBrush+CoreDataClass.m */,
+				456B6F701EA671BD004653A5 /* ToothBrush+CoreDataProperties.h */,
+				456B6F711EA671BD004653A5 /* ToothBrush+CoreDataProperties.m */,
 				455B1B201D361DD0002D85E3 /* ToothbrushManager.h */,
 				455B1B211D361DD0002D85E3 /* ToothbrushManager.m */,
 				455B1B2F1D37A390002D85E3 /* BindToothBrushCollectionViewDatasource.h */,
@@ -1150,6 +1185,12 @@
 			children = (
 				453FF57C1EA3D4BF00E2F80F /* AreaStatisticManager.h */,
 				453FF57D1EA3D4BF00E2F80F /* AreaStatisticManager.m */,
+				456B6F791EA67F25004653A5 /* BrushingStatisticManager.h */,
+				456B6F7A1EA67F25004653A5 /* BrushingStatisticManager.m */,
+				456B6F7E1EA67FC7004653A5 /* DatabaseBaseManager.h */,
+				456B6F7F1EA67FC7004653A5 /* DatabaseBaseManager.m */,
+				456B6F831EA79C07004653A5 /* TestManager.h */,
+				456B6F841EA79C07004653A5 /* TestManager.m */,
 			);
 			name = DataBase;
 			sourceTree = "<group>";
@@ -1513,7 +1554,7 @@
 				TargetAttributes = {
 					0487D75F1B74548F00756EF8 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 49VALGA2P9;
+						DevelopmentTeam = KAG6J66XWF;
 						ProvisioningStyle = Automatic;
 					};
 					0487D7781B74548F00756EF8 = {
@@ -1522,6 +1563,7 @@
 					};
 					453FF5841EA51C2F00E2F80F = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = KAG6J66XWF;
 						ProvisioningStyle = Automatic;
 					};
 					453FF59C1EA51C2F00E2F80F = {
@@ -1732,7 +1774,6 @@
 				64CCBD8E1CD30B94003EFFAD /* AddRewardButtonView.m in Sources */,
 				3C98A2241D24FF0700046BE8 /* CalendarViewController.m in Sources */,
 				3CF4C0A71E0D14F600C5EBC7 /* ModalPresentationController.m in Sources */,
-				3C68BEBD1E9E6B5B00D1EA3B /* ToothBrush+CoreDataClass.m in Sources */,
 				3C278A041E13AD2400EF2376 /* UserCollectionViewFlowLayout.m in Sources */,
 				3CCCAED21DA3979400D9A525 /* DesignMacro.m in Sources */,
 				64CCBD971CD5BA1F003EFFAD /* MAKAFakeRootAlertView.m in Sources */,
@@ -1742,13 +1783,15 @@
 				3CC63A431E03DF5A00A856F6 /* UserManager.m in Sources */,
 				C43136441BC279800097A91B /* RightToLeftSegue.m in Sources */,
 				3CC8F5FB1D6F216400E286E7 /* UIColor+Helper.m in Sources */,
+				456B6F7B1EA67F25004653A5 /* BrushingStatisticManager.m in Sources */,
 				C43136411BC26CF90097A91B /* LeftToRightSegue.m in Sources */,
 				645A01931C37CB7300556395 /* VerifyPasswordViewController.m in Sources */,
-				3C68BEA71E9E6A3900D1EA3B /* AreaStatistic+CoreDataClass.m in Sources */,
 				3C68BEB01E9E6A3900D1EA3B /* CalendarItem+CoreDataProperties.m in Sources */,
 				645A01711C37B5B800556395 /* AddAccountViewController.m in Sources */,
 				C431364A1BC29A840097A91B /* NormalModeControllerViewController.m in Sources */,
 				64CCBD8B1CD30B7E003EFFAD /* rewardListModel.m in Sources */,
+				456B6F751EA671BD004653A5 /* ToothBrush+CoreDataProperties.m in Sources */,
+				456B6F6B1EA671B0004653A5 /* AreaStatistic+CoreDataProperties.m in Sources */,
 				45F786601D0D00E400E4F91D /* ToothBrushManagentMainView.m in Sources */,
 				0487D7691B74548F00756EF8 /* AppDelegate.m in Sources */,
 				C460E0401BC509D3000608BD /* DesignModeController.m in Sources */,
@@ -1782,6 +1825,8 @@
 				6412FC9B1C476AB400DF8FC5 /* RewardListViewController.m in Sources */,
 				647E05CE1C3B70A500ADB810 /* UserAccountViewController.m in Sources */,
 				0457FB5E1BA9461000001A9D /* TouchableImageView.m in Sources */,
+				456B6F5D1EA67168004653A5 /* BrushingStatistic+CoreDataClass.m in Sources */,
+				456B6F681EA671B0004653A5 /* AreaStatistic+CoreDataClass.m in Sources */,
 				4576E3E21CCFD37800A1BA2B /* AwardManager.m in Sources */,
 				3C7B57361D6C325600D5E487 /* ToolMacroes.m in Sources */,
 				64CCBD941CD4909F003EFFAD /* AddRewardScrollView.m in Sources */,
@@ -1789,26 +1834,26 @@
 				3C37F4851D6BE0D500D879E0 /* UIImage+Helper.m in Sources */,
 				3CF4C0AD1E0D162800C5EBC7 /* UserDetailsViewController.m in Sources */,
 				0421D3741B8126C700BF6065 /* CabinetItem.m in Sources */,
+				456B6F721EA671BD004653A5 /* ToothBrush+CoreDataClass.m in Sources */,
 				454112741C95BE9600BE4DE9 /* ZNYSprogressBar.m in Sources */,
 				458094631C23DE3100CB9BF9 /* ConnectingView.m in Sources */,
 				64CCBD9A1CD88A16003EFFAD /* ExchangeRewardViewController.m in Sources */,
 				3C98A2291D24FF1800046BE8 /* CalendarDetailView.m in Sources */,
 				455B1B341D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.m in Sources */,
 				3C210B5F1E1361A500F0390B /* UserCollectionViewCell.m in Sources */,
-				3C68BEAC1E9E6A3900D1EA3B /* BrushingStatistic+CoreDataProperties.m in Sources */,
 				64CCBD851CD30460003EFFAD /* AddRewardView.m in Sources */,
 				3C62CE611D29FFE300402FE1 /* NSDate+Helper.m in Sources */,
 				455B1B2E1D376B44002D85E3 /* ToothBrushManagentFindView.m in Sources */,
 				3C68BEAE1E9E6A3900D1EA3B /* User+CoreDataProperties.m in Sources */,
 				041366001BAD8C9A00CD0604 /* DialogView.m in Sources */,
 				3C68BEAD1E9E6A3900D1EA3B /* User+CoreDataClass.m in Sources */,
-				3C68BEBE1E9E6B5B00D1EA3B /* ToothBrush+CoreDataProperties.m in Sources */,
 				0469BFBE1BADC22F0055DF4A /* Fortune.m in Sources */,
 				3CC8F6051D6FE47600E286E7 /* UIColor+Theme.m in Sources */,
 				645A019C1C37CEF700556395 /* VerifyPasswordView.m in Sources */,
 				3C7B57341D6BF3F100D5E487 /* UserInformationView.m in Sources */,
 				0421D3791B830D0B00BF6065 /* ItemState.m in Sources */,
 				3C68BEC11E9F25F800D1EA3B /* CalendarDetailModel.m in Sources */,
+				456B6F601EA67168004653A5 /* BrushingStatistic+CoreDataProperties.m in Sources */,
 				3CC8F5FD1D6F25B700E286E7 /* ThemeManager.m in Sources */,
 				3C877D831D37362B0068ADED /* ConnectedResultView.m in Sources */,
 				45F786631D0D010400E4F91D /* ToothBrushManagentMainViewController.m in Sources */,
@@ -1822,20 +1867,20 @@
 				458094691C23DE5700CB9BF9 /* ConnectingViewController.m in Sources */,
 				C4A025001BBE678000771969 /* settingIndexController.m in Sources */,
 				3C15B7161DE5876800609717 /* Model.xcdatamodeld in Sources */,
+				456B6F801EA67FC7004653A5 /* DatabaseBaseManager.m in Sources */,
 				04C978F31C44BE100046DB4A /* GiftItem.m in Sources */,
+				456B6F851EA79C07004653A5 /* TestManager.m in Sources */,
 				64CCBD911CD314E6003EFFAD /* ChooseNumberScrollView.m in Sources */,
 				647E05D11C3B710A00ADB810 /* UserDetailView.m in Sources */,
 				3C68BEA91E9E6A3900D1EA3B /* Award+CoreDataClass.m in Sources */,
 				3C98A22A1D24FF1800046BE8 /* CalendarView.m in Sources */,
 				645A01701C37B5B800556395 /* SelectBirthView.m in Sources */,
 				0487D7661B74548F00756EF8 /* main.m in Sources */,
-				3C68BEAB1E9E6A3900D1EA3B /* BrushingStatistic+CoreDataClass.m in Sources */,
 				647E05C81C3A6C1900ADB810 /* SettingHeaderView.m in Sources */,
 				647E05C51C3A6B4B00ADB810 /* SettingViewController.m in Sources */,
 				6412FCA11C477F0C00DF8FC5 /* RewardItemView.m in Sources */,
 				453FF57E1EA3D4BF00E2F80F /* AreaStatisticManager.m in Sources */,
 				64337DC81C3B8DD400C9D811 /* ThumbView.m in Sources */,
-				3C68BEA81E9E6A3900D1EA3B /* AreaStatistic+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1852,9 +1897,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				456B6F7C1EA67F25004653A5 /* BrushingStatisticManager.m in Sources */,
 				45B1434B1EA52DA40042C0BF /* ViewController.m in Sources */,
+				456B6F761EA671BD004653A5 /* ToothBrush+CoreDataProperties.m in Sources */,
+				456B6F861EA79C07004653A5 /* TestManager.m in Sources */,
 				453FF58C1EA51C2F00E2F80F /* AppDelegate.m in Sources */,
+				456B6F5E1EA67168004653A5 /* BrushingStatistic+CoreDataClass.m in Sources */,
+				456B6F731EA671BD004653A5 /* ToothBrush+CoreDataClass.m in Sources */,
+				456B6F611EA67168004653A5 /* BrushingStatistic+CoreDataProperties.m in Sources */,
 				453FF5891EA51C2F00E2F80F /* main.m in Sources */,
+				456B6F691EA671B0004653A5 /* AreaStatistic+CoreDataClass.m in Sources */,
+				456B6F811EA67FC7004653A5 /* DatabaseBaseManager.m in Sources */,
+				456B6F6C1EA671B0004653A5 /* AreaStatistic+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1862,8 +1916,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				456B6F5F1EA67168004653A5 /* BrushingStatistic+CoreDataClass.m in Sources */,
+				456B6F871EA79C07004653A5 /* TestManager.m in Sources */,
+				456B6F6D1EA671B0004653A5 /* AreaStatistic+CoreDataProperties.m in Sources */,
 				45B1434C1EA52DA40042C0BF /* ViewController.m in Sources */,
+				456B6F621EA67168004653A5 /* BrushingStatistic+CoreDataProperties.m in Sources */,
+				456B6F7D1EA67F25004653A5 /* BrushingStatisticManager.m in Sources */,
+				456B6F741EA671BD004653A5 /* ToothBrush+CoreDataClass.m in Sources */,
+				456B6F6A1EA671B0004653A5 /* AreaStatistic+CoreDataClass.m in Sources */,
+				456B6F821EA67FC7004653A5 /* DatabaseBaseManager.m in Sources */,
 				453FF5A21EA51C2F00E2F80F /* BluetoothTestInterfaceTests.m in Sources */,
+				456B6F771EA671BD004653A5 /* ToothBrush+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2029,7 +2092,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 543198902@qq.com (2EZ48W4M9J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 49VALGA2P9;
+				DEVELOPMENT_TEAM = KAG6J66XWF;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -2045,7 +2108,7 @@
 					"$(PROJECT_DIR)/ZNYS/BLELib",
 					"$(PROJECT_DIR)/ZNYS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.animita.ZNYS.yu243e;
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.EricCheung.ZNYS-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -2060,7 +2123,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 543198902@qq.com (2EZ48W4M9J)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 49VALGA2P9;
+				DEVELOPMENT_TEAM = KAG6J66XWF;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -2076,7 +2139,7 @@
 					"$(PROJECT_DIR)/ZNYS/BLELib",
 					"$(PROJECT_DIR)/ZNYS",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.animita.ZNYS.yu243e;
+				PRODUCT_BUNDLE_IDENTIFIER = "cn.EricCheung.ZNYS-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -2127,6 +2190,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = KAG6J66XWF;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)/**",
 					"\"$(SRCROOT)/BLEConnectModule/BLEConnectModule\"/**",
@@ -2146,6 +2210,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = KAG6J66XWF;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)/**",
 					"\"$(SRCROOT)/BLEConnectModule/BLEConnectModule\"/**",

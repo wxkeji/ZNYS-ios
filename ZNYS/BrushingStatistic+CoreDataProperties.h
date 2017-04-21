@@ -1,9 +1,9 @@
 //
 //  BrushingStatistic+CoreDataProperties.h
-//  ZNYS
+//  
 //
-//  Created by yu243e on 2017/4/12.
-//  Copyright © 2017年 Woodseen. All rights reserved.
+//  Created by 张恒铭 on 4/18/17.
+//
 //
 
 #import "BrushingStatistic+CoreDataClass.h"
@@ -24,17 +24,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSNumber *strength;
 @property (nullable, nonatomic, copy) NSNumber *timeSlot;
 @property (nullable, nonatomic, copy) NSNumber *toothBrushID;
-@property (nullable, nonatomic, retain) ToothBrush *bePossessedByToothBrush;
-@property (nullable, nonatomic, retain) NSSet<AreaStatistic *> *includeAreaStatistics;
+@property (nullable, nonatomic, retain) ToothBrush *areaStatistic;
+@property (nullable, nonatomic, retain) NSSet<AreaStatistic *> *toothBrush;
 
 @end
 
 @interface BrushingStatistic (CoreDataGeneratedAccessors)
 
-- (void)addIncludeAreaStatisticsObject:(AreaStatistic *)value;
-- (void)removeIncludeAreaStatisticsObject:(AreaStatistic *)value;
-- (void)addIncludeAreaStatistics:(NSSet<AreaStatistic *> *)values;
-- (void)removeIncludeAreaStatistics:(NSSet<AreaStatistic *> *)values;
+- (void)addToothBrushObject:(AreaStatistic *)value;
+- (void)removeToothBrushObject:(AreaStatistic *)value;
+- (void)addToothBrush:(NSSet<AreaStatistic *> *)values;
+- (void)removeToothBrush:(NSSet<AreaStatistic *> *)values;
 
 @end
 
