@@ -35,14 +35,6 @@
 #pragma mark life cycle
 
 - (void)dealloc{
-    _navView = nil;
-    _dismissButton = nil;
-    _userDetailView = nil;
-    _titleLabel = nil;
-    _switchUserView = nil;
-    _switchBackView = nil;
-    _switchDesLabel = nil;
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -57,6 +49,8 @@
     [self.view addSubview:self.switchBackView];
     [self.switchBackView addSubview:self.switchUserView];
     [self.switchBackView addSubview:self.switchDesLabel];
+    
+    [self configureTheme];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshDetail) name:@"userDetailDidChange" object:nil];
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newUserDetail) name:@"userDidCreate" object:nil];
@@ -113,6 +107,10 @@
 }
 
 #pragma mark private method
+- (void)configureTheme {
+    self.navView.backgroundColor = [UIColor colorWithThemedImageNamed:@"color/primary"];
+    [_dismissButton setImage:[UIImage themedImageWithNamed:@"navigation/dismissButton"] forState:UIControlStateNormal];
+}
 
 - (void)jumpToAddUserAccount{
     AddAccountViewController * viewController = [[AddAccountViewController alloc] init];
@@ -148,7 +146,6 @@
 - (UIView *)navView{
     if (!_navView) {
         _navView = [[UIView alloc] init];
-        _navView.backgroundColor = [UIColor purpleColor];
     }
     return _navView;
 }
@@ -156,7 +153,6 @@
 - (UIButton *)dismissButton{
     if (!_dismissButton) {
         _dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_dismissButton setImage:[UIImage imageNamed:@"userAccount_back"] forState:UIControlStateNormal];
         [_dismissButton addTarget:self action:@selector(dismissButtonAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _dismissButton;

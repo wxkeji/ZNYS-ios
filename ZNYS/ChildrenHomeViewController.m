@@ -146,7 +146,7 @@
 #pragma mark - private method
 - (void)configureTheme {
     self.backgroundImageViewTop.image = [UIImage themedImageWithNamed:@"color/primary"];
-    self.backgroundLogoImageView.image = [UIImage themedImageWithNamed:@"children/logo"];
+    self.backgroundLogoImageView.image = [UIImage themedImageWithNamed:@"logo"];
     
     [self.settingButton setImage:[UIImage themedImageWithNamed:@"navigation/settingButton"] forState:UIControlStateNormal];
     [self.calendarButton setImage:[UIImage themedImageWithNamed:@"navigation/calendarButton"] forState:UIControlStateNormal];
