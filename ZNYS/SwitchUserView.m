@@ -90,11 +90,11 @@
                 thumbView.thumbButton.tag = i;
                 thumbView.nameLabel.text = [[self.dataArray objectAtIndex:i] objectForKey:@"name"];
                 thumbView.uuid = [[self.dataArray objectAtIndex:i] objectForKey:@"uuid"];
-                //todo +++
-                if ([[[self.dataArray objectAtIndex:i] objectForKey:@"thumb"] boolValue]) {
-                    [thumbView.thumbButton setBackgroundColor:[UIColor redColor]];
+                //temp +++ thumb值已改为返回 gender
+                if (![[[self.dataArray objectAtIndex:i] objectForKey:@"thumb"] boolValue]) {
+                    [thumbView.thumbButton setImage:[UIImage imageNamed:@"user/boyDefault"] forState:UIControlStateNormal];
                 }else{
-                    [thumbView.thumbButton setBackgroundColor:[UIColor blueColor]];
+                    [thumbView.thumbButton setImage:[UIImage imageNamed:@"user/girlDefault"] forState:UIControlStateNormal];
                 }
                 [self addSubview:thumbView];
             }
