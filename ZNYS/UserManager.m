@@ -40,7 +40,7 @@
 }
 
 //根据用户性别返回用户头像，后期再加入判断是否已有头像图片
-+ (UIImage *)UserAvatarImageWithUser:(User *)user {
++ (UIImage *)userAvatarImageWithUser:(User *)user {
     UIImage *image;
     if (!user.gender) {
         image = [UIImage imageNamed:@"user/boyDefault"];
@@ -140,7 +140,7 @@
 
 //此版本根据性别生成用户头像
 - (UIImage *)currentUserAvatarImage {
-    UIImage *image = [UserManager UserAvatarImageWithUser:[self currentUser]];
+    UIImage *image = [UserManager userAvatarImageWithUser:[self currentUser]];
     return image;
 }
 

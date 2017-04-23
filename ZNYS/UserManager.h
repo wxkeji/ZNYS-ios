@@ -15,7 +15,7 @@
 + (instancetype)sharedInstance;
 
 //Helper
-+ (UIImage *)UserAvatarImageWithUser:(User *)user;
++ (UIImage *)userAvatarImageWithUser:(User *)user;
 
 //ALL Users
 - (NSInteger)currentUserCount;

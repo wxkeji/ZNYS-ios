@@ -161,7 +161,7 @@ static NSTimeInterval swichAnimationTime = 0.3;
     
     User *user = (User *)[[UserManager sharedInstance] allUsersExceptUUID:nil][indexPath.row];
     
-    [cell.userImageView setImage:[UserManager UserAvatarImageWithUser:user]];
+    [cell.userImageView setImage:[UserManager userAvatarImageWithUser:user]];
     [cell.userNameLabel setText:user.nickName];
     
     return cell;
@@ -214,7 +214,7 @@ static NSTimeInterval swichAnimationTime = 0.3;
 //        [[ThemeManager sharedManager] configureTheme:ZNYSThemeStyleBlue];
 //    }
     MyUserDetailsView *tempUserDetailsView = [MyUserDetailsView loadViewFromNib];
-    [tempUserDetailsView.userImageView setImage:[UserManager UserAvatarImageWithUser:user]];
+    [tempUserDetailsView.userImageView setImage:[UserManager userAvatarImageWithUser:user]];
     [tempUserDetailsView.userNameLabel setText:user.nickName];
     [tempUserDetailsView.levelLabel setText:[NSString stringWithFormat:@"%d",user.level]];
     [tempUserDetailsView.coinLabel setText:[NSString stringWithFormat:@"%@", @(user.tokensOwned)]];
