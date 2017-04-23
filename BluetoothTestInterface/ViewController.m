@@ -71,7 +71,13 @@
 //        NSLog(@"result %i",result);
 //    }];
     
-    [[BluetoothServer defaultServer] scan];
+//    [[BluetoothServer defaultServer] scan];
+    [[BluetoothServer defaultServer] scanWithCompletionBlock:^(NSArray *peripheralsArray ) {
+        
+        
+        NSLog(@"breakPoint");
+        
+    }];
     
 }
 - (IBAction)readRTC:(id)sender

@@ -13,12 +13,15 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "SensorDataHandler.h"
 #import "AnalysisResultSet.h"
+#import "ZNYSPeripheral.h"
 @import CoreBluetooth;
 @import QuartzCore;
 
 
 #define SAVE_DATA_TO_DATABASE 1
 
+typedef void (^ScanCompletionBlock)(NSArray<CBPeripheral*> *peripherals);
+typedef void (^ConnectCompletionBlock)(BOOL result, NSString *infomation);
 
 typedef NS_ENUM(NSUInteger,BLSDataType)
 {
@@ -64,11 +67,46 @@ typedef NS_ENUM(NSUInteger,DataType) {
 
 
 #pragma mark - APIs
--(void)scan;//开启蓝牙的状态下，扫描并自动连接到硬件（一般用时不超过五秒），连接后self.connected将变成YES
--(void)connectDeviceWithFinishBlock:(void(^)(BOOL isConnected))completion;/*WithCompletionBlock:(void(^)(void))completion failedBlock:(void(^)(void))fail*/;
+
+
+
+/**
+ 直接扫描附近蓝牙硬件名字为Mita Brush的并连接
+ */
+-(void)scan;
+
+/**
+ 扫描附近的蓝牙硬件，并在回调block中获取结果
+ 
+ @param completion 回调Block
+ */
+- (void)scanWithCompletionBlock:(ScanCompletionBlock)completion;
+
+
+
+/**
+ 直接连接相应的Peripheral
+
+ @param peripheral periphearl
+ */
+-(void)connect:(CBPeripheral*)peripheral;
+
+/**
+ 连接相应的Peripheral，并且在回调Block中传入连接结果
+
+ @param completion block
+ */
+-(void)connectDeviceWithFinishBlock:(ConnectCompletionBlock)completion;/*WithCompletionBlock:(void(^)(void))completion failedBlock:(void(^)(void))fail*/;
+
+
+/**
+ 停止搜索周围的硬件
+ */
 -(void)stopScan;
+
+
 - (void)startReceiveDataWithType:(NSUInteger)dataType;
--(BOOL)allDataIsReceived;
+- (BOOL)allDataIsReceived;
 #pragma mark - Encapsulated APIs,通过这些API可以控制牙刷
 
 

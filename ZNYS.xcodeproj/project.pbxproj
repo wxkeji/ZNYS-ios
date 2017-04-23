@@ -218,6 +218,20 @@
 			remoteGlobalIDString = 453FF5841EA51C2F00E2F80F;
 			remoteInfo = BluetoothTestInterface;
 		};
+		4587C86D1EABA12600348C80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45A843581EA1224B00E81B75 /* BLEConnectModule.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 45A843151EA11EAC00E81B75;
+			remoteInfo = BLEConnectModule;
+		};
+		4587C8721EACA76300348C80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45A843581EA1224B00E81B75 /* BLEConnectModule.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 45A843151EA11EAC00E81B75;
+			remoteInfo = BLEConnectModule;
+		};
 		45A8435C1EA1224B00E81B75 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 45A843581EA1224B00E81B75 /* BLEConnectModule.xcodeproj */;
@@ -1470,6 +1484,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4587C86E1EABA12600348C80 /* PBXTargetDependency */,
 			);
 			name = ZNYS;
 			productName = ZNYS;
@@ -1524,6 +1539,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4587C8731EACA76300348C80 /* PBXTargetDependency */,
 				453FF59F1EA51C2F00E2F80F /* PBXTargetDependency */,
 			);
 			name = BluetoothTestInterfaceTests;
@@ -1965,6 +1981,16 @@
 			target = 453FF5841EA51C2F00E2F80F /* BluetoothTestInterface */;
 			targetProxy = 453FF5A91EA51C2F00E2F80F /* PBXContainerItemProxy */;
 		};
+		4587C86E1EABA12600348C80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BLEConnectModule;
+			targetProxy = 4587C86D1EABA12600348C80 /* PBXContainerItemProxy */;
+		};
+		4587C8731EACA76300348C80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BLEConnectModule;
+			targetProxy = 4587C8721EACA76300348C80 /* PBXContainerItemProxy */;
+		};
 		45D5ED591EA5321200620CDD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BLEConnectModule;
@@ -2106,7 +2132,7 @@
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
 					"\"${PODS_ROOT}/Headers/Public/SVProgressHUD\"",
-					"\"$(SRCROOT)/BLEConnectModule/BLEConnectModule\"",
+					"\"$(SRCROOT)/BLEConnectModule/BLEConnectModule\"/**",
 				);
 				INFOPLIST_FILE = ZNYS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2115,6 +2141,21 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZNYS/BLELib",
 					"$(PROJECT_DIR)/ZNYS",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Masonry\"",
+					"-l\"SVProgressHUD\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"UIKit\"",
+					"-all_load",
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.EricCheung.ZNYS-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2137,7 +2178,7 @@
 					"\"${PODS_ROOT}/Headers/Public\"",
 					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
 					"\"${PODS_ROOT}/Headers/Public/SVProgressHUD\"",
-					"\"$(SRCROOT)/BLEConnectModule/BLEConnectModule\"",
+					"\"$(SRCROOT)/BLEConnectModule/BLEConnectModule\"/**",
 				);
 				INFOPLIST_FILE = ZNYS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2146,6 +2187,21 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZNYS/BLELib",
 					"$(PROJECT_DIR)/ZNYS",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Masonry\"",
+					"-l\"SVProgressHUD\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"UIKit\"",
+					"-all_load",
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.EricCheung.ZNYS-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2206,6 +2262,12 @@
 				INFOPLIST_FILE = BluetoothTestInterface/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ERICCHEUNG.BluetoothTestInterface;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2226,6 +2288,12 @@
 				INFOPLIST_FILE = BluetoothTestInterface/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ERICCHEUNG.BluetoothTestInterface;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2242,6 +2310,10 @@
 				INFOPLIST_FILE = BluetoothTestInterfaceTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ERICCHEUNG.BluetoothTestInterfaceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BluetoothTestInterface.app/BluetoothTestInterface";
@@ -2257,6 +2329,10 @@
 				INFOPLIST_FILE = BluetoothTestInterfaceTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ERICCHEUNG.BluetoothTestInterfaceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BluetoothTestInterface.app/BluetoothTestInterface";

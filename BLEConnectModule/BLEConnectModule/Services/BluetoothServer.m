@@ -8,6 +8,8 @@
 #import "BluetoothServer.h"
 #import "SensorData.h"
 #import "DataParser.h"
+#import "ZNYSPeripheral.h"
+#import "BluetoothServer+TimeOutManager.h"
 
 #define TARGET_TIME 0
 #define RTC 1
@@ -109,8 +111,12 @@ long lastTimeStamp = 0;
 
 @property(nonatomic,strong) NSTimer*          timerForScanning;
 @property(nonatomic,strong) NSTimer*          timerForEnding;
+
+@property (nonatomic, strong)NSMutableArray<ZNYSPeripheral*> *periphearlsArray;
+@property (nonatomic, copy)ScanCompletionBlock scanCompletionBlock;
+@property (nonatomic, copy)ConnectCompletionBlock connectCompletionBlock;
+
 -(instancetype)initPrivate;
--(void)connect:(CBPeripheral*)peripheral;
 -(void)disconnect;
 -(void)notify:(CBCharacteristic*)characteristic;
 -(BOOL)writeValue:(NSString*)value into:(CBCharacteristic*)characteristic;
@@ -179,6 +185,9 @@ long lastTimeStamp = 0;
     shouldCreateTimer = YES;
     numberOfQuaternionReceived = 0;
     numberOfAcceeleraionReceived = 0;
+    
+    self.periphearlsArray = [NSMutableArray array];
+    
     return self;
 }
 -(instancetype)init
@@ -193,6 +202,18 @@ long lastTimeStamp = 0;
 {
     [self.centralManager scanForPeripheralsWithServices:nil options:nil];
 }
+
+- (void)scanWithCompletionBlock:(ScanCompletionBlock)completion {
+    [self.periphearlsArray removeAllObjects];
+    self.scanCompletionBlock = completion;
+    [self startTimer];
+    
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self scan];
+    });
+}
+
 -(void)connectDevice//WithCompletionBlock:(void(^)(void))completion failedBlock:(void(^)(void))fail
 {
     if (self.connected)
@@ -231,9 +252,10 @@ long lastTimeStamp = 0;
 {
     [self.centralManager stopScan];
 }
--(void)connect:(CBPeripheral*)peripheral
+-(BOOL)connect:(CBPeripheral*)peripheral
 {
     [self.centralManager connectPeripheral:peripheral options:nil];
+    return YES;
 }
 -(void)disconnect
 {
@@ -400,12 +422,29 @@ long lastTimeStamp = 0;
     }
     [self readValueFrom:_characteristicArray[VERSION]];
 }
+
+#pragma  mark - scan related
+- (void)timesUp {
+    if (self.scanCompletionBlock) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+           self.scanCompletionBlock(self.periphearlsArray);
+        });
+    }
+}
+
 #pragma mark - CBCentralManager delegate
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
     NSLog(@"Did discover peripheral  %@",peripheral.name);
     NSLog(@"The averstisement data is %@",advertisementData);
     //此处要根据广播包数据来判断，根据periphral.name获取到的极有可能不准确
+    
+    ZNYSPeripheral *temp = [[ZNYSPeripheral alloc] init];
+    temp.peripheral = peripheral;
+    temp.advertisementData = advertisementData;
+    temp.RSSI = RSSI.integerValue;
+    [self.periphearlsArray addObject:temp];
+    
     if([[advertisementData objectForKey:@"kCBAdvDataLocalName"] isEqual:@"Mita Brush"])
     {
         self.peripheral = peripheral;

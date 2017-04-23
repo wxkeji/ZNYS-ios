@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4587C86C1EAB9F9900348C80 /* ZNYSPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 4587C86B1EAB9F9900348C80 /* ZNYSPeripheral.m */; };
+		4587C8711EACA34A00348C80 /* BluetoothServer+TimeOutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4587C8701EACA34A00348C80 /* BluetoothServer+TimeOutManager.m */; };
 		45A8431B1EA11EAC00E81B75 /* BLEConnectModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A8431A1EA11EAC00E81B75 /* BLEConnectModule.m */; };
 		45A8431C1EA11EAC00E81B75 /* BLEConnectModule.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 45A843191EA11EAC00E81B75 /* BLEConnectModule.h */; };
 		45A843491EA11F8D00E81B75 /* AccelerationPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A843311EA11F8D00E81B75 /* AccelerationPackage.m */; };
@@ -47,6 +49,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4587C86A1EAB9F9900348C80 /* ZNYSPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNYSPeripheral.h; sourceTree = "<group>"; };
+		4587C86B1EAB9F9900348C80 /* ZNYSPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNYSPeripheral.m; sourceTree = "<group>"; };
+		4587C86F1EACA34A00348C80 /* BluetoothServer+TimeOutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BluetoothServer+TimeOutManager.h"; sourceTree = "<group>"; };
+		4587C8701EACA34A00348C80 /* BluetoothServer+TimeOutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BluetoothServer+TimeOutManager.m"; sourceTree = "<group>"; };
 		45A843161EA11EAC00E81B75 /* libBLEConnectModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBLEConnectModule.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A843191EA11EAC00E81B75 /* BLEConnectModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLEConnectModule.h; sourceTree = "<group>"; };
 		45A8431A1EA11EAC00E81B75 /* BLEConnectModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEConnectModule.m; sourceTree = "<group>"; };
@@ -142,6 +148,8 @@
 				45A8433B1EA11F8D00E81B75 /* QuaternionPackage.m */,
 				45A8433C1EA11F8D00E81B75 /* SensorData.h */,
 				45A8433D1EA11F8D00E81B75 /* SensorData.m */,
+				4587C86A1EAB9F9900348C80 /* ZNYSPeripheral.h */,
+				4587C86B1EAB9F9900348C80 /* ZNYSPeripheral.m */,
 			);
 			name = Entities;
 			path = BLEConnectModule/Entities;
@@ -160,6 +168,8 @@
 				45A843461EA11F8D00E81B75 /* DataParser.m */,
 				45A843471EA11F8D00E81B75 /* SensorDataHandler.h */,
 				45A843481EA11F8D00E81B75 /* SensorDataHandler.m */,
+				4587C86F1EACA34A00348C80 /* BluetoothServer+TimeOutManager.h */,
+				4587C8701EACA34A00348C80 /* BluetoothServer+TimeOutManager.m */,
 			);
 			name = Services;
 			path = BLEConnectModule/Services;
@@ -253,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A8434C1EA11F8D00E81B75 /* Area.m in Sources */,
+				4587C8711EACA34A00348C80 /* BluetoothServer+TimeOutManager.m in Sources */,
 				45A843511EA11F8D00E81B75 /* BluetoothServer.m in Sources */,
 				45A843521EA11F8D00E81B75 /* DataFactory.m in Sources */,
 				45A843491EA11F8D00E81B75 /* AccelerationPackage.m in Sources */,
@@ -261,6 +272,7 @@
 				45A8434F1EA11F8D00E81B75 /* SensorData.m in Sources */,
 				45A8431B1EA11EAC00E81B75 /* BLEConnectModule.m in Sources */,
 				45A843541EA11F8D00E81B75 /* SensorDataHandler.m in Sources */,
+				4587C86C1EAB9F9900348C80 /* ZNYSPeripheral.m in Sources */,
 				45A8434D1EA11F8D00E81B75 /* AreaGroup.m in Sources */,
 				45A8434E1EA11F8D00E81B75 /* QuaternionPackage.m in Sources */,
 				45A843531EA11F8D00E81B75 /* DataParser.m in Sources */,
@@ -319,6 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -361,6 +374,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -372,7 +386,13 @@
 		45A843201EA11EAC00E81B75 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				OTHER_LDFLAGS = "-ObjC";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -381,7 +401,13 @@
 		45A843211EA11EAC00E81B75 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				OTHER_LDFLAGS = "-ObjC";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -435,6 +461,7 @@
 				45FB0ECF1EA24F6D0050DA6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
