@@ -34,6 +34,9 @@
 @property (nonatomic, strong) UserInformationView *userInformationView;
 @property (nonatomic, strong) UIButton *userDetailsButton;
 
+@property (nonatomic, strong) UIImageView *awardTopRackImageView;
+@property (nonatomic, strong) UIImageView *awardDownRackImageView;
+
 @property (nonatomic, strong) UIButton *connectToothBrushButton;
 
 @end
@@ -55,6 +58,9 @@
     
     [self.view addSubview:self.userInformationView];
     [self.view addSubview:self.userDetailsButton];
+    
+    [self.view addSubview:self.awardTopRackImageView];
+    [self.view addSubview:self.awardDownRackImageView];
     
     [self.view addSubview:self.connectToothBrushButton];
     
@@ -130,6 +136,19 @@
         make.left.equalTo(self.view.mas_left);
     }];//覆盖 userInformationView
     
+    [self.awardTopRackImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left).offset(15);
+        make.right.equalTo(self.view.mas_right).offset(-15);
+        make.top.equalTo(self.view.mas_top).offset(CustomHeight(332));
+        make.height.mas_equalTo(16);
+    }];
+    [self.awardDownRackImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left).offset(15);
+        make.right.equalTo(self.view.mas_right).offset(-15);
+        make.top.equalTo(self.view.mas_top).offset(CustomHeight(478));
+        make.height.mas_equalTo(20);
+    }];
+    
     [self.connectToothBrushButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(weakSelf.view.mas_centerX);
         make.bottom.equalTo(weakSelf.view.mas_bottom).with.offset(CustomHeight(-30));
@@ -151,6 +170,10 @@
     [self.settingButton setImage:[UIImage themedImageWithNamed:@"navigation/settingButton"] forState:UIControlStateNormal];
     [self.calendarButton setImage:[UIImage themedImageWithNamed:@"navigation/calendarButton"] forState:UIControlStateNormal];
     [self.awardButton setImage:[UIImage themedImageWithNamed:@"navigation/awardButton"] forState:UIControlStateNormal];
+    
+    [self.awardTopRackImageView setImage:[UIImage themedImageWithNamed:@"childrenHome/奖励架1"]];
+    [self.awardDownRackImageView setImage:[UIImage themedImageWithNamed:@"childrenHome/奖励架2"]];
+    
     [self.connectToothBrushButton setImage:[UIImage themedImageWithNamed:@"childrenHome/connectButton"] forState:UIControlStateNormal];
 }
 
@@ -255,6 +278,19 @@
         [_userDetailsButton setBackgroundImage:[UIImage imageWithColor:RGBACOLOR(0, 0, 0, BUTTON_TOUCH_ALPHA)] forState:UIControlStateHighlighted];
     }
     return _userDetailsButton;
+}
+
+- (UIImageView *)awardTopRackImageView {
+    if (!_awardTopRackImageView) {
+        _awardTopRackImageView = [[UIImageView alloc] init];
+    }
+    return _awardTopRackImageView;
+}
+- (UIImageView *)awardDownRackImageView {
+    if (!_awardDownRackImageView) {
+        _awardDownRackImageView = [[UIImageView alloc] init];
+    }
+    return _awardDownRackImageView;
 }
 
 - (UIButton *)connectToothBrushButton {
