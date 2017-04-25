@@ -10,6 +10,7 @@
 #import "CoreDataHelper.h"
 
 #import "UserManager.h"
+#import "ToothBrush+CoreDataClass.h"
 
 #define ENTITY_NAME @"ToothBrush"
 
@@ -39,6 +40,9 @@ static ToothbrushManager* instance;
 - (ToothBrush *)createTempInstance {
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:ENTITY_NAME inManagedObjectContext:[CoreDataHelper sharedInstance].context];
     ToothBrush *toothBrush = [[ToothBrush alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:nil];
+    toothBrush.nickname = @"未命名";
+    toothBrush.lastConnectTime = @"未连接";
+    toothBrush.bindTime = @"未绑定";
     return toothBrush;
 }
 

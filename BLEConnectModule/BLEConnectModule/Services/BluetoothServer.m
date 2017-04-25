@@ -254,6 +254,10 @@ long lastTimeStamp = 0;
 }
 -(BOOL)connect:(CBPeripheral*)peripheral
 {
+    if (!peripheral)  {
+        return NO;
+    }
+    
     [self.centralManager connectPeripheral:peripheral options:nil];
     return YES;
 }
@@ -439,12 +443,8 @@ long lastTimeStamp = 0;
     NSLog(@"The averstisement data is %@",advertisementData);
     //此处要根据广播包数据来判断，根据periphral.name获取到的极有可能不准确
     
-    ZNYSPeripheral *temp = [[ZNYSPeripheral alloc] init];
-    temp.peripheral = peripheral;
-    temp.advertisementData = advertisementData;
-    temp.RSSI = RSSI.integerValue;
+    ZNYSPeripheral *temp = [[ZNYSPeripheral alloc] initWithPeripheral:peripheral advertisementData:advertisementData RSSI:RSSI];
     [self.periphearlsArray addObject:temp];
-    
     if([[advertisementData objectForKey:@"kCBAdvDataLocalName"] isEqual:@"Mita Brush"])
     {
         self.peripheral = peripheral;
@@ -475,19 +475,20 @@ long lastTimeStamp = 0;
 }
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central
 {
-    if ([central state] == CBCentralManagerStatePoweredOff) {
+    
+    if ([central state] == CBManagerStatePoweredOff) {
         NSLog(@"CoreBluetooth BLE hardware is powered off");
     }
-    else if ([central state] == CBCentralManagerStatePoweredOn) {
+    else if ([central state] ==  CBManagerStatePoweredOn) {
         NSLog(@"CoreBluetooth BLE hardware is powered on and ready");
     }
-    else if ([central state] == CBCentralManagerStateUnauthorized) {
+    else if ([central state] == CBManagerStateUnauthorized) {
         NSLog(@"CoreBluetooth BLE state is unauthorized");
     }
-    else if ([central state] == CBCentralManagerStateUnknown) {
+    else if ([central state] ==  CBManagerStateUnknown) {
         NSLog(@"CoreBluetooth BLE state is unknown");
     }
-    else if ([central state] == CBCentralManagerStateUnsupported) {
+    else if ([central state] ==  CBManagerStateUnsupported) {
         NSLog(@"CoreBluetooth BLE hardware is unsupported on this platform");
     }
     [self.delegate connectedResult:self.connected];

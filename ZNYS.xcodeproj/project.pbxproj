@@ -111,6 +111,8 @@
 		4580946C1C23DE6400CB9BF9 /* ConnectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4580946B1C23DE6400CB9BF9 /* ConnectedViewController.m */; };
 		45839C321CBF6A4C000E878D /* CustomProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45839C301CBF6A4C000E878D /* CustomProgressBar.m */; };
 		45839C331CBF6A4C000E878D /* ProgressRectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 45839C311CBF6A4C000E878D /* ProgressRectangle.png */; };
+		4587C87A1EACDCE100348C80 /* UIView+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 4587C8791EACDCE100348C80 /* UIView+Tools.m */; };
+		4587C87E1EACDF1A00348C80 /* ToothBrushFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4587C87D1EACDF1A00348C80 /* ToothBrushFindViewController.m */; };
 		45A843601EA1225A00E81B75 /* libBLEConnectModule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A8435D1EA1224B00E81B75 /* libBLEConnectModule.a */; };
 		45B143421EA52D8B0042C0BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B143411EA52D8B0042C0BF /* Main.storyboard */; };
 		45B143431EA52D8B0042C0BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B143411EA52D8B0042C0BF /* Main.storyboard */; };
@@ -453,6 +455,10 @@
 		45839C2F1CBF6A4C000E878D /* CustomProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomProgressBar.h; sourceTree = "<group>"; };
 		45839C301CBF6A4C000E878D /* CustomProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomProgressBar.m; sourceTree = "<group>"; };
 		45839C311CBF6A4C000E878D /* ProgressRectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProgressRectangle.png; sourceTree = "<group>"; };
+		4587C8781EACDCE100348C80 /* UIView+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Tools.h"; sourceTree = "<group>"; };
+		4587C8791EACDCE100348C80 /* UIView+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Tools.m"; sourceTree = "<group>"; };
+		4587C87C1EACDF1A00348C80 /* ToothBrushFindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToothBrushFindViewController.h; sourceTree = "<group>"; };
+		4587C87D1EACDF1A00348C80 /* ToothBrushFindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToothBrushFindViewController.m; sourceTree = "<group>"; };
 		45A843581EA1224B00E81B75 /* BLEConnectModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BLEConnectModule.xcodeproj; path = BLEConnectModule/BLEConnectModule.xcodeproj; sourceTree = SOURCE_ROOT; };
 		45B143411EA52D8B0042C0BF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		45B143471EA52DA40042C0BF /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -1199,6 +1205,8 @@
 			children = (
 				45F786611D0D010400E4F91D /* ToothBrushManagentMainViewController.h */,
 				45F786621D0D010400E4F91D /* ToothBrushManagentMainViewController.m */,
+				4587C87C1EACDF1A00348C80 /* ToothBrushFindViewController.h */,
+				4587C87D1EACDF1A00348C80 /* ToothBrushFindViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -1317,6 +1325,8 @@
 				3C7B57351D6C325600D5E487 /* ToolMacroes.m */,
 				3CA18E881D767F8D00DE8EF4 /* DesignMacro.h */,
 				3CCCAED11DA3979400D9A525 /* DesignMacro.m */,
+				4587C8781EACDCE100348C80 /* UIView+Tools.h */,
+				4587C8791EACDCE100348C80 /* UIView+Tools.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1867,6 +1877,7 @@
 				458094631C23DE3100CB9BF9 /* ConnectingView.m in Sources */,
 				64CCBD9A1CD88A16003EFFAD /* ExchangeRewardViewController.m in Sources */,
 				3C98A2291D24FF1800046BE8 /* CalendarDetailView.m in Sources */,
+				4587C87E1EACDF1A00348C80 /* ToothBrushFindViewController.m in Sources */,
 				455B1B341D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.m in Sources */,
 				3C210B5F1E1361A500F0390B /* UserCollectionViewCell.m in Sources */,
 				64CCBD851CD30460003EFFAD /* AddRewardView.m in Sources */,
@@ -1910,6 +1921,7 @@
 				647E05C51C3A6B4B00ADB810 /* SettingViewController.m in Sources */,
 				6412FCA11C477F0C00DF8FC5 /* RewardItemView.m in Sources */,
 				453FF57E1EA3D4BF00E2F80F /* AreaStatisticManager.m in Sources */,
+				4587C87A1EACDCE100348C80 /* UIView+Tools.m in Sources */,
 				64337DC81C3B8DD400C9D811 /* ThumbView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

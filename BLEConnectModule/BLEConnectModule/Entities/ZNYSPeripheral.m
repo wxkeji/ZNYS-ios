@@ -10,5 +10,17 @@
 
 @implementation ZNYSPeripheral
 
+- (instancetype)initWithPeripheral:(CBPeripheral *)peripheral
+                 advertisementData:(NSDictionary *)advertisementData
+                              RSSI:(NSNumber *)RSSI {
+    self = [super init];
+    self.peripheral = peripheral;
+    if ([advertisementData objectForKey:@"kCBAdvDataLocalName"]) {
+        self.advertiseName = [advertisementData objectForKey:@"kCBAdvDataLocalName"];
+    }
+    self.advertisementData = advertisementData;
+    self.RSSI = [RSSI integerValue];
+    return self;
+}
 
 @end

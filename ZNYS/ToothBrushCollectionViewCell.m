@@ -34,6 +34,7 @@
 
 -(instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
+    self.clipsToBounds = YES;
     self.layer.cornerRadius = 10.0f;
     [self setBackgroundColor:cellOriginalColor];
     [self addSubview:self.titleLabel];

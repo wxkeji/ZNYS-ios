@@ -35,7 +35,7 @@ typedef NS_ENUM(NSUInteger,DataType) {
 };
 
 @protocol BluetoothServerProtocol <NSObject>
-
+@optional
 -(void)findNewToothBrushDevice:(CBPeripheral*)peripheral advertisementdata:(NSDictionary*)data RSSI:(NSNumber*)rssi;
 
 - (void)didConnectToothBrush:(CBPeripheral*)toothBrush;
@@ -45,6 +45,9 @@ typedef NS_ENUM(NSUInteger,DataType) {
 - (void)connectedResult:(BOOL) isConnected;
 
 - (void)dataTransferStatusUpdated:(BLSDataType)dataType packageReceived:(NSUInteger)num;
+- (void)onAccelerationUpdated:(AccelerationPackage *)acceleration;
+
+- (void)onQuatarnionUpdated:(QuaternionPackage *)quatarnion;
 
 @end
 
@@ -89,7 +92,7 @@ typedef NS_ENUM(NSUInteger,DataType) {
 
  @param peripheral periphearl
  */
--(void)connect:(CBPeripheral*)peripheral;
+-(BOOL)connect:(CBPeripheral*)peripheral;
 
 /**
  连接相应的Peripheral，并且在回调Block中传入连接结果
@@ -110,20 +113,20 @@ typedef NS_ENUM(NSUInteger,DataType) {
 #pragma mark - Encapsulated APIs,通过这些API可以控制牙刷
 
 
--(NSData*)getBrushUUID;
--(void)setTargetTime:(NSString*)time;//设置刷牙目标时间
--(void)light;//亮灯
--(void)turnOffLight;//关闭LED灯
--(void)buzzer;//蜂鸣
--(void)shutDown;//停止蜂鸣
--(void)readRTC;//读取RTC（读取/写入值的回调方法为 .m里的 -(void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error，下同
--(void)correctRTC:(NSString*)string;//写入校准的RTC
--(void)readBattery;//读取电量值
--(void)readPressure;//读取压力值
--(void)setBrushingAndAlarmBarrier:(NSString*)barrier;//设置检测刷牙的压力门槛
--(void)turnOnOnlineDataNotify;//接收硬件的实时数据，以下同理
--(void)TurnOffOnlineDataNotify;
--(void)turnOnOfflineDataNotify;
--(void)turnOffOfflineDataNotify;
--(void)readHardwareVersion;//读取硬件版本号
+- (NSData*)getBrushUUID;
+- (void)setTargetTime:(NSString*)time;//设置刷牙目标时间
+- (void)light;//亮灯
+- (void)turnOffLight;//关闭LED灯
+- (void)buzzer;//蜂鸣
+- (void)shutDown;//停止蜂鸣
+- (void)readRTC;//读取RTC（读取/写入值的回调方法为 .m里的 -(void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error，下同
+- (void)correctRTC:(NSString*)string;//写入校准的RTC
+- (void)readBattery;//读取电量值
+- (void)readPressure;//读取压力值
+- (void)setBrushingAndAlarmBarrier:(NSString*)barrier;//设置检测刷牙的压力门槛
+- (void)turnOnOnlineDataNotify;//接收硬件的实时数据，以下同理
+- (void)TurnOffOnlineDataNotify;
+- (void)turnOnOfflineDataNotify;
+- (void)turnOffOfflineDataNotify;
+- (void)readHardwareVersion;//读取硬件版本号
 @end

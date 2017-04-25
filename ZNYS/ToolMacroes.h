@@ -10,6 +10,7 @@
 
 #ifndef ToolMacroes_h
 #define ToolMacroes_h
+#import "UIView+Tools.h"
 
 #define kSCREEN_WIDTH   [UIScreen mainScreen].bounds.size.width
 #define kSCREEN_HEIGHT	[UIScreen mainScreen].bounds.size.height

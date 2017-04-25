@@ -25,6 +25,7 @@
 #import "MAKAFakeRootAlertView.h"
 #import "ToothBrushManagentFindView.h"
 #import "ToothBrushCollectionViewCell.h"
+#import "ToothBrushFindViewController.h"
 @interface CabinetViewController ()
 
 //奖品柜的两个ScrollView
@@ -385,12 +386,16 @@
 
 -(void)onSyncButtonClickded{
     
-    [self.view addSubview:self.overlayView];
-    
-    [self.view addSubview:self.findView];
-    [self.findView addSyncButton];
-    
-    
+//    [self.view addSubview:self.overlayView];
+//    
+//    [self.view addSubview:self.findView];
+//    [self.findView addSyncButton];
+//    
+
+    UIViewController *vc = [[ToothBrushFindViewController alloc] init];
+    vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    vc.view.backgroundColor = [UIColor clearColor];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 -(void)toConnectBrush

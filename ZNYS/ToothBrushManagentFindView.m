@@ -55,6 +55,9 @@
     
     
     [self addConstraints];
+    
+    
+
     return self;
 }
 
@@ -65,11 +68,29 @@
         make.left.equalTo(weakSelf.mas_left).with.offset(10);
         make.top.equalTo(weakSelf.mas_top).with.offset(10);
     }];
+//    
+    [self.babysToothBrushCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.mas_left);
+        make.right.equalTo(weakSelf.mas_right);
+        make.height.equalTo(@(CustomHeight(150)));
+        make.top.equalTo(weakSelf.babysToothBrushHintLabel.mas_bottom).with.offset(10);
+    }];
     
     [self.findNewToothBrushHintLabel mas_makeConstraints:^(MASConstraintMaker* make) {
         make.left.equalTo(weakSelf.babysToothBrushHintLabel);
-        make.bottom.equalTo(weakSelf.findNewToothBrushCollectionView.mas_top).with.offset(-10);
+        //make.bottom.equalTo(weakSelf.findNewToothBrushCollectionView.mas_top).with.offset(-10);
+        make.top.equalTo(weakSelf.babysToothBrushCollectionView.mas_bottom).with.offset(10);
     }];
+    
+    [self.findNewToothBrushCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(weakSelf.findNewToothBrushHintLabel.mas_bottom).offset(10);
+        make.height.equalTo(@(CustomHeight(150)));
+        make.left.equalTo(weakSelf.mas_left);
+        make.right.equalTo(weakSelf.mas_right);
+    }];
+    
+
+    
 }
 
 - (void)addSyncButton {
@@ -108,6 +129,9 @@
         
         self.selectedType = selectedCollectionViewTypeNewFind;
     }
+    
+    [self.findNewToothBrushCollectionView reloadData];
+    [self.babysToothBrushCollectionView reloadData];
 
 }
 
@@ -120,12 +144,11 @@
 //        _babysToothBrushCollectionView.collectionViewLayout = self.linearLayout;
         _babysToothBrushCollectionView.delegate = self;
         _babysToothBrushCollectionView.dataSource = self.bindedDataSouce;
-        
-
         [_babysToothBrushCollectionView registerClass:[ToothBrushCollectionViewCell class] forCellWithReuseIdentifier:cellId];
         [_babysToothBrushCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerId];
         [_babysToothBrushCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footerId];
-	}	return _babysToothBrushCollectionView;
+	}
+    return _babysToothBrushCollectionView;
 }
 
 - (CollectionViewLayout *)linearLayout {

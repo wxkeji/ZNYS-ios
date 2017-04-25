@@ -34,6 +34,7 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
+    self.clipsToBounds = YES;
     [self addSubview:self.titleLabel];
     [self.headerView addSubview:self.iconView];
     

@@ -21,7 +21,6 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self.view addSubview:self.mainView];
-    BluetoothServer *server = [BluetoothServer defaultServer];
     // Do any additional setup after loading the view.
 }
 

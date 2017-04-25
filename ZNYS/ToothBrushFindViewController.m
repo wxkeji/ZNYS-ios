@@ -1,0 +1,86 @@
+//
+//  ToothBrushFindViewController.m
+//  ZNYS
+//
+//  Created by 张恒铭 on 4/23/17.
+//  Copyright © 2017 Woodseen. All rights reserved.
+//
+
+#import "ToothBrushFindViewController.h"
+#import "ToothBrushManagentFindView.h"
+#import "ToothBrushCollectionViewCell.h"
+#import "ToothBrush+CoreDataClass.h"
+#import "BluetoothServer.h"
+#import "ZNYSPeripheral.h"
+#import "ToothbrushManager.h"
+#import "UserManager.h"
+#import "User+CoreDataClass.h"
+
+@interface ToothBrushFindViewController ()
+@property (nonatomic, strong) ToothBrush *currentSelectedBrush;
+@property (nonatomic, strong) NSMutableArray *toothBrushesArray;
+@end
+
+@implementation ToothBrushFindViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    ToothBrushManagentFindView *view = [[ToothBrushManagentFindView alloc] initWithFrame:CGRectMake(0, 0.298*kSCREEN_HEIGHT, kSCREEN_WIDTH, (1-0.298)*kSCREEN_HEIGHT)];
+    WS(weakView, view);
+    view.bindedActionBlock = ^(UICollectionView *collectionView, NSIndexPath *indexpath) {
+        
+    };
+    
+
+    view.newToothbrushActionBlock = ^(UICollectionView *collectionView, NSIndexPath *indexPath) {
+        
+    };
+    [view addSyncButton];
+    self.view.backgroundColor = [UIColor clearColor];
+    
+    
+    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT - view.height)];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onBackgroundViewClicked)];
+    [backgroundView addGestureRecognizer:tapGesture];
+    [self.view addSubview:backgroundView];
+    [self.view addSubview:view];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [[BluetoothServer defaultServer] scanWithCompletionBlock:^(NSArray<ZNYSPeripheral*>* peripherals) {
+        for (ZNYSPeripheral *peripheral in peripherals) {
+            if ([peripheral.advertiseName isEqualToString:@"Mita Brush"]) {
+                ToothBrush *brush = [[ToothbrushManager sharedInstance] createTempInstance];
+                brush.user = [UserManager sharedInstance].currentUser;
+                brush.userUUID = [UserManager sharedInstance].currentUser.uuid;
+                [self.toothBrushesArray addObject:brush];
+            }
+        }
+    }];
+    
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)onBackgroundViewClicked  {
+    NSLog(@"background clicked");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end
