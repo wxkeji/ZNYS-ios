@@ -49,17 +49,28 @@ static NSString *cellIdentifier = @"topRackCell";
     [cell.medalImageView setImage:[self.datasource itemImageAtIndex:indexPath.row]];
     return cell;
 }
+
+#pragma mark - public methods
+- (void)configureTheme {
+    self.tintColor = [UIColor colorWithThemedImageNamed:@"color/primary_dark"];
+}
+
 #pragma mark - getters and setters
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         layout.itemSize = CGSizeMake(60, 60);
         layout.minimumInteritemSpacing = 0;
         layout.minimumLineSpacing = 0;
-        
+        layout.sectionInset = UIEdgeInsetsMake(15, 0, 25, 0);
+
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.backgroundColor = [UIColor clearColor];
+        
+        _collectionView.pagingEnabled = YES;
+        _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.dataSource = self;
     }
     return _collectionView;

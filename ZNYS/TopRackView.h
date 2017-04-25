@@ -15,4 +15,5 @@
 @interface TopRackView : ZNYSBaseView
 
 @property (nonatomic, weak) id<TopRackViewDataSource> datasource;
+- (void)configureTheme;
 @end

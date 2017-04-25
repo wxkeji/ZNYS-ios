@@ -159,8 +159,8 @@
     [self.topRackView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left).offset(50);
         make.right.equalTo(self.view.mas_right).offset(-50);
-        make.bottom.equalTo(self.awardTopRackImageView.mas_top).offset(-15);
-        make.height.mas_equalTo(60);
+        make.bottom.equalTo(self.awardTopRackImageView.mas_top).offset(0);
+        make.height.mas_equalTo(100);
     }];//奖牌60x60
     
     [self.connectToothBrushButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -183,9 +183,16 @@
 }
 
 - (UIImage *)itemImageAtIndex:(NSUInteger)index {
+    NSInteger userLevel = [[UserManager sharedInstance] currentUser].level;
+    
     NSString *imageName = [NSString stringWithFormat:@"奖牌%lu", (index + 1)];
     UIImage *image = [UIImage imageNamed:imageName];
+    
+    if ((index + 1) > userLevel) {
+        image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    }
     return image;
+    
 }
 
 #pragma mark - private method
@@ -201,6 +208,7 @@
     [self.awardDownRackImageView setImage:[UIImage themedImageWithNamed:@"childrenHome/奖励架2"]];
     
     [self.connectToothBrushButton setImage:[UIImage themedImageWithNamed:@"childrenHome/connectButton"] forState:UIControlStateNormal];
+    [self.topRackView configureTheme];
 }
 
 - (void)userDetailChange {
@@ -211,6 +219,8 @@
     if (themeStyle != newStyle) {
         [[ThemeManager sharedManager] configureTheme:newStyle];
     }
+    
+    
     [self configureTheme];
 }
 
