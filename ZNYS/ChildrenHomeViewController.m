@@ -179,7 +179,7 @@
 
 #pragma mark - TopRackViewDataSource
 - (NSUInteger)numberOfItemsInView {
-    return 6;
+    return 10;
 }
 
 - (UIImage *)itemImageAtIndex:(NSUInteger)index {
@@ -213,13 +213,12 @@
 
 - (void)userDetailChange {
     [self.userInformationView userSwitch];
-
+    [self.topRackView reloadData];
     ZNYSThemeStyle themeStyle = [ThemeManager sharedManager].themeStyle;
     ZNYSThemeStyle newStyle = [[UserManager sharedInstance] currentUserThemeStyle];
     if (themeStyle != newStyle) {
         [[ThemeManager sharedManager] configureTheme:newStyle];
     }
-    
     
     [self configureTheme];
 }

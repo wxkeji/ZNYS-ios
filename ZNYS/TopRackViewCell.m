@@ -14,7 +14,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubview:self.medalImageView];
-        self.medalImageView.frame = self.frame;
+        self.medalImageView.frame = self.bounds;
     }
     return self;
 }

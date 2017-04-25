@@ -16,4 +16,6 @@
 
 @property (nonatomic, weak) id<TopRackViewDataSource> datasource;
 - (void)configureTheme;
+- (void)reloadData;
+
 @end

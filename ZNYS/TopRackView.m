@@ -55,6 +55,9 @@ static NSString *cellIdentifier = @"topRackCell";
     self.tintColor = [UIColor colorWithThemedImageNamed:@"color/primary_dark"];
 }
 
+- (void)reloadData {
+    [self.collectionView reloadData];
+}
 #pragma mark - getters and setters
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
@@ -63,13 +66,14 @@ static NSString *cellIdentifier = @"topRackCell";
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         layout.itemSize = CGSizeMake(60, 60);
         layout.minimumInteritemSpacing = 0;
-        layout.minimumLineSpacing = 0;
-        layout.sectionInset = UIEdgeInsetsMake(15, 0, 25, 0);
+        //6p:68 6:50 se:25
+        layout.minimumLineSpacing = ZNYSGetSizeByWidth(25, 50, 68);
+        layout.sectionInset = UIEdgeInsetsMake(30, 0, 10, 0);
 
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.backgroundColor = [UIColor clearColor];
         
-        _collectionView.pagingEnabled = YES;
+        _collectionView.pagingEnabled = NO;
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.dataSource = self;
     }
