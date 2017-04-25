@@ -15,6 +15,9 @@
 
 #import "ThemeManager.h"
 #import "UserManager.h"
+
+#import "TopRackView.h"
+
 //点击跳转
 #import "CalendarViewController.h"
 #import "VerifyPasswordViewController.h"
@@ -22,7 +25,7 @@
 #import "MAKAFakeRootAlertView.h"
 #import "ExchangeRewardViewController.h"
 
-@interface ChildrenHomeViewController ()
+@interface ChildrenHomeViewController ()<TopRackViewDataSource>
 
 @property (nonatomic, strong) UIImageView *backgroundImageViewTop;
 @property (nonatomic, strong) UIImageView *backgroundLogoImageView;
@@ -36,6 +39,8 @@
 
 @property (nonatomic, strong) UIImageView *awardTopRackImageView;
 @property (nonatomic, strong) UIImageView *awardDownRackImageView;
+
+@property (nonatomic, strong) TopRackView *topRackView;
 
 @property (nonatomic, strong) UIButton *connectToothBrushButton;
 
@@ -61,6 +66,8 @@
     
     [self.view addSubview:self.awardTopRackImageView];
     [self.view addSubview:self.awardDownRackImageView];
+    
+    [self.view addSubview:self.topRackView];
     
     [self.view addSubview:self.connectToothBrushButton];
     
@@ -149,6 +156,13 @@
         make.height.mas_equalTo(20);
     }];
     
+    [self.topRackView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left).offset(50);
+        make.right.equalTo(self.view.mas_right).offset(-50);
+        make.bottom.equalTo(self.awardTopRackImageView.mas_top).offset(-15);
+        make.height.mas_equalTo(60);
+    }];//奖牌60x60
+    
     [self.connectToothBrushButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(weakSelf.view.mas_centerX);
         make.bottom.equalTo(weakSelf.view.mas_bottom).with.offset(CustomHeight(-30));
@@ -162,6 +176,18 @@
     //销毁观察者
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
+#pragma mark - TopRackViewDataSource
+- (NSUInteger)numberOfItemsInView {
+    return 6;
+}
+
+- (UIImage *)itemImageAtIndex:(NSUInteger)index {
+    NSString *imageName = [NSString stringWithFormat:@"奖牌%lu", (index + 1)];
+    UIImage *image = [UIImage imageNamed:imageName];
+    return image;
+}
+
 #pragma mark - private method
 - (void)configureTheme {
     self.backgroundImageViewTop.image = [UIImage themedImageWithNamed:@"color/primary"];
@@ -293,6 +319,13 @@
     return _awardDownRackImageView;
 }
 
+- (TopRackView *)topRackView {
+    if (!_topRackView) {
+        _topRackView = [[TopRackView alloc] init];
+        _topRackView.datasource = self;
+    }
+    return _topRackView;
+}
 - (UIButton *)connectToothBrushButton {
     if (!_connectToothBrushButton) {
         _connectToothBrushButton = [UIButton buttonWithType:UIButtonTypeCustom];

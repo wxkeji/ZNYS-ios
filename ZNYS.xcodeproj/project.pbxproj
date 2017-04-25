@@ -22,12 +22,13 @@
 		0487D7801B74548F00756EF8 /* ZNYSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0487D77F1B74548F00756EF8 /* ZNYSTests.m */; };
 		04A7510F1C43D9E500B3F537 /* GiftList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A7510E1C43D9E500B3F537 /* GiftList.plist */; };
 		04C978F31C44BE100046DB4A /* GiftItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C978F21C44BE100046DB4A /* GiftItem.m */; };
+		3C06CD5B1EACEF2E001E9381 /* TopRackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C06CD571EACEF2E001E9381 /* TopRackView.m */; };
+		3C06CD5C1EACEF2E001E9381 /* TopRackViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C06CD5A1EACEF2E001E9381 /* TopRackViewCell.m */; };
 		3C15B7161DE5876800609717 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C15B7141DE5876800609717 /* Model.xcdatamodeld */; };
 		3C1765981EA8B65500BEA3F2 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C1765971EA8B65500BEA3F2 /* edit.png */; };
 		3C17659B1EA9B3FC00BEA3F2 /* addAcount.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C17659A1EA9B3FC00BEA3F2 /* addAcount.png */; };
 		3C210B5F1E1361A500F0390B /* UserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C210B5D1E1361A500F0390B /* UserCollectionViewCell.m */; };
 		3C210B601E1361A500F0390B /* UserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C210B5E1E1361A500F0390B /* UserCollectionViewCell.xib */; };
-		3C278A041E13AD2400EF2376 /* UserCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C278A031E13AD2400EF2376 /* UserCollectionViewFlowLayout.m */; };
 		3C32FC431E1E47DA001D09F4 /* MyUserDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C32FC401E1E47DA001D09F4 /* MyUserDetailsView.m */; };
 		3C32FC441E1E47DA001D09F4 /* MyUserDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C32FC421E1E47DA001D09F4 /* MyUserDetailsView.xib */; };
 		3C37F4851D6BE0D500D879E0 /* UIImage+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C37F4841D6BE0D500D879E0 /* UIImage+Helper.m */; };
@@ -293,14 +294,16 @@
 		04C978F11C44BE100046DB4A /* GiftItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftItem.h; sourceTree = "<group>"; };
 		04C978F21C44BE100046DB4A /* GiftItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftItem.m; sourceTree = "<group>"; };
 		3A4B640B30852A7412A6975C /* Pods-ZNYS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZNYS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZNYS/Pods-ZNYS.debug.xcconfig"; sourceTree = "<group>"; };
+		3C06CD571EACEF2E001E9381 /* TopRackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopRackView.m; sourceTree = "<group>"; };
+		3C06CD581EACEF2E001E9381 /* TopRackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopRackView.h; sourceTree = "<group>"; };
+		3C06CD591EACEF2E001E9381 /* TopRackViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopRackViewCell.h; sourceTree = "<group>"; };
+		3C06CD5A1EACEF2E001E9381 /* TopRackViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopRackViewCell.m; sourceTree = "<group>"; };
 		3C15B7151DE5876800609717 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		3C1765971EA8B65500BEA3F2 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
 		3C17659A1EA9B3FC00BEA3F2 /* addAcount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addAcount.png; sourceTree = "<group>"; };
 		3C210B5C1E1361A500F0390B /* UserCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCollectionViewCell.h; sourceTree = "<group>"; };
 		3C210B5D1E1361A500F0390B /* UserCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCollectionViewCell.m; sourceTree = "<group>"; };
 		3C210B5E1E1361A500F0390B /* UserCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCollectionViewCell.xib; sourceTree = "<group>"; };
-		3C278A021E13AD2400EF2376 /* UserCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		3C278A031E13AD2400EF2376 /* UserCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		3C32FC401E1E47DA001D09F4 /* MyUserDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUserDetailsView.m; sourceTree = "<group>"; };
 		3C32FC411E1E47DA001D09F4 /* MyUserDetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUserDetailsView.h; sourceTree = "<group>"; };
 		3C32FC421E1E47DA001D09F4 /* MyUserDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyUserDetailsView.xib; sourceTree = "<group>"; };
@@ -853,8 +856,6 @@
 				3C210B5C1E1361A500F0390B /* UserCollectionViewCell.h */,
 				3C210B5D1E1361A500F0390B /* UserCollectionViewCell.m */,
 				3C210B5E1E1361A500F0390B /* UserCollectionViewCell.xib */,
-				3C278A021E13AD2400EF2376 /* UserCollectionViewFlowLayout.h */,
-				3C278A031E13AD2400EF2376 /* UserCollectionViewFlowLayout.m */,
 				3C32FC411E1E47DA001D09F4 /* MyUserDetailsView.h */,
 				3C32FC401E1E47DA001D09F4 /* MyUserDetailsView.m */,
 				3C32FC421E1E47DA001D09F4 /* MyUserDetailsView.xib */,
@@ -898,6 +899,10 @@
 				3CA18E861D753C3D00DE8EF4 /* ChildrenHomeViewController.m */,
 				047D3D371B8A02DA00871627 /* NSArray+ForceBound.h */,
 				047D3D381B8A02DA00871627 /* NSArray+ForceBound.m */,
+				3C06CD581EACEF2E001E9381 /* TopRackView.h */,
+				3C06CD571EACEF2E001E9381 /* TopRackView.m */,
+				3C06CD591EACEF2E001E9381 /* TopRackViewCell.h */,
+				3C06CD5A1EACEF2E001E9381 /* TopRackViewCell.m */,
 			);
 			name = ChildrenHome;
 			sourceTree = "<group>";
@@ -1798,7 +1803,6 @@
 				64CCBD8E1CD30B94003EFFAD /* AddRewardButtonView.m in Sources */,
 				3C98A2241D24FF0700046BE8 /* CalendarViewController.m in Sources */,
 				3CF4C0A71E0D14F600C5EBC7 /* ModalPresentationController.m in Sources */,
-				3C278A041E13AD2400EF2376 /* UserCollectionViewFlowLayout.m in Sources */,
 				3CCCAED21DA3979400D9A525 /* DesignMacro.m in Sources */,
 				64CCBD971CD5BA1F003EFFAD /* MAKAFakeRootAlertView.m in Sources */,
 				6476646A1C3CB1A000386E05 /* UITextField+Font.m in Sources */,
@@ -1886,6 +1890,7 @@
 				C460E03D1BC5021F000608BD /* LackToothModeControllerViewController.m in Sources */,
 				6F368F081BBCCE1700D273C9 /* IsParentViewController.m in Sources */,
 				C43136471BC282C30097A91B /* IsParentToCabinetSegue.m in Sources */,
+				3C06CD5C1EACEF2E001E9381 /* TopRackViewCell.m in Sources */,
 				455B1B221D361DD0002D85E3 /* ToothbrushManager.m in Sources */,
 				45B143491EA52DA40042C0BF /* ViewController.m in Sources */,
 				458094691C23DE5700CB9BF9 /* ConnectingViewController.m in Sources */,
@@ -1894,6 +1899,7 @@
 				456B6F801EA67FC7004653A5 /* DatabaseBaseManager.m in Sources */,
 				04C978F31C44BE100046DB4A /* GiftItem.m in Sources */,
 				456B6F851EA79C07004653A5 /* TestManager.m in Sources */,
+				3C06CD5B1EACEF2E001E9381 /* TopRackView.m in Sources */,
 				64CCBD911CD314E6003EFFAD /* ChooseNumberScrollView.m in Sources */,
 				647E05D11C3B710A00ADB810 /* UserDetailView.m in Sources */,
 				3C68BEA91E9E6A3900D1EA3B /* Award+CoreDataClass.m in Sources */,
