@@ -24,6 +24,8 @@
 		04C978F31C44BE100046DB4A /* GiftItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C978F21C44BE100046DB4A /* GiftItem.m */; };
 		3C06CD5B1EACEF2E001E9381 /* TopRackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C06CD571EACEF2E001E9381 /* TopRackView.m */; };
 		3C06CD5C1EACEF2E001E9381 /* TopRackViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C06CD5A1EACEF2E001E9381 /* TopRackViewCell.m */; };
+		3C06CD641EB0DC53001E9381 /* DownRackViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C06CD631EB0DC53001E9381 /* DownRackViewCell.m */; };
+		3C06CD681EB0DCC3001E9381 /* DownRackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C06CD671EB0DCC3001E9381 /* DownRackView.m */; };
 		3C15B7161DE5876800609717 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3C15B7141DE5876800609717 /* Model.xcdatamodeld */; };
 		3C1765981EA8B65500BEA3F2 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C1765971EA8B65500BEA3F2 /* edit.png */; };
 		3C17659B1EA9B3FC00BEA3F2 /* addAcount.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C17659A1EA9B3FC00BEA3F2 /* addAcount.png */; };
@@ -300,6 +302,10 @@
 		3C06CD581EACEF2E001E9381 /* TopRackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopRackView.h; sourceTree = "<group>"; };
 		3C06CD591EACEF2E001E9381 /* TopRackViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopRackViewCell.h; sourceTree = "<group>"; };
 		3C06CD5A1EACEF2E001E9381 /* TopRackViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopRackViewCell.m; sourceTree = "<group>"; };
+		3C06CD621EB0DC53001E9381 /* DownRackViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownRackViewCell.h; sourceTree = "<group>"; };
+		3C06CD631EB0DC53001E9381 /* DownRackViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownRackViewCell.m; sourceTree = "<group>"; };
+		3C06CD661EB0DCC3001E9381 /* DownRackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownRackView.h; sourceTree = "<group>"; };
+		3C06CD671EB0DCC3001E9381 /* DownRackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownRackView.m; sourceTree = "<group>"; };
 		3C15B7151DE5876800609717 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		3C1765971EA8B65500BEA3F2 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
 		3C17659A1EA9B3FC00BEA3F2 /* addAcount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addAcount.png; sourceTree = "<group>"; };
@@ -909,6 +915,10 @@
 				3C06CD571EACEF2E001E9381 /* TopRackView.m */,
 				3C06CD591EACEF2E001E9381 /* TopRackViewCell.h */,
 				3C06CD5A1EACEF2E001E9381 /* TopRackViewCell.m */,
+				3C06CD661EB0DCC3001E9381 /* DownRackView.h */,
+				3C06CD671EB0DCC3001E9381 /* DownRackView.m */,
+				3C06CD621EB0DC53001E9381 /* DownRackViewCell.h */,
+				3C06CD631EB0DC53001E9381 /* DownRackViewCell.m */,
 			);
 			name = ChildrenHome;
 			sourceTree = "<group>";
@@ -1851,6 +1861,7 @@
 				645A019F1C3A146E00556395 /* UIButton+Font.m in Sources */,
 				C4DC701F1BBFA0F4004AB6A7 /* DIYGoalController.m in Sources */,
 				3C68BEAA1E9E6A3900D1EA3B /* Award+CoreDataProperties.m in Sources */,
+				3C06CD641EB0DC53001E9381 /* DownRackViewCell.m in Sources */,
 				C43BC7621BC541FF00C332DD /* IsParentToSettingSegue.m in Sources */,
 				3CC8F6021D6FDEEC00E286E7 /* UIImage+Theme.m in Sources */,
 				458093951C21453200CB9BF9 /* CoreDataHelper.m in Sources */,
@@ -1881,6 +1892,7 @@
 				455B1B341D37A3B5002D85E3 /* FindNewToothBrushCollectionviewDatasource.m in Sources */,
 				3C210B5F1E1361A500F0390B /* UserCollectionViewCell.m in Sources */,
 				64CCBD851CD30460003EFFAD /* AddRewardView.m in Sources */,
+				3C06CD681EB0DCC3001E9381 /* DownRackView.m in Sources */,
 				3C62CE611D29FFE300402FE1 /* NSDate+Helper.m in Sources */,
 				455B1B2E1D376B44002D85E3 /* ToothBrushManagentFindView.m in Sources */,
 				3C68BEAE1E9E6A3900D1EA3B /* User+CoreDataProperties.m in Sources */,

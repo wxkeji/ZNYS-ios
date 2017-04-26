@@ -8,8 +8,8 @@
 
 #import "ZNYSBaseView.h"
 @protocol TopRackViewDataSource <NSObject>
-- (NSUInteger)numberOfItemsInView;
-- (UIImage *)itemImageAtIndex:(NSUInteger)index;
+- (NSUInteger)numberOfItemsInTopRack;
+- (UIImage *)topRackItemImageAtIndex:(NSUInteger)index;
 @end
 
 @interface TopRackView : ZNYSBaseView

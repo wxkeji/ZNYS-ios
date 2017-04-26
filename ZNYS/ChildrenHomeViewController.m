@@ -17,6 +17,7 @@
 #import "UserManager.h"
 
 #import "TopRackView.h"
+#import "DownRackView.h"
 
 //点击跳转
 #import "CalendarViewController.h"
@@ -25,7 +26,7 @@
 #import "MAKAFakeRootAlertView.h"
 #import "ExchangeRewardViewController.h"
 
-@interface ChildrenHomeViewController ()<TopRackViewDataSource>
+@interface ChildrenHomeViewController ()<TopRackViewDataSource, DownRackViewDataSource>
 
 @property (nonatomic, strong) UIImageView *backgroundImageViewTop;
 @property (nonatomic, strong) UIImageView *backgroundLogoImageView;
@@ -41,6 +42,7 @@
 @property (nonatomic, strong) UIImageView *awardDownRackImageView;
 
 @property (nonatomic, strong) TopRackView *topRackView;
+@property (nonatomic, strong) DownRackView *downRackView;
 
 @property (nonatomic, strong) UIButton *connectToothBrushButton;
 
@@ -68,6 +70,7 @@
     [self.view addSubview:self.awardDownRackImageView];
     
     [self.view addSubview:self.topRackView];
+    [self.view addSubview:self.downRackView];
     
     [self.view addSubview:self.connectToothBrushButton];
     
@@ -163,6 +166,13 @@
         make.height.mas_equalTo(100);
     }];//奖牌60x60
     
+    [self.downRackView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left).offset(20);
+        make.right.equalTo(self.view.mas_right).offset(-20);
+        make.bottom.equalTo(self.awardDownRackImageView.mas_top);
+        make.height.mas_equalTo(ZNYSGetSizeByWidth(88, 108, 108));
+    }];//奖励100x100
+    
     [self.connectToothBrushButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(weakSelf.view.mas_centerX);
         make.bottom.equalTo(weakSelf.view.mas_bottom).with.offset(CustomHeight(-30));
@@ -178,17 +188,33 @@
 }
 
 #pragma mark - TopRackViewDataSource
-- (NSUInteger)numberOfItemsInView {
+- (NSUInteger)numberOfItemsInTopRack {
     return 10;
 }
 
-- (UIImage *)itemImageAtIndex:(NSUInteger)index {
+- (UIImage *)topRackItemImageAtIndex:(NSUInteger)index {
     NSInteger userLevel = [[UserManager sharedInstance] currentUser].level;
     
     NSString *imageName = [NSString stringWithFormat:@"奖牌%lu", (index + 1)];
     UIImage *image = [UIImage imageNamed:imageName];
     
     if ((index + 1) > userLevel) {
+        image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    }
+    return image;
+    
+}
+
+#pragma mark - DownRackViewDataSource
+- (NSUInteger)numberOfItemsInDownRack {
+    return 5;
+}
+
+- (UIImage *)downRackItemImageAtIndex:(NSUInteger)index {
+    NSString *imageName = [NSString stringWithFormat:@"奖励%lu", (index + 1)];
+    UIImage *image = [UIImage imageNamed:imageName];
+    
+    if ((index + 1) > 2) {
         image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     }
     return image;
@@ -208,12 +234,16 @@
     [self.awardDownRackImageView setImage:[UIImage themedImageWithNamed:@"childrenHome/奖励架2"]];
     
     [self.connectToothBrushButton setImage:[UIImage themedImageWithNamed:@"childrenHome/connectButton"] forState:UIControlStateNormal];
+    
     [self.topRackView configureTheme];
+    [self.downRackView configureTheme];
 }
 
 - (void)userDetailChange {
     [self.userInformationView userSwitch];
     [self.topRackView reloadData];
+    [self.downRackView reloadData];
+    
     ZNYSThemeStyle themeStyle = [ThemeManager sharedManager].themeStyle;
     ZNYSThemeStyle newStyle = [[UserManager sharedInstance] currentUserThemeStyle];
     if (themeStyle != newStyle) {
@@ -335,6 +365,14 @@
     }
     return _topRackView;
 }
+- (DownRackView *)downRackView {
+    if (!_downRackView) {
+        _downRackView = [[DownRackView alloc] init];
+        _downRackView.datasource = self;
+    }
+    return _downRackView;
+}
+
 - (UIButton *)connectToothBrushButton {
     if (!_connectToothBrushButton) {
         _connectToothBrushButton = [UIButton buttonWithType:UIButtonTypeCustom];
