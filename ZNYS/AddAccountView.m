@@ -21,29 +21,16 @@
 
 @property (nonatomic,strong) UILabel * chooseBirthLabel;
 
+@property (nonatomic, strong) UIImageView *girlsImageView;
+@property (nonatomic, strong) UIImageView *boysImageView;
 @end
 
 @implementation AddAccountView
 
 #pragma mark life cycle
-
-- (void)dealloc{
-    _chooseThumbLabel = nil;
-    _nameLabel = nil;
-    _chooseBirthLabel = nil;
-    _boysButton = nil;
-    _girlsButton = nil;
-    _nameTextField = nil;
-    _birthButton = nil;
-    _delegate = nil;
-    _titleLabel = nil;
-    _dismissButton = nil;
-}
-
 - (instancetype)init{
     self = [super init];
     if (self) {
-        self.backgroundColor = [UIColor blueColor];
         
 //        UIView * bgView = [[UIView alloc] init];
 //        bgView.backgroundColor = [UIColor clearColor];
@@ -52,7 +39,9 @@
         [self addSubview:self.nameLabel];
         [self addSubview:self.chooseBirthLabel];
 //        [self addSubview:bgView];
+        [self addSubview:self.boysImageView];
         [self addSubview:self.boysButton];
+        [self addSubview:self.girlsImageView];
         [self addSubview:self.girlsButton];
         [self addSubview:self.nameTextField];
         [self addSubview:self.birthButton];
@@ -72,8 +61,19 @@
             make.width.mas_equalTo(CustomWidth(105));
             make.height.mas_equalTo(CustomHeight(105));
         }];
-        
+        [self.boysImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(weakSelf.chooseThumbLabel.mas_right).with.offset(CustomWidth(16));
+            make.centerY.mas_equalTo(weakSelf.chooseThumbLabel.mas_centerY);
+            make.width.mas_equalTo(CustomWidth(105));
+            make.height.mas_equalTo(CustomHeight(105));
+        }];
         [self.girlsButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(weakSelf.boysButton.mas_right).with.offset(CustomWidth(16));
+            make.centerY.mas_equalTo(weakSelf.boysButton.mas_centerY);
+            make.width.mas_equalTo(CustomWidth(105));
+            make.height.mas_equalTo(CustomHeight(105));
+        }];
+        [self.girlsImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(weakSelf.boysButton.mas_right).with.offset(CustomWidth(16));
             make.centerY.mas_equalTo(weakSelf.boysButton.mas_centerY);
             make.width.mas_equalTo(CustomWidth(105));
@@ -128,6 +128,11 @@
     }
     return self;
 }
+#pragma mark - public methods
+- (void)configureTheme {
+    self.backgroundColor = [UIColor colorWithThemedImageNamed:@"color/primary"];
+    [self.dismissButton setImage:[UIImage themedImageWithNamed:@"navigation/dismissButton"] forState:UIControlStateNormal];
+}
 
 #pragma mark event action
 
@@ -151,10 +156,17 @@
         _boysButton.tag = 0;
 //        [_boysButton setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
 //        [_boysButton setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateSelected];
-        [_boysButton setBackgroundColor:[UIColor yellowColor]];
+        [_boysButton setBackgroundColor:[UIColor clearColor]];
         [_boysButton addTarget:self action:@selector(thumbButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _boysButton;
+}
+- (UIImageView *)boysImageView {
+    if (!_boysImageView) {
+        _boysImageView = [[UIImageView alloc] init];
+        [_boysImageView setImage:[UIImage imageNamed:@"user/boyDefault"]];
+    }
+    return _boysImageView;
 }
 
 - (UIButton *)girlsButton{
@@ -163,10 +175,17 @@
         _girlsButton.tag = 1;
 //        [_girlsButton setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
 //        [_girlsButton setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateSelected];
-        [_girlsButton setBackgroundColor:[UIColor grayColor]];
+        [_girlsButton setBackgroundColor:[UIColor clearColor]];
         [_girlsButton addTarget:self action:@selector(thumbButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _girlsButton;
+}
+- (UIImageView *)girlsImageView {
+    if (!_girlsImageView) {
+        _girlsImageView = [[UIImageView alloc] init];
+        [_girlsImageView setImage:[UIImage imageNamed:@"user/girlDefault"]];
+    }
+    return _girlsImageView;
 }
 
 - (UITextField *)nameTextField{
@@ -175,7 +194,7 @@
 //        _nameTextField.placeholder = @"请输入昵称";
         _nameTextField.textAlignment = NSTextAlignmentCenter;
         _nameTextField.textColor = [UIColor whiteColor];
-        _nameTextField.backgroundColor = [UIColor redColor];
+        _nameTextField.backgroundColor = [UIColor clearColor];
     }
     return _nameTextField;
 }
@@ -185,7 +204,7 @@
         _birthButton = [[UIButton alloc] initWithCustomFont:22.f];
     //    [_birthButton setTitle:@"请选择生日" forState:UIControlStateNormal];
         [_birthButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_birthButton setBackgroundColor:[UIColor redColor]];
+        [_birthButton setBackgroundColor:[UIColor clearColor]];
         [_birthButton addTarget:self action:@selector(birthButtonAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _birthButton;
@@ -229,7 +248,7 @@
 - (UIButton *)dismissButton{
     if (!_dismissButton) {
         _dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_dismissButton setImage:[UIImage imageNamed:@"userAccount_back"] forState:UIControlStateNormal];
+        
         [_dismissButton addTarget:self action:@selector(dismissButtonAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _dismissButton;

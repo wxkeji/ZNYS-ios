@@ -55,7 +55,8 @@
     [self.view addSubview:self.addAccountView];
     [self.view addSubview:self.addButton];
     [self.view addSubview:self.selectView];
-
+    
+    [self configureTheme];
     
     WS(weakSelf, self);
     [self.addAccountView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -177,13 +178,13 @@
     if (choose.tag) {
         _addAccountView.girlsButton.selected = YES;
         _addAccountView.boysButton.selected = NO;
-        [_addAccountView.girlsButton setBackgroundColor:[UIColor redColor]];
-        [_addAccountView.boysButton setBackgroundColor:[UIColor grayColor]];
+        [_addAccountView.girlsButton setBackgroundColor:[UIColor clearColor]];
+        [_addAccountView.boysButton setBackgroundColor:RGBACOLOR(0, 0, 0, 0.3)];
     }else{
         _addAccountView.girlsButton.selected = NO;
         _addAccountView.boysButton.selected = YES;
-        [_addAccountView.girlsButton setBackgroundColor:[UIColor grayColor]];
-        [_addAccountView.boysButton setBackgroundColor:[UIColor yellowColor]];
+        [_addAccountView.girlsButton setBackgroundColor:RGBACOLOR(0, 0, 0, 0.3)];
+        [_addAccountView.boysButton setBackgroundColor:[UIColor clearColor]];
     }
 }
 
@@ -199,6 +200,10 @@
 }
 
 #pragma mark private method
+- (void)configureTheme {
+    self.addButton.tintColor = [UIColor colorWithThemedImageNamed:@"color/primary_dark"];
+    [self.addAccountView configureTheme];
+}
 
 - (void)addRewardData{
     
@@ -425,14 +430,13 @@
             if (![[UserManager sharedInstance] currentUser].gender) {
                 _addAccountView.boysButton.selected = YES;
                 _addAccountView.girlsButton.selected = NO;
-                [_addAccountView.girlsButton setBackgroundColor:[UIColor grayColor]];
-                [_addAccountView.boysButton setBackgroundColor:[UIColor yellowColor]];
-                
-            }else{
+                [_addAccountView.boysButton setBackgroundColor:[UIColor clearColor]];
+                [_addAccountView.girlsButton setBackgroundColor:RGBACOLOR(0, 0, 0, 0.3)];
+            } else {
                 _addAccountView.boysButton.selected = NO;
                 _addAccountView.girlsButton.selected = YES;
-                [_addAccountView.girlsButton setBackgroundColor:[UIColor redColor]];
-                [_addAccountView.boysButton setBackgroundColor:[UIColor grayColor]];
+                [_addAccountView.girlsButton setBackgroundColor:[UIColor clearColor]];
+                [_addAccountView.boysButton setBackgroundColor:RGBACOLOR(0, 0, 0, 0.3)];
             }
         }else{
             _addAccountView.titleLabel.text = @"添加新用户";
@@ -451,7 +455,9 @@
 - (UIButton *)addButton{
     if (!_addButton) {
         _addButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _addButton.backgroundColor = [UIColor yellowColor];
+        UIImage *image = [UIImage imageNamed:@"check"];
+        image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [_addButton setImage:image forState:UIControlStateNormal];
         [_addButton addTarget:self action:@selector(addButtonAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _addButton;

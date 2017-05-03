@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZNYSBaseView.h"
 
 @protocol ChooseThumbDelegate <NSObject>
 
@@ -18,7 +19,7 @@
 
 @end
 
-@interface AddAccountView : UIView
+@interface AddAccountView : ZNYSBaseView
 
 @property (nonatomic,strong) UIButton * boysButton;
 
@@ -34,4 +35,5 @@
 
 @property (nonatomic,strong) UIButton * dismissButton;
 
+- (void)configureTheme;
 @end
