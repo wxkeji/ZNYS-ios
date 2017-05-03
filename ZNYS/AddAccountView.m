@@ -175,7 +175,7 @@
         _girlsButton.tag = 1;
 //        [_girlsButton setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
 //        [_girlsButton setBackgroundImage:[UIImage imageNamed:@""] forState:UIControlStateSelected];
-        [_girlsButton setBackgroundColor:[UIColor clearColor]];
+        [_girlsButton setBackgroundColor:RGBACOLOR(0, 0, 0, 0.3)];
         [_girlsButton addTarget:self action:@selector(thumbButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _girlsButton;
