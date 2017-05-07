@@ -23,18 +23,27 @@
 }
 
 #pragma mark - collectionveiw datasource
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 2;
+//-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+//    return 1;
+//}
+//-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+//    
+//    return 1;
+//}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
 }
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    
-    return 5;
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 3;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    ToothBrushCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
+    NSLog(@"current index %@, collectionView is %@",indexPath,collectionView);
     
+    ToothBrushCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:bindBrushCellID forIndexPath:indexPath];
     NSIndexPath* selectedIndexPath = self.findView.currentSelectedBindIndex;
     BOOL isIndexPathEqual = selectedIndexPath&&(indexPath.section == selectedIndexPath.section && indexPath.row == selectedIndexPath.row);
     if (!isIndexPathEqual || self.findView.selectedType != selectedCollectionViewTypeBinded) {

@@ -11,12 +11,14 @@
 #import "ToothBrushManagentMainView.h"
 
 static NSString* const cellId = @"collectionViewCellIdentifier";
+static NSString* const findToothBrushCellID = @"0924893204";
+static NSString* const bindBrushCellID = @"djklfjas";
 static NSString* const headerId = @"collectionViewHeaderIdentifier";
-static NSString* const footerId = @"collectionViewFooterIdentifier";
+static NSString* const footerId = @"collecti onViewFooterIdentifier";
 
 typedef void(^BindToothBrushClickBlock)(UICollectionView* collectionView,NSIndexPath* indexPath);
 typedef void(^NewFindToothBrushClickBlock)(UICollectionView* collectionView,NSIndexPath* indexPath);
-typedef void (^SyncButtonAction)(UIButton* button);
+typedef void (^SyncButtonAction)(UIButton *button);
 
 typedef NS_ENUM(NSInteger,SelectedCollectionViewType) {
     selectedCollectionViewTypeBinded,
@@ -57,6 +59,9 @@ typedef NS_ENUM(NSInteger,SelectedCollectionViewType) {
 @property(nonatomic,weak) NSIndexPath* currentSelectedBindIndex;
 @property(nonatomic,weak) NSIndexPath* currentSelectedNewFindIndex;
 
+@property (nonatomic,strong) UICollectionView* babysToothBrushCollectionView;
+@property (nonatomic,strong) UICollectionView* findNewToothBrushCollectionView;
 
+- (instancetype)initWithFrame:(CGRect)frame viewController:(UIViewController *)viewController;
 
 @end

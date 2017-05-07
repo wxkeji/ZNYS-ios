@@ -16,8 +16,7 @@
 
 @interface ToothBrushManagentFindView()<UICollectionViewDelegate,UICollectionViewDataSource>
 
-@property (nonatomic,strong) UICollectionView* babysToothBrushCollectionView;
-@property (nonatomic,strong) UICollectionView* findNewToothBrushCollectionView;
+
 
 @property(nonatomic,strong) CollectionViewLayout* linearLayout;
 
@@ -61,6 +60,12 @@
     return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame viewController:(UIViewController *)viewController {
+    self = [self initWithFrame:frame];
+    self.viewController = viewController;
+    return self;
+}
+
 
 - (void)addConstraints {
     WS(weakSelf, self);
@@ -69,25 +74,25 @@
         make.top.equalTo(weakSelf.mas_top).with.offset(10);
     }];
 //    
-    [self.babysToothBrushCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.mas_left);
-        make.right.equalTo(weakSelf.mas_right);
-        make.height.equalTo(@(CustomHeight(150)));
-        make.top.equalTo(weakSelf.babysToothBrushHintLabel.mas_bottom).with.offset(10);
-    }];
-    
+//    [self.babysToothBrushCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(weakSelf.mas_left);
+//        make.right.equalTo(weakSelf.mas_right);
+//        make.height.equalTo(@(CustomHeight(150)));
+//        make.top.equalTo(weakSelf.babysToothBrushHintLabel.mas_bottom).with.offset(10);
+//    }];
+//
     [self.findNewToothBrushHintLabel mas_makeConstraints:^(MASConstraintMaker* make) {
         make.left.equalTo(weakSelf.babysToothBrushHintLabel);
         //make.bottom.equalTo(weakSelf.findNewToothBrushCollectionView.mas_top).with.offset(-10);
         make.top.equalTo(weakSelf.babysToothBrushCollectionView.mas_bottom).with.offset(10);
     }];
     
-    [self.findNewToothBrushCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakSelf.findNewToothBrushHintLabel.mas_bottom).offset(10);
-        make.height.equalTo(@(CustomHeight(150)));
-        make.left.equalTo(weakSelf.mas_left);
-        make.right.equalTo(weakSelf.mas_right);
-    }];
+//    [self.findNewToothBrushCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(weakSelf.findNewToothBrushHintLabel.mas_bottom).offset(10);
+//        make.height.equalTo(@(CustomHeight(150)));
+//        make.left.equalTo(weakSelf.mas_left);
+//        make.right.equalTo(weakSelf.mas_right);
+//    }];
     
 
     
@@ -138,13 +143,22 @@
 
 #pragma mark - getters
 - (UICollectionView *)babysToothBrushCollectionView {
-	if(_babysToothBrushCollectionView == nil) {
-        _babysToothBrushCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 30, kSCREEN_WIDTH, CustomHeight(150)) collectionViewLayout:self.linearLayout];
+	if(!_babysToothBrushCollectionView ) {
+        
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        layout.itemSize = CGSizeMake(CustomWidth(180), CustomHeight(130));
+        
+        
+        _babysToothBrushCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 30, kSCREEN_WIDTH, CustomHeight(150)) collectionViewLayout:layout];
+//        _babysToothBrushCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 30, kSCREEN_WIDTH, CustomHeight(150))];
+//        _babysToothBrushCollectionView.collectionViewLayout = self.linearLayout;
         [_babysToothBrushCollectionView setBackgroundColor:[UIColor whiteColor]];
 //        _babysToothBrushCollectionView.collectionViewLayout = self.linearLayout;
         _babysToothBrushCollectionView.delegate = self;
-        _babysToothBrushCollectionView.dataSource = self.bindedDataSouce;
-        [_babysToothBrushCollectionView registerClass:[ToothBrushCollectionViewCell class] forCellWithReuseIdentifier:cellId];
+//        _babysToothBrushCollectionView.dataSource = self.bindedDataSouce;
+        _babysToothBrushCollectionView.dataSource = self.viewController;
+        [_babysToothBrushCollectionView registerClass:[ToothBrushCollectionViewCell class] forCellWithReuseIdentifier:bindBrushCellID];
         [_babysToothBrushCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerId];
         [_babysToothBrushCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footerId];
 	}
@@ -154,6 +168,7 @@
 - (CollectionViewLayout *)linearLayout {
 	if(_linearLayout == nil) {
 		_linearLayout = [[CollectionViewLayout alloc] init];
+        
 	}
 	return _linearLayout;
 }
@@ -177,16 +192,20 @@
 }
 
 - (UICollectionView *)findNewToothBrushCollectionView {
-	if(_findNewToothBrushCollectionView == nil) {
-		_findNewToothBrushCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, CGRectGetHeight(self.bounds) - 200 - 30, kSCREEN_WIDTH, CustomHeight(150)) collectionViewLayout:self.linearLayout];
-        
+	if(!_findNewToothBrushCollectionView) {
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        layout.itemSize = CGSizeMake(CustomWidth(180), CustomHeight(130));
+		_findNewToothBrushCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, CGRectGetHeight(self.bounds) - 200 - 30, kSCREEN_WIDTH, CustomHeight(150)) collectionViewLayout:layout];
+//        _findNewToothBrushCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, CGRectGetHeight(self.bounds) - 200 - 30, kSCREEN_WIDTH, CustomHeight(150))];
+//        _findNewToothBrushCollectionView.collectionViewLayout = self.linearLayout;
         [_findNewToothBrushCollectionView setBackgroundColor:[UIColor whiteColor]];
         //        _babysToothBrushCollectionView.collectionViewLayout = self.linearLayout;
         _findNewToothBrushCollectionView.delegate = self;
         _findNewToothBrushCollectionView.dataSource = self.foundDataSouce;
+
         
-        
-        [_findNewToothBrushCollectionView registerClass:[ToothBrushCollectionViewCell class] forCellWithReuseIdentifier:cellId];
+        [_findNewToothBrushCollectionView registerClass:[ToothBrushCollectionViewCell class] forCellWithReuseIdentifier:findToothBrushCellID];
         [_findNewToothBrushCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerId];
         [_findNewToothBrushCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footerId];
 	}

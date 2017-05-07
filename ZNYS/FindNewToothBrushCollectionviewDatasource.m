@@ -22,16 +22,24 @@
 }
 
 #pragma mark - collectionveiw datasource
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 2;
-}
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    
-    return 5;
+//-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+//    return 2;
+//}
+//-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+//    
+//    if (section == 0) {
+//        return 2;
+//    } else
+//    return 2;
+//}
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 1;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    ToothBrushCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
+    ToothBrushCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:findToothBrushCellID forIndexPath:indexPath];
     
     
     //因为Cell重用的问题，这里要确认显示出来的cell如果不是选中的index，就保持原有背景色

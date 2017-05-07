@@ -58,7 +58,6 @@
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker* make) {
         make.centerX.equalTo(weakSelf.mas_centerX);
         make.top.equalTo(weakSelf.mas_top).with.offset(10);
-//        make
     }];
     
     [self.bindTimeHintLabel mas_makeConstraints:^(MASConstraintMaker* make) {

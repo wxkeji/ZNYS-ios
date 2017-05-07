@@ -19,10 +19,22 @@
     if (self) {
         self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         self.itemSize = CGSizeMake(itemWidth, itemHeight);
-        self.sectionInset = UIEdgeInsetsMake(CustomWidth(10),CustomWidth(10),CustomWidth(10), CustomWidth(10));
+        self.minimumLineSpacing = CustomWidth(10);
+        self.minimumInteritemSpacing = CustomWidth(10);
+//        self.sectionInset = UIEdgeInsetsMake(CustomWidth(10),CustomWidth(10),CustomWidth(10), CustomWidth(10));
 
     }
     return self;
 }
 
+-(NSArray*)layoutAttributesForElementsInRect:(CGRect)rect {
+    NSMutableArray *attributes = [NSMutableArray array];
+    for(NSInteger i=0 ; i < self.collectionView.numberOfSections; i++) {
+        for (NSInteger j=0 ; j < [self.collectionView numberOfItemsInSection:i]; j++) {
+            NSIndexPath* indexPath = [NSIndexPath indexPathForItem:j inSection:i];
+            [attributes addObject:[self layoutAttributesForItemAtIndexPath:indexPath]];
+        }
+    }
+    return attributes;
+}
 @end

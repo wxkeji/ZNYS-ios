@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ToothBrushFindViewController : UIViewController
+@interface ToothBrushFindViewController : UIViewController<UICollectionViewDataSource>
 
 @end
