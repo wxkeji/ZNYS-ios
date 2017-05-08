@@ -320,7 +320,7 @@ long lastTimeStamp = 0;
 
 #pragma mark - Encapsulated APIs
 -(NSData*)getBrushUUID;
-{
+{ 
     return self.brushUUID;
 }
 -(void)setTargetTime:(NSString *)time
@@ -445,16 +445,16 @@ long lastTimeStamp = 0;
     
     ZNYSPeripheral *temp = [[ZNYSPeripheral alloc] initWithPeripheral:peripheral advertisementData:advertisementData RSSI:RSSI];
     [self.periphearlsArray addObject:temp];
-    if([[advertisementData objectForKey:@"kCBAdvDataLocalName"] isEqual:@"Mita Brush"])
-    {
-        self.peripheral = peripheral;
-        self.brushUUID = [CBUUID UUIDWithNSUUID:peripheral.identifier].data;
-        [self.centralManager connectPeripheral:peripheral options:nil];
-        if (self.delegate && [self.delegate respondsToSelector:@selector(findNewToothBrushDevice:advertisementdata:RSSI:)] ) {
-            [self.delegate findNewToothBrushDevice:peripheral advertisementdata:advertisementData RSSI:RSSI
-             ];
-        }
-    }
+//    if([[advertisementData objectForKey:@"kCBAdvDataLocalName"] isEqual:@"Mita Brush"])
+//    {
+//        self.peripheral = peripheral;
+//        self.brushUUID = [CBUUID UUIDWithNSUUID:peripheral.identifier].data;
+//        [self.centralManager connectPeripheral:peripheral options:nil];
+//        if (self.delegate && [self.delegate respondsToSelector:@selector(findNewToothBrushDevice:advertisementdata:RSSI:)] ) {
+//            [self.delegate findNewToothBrushDevice:peripheral advertisementdata:advertisementData RSSI:RSSI
+//             ];
+//        }
+//    }
     
 }
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral

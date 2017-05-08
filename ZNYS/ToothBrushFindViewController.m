@@ -47,8 +47,12 @@
     UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kSCREEN_WIDTH, kSCREEN_HEIGHT - view.height)];
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onBackgroundViewClicked)];
     [backgroundView addGestureRecognizer:tapGesture];
+    
     [self.view addSubview:backgroundView];
     [self.view addSubview:view];
+    
+    
+    self.toothBrushesArray = [NSMutableArray array];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -56,16 +60,22 @@
     [[BluetoothServer defaultServer] scanWithCompletionBlock:^(NSArray<ZNYSPeripheral*>* peripherals) {
         for (ZNYSPeripheral *peripheral in peripherals) {
             if ([peripheral.advertiseName isEqualToString:@"Mita Brush"]) {
-                ToothBrush *brush = [[ToothbrushManager sharedInstance] createTempInstance];
+                ToothBrush *brush = [[ToothbrushManager sharedInstance] createInstance];
                 brush.user = [UserManager sharedInstance].currentUser;
                 brush.userUUID = [UserManager sharedInstance].currentUser.uuid;
                 [self.toothBrushesArray addObject:brush];
             }
         }
+        [self.findView.findNewToothBrushCollectionView reloadData];
     }];
-    
-    
 }
+
+- (void)dealloc {
+    for (ToothBrush *toothbrush in self.toothBrushesArray) {
+        [[CoreDataHelper sharedInstance].context deleteObject:toothbrush];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -100,9 +110,9 @@
     
 //    return 3;
     if (collectionView == self.findView.babysToothBrushCollectionView) {
-        return 1;
+        return 8;
     } else if (collectionView == self.findView.findNewToothBrushCollectionView) {
-        return 2;
+        return self.toothBrushesArray.count;
     }
     return 10;
 }
@@ -130,6 +140,7 @@
         if (!cell) {
             NSLog(@"no cell!");
         }
+        [cell setToothBrush:self.toothBrushesArray[indexPath.row]];
         NSIndexPath* selectedIndexPath = self.findView.currentSelectedBindIndex;
         BOOL isIndexPathEqual = selectedIndexPath&&(indexPath.section == selectedIndexPath.section && indexPath.row == selectedIndexPath.row);
         if (!isIndexPathEqual || self.findView.selectedType != selectedCollectionViewTypeNewFind) {

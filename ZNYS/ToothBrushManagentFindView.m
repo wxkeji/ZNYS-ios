@@ -115,13 +115,20 @@
     }
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *selectedCell = [collectionView cellForItemAtIndexPath:indexPath];
+    [selectedCell setBackgroundColor:cellSelectedColor];
+    
+    UICollectionViewCell *previousSelectedCell;
+    
+    
+    
     if (collectionView == self.babysToothBrushCollectionView) {
         if (self.bindedActionBlock) {
             self.bindedActionBlock(collectionView,indexPath);
         }
         self.currentSelectedBindIndex = indexPath;
-        
         [[self.findNewToothBrushCollectionView cellForItemAtIndexPath:self.currentSelectedNewFindIndex] setBackgroundColor:cellOriginalColor];
+//        [self.findNewToothBrushCollectionView reloadItemsAtIndexPaths:@[self.currentSelectedNewFindIndex]];
         self.selectedType = selectedCollectionViewTypeBinded;
     } else if(collectionView == self.findNewToothBrushCollectionView){
         if (self.newToothbrushActionBlock) {
@@ -129,12 +136,11 @@
         }
         
         self.currentSelectedNewFindIndex = indexPath;
-        
+        self.currentSelectedBindIndex = indexPath;
         [[self.babysToothBrushCollectionView cellForItemAtIndexPath:self.currentSelectedBindIndex] setBackgroundColor:cellOriginalColor];
-        
+//        [self.babysToothBrushCollectionView reloadItemsAtIndexPaths:@[self.currentSelectedBindIndex]];
         self.selectedType = selectedCollectionViewTypeNewFind;
     }
-    
     [self.findNewToothBrushCollectionView reloadData];
     [self.babysToothBrushCollectionView reloadData];
 

@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 @implementation BluetoothServer (DataTransferTimer)
 
-- (void)startTimer {
+- (void)startDataTransferTimer {
     [self stopDataTransferTimer];
     self.dataTranferTimer = [NSTimer timerWithTimeInterval:1.0f target:self selector:@selector(dataTransCount) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:self.dataTranferTimer forMode:NSRunLoopCommonModes];

@@ -94,9 +94,9 @@
 
 #pragma mark - public methods
 - (void)setToothBrush:(ToothBrush *)brush {
-    self.titleLabel.text = brush.nickname;
-    self.bindTimeContentLabel.text = brush.bindTime;
-    self.lastConnectTimeHintLabel.text = brush.lastConnectTime;
+    self.titleLabel.text = brush.nickname?brush.nickname:@"未命名";
+    self.bindTimeContentLabel.text = brush.bindTime?brush.bindTime:@"尚未绑定";
+    self.lastConnectTimeContentLabel.text = brush.lastConnectTime?brush.lastConnectTime:@"尚未绑定";
 }
 #pragma mark - getter
 - (UILabel *)titleLabel {

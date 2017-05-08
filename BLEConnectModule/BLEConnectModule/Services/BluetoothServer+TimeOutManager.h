@@ -8,7 +8,7 @@
 
 #import "BluetoothServer.h"
 
-#define TIME_OUT_INTERVAL 10
+#define TIME_OUT_INTERVAL 5
 
 @interface BluetoothServer (TimeOutManager)
 
