@@ -105,7 +105,6 @@
 - (UIButton *)thumbButton{
     if (!_thumbButton) {
         _thumbButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _thumbButton.backgroundColor = [UIColor yellowColor];
         [_thumbButton addTarget:self action:@selector(thumbButtonAction) forControlEvents:UIControlEventTouchUpInside];
         [_thumbButton setImage:[[UserManager sharedInstance] currentUserAvatarImage] forState:UIControlStateNormal];
     }
