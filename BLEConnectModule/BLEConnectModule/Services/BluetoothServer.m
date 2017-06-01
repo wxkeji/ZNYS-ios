@@ -182,7 +182,7 @@ long lastTimeStamp = 0;
     }
     
     _timerForEnding = [NSTimer timerWithTimeInterval:3 target:self selector:@selector(checkDataTransferFinished) userInfo:nil repeats:YES];
-    shouldCreateTimer = YES;
+    shouldCreateTimer = NO;
     numberOfQuaternionReceived = 0;
     numberOfAcceeleraionReceived = 0;
     
@@ -445,6 +445,7 @@ long lastTimeStamp = 0;
     
     ZNYSPeripheral *temp = [[ZNYSPeripheral alloc] initWithPeripheral:peripheral advertisementData:advertisementData RSSI:RSSI];
     [self.periphearlsArray addObject:temp];
+
 //    if([[advertisementData objectForKey:@"kCBAdvDataLocalName"] isEqual:@"Mita Brush"])
 //    {
 //        self.peripheral = peripheral;
@@ -596,13 +597,9 @@ didDiscoverServices:(NSError *)error
             NSString* string=[NSString stringWithFormat:@"%@%d%@",
                               @"Receieved ",numberOfQuaternionReceived,@" quaternions" ];
             [[NSNotificationCenter defaultCenter]postNotificationName:@"updateQuaternion" object:string];
-            //            [[NSNotificationCenter defaultCenter]postNotificationName:@"updateQuaternion" object:string];
-            //            [[SensorDataHandler sharedInstance] pushQuaternion:[DataParser parseQuaternion:characteristic.value]];
-            
             NSArray*  attitudeAngle = [_currentHandler pushQuaternion:[DataParser parseQuaternion:characteristic.value]];
             NSString* quaternionDetails = [NSString stringWithFormat:@"yaw:%@\r\npitch:%@\r\nroll:%@\r\n",attitudeAngle[0],attitudeAngle[1],attitudeAngle[2]];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"updateOnlineQuaternion" object:quaternionDetails];
-            
         }
         else//加速度
         {

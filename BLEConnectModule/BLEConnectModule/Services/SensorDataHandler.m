@@ -235,8 +235,7 @@
         long timeStamp = [self.sensorData getTimeStamp:YAW index:i];
         if ((timeStamp >= areaPointer.startTime && timeStamp<= areaPointer.endTime)||(timeStamp + 400 >= areaPointer.startTime && timeStamp + 400 <= areaPointer.endTime))
         {
-            for (int j = 0;j < 5; j++)//这个循环为什么是五次？？？
-            {
+            for (int j = 0;j < 5; j++)            {
                 [areaPointer.yawVector addInt:[self.sensorData getData:YAW index:i]];
                 [areaPointer.rollVector addInt:[self.sensorData getData:ROLL index:i]];
                 [areaPointer.pitchVector addInt:[self.sensorData getData:PITCH index:i]];
@@ -363,7 +362,7 @@
                 /*condition 4 in range between right_middle_yaw and normalized_yaw*/
                 else if([self isInRange:self.right_middle_yaw endAngle:self.normalized_yaw targetAngle:areaPointer.yawMedian])
                 {
-                    if(abs(areaPointer.yawMedian - self.right_middle_pitch) < 10 )
+                    if(abs(areaPointer.pitchMedian - self.right_middle_pitch) < 10 )
                         areaPointer.type = right_middle_up;
                     else
                         areaPointer.type = front_inner_up;

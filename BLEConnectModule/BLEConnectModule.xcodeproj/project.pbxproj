@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		457498BF1EC5FB5500626FD1 /* BluetoothMessageDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 457498BE1EC5FB5500626FD1 /* BluetoothMessageDispatcher.m */; };
 		4587C86C1EAB9F9900348C80 /* ZNYSPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 4587C86B1EAB9F9900348C80 /* ZNYSPeripheral.m */; };
 		4587C8711EACA34A00348C80 /* BluetoothServer+TimeOutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4587C8701EACA34A00348C80 /* BluetoothServer+TimeOutManager.m */; };
 		4587C8771EACC88F00348C80 /* BluetoothServer+DataTransferTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4587C8761EACC88F00348C80 /* BluetoothServer+DataTransferTimer.m */; };
@@ -50,6 +51,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		457498BD1EC5FB5500626FD1 /* BluetoothMessageDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothMessageDispatcher.h; sourceTree = "<group>"; };
+		457498BE1EC5FB5500626FD1 /* BluetoothMessageDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothMessageDispatcher.m; sourceTree = "<group>"; };
 		4587C86A1EAB9F9900348C80 /* ZNYSPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNYSPeripheral.h; sourceTree = "<group>"; };
 		4587C86B1EAB9F9900348C80 /* ZNYSPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNYSPeripheral.m; sourceTree = "<group>"; };
 		4587C86F1EACA34A00348C80 /* BluetoothServer+TimeOutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BluetoothServer+TimeOutManager.h"; sourceTree = "<group>"; };
@@ -175,6 +178,8 @@
 				4587C8761EACC88F00348C80 /* BluetoothServer+DataTransferTimer.m */,
 				4587C86F1EACA34A00348C80 /* BluetoothServer+TimeOutManager.h */,
 				4587C8701EACA34A00348C80 /* BluetoothServer+TimeOutManager.m */,
+				457498BD1EC5FB5500626FD1 /* BluetoothMessageDispatcher.h */,
+				457498BE1EC5FB5500626FD1 /* BluetoothMessageDispatcher.m */,
 			);
 			name = Services;
 			path = BLEConnectModule/Services;
@@ -267,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				457498BF1EC5FB5500626FD1 /* BluetoothMessageDispatcher.m in Sources */,
 				45A8434C1EA11F8D00E81B75 /* Area.m in Sources */,
 				4587C8711EACA34A00348C80 /* BluetoothServer+TimeOutManager.m in Sources */,
 				45A843511EA11F8D00E81B75 /* BluetoothServer.m in Sources */,

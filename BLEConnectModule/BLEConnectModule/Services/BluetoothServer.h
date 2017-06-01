@@ -34,6 +34,19 @@ typedef NS_ENUM(NSUInteger,DataType) {
     DATA_TYPE_QUATARNION//四元数
 };
 
+typedef NS_ENUM(NSUInteger,CharacteristicType) {
+    CHARACTERISTIC_TYPE1,
+    CHARACTERISTIC_TYPE2,
+    CHARACTERISTIC_TYPE3,
+    CHARACTERISTIC_TYPE4,
+    CHARACTERISTIC_TYPE5,
+    CHARACTERISTIC_TYPE6,
+    CHARACTERISTIC_TYPE7,
+    CHARACTERISTIC_TYPE8,
+    CHARACTERISTIC_TYPE9
+};
+
+
 @protocol BluetoothServerProtocol <NSObject>
 @optional
 -(void)findNewToothBrushDevice:(CBPeripheral*)peripheral advertisementdata:(NSDictionary*)data RSSI:(NSNumber*)rssi;

@@ -64,17 +64,10 @@
     return result;
 }
 +(int*)parseIntFromHexByte:(Byte*)data startIndex:(int)startIndex
-{//the alogrithm?
+{
      int  *result = (int*)malloc(3*sizeof(int));
-//    result[0] =  ( (data[startIndex + 1] & 0x1f) << 8 ) + (data[startIndex]&0xff) ;
-//    result[1] =  ( (data[startIndex + 3] & 0x03) << 11) + ((data[startIndex + 2] & 0xff) << 3 ) + (data[startIndex + 1] & 0xE0);
-    
-    //这里有个非常有趣的问题，根据协议，( (data[startIndex + 1] & 0x1f) << 8 ) + (data[startIndex]&0xff)应该是x轴的加速度，而在实际开发过程中我发现其实它是y轴的加速度，y轴加速度的道理也一样 by Eric Cheung
-    
-    
     result[1] =  ( (data[startIndex + 1] & 0x1f) << 8 ) + (data[startIndex]&0xff) ;
     result[0] =  ( (data[startIndex + 3] & 0x03) << 11) + ((data[startIndex + 2] & 0xff) << 3 ) + (data[startIndex + 1] & 0xE0);
-
     result[2] =  ((data[startIndex + 4] & 0x7f) << 6) + (data[startIndex + 3] & 0xfc) ;
     for (int i = 0; i<3 ; i++)
     {
