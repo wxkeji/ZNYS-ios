@@ -18,6 +18,7 @@
 
 #import "TopRackView.h"
 #import "DownRackView.h"
+#import "ToothBrushFindViewController.h"
 
 //点击跳转
 #import "CalendarViewController.h"
@@ -281,7 +282,10 @@
 
 //在这里加入连接牙刷的代码
 - (void)connectButtonClicked {
-    
+    UIViewController *vc = [[ToothBrushFindViewController alloc] init];
+    vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    vc.view.backgroundColor = [UIColor clearColor];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)toExchangeReward {

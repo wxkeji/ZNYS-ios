@@ -15,7 +15,7 @@
 #import "Award+CoreDataClass.h"
 #import "Award+CoreDataProperties.h"
 #import <SVProgressHUD.h>
-#import "CabinetViewController.h"
+#import "ChildrenHomeViewController.h"
 #import "UserManager.h"
 
 @interface AddAccountViewController ()
@@ -388,8 +388,7 @@
             [self addRewardData];
             
             [SVProgressHUD showInfoWithStatus:@"添加用户成功"];
-            UIStoryboard * storyBoard = [UIStoryboard storyboardWithName:@"Cabinet" bundle:[NSBundle mainBundle]];
-            CabinetViewController * viewController = [storyBoard instantiateViewControllerWithIdentifier:@"CabinetViewController"];
+            ChildrenHomeViewController *viewController = [[ChildrenHomeViewController alloc] init];
             [self.navigationController pushViewController:viewController animated:YES];
         }else{
            [SVProgressHUD showInfoWithStatus:@"添加用户失败，请重试"];
