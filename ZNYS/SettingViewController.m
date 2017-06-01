@@ -10,7 +10,7 @@
 #import "SettingButtonView.h"
 #import "SettingHeaderView.h"
 #import "UserAccountViewController.h"
-#import "CabinetViewController.h"
+#import "ChildrenHomeViewController.h"
 #import "UserManager.h"
 #import "RewardListViewController.h"
 #import "ToothBrushManagentMainViewController.h"
@@ -115,7 +115,7 @@
         WS(weakSelf, self);
         _headerView.dismissButtonBlock = ^{
             for (UIViewController * viewController in weakSelf.navigationController.viewControllers) {
-                if ([viewController isKindOfClass:[CabinetViewController class]]) {
+                if ([viewController isKindOfClass:[ChildrenHomeViewController class]]) {
                     [weakSelf.navigationController popToViewController:viewController animated:YES];
                 }
             }

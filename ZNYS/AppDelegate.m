@@ -11,6 +11,7 @@
 #import "CabinetViewController.h"
 #import "AddAccountViewController.h"
 #import "TestManager.h"
+#import "ChildrenHomeViewController.h"
 
 static AppDelegate* singleton;
 @interface AppDelegate ()
@@ -38,7 +39,8 @@ static AppDelegate* singleton;
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     UIStoryboard * storyBoard = [UIStoryboard storyboardWithName:@"Cabinet" bundle:[NSBundle mainBundle]];
     if ([[UserManager sharedInstance] whetherThereIsUser]) {
-        CabinetViewController * viewController = [storyBoard instantiateViewControllerWithIdentifier:@"CabinetViewController"];
+//        CabinetViewController * viewController = [storyBoard instantiateViewControllerWithIdentifier:@"CabinetViewController"];
+        ChildrenHomeViewController *viewController = [[ChildrenHomeViewController alloc] init];
          UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:viewController];
         nav.navigationBarHidden = YES;
         self.window.rootViewController = nav;
