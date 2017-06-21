@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "SensorDataHandler.h"
 #import "AnalysisResultSet.h"
+#import "ZNYSPeripheral.h"
 @interface ViewController ()
 @property(nonatomic)  BluetoothServer* BLEtest;
 @property (weak, nonatomic) IBOutlet UILabel *RTCLabel;
@@ -23,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UITextView *quaternionTextView;
 @property (weak, nonatomic) IBOutlet UITextView *accelerationTextView;
+
 
 
 @end
@@ -73,10 +75,11 @@
     
 //    [[BluetoothServer defaultServer] scan];
     [[BluetoothServer defaultServer] scanWithCompletionBlock:^(NSArray *peripheralsArray ) {
-        
+        for (ZNYSPeripheral *peripheral in peripheralsArray) {
+            
+        }
         
         NSLog(@"breakPoint");
-        
     }];
     
 }

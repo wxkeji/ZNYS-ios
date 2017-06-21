@@ -2287,7 +2287,7 @@
 				DEVELOPMENT_TEAM = KAG6J66XWF;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)/**",
-					"\"$(SRCROOT)/BLEConnectModule/BLEConnectModule\"/**",
+					"$(SRCROOT)/BLEConnectModule/**",
 				);
 				INFOPLIST_FILE = BluetoothTestInterface/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
@@ -2313,7 +2313,7 @@
 				DEVELOPMENT_TEAM = KAG6J66XWF;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)/**",
-					"\"$(SRCROOT)/BLEConnectModule/BLEConnectModule\"/**",
+					"$(SRCROOT)/BLEConnectModule/**",
 				);
 				INFOPLIST_FILE = BluetoothTestInterface/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;

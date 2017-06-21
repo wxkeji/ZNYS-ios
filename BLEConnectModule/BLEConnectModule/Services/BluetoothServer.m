@@ -446,16 +446,16 @@ long lastTimeStamp = 0;
     ZNYSPeripheral *temp = [[ZNYSPeripheral alloc] initWithPeripheral:peripheral advertisementData:advertisementData RSSI:RSSI];
     [self.periphearlsArray addObject:temp];
 
-//    if([[advertisementData objectForKey:@"kCBAdvDataLocalName"] isEqual:@"Mita Brush"])
-//    {
-//        self.peripheral = peripheral;
-//        self.brushUUID = [CBUUID UUIDWithNSUUID:peripheral.identifier].data;
-//        [self.centralManager connectPeripheral:peripheral options:nil];
-//        if (self.delegate && [self.delegate respondsToSelector:@selector(findNewToothBrushDevice:advertisementdata:RSSI:)] ) {
-//            [self.delegate findNewToothBrushDevice:peripheral advertisementdata:advertisementData RSSI:RSSI
-//             ];
-//        }
-//    }
+    if([[advertisementData objectForKey:@"kCBAdvDataLocalName"] isEqual:@"Mita Brush"])
+    {
+        self.peripheral = peripheral;
+        self.brushUUID = [CBUUID UUIDWithNSUUID:peripheral.identifier].data;
+        [self.centralManager connectPeripheral:peripheral options:nil];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(findNewToothBrushDevice:advertisementdata:RSSI:)] ) {
+            [self.delegate findNewToothBrushDevice:peripheral advertisementdata:advertisementData RSSI:RSSI
+             ];
+        }
+    }
     
 }
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
@@ -585,8 +585,8 @@ didDiscoverServices:(NSError *)error
     {
         NSLog(@"离线数据");
         long currentTimeStamp = [[DataParser parseRTC:characteristic.value is32Bit:NO] longLongValue];
+        [self.delegate dataTransferStatusUpdated:BLS_OFFLINE_DATA packageReceived:(NSUInteger)(numberOfQuaternionReceived+numberOfAcceeleraionReceived)];
         if ((currentTimeStamp - lastTimeStamp > 60000) && lastTimeStamp!=0)//间隔大于十分钟
-            [self.delegate dataTransferStatusUpdated:BLS_OFFLINE_DATA packageReceived:(NSUInteger)(numberOfQuaternionReceived+numberOfAcceeleraionReceived)];
         {
             _currentHandler = [[SensorDataHandler alloc] init];
             [_sensorDataHandlersArray addObject:_currentHandler];
